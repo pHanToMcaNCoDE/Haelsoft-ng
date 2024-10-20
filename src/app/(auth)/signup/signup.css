@@ -1,0 +1,21 @@
+
+.signupOne{
+    background-image: url('../../../asset/Black\ People\ Learning\ Retha\ Ferguson.jpg');
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+}
+
+.signupTwo{
+    background-image: url('../../../asset/Black\ Boy\ Assignment\ \(2\).jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.signupThree{
+    background-image: url('../../../asset/Black\ People\ Learning.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}

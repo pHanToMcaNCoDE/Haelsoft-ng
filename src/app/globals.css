@@ -2,26 +2,162 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+} */
+
+aside {
+  transition: transform 0.2s ease-in-out;
+  z-index: 50;
+  display: block;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+
+.aside-link {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.hover\:text-[#F36400]:hover {
+  color: #F36400; /* Ensure this color contrasts the background */
+}
+
+
+
+/* Hero and Video Styling */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+
+
+
+.custom-spinner .nextui-spinner {
+  color: #f36400 !important; /* Override with your custom color */
+}
+
+/* styles.css */
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.waving-emoji {
+  display: inline-block;
+  animation: wave-animation  4s infinite;
+  transform-origin: 70% 70%;   
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.trailer{
+  background-image: url('../asset/course-details/ConfidentBusinessWoman.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.comm{
+  background-image: url('../asset/course-details/EdTechPlatformteam.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner{
+  background-image: url('../asset/courses/EdTechPlatform.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.top-section{
+  background-image: url('../asset/Black\ Girl\ Writing\ by\ August\ de\ Richelieu.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.py{
+  background-image: url('../../public/pyTwo.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
   }
 }
