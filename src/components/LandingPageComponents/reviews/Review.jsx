@@ -1,17 +1,12 @@
-"use client";
-
+import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
-import obj from "../../../../public/assets/EdTech Platform (3).svg";
 import gsap from "gsap";
-// import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Power3 } from "gsap";
-import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 import ReactPlayer from "react-player";
+import obj from "../../../../public/assets/EdTech Platform (3).svg";
 import img from "../../../asset/img.svg";
 import Details from "./Details";
-import vector from '../../../../public/assets/EdTech Platform Line 7.svg';
 import ResponsiveDetails from "./ResponsiveDetails";
 import './review.css';
 
@@ -19,14 +14,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Review = () => {
   const playerRef = useRef();
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  let tl = new gsap.timeline();
-  let ease = Power3.easeOut();
-
-  React.useEffect(() => {
+  useEffect(() => {
     gsap.to(".alum", {
       opacity: 1,
-      ease: ease,
+      ease: Power3.easeOut,
       scrollTrigger: {
         trigger: '.alum',
         start: "top",
@@ -42,7 +35,7 @@ const Review = () => {
         start: "top center",
         toggleActions: "play none none none",
       },
-      ease: ease,
+      ease: Power3.easeOut,
     });
 
     // Animation for ReactPlayer on scroll
@@ -59,30 +52,28 @@ const Review = () => {
     });
   }, []);
 
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <section className="alum z-[20] relative bg-[#f36402] min-h-screen xl:h-[210vh] 2xl:min-h-screen overflow-hidden">
       <div className="py-[70px] z-[30] relative px-5">
-        {/* {isPlaying ? (
-          <ReactPlayer
-            url="https://youtu.be/qRLnFt7A7Qc"
-            playing={isPlaying}
-            controls
-            className="h-[630px] max-w-[1200px] mx-auto mt-[2rem] react-player"
-            autoPlay
-            height="630"
-            width="80%"
-            ref={playerRef}
-          />
-        ) : (
-          <Image
-            src={img}
-            className="mx-auto cursor-pointer"
+        <ReactPlayer
+          url="https://youtu.be/qRLnFt7A7Qc"
+          playing={isPlaying}
+          controls
+          className="h-[630px] max-w-[1200px] mx-auto mt-[2rem] react-player"
+          height="630"
+          width="80%"
+          ref={playerRef}
+        />
+        {!isPlaying && (
+          <div 
+            className="absolute inset-0 flex justify-center items-center cursor-pointer" 
             onClick={() => setIsPlaying(true)}
-            alt="Alumni"
-          />
-        )} */}
+          >
+            <div className="bg-black bg-opacity-50 p-2 rounded-full">
+              <span className="text-white text-lg">▶️ Play Video</span>
+            </div>
+          </div>
+        )}
         <div className="car mt-20 mb-[1em] duration-300 hidden lg:flex flex-col">
           <h1 className='text-white w-full flex flex-col justify-center items-center text-[2.125rem] font-bold leading-7'>More Alumni Stories</h1>
           <Details />
