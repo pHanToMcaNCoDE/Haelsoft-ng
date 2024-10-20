@@ -7,7 +7,7 @@ import {
   AccordionButton,
   AccordionItem,
   AccordionPanel,
-} from "@chakra-ui/accordion";
+} from "@chakra-ui/react";
 
 const CourseAccordion = ({ courses }) => {
   // Check if courses and units are defined

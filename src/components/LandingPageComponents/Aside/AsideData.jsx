@@ -1,5 +1,5 @@
 import React from 'react';
-import vector from '../../../../public/assets/vector.svg';
+import vector from '../../../../public/assets/Vector.svg';
 import CoursesData from '../MenuData/CoursesData';
 import CorporateData from '../MenuData/CorporateData';
 import BootcampsData from '../MenuData/BootcampsData';

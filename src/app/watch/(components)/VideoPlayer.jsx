@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
 // // Base styles for media player and provider (~400B).
-import "@vidstack/react/player/styles/base.css";
+import "@vidstack/react/player/styles.css";
 import { MediaPlayer, MediaProvider, Poster, Track } from "@vidstack/react";
 import { PlayIcon } from "@vidstack/react/icons";
 import draw from "../../../asset/draw.svg";
