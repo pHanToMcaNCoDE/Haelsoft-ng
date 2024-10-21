@@ -1,15 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import "@vidstack/react/styles.css"; 
 import { MediaPlayer, MediaProvider, Poster, Track } from "@vidstack/react";
 import { PlayIcon } from "@vidstack/react/icons";
 import draw from "../../../asset/draw.svg";
 import playicon from "../../../../public/assets/playicon.svg";
 import Image from "next/image";
 import { useSelector } from "react-redux";
-// import '@vidstack/react/player/styles/default/theme.css';
-// import '@vidstack/react/player/styles/default/layouts/video.css';
 
 const VideoPlayer = ({ videoUrl, open, setopen }) => {
   const { lesson } = useSelector((state) => state.courses);
@@ -17,37 +14,22 @@ const VideoPlayer = ({ videoUrl, open, setopen }) => {
 
   const handleDownload = async () => {
     const url = `https://res.cloudinary.com/dmpqdaupc/${lesson.pdf_file}`;
-    // Fetch the file from the URL
-
     try {
-      // Fetch the file from the URL
       const response = await fetch(url);
 
       if (!response.ok) {
         throw new Error("Failed to fetch file");
       }
 
-      // Convert the response to a blob
       const blob = await response.blob();
-
-      // Create a temporary URL for the blob
       const blobUrl = window.URL.createObjectURL(blob);
 
-      // Create a temporary anchor element
       const link = document.createElement("a");
       link.href = blobUrl;
-      link.download = `${lesson?.title}.pdf`; // Set the default file name
-
-      // Append link to the document body
+      link.download = `${lesson?.title}.pdf`;
       document.body.appendChild(link);
-
-      // Programmatically click the link to trigger the download
       link.click();
-
-      // Remove the link from the document
       document.body.removeChild(link);
-
-      // Revoke the blob URL to free up memory
       window.URL.revokeObjectURL(blobUrl);
     } catch (error) {
       console.error("Download failed:", error);
@@ -56,40 +38,17 @@ const VideoPlayer = ({ videoUrl, open, setopen }) => {
 
   const [pausePlay, setpausePlay] = useState(false);
   return (
-    <div
-      className="col-span-12 md:col-span-9  h-screen gap-y-4 p-4 md:px-10 flex-1 overflow-y-auto w-full
-    "
-    >
-      {/* {videoUrl} */}
+    <div className="col-span-12 md:col-span-9 h-screen gap-y-4 p-4 md:px-10 flex-1 overflow-y-auto w-full">
       <div>
         <Image
           src={draw}
           className="mt-4 mb-4 md:hidden"
-          onClick={() => {
-            setopen(!open);
-          }}
+          onClick={() => setopen(!open)}
           alt="Draw"
         />
 
-        {/* {!lesson.pdf_file&& (
-          <ReactPlayer
-            url={`https://res.cloudinary.com/dmpqdaupc/` +videoUrl}
-            width={"100%"}
-            height={"448px"}
-            controls
-            config={{
-              file: {
-                attributes: {
-                  controlsList: "nodownload", // Prevents download option
-                  disablePictureInPicture: true, // Disables PiP mode
-                },
-              },
-            }}
-          />
-        )} */}
-
         {!lesson.pdf_file && (
-          <div  className="relative w-full cursor-pointer">
+          <div className="relative w-full cursor-pointer">
             <ReactPlayer
               url={`https://res.cloudinary.com/dmpqdaupc/${videoUrl}`}
               width={"100%"}
@@ -101,8 +60,8 @@ const VideoPlayer = ({ videoUrl, open, setopen }) => {
               config={{
                 file: {
                   attributes: {
-                    controlsList: "nodownload", // Prevents download option
-                    disablePictureInPicture: true, // Disables PiP mode
+                    controlsList: "nodownload",
+                    disablePictureInPicture: true,
                   },
                 },
               }}
@@ -123,15 +82,11 @@ const VideoPlayer = ({ videoUrl, open, setopen }) => {
           </div>
         )}
         {!videoUrl && (
-          <div className="flex flex-col justify-center  items-center">
-            <p className="">
-              Donwload the PDF below to access resources for this lesson
-            </p>
+          <div className="flex flex-col justify-center items-center">
+            <p>Download the PDF below to access resources for this lesson</p>
             <button
-              // href={`https://res.cloudinary.com/dmpqdaupc/${selector.pdflink}`}
-              // target="_blank"
               onClick={handleDownload}
-              className="bg-main px-4 py-2 rounded-lg text-white mt-4 "
+              className="bg-main px-4 py-2 rounded-lg text-white mt-4"
             >
               Download Pdf
             </button>
