@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import Hero from '../course-details/components/Hero';
 import CourseTrailer from '../course-details/components/CourseTrailer';
 import CourseTutor from '../course-details/CourseTutor';
@@ -16,7 +16,6 @@ import GetStartedCourse from '../course-details/GetStartedCourse';
 import axios from 'axios';
 import { courseDetails } from '@/raw-data/data';
 import { usePathname, useSearchParams } from 'next/navigation';
-
 
 const Page = () => {
   const pathname = usePathname();
@@ -59,21 +58,23 @@ const Page = () => {
   }, [courseTitle, courseTtl]);
 
   return (
-    <>
-      <Hero courses={courses} />
-      <CourseTrailer courses={courses} />
-      <CourseTutor courses={courses} />
-      <ImageDisplay />
-      <CourseContent courses={courses} />
-      <Instructors courses={courses} />
-      <BuildYourPortfolio courses={courses} />   
-      <Expectation courses={courses} />
-      <OnlineClassroom courses={courses} />
-      <GraduateFeedback courses={courses} />
-      <Community />
-      <GetStartedCourse courses={courses} />
-      {/* <Footer/> */}
-    </>
+    <Suspense fallback={<div>Loading...</div>}>
+      <>
+        <Hero courses={courses} />
+        <CourseTrailer courses={courses} />
+        <CourseTutor courses={courses} />
+        <ImageDisplay />
+        <CourseContent courses={courses} />
+        <Instructors courses={courses} />
+        <BuildYourPortfolio courses={courses} />   
+        <Expectation courses={courses} />
+        <OnlineClassroom courses={courses} />
+        <GraduateFeedback courses={courses} />
+        <Community />
+        <GetStartedCourse courses={courses} />
+        {/* <Footer/> */}
+      </>
+    </Suspense>
   );
 };
 

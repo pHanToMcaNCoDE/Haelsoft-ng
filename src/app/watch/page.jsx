@@ -16,31 +16,33 @@ const Watch = () => {
   const [videoData, setVideoData] = useState([]);
   const [courseContentData, setContentData] = useState([]);
 
-  const params = useSearchParams();
+  const params = useSearchParams(); // useSearchParams() used in client component
   const token = secureLocalStorage.getItem("token");
   const id = params.get("id");
 
   useEffect(() => {
     // Fetching course details
-    axios
-      .get(
-        `https://edtech-backend-q2ud.onrender.com/course_details/api/courses/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
-      .then((res) => {
-        setVideoData(res.data.data);
-        setContentData(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    if (id) {
+      axios
+        .get(
+          `https://edtech-backend-q2ud.onrender.com/course_details/api/courses/${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+        .then((res) => {
+          setVideoData(res.data.data);
+          setContentData(res.data.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }
   }, [id, token]);
 
   if (loading) {
@@ -50,7 +52,7 @@ const Watch = () => {
   return (
     <div className="w-full">
       <TopBarNav />
-      <div className="h-screen flex w-full ">
+      <div className="h-screen flex w-full">
         <SideNav
           videoData={videoData}
           courseContentData={courseContentData}
@@ -58,7 +60,7 @@ const Watch = () => {
           setopen={setopen}
           open={open}
         />
-        {/* Wrap VideoPlayer in Suspense */}
+        
         <Suspense fallback={<Loading />}>
           <VideoPlayer
             videoUrl={videoUrl}

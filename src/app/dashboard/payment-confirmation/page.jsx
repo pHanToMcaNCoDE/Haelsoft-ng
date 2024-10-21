@@ -2,17 +2,13 @@
 
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { toast } from "react-toastify";
-import Loading from "../(dashboardcomponents)/loading";
 import { useRouter } from "next/navigation";
-import Loader from "@/components/Loader";
-// import { ClipLoader } from 'react-spinners';
-
-import logoimage from "../../../asset/haelsoft.gif";
 import Image from "next/image";
 import { FaRegCircleCheck } from "react-icons/fa6";
 import secureLocalStorage from "react-secure-storage";
+import logoimage from "../../../asset/haelsoft.gif";
 
 const PaymentConfirmation = () => {
   const [loading, setLoading] = useState(true);
@@ -30,7 +26,7 @@ const PaymentConfirmation = () => {
           }
         )
         .then((res) => {
-          toast.success(res, {
+          toast.success("Payment verified successfully!", {
             toastId: 1,
           });
           secureLocalStorage.removeItem('CartItems');
@@ -44,15 +40,6 @@ const PaymentConfirmation = () => {
   if (loading) {
     return (
       <div className="h-screen w-full flex justify-center items-center">
-        {/* <Bars
-          height="80"
-          width="80"
-          radius="9"
-          color="orange"
-          ariaLabel="loading"
-          wrapperStyle={{}}
-          wrapperClass
-        /> */}
         <Image src={logoimage} alt="Haelsoft" />
       </div>
     );
@@ -66,4 +53,12 @@ const PaymentConfirmation = () => {
   );
 };
 
-export default PaymentConfirmation;
+const PaymentConfirmationWrapper = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PaymentConfirmation />
+    </Suspense>
+  );
+};
+
+export default PaymentConfirmationWrapper;

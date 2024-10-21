@@ -2,6 +2,7 @@
 
 import React, { Suspense } from "react";
 import CourseDetailPage from "./components/CourseDetailPage";
+import Loading from "../../(dashboardcomponents)/loading";
 
 const CourseDetailPageWrapper = () => {
   return (
