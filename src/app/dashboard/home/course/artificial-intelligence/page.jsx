@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useSelector } from 'react-redux';
@@ -13,7 +15,7 @@ import OnlineClassroom from '../../course-details/OnlineClassroom';
 import GraduateFeedback from '../../course-details/GraduateFeedback';
 import Community from '../../course-details/Community';
 import GetStartedCourse from '../../course-details/GetStartedCourse';
-import Loading from './Loading'; // Adjust the path as necessary
+import Loading from '@/app/dashboard/(dashboardcomponents)/loading';
 
 const page = () => {
   const pathname = usePathname();
@@ -28,14 +30,18 @@ const page = () => {
   useEffect(() => {
     const fetchCourse = () => {
       const allCourses = Object.values(courseDetails).flat();
- 
-      const cartDataCourse = courses.find((c) => c.title.toLowerCase() === (courseTtl ? courseTtl.toLowerCase() : courseTitle.toLowerCase()));
 
-      const displayDataCourse = allCourses.find((c) => c.course_title.toLowerCase() === (courseTtl ? courseTtl.toLowerCase() : courseTitle.toLowerCase()));
+      const cartDataCourse = courses.find((c) =>
+        c.title.toLowerCase() === (courseTtl ? courseTtl.toLowerCase() : courseTitle.toLowerCase())
+      );
+
+      const displayDataCourse = allCourses.find((c) =>
+        c.course_title.toLowerCase() === (courseTtl ? courseTtl.toLowerCase() : courseTitle.toLowerCase())
+      );
 
       const mergedCourseData = {
         ...cartDataCourse,
-        ...displayDataCourse
+        ...displayDataCourse,
       };
 
       if (displayDataCourse && cartDataCourse) {
