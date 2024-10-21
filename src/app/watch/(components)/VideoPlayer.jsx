@@ -89,7 +89,7 @@ const VideoPlayer = ({ videoUrl, open, setopen }) => {
         {!lesson.pdf_file && (
           <div  className="relative w-full cursor-pointer">
             <ReactPlayer
-              url={`https://res.cloudinary.com/dmpqdaupc/` + videoUrl}
+              url={`https://res.cloudinary.com/dmpqdaupc/${videoUrl}`}
               width={"100%"}
               height={"448px"}
               className="bg-black"

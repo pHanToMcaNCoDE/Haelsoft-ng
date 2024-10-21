@@ -1,14 +1,13 @@
-import Hire from '@/components/LandingPageComponents/hire/Hire'
-import React from 'react'
-import Navbar from "@/components/LandingPageComponents//Navbar/Navbar";
-import ConnectTalent from '@/components/LandingPageComponents/ConnectTalent/ConnectTalent';
-import EdtechGraduates from '@/components/LandingPageComponents/EdtechGraduates/EdtechGraduates';
-import WorkAt from '@/components/LandingPageComponents/WorkAt/WorkAt';
-import EdtechRoles from '@/components/LandingPageComponents/EdtechRoles/EdtechRoles';
-import Plan from '@/components/LandingPageComponents/Plan/Plan';
-import CorporateGallary from '@/components/LandingPageComponents/CorporateGallary/CorporateGallary';
-import StartHiring from '@/components/LandingPageComponents/StartHiring/StartHiring';
-import ResponsiveWorkAt from '@/components/LandingPageComponents/WorkAt/ResponsiveWorkAt';
+import ConnectTalent from "@/components/LandingPageComponents/ConnectTalent"
+import CorporateGallary from "@/components/LandingPageComponents/CorporateGallary"
+import EdtechGraduates from "@/components/LandingPageComponents/EdtechGraduates"
+import EdtechRoles from "@/components/LandingPageComponents/EdtechRoles"
+import Hire from "@/components/LandingPageComponents/Hire"
+import Navbar from "@/components/LandingPageComponents/Navbar"
+import Plan from "@/components/LandingPageComponents/Plan"
+import ResponsiveWorkAt from "@/components/LandingPageComponents/ResponsiveWorkAt"
+import StartHiring from "@/components/LandingPageComponents/StartHiring"
+import WorkAt from "@/components/LandingPageComponents/WorkAt"
 
 const Corporate = () => {
   return (
