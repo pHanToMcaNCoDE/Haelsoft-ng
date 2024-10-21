@@ -8,6 +8,8 @@ import draw from "../../../asset/draw.svg";
 import playicon from "../../../../public/assets/playicon.svg";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import '@vidstack/react/player/styles/default/theme.css';
+import '@vidstack/react/player/styles/default/layouts/video.css';
 
 const VideoPlayer = ({ videoUrl, open, setopen }) => {
   const { lesson } = useSelector((state) => state.courses);

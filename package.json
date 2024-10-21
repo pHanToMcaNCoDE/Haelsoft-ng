@@ -27,6 +27,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.11.9",
     "gsap": "^3.12.5",
+    "media-icons": "^0.10.0",
     "next": "14.2.15",
     "next-cloudinary": "^6.15.0",
     "nextjs-toploader": "^3.7.15",
