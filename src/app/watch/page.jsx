@@ -19,7 +19,6 @@ const Watch = () => {
 
   const token = secureLocalStorage.getItem("token");
 
-  // Wrap the part where you use useSearchParams in Suspense
   return (
     <div className="w-full">
       <TopBarNav />
@@ -52,34 +51,42 @@ const Watch = () => {
 };
 
 const SearchParamsWrapper = ({ setLoading, setVideoData, setContentData, token }) => {
-  const params = useSearchParams();
-  const id = params.get("id");
+  const SearchParamsSuspense = () => {
+    const params = useSearchParams();
+    const id = params.get("id");
 
-  useEffect(() => {
-    if (id) {
-      axios
-        .get(
-          `https://edtech-backend-q2ud.onrender.com/course_details/api/courses/${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        )
-        .then((res) => {
-          setVideoData(res.data.data);
-          setContentData(res.data.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
-  }, [id, token]);
+    useEffect(() => {
+      if (id) {
+        axios
+          .get(
+            `https://edtech-backend-q2ud.onrender.com/course_details/api/courses/${id}`,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          )
+          .then((res) => {
+            setVideoData(res.data.data);
+            setContentData(res.data.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
+    }, [id, token]);
 
-  return null;
+    return null;
+  };
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <SearchParamsSuspense />
+    </Suspense>
+  );
 };
 
 export default Watch;

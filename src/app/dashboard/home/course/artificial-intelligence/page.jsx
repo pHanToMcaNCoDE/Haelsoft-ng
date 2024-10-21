@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useSelector } from 'react-redux';
 import Hero from '../../course-details/components/Hero';
@@ -17,15 +17,50 @@ import Community from '../../course-details/Community';
 import GetStartedCourse from '../../course-details/GetStartedCourse';
 import Loading from '@/app/dashboard/(dashboardcomponents)/loading';
 
-const page = () => {
+const CoursePage = () => {
   const pathname = usePathname();
   const courseTitle = decodeURIComponent(pathname.split('/').pop());
   const [course, setCourse] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { courses } = useSelector((state) => state.courses);
+
+  return (
+    <Suspense fallback={<Loading />}>
+      <CourseContentWrapper
+        courseTitle={courseTitle}
+        courses={courses}
+        setCourse={setCourse}
+        setLoading={setLoading}
+        setError={setError}
+      />
+      {loading ? (
+        <Loading />
+      ) : error ? (
+        <div>Error: {error}</div>
+      ) : (
+        <main>
+          <Hero course={course} />
+          <CourseTrailer course={course} />
+          <CourseTutor course={course} />
+          <ImageDisplay />
+          <CourseContent course={course} />
+          <Instructors course={course} />
+          <BuildYourPortfolio course={course} />
+          <Expectation course={course} />
+          <OnlineClassroom course={course} />
+          <GraduateFeedback course={course} />
+          <Community />
+          <GetStartedCourse course={course} />
+        </main>
+      )}
+    </Suspense>
+  );
+};
+
+const CourseContentWrapper = ({ courseTitle, courses, setCourse, setLoading, setError }) => {
   const searchParams = useSearchParams();
   const courseTtl = searchParams.get('details');
-  const { courses } = useSelector((state) => state.courses);
 
   useEffect(() => {
     const fetchCourse = () => {
@@ -53,32 +88,9 @@ const page = () => {
     };
 
     fetchCourse();
-  }, [courseTitle, courseTtl]);
+  }, [courseTitle, courseTtl, courses]);
 
-  if (loading) {
-    return <Loading />;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  return (
-    <main>
-      <Hero course={course} />
-      <CourseTrailer course={course} />
-      <CourseTutor course={course} />
-      <ImageDisplay />
-      <CourseContent course={course} />
-      <Instructors course={course} />
-      <BuildYourPortfolio course={course} />   
-      <Expectation course={course} />
-      <OnlineClassroom course={course} />
-      <GraduateFeedback course={course} />
-      <Community />
-      <GetStartedCourse course={course} />
-    </main>
-  );
+  return null;
 };
 
-export default page;
+export default CoursePage;
