@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import gsap from "gsap";
@@ -9,11 +11,14 @@ import img from "../../../asset/img.svg";
 import Details from "./Details";
 import ResponsiveDetails from "./ResponsiveDetails";
 import './review.css';
+import { IoMdPlay } from "react-icons/io";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Review = () => {
   const playerRef = useRef();
+  const overlayRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
@@ -50,30 +55,71 @@ const Review = () => {
         scrub: true, // Smooth scrolling animation
       },
     });
+
+    gsap.to(playerRef.current.wrapper, {
+      width: "100%",
+      duration: 2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".alum",
+        start: "top 70%", 
+        end: "top 20%",
+        scrub: true,
+      },
+    });
+
+    gsap.to(overlayRef.current, {
+      width: "100%",
+      duration: 2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".alum",
+        start: "top 70%", 
+        end: "top 20%",
+        scrub: true,
+      },
+    });
   }, []);
 
   return (
     <section className="alum z-[20] relative bg-[#f36402] min-h-screen xl:h-[210vh] 2xl:min-h-screen overflow-hidden">
-      <div className="py-[70px] z-[30] relative px-5">
-        <ReactPlayer
-          url="https://youtu.be/qRLnFt7A7Qc"
-          playing={isPlaying}
-          controls
-          className="h-[630px] max-w-[1200px] mx-auto mt-[2rem] react-player"
-          height="630"
-          width="80%"
-          ref={playerRef}
-        />
-        {!isPlaying && (
-          <div 
-            className="absolute inset-0 flex justify-center items-center cursor-pointer" 
-            onClick={() => setIsPlaying(true)}
-          >
-            <div className="bg-black bg-opacity-50 p-2 rounded-full">
-              <span className="text-white text-lg">▶️ Play Video</span>
+      <div className="py-[70px] z-[30] relative px-5 xl:px-0">
+        <div className="container flex justify-center items-center mx-auto min-w-full relative">
+          <ReactPlayer
+            ref={playerRef}
+            url="https://youtu.be/qRLnFt7A7Qc"
+            playing={!isPlaying}
+            muted
+            loop
+            className="video-preview relative z-[5px]"
+            width="80%"
+            height='630px'
+            config={{
+              youtube: {
+                playerVars: {
+                  controls: 0,
+                  modestbranding: 1,
+                  disablekb: 1,
+                  rel: 0
+                }
+              }
+            }}
+          />
+          {!isPlaying && (
+            <div className="absolute translate-x-[0%] translate-y-[-40%] z-10 play-button flex flex-col justify-center items-center gap-y-[70px]">
+              <h1 className="text-[4.25rem] font-medium text-white">Alumni Stories</h1>
+              <button 
+                className="flex justify-center items-center gap-x-3 py-[16px] w-[131px] h-[52px] rounded-full bg-white" 
+                onClick={() => setIsPlaying(true)}
+              >
+                <IoMdPlay className="text-black text-[1.3rem]" />
+                <p className="text-black text-[1.125rem] font-semibold">watch</p>
+              </button>
             </div>
-          </div>
-        )}
+          )}
+
+          <div ref={overlayRef} className="h-full w-[80%] bg-[#000]/30 absolute top-0 z-[8px]"></div>
+        </div>
         <div className="car mt-20 mb-[1em] duration-300 hidden lg:flex flex-col">
           <h1 className='text-white w-full flex flex-col justify-center items-center text-[2.125rem] font-bold leading-7'>More Alumni Stories</h1>
           <Details />
