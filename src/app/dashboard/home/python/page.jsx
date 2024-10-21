@@ -59,7 +59,6 @@ const Page = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <>
         <Hero courses={courses} />
         <CourseTrailer courses={courses} />
         <CourseTutor courses={courses} />
@@ -73,7 +72,6 @@ const Page = () => {
         <Community />
         <GetStartedCourse courses={courses} />
         {/* <Footer/> */}
-      </>
     </Suspense>
   );
 };

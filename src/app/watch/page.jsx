@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState, Suspense } from "react";
 import TopBarNav from "./(components)/TopBarNav";
 import SideNav from "./(components)/SideNav";
@@ -16,12 +17,45 @@ const Watch = () => {
   const [videoData, setVideoData] = useState([]);
   const [courseContentData, setContentData] = useState([]);
 
-  const params = useSearchParams(); // useSearchParams() used in client component
   const token = secureLocalStorage.getItem("token");
+
+  // Wrap the part where you use useSearchParams in Suspense
+  return (
+    <div className="w-full">
+      <TopBarNav />
+      <div className="h-screen flex w-full">
+        <SideNav
+          videoData={videoData}
+          courseContentData={courseContentData}
+          setVideoUrl={setVideoUrl}
+          setopen={setopen}
+          open={open}
+        />
+
+        <Suspense fallback={<Loading />}>
+          <SearchParamsWrapper
+            setLoading={setLoading}
+            setVideoData={setVideoData}
+            setContentData={setContentData}
+            token={token}
+          />
+          <VideoPlayer
+            videoUrl={videoUrl}
+            courseContentData={courseContentData}
+            setopen={setopen}
+            open={open}
+          />
+        </Suspense>
+      </div>
+    </div>
+  );
+};
+
+const SearchParamsWrapper = ({ setLoading, setVideoData, setContentData, token }) => {
+  const params = useSearchParams();
   const id = params.get("id");
 
   useEffect(() => {
-    // Fetching course details
     if (id) {
       axios
         .get(
@@ -45,33 +79,7 @@ const Watch = () => {
     }
   }, [id, token]);
 
-  if (loading) {
-    return <Loading />;
-  }
-
-  return (
-    <div className="w-full">
-      <TopBarNav />
-      <div className="h-screen flex w-full">
-        <SideNav
-          videoData={videoData}
-          courseContentData={courseContentData}
-          setVideoUrl={setVideoUrl}
-          setopen={setopen}
-          open={open}
-        />
-        
-        <Suspense fallback={<Loading />}>
-          <VideoPlayer
-            videoUrl={videoUrl}
-            courseContentData={courseContentData}
-            setopen={setopen}
-            open={open}
-          />
-        </Suspense>
-      </div>
-    </div>
-  );
+  return null;
 };
 
 export default Watch;
