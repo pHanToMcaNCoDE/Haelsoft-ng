@@ -2,20 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { courseDetails } from "../../../../raw-data/data";
-import Hero from "./components/Hero";
-import CourseTrailer from "./components/CourseTrailer";
-import CourseTutor from "./CourseTutor";
-import ImageDisplay from "./ImageDisplay";
-import CourseContent from "./CourseContent";
-import Instructors from "./Instructors";
-import BuildYourPortfolio from "./BuildYourPortfolio";
-import Expectation from "./Expectation";
-import OnlineClassroom from "./OnlineClassroom";
-import GraduateFeedback from "./GraduateFeedback";
-import Community from "./Community";
-import GetStartedCourse from "./GetStartedCourse";
+import { courseDetails } from "../../../../../raw-data/data";
 import Loading from "@/app/dashboard/(dashboardcomponents)/loading";
+import Hero from "./Hero";
+import CourseTrailer from "./CourseTrailer";
+import CourseTutor from "../CourseTutor";
+import ImageDisplay from "../ImageDisplay";
+import CourseContent from "../CourseContent";
+import Instructors from "../Instructors";
+import BuildYourPortfolio from "../BuildYourPortfolio";
+import Expectation from "../Expectation";
+import OnlineClassroom from "../OnlineClassroom";
+import GraduateFeedback from "../GraduateFeedback";
+import Community from "../Community";
+import GetStartedCourse from "../GetStartedCourse";
 
 const CourseDetailPage = () => {
   const pathname = usePathname();
