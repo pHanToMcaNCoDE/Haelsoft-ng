@@ -14,89 +14,78 @@ const CourseCrd = () => {
             image: data,
             name: 'Data + AI',
             details: [
-                'Introduction to Data Science',
-                'Machine Learning Algorithms',
-                'AI and Neural Networks',
-                'Big Data Analytics'
+                'Data Analytics Course',
+                'Data Science Course ',
+                'Artificial Intelligence Course',
+                'Python Course'  
             ]
         },
-        // {
-        //     image: pdt,
-        //     name: 'Product',
-        //     details: [
-        //         'Product Management Essentials',
-        //         'Roadmapping and Strategy',
-        //         'User Experience Design',
-        //         'Product Lifecycle Management'
-        //     ]
-        // },
         {
-            image: dev,
-            name: 'Development',
+            image: mkt,
+            name: 'Marketing',
             details: [
-                'Full-Stack Development',
-                'Backend Programming',
-                'Frontend Frameworks',
-                'DevOps and CI/CD'
+                'Digital Marketing Course',
+                'Marketing Leadership'
+            ]
+        },
+        {
+            image: pdt,
+            name: 'Product',
+            details: [
+                'Product Management ',
+                'Product Leadership Course ',
             ]
         },
         {
             image: des,
             name: 'Design',
             details: [
-                'Graphic Design Principles',
-                'UI/UX Design Techniques',
-                'Prototyping and Wireframing',
-                'Visual Communication Design'
+                'UX Design Course',
+                'UI Design Course',
+                'Design Leadership Course'
             ]
         },
-        // {
-        //     image: cyb,
-        //     name: 'Cyber',
-        //     details: [
-        //         'Cybersecurity Fundamentals',
-        //         'Network Security Protocols',
-        //         'Ethical Hacking',
-        //         'Incident Response and Forensics'
-        //     ]
-        // },
         {
-            image: mkt,
-            name: 'Marketing',
+            image: cyb,
+            name: 'Cyber',
             details: [
-                'Digital Marketing Strategies',
-                'SEO and SEM Techniques',
-                'Content Marketing',
-                'Social Media Campaigns'
+                'Cybersecurity Course '
             ]
-        }
+        },
+        {
+            image: dev,
+            name: 'Development',
+            details: [
+                'Web Development Course '
+            ]
+        },
     ];    
 
     return (
-        <div className='relative z-30 grid grid-cols-1 md:grid-cols-2 gap-10 lg:place-items-end lg:ml-auto mt-[20px] lg:mt-[110px] w-full md:w-auto'>
+        <div className='relative z-30 grid grid-cols-1 md:grid-cols-2 gap-10 lg:place-items-end lg:ml-auto mt-[20px] lg:mt-[50px] w-full md:w-auto'>
             {courses.map((course, index) => (
-                <div key={index} className='bg-white w-full lg:w-[394px] min-h-[298px] rounded shadow-xl'>
-                    <div className='flex justify-start items-center gap-7 pt-[16px] pb-[6px] px-[12px]'>
+                <div key={index} className='bg-white w-full lg:w-[335px] min-h-[150px] rounded shadow-xl p-[24px]'>
+                    <div className='flex justify-start items-center gap-5'>
                         <Image
-                            width={62}
-                            height={62}
+                            width={32}
+                            height={32}
                             className='object-cover'
                             src={course.image}
                             alt={course.name}
                         />
-                        <h1 className='text-[#201A18] font-medium leading-[43px] text-[1.5rem] lg:text-[1.75rem]'>
+                        <h1 className='text-[#201A18] leading-10 font-semibold text-[1rem]'>
                             {course.name}
                         </h1>
                     </div>
-                    <div className='w-full h-[1px] bg-[#F36400] rounded-[1px]'></div>
-                    <ul className='pt-[5px] px-[24px] flex flex-col justify-start gap-3 my-3 h-full'>
+                    <div className='w-full h-[1px] bg-[#E7E7E7] rounded-[1px] my-5'></div>
+                    <ul className='flex flex-col justify-start gap-2'>
                         {course.details.map((detail, index) => (
                             <li
-                                className='text-[#201A18] text-[1.125rem] font-normal leading-8 flex gap-2 items-center'
+                                className='text-[#201A18] text-[.875rem] font-normal leading-6 flex gap-1 items-center duration-200 hover:underline hover:text-blue-700 cursor-pointer'
                                 key={index}
                             >
-                                <IoIosArrowForward className='text-base' />
                                 {detail}
+                                <IoIosArrowForward className='text-[.875rem]' />
                             </li>
                         ))}
                     </ul>

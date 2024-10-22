@@ -58,8 +58,8 @@ const Details = () => {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 h-full w-[25%] bg-gradient-to-r from-main to-transparent pointer-events-none z-20"></div>
-      <div className="absolute top-0 right-0 h-full w-[25%] bg-gradient-to-r from-transparent to-main pointer-events-none z-20"></div>
+      <div className="absolute top-0 left-0 h-full w-[20%] bg-gradient-to-r from-[#F36400] to-transparent pointer-events-none z-20"></div>
+      <div className="absolute top-0 right-0 h-full w-[20%] bg-gradient-to-r from-transparent to-[#F36400] pointer-events-none z-20"></div>
       <Splide
         extensions={{ AutoScroll }}
         options={{
@@ -84,13 +84,15 @@ const Details = () => {
           >
             <div className="relative">
               <Image
-                className="object-cover w-[325px] h-[327px] rounded-tl-medium rounded-tr-medium"
+                width={325}
+                height={327}
+                className="rounded-tl-[5px] rounded-tr-[5px] object-cover w-[325px] h-[327px] rounded-tl-medium rounded-tr-medium"
                 src={item.image}
                 alt={item.name}
               />
             </div>
             {/* <div className="bg-white px-4 py-8 flex flex-col items-center text-center w-[400px] 2xl:w-[500px] h-[280px]"> */}
-            <div className="bg-white h-full lg:h-[269px] p-6 flex flex-col justify-center items-start gap-3 w-full lg:w-[325px] rounded-bl-small rounded-br-small">
+            <div className="bg-white h-full lg:h-[289px] p-6 flex flex-col justify-center items-start gap-3 w-full lg:w-[325px] rounded-bl-[5px] rounded-br-[5px]">
               <div className='flex flex-col justify-center items-start gap-1'>
                 <h1 className="text-[#000000] font-semibold text-[1.125rem]">{item.name}</h1>
                 <p className="text-[.9rem] w-full lg:w-[277px] leading-[21px] font-normal text-[#555]">

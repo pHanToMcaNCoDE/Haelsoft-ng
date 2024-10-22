@@ -85,13 +85,15 @@ const ResponsiveDetails = () => {
           >
             <div className="relative">
               <Image
-                className="object-cover w-[325px] h-[327px] rounded-tl-medium rounded-tr-medium"
+                width={325}
+                height={327}
+                className="object-cover w-[325px] h-[327px] rounded-tl-[5px] rounded-tr-[5px]"
                 src={item.image}
                 alt={item.name}
               />
             </div>
             {/* <div className="bg-white px-4 py-8 flex flex-col items-center text-center w-[400px] 2xl:w-[500px] h-[280px]"> */}
-            <div className="bg-white h-full lg:h-[269px] p-6 flex flex-col justify-center items-start gap-3 w-full lg:w-[325px] rounded-bl-small rounded-br-small">
+            <div className="rounded-bl-[5px] rounded-br-[5px] bg-white h-full lg:h-[289px] p-6 flex flex-col justify-center items-start gap-3 w-full lg:w-[325px] rounded-bl-small rounded-br-small">
               <div className='flex flex-col justify-center items-start gap-1'>
                 <h1 className="text-[#000000] font-semibold text-[1.125rem]">{item.name}</h1>
                 <p className="text-[.9rem] w-full lg:w-[277px] leading-[21px] font-normal text-[#555]">

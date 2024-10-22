@@ -22,10 +22,10 @@ import Image from 'next/image';
 
 const Network = () => {
   return (
-    <section className='w-full hidden md:flex flex-col gap-[4em] py-[100px]'>
+    <section className='w-full hidden md:flex flex-col gap-[4em] py-[100px] relative'>
         <div className='flex flex-col justify-center items-center max-w-[1200px] mx-auto text-center gap-4'>
             <h1 className='text-[#F36400] text-[2.125rem] font-semibold leading-9'>Collaborating with Leading Industry Experts</h1>
-            <p className='w-full lg:w-[879px] text-center text-base text-[#655D59]'>
+            <p className='w-full lg:w-[936px] text-center text-base text-[#655D59]'>
                 At Haelsoft, we partner with renowned digital brands and professionals to deliver cutting-edge online courses, events, and bootcamp experiences, empowering learners worldwide.
             </p>
         </div>
@@ -69,6 +69,158 @@ const Network = () => {
                     <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
                         <Image width={300} height={300} src={gd} alt="gd"></Image>
                     </SplideSlide>
+                </Splide>
+            </div>
+            <div className="flex justify-center items-center gap-6 clients h-[65px]">
+                <Splide
+                    extensions={{ AutoScroll }}
+                    options={{
+                    type: "loop",
+                    gap: "30px",
+                    
+                    pauseOnHover: false,
+                    pauseOnFocus: false,
+                    perPage: 8,
+                    arrows: false,
+                    pagination: false,
+                    autoScroll: { pauseOnHover: false, speed: 1 },
+                    }}
+                    className="flex items-center justify-center w-full gap-20"
+                    aria-label="My Favorite Images"
+                >
+                    <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={pc} alt="pc"></Image>
+                        </SplideSlide>
+
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={peppa} alt="peppa"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={rh} alt="rh"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={iso} alt="iso"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={znz} alt="znz"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={lcp} alt="lcp"></Image>
+                        </SplideSlide>
+                </Splide>
+            </div>
+            <div className="flex justify-center items-center gap-6 clients h-[65px]">
+                <Splide
+                    extensions={{ AutoScroll }}
+                    options={{
+                    type: "loop",
+                    gap: "30px",
+                    
+                    pauseOnHover: false,
+                    pauseOnFocus: false,
+                    perPage: 8,
+                    arrows: false,
+                    pagination: false,
+                    autoScroll: { pauseOnHover: false, speed: 1 },
+                    }}
+                    className="flex items-center justify-center w-full gap-20"
+                    aria-label="My Favorite Images"
+                >
+                    <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={pc} alt="pc"></Image>
+                        </SplideSlide>
+
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={peppa} alt="peppa"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={rh} alt="rh"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={iso} alt="iso"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={znz} alt="znz"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={lcp} alt="lcp"></Image>
+                        </SplideSlide>
+                </Splide>
+            </div>
+            <div className="flex justify-center items-center gap-6 clients h-[65px]">
+                <Splide
+                    extensions={{ AutoScroll }}
+                    options={{
+                    type: "loop",
+                    gap: "30px",
+                    
+                    pauseOnHover: false,
+                    pauseOnFocus: false,
+                    perPage: 8,
+                    arrows: false,
+                    pagination: false,
+                    autoScroll: { pauseOnHover: false, speed: 1 },
+                    }}
+                    className="flex items-center justify-center w-full gap-20"
+                    aria-label="My Favorite Images"
+                >
+                    <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={pc} alt="pc"></Image>
+                        </SplideSlide>
+
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={peppa} alt="peppa"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={rh} alt="rh"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={iso} alt="iso"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={znz} alt="znz"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={lcp} alt="lcp"></Image>
+                        </SplideSlide>
+                </Splide>
+            </div>
+            <div className="flex justify-center items-center gap-6 clients h-[65px]">
+                <Splide
+                    extensions={{ AutoScroll }}
+                    options={{
+                    type: "loop",
+                    gap: "30px",
+                    
+                    pauseOnHover: false,
+                    pauseOnFocus: false,
+                    perPage: 8,
+                    arrows: false,
+                    pagination: false,
+                    autoScroll: { pauseOnHover: false, speed: 1 },
+                    }}
+                    className="flex items-center justify-center w-full gap-20"
+                    aria-label="My Favorite Images"
+                >
+                    <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={pc} alt="pc"></Image>
+                        </SplideSlide>
+
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={peppa} alt="peppa"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={rh} alt="rh"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={iso} alt="iso"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={znz} alt="znz"></Image>
+                        </SplideSlide>
+                        <SplideSlide className="w-[97px] h-[61px] flex items-center justify-center">
+                            <Image width={300} height={300} src={lcp} alt="lcp"></Image>
+                        </SplideSlide>
                 </Splide>
             </div>
             <div className="flex justify-center items-center gap-6 clients h-[65px]">
