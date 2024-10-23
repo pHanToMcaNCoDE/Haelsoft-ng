@@ -61,7 +61,7 @@ const Expert = () => {
             key={index}
             className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
           >
-            <div className="relative w-full md:w-[268px] overflow-hidden">
+            <div className="relative z-[5px] w-full md:w-[268px] overflow-hidden">
               <Image
                 width={268}
                 height={268}
@@ -69,7 +69,7 @@ const Expert = () => {
                 src={item.image}
                 alt={item.name}
               />
-              <div className="absolute translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
+              <div className="absolute z-10 translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
             </div>
             <div className="p-[24px] flex flex-col rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] w-full md:w-[268px]">
               <h1 className="text-[#000000] font-medium text-base text-center">
