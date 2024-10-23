@@ -36,9 +36,11 @@ const PartTimeCertificateCourse = () => {
       </div>
 
       <div className='absolute z-[30] bottom-[-15%] w-full lg:w-[1040px] left-[15%] h-[276px] py-[64px] px-[88px] flex justify-between items-center bg-white shadow-md rounded py-[48px] px-[12px] mb-8'>
-        <div className="flex flex-col justify-center items-start gap-[24px]">
-          <h1 className="text-[3.5rem] font-bold leading-[43px] text-black">100+</h1>
-          <div className='w-[48px] h-[4px] rounded-full bg-[#FFCF00]'></div>
+        <div className="flex flex-col justify-center items-start gap-[55px]">
+          <div className="flex flex-col gap-9">
+            <h1 className="text-[3.5rem] font-bold leading-[43px] text-black">100+</h1>
+            <div className='w-[48px] h-[4px] rounded-full bg-[#FFCF00]'></div>
+          </div>
           <p className='text-black text-[1.25rem] font-medium'>Countries</p>
         </div>
       </div>

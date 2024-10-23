@@ -37,13 +37,13 @@ const Expert = () => {
   ];
 
   return (
-    <div className="overflow-hidden relative before:absolute before:top-0 before:bottom-0 before:w-[30%] before:bg-gradient-to-r before:from-white before:to-transparent before:z-[2] before:left-0 after:right-0 after:absolute after:top-0 after:bottom-0 after:w-[30%] after:z-[2] after:bg-gradient-to-r after:from-transparent after:to-white">
+    <div className="w-[1064px] mx-auto overflow-hidden relative before:absolute before:top-0 before:bottom-0 before:w-[30%] before:bg-gradient-to-r before:from-white before:to-transparent before:z-[2] before:left-0 after:right-0 after:absolute after:top-0 after:bottom-0 after:w-[30%] after:z-[2] after:bg-gradient-to-r after:from-transparent after:to-white">
       <Splide
         extensions={{ AutoScroll }}
         options={{
           type: "loop",
-          gap: "24px",
-          height: '550px',
+          gap: "80px",
+          height: '480px',
           perPage: 4,
           perMove: 1,
           arrows: false,
@@ -59,21 +59,23 @@ const Expert = () => {
         {slides.map((item, index) => (
           <SplideSlide
             key={index}
-            className="relative flex flex-col items-center min-w-[200px] md:min-w-[338px] min-h-[500px]"
+            className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
           >
-            <div className="relative w-full h-[300px]">
+            <div className="relative w-full md:w-[268px] overflow-hidden">
               <Image
-                className="object-cover"
+                width={268}
+                height={268}
+                className="object-cover rounded-tl-[4px] rounded-tr-[4px] w-full md:w-[268px] h-[268px]"
                 src={item.image}
                 alt={item.name}
               />
+              <div className="absolute translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
             </div>
-            <div className="w-full h-4 bg-main mt-2"></div>
-            <div className="px-4 py-8 flex flex-col items-start bg-white h-[140px] w-full shadow-lg">
-              <h1 className="text-[#000000] font-medium text-[1.125rem] text-center">
+            <div className="p-[24px] flex flex-col rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] w-full md:w-[268px]">
+              <h1 className="text-[#000000] font-medium text-base text-center">
                 {item.name}
               </h1>
-              <p className="text-[.9rem] leading-[21px] font-normal text-[#7F7571] text-center">
+              <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-center">
                 {item.role}
               </p>
             </div>
