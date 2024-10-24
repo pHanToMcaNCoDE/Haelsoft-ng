@@ -36,6 +36,7 @@ import Courses from "@/components/LandingPageComponents/Courses";
 import Review from "@/components/LandingPageComponents/reviews/Review";
 import LearnOnline from "@/components/LandingPageComponents/LearnOnline";
 import Bootcamps from "@/components/LandingPageComponents/Bootcamps";
+import ReadyToGetStarted from "@/components/LandingPageComponents/ReadyToGetStarted";
 
 
 export default function Home() {
@@ -61,7 +62,8 @@ export default function Home() {
       <LearnOnline/>
       <Bootcamps/>
       <Instructors />
-      <GetStarted />
+      {/* <GetStarted /> */}
+      <ReadyToGetStarted/>
       {/* <Footer /> */}
     </main>
   );

@@ -67,7 +67,7 @@ const Details = () => {
           gap: '30px',
           perPage: 4,
           perMove: 1,
-          height: '880px',
+          height: '650px',
           arrows: true,
           pagination: true,
           autoScroll: { speed: 1 },

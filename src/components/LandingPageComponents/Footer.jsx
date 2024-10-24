@@ -12,8 +12,8 @@ const Footer = () => {
         setYear(new Date().getFullYear())
     }, [])
   return (
-    <footer className='bg-[#F36400] w-full pt-[70px] pb-[10px] px-5 xl:px-0'>
-        <div className='max-w-[1200px] 2xl:max-w-[1500px] border-t-[3px] border-t-white pt-[100px] mx-auto flex flex-col lg:flex-row justify-center items-start gap-[6em] lg:gap-10 xl:gap-[6em]'>
+    <footer className=' w-full px-5 xl:px-0'>
+        <div className='max-w-[1200px] 2xl:max-w-[1500px] border-t-[3px] border-t-white mx-auto flex flex-col lg:flex-row justify-center items-start gap-[6em] lg:gap-10 xl:gap-[6em]'>
             <div className='h-full flex flex-col justify-between items-start gap-6 xl:gap-[12.5em] 2xl:gap-[11em]'>
                 <div className='flex flex-col gap-6 justify-center items-start'>
                     <Image className='object-contain' src={logo} alt="Haelsoft Logo" />

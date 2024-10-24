@@ -3,7 +3,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 const Bootcamps = () => {
   return (
-    <section className='min-h-screen w-full max-w-[1200px] 2xl:max-w-[1500px] mx-auto flex flex-col justify-center items-center gap-[80px]'>
+    <section className='min-h-screen w-full max-w-[1200px] 2xl:max-w-[1500px] mx-auto flex flex-col justify-center items-center gap-[80px] py-[200px] pb-[50px]'>
         <div className='flex flex-col justify-center items-center gap-10'>
             <h1 className='text-[2.125rem] font-semibold leading-10'>Tech & Coding Bootcamps 101</h1>
             <div className='w-[48px] h-[4px] rounded bg-[#FFCF00]'></div>
@@ -11,22 +11,22 @@ const Bootcamps = () => {
         <div className='w-full lg:w-[1200px] flex justify-center items-start'>
 
             <div className='w-full lg:w-[259px] h-full lg:h-[455px] rounded-tr-none border-r-none rounded-br-none'>
-                <div className='px-[24px] py-[12px] border border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 text-[#1358DB] font-semibold duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
+                <div className='border border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 text-[#1358DB] font-semibold duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
                     <p className='w-full lg:w-[191px] text-base'>What Are Coding Bootcamps?</p>
                     <IoIosArrowForward className='text-[1.5rem]'/>
                 </div>
 
-                <div className='px-[24px] py-[12px] border border-b-none border-t-none border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
+                <div className='border border-b-none border-t-none border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
                     <p className='w-full lg:w-[191px] text-base'>How Do Coding Bootcamps Work?</p>
                     <IoIosArrowForward className='text-[1.5rem]'/>
                 </div>
 
-                <div className='px-[24px] py-[12px] border border-b-none border-t-none border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
+                <div className='border border-b-none border-t-none border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
                     <p className='w-full lg:w-[191px] text-base'>How Do I Choose my Tech Career Path?</p>
                     <IoIosArrowForward className='text-[1.5rem]'/>
                 </div>
 
-                <div className='px-[24px] py-[12px] border border-t-none border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
+                <div className='border border-t-none border-[#E7E7E7] h-[97px] py-[12px] px-[24px] flex justify-center items-center gap-4 duration-200 hover:bg-[#F3F8FE] cursor-pointer hover:border hover:border-[#015ECC]'>
                     <p className='w-full lg:w-[191px] text-base'>How Long Are Haelsoft's Coding Bootcamps?</p>
                     <IoIosArrowForward className='text-[1.5rem]'/>
                 </div>

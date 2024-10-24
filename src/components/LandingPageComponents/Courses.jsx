@@ -13,7 +13,7 @@ const Courses = () => {
         </div>
         <div className='flex justify-start items-center max-w-[1000px] mx-auto mt-[4em] md:mt-[7em] pb-5 px-10 xl:px-0'>
           <CourseCards/>
-          <Image width={1200} height={1435} src={online} className='hidden md:flex w-full xl:w-[1200px] xl:h-[1400px] 2xl:h-[1435px] object-cover z-10 absolute right-[-5%]' alt="Workers" />
+          <Image width={1200} height={1435} src={online} className='hidden md:flex w-full xl:w-[1200px] xl:h-[1350px] 2xl:h-[1435px] object-cover z-10 absolute right-[-5%]' alt="Workers" />
         </div>
     </section>
   )

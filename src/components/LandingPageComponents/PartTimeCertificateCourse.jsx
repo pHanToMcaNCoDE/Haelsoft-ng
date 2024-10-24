@@ -22,10 +22,13 @@ const PartTimeCertificateCourse = () => {
         alt="Orange Cover"
       />
       <div className="relative py-[30px] max-w-[1260px] mx-auto px-5 flex flex-col justify-center items-center gap-[16px] z-20">
-        <div className="flex flex-col justify-center items-center text-center gap-[10px] mt-4">
-          <h1 className="text-white text-[2.125rem] font-bold leading-[36px]">
-            Part-Time Certificate Courses
-          </h1>
+        <div className="flex flex-col justify-center items-center text-center gap-[20px] mt-4">
+          <div className='flex flex-col justify-center items-center gap-2'>
+            <h1 className="text-white text-[2.125rem] font-bold leading-[36px]">
+              Part-Time Certificate Courses
+            </h1>
+            <div className='w-[48px] h-[4px] rounded bg-[#FFCF00]'></div>
+          </div>
           <p className="lg:w-[800px] xl:w-[1049px] text-gray-200 leading-[24px] text-[1rem] font-normal">
             Enroll in our flexible part-time courses and gain valuable certifications that will advance your career. Learn from experienced professionals and engage in hands-on projects to build your skills.
           </p>
@@ -35,7 +38,7 @@ const PartTimeCertificateCourse = () => {
         <CourseCrd/>
       </div>
 
-      <div className='absolute z-[30] bottom-[-15%] w-full lg:w-[1040px] left-[15%] h-[276px] py-[64px] px-[88px] flex justify-between items-center bg-white shadow-md rounded py-[48px] px-[12px] mb-8'>
+      <div className='absolute z-[30] bottom-[-15%] w-full lg:w-[1040px] left-[15%] h-[276px] py-[64px] px-[88px] flex justify-between items-center bg-white shadow-md rounded mb-8'>
         <div className="flex flex-col justify-center items-start gap-[55px]">
           <div className="flex flex-col gap-9">
             <h1 className="text-[3.5rem] font-bold leading-[43px] text-black">100+</h1>
