@@ -3,6 +3,10 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import './benefits.css'
+import { FaBarsProgress } from 'react-icons/fa6';
+import { RiProgress5Line } from 'react-icons/ri';
+import { GrCertificate, GrDirections } from 'react-icons/gr';
+import { BsHourglassTop } from 'react-icons/bs';
 
 const BenefitControls = () => {
   return (
@@ -29,19 +33,19 @@ const BenefitControls = () => {
                 className="max-w-[986px] mx-auto relative"
             >
                 <SplideSlide className="rounded w-full lg:w-[148px] h-[86px] py-[30px] px-[12px] flex items-center justify-center gap-3 bg-orange-700 text-white">
-                    <p>yo</p>
+                    <RiProgress5Line className='text-[1.5rem] text-white' />
                     <p className='text-base font-bold'>Progress Tracking</p>
                 </SplideSlide>
                 <SplideSlide className="bg-white rounded w-full lg:w-[148px] h-[86px] py-[30px] px-[12px] flex items-center justify-center gap-3">
-                    <p>yo</p>
+                    <GrDirections className='text-[1.5rem] text-black' />
                     <p className='text-base font-bold'>Increased Flexibility</p>
                 </SplideSlide>
                 <SplideSlide className="bg-white rounded w-full lg:w-[148px] h-[86px] py-[30px] px-[12px] flex items-center justify-center gap-3">
-                    <p>yo</p>
+                    <BsHourglassTop className='text-[1.5rem] text-black' />
                     <p className='text-base font-bold'>Self-Paced Learning</p>
                 </SplideSlide>
                 <SplideSlide className="bg-white rounded w-full lg:w-[148px] h-[86px] py-[30px] px-[12px] flex items-center justify-center gap-3">
-                    <p>yo</p>
+                    <GrCertificate className='text-[1.5rem] text-black' />
                     <p className='text-base font-bold'>Certification Benefits</p>
                 </SplideSlide>
             </Splide>

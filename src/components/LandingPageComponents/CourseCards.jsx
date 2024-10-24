@@ -46,7 +46,7 @@ const CourseCards = () => {
                 />
                 <div className="pt-[1em] pb-[1em] md:pb-[1.5em] xl:pb-[2em] px-[.4em] md:px-[2em] lg:px-[2.6em] flex items-center gap-x-6">
                     <Image className="w-11 h-11" src={item.icon} alt="Icon" />
-                    <div className='flex flex-col justify-center items-start gap-y-6'>
+                    <div className='flex flex-col justify-center items-start gap-y-2'>
                       <p className="text-[1.3rem] text-[#655D59] font-semibold leading-[46px]">
                         {item.title}
                       </p>

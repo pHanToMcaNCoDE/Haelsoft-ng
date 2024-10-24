@@ -10,25 +10,38 @@ import user4 from '/public/Student Profile Tarzine Jackson.jpg';
 import user5 from '/public/Justin Shaifer Black People.jpg';
 import user6 from '/public/Black People Photo by Divinetechygirl.jpg';
 
+
+import lb from '../../../../public/assets/clients/leatherback.png';
+import gd from '../../../../public/assets/clients/Logo 2.png';
+import pc from '../../../../public/assets/clients/Logo 4.png';
+import peppa from '../../../../public/assets/clients/png peppa 1.png';
+// import rh from '../../../public/assets/clients/Rhebuch-Logo.png';
+// import iso from '../../../public/assets/clients/Untitled-1.png';
+// import znz from '../../../public/assets/clients/Zaph and Zoe B.png';
+// import lcp from '../../../public/assets/clients/Zaph and Zoe.png'
+
 const Details = () => {
   const slides = [
     {
       image: user,
       name: 'Adeola Olukayode',
       date: 'July 8, 2023',
-      desc: "Haelsoft's digital marketing platform is a game-changer. Their industry-based courses provide practical skills crucial for success. With hands-on projects and excellent support, it's the perfect choice for anyone looking to excel in digital marketing.",
+      comp: peppa
+      // desc: "Haelsoft's digital marketing platform is a game-changer. Their industry-based courses provide practical skills crucial for success. With hands-on projects and excellent support, it's the perfect choice for anyone looking to excel in digital marketing.",
     },
     {
       image: user2,
       name: 'Chidera Nwosu',
       date: 'June 15, 2023',
-      desc: "I am thoroughly impressed with Haelsoft's approach to teaching. The UI/UX Design course has provided me with the skills I need to excel in the field. Their resources and support are top-notch.",
+      comp: gd
+      // desc: "I am thoroughly impressed with Haelsoft's approach to teaching. The UI/UX Design course has provided me with the skills I need to excel in the field. Their resources and support are top-notch.",
     },
     {
       image: user3,
       name: 'Tumi Williams',
       date: 'May 10, 2023',
-      desc: "Haelsoft's courses are comprehensive and practical. The Full-Stack Development course helped me land a job within months of completing it. Highly recommended for anyone looking to break into tech.",
+      comp: pc
+      // desc: "Haelsoft's courses are comprehensive and practical. The Full-Stack Development course helped me land a job within months of completing it. Highly recommended for anyone looking to break into tech.",
     },
     // {
     //   image: user4,
@@ -92,16 +105,20 @@ const Details = () => {
               />
             </div>
             {/* <div className="bg-white px-4 py-8 flex flex-col items-center text-center w-[400px] 2xl:w-[500px] h-[280px]"> */}
-            <div className="bg-white h-full lg:h-[289px] p-6 flex flex-col justify-center items-start gap-3 w-full lg:w-[325px] rounded-bl-[5px] rounded-br-[5px]">
+            <div className="bg-white h-full lg:h-[289px] p-6 flex flex-col justify-between items-start gap-3 w-full lg:w-[325px] rounded-bl-[5px] rounded-br-[5px]">
               <div className='flex flex-col justify-center items-start gap-1'>
                 <h1 className="text-[#000000] font-semibold text-[1.125rem]">{item.name}</h1>
                 <p className="text-[.9rem] w-full lg:w-[277px] leading-[21px] font-normal text-[#555]">
                   {item.date}
                 </p>
               </div>
-              <p className="text-[.875rem] leading-[21px] text-left font-normal text-[#201A18] mt-[1em]">
+              <div className='flex flex-col justify-center items-start gap-8'>
+                <Image width={125} height={44} className="grayscale h-[44px] object-cover" src={item.comp} alt="Afro"></Image>
+                <button className='duration-200 hover:bg-main border border-main rounded text-main hover:text-white text-[.875rem] font-semibold w-[253px] h-[50px] py-[15px] px-[24px]'>Read More</button>
+              </div>
+              {/* <p className="text-[.875rem] leading-[21px] text-left font-normal text-[#201A18] mt-[1em]">
                 {item.desc}
-              </p>
+              </p> */}
             </div>
           </SplideSlide>
         ))}

@@ -12,27 +12,37 @@ import user3 from "../../../public/assets/users/user3.svg";
 import user4 from "../../../public/assets/users/user4.svg";
 import Image from "next/image";
 
+
+import afro from '../../../public/assets/clients/Afro a.png';
+import photiz from '../../../public/assets/clients/Afro c.png';
+import swun from '../../../public/assets/clients/Colur Code.jpg';
+import kusnap from '../../../public/assets/clients/KUSNAP.png';
+
 const Expert = () => {
   const slides = [
     {
       image: user3,
       name: "Adeola Olukayode",
       role: "UI/UX Designer",
+      comp: afro
     },
     {
       image: user,
       name: "Sola Akinsan",
       role: "Project Manager",
+      comp: photiz
     },
     {
       image: user4,
       name: "Adaora Okoli",
       role: "Full-Stack Developer",
+      comp: swun
     },
     {
       image: user2,
       name: "Samuel Micheal",
       role: "Data Scientist",
+      comp: kusnap
     },
   ];
 
@@ -71,13 +81,20 @@ const Expert = () => {
               />
               <div className="absolute z-10 translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
             </div>
-            <div className="p-[24px] flex flex-col rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] w-full md:w-[268px]">
-              <h1 className="text-[#000000] font-medium text-base text-center">
-                {item.name}
-              </h1>
-              <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-center">
-                {item.role}
-              </p>
+            <div className="flex justify-between items-start">
+              <div className="p-[24px] flex flex-col justify-between rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] gap-4 w-full md:w-[268px]">
+                <div className="flex flex-col items-start">
+                  <h1 className="text-[#000000] font-medium text-base text-center">
+                    {item.name}
+                  </h1>
+                  <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-center">
+                    {item.role}
+                  </p>
+                </div>
+                <Image width={105} height={44} className="grayscale h-[44px] object-cover" src={item.comp} alt="Afro"></Image>
+              </div>
+              {/* <div> */}
+              {/* </div> */}
             </div>
           </SplideSlide>
         ))}

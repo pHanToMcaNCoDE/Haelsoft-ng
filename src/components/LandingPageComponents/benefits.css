@@ -37,6 +37,7 @@
   .custom-arw {
     position: absolute;
     width: 30px;
+    padding: 5px;
     height: 30px;
     background-color: #fff;
     mix-blend-mode: difference;
