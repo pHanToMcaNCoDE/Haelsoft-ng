@@ -34,9 +34,10 @@ import Navbar from "@/components/LandingPageComponents/Navbar";
 import { useState } from "react";
 import Courses from "@/components/LandingPageComponents/Courses";
 import Review from "@/components/LandingPageComponents/reviews/Review";
-import LearnOnline from "@/components/LandingPageComponents/LearnOnline";
+import LearnOnline from "@/components/LandingPageComponents/BenefitsOnline";
 import Bootcamps from "@/components/LandingPageComponents/Bootcamps";
 import ReadyToGetStarted from "@/components/LandingPageComponents/ReadyToGetStarted";
+import BenefitsOnline from "@/components/LandingPageComponents/BenefitsOnline";
 
 
 export default function Home() {
@@ -59,7 +60,7 @@ export default function Home() {
       <Network />
       <ResponsiveNetwork />
       <PartTimeCertificateCourse />
-      <LearnOnline/>
+      <BenefitsOnline/>
       <Bootcamps/>
       <Instructors />
       {/* <GetStarted /> */}
