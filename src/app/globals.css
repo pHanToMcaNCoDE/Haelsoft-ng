@@ -15,6 +15,17 @@ body {
   font-family: 'Montserrat', sans-serif;
 } */
 
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+
 aside {
   transition: transform 0.2s ease-in-out;
   z-index: 50;

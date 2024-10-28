@@ -12,6 +12,7 @@ import Details from "./Details";
 import ResponsiveDetails from "./ResponsiveDetails";
 import './review.css';
 import { IoMdPlay } from "react-icons/io";
+import VideoComponent from "../VideoComponent";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -81,6 +82,7 @@ const Review = () => {
     });
   }, []);
 
+
   return (
     <section className="relative alum z-[20] bg-[#f36402] min-h-screen 2xl:min-h-screen">
       <div className='absolute z-[30] top-[-5%] left-[15%] w-full lg:w-[960px] h-[162px] flex justify-center items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
@@ -120,6 +122,12 @@ const Review = () => {
               </button>
             </div>
           )}
+
+          {
+            isPlaying && (
+              <VideoComponent setIsPlaying={setIsPlaying} />
+            )
+          }
 
           <div ref={overlayRef} className="h-full w-[80%] bg-[#000]/30 absolute top-0 z-[8px]"></div>
         </div>
