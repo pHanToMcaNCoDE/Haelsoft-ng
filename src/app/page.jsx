@@ -66,6 +66,13 @@ export default function Home() {
       {/* <GetStarted /> */}
       <ReadyToGetStarted/>
       {/* <Footer /> */}
+
+
+      <footer className="text-center py-4">
+        <a href="https://lordicon.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+          Icons by Lordicon.com
+        </a>
+      </footer>
     </main>
   );
 }

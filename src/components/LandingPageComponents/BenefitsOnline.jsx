@@ -5,13 +5,20 @@ import img from '../../../public/EdTech Platform Vector 4.svg';
 import Image from 'next/image';
 import BenefitControls from './BenefitControls';
 import icon from '../../../public/Online class icon.png';
+import { BsHourglassTop } from 'react-icons/bs'
+import { FaBarsProgress } from 'react-icons/fa6'
+import { GrCertificate, GrDirections } from 'react-icons/gr'
+import fx from '../../../public/Solid System Trend Up.webp';
+import cb from '../../../public/Confetti Regular.webp';
+import pg from '../../../public/System Regular Analytics.webp';
+import sp from '../../../public/System Regular Calendar Hover.webp';
 
 const BenefitsOnline = () => {
   const [currentBenefit, setCurrentBenefit] = useState('Progress Tracking');
   const [previousBenefit, setPreviousBenefit] = useState(null);
   const [fade, setFade] = useState(true);
 
-  
+
   useEffect(() => {
     if (previousBenefit !== currentBenefit) {
       setFade(false);
@@ -28,7 +35,20 @@ const BenefitsOnline = () => {
       <div className='max-w-[1200px] 2xl:max-w-[1530px] mx-auto min-h-screen pt-[111px] flex flex-col justify-between items-start gap-y-[150px]'>
         <div className='bg-white pt-[12px] px-[36px] w-full lg:w-[520px] rounded-[5px] h-[600px] relative z-10 flex flex-col justify-center items-center lg:items-start gap-10'>
           <div className='flex flex-col justify-center items-start gap-6'>
-            <Image width={151} height={94} className='object-contain grayscale' src={icon} alt='Online Class Icon' />
+            <div className={`${fade ? 'fade-in' : 'fade-out'} duration-200`}>
+              {previousBenefit === 'Progress Tracking' && (
+                <Image width={150} height={150} src={pg.src} alt='Progress Animated Icon'></Image>
+              )}
+              {previousBenefit === 'Increased Flexibility' && (
+                <Image width={150} height={150} src={fx.src} alt='Flexible Animated Icon'></Image>
+              )}
+              {previousBenefit === 'Self-Paced Learning' && (
+                <Image width={150} height={150} src={sp.src} alt='Calendar Animated Icon'></Image>
+              )}
+              {previousBenefit === 'Certification Benefits' && (
+                <Image width={150} height={150} src={cb.src} alt='Confetti Animated Icon'></Image>
+              )}
+            </div>
             <div className='flex flex-col justify-center items-start gap-7'>
               <h1 className="text-black text-[1.75rem] font-semibold leading-[36px]">
                 Digital Learning Benefits.
