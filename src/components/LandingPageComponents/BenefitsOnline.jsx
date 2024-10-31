@@ -2,6 +2,9 @@
 
 import React, { useState, useEffect } from 'react'
 import img from '../../../public/EdTech Platform Vector 4.svg';
+import tck from '../../../public/EdTech Platform (1).svg';
+import slf from '../../../public/EdTech Platform Mask Group.svg';
+import cer from '../../../public/EdTech Platform 2.svg';
 import Image from 'next/image';
 import BenefitControls from './BenefitControls';
 import icon from '../../../public/Online class icon.png';
@@ -31,7 +34,20 @@ const BenefitsOnline = () => {
 
   return (
     <section className='overflow-hidden min-h-screen xl:h-[1536px] w-full pb-[100px] relative pt-[300px] bg-main'>
-      <Image width={888} height={1156.22} className='absolute top-[5%] z-[5px] right-[-1%] object-cover bottom-0' src={img} alt='Image' />
+      <div className={`${fade ? 'fade-in' : 'fade-out'} absolute top-[5%] z-[5px] right-[-1%] bottom-0 duration-200`}>
+        {previousBenefit === 'Progress Tracking' && (
+          <Image width={888} height={1156.22} className='object-cover' src={tck} alt='Image' />
+        )}
+        {previousBenefit === 'Increased Flexibility' && (
+          <Image width={888} height={1156.22} className='object-cover' src={img} alt='Image' />
+        )}
+        {previousBenefit === 'Self-Paced Learning' && (
+          <Image width={888} height={1156.22} className='object-cover' src={slf} alt='Image' />
+        )}
+        {previousBenefit === 'Certification Benefits' && (
+          <Image width={888} height={1156.22} className='object-cover' src={cer} alt='Image' />
+        )}
+      </div>
       <div className='max-w-[1200px] 2xl:max-w-[1530px] mx-auto min-h-screen pt-[111px] flex flex-col justify-between items-start gap-y-[150px]'>
         <div className='bg-white pt-[12px] px-[36px] w-full lg:w-[520px] rounded-[5px] h-[600px] relative z-10 flex flex-col justify-center items-center lg:items-start gap-10'>
           <div className='flex flex-col justify-center items-start gap-6'>
