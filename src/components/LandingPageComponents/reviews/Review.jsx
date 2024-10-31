@@ -85,10 +85,10 @@ const Review = () => {
 
   return (
     <section className="relative alum z-[20] bg-[#f36402] min-h-screen 2xl:min-h-screen">
-      <div className='absolute z-[30] top-[-5%] left-[15%] w-full lg:w-[960px] h-[162px] flex justify-center items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
+      <div className='absolute z-[30] top-[-5%] mx-auto w-full lg:w-[960px] h-[162px] flex justify-center items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
         fire
       </div>
-      <div className="pt-[200px] pb-[70px] z-[30] relative px-5 xl:px-0 flex flex-col gap-[60px]">
+      <div className="pt-[200px] pb-[70px] z-[30] relative flex flex-col gap-[60px]">
         <div className="container flex justify-center items-center mx-auto min-w-full relative">
           <ReactPlayer
             ref={playerRef}
@@ -135,7 +135,8 @@ const Review = () => {
           <h1 className='text-white w-full flex flex-col justify-center items-center text-[2.125rem] font-bold leading-7'>More Alumni Stories</h1>
           <Details />
         </div>
-        <div className="car mt-20 mb-[1em] duration-300 flex flex-col lg:hidden">
+        
+        <div className="car mt-20 mb-[1em] duration-300 flex flex-col lg:hidden gap-[55px]">
           <h1 className='text-white w-full flex flex-col justify-center items-center text-[2.125rem] font-bold leading-7'>More Alumni Stories</h1>
           <ResponsiveDetails />
         </div>

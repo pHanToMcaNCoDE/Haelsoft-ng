@@ -7,7 +7,7 @@ import map from '../../../public/World Map.svg';
 
 const PartTimeCertificateCourse = () => {
   return (
-    <section className="relative w-full min-h-screen xl:h-[137vh] 2xl:h-[120vh]">
+    <section className="relative w-full min-h-screen lg:h-[137vh] 2xl:h-[120vh]">
       <div className="absolute hidden md:flex top-[180px] 2xl:top-[150px]">
         <Image 
           src={imgCover}
@@ -39,7 +39,7 @@ const PartTimeCertificateCourse = () => {
         <CourseCrd/>
       </div>
 
-      <div className='relative z-[30] bottom-[-8%] w-full lg:w-[1040px] left-[15%] h-[276px] py-[64px] px-[88px] flex justify-between items-center bg-white overflow-hidden shadow-md rounded mb-8'>
+      <div className='relative z-[30] bottom-[-10%] xl:bottom-[-8%] w-[90%] xl:w-[1040px] mx-auto xl:h-[276px] py-[64px] px-[88px] flex justify-between items-center bg-white overflow-hidden shadow-md rounded mb-8'>
         <div className="flex flex-col justify-center items-start gap-[55px]">
           <div className="flex flex-col gap-9">
             <h1 className="text-[3.5rem] font-bold leading-[43px] text-black">100+</h1>

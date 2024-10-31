@@ -99,13 +99,13 @@ const Details = () => {
               <Image
                 width={325}
                 height={327}
-                className="rounded-tl-[5px] rounded-tr-[5px] object-cover w-[325px] h-[327px] rounded-tl-medium rounded-tr-medium"
+                className="rounded-tl-[5px] rounded-tr-[5px] object-cover w-full xl:w-[325px] h-[327px] rounded-tl-medium rounded-tr-medium"
                 src={item.image}
                 alt={item.name}
               />
             </div>
             {/* <div className="bg-white px-4 py-8 flex flex-col items-center text-center w-[400px] 2xl:w-[500px] h-[280px]"> */}
-            <div className="bg-white h-full lg:h-[289px] p-6 flex flex-col justify-between items-start gap-3 w-full lg:w-[325px] rounded-bl-[5px] rounded-br-[5px]">
+            <div className="bg-white h-full lg:h-[289px] p-6 flex flex-col justify-between items-start gap-3 w-full xl:w-[325px] rounded-bl-[5px] rounded-br-[5px]">
               <div className='flex flex-col justify-center items-start gap-1'>
                 <h1 className="text-[#000000] font-semibold text-[1.125rem]">{item.name}</h1>
                 <p className="text-[.9rem] w-full lg:w-[277px] leading-[21px] font-normal text-[#555]">
@@ -114,7 +114,7 @@ const Details = () => {
               </div>
               <div className='flex flex-col justify-center items-start gap-8'>
                 <Image width={125} height={44} className="grayscale h-[44px] object-cover" src={item.comp} alt="Afro"></Image>
-                <button className='duration-200 hover:bg-main border border-main rounded text-main hover:text-white text-[.875rem] font-semibold w-[253px] h-[50px] py-[15px] px-[24px]'>Read More</button>
+                <button className='duration-200 hover:bg-main border border-main rounded text-main hover:text-white text-[.875rem] font-semibold w-full xl:w-[253px] h-[50px] py-[15px] px-[24px]'>Read More</button>
               </div>
               {/* <p className="text-[.875rem] leading-[21px] text-left font-normal text-[#201A18] mt-[1em]">
                 {item.desc}

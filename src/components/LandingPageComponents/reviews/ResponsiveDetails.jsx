@@ -66,7 +66,7 @@ const ResponsiveDetails = () => {
         options={{
           type: 'loop',
           gap: '30px',
-          perPage: 1,
+          perPage: 2,
           perMove: 1,
           height: '880px',
           arrows: true,

@@ -6,7 +6,7 @@ import Image from 'next/image'
 const Courses = () => {
   
   return (
-    <section className='pb-[40px] pt-[100px] lg:pb-0 relative min-h-screen xl:h-[160vh] 2xl:h-[138vh] overflow-hidden'>
+    <section className='pb-[40px] pt-[100px] lg:pb-0 relative h-[160vh] 2xl:h-[138vh] overflow-hidden'>
         <div className='flex flex-col justify-center items-center gap-6 px-5 lg:px-8 text-center'>
           <div className='flex flex-col justify-center items-center gap-5'>
             <h1 className='text-[#F36400] text-[2.125rem] font-semibold leading-9'>
