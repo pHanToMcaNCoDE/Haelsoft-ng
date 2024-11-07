@@ -15,8 +15,8 @@ const Blogs = () => {
   };
   return (
     <main onClick={handleClickOutside} className='relative'>
-        <Navbar setClicked={setClicked} clicked={clicked}/>
-      <div className="bg-white shadow-xl absolute top-[10%] left-[16px] xl:left-[150px] py-8 px-5 lg:px-8 w-full md:w-[487px] lg:w-[687px] h-[433px] rounded gap-10 z-40">
+      <Navbar setClicked={setClicked} clicked={clicked}/>
+      <div className="bg-white shadow-xl absolute top-[10%] md:top-[15%] md:left-[16px] xl:left-[150px] py-8 px-5 lg:px-8 w-[95%] md:w-[587px] lg:w-[787px] lg:h-[433px] rounded gap-10 z-40 mx-4">
         <div className='max-w-[1200px] 2xl:max-w-[1530px] mx-auto'>
           <div className='flex flex-col h-full'>
               <div className='flex flex-col justify-center gap-[3em]'>

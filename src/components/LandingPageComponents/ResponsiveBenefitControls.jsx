@@ -20,7 +20,7 @@ import Image from 'next/image';
 const ResponsiveBenefitControls = ({ click, setClick, currentBenefit, setCurrentBenefit }) => {
 
   return (
-    <section className='w-full xl:max-w-[986px] flex lg:hidden flex-col justify-center items-start h-[102px] z-10'>
+    <section className='w-full xl:max-w-[986px] mx-auto flex lg:hidden flex-col justify-center items-center h-[102px] z-10'>
         {/* <div className="relative flex justify-center items-center gap-6 w-full h-[65px]"> */}
             <Splide
                 // extensions={{ AutoScroll }}
