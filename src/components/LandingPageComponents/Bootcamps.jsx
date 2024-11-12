@@ -66,7 +66,7 @@ const Bootcamps = () => {
               key={index}
               onClick={() => setActiveTab(index)}
               className={`px-6 py-3 text-left border flex justify-between items-center gap-4 hover:bg-blue-50 transition-colors ${
-                activeTab === index ? 'text-blue-600 bg-blue-50' : 'text-gray-700'
+                activeTab === index ? 'text-blue-600 bg-blue-50 border-blue-500' : 'text-gray-700'
               }`}
             >
               <span className="text-base">{tab.title}</span>
