@@ -14,6 +14,7 @@ import { FcGoogle } from "react-icons/fc";
 import firebase from "firebase/auth";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { app } from "@/app/lib/firebase";
+import l from '/public/EdTech Platform screenshot (1).svg'
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -90,7 +91,7 @@ const SigninForm = () => {
         <div className="w-full mx-auto text-center lg:mt-36">
           <Link href={"/"}>
             <Image
-              src="/public/EdTech Platform screenshot (1).svg"
+              src={l}
               alt="Logo"
               width={100}
               height={100}
