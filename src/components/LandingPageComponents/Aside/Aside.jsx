@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
 import secureLocalStorage from 'react-secure-storage';
 import Link from 'next/link';
@@ -6,6 +6,8 @@ import AsideData from './AsideData';
 import './style.css';
 
 const Aside = ({ menu, setMenu, clicked, setClicked }) => {
+  const [selectedMenu, setSelectedMenu] = useState('');
+
   const links = [
     { name: 'Home', route: '/' },
     { name: 'About', route: '#' },
@@ -13,37 +15,53 @@ const Aside = ({ menu, setMenu, clicked, setClicked }) => {
     { name: 'Blog', route: '/blogs' },
     { name: 'Corporate', route: '#' },
     { name: 'Careers', route: '/careers' },
-    { name: 'Bootcamps', route: '#' }
+    { name: 'Bootcamps', route: '#' },
   ];
 
   const handleClick = (item) => {
     setClicked(item);
+    setSelectedMenu(item);
     secureLocalStorage.setItem('Title', item);
   };
 
   return (
     <>
+      {/* Aside Menu */}
       <aside
-        className={`bg-white flex xl:hidden z-40 sticky h-screen top-[8%] right-0 w-full duration-300 ease-in-out ${menu ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`bg-white flex xl:hidden z-40 fixed h-screen top-[6%] right-0 w-full ${
+          menu ? 'fade-left' : 'fade-right'
+        }`}
       >
-        <div className='w-full h-full flex flex-col justify-start p-[24px] items-start text-[#201A18] font-semibold text-base gap-[25px]'>
+        <div className="w-full h-full flex flex-col justify-start px-[24px] items-start text-[#201A18] font-semibold text-base gap-[25px] py-6">
           {links.map((link, index) => (
-            <Link
-              onClick={() => {
-                handleClick(link.name);
-                setMenu(true);
-              }}
-              href={link.route}
-              key={index}
-              className='flex justify-between items-center w-full aside-link'
-            >
-              <p className='mb-4 cursor-pointer hover:text-[#F36400]'>{link.name}</p>
-              <GoArrowRight className='text-[#201A18] font-semibold text-base' />
-            </Link>
+            <li key={index} className="w-full list-none">
+              {['Courses', 'Corporate', 'Bootcamps', 'About'].includes(link.name) ? (
+                <div
+                  className="flex justify-between items-center w-full cursor-pointer"
+                  onClick={() => handleClick(link.name)}
+                >
+                  <Link href={link.route || '#'} onClick={(e) => e.preventDefault()}>
+                    {link.name}
+                  </Link>
+                  <GoArrowRight className="text-[#201A18] font-semibold text-base" />
+                </div>
+              ) : (
+                <Link href={link.route || '#'}>{link.name}</Link>
+              )}
+              <span className="absolute left-0 right-0 bottom-[-13px] h-[5px] bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </li>
           ))}
         </div>
       </aside>
-      <AsideData clicked={clicked} />
+
+      {/* Aside Data */}
+      {clicked && (
+        <AsideData
+          clicked={clicked}
+          selectedMenu={selectedMenu}
+          setSelectedMenu={setSelectedMenu}
+        />
+      )}
     </>
   );
 };

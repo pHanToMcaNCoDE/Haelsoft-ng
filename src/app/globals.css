@@ -25,6 +25,37 @@ body {
   transition: opacity 0.5s ease-out;
 }
 
+@keyframes fadeLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.fade-left {
+  animation: fadeLeft 0.3s ease-in-out forwards;
+}
+
+.fade-right {
+  animation: fadeRight 0.3s ease-in-out forwards;
+}
+
+
 .fade-enter {
   opacity: 0;
   transform: translateY(-10px);

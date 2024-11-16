@@ -62,7 +62,7 @@ const CoursesData = () => {
         </div>
 
 
-        <div className='xl:hidden grid grid-cols-1 xl:grid-cols-3 justify-items-start gap-10 xl:h-full w-full'>
+        <div className='xl:hidden grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-start gap-10 xl:h-full w-full'>
             <div className='w-full flex flex-col justify-start items-start gap-3'>
                 <div className='flex justify-center items-center gap-2'>
                     <FaCode className='text-[1.5rem]' />

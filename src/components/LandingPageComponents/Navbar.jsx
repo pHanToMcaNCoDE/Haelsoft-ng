@@ -7,6 +7,8 @@ import { CSSTransition } from 'react-transition-group';
 import Menu from './MenuData/Menu';
 import Image from 'next/image';
 import Link from 'next/link';
+import Aside from './Aside/Aside';
+import { GoArrowLeft } from 'react-icons/go';
 
 const Navbar = ({boolclick, setBoolClick, clicked, setClicked}) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,19 +64,51 @@ const Navbar = ({boolclick, setBoolClick, clicked, setClicked}) => {
   return (
     <>
       {/* Mobile Navigation */}
-      <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] transition-all duration-300 bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
-        <div className="container flex justify-between items-center p-2 max-w-[1200px] 2xl:max-w-[1500px] mx-auto gap-4">
-          <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
-          <div
-            onClick={() => setMenu((prev) => !prev)}
-            className="flex flex-col justify-between items-center w-[5%] h-[13px] cursor-pointer"
-          >
-            <div className={`h-[2px] rounded-full bg-[#1A1A1A] transition-transform ${menu ? 'rotate-45 translate-y-[2px]' : ''}`}></div>
-            <div className={`h-[2px] rounded-full bg-[#1A1A1A] transition-opacity ${menu ? 'opacity-0' : 'opacity-100'}`}></div>
-            <div className={`h-[2px] rounded-full bg-[#1A1A1A] transition-transform ${menu ? '-rotate-45 -translate-y-[2px]' : ''}`}></div>
-          </div>
-        </div>
-      </nav>
+      {
+        clicked ? (
+          <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] transition-all duration-300 bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
+            <div className="container flex justify-between items-center p-2 max-w-[1200px] 2xl:max-w-[1500px] mx-auto gap-4">
+              <div onClick={() => setClicked(false)} className='cursor-pointer flex justify-center items-center text-lg gap-1 underline text-blue-500'>
+                <GoArrowLeft className="font-semibold text-base" />
+                <p>Back</p>
+              </div>
+              <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
+              <div
+                onClick={() => {
+                  setMenu((prev) => !prev);
+                  setClicked(false)
+                }}
+                className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
+              >
+                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? 'rotate-45 translate-y-[7px]' : ''}`}></div>
+                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-opacity ${menu ? 'opacity-0' : 'opacity-100'}`}></div>
+                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
+              </div>
+            </div>
+          </nav>
+        ) : (
+          <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] transition-all duration-300 bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
+            <div className="container flex justify-between items-center p-2 max-w-[1200px] 2xl:max-w-[1500px] mx-auto gap-4">
+              <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
+              <div
+                onClick={() => {
+                  setMenu((prev) => !prev);
+                  setClicked(false)
+                }}
+                className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
+              >
+                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? 'rotate-45 translate-y-[7px]' : ''}`}></div>
+                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-opacity ${menu ? 'opacity-0' : 'opacity-100'}`}></div>
+                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
+              </div>
+            </div>
+          </nav>
+        )
+      }
+
+      {
+        menu && (<Aside menu={menu} setMenu={setMenu} clicked={clicked} setClicked={setClicked} />)
+      }
 
       {/* Desktop Navigation */}
       <nav
