@@ -13,7 +13,15 @@ import ResponsiveDetails from "./ResponsiveDetails";
 import './review.css';
 import { IoMdPlay } from "react-icons/io";
 import VideoComponent from "../VideoComponent";
-
+import afro from '../../../../public/assets/clients/Afro a.png';
+import photiz from '../../../../public/assets/clients/Afro c.png';
+import gd from '../../../../public/assets/clients/Logo 2.png';
+import pc from '../../../../public/assets/clients/Logo 4.png';
+import peppa from '../../../../public/assets/clients/png peppa 1.png';
+import rh from '../../../../public/assets/clients/Rhebuch-Logo.png';
+import iso from '../../../../public/assets/clients/Untitled-1.png';
+import znz from '../../../../public/assets/clients/Zaph and Zoe B.png';
+import lcp from '../../../../public/assets/clients/Zaph and Zoe.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,8 +93,10 @@ const Review = () => {
 
   return (
     <section className="relative alum z-[20] bg-[#f36402] min-h-screen 2xl:min-h-screen">
-      <div className='absolute z-[30] top-[-5%] mx-auto w-full lg:w-[960px] h-[162px] flex justify-center items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
-        fire
+      <div className='absolute z-[30] top-[-5%] w-[90%] left-[25%] lg:w-[960px] h-[162px] flex justify-center gap-[60px] items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
+        <Image width={150} height={100} className="object-ccover" src={afro} alt="Afro"></Image>
+        <Image width={150} height={100} className="object-ccover" src={photiz} alt="Photiz"></Image>
+        <Image width={150} height={100} className="object-ccover" src={gd} alt="Swun"></Image>
       </div>
       <div className="pt-[200px] pb-[70px] z-[30] relative flex flex-col gap-[60px]">
         <div className="container flex justify-center items-center mx-auto min-w-full relative">
