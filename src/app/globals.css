@@ -25,6 +25,25 @@ body {
   transition: opacity 0.5s ease-out;
 }
 
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
 
 aside {
   transition: transform 0.2s ease-in-out;

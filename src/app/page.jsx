@@ -42,16 +42,17 @@ import BenefitsOnline from "@/components/LandingPageComponents/BenefitsOnline";
 
 export default function Home() {
   const [clicked, setClicked] = useState('');
+  const [boolclick, setBoolClick] = useState(false);
 
-  const handleClickOutside = () => {
-    if (clicked) {
-      setClicked('');
-    }
-  };
+  // const handleClickOutside = () => {
+  //   if (clicked) {
+  //     setBoolClick(false);
+  //   }
+  // };
 
   return (
-    <main className="relative">
-      <Navbar clicked={clicked} setClicked={setClicked}/>
+    <main onClick={() => setBoolClick(false)} className="relative">
+      <Navbar clicked={clicked} setClicked={setClicked} boolclick={boolclick} setBoolClick={setBoolClick} />
       <Hero />
       <Companies />
       <Courses/>

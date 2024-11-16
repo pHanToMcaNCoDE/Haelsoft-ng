@@ -84,7 +84,7 @@ const Bootcamps = () => {
         </div>
 
         {/* Content Area */}
-        <div className="w-full lg:w-[780px] min-h-[456px] border-t lg:border-l lg:border border-gray-200 p-12">
+        <div className="w-full lg:w-[780px] min-h-[456px] border-t-0 border lg:border-l lg:border border-gray-200 p-12">
           <div className="flex flex-col gap-4 mb-9">
             <h2 className="text-2xl font-semibold">
               {tabContent[activeTab].content.heading}
