@@ -52,7 +52,7 @@ const BlogList = () => {
 
 
   return (
-    <section className='max-w-[1200px] 2xl:max-w-[1500px] mx-auto py-[250px] pb-[100px] px-5 flex flex-col gap-[6em] min-h-screen'>
+    <section className='max-w-[1200px] 2xl:max-w-[1500px] mx-auto pt-[300px] pb-[100px] px-5 flex flex-col gap-[6em] min-h-screen'>
         <div className='justify-items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-x-3 gap-y-[4em]'>
             {
                 currentBlogs.map((blog, index) => (
