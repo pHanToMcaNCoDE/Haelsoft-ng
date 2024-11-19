@@ -10,7 +10,7 @@ import SignInModal from "./components/SignInModal";
 const Payment = () => {
   const [isSignup, setIsSignup] = useState(true);
   const [isSignIn, setIsSignIn] = useState(false);
-  const cartItemsCount = 1; // Update this dynamically based on actual cart items
+  const cartItemsCount = 1;
 
   return (
     <div className="mb-32">

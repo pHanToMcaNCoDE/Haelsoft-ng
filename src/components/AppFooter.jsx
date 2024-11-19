@@ -18,10 +18,10 @@ const AppFooter = () => {
   return (
     <footer className="bg-[#f36402] min-h-[62vh] md:min-h-[20vh] lg:min-h-[62vh] py-[2em]">
       <div className="bg-white h-[2px] max-w-[1040px] mx-auto rounded-full"></div>
-      <div className="flex flex-col md:flex-row justify-between items-start py-[72px] text-white lg:gap-x-4 max-w-[1064px] mx-auto">
+      <div className="flex flex-col md:flex-row justify-between items-start py-[72px] text-white lg:gap-x-4 max-w-[1064px] mx-auto px-6 xl:px-0">
         {/* <div className="bg-white h-[1px] w-full rounded-full"></div> */}
         {/* <div className="flex flex-col md:flex-row justify-between items-start py-[4em] md:py-[2em] text-white lg:gap-x-4 w-full"> */}
-          <div className="w-full footer flex flex-col md:flex-row justify-between items-start gap-8">
+          <div className="w-full footer flex flex-col lg:flex-row justify-between items-start gap-8">
             <div className="leading-[37.54px] flex flex-col justify-between gap-6 xl:h-[530px] items-start w-full lg:w-[230px]">
               <div>
                 <Link href={`/`}>
@@ -73,27 +73,27 @@ const AppFooter = () => {
               <div className='flex flex-col justify-center items-start gap-3'>
                 <h2 className="text-[.875rem] font-bold">Career Guides</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/become-a-software-engineer`} className="text-[.75rem] font-medium">
                     Become a Software Engineer
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/become-a-web-developer`} className="text-[.75rem] font-medium">
                     Become a Web Developer
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/become-a-ux-designer`} className="text-[.75rem] font-medium">
                     Become a UX Designer
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/become-a-data-scientist`} className="text-[.75rem] font-medium">
                     Become a Data Scientist
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/become-a-product-manager`} className="text-[.75rem] font-medium">
                     Become a Product Manager
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/become-a-digital-marketer`} className="text-[.75rem] font-medium">
                     Become a Digital Marketer
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/become-a-data-analyst`} className="text-[.75rem] font-medium">
                     Become a Data Analyst
-                  </li>
+                  </Link>
                   {/* <li></li> */}
                 </ul>
               </div>

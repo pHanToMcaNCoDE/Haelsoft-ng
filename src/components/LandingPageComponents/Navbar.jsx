@@ -9,8 +9,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Aside from './Aside/Aside';
 import { GoArrowLeft } from 'react-icons/go';
+// import { useNavbarContext } from "@/context/NavbarContext";
 
-const Navbar = ({boolclick, setBoolClick, clicked, setClicked}) => {
+
+const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
+  console.log("Navbar Props:", { boolclick, setBoolClick, clicked, setClicked });
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
 
@@ -35,10 +39,19 @@ const Navbar = ({boolclick, setBoolClick, clicked, setClicked}) => {
     { name: 'Bootcamps', link: '' },
   ];
 
+  console.log({ boolclick, setBoolClick, clicked, setClicked });
+
+
   const toggleMenu = (e, itemName) => {
-    e.stopPropagation(); // Prevent event from bubbling up
+    e.stopPropagation();
+    
+    if (typeof setBoolClick !== 'function') {
+      console.error('setBoolClick is not a function');
+      return;
+    }
+  
     if (clicked === itemName) {
-      setClicked('');
+      setClicked("");
       setBoolClick(false);
     } else {
       setClicked(itemName);
@@ -46,21 +59,10 @@ const Navbar = ({boolclick, setBoolClick, clicked, setClicked}) => {
     }
   };
 
-  // Handle clicks outside of menu
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (boolclick && !event.target.closest('.navbar')) {
-        setBoolClick(false);
-        setClicked('');
-      }
-    };
+  console.log('toggleMenu called with:', clicked, setBoolClick);
 
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  }, [boolclick, setBoolClick, setClicked]);
 
+  
   return (
     <>
       {/* Mobile Navigation */}
@@ -74,9 +76,9 @@ const Navbar = ({boolclick, setBoolClick, clicked, setClicked}) => {
               </div>
               <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
               <div
-                onClick={() => {
+                 onClick={() => {
                   setMenu((prev) => !prev);
-                  setClicked(false)
+                  setClicked(false);
                 }}
                 className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
               >

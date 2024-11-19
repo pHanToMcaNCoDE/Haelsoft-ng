@@ -15,17 +15,22 @@ import WorkAt from '@/components/LandingPageComponents/WorkAt'
 import React, { useState } from 'react'
 
 const page = () => {
-
   const [clicked, setClicked] = useState('');
+  const [boolclick, setBoolClick] = useState(false);
 
-  const handleClickOutside = () => {
-    if (clicked) {
-      setClicked('');
-    }
+  const handlePageClick = () => {
+    setBoolClick(false);
+    setClicked('');
   };
+
   return (
-    <main onClick={handleClickOutside}>
-      <Navbar clicked={clicked} setClicked={setClicked}/>
+    <main onClick={handlePageClick}>
+      <Navbar 
+        clicked={clicked} 
+        setClicked={setClicked} 
+        boolclick={boolclick} 
+        setBoolClick={setBoolClick} 
+      />
       <Hire/>
       <ConnectTalent/>
       <EdtechGraduates/>
