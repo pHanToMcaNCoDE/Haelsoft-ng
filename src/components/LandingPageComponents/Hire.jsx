@@ -1,13 +1,16 @@
 import React from "react";
+import hero from '../../../public/EdTech Platform Hero Image.png';
+import Image from "next/image";
 
 const Hire = () => {
   return (
-    <section className="relative px-5 flex flex-col lg:flex-row justify-between items-start max-w-[1250px] mx-auto py-[100px] gap-y-5">
-      <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
-        <h1 className="text-main leading-[42px] font-bold text-[1.75rem]">
+    <section className="relative z-10 px-5 flex flex-col lg:flex-row justify-between items-start max-w-[1250px] mx-auto py-[100px] gap-y-5">
+      <Image width={1440} height={968} className="absolute top-0 w-screen min-h-screen z-[5px]" src={hero} alt="Background Image"></Image>
+      <div className="relative z-10 flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
+        <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">
           Hire An Ed-Tech Talent
         </h1>
-        <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
+        <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
           et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
@@ -15,7 +18,7 @@ const Hire = () => {
           consequat massa quis enim. Donec
         </p>
       </div>
-      <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">
+      <div className="relative z-10 w-full lg:w-[50%] flex flex-col justify-center items-center">
         <div className="bg-[#FBFBFB] w-full xl:w-[636px] h-[877px] rounded flex flex-col justify-start items-center px-[25px] gap-[7em] py-[50px]">
           <div className="flex flex-col gap-3 text-center">
             <h1 className="text-[1.75rem] text-main leading-[43px] font-semibold">

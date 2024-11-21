@@ -8,6 +8,7 @@ import Plan from '@/components/LandingPageComponents/Plan'
 import Random from '@/components/LandingPageComponents/Random'
 import ResponsiveNetwork from '@/components/LandingPageComponents/ResponsiveNetwork'
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
+import TalentNetwork from '@/components/LandingPageComponents/TalentNetwork'
 import TrainingBenefits from '@/components/LandingPageComponents/TrainingBenefits'
 import React, { useState } from 'react'
 
@@ -30,12 +31,13 @@ const page = () => {
         setBoolClick={setBoolClick} 
       />
       <Hire/>
+      <TalentNetwork/>
       <TrainingBenefits/>
       <Network />
       <ResponsiveNetwork />
       <Random/>
       <Comments/>
-      {/* <Plan/> */}
+      <Plan/>
       <StartHiring/>
     </main>
   )

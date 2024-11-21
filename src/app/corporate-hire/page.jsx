@@ -11,6 +11,7 @@ import Plan from '@/components/LandingPageComponents/Plan'
 import ResponsiveNetwork from '@/components/LandingPageComponents/ResponsiveNetwork'
 import ResponsiveWorkAt from '@/components/LandingPageComponents/ResponsiveWorkAt'
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
+import WhereTheyWork from '@/components/LandingPageComponents/WhereTheyWork'
 import WorkAt from '@/components/LandingPageComponents/WorkAt'
 import React, { useState } from 'react'
 
@@ -32,14 +33,16 @@ const page = () => {
         setBoolClick={setBoolClick} 
       />
       <Hire/>
-      <ConnectTalent/>
-      <EdtechGraduates/>
+      {/* <ConnectTalent/> */}
+
+      <WhereTheyWork/>
       {/* <WorkAt/> */}
-      <Network/>
-      <ResponsiveNetwork/>
-      <ResponsiveWorkAt/>
+      {/* <Network/> */}
+      {/* <ResponsiveNetwork/> */}
+      {/* <ResponsiveWorkAt/> */}
       <CorporateGallary/>
       <EdtechRoles/>
+      <EdtechGraduates/>
       <Plan/>
       <StartHiring/>
     </main>
