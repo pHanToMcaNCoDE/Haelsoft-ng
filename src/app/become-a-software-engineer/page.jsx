@@ -30,7 +30,7 @@ const page = () => {
                         How to Become a Software Engineer
                     </h1>
                     <p className='w-full xl:w-[605px] text-[#FFFFFF] leading-[30px] font-normal text-base'>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula 
+                        Discover the journey to becoming a skilled software engineer by learning key programming concepts and software engineering principles.
                     </p>
                 </div>
                 <GetStarted/>
@@ -40,12 +40,12 @@ const page = () => {
         <section className='py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10'>
            <div className='w-full xl:w-[838px] flex flex-col justify-center items-start gap-10'>
                 <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                    Software engineering is a dynamic and challenging field that requires constant learning and problem-solving. 
                 </p>
                 <div className='flex flex-col justify-center items-start gap-2'>
                     <h2 className='text-[#201A18] text-base leading-[30px] font-normal'>How to become a software engineer:</h2>
                     <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                        Becoming a software engineer involves learning core principles of programming, software development processes, and practical problem-solving.
                     </p>
                 </div>
            </div>
@@ -59,33 +59,32 @@ const page = () => {
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Start by understanding core concepts like data structures, algorithms, and object-oriented programming (OOP).
                         </p>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Learn how to write clean, efficient, and maintainable code that meets industry standards.
                         </p>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Familiarize yourself with version control systems like Git to collaborate on projects.
                         </p>
                     </div>
                 </div>
 
-
                 <div className='flex flex-col justify-center items-start gap-2'>
                     <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step2</h2>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Fundamentals</h1>
+                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Practice with Real-World Projects</h1>
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Apply your knowledge by working on projects that solve real-world problems.
                         </p>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Contribute to open-source projects or build your own portfolio to showcase your skills.
                         </p>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Participate in hackathons and collaborate with other developers to enhance your problem-solving abilities.
                         </p>
                     </div>
                 </div>
@@ -93,15 +92,15 @@ const page = () => {
                 <div className='flex flex-col justify-center items-start gap-2'>
                     <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step3</h2>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Fundamentals</h1>
+                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Principles</h1>
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Understand principles such as clean code, testing, and software architecture to create high-quality software.
                         </p>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Study methodologies like Agile and DevOps to work effectively within teams and deliver products on time.
                         </p>
                     </div>
                 </div>
@@ -109,172 +108,52 @@ const page = () => {
                 <div className='flex flex-col justify-center items-start gap-2'>
                     <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step4</h2>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Fundamentals</h1>
+                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Stay Updated with Industry Trends</h1>
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Software engineering is an ever-evolving field. Keep learning new languages, frameworks, and tools.
                         </p>
                         <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                            Follow industry leaders, read technical blogs, and attend conferences to stay informed about the latest advancements.
                         </p>
                     </div>
                 </div>
             </div>
 
             <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-20 pt-[200px]'>
-                {/* <div className='flex flex-col justify-center items-start gap-2'>
-                    <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step4</h2> */}
-                    <div className='flex flex-col justify-center items-start gap-4'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Fundamentals</h1>
-                        <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
-                    </div>
-                    
-                    <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[838px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                    </div>
-                {/* </div> */}
-            </div>
-
-
-            <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-20 py-[70px]'>
-                {/* <div className='flex flex-col justify-center items-start gap-2'>
-                    <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step4</h2> */}
-                    <div className='flex flex-col justify-center items-start gap-4'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Fundamentals</h1>
-                        <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
-                    </div>
-                    
-                    <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[838px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                    </div>
-                {/* </div> */}
-            </div>
-
-
-            <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-20 py-[70px]'>
-                {/* <div className='flex flex-col justify-center items-start gap-2'>
-                    <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step4</h2> */}
-                    <div className='flex flex-col justify-center items-start gap-4'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Learn Software Engineering Fundamentals</h1>
-                        <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
-                    </div>
-                    
-                    <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[838px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                    </div>
-                {/* </div> */}
-            </div>
-
-
-            <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-20 pt-[200px]'>
-                {/* <div className='flex flex-col justify-center items-start gap-2'>
-                    <h2 className='text-[#201A18] text-base leading-[30px] font-normal uppercase'>step4</h2> */}
-                    <div className='flex flex-col justify-center items-start gap-4'>
-                        <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Software Engineering Process?</h1>
-                        <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
-                    </div>
-                    
-                    <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[838px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                        </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
-                        </p>
-                    </div>
-
-                    <div className='flex flex-col justify-center items-start gap-8 w-full xl:w-[838px] mx-auto py-[10px]'>
-                        <div className='flex flex-col justify-center items-start gap-3'>
-                            <h2 className='text-[#201A18] leading-[29.26px] font-semibold text-[1.5rem]'>Software Design</h2>
-                            <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                            </p>
-                        </div>
-                        <div className='flex flex-col justify-center items-start gap-3'>
-                            <h2 className='text-[#201A18] leading-[29.26px] font-semibold text-[1.5rem]'>Software Design</h2>
-                            <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                            </p>
-                        </div>
-                        <div className='flex flex-col justify-center items-start gap-3'>
-                            <h2 className='text-[#201A18] leading-[29.26px] font-semibold text-[1.5rem]'>Software Design</h2>
-                            <p className='text-[#655D59] text-base font-normal leading-[30px]'>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                            </p>
-                        </div>
-                    </div>
-                {/* </div> */}
-            </div>
-        </section>
-
-        <div className='flex flex-col justify-between items-center gap-10 max-w-[1250px] mx-auto pb-[80px] px-6 xl:px-0'>
-            <div className='bg-[#FF8C53] w-full xl:w-[1242px] mx-auto border-[2px] border-[#FF8C53] h-[1px] rounded'></div>
-            <div className='w-full flex flex-col md:flex-row justify-between items-center pt-[10px]'>
-                <div className='flex flex-col justify-center items-start gap-2'>
-                    <h2 className='text-[#201A18] leading-[30px] font-normal text-[.75rem]'>Previous</h2>
-                    <p className='text-[#F36400] leading-[30px] font-semibold text-[.875rem]'>Lorem ipsum dolor sit amet, consectetuer</p>
+                <div className='flex flex-col justify-center items-start gap-4'>
+                    <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Master Core Engineering Skills</h1>
+                    <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <div className='flex flex-col justify-center items-start gap-2'>
-                    <h2 className='text-[#201A18] leading-[30px] font-normal text-[.75rem]'>Next</h2>
-                    <p className='text-[#F36400] leading-[30px] font-semibold text-[.875rem]'>Lorem ipsum dolor sit amet, consectetuer</p>
+                    
+                <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[838px] mx-auto'>
+                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        Master the essentials of software engineering including algorithms, data structures, and software development principles.
+                    </p>
+                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        Learn to design efficient algorithms, write code that scales, and build systems that perform well under pressure.
+                    </p>
+                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        Always strive to improve and learn new skills to stay competitive in the job market.
+                    </p>
                 </div>
             </div>
-        </div>
 
-        <section className='w-full bg-[#E1884A] py-[100px] px-6 xl:px-0 xl:h-[824px]'>
-            <div className='max-w-[1250px] mx-auto flex flex-col xl:flex-row justify-between items-center gap-20'>
-                <div className='w-full xl:w-[514px] flex flex-col justify-center items-start gap-20'>
-                    <div className='w-full xl:w-[514px] flex flex-col justify-center items-start gap-3'>
-                        <h2 className='text-white text-[1rem] leading-[30px] font-normal uppercase'>get started</h2>
-                        <div className='flex flex-col justify-center items-start gap-4'>
-                            <h1 className='text-white leading-[34.13px] text-[1.75rem] font-bold'>Kickstart your Software Engineer Career</h1>
-                            <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
-                        </div>
-                        <p className='text-white text-[1rem] leading-[30px] font-normal'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
-                        </p>
-                    </div>
-
-                    <button className='bg-[#F36400] w-[221px] h-[50px] text-white leading-[30px] text-[.875rem] font-semibold gap-[10px] p-[10px] rounded border border-[#FF8C53]'>Request a Consultation</button>
+            <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-12'>
+                <div className='flex flex-col justify-center items-start gap-4'>
+                    <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Start Your Journey Today!</h1>
+                    <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <div className='flex flex-col gap-6 justify-center items-start'>
-                    <div className='flex flex-col gap-3'>
-                        <h1 className='text-white text-[.875rem] leading-[30px] font-semibold'>RECOMMENDED SOFTWARE ENGINEER COURSES</h1>
-                        <div className='flex flex-col justify-center items-center gap-6 text-center bg-white w-full p-6 xl:p-0 lg:w-[607px] h-ful xl:h-[170px] rounded'>
-                            <h1 className='text-[#E1884A] text-[.875rem] leading-[30px] font-semibold'>RECOMMENDED SOFTWARE ENGINEER COURSES</h1>
-                            <p className='text-[#655D59] text-base font-normal leading-[30px]'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p>
-                        </div>
-                    </div>
-                    <div className='flex flex-col justify-center items-center gap-6 text-center bg-white w-full p-6 xl:p-0 lg:w-[607px] h-ful xl:h-[170px] rounded'>
-                        <h1 className='text-[#E1884A] text-[.875rem] leading-[30px] font-semibold'>RECOMMENDED SOFTWARE ENGINEER COURSES</h1>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque</p>
-                    </div>
+                    
+                <div className='flex flex-col justify-center items-start gap-10'>
+                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        It's time to start your career as a software engineer! Join thousands of learners worldwide who have taken the first step towards achieving their career goals.
+                    </p>
+                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        Enroll today and begin learning the skills that will open doors to amazing opportunities in the tech world.
+                    </p>
                 </div>
             </div>
         </section>
@@ -282,4 +161,4 @@ const page = () => {
   )
 }
 
-export default page
+export default page;
