@@ -1,4 +1,6 @@
 import React from 'react'
+import companies from '../../../public/EdTech Platform Frame.svg';
+import Image from 'next/image';
 
 const DigitalTransformation = () => {
   return (
@@ -13,7 +15,15 @@ const DigitalTransformation = () => {
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
                 </p>
             </div>
-            <div></div>
+            
+            <div className='grid grid-cols-2 lg:grid-cols-3 justify-center items-center max-w-[1200px] ml-auto 2xl:mx-0 gap-3 h-full'>
+                <Image width={532} height={532} className='object-cover' src={companies} alt='Companies'></Image>
+                <Image width={532} height={532} className='object-cover' src={companies} alt='Companies'></Image>
+                <Image width={532} height={532} className='object-cover' src={companies} alt='Companies'></Image>
+                <Image width={532} height={532} className='object-cover' src={companies} alt='Companies'></Image>
+                <Image width={532} height={532} className='object-cover' src={companies} alt='Companies'></Image>
+                <Image width={532} height={532} className='object-cover' src={companies} alt='Companies'></Image>
+            </div>
         </div>
     </section>
   )

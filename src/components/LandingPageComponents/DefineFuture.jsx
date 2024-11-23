@@ -11,7 +11,7 @@ const DefineFuture = () => {
                 <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
             </div>
             <p className='w-full md:w-[390px] lg:w-[469px] text-[#655D59] text-base leading-6'>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                At Haelsoft, we’re on a mission to transform lives through education and technology, empowering individuals, businesses, and governments across Africa’s 54 nations. Our work goes beyond providing learning solutions—we are shaping the future of education and unlocking the continent's potential.
             </p>
         </div>
         <div className='lg:relative lg:right-[-10%]'>

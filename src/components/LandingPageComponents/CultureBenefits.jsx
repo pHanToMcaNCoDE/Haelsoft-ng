@@ -13,27 +13,27 @@ const CultureBenefits = () => {
                 </div>
                 <div className='grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-[2em] lg:gap-[4em] xl:gap-[2em]'>
                     <div className='w-full lg:w-[246px] xl:w-[296px] lg:h-[209px] flex flex-col justify-center items-start gap-3'>
-                        <h1 className='font-semibold text-lg text-white'>Culture + Benefits</h1>
+                        <h1 className='font-semibold text-lg text-white'>Make an Impact</h1>
                         <p className='text-base font-normal text-white'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, 
+                            Be part of a movement that empowers people and communities with the knowledge and skills they need to succeed.
                         </p>
                     </div>
                     <div className='w-full lg:w-[246px] xl:w-[296px] lg:h-[209px] flex flex-col justify-center items-start gap-3'>
-                        <h1 className='font-semibold text-lg text-white'>Culture + Benefits</h1>
+                        <h1 className='font-semibold text-lg text-white'>Innovate with Purpose</h1>
                         <p className='text-base font-normal text-white'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, 
+                            Work on cutting-edge projects that push the boundaries of education and technology. 
                         </p>
                     </div>
                     <div className='w-full lg:w-[246px] xl:w-[296px] lg:h-[209px] flex flex-col justify-center items-start gap-3'>
-                        <h1 className='font-semibold text-lg text-white'>Culture + Benefits</h1>
+                        <h1 className='font-semibold text-lg text-white'>Collaborate & Grow</h1>
                         <p className='text-base font-normal text-white'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, 
+                            Join a diverse and dynamic team of professionals who inspire and support each other to reach new heights.
                         </p>
                     </div>
                     <div className='w-full lg:w-[246px] xl:w-[296px] lg:h-[209px] flex flex-col justify-center items-start gap-3'>
-                        <h1 className='font-semibold text-lg text-white'>Culture + Benefits</h1>
+                        <h1 className='font-semibold text-lg text-white'>Shape the Future</h1>
                         <p className='text-base font-normal text-white'>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, 
+                            Play a role in transforming how education is delivered across the African continent.
                         </p>
                     </div>
                 </div>

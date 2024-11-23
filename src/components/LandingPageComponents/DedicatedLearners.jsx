@@ -15,10 +15,10 @@ const DedicatedLearners = () => {
                 </div>
                 <div className='flex flex-col gap-5'>
                     <p className='w-full md:w-[383px] lg:w-[469px] text-white text-sm lg:text-base font-normal'>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                        We are looking for passionate, creative, and driven individuals who share our vision of making quality education accessible to all. Whether you're an educator, tech innovator, designer, strategist, or advocate for change, there’s a place for you on our team.
                     </p>
                     <p className='w-full md:w-[383px] lg:w-[469px] text-white text-sm lg:text-base font-normal'>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                        Joining our team means collaborating with like-minded individuals who value innovation, teamwork, and a commitment to excellence. Together, we aim to build impactful solutions that empower learners globally and help shape the future of education.
                     </p>
                 </div>
             </div>
