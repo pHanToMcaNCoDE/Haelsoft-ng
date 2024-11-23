@@ -6,7 +6,8 @@ const StartHiring = () => {
       <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
         <h1 className="text-[#F36400] leading-[42px] font-bold text-[1.75rem]">Ready To Start Hiring?</h1>
         <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+          Empower your organization with the skills and knowledge it needs to thrive. To learn more about our Corporate Hire services or to schedule a consultation, contact us at [your email address].
+          At Haelsoft, we’re not just training teams—we’re building capabilities that drive long-term success.
         </p>
       </div>
       <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">

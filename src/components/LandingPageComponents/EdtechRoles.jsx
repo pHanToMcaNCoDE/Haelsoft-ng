@@ -1,84 +1,57 @@
-import Image from 'next/image'
-import React from 'react'
-import ai from '../../../public/EdTech Platform Creative 2.svg';
-import ux from '../../../public/EdTech Platform Design 3.svg';
-import sm from '../../../public/EdTech Platform Marketing.svg';
-import dm from '../../../public/Digital Marketing 2.svg';
-import se from '../../../public/Paid Search.svg';
+import React from 'react';
+import { FaGlobeAfrica, FaMoneyBillWave, FaLightbulb } from 'react-icons/fa';
 
-const EdtechRoles = () => {
+const WhyChooseHaelsoft = () => {
   return (
-    <section className='max-w-[1400px] mx-auto px-5 py-[100px] flex flex-col gap-[60px]'>
-        <h1 className='text-[#F36400] font-semibold text-[1.5rem] leading-[36px]'>Ed-Tech Graduates Fit In Following Roles</h1>
-        <div className='w-full grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-[65px] lg:justify-items-center'>
-            <ul className='flex flex-col gap-4'>
-                <Image src={dm} alt='Digital Marketing Icon'></Image>
-                <h2 className='texr-[#655D59] leading-[21.94px] text-[1.125rem] font-semibold'>Digital Marketing</h2>            
-                <div>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Scientist</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Analyst</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Engineer</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Consultant</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Product Manager</li>
-                </div>
-            </ul>
-            {/* <ul className='flex flex-col gap-4'>
-                <h2 className='texr-[#201A18] leading-[43px] text-[1.125rem] font-medium'>Data Science</h2>
-                <div>
-                    <li className='text-[#000000] leading-[43px] text-[1rem] font-normal'>Data Scientist</li>
-                    <li className='text-[#000000] leading-[43px] text-[1rem] font-normal'>Data Analyst</li>
-                    <li className='text-[#000000] leading-[43px] text-[1rem] font-normal'>Data Engineer</li>
-                    <li className='text-[#000000] leading-[43px] text-[1rem] font-normal'>Consultant</li>
-                    <li className='text-[#000000] leading-[43px] text-[1rem] font-normal'>Product Manager</li>
-                </div>
-            </ul> */}
-            <ul className='flex flex-col gap-4'>
-                <Image src={ux} alt='UX Icon'></Image>
-                <h2 className='texr-[#655D59] leading-[21.94px] text-[1.125rem] font-semibold'>Ux Design</h2>
-                <div>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Scientist</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Analyst</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Engineer</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Consultant</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Product Manager</li>
-                </div>
-            </ul>
-            <ul className='flex flex-col gap-4'>
-                <Image src={sm} alt='Social Media Marketing Icon'></Image>
-                <h2 className='texr-[#655D59] leading-[21.94px] text-[1.125rem] font-semibold'>Social Media Marketing</h2>
-                <div>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Scientist</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Analyst</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Engineer</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Consultant</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Product Manager</li>
-                </div>
-            </ul>
-            <ul className='flex flex-col gap-4'>
-                <Image src={ai} alt='AI icon'></Image>
-                <h2 className='texr-[#655D59] leading-[21.94px] text-[1.125rem] font-semibold'>Artificial Intelligence</h2>
-                <div>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Scientist</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Analyst</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Engineer</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Consultant</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Product Manager</li>
-                </div>
-            </ul>
-            <ul className='flex flex-col gap-4'>
-                <Image src={se} alt='UX Icon'></Image>
-                <h2 className='texr-[#655D59] leading-[21.94px] text-[1.125rem] font-semibold'>Search Engine Marketing</h2>
-                <div>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Scientist</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Analyst</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Data Engineer</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Consultant</li>
-                    <li className='text-[#655D59] leading-[30px] text-[1rem] font-normal'>Product Manager</li>
-                </div>
-            </ul>
+    <section className="max-w-[1400px] mx-auto px-5 py-[100px] flex flex-col gap-[80px] justify-center items-center">
+      <h1 className="text-[#F36400] font-semibold text-[1.5rem] leading-[36px]">
+        Why Choose Haelsoft?
+      </h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[50px] justify-items-center">
+        {/* Africa-Focused */}
+        <div className="flex flex-col items-center gap-6 p-6 border-[3px] border-[#EEEEEE] rounded">
+          <div className="bg-[#FF8C53] w-[52px] h-[52px] rounded-full flex justify-center items-center">
+            <FaGlobeAfrica size={30} color="#fff" />
+          </div>
+          <h2 className="text-[#F36400] text-[1.125rem] font-semibold leading-[27px]">
+            Africa-Focused
+          </h2>
+          <p className="text-[#655D59] text-[1rem] leading-[30px] font-normal text-center">
+            We understand the unique dynamics of African markets and provide solutions that resonate
+            with your operational realities.
+          </p>
         </div>
-    </section>
-  )
-}
 
-export default EdtechRoles
+        {/* Cost-Effective */}
+        <div className="flex flex-col items-center gap-6 p-6 border-[3px] border-[#EEEEEE] rounded">
+          <div className="bg-[#FF8C53] w-[52px] h-[52px] rounded-full flex justify-center items-center">
+            <FaMoneyBillWave size={30} color="#fff" />
+          </div>
+          <h2 className="text-[#F36400] text-[1.125rem] font-semibold leading-[27px]">
+            Cost-Effective
+          </h2>
+          <p className="text-[#655D59] text-[1rem] leading-[30px] font-normal text-center">
+            High-quality training programs at competitive prices, ensuring value for every
+            investment.
+          </p>
+        </div>
+
+        {/* Proven Expertise */}
+        <div className="flex flex-col items-center gap-6 p-6 border-[3px] border-[#EEEEEE] rounded">
+          <div className="bg-[#FF8C53] w-[52px] h-[52px] rounded-full flex justify-center items-center">
+            <FaLightbulb size={30} color="#fff" />
+          </div>
+          <h2 className="text-[#F36400] text-[1.125rem] font-semibold leading-[27px]">
+            Proven Expertise
+          </h2>
+          <p className="text-[#655D59] text-[1rem] leading-[30px] font-normal text-center">
+            Backed by Haelsoft’s extensive experience in digital transformation and skill
+            development.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhyChooseHaelsoft;
