@@ -1,15 +1,9 @@
 import React from 'react';
 
-const StartHiring = () => {
+const StartHiring = ({contentTwo}) => {
   return (
     <section className="px-5 flex flex-col lg:flex-row justify-between items-start max-w-[1250px] mx-auto py-[100px] gap-y-5 gap-x-8">
-      <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
-        <h1 className="text-[#F36400] leading-[42px] font-bold text-[1.75rem]">Ready To Start Hiring?</h1>
-        <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
-          Empower your organization with the skills and knowledge it needs to thrive. To learn more about our Corporate Hire services or to schedule a consultation, contact us at [your email address].
-          At Haelsoft, we’re not just training teams—we’re building capabilities that drive long-term success.
-        </p>
-      </div>
+      {contentTwo}
       <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">
         <div className="bg-[#FBFBFB] w-full xl:w-[636px] h-[877px] rounded flex flex-col justify-start items-center px-[25px] gap-[7em] py-[50px]">
           <div className="flex flex-col gap-3 text-center">

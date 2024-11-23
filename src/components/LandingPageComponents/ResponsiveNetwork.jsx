@@ -24,10 +24,10 @@ const ResponsiveNetwork = () => {
   return (
     <section className='w-full flex md:hidden flex-col gap-[4em] py-[100px]'>
         <div className='flex flex-col justify-center items-center max-w-[1200px] mx-auto text-center gap-4'>
-            <h1 className='text-[#F36400] text-[2.125rem] font-semibold leading-9'>Collaborating with Leading Industry Experts</h1>
-            <p className='w-full lg:w-[879px] text-center text-base text-[#655D59]'>
+            <h1 className='text-[#F36400] text-[2.125rem] font-semibold leading-9'>Trusted by Leading Companies</h1>
+            {/* <p className='w-full lg:w-[879px] text-center text-base text-[#655D59]'>
                 At Haelsoft, we partner with renowned digital brands and professionals to deliver cutting-edge online courses, events, and bootcamp experiences, empowering learners worldwide.
-            </p>
+            </p> */}
         </div>
         <div className="flex flex-col justify-between items-center gap-6 overflow-hidden relative before:absolute before:top-0 before:bottom-0 before:w-[45%] before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 before:left-0 after:right-0 after:absolute after:top-0 after:bottom-0 after:w-[45%] after:z-10 after:bg-gradient-to-r after:from-transparent after:to-white clients h-full">  
             <div className="flex justify-center items-center gap-6 clients relative h-[115px]">
