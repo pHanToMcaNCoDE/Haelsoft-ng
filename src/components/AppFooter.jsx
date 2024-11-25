@@ -106,12 +106,12 @@ const AppFooter = () => {
                   <li className="text-[.75rem] font-medium">
                     Learn JavaScript
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/tutorial-learn-html-css`} className="text-[.75rem] font-medium">
                     Learn HTML & CSS
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/tutorial-learn-sql`} className="text-[.75rem] font-medium">
                     Learn SQL
-                  </li>
+                  </Link>
                 </ul>
               </div>
             </div>
