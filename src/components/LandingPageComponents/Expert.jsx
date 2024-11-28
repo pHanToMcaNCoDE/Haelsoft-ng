@@ -13,10 +13,10 @@ import user4 from "../../../public/assets/users/user4.svg";
 import Image from "next/image";
 
 
-import afro from '../../../public/assets/clients/Afro a.png';
-import photiz from '../../../public/assets/clients/Afro c.png';
-import swun from '../../../public/assets/clients/Colur Code.jpg';
-import kusnap from '../../../public/assets/clients/KUSNAP.png';
+import edo from '../../../public/assets/clients/Edo State Government Haelsoft Clients.png';
+import esi from '../../../public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
+import farm from '../../../public/assets/clients/Farm Industria Logo.png';
+import giz from '../../../public/assets/clients/Giz Logo II.png';
 
 const Expert = () => {
   const slides = [
@@ -24,25 +24,25 @@ const Expert = () => {
       image: user3,
       name: "Adeola Olukayode",
       role: "UI/UX Designer",
-      comp: afro
+      comp: edo
     },
     {
       image: user,
       name: "Sola Akinsan",
       role: "Project Manager",
-      comp: photiz
+      comp: esi
     },
     {
       image: user4,
       name: "Adaora Okoli",
       role: "Full-Stack Developer",
-      comp: swun
+      comp: farm
     },
     {
       image: user2,
       name: "Samuel Micheal",
       role: "Data Scientist",
-      comp: kusnap
+      comp: giz
     },
   ];
 
@@ -91,7 +91,7 @@ const Expert = () => {
                     {item.role}
                   </p>
                 </div>
-                <Image width={105} height={44} className="grayscale h-[44px] object-cover" src={item.comp} alt="Afro"></Image>
+                <Image width={100} className="grayscale object-cover" src={item.comp} alt="Afro"></Image>
               </div>
               {/* <div> */}
               {/* </div> */}

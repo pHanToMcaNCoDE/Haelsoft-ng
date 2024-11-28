@@ -13,7 +13,7 @@ import { GoArrowLeft } from 'react-icons/go';
 
 
 const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
-  console.log("Navbar Props:", { boolclick, setBoolClick, clicked, setClicked });
+  console.log("Navbar Props:", clicked);
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
@@ -130,7 +130,7 @@ const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
                 {['Courses', 'Corporate', 'Bootcamps', 'About'].includes(item.name) ? (
                   <div
                     className="flex items-center gap-1 cursor-pointer"
-                    onClick={(e) => toggleMenu(e, item.name)}
+                    onClick={() => setClicked((prev) => prev === item.name ? '' : item.name)}
                   >
                     <Link href={item.link || '#'} onClick={(e) => e.preventDefault()}>{item.name}</Link>
                     <MdOutlineKeyboardArrowDown

@@ -11,14 +11,11 @@ import user5 from '/public/Justin Shaifer Black People.jpg';
 import user6 from '/public/Black People Photo by Divinetechygirl.jpg';
 
 
-import lb from '../../../../public/assets/clients/leatherback.png';
-import gd from '../../../../public/assets/clients/Logo 2.png';
-import pc from '../../../../public/assets/clients/Logo 4.png';
-import peppa from '../../../../public/assets/clients/png peppa 1.png';
-// import rh from '../../../public/assets/clients/Rhebuch-Logo.png';
-// import iso from '../../../public/assets/clients/Untitled-1.png';
-// import znz from '../../../public/assets/clients/Zaph and Zoe B.png';
-// import lcp from '../../../public/assets/clients/Zaph and Zoe.png'
+
+import edo from '/public/assets/clients/Edo State Government Haelsoft Clients.png';
+import esi from '/public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
+import farm from '/public/assets/clients/Farm Industria Logo.png';
+import giz from '/public/assets/clients/Giz Logo II.png';
 
 const Details = () => {
   const slides = [
@@ -26,21 +23,21 @@ const Details = () => {
       image: user,
       name: 'Adeola Olukayode',
       date: 'July 8, 2023',
-      comp: peppa
+      comp: edo
       // desc: "Haelsoft's digital marketing platform is a game-changer. Their industry-based courses provide practical skills crucial for success. With hands-on projects and excellent support, it's the perfect choice for anyone looking to excel in digital marketing.",
     },
     {
       image: user2,
       name: 'Chidera Nwosu',
       date: 'June 15, 2023',
-      comp: gd
+      comp: esi
       // desc: "I am thoroughly impressed with Haelsoft's approach to teaching. The UI/UX Design course has provided me with the skills I need to excel in the field. Their resources and support are top-notch.",
     },
     {
       image: user3,
       name: 'Tumi Williams',
       date: 'May 10, 2023',
-      comp: pc
+      comp: farm
       // desc: "Haelsoft's courses are comprehensive and practical. The Full-Stack Development course helped me land a job within months of completing it. Highly recommended for anyone looking to break into tech.",
     },
     // {
