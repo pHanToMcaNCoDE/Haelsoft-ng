@@ -100,12 +100,12 @@ const AppFooter = () => {
               <div className='flex flex-col justify-center items-start gap-3'>
                 <h2 className="text-[.875rem] font-bold">Tutorials</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/tutorial-learn-python`} className="text-[.75rem] font-medium">
                     Learn Python
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/tutorial-learn-javascript`} className="text-[.75rem] font-medium">
                     Learn JavaScript
-                  </li>
+                  </Link>
                   <Link href={`/tutorial-learn-html-css`} className="text-[.75rem] font-medium">
                     Learn HTML & CSS
                   </Link>

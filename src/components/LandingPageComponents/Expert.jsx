@@ -91,7 +91,7 @@ const Expert = () => {
                     {item.role}
                   </p>
                 </div>
-                <Image width={100} className="grayscale object-cover" src={item.comp} alt="Afro"></Image>
+                <Image width={100} className="object-cover" src={item.comp} alt="Afro"></Image>
               </div>
               {/* <div> */}
               {/* </div> */}

@@ -29,7 +29,7 @@ const Companies = () => {
   return (
     <section className='w-full py-6 flex flex-col gap-[3em] bg-[#F2F2F2]'>
         
-      <div className="flex justify-center items-center gap-6 clients h-[65px]">
+      <div className="flex justify-center items-center gap-6 clients h-[90px]">
         <Splide
           extensions={{ AutoScroll }}
           options={{
@@ -43,66 +43,63 @@ const Companies = () => {
             pagination: false,
             autoScroll: { pauseOnHover: false, speed: 1 },
           }}
-          className="flex items-center justify-center w-full h-[55px] gap-20"
+          className="flex items-center justify-center w-full h-[90px] gap-20"
           aria-label="My Favorite Images"
         >
-          <SplideSlide className="grayscale w-[97px] h-[71px] flex items-center justify-center">
-            <Image width={200} height={200} src={edo} alt="Edo State Government"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={edo} alt="Edo State Government"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={esi} alt="Edo State Investment Promotion Office"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={esi} alt="Edo State Investment Promotion Office"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={farm} alt="Farm Industria"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={farm} alt="Farm Industria"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={giz} alt="Giz"></Image>
-          </SplideSlide>
-
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-          {/* <Image width={130} height={130} src={srv} alt="srv"></Image> */}
-          </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={gro} alt="Grovane"></Image>
-          </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={fin} alt="Fincra"></Image>
-          </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={goo} alt="Google"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={giz} alt="Giz"></Image>
           </SplideSlide>
 
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={srv} alt="SRV Grid Limited"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={gro} alt="Grovane"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={ser} alt="Servo"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={fin} alt="Fincra"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={kle} alt="Kleenol"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={goo} alt="Google"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={kor} alt="Korahq"></Image>
+
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={srv} alt="SRV Grid Limited"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={kus} alt="Kusnap"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={ser} alt="Servo"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kle} alt="Kleenol"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kor} alt="Korahq"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kus} alt="Kusnap"></Image>
           </SplideSlide>
 
 
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={lfi} alt="Leatherback Financials"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={lfi} alt="Leatherback Financials"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={min} alt="Mintyn"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={min} alt="Mintyn"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={nex} alt="Nexgate Group"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={nex} alt="Nexgate Group"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={val} alt="Valdo Furniture"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={val} alt="Valdo Furniture"></Image>
           </SplideSlide>
-          <SplideSlide className="grayscale w-[97px] h-[61px] flex items-center justify-center">
-            <Image width={200} height={200} src={zen} alt="Zenith Bank"></Image>
+          <SplideSlide className=" w-[97px] h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={zen} alt="Zenith Bank"></Image>
           </SplideSlide>
         </Splide>
       </div>

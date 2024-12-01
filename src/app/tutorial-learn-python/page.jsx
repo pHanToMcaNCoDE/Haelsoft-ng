@@ -9,28 +9,31 @@ import TutorialGetStarted from '@/components/LandingPageComponents/TutorialGetSt
 import TutorialHero from '@/components/LandingPageComponents/TutorialHero'
 import Why from '@/components/LandingPageComponents/Why'
 import React, { useState } from 'react'
-import img from '../../../public/assets/EdTech Platform Image 1.svg';
+import img from '../../../public/assets/EdTech Platform 5.svg';
 import org from '../../../public/EdTech Platform Vector 13.svg';
-
 import obj from '../../../public/assets/EdTech Platform Group 312.svg';
 
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 
-import afro from '../../../public/assets/clients/Afro a.png';
-import photiz from '../../../public/assets/clients/Afro c.png';
-import swun from '../../../public/assets/clients/Colur Code.jpg';
-// import srv from '../../public/assets/clients/IMG_8040.JPG';
-import kusnap from '../../../public/assets/clients/KUSNAP.png';
-import lb from '../../../public/assets/clients/leatherback.png';
-import gd from '../../../public/assets/clients/Logo 2.png';
-import pc from '../../../public/assets/clients/Logo 4.png';
-import peppa from '../../../public/assets/clients/png peppa 1.png';
-import rh from '../../../public/assets/clients/Rhebuch-Logo.png';
-import iso from '../../../public/assets/clients/Untitled-1.png';
-import znz from '../../../public/assets/clients/Zaph and Zoe B.png';
-import lcp from '../../../public/assets/clients/Zaph and Zoe.png'
+import edo from '../../../public/assets/clients/Edo State Government Haelsoft Clients.png';
+import esi from '../../../public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
+import farm from '../../../public/assets/clients/Farm Industria Logo.png';
+import giz from '../../../public/assets/clients/Giz Logo II.png';
+import gro from '../../../public/assets/clients/Grovane Logo Blue.png';
+import fin from '../../../public/assets/clients/Haelsoft Clients Edtech Platform.png';
+import goo from '../../../public/assets/clients/Haelsoft Clients Edtech.png';
+import srv from '../../../public/assets/clients/Haelsoft Edtech Logo (1).png';
+import ser from '../../../public/assets/clients/Haelsoft Edtech Logo.png';
+import kle from '../../../public/assets/clients/Kleenol Logo.png';
+import kor from '../../../public/assets/clients/Korahq Edtech Clients.jpg';
+import kus from '../../../public/assets/clients/Kusnap Logo from Haelsoft Edtech.png'
+import lfi from '../../../public/assets/clients/Leatherback Financials Haelsoft Clients.png';
+import min from '../../../public/assets/clients/Mintyn Logo.png';
+import nex from '../../../public/assets/clients/Nexgate Official Logo.png';
+import val from '../../../public/assets/clients/Valdo Furniture Interiors.png';
+import zen from '../../../public/assets/clients/Zenith Logo from Haelsoft.png';
 import Image from 'next/image';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { GoCheck } from 'react-icons/go';
@@ -48,17 +51,18 @@ const page = () => {
 
     const [activeTab, setActiveTab] = useState(0);
 
+
     const tabContent = [
         {
-            title: "Why Choose Haelsoft’s Learn SQL Course?",
+            title: "Why Choose Haelsoft's Python Course?",
             content: {
-                heading: "Why Choose Haelsoft’s Learn SQL Course?",
+                heading: "Why Choose Haelsoft's Python Course?",
                 paragraphs: [
-                    "Beginner to Advanced: Progress from SQL basics to mastering advanced concepts.",
-                    "Real-World Projects: Work on practical examples to apply your skills.",
-                    "Expert Mentorship: Learn from experienced database professionals and data scientists.",
-                    "Interactive Learning: Hands-on exercises and quizzes to reinforce your understanding.",
-                    "Certification: Earn a certificate of completion to boost your resume and career prospects."
+                    "Beginner-Friendly Approach: No prior programming knowledge required.",
+                    "Expert Instructors: Learn from seasoned professionals with real-world experience.",
+                    "Practical Projects: Work on real-life projects to build a portfolio that showcases your skills.",
+                    "Flexible Learning: Self-paced online modules or live instructor-led classes to fit your schedule.",
+                    "Career Advancement: Gain skills that are in high demand across industries"
                 ]
             }
         },
@@ -67,10 +71,10 @@ const page = () => {
             content: {
                 heading: "Who Should Enroll?",
                 paragraphs: [
-                    "Aspiring data analysts and database administrators.",
-                    "Business professionals looking to understand data better.",
-                    "Developers wanting to enhance their back-end skills.",
-                    "Entrepreneurs and startups interested in data-driven decision-making."
+                    "Aspiring programmers and developers.",
+                    "Professionals looking to upskill in data analysis, web development, or AI.",
+                    "Entrepreneurs seeking to create tech-driven solutions.",
+                    "Students passionate about starting a career in tech."
                 ]
             }
         },
@@ -79,36 +83,39 @@ const page = () => {
             content: {
                 heading: "Course Highlights",
                 paragraphs: [
-                    "Comprehensive Curriculum: Covering everything from SQL syntax to advanced optimization techniques.",
-                    "Industry-Relevant Skills: Learn skills highly valued by top employers in the tech and business sectors.",
-                    "Collaborative Projects: Engage with peers to solve real-world data challenges.",
-                    "Flexible Learning: Access course materials anytime, anywhere at your convenience."
+                    "Python Basics: Understand syntax, variables, data types, and fundamental programming concepts.",
+                    "Data Analysis: Learn how to analyze and visualize data using libraries like Pandas, NumPy, and Matplotlib.",
+                    "Web Development: Build dynamic websites using frameworks like Django and Flask.",
+                    "Automation: Automate repetitive tasks and processes to save time and increase efficiency.",
+                    "Machine Learning: Get started with artificial intelligence by exploring Python’s machine learning libraries.",
+                    "API Integration: Learn how to work with APIs to create powerful and integrated applications"
                 ]
             }
         },
         {
-            title: "Career Opportunities After Completing This Course",
-            content: {
-                heading: "Career Opportunities After Completing This Course",
-                paragraphs: [
-                    "Data Analyst: Analyze and interpret complex datasets for businesses.",
-                    "Database Administrator: Manage and maintain database systems efficiently.",
-                    "Business Intelligence Analyst: Provide insights for strategic decision-making.",
-                    "Back-End Developer: Develop robust applications with SQL-integrated solutions."
+            "title": "Skills You Will Gain From This Course",
+            "content": {
+                "heading": "Skills You Will Gain From This Course",
+                "paragraphs": [
+                    "Master core JavaScript concepts for building interactive web applications.",
+                    "Understand modern JavaScript ES6+ features for cleaner, efficient code.",
+                    "Develop problem-solving skills through real-world coding challenges.",
+                    "Lay a strong foundation for advanced web development frameworks."
                 ]
             }
-        }
+        }        
     ];
+    
     
 
     const contentTwo = (
         <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
         <h1 className="text-[#F36400] leading-[42px] font-bold text-[1.75rem]">Partner with Haelsoft for Excellence</h1>
         <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
-          Invest in your people, and you&apos;ll invest in the future of your organization. Let Haelsoft EdTech Platform help you build a workforce that&apos;s ready to tackle today&apos;s challenges and tomorrow&apos;s opportunities. To learn more about our Corporate Training programs or schedule a consultation, contact us at [your email address]. At Haelsoft, we don&apos;t just train teams; we empower them to lead, innovate, and excel.
+          Invest in your people, and you’ll invest in the future of your organization. Let Haelsoft EdTech Platform help you build a workforce that’s ready to tackle today’s challenges and tomorrow’s opportunities. To learn more about our Corporate Training programs or schedule a consultation, contact us at [your email address]. At Haelsoft, we don’t just train teams; we empower them to lead, innovate, and excel.
         </p>
         <span className='text-black font-bold text-[1.125rem] leading-[43px] w-full xl:w-[574px]'>
-          At Haelsoft, we don&apos;t just train teams; we empower them to lead, innovate, and excel.
+          At Haelsoft, we don’t just train teams; we empower them to lead, innovate, and excel.
         </span>
       </div>
     )
@@ -126,11 +133,14 @@ const page = () => {
             <div className='flex flex-col lg:flex-row justify-between items-center max-w-[1250px] mx-auto gap-20'>
                 <div className='flex flex-col justify-center items-start gap-10'>
                     <div className='flex flex-col justify-center items-start gap-8'>
-                        <h1 className='text-white font-bold text-[2.75rem] leading-[55px]'>Learn SQL</h1>
+                        <h1 className='text-white font-bold text-[2.75rem] leading-[55px]'>Learn Python</h1>
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <p className='text-white w-full xl:w-[578px] text-[1rem] font-normal leading-[30px]'>
-                        SQL (Structured Query Language) is the backbone of modern data management and analysis. From powering business decisions to building dynamic applications, SQL is a critical skill for anyone working in technology or business. At Haelsoft EdTech Platform, our Learn SQL course equips you with the knowledge and practical experience to harness the power of data effectively. Whether you're a beginner or a professional looking to enhance your data skills, this course provides the tools you need to excel in database management, analytics, and beyond.
+                        Python is more than just a programming language; it&apos;s your gateway to limitless opportunities in technology, data analysis, web development, artificial intelligence, and much more. At Haelsoft EdTech Platform, we&apos;ve designed a comprehensive Learn Python course to help individuals, professionals, and businesses unlock the full potential of this powerful language.
+                    </p>
+                    <p className='text-white w-full xl:w-[578px] text-[1rem] font-normal leading-[30px]'>
+                        Whether you&apos;re a complete beginner or looking to enhance your coding skills, our Python program is tailored to your needs, providing you with practical knowledge and hands-on experience to succeed in today&apos;s tech-driven world.
                     </p>
                     <button className='w-[194px] h-[50px] bg-[#FF8C53] border border-[#FF8C53] p-[10px] flex justify-center items-center gap-[10px] rounded text-white text-[.875rem] font-semibold leading-[30px]'>Start Free Tutorial</button>
                 </div>
@@ -152,7 +162,7 @@ const page = () => {
                         <div className='relative z-10 flex flex-col justify-center items-start gap-20'>
                             <div className='flex flex-col justify-center items-start gap-10'>
                                 <div className='flex flex-col justify-center items-start gap-4'>
-                                    <h1 className='text-white font-semibold text-[1.5rem] leading-[29.26px]'>Master the Language of Databases and Unlock Data Insights</h1>
+                                    <h1 className='text-white font-semibold text-[1.5rem] leading-[29.26px]'>Your Python Journey Starts Here</h1>
                                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                                 </div>
 
@@ -169,7 +179,7 @@ const page = () => {
                                 </div> */}
                             </div>
                             <p className='text-white text-[1rem] font-normal leading-[30px] w-full lg:w-[424px]'>
-                                Join Haelsoft’s Learn SQL course and become proficient in one of the most valuable skills in today’s data-driven world. Empower yourself to manage, analyze, and make data work for you.
+                                Take the first step toward becoming a Python expert. Join our Learn Python course today and gain the skills you need to stay ahead in the digital economy.
                             </p>
                         </div>
                         <div className='pt-[180px] flex flex-col justify-center items-start gap-8'>
@@ -180,34 +190,10 @@ const page = () => {
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                                 <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
                                     <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
-                                        SQL Fundamentals 
+                                        Python Basics
                                     </h2>
                                     <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
-                                        Understand databases, tables, rows, and columns.
-                                    </p>
-                                </div>
-                                <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
-                                    <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
-                                        Query Writing
-                                    </h2>
-                                    <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
-                                        Learn to retrieve, filter, and manipulate data with SELECT, WHERE, and JOIN statements.
-                                    </p>
-                                </div>
-                                <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
-                                    <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
-                                        Data Management
-                                    </h2>
-                                    <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
-                                        Insert, update, and delete records efficiently.
-                                    </p>
-                                </div>
-                                <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
-                                    <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
-                                        Advanced SQL Techniques
-                                    </h2>
-                                    <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
-                                        Master subqueries, indexes, and stored procedures for complex operations.
+                                        Understand syntax, variables, data types, and fundamental programming concepts.
                                     </p>
                                 </div>
                                 <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
@@ -215,15 +201,39 @@ const page = () => {
                                         Data Analysis
                                     </h2>
                                     <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
-                                        Use SQL to aggregate and analyze data, generate reports, and extract meaningful insights.
+                                        Learn how to analyze and visualize data using libraries like Pandas, NumPy, and Matplotlib.
                                     </p>
                                 </div>
                                 <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
                                     <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
-                                        Database Design
+                                        Web Development
                                     </h2>
                                     <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
-                                        Learn how to create and optimize database structures.
+                                        Build dynamic websites using frameworks like Django and Flask.
+                                    </p>
+                                </div>
+                                <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
+                                    <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
+                                        Automation
+                                    </h2>
+                                    <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
+                                        Automate repetitive tasks and processes to save time and increase efficiency.
+                                    </p>
+                                </div>
+                                <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
+                                    <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
+                                        Machine Learning
+                                    </h2>
+                                    <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
+                                        Get started with artificial intelligence by exploring Python&apos;s machine learning libraries.
+                                    </p>
+                                </div>
+                                <div className='flex flex-col justify-center items-start gap-6 w-full lg:w-[274px]'>
+                                    <h2 className='text-[#201A18] text-[.875rem] leading-[30px] font-semibold'>
+                                        API Integration
+                                    </h2>
+                                    <p className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>
+                                        Learn how to work with APIs to create powerful and integrated applications.
                                     </p>
                                 </div>
                             </div>
@@ -236,9 +246,9 @@ const page = () => {
 
 
         <section className='flex flex-col justify-center items-center gap-20 py-[100px]'>
-            <h1 className='text-[#201A18] text-[1.75rem] leading-[34.13px] font-bold'>Leading Businesses Need SQL Skills</h1>
+            <h1 className='text-[#201A18] text-[1.75rem] leading-[34.13px] font-bold'>Leading Businesses Need Python</h1>
             
-            <div className='w-full py-6 flex flex-col gap-[3em] bg-[#F2F2F2]'>
+            <div className='w-full py-6 flex flex-col gap-[3em]'>
                 
                 <div className="flex justify-center items-center gap-6 clients h-[120px]">
                     <Splide
@@ -341,35 +351,40 @@ const page = () => {
 
         <section className='max-w-[1250px] mx-auto px-6 flex flex-col justify-center items-start gap-8'>
             <div className='flex flex-col justify-center items-start gap-4'>
-                <h1 className='text-[#201A18] text-[1.75rem] leading-[34.13px] font-bold'>Why Learn SQL?</h1>
+                <h1 className='text-[#201A18] text-[1.75rem] leading-[34.13px] font-bold'>Why Learn Python?</h1>
                 <div className='bg-[#F1C118] rounded w-[56px] h-[5px]'></div>
             </div>
             <div className='w-full xl:w-[578px] flex flex-col justify-center items-start gap-10'>
                 <div className='flex justify-between items-start gap-3'>
                     <GoCheck className='text-main text-[1.5rem]' />
                     <p className='text-[#201A18] leading-[30px] text-[1rem] font-normal'>
-                        <span className='text-black font-bold'>Essential for Data Management:</span> SQL is the standard language for managing relational databases.
+                        <span className='text-black font-bold'>Beginner-Friendly Approach:</span> No prior programming knowledge required.
                     </p>
                 </div>
                 <div className='flex justify-between items-start gap-3'>
                     <GoCheck className='text-main text-[1.5rem]' />
                     <p className='text-[#201A18] leading-[30px] text-[1rem] font-normal'>
-                        <span className='text-black font-bold'>High Demand:</span> SQL skills are sought after in IT, business intelligence, data science, and software development.
+                        <span className='text-black font-bold'>Expert Instructors:</span> Learn from seasoned professionals with real-world experience.
                     </p>
                 </div>
                 <div className='flex justify-between items-start gap-3'>
                     <GoCheck className='text-main text-[1.5rem]' />
                     <p className='text-[#201A18] leading-[30px] text-[1rem] font-normal'>
-                        <span className='text-black font-bold'>Versatile Application:</span> Use SQL across various platforms, including MySQL, PostgreSQL, Microsoft SQL Server, and more.
+                        <span className='text-black font-bold'>Practical Projects:</span> Work on real-life projects to build a portfolio that showcases your skills.
                     </p>
                 </div>
                 <div className='flex justify-between items-start gap-3'>
                     <GoCheck className='text-main text-[1.5rem]' />
                     <p className='text-[#201A18] leading-[30px] text-[1rem] font-normal'>
-                        <span className='text-black font-bold'>Unlock Career Opportunities:</span> Enter high-paying roles in data analysis, engineering, and database administration.
+                        <span className='text-black font-bold'>Flexible Learning:</span> Self-paced online modules or live instructor-led classes to fit your schedule.
                     </p>
                 </div>
-                
+                <div className='flex justify-between items-start gap-3'>
+                    <GoCheck className='text-main text-[1.5rem]' />
+                    <p className='text-[#201A18] leading-[30px] text-[1rem] font-normal'>
+                        <span className='text-black font-bold'>Career Advancement:</span> Gain skills that are in high demand across industries.
+                    </p>
+                </div>
             </div>
 
             <div className="relative z-20 w-full max-w-[1200px] mx-auto flex flex-col justify-center items-center gap-20 pt-24 px-6">
@@ -438,12 +453,6 @@ const page = () => {
                 </div>
             </div>
         </section>
-        {/* <TutorialHero/> */}
-        {/* <TutorialGetStarted/> */}
-        {/* <Docs/> */}
-        {/* <CompaniesThatUse/> */}
-        {/* <Why/> */}
-        {/* <Looking/> */}
         <StartHiring contentTwo={contentTwo}/>
 
     </main>

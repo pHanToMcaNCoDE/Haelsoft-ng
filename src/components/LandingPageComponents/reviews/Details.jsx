@@ -90,12 +90,12 @@ const Details = () => {
         {slides.map((item, index) => (
           <SplideSlide
             key={index}
-            className="flex flex-col justify-center items-center w-auto"
+            className="flex flex-col justify-center items-center w-full xl:w-[333.33px] h-[612.8px]"
           >
             <div className="relative">
               <Image
-                width={325}
-                height={327}
+                width={325.33}
+                height={327.3}
                 className="rounded-tl-[5px] rounded-tr-[5px] object-cover w-full xl:w-[325px] h-[327px] rounded-tl-medium rounded-tr-medium"
                 src={item.image}
                 alt={item.name}
@@ -110,7 +110,9 @@ const Details = () => {
                 </p>
               </div>
               <div className='flex flex-col justify-center items-start gap-8'>
-                <Image width={125} height={44} className="grayscale h-[44px] object-cover" src={item.comp} alt="Afro"></Image>
+                {/* <div className='w-full'> */}
+                  <Image width={100} className="object-cover flex justify-center items-center" src={item.comp} alt="Afro"></Image>
+                {/* </div> */}
                 <button className='duration-200 hover:bg-main border border-main rounded text-main hover:text-white text-[.875rem] font-semibold w-full xl:w-[253px] h-[50px] py-[15px] px-[24px]'>Read More</button>
               </div>
               {/* <p className="text-[.875rem] leading-[21px] text-left font-normal text-[#201A18] mt-[1em]">
