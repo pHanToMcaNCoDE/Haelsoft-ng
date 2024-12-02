@@ -16,21 +16,14 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [clicked, setClicked] = useState('');
-  const [boolclick, setBoolClick] = useState(false);
-
-  const handlePageClick = () => {
-    setBoolClick(false);
-    setClicked('');
-  };
-
 
   return (
-    <main onClick={handlePageClick} className="relative">
-      <Navbar 
-        clicked={clicked} 
-        setClicked={setClicked} 
-        boolclick={boolclick} 
-        setBoolClick={setBoolClick} 
+    <main className="relative">
+      <Navbar
+        clicked={clicked}
+        setClicked={(value) => {
+          setClicked(value);
+        }}
       />
       <Hero />
       <Companies />
@@ -44,15 +37,15 @@ export default function Home() {
       <Instructors />
       <ReadyToGetStarted />
       <footer className="text-center py-4 hidden">
-        <a 
-          href="https://lordicon.com/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://lordicon.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-blue-600 underline"
         >
           Icons by Lordicon.com
         </a>
       </footer>
     </main>
-  );
+  );  
 }

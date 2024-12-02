@@ -29,7 +29,7 @@ const Companies = () => {
   return (
     <section className='w-full py-6 flex flex-col gap-[3em] bg-[#F2F2F2]'>
         
-      <div className="flex justify-center items-center gap-6 clients h-[90px]">
+      <div className="hidden xl:flex justify-center items-center gap-6 clients h-[90px]">
         <Splide
           extensions={{ AutoScroll }}
           options={{
@@ -39,6 +39,158 @@ const Companies = () => {
             pauseOnHover: false,
             pauseOnFocus: false,
             perPage: 8,
+            arrows: false,
+            pagination: false,
+            autoScroll: { pauseOnHover: false, speed: 1 },
+          }}
+          className="flex items-center justify-center w-full h-[90px] gap-20"
+          aria-label="My Favorite Images"
+        >
+          <SplideSlide className="w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={edo} alt="Edo State Government"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={esi} alt="Edo State Investment Promotion Office"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={farm} alt="Farm Industria"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={giz} alt="Giz"></Image>
+          </SplideSlide>
+
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={gro} alt="Grovane"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={fin} alt="Fincra"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={goo} alt="Google"></Image>
+          </SplideSlide>
+
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={srv} alt="SRV Grid Limited"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={ser} alt="Servo"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kle} alt="Kleenol"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kor} alt="Korahq"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kus} alt="Kusnap"></Image>
+          </SplideSlide>
+
+
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={lfi} alt="Leatherback Financials"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={min} alt="Mintyn"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={nex} alt="Nexgate Group"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={val} alt="Valdo Furniture"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={zen} alt="Zenith Bank"></Image>
+          </SplideSlide>
+        </Splide>
+      </div>
+
+
+      <div className="hidden xl:hidden lg:flex justify-center items-center gap-6 clients h-[90px]">
+        <Splide
+          extensions={{ AutoScroll }}
+          options={{
+            type: "loop",
+            gap: "30px",
+
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            perPage: 5,
+            arrows: false,
+            pagination: false,
+            autoScroll: { pauseOnHover: false, speed: 1 },
+          }}
+          className="flex items-center justify-center w-full h-[90px] gap-20"
+          aria-label="My Favorite Images"
+        >
+          <SplideSlide className="w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={edo} alt="Edo State Government"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={esi} alt="Edo State Investment Promotion Office"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={farm} alt="Farm Industria"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={giz} alt="Giz"></Image>
+          </SplideSlide>
+
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={gro} alt="Grovane"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={fin} alt="Fincra"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={goo} alt="Google"></Image>
+          </SplideSlide>
+
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={srv} alt="SRV Grid Limited"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={ser} alt="Servo"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kle} alt="Kleenol"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kor} alt="Korahq"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={kus} alt="Kusnap"></Image>
+          </SplideSlide>
+
+
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={lfi} alt="Leatherback Financials"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={min} alt="Mintyn"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={nex} alt="Nexgate Group"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={val} alt="Valdo Furniture"></Image>
+          </SplideSlide>
+          <SplideSlide className=" w-[97px] h-[80px] 2xl:h-[90px] flex items-center justify-center">
+            <Image width={150} height={150} src={zen} alt="Zenith Bank"></Image>
+          </SplideSlide>
+        </Splide>
+      </div>
+
+
+      <div className="flex lg:hidden justify-center items-center gap-6 clients h-[90px]">
+        <Splide
+          extensions={{ AutoScroll }}
+          options={{
+            type: "loop",
+            gap: "30px",
+
+            pauseOnHover: false,
+            pauseOnFocus: false,
+            perPage: 4,
             arrows: false,
             pagination: false,
             autoScroll: { pauseOnHover: false, speed: 1 },

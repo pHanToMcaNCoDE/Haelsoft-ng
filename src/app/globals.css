@@ -23,35 +23,34 @@ body {
   position: absolute;
 } */
 
+
 .fade-in {
-  opacity: 1;
-  transition: opacity 0.5s ease-in;
+  animation: fadeIn 0.3s forwards;
 }
 
 .fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
+  animation: fadeOut 0.3s backwards;
 }
 
-@keyframes fadeLeft {
+@keyframes fadeIn {
   from {
-    transform: translateX(100%);
-    opacity: 0;
+      opacity: 0;
+      /* transform: translateX(100%); */
   }
   to {
-    transform: translateX(0);
-    opacity: 1;
+      opacity: 1;
+      /* transform: translateX(0); */
   }
 }
 
-@keyframes fadeRight {
+@keyframes fadeOut {
   from {
-    transform: translateX(0);
-    opacity: 1;
+      opacity: 1;
+      /* transform: translateX(0); */
   }
   to {
-    transform: translateX(100%);
-    opacity: 0;
+      opacity: 0;
+      /* transform: translateX(100%); */
   }
 }
 

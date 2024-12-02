@@ -89,11 +89,11 @@ const Review = () => {
 
   return (
     <section className="relative alum z-[20] bg-[#f36402] min-h-screen 2xl:min-h-screen">
-      <div className='absolute z-[30] top-[-5%] w-[90%] mx-[60px] xl:left-[25%] lg:w-[960px] h-[162px] flex justify-center gap-[60px] items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
+      {/* <div className='absolute z-[30] top-[-5%] max-w-[90%] mx-3 lg:left-[25%] lg:w-[960px] h-[162px] flex justify-center gap-[60px] items-center bg-white shadow-md rounded py-[48px] px-[12px]'>
         <Image width={150} height={100} className="object-ccover" src={edo} alt="Edo State Government"></Image>
         <Image width={150} height={100} className="object-ccover" src={esi} alt="Edo State Investment Promotion Office"></Image>
         <Image width={150} height={100} className="object-ccover" src={farm} alt="Farm Industria"></Image>
-      </div>
+      </div> */}
       <div className="pt-[200px] pb-[70px] z-[30] relative flex flex-col gap-[60px]">
         <div className="container flex justify-center items-center mx-auto min-w-full relative">
           <ReactPlayer

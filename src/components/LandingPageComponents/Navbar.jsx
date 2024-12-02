@@ -3,18 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../../../public/assets/logo.svg';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
-import { CSSTransition } from 'react-transition-group';
-import Menu from './MenuData/Menu';
+import { GoArrowLeft } from 'react-icons/go';
 import Image from 'next/image';
 import Link from 'next/link';
+import Menu from './MenuData/Menu';
 import Aside from './Aside/Aside';
-import { GoArrowLeft } from 'react-icons/go';
-// import { useNavbarContext } from "@/context/NavbarContext";
 
-
-const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
-  console.log("Navbar Props:", clicked);
-
+const Navbar = ({ clicked, setClicked }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
 
@@ -24,104 +19,74 @@ const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const links = [
     { name: 'Home', link: '/' },
-    { name: 'About', link: '' },
-    { name: 'Courses', link: '' },
+    { name: 'About', link: '#' },
+    { name: 'Courses', link: '#' },
     { name: 'Blog', link: '/blogs' },
-    { name: 'Corporate', link: '' },
+    { name: 'Corporate', link: '#' },
     { name: 'Careers', link: '/careers' },
-    { name: 'Bootcamps', link: '' },
+    { name: 'Bootcamps', link: '#' },
   ];
 
-  console.log({ boolclick, setBoolClick, clicked, setClicked });
+  console.log('Clicked', clicked)
 
-
-  const toggleMenu = (e, itemName) => {
-    e.stopPropagation();
-    
-    if (typeof setBoolClick !== 'function') {
-      console.error('setBoolClick is not a function');
-      return;
-    }
-  
-    if (clicked === itemName) {
-      setClicked("");
-      setBoolClick(false);
-    } else {
-      setClicked(itemName);
-      setBoolClick(true);
-    }
-  };
-
-  console.log('toggleMenu called with:', clicked, setBoolClick);
-
-
-  
   return (
     <>
       {/* Mobile Navigation */}
-      {
-        clicked ? (
-          <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] transition-all duration-300 bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
-            <div className="container flex justify-between items-center p-2 max-w-[1200px] 2xl:max-w-[1500px] mx-auto gap-4">
-              <div onClick={() => setClicked(false)} className='cursor-pointer flex justify-center items-center text-lg gap-1 underline text-blue-500'>
-                <GoArrowLeft className="font-semibold text-base" />
-                <p>Back</p>
-              </div>
-              <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
-              <div
-                 onClick={() => {
-                  setMenu((prev) => !prev);
-                  setClicked(false);
-                }}
-                className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
-              >
-                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? 'rotate-45 translate-y-[7px]' : ''}`}></div>
-                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-opacity ${menu ? 'opacity-0' : 'opacity-100'}`}></div>
-                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
-              </div>
+      {clicked ? (
+        <nav className="navbar h-[68px] xl:hidden sticky top-0 left-0 w-full z-[990] bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
+          <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
+            <div
+              onClick={() => setClicked('')}
+              className="cursor-pointer flex justify-center items-center text-lg gap-1 underline text-blue-500"
+            >
+              <GoArrowLeft className="font-semibold text-base" />
+              <p>Back</p>
             </div>
-          </nav>
-        ) : (
-          <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] transition-all duration-300 bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
-            <div className="container flex justify-between items-center p-2 max-w-[1200px] 2xl:max-w-[1500px] mx-auto gap-4">
-              <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
+            <Image width={100} height={100} src={logo} alt="Logo" />
+            <div
+              onClick={() => {
+                setMenu((prev) => !prev);
+                setClicked('');
+              }}
+              className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
+            >
               <div
-                onClick={() => {
-                  setMenu((prev) => !prev);
-                  setClicked(false)
-                }}
-                className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
-              >
-                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? 'rotate-45 translate-y-[7px]' : ''}`}></div>
-                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-opacity ${menu ? 'opacity-0' : 'opacity-100'}`}></div>
-                <div className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${menu ? '-rotate-45 -translate-y-[7px]' : ''}`}></div>
-              </div>
+                className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${
+                  menu ? 'rotate-45 translate-y-[7px]' : ''
+                }`}
+              ></div>
+              <div
+                className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-opacity ${
+                  menu ? 'opacity-0' : 'opacity-100'
+                }`}
+              ></div>
+              <div
+                className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${
+                  menu ? '-rotate-45 -translate-y-[7px]' : ''
+                }`}
+              ></div>
             </div>
-          </nav>
-        )
-      }
+          </div>
+        </nav>
+      ) : null}
 
-      {
-        menu && (<Aside menu={menu} setMenu={setMenu} clicked={clicked} setClicked={setClicked} />)
-      }
+      {menu && <Aside menu={menu} setMenu={setMenu} clicked={clicked} setClicked={setClicked} />}
 
       {/* Desktop Navigation */}
       <nav
-        className={`navbar hidden xl:flex fixed top-0 left-0 w-full z-[990] transition-all duration-300 ${
+        className={`navbar hidden xl:flex fixed top-0 left-0 w-full z-[990] ${
           isScrolled ? 'bg-white shadow-lg' : 'bg-[#4c4f5f]/50'
         }`}
       >
-        <div className="container flex justify-between items-center p-2 max-w-[1200px] 2xl:max-w-[1500px] mx-auto">
-          <Image width={100} height={100} src={logo} alt="Logo" className="object-cover" />
+        <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
+          <Image width={100} height={100} src={logo} alt="Logo" />
           <ul
-            className={`flex gap-8 text-[1.125rem] font-normal leading-8 ${
+            className={`flex gap-8 text-[1.125rem] ${
               isScrolled ? 'text-black' : 'text-white'
             }`}
           >
@@ -130,15 +95,20 @@ const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
                 {['Courses', 'Corporate', 'Bootcamps', 'About'].includes(item.name) ? (
                   <div
                     className="flex items-center gap-1 cursor-pointer"
-                    onClick={() => setClicked((prev) => prev === item.name ? '' : item.name)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setClicked(clicked === item.name ? '' : item.name)
+                    }}
                   >
-                    <Link href={item.link || '#'} onClick={(e) => e.preventDefault()}>{item.name}</Link>
+                    <Link href={item.link}>{item.name}</Link>
                     <MdOutlineKeyboardArrowDown
-                      className={`${clicked === item.name ? 'rotate-180' : 'rotate-0'} transition-transform`}
+                      className={`transition-transform ${
+                        clicked === item.name ? 'rotate-180' : 'rotate-0'
+                      }`}
                     />
                   </div>
                 ) : (
-                  <Link href={item.link || '#'}>{item.name}</Link>
+                  <Link href={item.link}>{item.name}</Link>
                 )}
                 <span className="absolute left-0 right-0 bottom-[-13px] h-[5px] bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </li>
@@ -146,7 +116,7 @@ const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
           </ul>
           <Link
             href="/signin"
-            className={`w-[150px] h-[43px] rounded flex items-center justify-center transition-colors ${
+            className={`w-[150px] h-[43px] rounded flex items-center justify-center ${
               isScrolled ? 'bg-[#F36400] text-white' : 'bg-[#F36400] text-white'
             }`}
           >
@@ -156,14 +126,9 @@ const Navbar = ({ boolclick, setBoolClick, clicked, setClicked }) => {
       </nav>
 
       {/* Dropdown Menu */}
-      <CSSTransition
-        in={boolclick && ['Courses', 'Corporate', 'Bootcamps', 'About'].includes(clicked)}
-        timeout={300}
-        classNames="fade"
-        unmountOnExit
-      >
+      {['Courses', 'Corporate', 'Bootcamps', 'About'].includes(clicked) && (
         <Menu clicked={clicked} setClicked={setClicked} />
-      </CSSTransition>
+      )}
     </>
   );
 };
