@@ -5,7 +5,7 @@ const StartHiring = ({contentTwo}) => {
     <section className="px-5 flex flex-col lg:flex-row justify-between items-start max-w-[1250px] mx-auto py-[100px] gap-y-5 gap-x-8">
       {contentTwo}
       <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">
-        <div className="bg-[#FBFBFB] w-full xl:w-[636px] h-[877px] rounded flex flex-col justify-start items-center px-[25px] gap-[7em] py-[50px]">
+        <div className="bg-[#FBFBFB] relative z-10 w-full xl:w-[636px] h-[877px] rounded flex flex-col justify-start items-center px-[25px] gap-[7em] py-[50px]">
           <div className="flex flex-col gap-3 text-center">
             <h1 className="text-[1.75rem] text-[#F36400] leading-[43px] font-semibold">Connect with our Team</h1>
             <p className="text-[#655D59] font-normal text-[1rem] leading-6">Kindly fill in the form to get started.</p>

@@ -160,9 +160,9 @@ const AppFooter = () => {
                   <li className="text-[.75rem] font-medium">
                     Marketing Leadership
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/design-leadership-course`} className="text-[.75rem] font-medium">
                     Design Leadership
-                  </li>
+                  </Link>
                 </ul>
               </div>
             </div>
