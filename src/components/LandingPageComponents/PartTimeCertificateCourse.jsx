@@ -50,10 +50,10 @@ const PartTimeCertificateCourse = () => {
       <div className='relative z-[30] lg:bottom-[-10%] xl:bottom-[-8%] w-[90%] xl:w-[1040px] mx-auto xl:h-[276px] py-[34px] lg:py-[64px] px-[24px] lg:px-[88px] flex justify-between items-center bg-white overflow-hidden shadow-md rounded mb-8'>
         <div className="flex flex-col justify-center items-start gap-[55px] relative z-10">
           <div className="flex flex-col gap-9">
-            <h1 className="text-[3.5rem] font-bold leading-[43px] text-black">100+</h1>
+            <h1 className="text-[3.5rem] font-bold leading-[43px] text-black">54+</h1>
             <div className='w-[48px] h-[4px] rounded-full bg-[#FFCF00]'></div>
           </div>
-          <p className='text-black text-[1.25rem] font-medium'>Countries</p>
+          <p className='text-black text-[1.25rem] font-medium'>African Countries</p>
         </div>
         <Image className="absolute top-[-5%] right-[-3%] w-[80%] xl:w-auto z-[5px]" src={map} alt="World Map"></Image>
       </div>
