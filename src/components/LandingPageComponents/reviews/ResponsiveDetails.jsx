@@ -116,7 +116,7 @@ const ResponsiveDetails = () => {
               </div>
               <div className='flex flex-col justify-center items-start gap-8'>
                 
-              <Image width={150} className="object-cover" src={item.comp} alt="Afro"></Image>
+              <Image width={150} className="object-cover" src={item.comp} alt={item.compName}></Image>
                 <button className='duration-200 hover:bg-main border border-main rounded text-main hover:text-white text-[.875rem] font-semibold w-full xl:w-[253px] h-[50px] py-[15px] px-[24px]'>Read More</button>
               </div>
               {/* <p className="text-[.875rem] leading-[21px] text-left font-normal text-[#201A18] mt-[1em]">

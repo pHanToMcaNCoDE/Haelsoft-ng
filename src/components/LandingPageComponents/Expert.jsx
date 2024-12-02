@@ -24,25 +24,29 @@ const Expert = () => {
       image: user3,
       name: "Adeola Olukayode",
       role: "UI/UX Designer",
-      comp: edo
+      comp: edo,
+      compName: 'Edo State Government'
     },
     {
       image: user,
       name: "Sola Akinsan",
       role: "Project Manager",
-      comp: esi
+      comp: esi,
+      compName: 'Edo State Investment Promotion Office'
     },
     {
       image: user4,
       name: "Adaora Okoli",
       role: "Full-Stack Developer",
-      comp: farm
+      comp: farm,
+      compName: 'Farm Industria'
     },
     {
       image: user2,
       name: "Samuel Micheal",
       role: "Data Scientist",
-      comp: giz
+      comp: giz,
+      compName: 'Giz'
     },
   ];
 
@@ -91,7 +95,7 @@ const Expert = () => {
                     {item.role}
                   </p>
                 </div>
-                <Image width={100} className="object-cover" src={item.comp} alt="Afro"></Image>
+                <Image width={100} className="object-cover" src={item.comp} alt='Company'></Image>
               </div>
               {/* <div> */}
               {/* </div> */}

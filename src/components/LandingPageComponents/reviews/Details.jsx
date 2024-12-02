@@ -111,7 +111,7 @@ const Details = () => {
               </div>
               <div className='flex flex-col justify-center items-start gap-8'>
                 {/* <div className='w-full'> */}
-                  <Image width={100} className="object-cover flex justify-center items-center" src={item.comp} alt="Afro"></Image>
+                  <Image width={100} className="object-cover flex justify-center items-center" src={item.comp} alt={item.compName}></Image>
                 {/* </div> */}
                 <button className='duration-200 hover:bg-main border border-main rounded text-main hover:text-white text-[.875rem] font-semibold w-full xl:w-[253px] h-[50px] py-[15px] px-[24px]'>Read More</button>
               </div>
