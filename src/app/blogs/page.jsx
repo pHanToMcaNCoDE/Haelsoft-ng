@@ -9,13 +9,9 @@ const Blogs = () => {
   const [clicked, setClicked] = useState('');
   const [boolclick, setBoolClick] = useState(false);
 
-  const handlePageClick = () => {
-    setBoolClick(false);
-    setClicked('');
-  };
 
   return (
-    <main onClick={handlePageClick} className='relative'>
+    <main className='relative'>
       <Navbar 
         clicked={clicked} 
         setClicked={setClicked} 

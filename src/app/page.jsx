@@ -12,10 +12,17 @@ import Review from "@/components/LandingPageComponents/reviews/Review";
 import BenefitsOnline from "@/components/LandingPageComponents/BenefitsOnline";
 import Bootcamps from "@/components/LandingPageComponents/Bootcamps";
 import ReadyToGetStarted from "@/components/LandingPageComponents/ReadyToGetStarted";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const [clicked, setClicked] = useState('');
+  let courses = useRef(null);
+
+  const scrollToCourses = () => {
+    if(courses.current){
+      courses.current.scrollIntoView({behavior: 'smooth'})
+    }
+  }
 
   return (
     <main className="relative">
@@ -25,9 +32,11 @@ export default function Home() {
           setClicked(value);
         }}
       />
-      <Hero />
+      <Hero scrollToCourses={scrollToCourses} />
       <Companies />
-      <Courses />
+      <section ref={courses}>
+        <Courses />
+      </section>
       <Review />
       <Network />
       <ResponsiveNetwork />

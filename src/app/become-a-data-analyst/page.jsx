@@ -10,13 +10,9 @@ const page = () => {
   const [clicked, setClicked] = useState('');
   const [boolclick, setBoolClick] = useState(false);
 
-  const handlePageClick = () => {
-    setBoolClick(false);
-    setClicked('');
-  };
 
   return (
-    <main className="relative w-full" onClick={handlePageClick}>
+    <main className="relative w-full">
       <Navbar
         clicked={clicked}
         setClicked={setClicked}

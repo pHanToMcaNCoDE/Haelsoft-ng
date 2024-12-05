@@ -16,7 +16,7 @@ const AppFooter = () => {
     return null;
   }
   return (
-    <footer className="bg-[#f36402] min-h-[62vh] md:min-h-[20vh] lg:min-h-[62vh] py-[2em]">
+    <footer className="bg-[#f36402] min-h-[62vh] md:min-h-[20vh] lg:min-h-[62vh] py-[2em] relative z-10">
       <div className="bg-white h-[2px] max-w-[1040px] mx-auto rounded-full"></div>
       <div className="flex flex-col md:flex-row justify-between items-start py-[72px] text-white lg:gap-x-4 max-w-[1064px] mx-auto px-6 xl:px-0">
         {/* <div className="bg-white h-[1px] w-full rounded-full"></div> */}
@@ -154,12 +154,12 @@ const AppFooter = () => {
               <div className='flex flex-col justify-center items-start gap-3'>
                 <h2 className="text-[.875rem] font-bold">Leadership Courses</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/product-leadership-course`} className="text-[.75rem] font-medium">
                     Product Leadership
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/marketing-leadership-course`}  className="text-[.75rem] font-medium">
                     Marketing Leadership
-                  </li>
+                  </Link>
                   <Link href={`/design-leadership-course`} className="text-[.75rem] font-medium">
                     Design Leadership
                   </Link>

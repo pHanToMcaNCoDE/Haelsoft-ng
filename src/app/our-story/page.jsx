@@ -14,13 +14,10 @@ const page = () => {
   const [clicked, setClicked] = useState('');
   const [boolclick, setBoolClick] = useState(false);
 
-  const handlePageClick = () => {
-    setBoolClick(false);
-    setClicked('');
-  };
+
 
   return (
-    <main onClick={handlePageClick}>
+    <main>
       <Navbar 
         clicked={clicked} 
         setClicked={setClicked} 

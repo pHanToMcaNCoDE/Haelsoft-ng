@@ -44,10 +44,7 @@ const page = () => {
     const [clicked, setClicked] = useState('');
     const [boolclick, setBoolClick] = useState(false);
   
-    const handlePageClick = () => {
-      setBoolClick(false);
-      setClicked('');
-    };
+
 
     const [activeTab, setActiveTab] = useState(0);
 
@@ -122,7 +119,7 @@ const page = () => {
     )
 
   return (
-    <main onClick={handlePageClick}>
+    <main>
         <Navbar 
         clicked={clicked} 
         setClicked={setClicked} 

@@ -19,10 +19,7 @@ const page = () => {
   const [clicked, setClicked] = useState('');
   const [boolclick, setBoolClick] = useState(false);
 
-  const handlePageClick = () => {
-    setBoolClick(false);
-    setClicked('');
-  };
+
 
   const content = (
     <div className="relative z-10 flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
@@ -50,7 +47,7 @@ const page = () => {
 
 
   return (
-    <main onClick={handlePageClick}>
+    <main>
       <Navbar 
         clicked={clicked} 
         setClicked={setClicked} 

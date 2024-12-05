@@ -28,14 +28,9 @@ const page = () => {
 
   const [clicked, setClicked] = useState('');
 
-  const handleClickOutside = () => {
-    if (clicked) {
-      setClicked('');
-    }
-  };
 
   return (
-    <section onClick={handleClickOutside} className='relative'>
+    <section className='relative'>
       <Navbar setClicked={setClicked} clicked={clicked}/>
       <div className="bg-white shadow-xl absolute top-[25%] left-[50px] xl:left-[200px] py-[40px] px-[48px] w-[90%] xl:w-[1040px] h-[292px] rounded gap-4 z-40">
         {/* <div className='max-w-[1200px] 2xl:max-w-[1530px] mx-auto'> */}

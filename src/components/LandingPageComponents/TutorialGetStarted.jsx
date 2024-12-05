@@ -35,7 +35,7 @@ const TutorialGetStarted = () => {
                             </div> */}
                         </div>
                         <p className='text-white text-[1rem] font-normal leading-[30px] w-full lg:w-[424px]'>
-                            Join Haelsoft’s Learn SQL course and become proficient in one of the most valuable skills in today’s data-driven world. Empower yourself to manage, analyze, and make data work for you.
+                            Join Haelsoft&apos;s Learn SQL course and become proficient in one of the most valuable skills in today&apos;s data-driven world. Empower yourself to manage, analyze, and make data work for you.
                         </p>
                     </div>
                     <div className='pt-[180px] flex flex-col justify-center items-start gap-8'>

@@ -100,7 +100,7 @@ const Navbar = ({ clicked, setClicked }) => {
                       setClicked(clicked === item.name ? '' : item.name)
                     }}
                   >
-                    <Link href={item.link}>{item.name}</Link>
+                    <span>{item.name}</span>
                     <MdOutlineKeyboardArrowDown
                       className={`transition-transform ${
                         clicked === item.name ? 'rotate-180' : 'rotate-0'
