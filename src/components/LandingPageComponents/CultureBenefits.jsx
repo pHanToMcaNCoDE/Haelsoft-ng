@@ -1,5 +1,5 @@
 import React from 'react'
-import img from '../../../public/assets/EdTech Platform (5).svg';
+import img from '../../../public/assets/EdTech Platform (5) 2.svg';
 import Image from 'next/image';
 
 const CultureBenefits = () => {
