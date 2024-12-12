@@ -1,14 +1,24 @@
 'use client'
 
 import Navbar from '@/components/LandingPageComponents/Navbar';
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import img from '../../../public/EdTech Platform Vector 13.svg';
 import Image from 'next/image';
 import GetStarted from '@/components/LandingPageComponents/GetStarted';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
+import Link from 'next/link';
 
 const page = () => {
     const [clicked, setClicked] = useState('');
     const [boolclick, setBoolClick] = useState(false);
+
+    let consultRef = useRef(null);
+
+    const scrollToConsult = () => {
+        if(consultRef.current){
+          consultRef.current.scrollIntoView({behavior: 'smooth'})
+        }
+      }
   
   
   return (
@@ -19,7 +29,7 @@ const page = () => {
             boolclick={boolclick} 
             setBoolClick={setBoolClick} 
         />
-        <section className='w-full overflow-hidden min-h-screen'>
+        <section ref={consultRef} className='w-full overflow-hidden min-h-screen'>
             <Image width={1440} height={830} className='object-cover w-full absolute z-[5px] h-screen xl:h-auto' src={img} alt='Background Image'></Image>
             <div className='pt-[200px] px-6 xl:px-0 flex flex-col lg:flex-row justify-end items-start gap-10 max-w-[1250px] mx-auto'>
                 <div className='flex flex-col justify-center items-start gap-2 relative z-10 w-full xl:w-[50%]'>
@@ -139,6 +149,44 @@ const page = () => {
                 <p className='text-[#655D59] text-base font-normal leading-[30px]'>
                     Apply your skills by working on real-world projects, participating in data science competitions, or contributing to open-source projects. This will help you build a portfolio that demonstrates your expertise and increases your employability.
                 </p>
+            </div>
+        </section>
+
+        <div className='flex flex-col justify-between items-center gap-10 max-w-[1250px] mx-auto pb-[80px] px-6 xl:px-0'>
+            <div className='bg-[#FF8C53] w-full xl:w-[1242px] mx-auto border-[2px] border-[#FF8C53] h-[1px] rounded'></div>
+            <div className='w-full flex flex-col md:flex-row justify-between items-center pt-[10px]'>
+                <div className='flex flex-col justify-center items-start gap-2'>
+                    <Link href={`/become-a-ux-designer`} className='text-[#201A18] leading-[30px] font-normal text-[.75rem] flex justify-center items-center gap-2'>
+                        <FaArrowLeft />
+                        Previous
+                    </Link>
+                    <p className='text-[#F36400] leading-[30px] font-semibold text-[.875rem]'>Become a UX Designer</p>
+                </div>
+                <div className='flex flex-col justify-center items-start gap-2'>
+                    <Link href={`/become-a-product-manager`} className='text-[#201A18] leading-[30px] font-normal text-[.75rem] flex justify-center items-center gap-2'>
+                        Next
+                        <FaArrowRight />
+                    </Link>
+                    <p className='text-[#F36400] leading-[30px] font-semibold text-[.875rem]'>Become a Product Manager</p>
+                </div>
+            </div>
+        </div>
+
+        <section className='w-full bg-[#E1884A] py-[100px] px-6 xl:px-0 xl:h-[624px]'>
+            <div className='max-w-[1250px] mx-auto flex flex-col justify-center items-center gap-20'>
+                <div className='w-full xl:w-[514px] flex flex-col justify-center items-center gap-20'>
+                    <div className='text-center w-full xl:w-[514px] flex flex-col justify-center items-center gap-3'>
+                        <h2 className='text-white text-[1rem] leading-[30px] font-normal uppercase'>get started</h2>
+                        <div className='flex flex-col justify-center items-center gap-4'>
+                            <h1 className='text-white leading-[34.13px] lg:leading-[55.5px] text-[1.75rem] lg:text-[2.5rem] font-bold'>Kickstart your Software Engineer Career</h1>
+                            <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
+                        </div>
+                        <p className='text-white text-[1rem] lg:text-[1.125rem] leading-[30px] font-normal'>
+                        Data is the currency of the future. With Haelsoft EdTech, you’ll gain the skills, confidence, and network to succeed in this thriving field.                        </p>
+                    </div>
+
+                    <button onClick={scrollToConsult} className='bg-[#F36400] w-[221px] h-[50px] text-white leading-[30px] text-[.875rem] font-semibold gap-[10px] p-[10px] rounded border border-[#FF8C53]'>Request a Consultation</button>
+                </div>
             </div>
         </section>
     </main>

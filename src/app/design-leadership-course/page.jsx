@@ -16,6 +16,7 @@ import impact from '../../../public/assets/leadership-icons/Mask Group EdTech Pl
 import lead from '../../../public/assets/leadership-icons/EdTech Platform Mask Group.svg';
 import growth from '../../../public/assets/leadership-icons/Mask Group EdTech Platform (2).svg';
 import { FaLightbulb, FaPalette, FaRocket, FaUserTie } from 'react-icons/fa6';
+import Image from 'next/image';
 
 
 const page = () => {

@@ -29,68 +29,57 @@ const Explore = ({ courses }) => {
   });
 
   return (
-    <section className="max-w-[1250px] 2xl:max-w-[1500px] mx-auto p-3 lg:p-0 gap-6">
-      <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-center gap-5 my-10">
-        <div className="flex justify-between items-center gap-3">
-          <button onClick={() => handleCategoryClick()} className="bg-main text-white text-[.85rem] font-medium leading-5 rounded-full py-2 px-8">
-            Trending
-          </button>
-          <button onClick={() => handleCategoryClick("Development")} className="bg-main text-white text-[.85rem] font-medium leading-5 rounded-full py-2 px-8">
-            Development
-          </button>
-          <button onClick={() => handleCategoryClick("Design")} className="bg-main text-white text-[.85rem] font-medium leading-5 rounded-full py-2 px-8">
-            Design
-          </button>
-          <button onClick={() => handleCategoryClick("Marketing")} className="bg-main text-white text-[.85rem] font-medium leading-5 rounded-full py-2 px-8">
-            Marketing
-          </button>
-        </div>
+    <section className="max-w-[1250px] 2xl:max-w-[1500px] mx-auto p-3 lg:p-0 gap-2">
+      <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-center gap-3 my-5">
+        <div className="text-[#201A18] font-bold text-[1.5rem] lg:text-[2rem] leading-[45px] flex flex-col md:flex-row justify-between w-full items-start md:items-center gap-5 my-5">
+        <h1>All Courses</h1>
         <div className="relative">
-          <div
-            onClick={() => setClickFilter((prev) => !prev)}
-            className="z-40 bg-white relative w-[169px] h-[38px] rounded-lg px-4 py-5 flex justify-between items-center cursor-pointer"
-          >
-            <p className="text-lg text-[#201A18] leading-[46px] font-medium">Filter</p>
-            <IoIosArrowDown
-              size={20}
-              className={`duration-200 cursor-pointer text-main ${clickFilter ? "rotate-[180deg]" : "rotate-0"}`}
-            />
-          </div>
-          <div
-            className={`absolute flex gap-4 flex-col justify-center items-start right-0 duration-200 w-full md:w-[169px] shadow-lg shadow-slate-200 mt-2 rounded-lg bg-white ${
-              clickFilter ? "opacity-100 z-30" : "opacity-0 z-0"
-            }`}
-          >
-            <p
-              onClick={() => handleFilterClick({ key: "level", value: "Beginner" })}
-              className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+            <div
+              onClick={() => setClickFilter((prev) => !prev)}
+              className="z-40 bg-white border border-[#e0e0e0] relative w-[189px] h-[38px] rounded-lg px-4 py-5 flex justify-between items-center cursor-pointer"
             >
-              Level
-            </p>
-            <p
-              onClick={() => handleFilterClick({ key: "price", value: "Free" })}
-              className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+              <p className="text-lg text-[#201A18] leading-[46px] font-medium">Filter</p>
+              <IoIosArrowDown
+                size={20}
+                className={`duration-200 cursor-pointer text-main ${clickFilter ? "rotate-[180deg]" : "rotate-0"}`}
+              />
+            </div>
+            <div
+              className={`absolute flex gap-4 flex-col justify-center items-start right-0 duration-200 w-full md:w-[189px] shadow-lg shadow-slate-200 mt-2 rounded-lg bg-white ${
+                clickFilter ? "opacity-100 z-30" : "opacity-0 z-0"
+              }`}
             >
-              Price
-            </p>
-            <p
-              onClick={() => handleFilterClick({ key: "duration", value: "Short" })}
-              className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
-            >
-              Duration
-            </p>
-            <p
-              onClick={() => handleFilterClick({ key: "popularity", value: "Most Popular" })}
-              className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
-            >
-              Most Popular
-            </p>
-            <p
-              onClick={() => handleFilterClick({ key: "rating", value: "Highest Rated" })}
-              className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
-            >
-              Most Rated
-            </p>
+              <p
+                onClick={() => handleFilterClick({ key: "level", value: "Beginner" })}
+                className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+              >
+                Level
+              </p>
+              <p
+                onClick={() => handleFilterClick({ key: "price", value: "Free" })}
+                className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+              >
+                Price
+              </p>
+              <p
+                onClick={() => handleFilterClick({ key: "duration", value: "Short" })}
+                className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+              >
+                Duration
+              </p>
+              <p
+                onClick={() => handleFilterClick({ key: "popularity", value: "Most Popular" })}
+                className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+              >
+                Most Popular
+              </p>
+              <p
+                onClick={() => handleFilterClick({ key: "rating", value: "Highest Rated" })}
+                className="cursor-pointer text-[1.25rem] font-medium leading-7 text-[#7F7571] hover:text-white hover:bg-main duration-100 rounded-lg py-2 px-3 w-full"
+              >
+                Most Rated
+              </p>
+            </div>
           </div>
         </div>
       </div>

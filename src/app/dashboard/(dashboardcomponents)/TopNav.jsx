@@ -44,7 +44,7 @@ const TopNav = () => {
   };
 
   return (
-    <div className="bg-white border-b border-50 min-h-[4rem] lg:p-[26px] px-4 sticky flex flex-col top-0 z-50 py-2 gap-y-6">
+    <div className="bg-white border-b border-b-[#d0cfcf] min-h-[4rem] lg:p-[26px] px-4 sticky flex flex-col top-0 z-50 py-2 gap-y-6">
       <div className="flex items-center justify-between w-full gap-x-4 max-w-[1300px] 2xl:max-w-[1550px] mx-auto">
         <div className="flex gap-x-4 justify-center items-center">
           <Link href={`/dashboard/home`}>

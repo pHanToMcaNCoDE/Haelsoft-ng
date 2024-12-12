@@ -25,11 +25,11 @@ const ExploreCourseCards = ({ courses, rating, setRating }) => {
       {courses.map((course, index) => (
         <div
           key={index}
-          className="p-3 bg-white hover:shadow-gray-200 shadow-sm w-full md:w-[304px] lg:min-h-[320px] border border-[#F0F0F0] rounded-2xl flex flex-col gap-6 items-start cursor-pointer"
+          className="p-3 bg-white w-full md:w-[304px] 2xl:w-[90%] lg:min-h-[320px] 2xl:h-[365px] border-[2px] border-[#cfcece] rounded-[12px] flex flex-col gap-6 items-start cursor-pointer"
         >
           <div className="w-full gap-4 flex flex-col">
           <Image width={523}
-          height={200}
+          height={300}
         
               className="object-contain rounded-lg"
               src={
@@ -50,8 +50,8 @@ const ExploreCourseCards = ({ courses, rating, setRating }) => {
                   value={rating}
                   onChange={setRating}
                 />
-                <p className="text-[#655D59] font-medium text-[.75rem] leading-[18px]">
-                  {course.price}
+                <p className="text-[#655D59] font-medium text-[.75rem] leading-[18px] flex justify-center items-center gap-2">
+                  ₦{course.price}
                 </p>
               </div>
 

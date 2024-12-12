@@ -59,7 +59,7 @@ const HomePage = () => {
   }
 
   return (
-    <section className='p-3 bg-[#f0f0f0]'>
+    <section className='p-3 bg-white'>
       {(loadingCategories || loadingCourses) ? (
         <Loading />
       ) : (
