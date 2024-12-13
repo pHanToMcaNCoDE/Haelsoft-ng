@@ -12,6 +12,11 @@ import phone from "../../public/assets/courseicons/Mobile_Button.svg";
 import code from '../../public/assets/courseicons/Code.svg';
 
 
+import can from '../../public/assets/bootcamp/candidate.svg';
+import flex from '../../public/assets/bootcamp/flexibility.svg';
+import sol from '../../public/assets/bootcamp/solution.svg';
+
+
 export const courseDetails = {
     dataScience: {
             "course_title": "Data Science",
@@ -1032,3 +1037,398 @@ export const faqs = [
         ans: 'Yes, upon successful completion of a course, you will receive a digital certificate that you can share on your LinkedIn profile, resume, or portfolio.'
     },
 ]
+
+
+export const bootcampUX = [
+    {
+        id: 1,
+        name: 'User Research & Personas',
+        desc: 'Understand your audience through interviews, surveys, and data analysis.',
+        img: can
+    },
+    {
+        id: 2,
+        name: 'Wireframing & Prototyping',
+        desc: 'Create low- and high-fidelity designs using tools like Figma and Adobe XD.',
+        img: flex
+    },
+    {
+        id: 3,
+        name: 'Design Thinking',
+        desc: 'Approach problem-solving with a user-first mindset.',
+        img: sol
+    },
+    {
+        id: 4,
+        name: 'Usability Testing',
+        desc: 'Conduct and analyze tests to improve your designs.',
+        img: can
+    },
+    {
+        id: 5,
+        name: 'Interaction  Design',
+        desc: 'Learn the principles of designing intuitive interactions.',
+        img: flex
+    },
+    {
+        id: 6,
+        name: 'Information Architecture',
+        desc: 'Organize content to create seamless user journeys.',
+        img: sol
+    },
+    {
+        id: 7,
+        name: 'Visual Design Principles',
+        desc: 'Master typography, color theory, and layout for stunning designs.',
+        img: can
+    },
+]
+
+
+export const featuresUx = [
+    {
+        id: 1,
+        name: 'Duration',
+        desc: '12-16 weeks (full-time or part-time options)'
+    },
+    {
+        id: 2,
+        name: 'Certification',
+        desc: 'Earn a recognized Data Science certification upon completion'
+    },
+    {
+        id: 3,
+        name: 'Mode',
+        desc: 'Online'
+    },
+    {
+        id: 4,
+        name: 'Live Projects',
+        desc: 'Collaborate on industry-inspired projects and build a job-ready portfolio'
+    },
+    {
+        id: 5,
+        name: 'Mentorship',
+        desc: 'Access one-on-one guidance from industry professionals'
+    },
+]
+
+export const whoUx = [
+    {
+        id: 1,
+        list: 'Beginners passionate about starting a career in UX design.'
+    },
+    {
+        id: 2,
+        list: 'Graphic designers looking to transition into UX roles.'
+    },
+    {
+        id: 3,
+        list: 'Tech enthusiasts eager to design user-friendly interfaces.'
+    },
+    {
+        id: 4,
+        list: 'Entrepreneurs aiming to create user-centered digital products.'
+    },
+]
+
+
+export const bootcampDM = [
+    {
+        id: 1,
+        name: 'Optimize websites to rank higher on search',
+        desc: 'Optimize websites to rank higher on search engines.',
+        img: can
+    },
+    {
+        id: 2,
+        name: 'Pay-Per-Click (PPC) Advertising',
+        desc: 'Clearn to create and manage paid ad campaigns on platforms like Google Ads.',
+        img: flex
+    },
+    {
+        id: 3,
+        name: 'Social Media Marketing',
+        desc: 'Master platforms like Facebook, Instagram, LinkedIn, and TikTok..',
+        img: sol
+    },
+    {
+        id: 4,
+        name: 'Content Marketing',
+        desc: 'Create engaging blogs, videos, and infographics that drive engagement.',
+        img: can
+    },
+    {
+        id: 5,
+        name: 'Email Marketing',
+        desc: 'Build effective email campaigns that nurture leads and drive conversions.',
+        img: flex
+    },
+    {
+        id: 6,
+        name: 'Web Analytics',
+        desc: 'Track and analyze campaign performance using tools like Google Analytics.',
+        img: sol
+    },
+    {
+        id: 7,
+        name: 'Marketing Strategy',
+        desc: 'Develop data-driven strategies that align with business goals.',
+        img: can
+    },
+]
+
+
+export const featuresDM = [
+    {
+        id: 1,
+        name: 'Duration',
+        desc: '12-16 weeks (full-time or part-time options)'
+    },
+    {
+        id: 2,
+        name: 'Certification',
+        desc: 'Earn a recognized Data Science certification upon completion'
+    },
+    {
+        id: 3,
+        name: 'Mode',
+        desc: 'Online'
+    },
+    {
+        id: 4,
+        name: 'Live Projects',
+        desc: 'Work on real campaigns for businesses to gain hands-on experience'
+    },
+    {
+        id: 5,
+        name: 'Mentorship',
+        desc: 'Connect with industry experts and peers'
+    },
+]
+
+export const whoDM = [
+    {
+        id: 1,
+        list: 'Beginners interested in starting a career in digital marketing.'
+    },
+    {
+        id: 2,
+        list: 'Entrepreneurs looking to grow their businesses online.'
+    },
+    {
+        id: 3,
+        list: 'Marketing professionals seeking to upgrade their digital skills.'
+    },
+    {
+        id: 4,
+        list: 'Freelancers and creative professionals aiming to diversify their expertise.'
+    },
+]
+
+
+
+
+
+export const bootcampDS = [
+    {
+        id: 1,
+        name: 'Python & R Programming',
+        desc: 'Learn essential programming languages for data analysis..',
+        img: can
+    },
+    {
+        id: 2,
+        name: 'Data Visualization',
+        desc: 'Create compelling visuals using tools like Tableau and Power BI.',
+        img: flex
+    },
+    {
+        id: 3,
+        name: 'Statistical Analysis',
+        desc: 'Understand the numbers behind the data with advanced statistical techniques.',
+        img: sol
+    },
+    {
+        id: 4,
+        name: 'Machine Learning',
+        desc: 'Build predictive models using algorithms like regression, clustering, and neural networks.',
+        img: can
+    },
+    {
+        id: 5,
+        name: 'Big Data Tools',
+        desc: 'Work with Hadoop, Spark, and cloud platforms for large-scale data analysis.',
+        img: flex
+    },
+    {
+        id: 6,
+        name: 'Data Wrangling',
+        desc: 'Clean and prepare data for analysis.',
+        img: sol
+    },
+    {
+        id: 7,
+        name: 'SQL',
+        desc: 'Manage and query databases efficiently.',
+        img: can
+    },
+]
+
+
+
+export const featuresDS = [
+    {
+        id: 1,
+        name: 'Duration',
+        desc: '12-16 weeks (full-time or part-time options)'
+    },
+    {
+        id: 2,
+        name: 'Certification',
+        desc: 'Earn a recognized Data Science certification upon completion'
+    },
+    {
+        id: 3,
+        name: 'Mode',
+        desc: 'Online'
+    },
+    {
+        id: 4,
+        name: 'Live Projects',
+        desc: 'Collaborate on industry-inspired projects and build a job-ready portfolio'
+    },
+    {
+        id: 5,
+        name: 'Mentorship',
+        desc: 'Access one-on-one guidance from industry professionals'
+    },
+]
+
+
+export const whoDS = [
+    {
+        id: 1,
+        list: 'Beginners interested in breaking into data science.'
+    },
+    {
+        id: 2,
+        list: 'Professionals seeking to upskill or transition to a data-driven role.'
+    },
+    {
+        id: 3,
+        list: 'Entrepreneurs aiming to harness data for business growth.'
+    },
+    {
+        id: 4,
+        list: 'Tech enthusiasts passionate about using data to solve real-world problems.'
+    },
+]
+
+
+
+
+
+export const bootcampCY = [
+    {
+        id: 1,
+        name: 'Cybersecurity Fundamentals',
+        desc: 'Understand the principles of confidentiality, integrity, and availability.',
+        img: can
+    },
+    {
+        id: 2,
+        name: 'Network Security',
+        desc: 'Learn how to protect data and systems in enterprise networks.',
+        img: flex
+    },
+    {
+        id: 3,
+        name: 'Ethical Hacking & Penetration Testing',
+        desc: 'Test systems for vulnerabilities using tools like Metasploit and Wireshark.',
+        img: sol
+    },
+    {
+        id: 4,
+        name: 'Threat Detection & Response',
+        desc: 'Develop strategies to detect and respond to cyberattacks in real time.',
+        img: can
+    },
+    {
+        id: 5,
+        name: 'Risk Assessment & Management',
+        desc: 'Learn how to identify, analyze,  and mitigate potential security risks.',
+        img: flex
+    },
+    {
+        id: 6,
+        name: 'Cloud Security',
+        desc: 'Secure cloud environments and data.',
+        img: sol
+    },
+    {
+        id: 7,
+        name: 'Cyber Law and Compliance',
+        desc: 'Understand global regulations, including GDPR, HIPAA, and ISO standards.',
+        img: can
+    },
+]
+
+
+
+
+export const featuresCY = [
+    {
+        id: 1,
+        name: 'Duration',
+        desc: '12-16 weeks (full-time or part-time options)'
+    },
+    {
+        id: 2,
+        name: 'Certification',
+        desc: 'Earn an industry-recognized certificate upon completion.'
+    },
+    {
+        id: 3,
+        name: 'Mode',
+        desc: 'Online'
+    },
+    {
+        id: 4,
+        name: 'Live Projects',
+        desc: 'Kali Linux, Splunk, Nessus, Burp Suite, and more.'
+    },
+    {
+        id: 5,
+        name: 'Mentorship',
+        desc: 'Access one-on-one guidance from industry professionals'
+    },
+]
+
+
+
+export const whoCY = [
+    {
+        id: 1,
+        list: 'Aspiring cybersecurity professionals with no prior experience.'
+    },
+    {
+        id: 2,
+        list: 'IT professionals looking to upskill and transition into cybersecurity roles.'
+    },
+    {
+        id: 3,
+        list: 'Entrepreneurs wanting to secure their businesses’ digital assets.'
+    },
+    {
+        id: 4,
+        list: 'Anyone passionate about fighting cybercrime and protecting digital systems.'
+    },
+]
+
+
+
+
+
+
+

@@ -83,7 +83,7 @@ const GetStarted = () => {
     };
 
     return (
-        <section className='w-full shadow-2xl'>
+        <section className='w-full'>
             {/* <div className='max-w-[1250px] mx-auto px-5 py-[100px] flex flex-col md:flex-row justify-between items-center gap-10 md:gap-4'> */}
                 {/* <div className='w-full md:w-[40%] xl:w-[50%] md:h-[663px] flex flex-col gap-6'>
                     <h1 className='text-[1.75rem] text-white leading-[43px] font-semibold text-center md:text-left'>

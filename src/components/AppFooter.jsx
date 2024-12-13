@@ -56,18 +56,18 @@ const AppFooter = () => {
                   <li className="text-[.75rem] font-medium">
                     Software Engineering  /  Web Development
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/cybersecurity-bootcamp`} className="text-[.75rem] font-medium">
                     Cybersecurity
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/ux-bootcamp`} className="text-[.75rem] font-medium">
                     User Experience Design
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/data-science-bootcamp`} className="text-[.75rem] font-medium">
                     Data Science
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/digital-marketing-bootcamp`} className="text-[.75rem] font-medium">
                     Digital Marketing
-                  </li>
+                  </Link>
                 </ul>
               </div>
               <div className='flex flex-col justify-center items-start gap-3'>
