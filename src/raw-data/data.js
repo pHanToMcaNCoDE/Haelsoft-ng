@@ -1429,6 +1429,94 @@ export const whoCY = [
 
 
 
+export const bootcampSE = [
+    {
+        id: 1,
+        name: 'Intensive, Industry-Focused Training',
+        desc: 'Learn the latest tools, frameworks, and programming languages demanded by employers.',
+        img: can
+    },
+    {
+        id: 2,
+        name: 'Hands-On Projects',
+        desc: 'Work on real-world challenges, from coding applications to developing full-stack websites.',
+        img: flex
+    },
+    {
+        id: 3,
+        name: 'Expert-Led Instruction',
+        desc: 'Learn from experienced software engineers and web developers who bring industry insights to the classroom.',
+        img: sol
+    },
+    {
+        id: 4,
+        name: 'Career Support',
+        desc: 'Receive personalized resume reviews, interview preparation, and access to a network of hiring partners.',
+        img: can
+    },
+    {
+        id: 5,
+        name: 'Flexible Learning Options',
+        desc: 'Choose between in-person, online, or hybrid learning to fit your schedule.',
+        img: flex
+    }
+]
+
+
+
+export const featuresSE = [
+    {
+        id: 1,
+        name: 'Duration',
+        desc: '12-16 weeks (full-time or part-time options)'
+    },
+    {
+        id: 2,
+        name: 'Certification',
+        desc: 'Earn an industry-recognized certificate upon completion.'
+    },
+    {
+        id: 3,
+        name: 'Mode',
+        desc: 'Online'
+    },
+    {
+        id: 4,
+        name: 'Live Projects',
+        desc: 'Earn an industry-recognized certificate upon completion'
+    },
+    {
+        id: 5,
+        name: 'Support',
+        desc: 'Access one-on-one mentorship and career coaching'
+    },
+]
+
+
+
+export const whoSE = [
+    {
+        id: 1,
+        list: 'Beginners with no coding experience looking to break into tech.'
+    },
+    {
+        id: 2,
+        list: 'Professionals seeking to transition into software engineering or web development.'
+    },
+    {
+        id: 3,
+        list: 'Entrepreneurs aiming to build their own tech solutions.'
+    },
+    {
+        id: 4,
+        list: 'Tech enthusiasts eager to advance their coding skills.'
+    },
+]
+
+
+
+
+
 
 
 

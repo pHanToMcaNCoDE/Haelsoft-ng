@@ -53,9 +53,9 @@ const AppFooter = () => {
               <div className='flex flex-col justify-center items-start gap-3'>
                 <h2 className="text-[.875rem] font-bold">Bootcamps</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/software-engineering-bootcamp`} className="text-[.75rem] font-medium">
                     Software Engineering  /  Web Development
-                  </li>
+                  </Link>
                   <Link href={`/cybersecurity-bootcamp`} className="text-[.75rem] font-medium">
                     Cybersecurity
                   </Link>
