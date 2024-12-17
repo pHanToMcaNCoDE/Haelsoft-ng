@@ -1658,30 +1658,30 @@ export const webWhy = [
         id: 1,
         name: 'Comprehensive Curriculum',
         desc: 'Cover the entire spectrum of web development, from basics to advanced topics.',
-        icon: <FaBookOpen className='text-[1.5rem] text-main' />
+        icon: <FaBookOpen className='text-[2rem] text-main' />
     },
     {
         id: 2,
         name: 'Hands-On Learning',
         desc: 'Build real-world projects to showcase your skills.',
-        icon: <FaLaptopCode className='text-[1.5rem] text-main' />
+        icon: <FaLaptopCode className='text-[2rem] text-main' />
     },
     {
         id: 3,
         name: 'Expert Instructors',
         desc: 'Learn from industry professionals with years of practical experience.',
-        icon: <FaChalkboardTeacher className='text-[1.5rem] text-main' />
+        icon: <FaChalkboardTeacher className='text-[2rem] text-main' />
     },
     {
         id: 4,
         name: 'Flexible Learning Options',
         desc: 'Access self-paced courses or join live, interactive sessions.',
-        icon: <FaCalendarCheck className='text-[1.5rem] text-main' />
+        icon: <FaCalendarCheck className='text-[2rem] text-main' />
     },
     {
         id: 5,
         name: 'Certification',
         desc: 'Earn a professional certificate to validate your expertise and enhance your resume.',
-        icon: <FaCertificate className='text-[1.5rem] text-main' />
+        icon: <FaCertificate className='text-[2rem] text-main' />
     }
 ]
