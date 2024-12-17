@@ -119,9 +119,9 @@ const AppFooter = () => {
               <div className='flex flex-col justify-center items-start gap-3'>
                 <h2 className="text-[.875rem] font-bold">Certificate Courses</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/web-certificate-course`} className="text-[.75rem] font-medium">
                     Web Development
-                  </li>
+                  </Link>
                   <li className="text-[.75rem] font-medium">
                     User Experience Design
                   </li>

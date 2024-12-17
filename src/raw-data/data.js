@@ -17,6 +17,23 @@ import flex from '../../public/assets/bootcamp/flexibility.svg';
 import sol from '../../public/assets/bootcamp/solution.svg';
 
 
+// Icons
+
+
+import { GoDotFill } from 'react-icons/go';
+import { RiReactjsFill } from 'react-icons/ri';
+import { IoLogoAngular } from 'react-icons/io5';
+import { BsBootstrapFill } from 'react-icons/bs';
+import { PiFileSqlDuotone } from "react-icons/pi";
+import { SiMongodb } from "react-icons/si";
+import { AiOutlineGithub } from "react-icons/ai";
+import { LiaAws } from "react-icons/lia";
+import { BiLogoNetlify } from "react-icons/bi";
+import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate } from 'react-icons/fa';
+
+
+
+
 export const courseDetails = {
     dataScience: {
             "course_title": "Data Science",
@@ -1515,8 +1532,156 @@ export const whoSE = [
 
 
 
+export const webLearn = [
+    {
+        id: 1,
+        list: 'Master the building blocks of the web, creating structure and styling for websites.'
+    },
+    {
+        id: 2,
+        list: 'Learn how to add interactivity and dynamic features to your web pages.'
+    },
+    {
+        id: 3,
+        list: 'Ensure your websites look great on any device with mobile-first development.'
+    },
+    {
+        id: 4,
+        list: 'Work with tools like Node.js to handle backend processes.'
+    },
+    {
+        id: 5,
+        list: 'Gain experience using databases like SQL and MongoDB.'
+    },
+]
+
+
+
+export const webSkills = [
+    {
+        id: 1,
+        list: 'HTML/CSS'
+    },
+    {
+        id: 2,
+        list: 'JavaScript'
+    },
+    {
+        id: 3,
+        list: 'Responsive Design'
+    },
+    {
+        id: 4,
+        list: 'SQL'
+    },
+    {
+        id: 5,
+        list: 'MongoDB'
+    },
+    {
+        id: 6,
+        list: 'React'
+    },
+    {
+        id: 7,
+        list: 'Angular'
+    },
+    {
+        id: 8,
+        list: 'Bootstrap'
+    },
+    {
+        id: 9,
+        list: 'Git/GitHub'
+    },
+    {
+        id: 10,
+        list: 'AWS'
+    },
+    {
+        id: 11,
+        list: 'Netlify'
+    },
+]
 
 
 
 
+export const webTools = [
+    {
+        id: 1,
+        list: (
+            <RiReactjsFill className='text-blue-700 text-[2rem]'/>
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <BsBootstrapFill className='text-purple-600 text-[2rem]'/>
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <PiFileSqlDuotone className='text-yellow-600 text-[2rem]'/>
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <SiMongodb className='text-[2rem] text-green-500'/>
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <AiOutlineGithub className='text-[2rem]' />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <LiaAws className='text-yellow-600 text-[2rem]'/>
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <BiLogoNetlify className='text-blue-400 text-[2rem]'/>
+        )
+    }
+]
 
+
+export const webWhy = [
+    {
+        id: 1,
+        name: 'Comprehensive Curriculum',
+        desc: 'Cover the entire spectrum of web development, from basics to advanced topics.',
+        icon: <FaBookOpen className='text-[1.5rem] text-main' />
+    },
+    {
+        id: 2,
+        name: 'Hands-On Learning',
+        desc: 'Build real-world projects to showcase your skills.',
+        icon: <FaLaptopCode className='text-[1.5rem] text-main' />
+    },
+    {
+        id: 3,
+        name: 'Expert Instructors',
+        desc: 'Learn from industry professionals with years of practical experience.',
+        icon: <FaChalkboardTeacher className='text-[1.5rem] text-main' />
+    },
+    {
+        id: 4,
+        name: 'Flexible Learning Options',
+        desc: 'Access self-paced courses or join live, interactive sessions.',
+        icon: <FaCalendarCheck className='text-[1.5rem] text-main' />
+    },
+    {
+        id: 5,
+        name: 'Certification',
+        desc: 'Earn a professional certificate to validate your expertise and enhance your resume.',
+        icon: <FaCertificate className='text-[1.5rem] text-main' />
+    }
+]

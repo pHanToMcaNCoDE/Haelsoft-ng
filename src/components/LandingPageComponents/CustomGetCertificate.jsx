@@ -5,18 +5,18 @@ import vector from '../../../public/assets/get-certificate/EdTech Platform Group
 import Image from 'next/image';
 import obj from '../../../public/assets/get-certificate/EdTech Platform Group.svg';
 
-const GetCertificate = ({header}) => {
+const CustomGetCertificate = ({header, desc}) => {
   return (
-    <section className='w-full min-h-[120vh] bg-white relative px-6 overflow-hidden'>
-        <Image width={1712.94} height={2736.35} className='object-cover absolute z-10 top-[-100px] left-[200px]' src={obj} alt='Vector'></Image>
+    <section className='w-full min-h-[120vh] xl:h-screen bg-white relative px-6'>
+        <Image width={1712.94} height={2736.35} className='object-cover absolute z-10 top-[0px] left-[200px]' src={obj} alt='Vector'></Image>
         <div className='flex flex-col justify-center items-start gap-4 max-w-[1250px] mx-auto pt-[96px]'>
             <Image width={195} height={234} className='object-cover' src={badge} alt='Haelsoft Certificate Badge'></Image>
-            <div className='w-full lg:w-[356px] flex flex-col justify-center items-start gap-4'>
+            <div className='w-full lg:w-[412px] flex flex-col justify-center items-start gap-4'>
                 {header}
                 <div className='w-[56px] h-[4px] rounded-[4px] bg-[#F1C118]'></div>
             </div>
             <p className='font-normal text-[#655D59] leading-[30px] text-[1rem] w-full xl:w-[542px]'>
-                <span className='font-semibold'>Lead with Impact, Innovate with Strategy, and Drive Results</span> In today&apos;s dynamic business environment, effective marketing leadership is the cornerstone of brand success and growth. Haelsoft EdTech Platform&apos;s Marketing Leadership course is designed to transform you into a visionary marketing leader who can craft strategies, inspire teams, and deliver measurable results. Whether you&apos;re an experienced marketer aiming to take on leadership roles or a professional transitioning into marketing, this course will provide the skills and insights needed to lead in a rapidly evolving marketing landscape.
+                {desc}
             </p>
         </div>
         <div>
@@ -33,4 +33,4 @@ const GetCertificate = ({header}) => {
   )
 }
 
-export default GetCertificate
+export default CustomGetCertificate
