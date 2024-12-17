@@ -7,7 +7,7 @@ const VideoComponent = ({setIsPlaying}) => {
         <div className='h-full w-[90%] flex justify-center items-center p-[24px]'>
             <ReactPlayer
                 // ref={playerRef}
-                url="https://youtu.be/qRLnFt7A7Qc"
+                url="https://www.youtube.com/watch?v=VkxVCMeY53M"
                 className="rounded-[24px] video-preview relative z-[5px]"
                 width="90%"
                 height='700px'

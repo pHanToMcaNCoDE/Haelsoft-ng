@@ -7,7 +7,7 @@ import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import './expert.css';
 import user from "../../../public/assets/users/user.png";
-import user2 from "../../../public/assets/users/user2.svg";
+import user2 from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
 import user3 from "../../../public/assets/users/user3.svg";
 import user4 from "../../../public/assets/users/user4.svg";
 import Image from "next/image";
@@ -17,6 +17,7 @@ import edo from '../../../public/assets/clients/Edo State Government Haelsoft Cl
 import esi from '../../../public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
 import farm from '../../../public/assets/clients/Farm Industria Logo.png';
 import giz from '../../../public/assets/clients/Giz Logo II.png';
+import haelsoft from '../../../public/EdTech Platform Figma.svg';
 
 const Expert = () => {
   const slides = [
@@ -43,10 +44,10 @@ const Expert = () => {
     },
     {
       image: user2,
-      name: "Samuel Micheal",
+      name: "Michael Ezeadichie",
       role: "Data Scientist",
-      comp: giz,
-      compName: 'Giz'
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
   ];
 

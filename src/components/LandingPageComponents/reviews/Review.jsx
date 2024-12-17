@@ -98,7 +98,7 @@ const Review = () => {
         <div className="container flex justify-center items-center mx-auto min-w-full relative">
           <ReactPlayer
             ref={playerRef}
-            url="https://youtu.be/qRLnFt7A7Qc"
+            url="https://www.youtube.com/watch?v=VkxVCMeY53M"
             playing={!isPlaying}
             muted
             loop

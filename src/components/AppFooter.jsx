@@ -170,27 +170,27 @@ const AppFooter = () => {
               <div className='flex flex-col justify-center items-start gap-3'>
                 <h2 className="text-[.875rem] font-bold">About</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/our-story`} className="text-[.75rem] font-medium">
                     Our Story
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/careers`} className="text-[.75rem] font-medium">
                     Careers
-                  </li>
+                  </Link>
                   <li className="text-[.75rem] font-medium">
                     Get Involved
                   </li>
                   <li className="text-[.75rem] font-medium">
                     Magazine
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/contact`} className="text-[.75rem] font-medium">
                     Contact Us
-                  </li>
+                  </Link>
                   <li className="text-[.75rem] font-medium">
                     Press and Media
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/blogs`} className="text-[.75rem] font-medium">
                     Blog
-                  </li>
+                  </Link>
                 </ul>
               </div>
               <div className='flex flex-col justify-center items-start gap-3'>
