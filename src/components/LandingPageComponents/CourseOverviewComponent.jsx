@@ -92,7 +92,7 @@ const CourseOverviewComponent = () => {
   return (
     <section className='c bg-[#644530] w-full relative'>
 
-        <div className="bg-white rounded-lg max-w-[1040px] mx-auto h-auto py-8 px-4 absolute inset-x-0 top-[-12%] z-20 shadow-lg grid grid-cols-1 md:grid-cols-5 gap-6 text-center bg-[url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2740%27 height=%2740%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27none%27 stroke=%23e5e7eb%27 stroke-width=%271%27/%3E%3C/svg%3E')] bg-no-repeat bg-cover">
+        <div className="bg-white rounded-lg max-w-[1040px] mx-auto h-auto py-8 px-4 absolute inset-x-0 top-[-5%] 2xl:top-[-12%] z-20 shadow-lg grid grid-cols-1 md:grid-cols-5 gap-6 text-center bg-[url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2740%27 height=%2740%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27none%27 stroke=%23e5e7eb%27 stroke-width=%271%27/%3E%3C/svg%3E')] bg-no-repeat bg-cover">
 
             {/* Duration */}
             <div className="flex flex-col items-center">

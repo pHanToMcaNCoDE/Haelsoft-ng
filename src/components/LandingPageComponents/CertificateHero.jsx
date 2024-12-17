@@ -5,7 +5,7 @@ import Image from 'next/image';
   
 const CertificateHero = () => {
   return (
-    <section className='w-full relative hero min-h-screen py-[100px] px-6'>
+    <section className='w-full relative hero min-h-screen py-[200px] 2xl:py-[100px] px-6'>
         <div className='max-w-[1312px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-10'>
             <video autoPlay muted loop playsInline className="hero-video">
                 <source src='/assets/Student note over wooden desk.mp4' type="video/mp4" />

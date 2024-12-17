@@ -6,8 +6,8 @@ import { GoDotFill } from 'react-icons/go';
 
 const CustomCertificateWhy = ({main, learn, tools, skills, why}) => {
   return (
-    <section className='relative min-h-screen w-full bg-[#E5E5E5]'>
-        <div className='absolute inset-x-0 top-[-22%] w-full xl:max-w-[953.75px] mx-auto min-h-[871px] bg-white shadow-lg z-20 p-[36px]'>
+    <section className='relative min-h-screen w-full bg-[#f5f5f5] pt-[100px] 2xl:pt-0'>
+        <div className='relative 2xl:absolute inset-x-0 top-[-10%] 2xl:top-[-22%] w-full xl:max-w-[953.75px] mx-auto min-h-[871px] bg-white shadow-lg z-20 p-[36px]'>
             <Image width={953.75} height={276} src={org} alt='Orange Background' className='absolute z-[5px] top-0 right-0 left-0'></Image>
             <div className='relative z-10 flex flex-col justify-center items-start gap-20'>
                 <div className='flex flex-col justify-center items-start gap-10'>
@@ -19,7 +19,7 @@ const CustomCertificateWhy = ({main, learn, tools, skills, why}) => {
                     </div>
                 </div>
             </div>
-            <div className='pt-[300px] flex flex-col justify-center items-start gap-8'>
+            <div className='pt-[200px] flex flex-col justify-center items-start gap-8'>
                 <div className='flex flex-col justify-center items-start gap-4'>
                     <h1 className='text-[#201A18] font-semibold text-[1.5rem] leading-[29.26px]'>What You'll Learn</h1>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
