@@ -6,33 +6,49 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import './expert.css';
-import user from "../../../public/assets/users/user.png";
-import user2 from "../../../public/assets/users/user2.svg";
-import user3 from "../../../public/assets/users/user3.svg";
+import user from "../../../public/Opeyemi Oluleye - Brand & Communication.jpg";
+import user2 from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
+import user3 from "../../../public/Christopher I. Content Strategistr.jpg";
 import user4 from "../../../public/assets/users/user4.svg";
 import Image from "next/image";
 
+
+import edo from '../../../public/assets/clients/Edo State Government Haelsoft Clients.png';
+import esi from '../../../public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
+import farm from '../../../public/assets/clients/Farm Industria Logo.png';
+import giz from '../../../public/assets/clients/Giz Logo II.png';
+import haelsoft from '../../../public/EdTech Platform Figma.svg';
+
 const ResponsiveExpert = () => {
+  
   const slides = [
     {
       image: user3,
-      name: "Adeola Olukayode",
-      role: "UI/UX Designer",
+      name: "Christopher I.",
+      role: "Content Strategist",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
     {
       image: user,
-      name: "Sola Akinsan",
-      role: "Project Manager",
+      name: "Instructor Opeyemi Oluleye",
+      role: "Brand & Communication",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
     {
       image: user4,
       name: "Adaora Okoli",
       role: "Full-Stack Developer",
+      comp: farm,
+      compName: 'Farm Industria'
     },
     {
       image: user2,
-      name: "Samuel Micheal",
-      role: "Data Scientist",
+      name: "Michael Ezeadichie",
+      role: "Data Scientist / Digital Marketing Specialist",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
   ];
 

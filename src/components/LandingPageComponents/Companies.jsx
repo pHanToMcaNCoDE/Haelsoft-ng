@@ -27,7 +27,7 @@ import Image from 'next/image';
 
 const Companies = () => {
   return (
-    <section className='w-full py-6 flex flex-col gap-[3em] bg-[#F2F2F2]'>
+    <section className='w-full py-6 flex flex-col gap-[3em] bg-white'>
         
       <div className="hidden xl:flex justify-center items-center gap-6 clients h-[90px]">
         <Splide

@@ -6,9 +6,9 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import './expert.css';
-import user from "../../../public/assets/users/user.png";
+import user from "../../../public/Opeyemi Oluleye - Brand & Communication.jpg";
 import user2 from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
-import user3 from "../../../public/assets/users/user3.svg";
+import user3 from "../../../public/Christopher I. Content Strategistr.jpg";
 import user4 from "../../../public/assets/users/user4.svg";
 import Image from "next/image";
 
@@ -23,17 +23,17 @@ const Expert = () => {
   const slides = [
     {
       image: user3,
-      name: "Adeola Olukayode",
-      role: "UI/UX Designer",
-      comp: edo,
-      compName: 'Edo State Government'
+      name: "Christopher I.",
+      role: "Content Strategist",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
     {
       image: user,
-      name: "Sola Akinsan",
-      role: "Project Manager",
-      comp: esi,
-      compName: 'Edo State Investment Promotion Office'
+      name: "Instructor Opeyemi Oluleye",
+      role: "Brand & Communication",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
     {
       image: user4,
@@ -45,7 +45,7 @@ const Expert = () => {
     {
       image: user2,
       name: "Michael Ezeadichie",
-      role: "Data Scientist",
+      role: "Data Scientist / Digital Marketing Specialist",
       comp: haelsoft,
       compName: 'Haelsoft'
     },
@@ -89,10 +89,10 @@ const Expert = () => {
             <div className="flex justify-between items-start">
               <div className="p-[24px] flex flex-col justify-between rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] gap-4 w-full md:w-[268px]">
                 <div className="flex flex-col items-start">
-                  <h1 className="text-[#000000] font-medium text-base text-center">
+                  <h1 className="text-[#000000] font-medium text-base text-start">
                     {item.name}
                   </h1>
-                  <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-center">
+                  <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-start">
                     {item.role}
                   </p>
                 </div>
