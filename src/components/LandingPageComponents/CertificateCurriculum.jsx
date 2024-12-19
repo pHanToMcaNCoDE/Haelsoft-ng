@@ -16,7 +16,7 @@ const CertificateCurriculum = ({curriculum, curTitle}) => {
               {
                 cur.id === 1 && (<div style={{ backgroundColor: `${cur.bg}`}} className="absolute top-0 left-0 w-full h-full skew-y-[-6deg] origin-top-left z-[1px]"></div>)
               }
-              <div className={`relative z-10 gap-[64px] flex flex-col justify-center items-center max-w-[1312px] mx-auto px-6 ${cur.id === 1 ? 'mt-[500px]' : 'pt-[100px]'} pb-[100px]`}>
+              <div className={`relative z-10 gap-[64px] flex flex-col justify-center items-center max-w-[1312px] mx-auto px-6 ${cur.id === 1 ? 'pt-[100px] md:mt-[500px]' : 'pt-[100px]'} pb-[100px]`}>
                 {
                   cur.id === 1 && (<h1 className='text-center text-white text-[2rem] lg:text-[3rem] leading-10 lg:leading-[55.5px] font-bold w-full md:w-[794.67px] xl:w-[994.67px]'>{curTitle}</h1>)
                 }
@@ -33,7 +33,7 @@ const CertificateCurriculum = ({curriculum, curTitle}) => {
                       </p>
                       <div className='flex flex-col lg:flex-row justify-start items-start lg:items-center gap-3 pt-6 w-full'>
                         <p className={`text-[1rem] lg:text-[1.125rem] font-semibold leading-[38.5px] ${cur.id % 2 === 0 ? 'text-[#201A18]' : 'text-white'}`}>Skills:</p>
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-start lg:justify-items-center place-items-start lg:place-items-center gap-3 w-full'>
+                        <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-start lg:justify-items-center place-items-start lg:place-items-center gap-3 w-full'>
                           {
                             cur?.skills?.map((skill) => (
                               <div key={skill.id} className='bg-[#fafafa] text-black text-[.75rem] w-[128px] rounded-[2px] h-[40px] flex justify-center items-center py-[4px] font-bold'>{skill}</div>

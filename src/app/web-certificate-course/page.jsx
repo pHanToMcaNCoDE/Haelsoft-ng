@@ -8,10 +8,16 @@ import CustomGetCertificate from '@/components/LandingPageComponents/CustomGetCe
 import GetCertificate from '@/components/LandingPageComponents/GetCertificate'
 import Navbar from '@/components/LandingPageComponents/Navbar'
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
-import { certificateWeb, webLearn, webSkills, webTools, webWhy } from '@/raw-data/data'
+import { certificateWeb, webFaqs, webLearn, webSkills, webTools, webWhy } from '@/raw-data/data'
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
 import CertificateCurriculum from '@/components/LandingPageComponents/CertificateCurriculum'
+import CustomEarn from '@/components/LandingPageComponents/CustomEarn'
+import web from '../../../public/certificates/web.svg';
+import Industries from '@/components/LandingPageComponents/Industries'
+import gal from '../../../public/assets/cert-course/gallary.svg'
+import CorporateGallary from '@/components/LandingPageComponents/CorporateGallary'
+import CertificateFaq from '@/components/LandingPageComponents/CertificateFaq'
 
 const page = () => {
     const [clicked, setClicked] = useState('');
@@ -45,6 +51,13 @@ const page = () => {
     const [why, setWhy] = useState(webWhy)
     const [curriculum, setCurriculum] = useState(certificateWeb)
     const curTitle = 'Web Development Certification Course Curriculum';
+
+    const [cusTitle, setCusTitle] = useState('Earn Your Web Development Certification');
+    const [cusImg, setCusImg] = useState(web);
+    const cusDesc = "Upon completing your course, you'll receive a Haelsoft Web Development Certificate. This shareable certificate is a valuable addition to your resume and LinkedIn profile, helping you showcase your expertise to potential employers and advance your career in web development."
+
+    const [faqs, setFaqs] = useState(webFaqs)
+
   return (
     <main>
         <Navbar
@@ -59,6 +72,10 @@ const page = () => {
         <CertificateBenefits why={why}/>
         <CustomCertificateWhy main={main} learn={learn} tools={tools} skills={skills}/>
         <CertificateCurriculum curriculum={curriculum} curTitle={curTitle} />
+        <CustomEarn cusTitle={cusTitle} cusImg={cusImg} cusDesc={cusDesc} />
+        <Industries/>
+        <CorporateGallary/>
+        <CertificateFaq faqs={faqs}/>
     </main>
   )
 }

@@ -37,23 +37,34 @@ const Navbar = ({ clicked, setClicked }) => {
   return (
     <>
       {/* Mobile Navigation */}
-      {clicked ? (
         <nav className="navbar h-[68px] xl:hidden sticky top-0 left-0 w-full z-[990] bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
           <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
-            <div
-              onClick={() => setClicked('')}
-              className="cursor-pointer flex justify-center items-center text-lg gap-1 underline text-blue-500"
-            >
-              <GoArrowLeft className="font-semibold text-base" />
-              <p>Back</p>
-            </div>
-            <Image width={100} height={100} src={logo} alt="Logo" />
+            {
+              clicked ? (
+                <>
+                  <div
+                    onClick={() => setClicked('')}
+                    className="cursor-pointer flex justify-center items-center text-lg gap-1 underline text-blue-500"
+                  >
+                    <GoArrowLeft className="font-semibold text-base" />
+                    <p>Back</p>
+                  </div>
+                  <Link href={`/`}>
+                    <Image width={100} height={100} src={logo} alt="Logo" />
+                  </Link>
+                </>
+              ) : (
+                <Link href={`/`}>
+                  <Image width={100} height={100} src={logo} alt="Logo" />
+                </Link>
+              )
+            }
             <div
               onClick={() => {
                 setMenu((prev) => !prev);
                 setClicked('');
               }}
-              className="flex flex-col justify-between items-center w-[5%] h-[16px] cursor-pointer gap-1"
+              className="flex flex-col justify-between items-center w-[13%] lg:w-[5%] h-[16px] cursor-pointer gap-1"
             >
               <div
                 className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${
@@ -73,7 +84,7 @@ const Navbar = ({ clicked, setClicked }) => {
             </div>
           </div>
         </nav>
-      ) : null}
+    
 
       {menu && <Aside menu={menu} setMenu={setMenu} clicked={clicked} setClicked={setClicked} />}
 
@@ -84,7 +95,10 @@ const Navbar = ({ clicked, setClicked }) => {
         }`}
       >
         <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
-          <Image width={100} height={100} src={logo} alt="Logo" />
+          
+          <Link href={`/`}>
+            <Image width={100} height={100} src={logo} alt="Logo" />
+          </Link>
           <ul
             className={`flex gap-8 text-[1.125rem] ${
               isScrolled ? 'text-black' : 'text-white'

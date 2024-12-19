@@ -7,15 +7,15 @@ import obj from '../../../public/assets/get-certificate/EdTech Platform Group.sv
 
 const CustomGetCertificate = ({header, desc}) => {
   return (
-    <section className='w-full min-h-[120vh] xl:h-screen bg-white relative px-6 overflow-hidden'>
-        <Image className='h-full w-screen object-cover absolute z-10 top-[0px] left-0' src={obj} alt='Vector'></Image>
+    <section className='w-full min-h-[120vh] xl:h-[40vh] bg-white relative px-8 overflow-hidden'>
+        <Image className='w-screen object-cover absolute z-10 top-[0px] left-0' src={obj} alt='Vector'></Image>
         <div className='flex flex-col justify-center items-start gap-4 max-w-[1250px] mx-auto pt-[96px]'>
             <Image width={195} height={234} className='object-cover' src={badge} alt='Haelsoft Certificate Badge'></Image>
             <div className='w-full lg:w-[412px] flex flex-col justify-center items-start gap-4'>
                 {header}
                 <div className='w-[56px] h-[4px] rounded-[4px] bg-[#F1C118]'></div>
             </div>
-            <p className='font-normal text-[#655D59] leading-[30px] text-[1rem] w-full xl:w-[542px]'>
+            <p className='font-normal text-[#655D59] leading-[30px] text-[1rem] w-full sm:w-[328px] md:w-[442px] xl:w-[542px]'>
                 {desc}
             </p>
         </div>

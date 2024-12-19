@@ -126,6 +126,26 @@ aside {
   z-index: -1;
 }
 
+
+.cer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cerVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
 /* Hero Content Styling */
 .hero-content {
   position: relative;

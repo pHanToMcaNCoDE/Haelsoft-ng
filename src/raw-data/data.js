@@ -1850,3 +1850,57 @@ export const certificateWeb = [
         ]
     }         
 ]
+
+
+export const webFaqs = [
+    {
+        id: 1,
+        name: 'Who can take this course?',
+        desc: 'Anyone interested in web development! Whether you’re a complete beginner, an experienced professional looking to enhance your skills, or an entrepreneur, this course is for you.'
+    },
+    {
+        id: 2,
+        name: 'Do I need prior coding experience?',
+        desc: 'No prior coding experience is needed. Our courses are designed to guide you step-by-step, starting with the basics.'
+    },
+    {
+        id: 3,
+        name: 'How long does it take to complete the course?',
+        desc: 'The duration depends on your chosen learning path. Self-paced courses typically take 8–12 weeks, while instructor-led classes have a set schedule.'
+    },
+    {
+        id: 4,
+        name: 'Will I receive a certificate upon completion?',
+        desc: 'Yes, you’ll receive a professional certificate upon successfully completing the course, showcasing your expertise to employers or clients.'
+    },
+    {
+        id: 5,
+        name: 'Are there hands-on projects included?',
+        desc: 'Absolutely! You’ll work on real-world projects to build a portfolio that demonstrates your skills and knowledge.'
+    },
+    {
+        id: 6,
+        name: 'What tools and software do I need for this course?',
+        desc: 'All you need is a computer and a stable internet connection. We’ll guide you on how to set up free tools like text editors (e.g., Visual Studio Code) and version control systems (e.g., Git).'
+    },
+    {
+        id: 7,
+        name: 'Can I get help if I get stuck?',
+        desc: 'Yes, our instructors and support team are available to assist you through our discussion forums, live Q&A sessions, and email support.'
+    },
+    {
+        id: 8,
+        name: 'How much does the course cost?',
+        desc: 'Pricing details are available on our website. We also offer flexible payment plans and occasional discounts to make learning accessible.'
+    },
+    {
+        id: 9,
+        name: 'Is this course available online?',
+        desc: 'Yes, the course is fully online, giving you the flexibility to learn at your own pace or join live interactive classes.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Click the "Enroll Now" button on this page or visit info@haelsoft.com. Fill out the registration form, complete the payment, and you’re ready to start learning!'
+    },
+]

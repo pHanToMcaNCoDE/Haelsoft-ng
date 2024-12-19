@@ -90,47 +90,35 @@ const CourseOverviewComponent = () => {
     const overlayRef = useRef();
     const [isPlaying, setIsPlaying] = useState(false);
   return (
-    <section className='c bg-[#644530] w-full relative'>
+    <section className='c bg-[#644530] w-full relative min-h-screen xl:h-auto'>
 
-        <div className="bg-white rounded-lg max-w-[1040px] mx-auto h-auto py-8 px-4 absolute inset-x-0 top-[-5%] 2xl:top-[-12%] z-20 shadow-lg grid grid-cols-1 md:grid-cols-5 gap-6 text-center bg-[url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2740%27 height=%2740%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27none%27 stroke=%23e5e7eb%27 stroke-width=%271%27/%3E%3C/svg%3E')] bg-no-repeat bg-cover">
-
-            {/* Duration */}
-            <div className="flex flex-col items-center">
-                <ClockIcon className="w-8 h-8 text-orange-500 mb-2" />
-                <h3 className="text-orange-500 font-bold text-lg">Duration</h3>
-                <p className="text-gray-600">12-16 weeks (full-time or part-time options)</p>
-            </div>
-
-            {/* Certification */}
-            <div className="flex flex-col items-center">
-                <AcademicCapIcon className="w-8 h-8 text-orange-500 mb-2" />
-                <h3 className="text-orange-500 font-bold text-lg">Certification</h3>
-                <p className="text-gray-600">Earn an industry-recognized certificate upon completion.</p>
-            </div>
-
-            {/* Mode */}
-            <div className="flex flex-col items-center">
-                <ComputerDesktopIcon className="w-8 h-8 text-orange-500 mb-2" />
-                <h3 className="text-orange-500 font-bold text-lg">Mode</h3>
-                <p className="text-gray-600">Online</p>
-            </div>
-
-            {/* Tools Covered */}
-            <div className="flex flex-col items-center">
-                <WrenchIcon className="w-8 h-8 text-orange-500 mb-2" />
-                <h3 className="text-orange-500 font-bold text-lg">Tools Covered</h3>
-                <p className="text-gray-600">Kali Linux, Splunk, Nessus, Burp Suite, and more.</p>
-            </div>
-
-            {/* Mentorship */}
-            <div className="flex flex-col items-center">
-                <UserIcon className="w-8 h-8 text-orange-500 mb-2" />
-                <h3 className="text-orange-500 font-bold text-lg">Mentorship</h3>
-                <p className="text-gray-600">Access one-on-one guidance from industry professionals.</p>
-            </div>
-
-        </div>
-
+        {/* <div className="bg-white rounded-lg max-w-[90%] md:max-w-[1040px] mx-auto py-6 px-4 absolute inset-x-0 top-[-5%] md:top-[-8%] z-20 shadow-lg grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 text-center bg-[url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2740%27 height=%2740%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27none%27 stroke=%23e5e7eb%27 stroke-width=%271%27/%3E%3C/svg%3E')] bg-no-repeat bg-cover mx-6">
+          <div className="flex flex-col items-center">
+            <ClockIcon className="w-8 h-8 text-orange-500 mb-2" />
+            <h3 className="text-orange-500 font-bold text-sm">Duration</h3>
+            <p className="text-gray-600 text-sm">12-16 weeks</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <AcademicCapIcon className="w-8 h-8 text-orange-500 mb-2" />
+            <h3 className="text-orange-500 font-bold text-sm">Certification</h3>
+            <p className="text-gray-600 text-sm">Industry-recognized</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <ComputerDesktopIcon className="w-8 h-8 text-orange-500 mb-2" />
+            <h3 className="text-orange-500 font-bold text-sm">Mode</h3>
+            <p className="text-gray-600 text-sm">Online</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <WrenchIcon className="w-8 h-8 text-orange-500 mb-2" />
+            <h3 className="text-orange-500 font-bold text-sm">Tools</h3>
+            <p className="text-gray-600 text-sm">Kali, Splunk, & more</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <UserIcon className="w-8 h-8 text-orange-500 mb-2" />
+            <h3 className="text-orange-500 font-bold text-sm">Mentorship</h3>
+            <p className="text-gray-600 text-sm">1-on-1 guidance</p>
+          </div>
+        </div> */}
 
         <div className="pt-[200px] z-[30] relative flex flex-col gap-[60px]">
         <div className="container flex justify-center items-center mx-auto min-w-full relative">
@@ -156,7 +144,7 @@ const CourseOverviewComponent = () => {
           />
           {!isPlaying && (
             <div className="absolute translate-x-[0%] translate-y-[-40%] z-10 play-button flex flex-col justify-center items-center gap-y-[70px]">
-              <h1 className="text-[4.25rem] font-medium text-white">Alumni Stories</h1>
+              <h1 className="text-[1.5rem] lg:text-[4.25rem] font-medium text-white">Alumni Stories</h1>
               <button 
                 className="flex justify-center items-center gap-x-3 py-[16px] w-[131px] h-[52px] rounded-full bg-white" 
                 onClick={() => setIsPlaying(true)}
