@@ -6,8 +6,8 @@ import { GoDotFill } from 'react-icons/go';
 
 const CustomCertificateWhy = ({main, learn, tools, skills, why}) => {
   return (
-    <section className='relative min-h-screen w-full bg-[#f5f5f5] pt-[100px] 2xl:pt-0'>
-        <div className='relative 2xl:absolute inset-x-0 top-[-10%] 2xl:top-[-22%] w-full xl:max-w-[953.75px] mx-auto min-h-[871px] bg-white shadow-lg z-20 p-[36px]'>
+    <section className='relative min-h-screen w-full bg-[#fafafa] px-6'>
+        <div className='relative xl:absolute inset-x-0 xl:bottom-[-50%] 2xl:bottom-[-30%] w-[80%] xl:max-w-[953.75px] mx-auto min-h-[871px] bg-white shadow-lg z-20 p-[36px]'>
             <Image width={953.75} height={276} src={org} alt='Orange Background' className='absolute z-[5px] top-0 right-0 left-0'></Image>
             <div className='relative z-10 flex flex-col justify-center items-start gap-20'>
                 <div className='flex flex-col justify-center items-start gap-10'>
@@ -41,7 +41,7 @@ const CustomCertificateWhy = ({main, learn, tools, skills, why}) => {
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-start place-items-start gap-x-[10px] gap-y-[15px]'>
+                <div className='grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 justify-items-start place-items-start gap-x-[10px] gap-y-[15px]'>
                     {
                         skills.map((skill) => (
                             <div key={skill.id} className='text-[.875rem] leading-[18px] font-normal text-black flex justify-center items-center w-[143px] h-[36.5px] rounded-[4px] py-[4px] bg-[#e7eefb]'>
@@ -56,7 +56,7 @@ const CustomCertificateWhy = ({main, learn, tools, skills, why}) => {
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 justify-items-start place-items-start gap-x-[10px] gap-y-[15px]'>
+                <div className='grid grid-cols-1 md:grid-cols-4 xl:grid-cols-5 justify-items-start place-items-start gap-x-[10px] gap-y-[15px]'>
                     {
                         tools.map((tool) => (
                             <div key={tool.id} className='flex justify-center items-center w-[104px] h-[56px] rounded-[4px] py-[4px] border'>

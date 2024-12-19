@@ -8,9 +8,10 @@ import CustomGetCertificate from '@/components/LandingPageComponents/CustomGetCe
 import GetCertificate from '@/components/LandingPageComponents/GetCertificate'
 import Navbar from '@/components/LandingPageComponents/Navbar'
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
-import { webLearn, webSkills, webTools, webWhy } from '@/raw-data/data'
+import { certificateWeb, webLearn, webSkills, webTools, webWhy } from '@/raw-data/data'
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
+import CertificateCurriculum from '@/components/LandingPageComponents/CertificateCurriculum'
 
 const page = () => {
     const [clicked, setClicked] = useState('');
@@ -42,7 +43,8 @@ const page = () => {
     const [skills, setSkills] = useState(webSkills);
     const [learn, setLearn] = useState(webLearn);
     const [why, setWhy] = useState(webWhy)
-
+    const [curriculum, setCurriculum] = useState(certificateWeb)
+    const curTitle = 'Web Development Certification Course Curriculum';
   return (
     <main>
         <Navbar
@@ -54,8 +56,9 @@ const page = () => {
         <CertificateHero/>
         <CourseOverviewComponent/>
         <CustomGetCertificate header={head} desc={desc}/>
-        <CustomCertificateWhy main={main} learn={learn} tools={tools} skills={skills}/>
         <CertificateBenefits why={why}/>
+        <CustomCertificateWhy main={main} learn={learn} tools={tools} skills={skills}/>
+        <CertificateCurriculum curriculum={curriculum} curTitle={curTitle} />
     </main>
   )
 }

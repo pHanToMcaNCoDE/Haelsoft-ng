@@ -21,15 +21,18 @@ import sol from '../../public/assets/bootcamp/solution.svg';
 
 
 import { GoDotFill } from 'react-icons/go';
-import { RiReactjsFill } from 'react-icons/ri';
-import { IoLogoAngular } from 'react-icons/io5';
+import { RiHtml5Line, RiJavascriptLine, RiReactjsFill } from 'react-icons/ri';
+import { IoLogoAngular, IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from 'react-icons/io5';
 import { BsBootstrapFill } from 'react-icons/bs';
-import { PiFileSqlDuotone } from "react-icons/pi";
-import { SiMongodb } from "react-icons/si";
+import { PiAngularLogo, PiFileSqlDuotone } from "react-icons/pi";
+import { SiAngular, SiBootstrap, SiMongodb, SiReact } from "react-icons/si";
 import { AiOutlineGithub } from "react-icons/ai";
-import { LiaAws } from "react-icons/lia";
+import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
 import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate } from 'react-icons/fa';
+import { FiCloud, FiDatabase, FiGlobe, FiLayers, FiServer, FiUpload } from 'react-icons/fi';
+import { TbBrandBootstrap, TbCloud } from 'react-icons/tb';
+import { FaAws } from 'react-icons/fa6';
 
 
 
@@ -1684,4 +1687,166 @@ export const webWhy = [
         desc: 'Earn a professional certificate to validate your expertise and enhance your resume.',
         icon: <FaCertificate className='text-[2rem] text-main' />
     }
+]
+
+
+
+
+export const certificateWeb = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'Introduction to Web Development',
+        desc: "In this unit, you'll learn the fundamentals of web development, including the structure of web pages, the role of HTML for content, CSS for styling, and JavaScript for interactivity. We'll explore how the internet works, the basics of browsers, and how web pages are rendered. This foundation will prepare you to start creating your own websites.",
+        skills: [
+            'The Web',
+            'HTML',
+            'CSS',
+            'Responsive Design'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiGlobe className='text-[1.75rem]'/>
+                ),
+                head: 'WWW',
+                desc: 'The World Wide Web (WWW) connects billions of websites, enabling access to vast information, resources, and communication on the internet.'
+            },
+            {
+                id: 2,
+                icon: (
+                    <RiHtml5Line className='text-[1.75rem]'/>
+                ),
+                head: 'HTML',
+                desc: 'HTML (HyperText Markup Language) is the foundational language used to create and structure content on the web, defining elements like text, links, and images.'
+            },
+            {
+                id: 3,
+                icon: (
+                    <LiaCss3 className='text-[1.75rem]'/>
+                ),
+                head: 'CSS',
+                desc: 'CSS (Cascading Style Sheets) controls the layout and visual appearance of web pages, allowing you to style text, colors, spacing, and positioning.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Introduction to JavaScript and Frameworks',
+        desc: "In this unit, you'll delve into JavaScript, the backbone of web interactivity, and explore popular frameworks like React, Angular, and Bootstrap. You'll learn how these tools streamline web development, enabling dynamic content, seamless user interfaces, and responsive design. By the end of this unit, you'll have the skills to create interactive and modern web applications.",
+        skills: [
+            'JavaScript Basics',
+            'React',
+            'Angular',
+            'Bootstrap'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <RiJavascriptLine className='text-[1.75rem]'/>
+                ),
+                head: 'JavaScript',
+                desc: 'JavaScript is a powerful programming language that brings interactivity to web pages, allowing you to create dynamic content and handle user actions effectively.'
+            },
+            {
+                id: 2,
+                icon: (
+                    <SiReact className='text-[1.75rem]'/>
+                ),
+                head: 'React',
+                desc: 'React is a popular JavaScript library for building user interfaces, emphasizing reusable components and efficient rendering for modern web applications.'
+            },
+            {
+                id: 3,
+                icon: (
+                    <PiAngularLogo className='text-[1.75rem]'/>
+                ),
+                head: 'Angular',
+                desc: 'Angular is a robust framework for building dynamic single-page applications, offering powerful tools for dependency injection and data binding.'
+            },
+            {
+                id: 4,
+                icon: (
+                    <TbBrandBootstrap className='text-[1.75rem]'/>
+                ),
+                head: 'Bootstrap',
+                desc: 'Bootstrap is a front-end framework that simplifies responsive design and layout creation, offering pre-styled components and grid systems.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Introduction to Backend Development',
+        desc: "In this unit, you'll learn the essentials of backend development, focusing on building and managing databases, server-side logic, and APIs. You'll explore SQL for relational databases, Node.js for server-side programming, and MongoDB for NoSQL database management. This unit will provide you with the tools to create and manage the backend of web applications effectively.",
+        skills: [
+            'SQL',
+            'Node.js',
+            'MongoDB',
+            'RESTful APIs'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiDatabase className='text-white text-[1.75rem]'/>
+                ),
+                head: 'SQL',
+                desc: 'SQL (Structured Query Language) is used to manage and query relational databases, enabling efficient data storage and retrieval for web applications.'
+            },
+            {
+                id: 2,
+                icon: (
+                    <FiServer className='text-white text-[1.75rem]'/>
+                ),
+                head: 'Node.js',
+                desc: 'Node.js is a runtime environment that allows you to run JavaScript on the server, ideal for building scalable and high-performance web applications.'
+            },
+            {
+                id: 3,
+                icon: (
+                    <FiLayers className='text-white text-[1.75rem]'/>
+                ),
+                head: 'MongoDB',
+                desc: 'MongoDB is a NoSQL database designed for flexibility and scalability, enabling developers to work with dynamic and unstructured data efficiently.'
+            }
+        ]
+    },   
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'Deploying Web Applications',
+        desc: "This unit covers the deployment process for web applications, teaching you how to bring your projects live to the web. You'll learn how to use platforms like Netlify for frontend hosting and AWS for scalable backend deployments. By the end of this unit, you’ll understand how to configure servers, set up domain names, and optimize your applications for production environments.",
+        skills: [
+            'Netlify',
+            'AWS',
+            'CI/CD Pipelines',
+            'DNS Configuration'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <BiLogoNetlify className='text-[1.75rem]'/>
+                ),
+                head: 'Netlify',
+                desc: 'Netlify simplifies frontend deployment, providing continuous integration, custom domains, and automated builds for modern web projects.'
+            },
+            {
+                id: 2,
+                icon: (
+                    <FaAws className='text-[1.75rem]'/>
+                ),
+                head: 'AWS',
+                desc: 'Amazon Web Services (AWS) offers a wide range of cloud services for deploying and scaling web applications, ensuring high performance and reliability.'
+            }
+        ]
+    }         
 ]

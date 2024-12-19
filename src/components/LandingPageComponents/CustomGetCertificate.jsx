@@ -8,7 +8,7 @@ import obj from '../../../public/assets/get-certificate/EdTech Platform Group.sv
 const CustomGetCertificate = ({header, desc}) => {
   return (
     <section className='w-full min-h-[120vh] xl:h-screen bg-white relative px-6 overflow-hidden'>
-        <Image width={1712.94} height={2736.35} className='object-cover absolute z-10 top-[0px] left-[200px]' src={obj} alt='Vector'></Image>
+        <Image className='h-full w-screen object-cover absolute z-10 top-[0px] left-0' src={obj} alt='Vector'></Image>
         <div className='flex flex-col justify-center items-start gap-4 max-w-[1250px] mx-auto pt-[96px]'>
             <Image width={195} height={234} className='object-cover' src={badge} alt='Haelsoft Certificate Badge'></Image>
             <div className='w-full lg:w-[412px] flex flex-col justify-center items-start gap-4'>
