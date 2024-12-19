@@ -14,10 +14,6 @@ import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
 import Image from "next/image";
 
 
-import edo from '../../../public/assets/clients/Edo State Government Haelsoft Clients.png';
-import esi from '../../../public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
-import farm from '../../../public/assets/clients/Farm Industria Logo.png';
-import giz from '../../../public/assets/clients/Giz Logo II.png';
 import haelsoft from '../../../public/EdTech Platform Figma.svg';
 
 const Expert = () => {

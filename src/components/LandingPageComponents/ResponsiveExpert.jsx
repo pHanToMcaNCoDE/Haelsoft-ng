@@ -6,47 +6,53 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import './expert.css';
-import user from "../../../public/Opeyemi Oluleye - Brand & Communication.jpg";
-import user2 from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
-import user3 from "../../../public/Christopher I. Content Strategistr.jpg";
-import user4 from "../../../public/assets/users/user4.svg";
+
+import haelsoft from '../../../public/EdTech Platform Figma.svg';
+
+import olu from "../../../public/Opeyemi Oluleye - Brand & Communication.jpg";
+import mic from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
+import chris from "../../../public/Christopher I. Content Strategistr.jpg";
+import lin from "../../../public/Linda Ochugbua - Public Relations (PR) Strategist.jpg";
+import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
 import Image from "next/image";
 
 
-import edo from '../../../public/assets/clients/Edo State Government Haelsoft Clients.png';
-import esi from '../../../public/assets/clients/Edo State Investment Promotion Office from Haelsoft.png';
-import farm from '../../../public/assets/clients/Farm Industria Logo.png';
-import giz from '../../../public/assets/clients/Giz Logo II.png';
 import haelsoft from '../../../public/EdTech Platform Figma.svg';
 
 const ResponsiveExpert = () => {
-  
   const slides = [
     {
-      image: user3,
+      image: chris,
       name: "Christopher I.",
       role: "Content Strategist",
       comp: haelsoft,
       compName: 'Haelsoft'
     },
     {
-      image: user,
+      image: olu,
       name: "Instructor Opeyemi Oluleye",
       role: "Brand & Communication",
       comp: haelsoft,
       compName: 'Haelsoft'
     },
     {
-      image: user4,
-      name: "Adaora Okoli",
-      role: "Full-Stack Developer",
-      comp: farm,
-      compName: 'Farm Industria'
+      image: lin,
+      name: "Linda Ochugbua",
+      role: "Public Relations (PR) Strategist",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
     {
-      image: user2,
+      image: mic,
       name: "Michael Ezeadichie",
       role: "Data Scientist / Digital Marketing Specialist",
+      comp: haelsoft,
+      compName: 'Haelsoft'
+    },
+    {
+      image: chike,
+      name: "Chike Ozulumba",
+      role: "Backend Engineer",
       comp: haelsoft,
       compName: 'Haelsoft'
     },
