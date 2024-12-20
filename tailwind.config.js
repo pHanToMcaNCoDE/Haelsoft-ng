@@ -32,6 +32,17 @@ module.exports = {
                 'triangle-up': 'polygon(0 0, 70% 60%, 0 100%)',
                 'triangle-down': 'polygon(50% 0, 100% 100%, 0 100%)',
             },
+            backgroundImage: {
+                "custom-grid": `
+                  radial-gradient(circle, #ffffff 1px, transparent 1px),
+                  radial-gradient(circle, #ffffff 1px, transparent 1px)`,
+              },
+              backgroundSize: {
+                "custom-grid": "40px 40px",
+              },
+              backgroundPosition: {
+                "custom-grid": "0 0, 20px 20px",
+              },
         }
     },
     plugins: [

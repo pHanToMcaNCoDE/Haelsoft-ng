@@ -5,7 +5,6 @@ import CertificateHero from '@/components/LandingPageComponents/CertificateHero'
 import CourseOverviewComponent from '@/components/LandingPageComponents/CourseOverviewComponent'
 import CustomCertificateWhy from '@/components/LandingPageComponents/CustomCertificateWhy'
 import CustomGetCertificate from '@/components/LandingPageComponents/CustomGetCertificate'
-import GetCertificate from '@/components/LandingPageComponents/GetCertificate'
 import Navbar from '@/components/LandingPageComponents/Navbar'
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
 import { certificateWeb, webFaqs, webLearn, webSkills, webTools, webWhy } from '@/raw-data/data'
@@ -15,9 +14,9 @@ import CertificateCurriculum from '@/components/LandingPageComponents/Certificat
 import CustomEarn from '@/components/LandingPageComponents/CustomEarn'
 import web from '../../../public/certificates/web.svg';
 import Industries from '@/components/LandingPageComponents/Industries'
-import gal from '../../../public/assets/cert-course/gallary.svg'
-import CorporateGallary from '@/components/LandingPageComponents/CorporateGallary'
 import CertificateFaq from '@/components/LandingPageComponents/CertificateFaq'
+import CertificateGallary from '@/components/LandingPageComponents/CertificateGallary'
+import CertificateGetStarted from '@/components/LandingPageComponents/CertificateGetStarted'
 
 const page = () => {
     const [clicked, setClicked] = useState('');
@@ -74,8 +73,9 @@ const page = () => {
         <CertificateCurriculum curriculum={curriculum} curTitle={curTitle} />
         <CustomEarn cusTitle={cusTitle} cusImg={cusImg} cusDesc={cusDesc} />
         <Industries/>
-        <CorporateGallary/>
+        <CertificateGallary/>
         <CertificateFaq faqs={faqs}/>
+        <CertificateGetStarted/>
     </main>
   )
 }

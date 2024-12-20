@@ -16,16 +16,16 @@ const AppFooter = () => {
     return null;
   }
   return (
-    <footer className="bg-[#f36402] min-h-[62vh] md:min-h-[20vh] lg:min-h-[62vh] py-[2em] relative z-10">
+    <footer className="bg-[#C75C27] min-h-[62vh] md:min-h-[20vh] lg:min-h-[62vh] py-[2em] relative z-10">
       <div className="bg-white h-[2px] max-w-[1040px] mx-auto rounded-full"></div>
       <div className="flex flex-col md:flex-row justify-between items-start py-[72px] text-white lg:gap-x-4 max-w-[1064px] mx-auto px-6 xl:px-0">
         {/* <div className="bg-white h-[1px] w-full rounded-full"></div> */}
         {/* <div className="flex flex-col md:flex-row justify-between items-start py-[4em] md:py-[2em] text-white lg:gap-x-4 w-full"> */}
           <div className="w-full footer flex flex-col lg:flex-row justify-between items-start gap-8">
             <div className="leading-[37.54px] flex flex-col justify-between gap-6 xl:h-[530px] items-start w-full lg:w-[230px]">
-              <div>
+              <div className="flex flex-col justify-center items-start gap-4">
                 <Link href={`/`}>
-                  <Image width={100} height={100} className="object-cover" src={logo} alt="Haelsoft Logo"></Image>
+                  <Image width={150} height={150} className="object-cover" src={logo} alt="Haelsoft Logo"></Image>
                 </Link>
                 <p className="text-[.875rem] leading-6 font-medium">
                   Haelsoft is a Digital marketing and software development expertise to boost your tech career.

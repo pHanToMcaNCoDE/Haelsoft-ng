@@ -21,11 +21,11 @@ const CertificateFaq = ({ faqs }) => {
   const pathname = usePathname();
 
   return (
-    <section className='bg-white min-h-screen py-[120px] gap-[64px] flex flex-col justify-center items-center lg:px-[74px] relative'>
-      <div className="bg-main absolute top-[50%] left-0 w-full h-full skew-y-[-6deg] origin-top-left z-[1px]"></div>
-      <div className='max-w-[1120px] mx-auto flex py-[120px] gap-[64px] flex-col justify-center items-center lg:px-[74px]'>
-        <div className='flex-col justify-start items-center gap-[64px] relative z-10'>
-            <div className='w-full flex flex-col justify-center items-start gap-2'>
+    <section className='bg-white min-h-screen py-[120px] gap-[64px] flex flex-col justify-center items-center lg:px-[74px] relative overflow-hidden'>
+      <div className="bg-[#db7a13] absolute top-[50%] left-0 w-full h-full skew-y-[-6deg] origin-top-left z-[1px]"></div>
+      <div className='w-full relative z-10 max-w-[1120px] mx-auto flex flex-col justify-center items-center gap-[64px]'>
+        <div className='w-full flex flex-col justify-start items-start gap-[64px]'>
+            <div className='flex flex-col justify-center items-start gap-2'>
               <h1 className='text-black text-[1.5rem] lg:text-[3rem] leading-[40px] lg:leading-[55.5px] font-semibold'>
                 Frequently Asked Questions
               </h1>

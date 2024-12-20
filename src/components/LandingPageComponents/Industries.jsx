@@ -39,9 +39,9 @@ const Industries = () => {
                 Haelsoft partners with industry experts when building all of our courses, ensuring every course covers the latest industry-relevant topics and tools businesses need. We continue to work with our network of experts to update our courses so they're always up to date.
             </p>
         </div>
-        <div className="flex flex-col justify-between items-center gap-6 overflow-hidden relative before:absolute before:top-0 before:bottom-0 before:w-[35%] before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 before:left-0 after:right-0 after:absolute after:top-0 after:bottom-0 after:w-[35%] after:z-10 after:bg-gradient-to-r after:from-transparent after:to-white clients h-full">  
+        <div className="flex flex-col justify-between items-center gap-3 overflow-hidden relative clients h-full">  
             
-        <div className="flex justify-center items-center gap-6 clients h-[120px]">
+        <div className="flex justify-center items-center gap-3 clients h-[120px]">
                 <Splide
                     extensions={{ AutoScroll }}
                     options={{
@@ -85,7 +85,7 @@ const Industries = () => {
                     </SplideSlide>
                 </Splide>
             </div>
-            <div className="flex justify-center items-center gap-6 clients h-[120px]">
+            <div className="flex justify-center items-center gap-3 clients h-[120px]">
                 <Splide
                     extensions={{ AutoScroll }}
                     options={{
