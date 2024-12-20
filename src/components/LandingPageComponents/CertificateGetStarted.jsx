@@ -15,7 +15,7 @@ const CertificateGetStarted = () => {
             <p className="text-lg leading-relaxed text-white">
                 Unlock your potential with our industry-recognized web development certification. Build real-world projects, learn cutting-edge technologies, and join a community of passionate developers.
             </p>
-            <Link href={`/signup`} className='w-[148px] bg-white h-[46px] rounded-[5px] py-[4px] flex justify-center items-center text-main font-medium text-base'>Get Started!</Link>
+            <Link href={`/signup`} className='w-[148px] bg-white h-[46px] rounded-[5px] py-[4px] flex justify-center items-center text-main font-semibold text-base'>Get Started!</Link>
         </div>
       </div>
     </section>
