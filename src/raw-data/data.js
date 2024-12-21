@@ -1691,25 +1691,25 @@ export const webTools = [
     {
         id: 1,
         list: (
-            <RiReactjsFill className='text-blue-700 text-[2rem]'/>
+            <RiReactjsFill color='#1d4ed8' className='text-[2rem]'/>
         )
     },
     {
         id: 2,
         list: (
-            <BsBootstrapFill className='text-purple-600 text-[2rem]'/>
+            <BsBootstrapFill color='#9333ea' className='text-[2rem]'/>
         )
     },
     {
         id: 3,
         list: (
-            <PiFileSqlDuotone className='text-yellow-600 text-[2rem]'/>
+            <PiFileSqlDuotone color='#ca8a04' className='text-[2rem]'/>
         )
     },
     {
         id: 4,
         list: (
-            <SiMongodb className='text-[2rem] text-green-500'/>
+            <SiMongodb color='#22c55e' className='text-[2rem]'/>
         )
     },
     {
@@ -1721,13 +1721,13 @@ export const webTools = [
     {
         id: 6,
         list: (
-            <LiaAws className='text-yellow-600 text-[2rem]'/>
+            <LiaAws color='#ca8a04' className='text-[2rem]'/>
         )
     },
     {
         id: 7,
         list: (
-            <BiLogoNetlify className='text-blue-400 text-[2rem]'/>
+            <BiLogoNetlify color='#60a5fa' className='text-[2rem]'/>
         )
     }
 ]
