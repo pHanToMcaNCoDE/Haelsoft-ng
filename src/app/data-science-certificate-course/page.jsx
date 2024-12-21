@@ -7,17 +7,17 @@ import CustomCertificateWhy from '@/components/LandingPageComponents/CustomCerti
 import CustomGetCertificate from '@/components/LandingPageComponents/CustomGetCertificate'
 import Navbar from '@/components/LandingPageComponents/Navbar'
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
-import { curriculumWeb, webFaqs, webLearn, webSkills, webTools, webWhy } from '@/raw-data/data'
+import { curriculumUX, uxFaqs, uxLearn, uxSkills, uxTools, uxWhy } from '@/raw-data/data'
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
 import CertificateCurriculum from '@/components/LandingPageComponents/CertificateCurriculum'
 import CustomEarn from '@/components/LandingPageComponents/CustomEarn'
-import web from '../../../public/certificates/web.svg';
+import uxCer from '../../../public/certificates/ux.svg';
 import Industries from '@/components/LandingPageComponents/Industries'
 import CertificateFaq from '@/components/LandingPageComponents/CertificateFaq'
 import CertificateGallary from '@/components/LandingPageComponents/CertificateGallary'
 import CertificateGetStarted from '@/components/LandingPageComponents/CertificateGetStarted'
-import webImg from '../../../public/assets/cert-course/success/web.svg';
+import ux from '../../../public/assets/cert-course/success/ux.svg'
 
 const page = () => {
     const [clicked, setClicked] = useState('');
@@ -33,39 +33,38 @@ const page = () => {
 
     const desc = (
         <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
-            <span className='font-bold'>Build the Web, Build Your Future!</span> Haelsoft&apos;s Web Development Certificate Courses empower you to create innovative, high-performing websites that meet the needs of users and businesses alike. Start your journey into the exciting world of web development today.
+            <span className='font-bold'>Craft Seamless Digital Experiences that Delight and Inspire!</span> Haelsoft&apos;s UX Design Certificate Courses empower you to craft intuitive, user-centered designs that elevate digital experiences and drive business success. Start your journey into the dynamic world of UX design today.
         </div>
     )
 
     const head = (
         <h1 className='text-black text-[1.5rem] lg:text-[2.65rem] leading-[40px] lg:leading-[61.33px] font-bold'>
-            Get Certified as a Web Developer
+            Get Certified as a UX Designer
         </h1>
     )
 
-    const [img, setImg] = useState(webImg)
+    const main = ('UX Design Certification Course Overview')
 
+    const [tools, setTools] = useState(uxTools);
+    const [skills, setSkills] = useState(uxSkills);
+    const [learn, setLearn] = useState(uxLearn);
+    const [why, setWhy] = useState(uxWhy)
+    const [curriculum, setCurriculum] = useState(curriculumUX)
+    const curTitle = 'User Experience (UX) Certification Course Curriculum';
 
-    const main = ('Web Development Certification Course Overview')
+    const [cusTitle, setCusTitle] = useState('Earn Your User Experience (UX) Certification');
+    const [cusImg, setCusImg] = useState(uxCer);
+    const cusDesc = "Earn your Haelsoft UX Design Certification upon course completion. This certification highlights your ability to design user-focused experiences and is perfect for enhancing your professional portfolio. Use it to stand out in the competitive UX field and attract opportunities that match your skills."
 
-    const [tools, setTools] = useState(webTools);
-    const [skills, setSkills] = useState(webSkills);
-    const [learn, setLearn] = useState(webLearn);
-    const [why, setWhy] = useState(webWhy)
-    const [curriculum, setCurriculum] = useState(curriculumWeb)
-    const curTitle = 'Web Development Certification Course Curriculum';
+    const [faqs, setFaqs] = useState(uxFaqs)
+    const heroTitle = 'Data Science Certification'
+    const heroDesc = 'In a world driven by information, data is the most valuable asset for businesses, governments, and individuals. Haelsoft EdTech Platform’s Data Science Courses are designed to help you transform raw data into actionable insights, equipping you with the skills to thrive in one of the fastest-growing fields in technology. Whether you’re a beginner eager to explore data science or a professional looking to upskill, our comprehensive courses provide everything you need to excel.'
 
-    const [cusTitle, setCusTitle] = useState('Earn Your Web Development Certification');
-    const [cusImg, setCusImg] = useState(web);
-    const cusDesc = "Upon completing your course, you'll receive a Haelsoft Web Development Certificate. This shareable certificate is a valuable addition to your resume and LinkedIn profile, helping you showcase your expertise to potential employers and advance your career in web development."
+    const [img, setImg] = useState(ux);
 
-    const [faqs, setFaqs] = useState(webFaqs)
-    const heroTitle = 'Web Development Certification'
-    const heroDesc = 'The digital world is powered by websites, and web development is at the heart of building engaging, responsive, and functional online experiences. Haelsoft EdTech Platform`s Web Development Certificate Courses are designed to provide you with the skills, knowledge, and hands-on experience needed to create stunning, user-friendly websites.'
-
-    const whyTitle = "Why Choose Haelsoft's Web Development Certificate Courses?"
-    const getTitle = 'Master Web Development Today'
-    const getDesc = 'Unlock your potential with our industry-recognized web development certification. Build real-world projects, learn cutting-edge technologies, and join a community of passionate developers.'
+    const whyTitle = "Why Choose Haelsoft's UX Design Certificate Courses?"
+    const getTitle = 'Master UX Design Today';
+    const getDesc = 'Transform your creative skills with our industry-recognized UX design certification. Craft user-centered designs, work on real-world projects, and become part of a thriving community of design professionals.';
 
   return (
     <main>

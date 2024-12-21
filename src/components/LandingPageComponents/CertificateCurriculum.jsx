@@ -36,7 +36,7 @@ const CertificateCurriculum = ({curriculum, curTitle}) => {
                         <div className='grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-items-start lg:justify-items-center place-items-start lg:place-items-center gap-3 w-full'>
                           {
                             cur?.skills?.map((skill) => (
-                              <div key={skill.id} className='bg-[#fafafa] text-black text-[.75rem] w-[128px] rounded-[2px] h-[40px] flex justify-center items-center py-[4px] font-bold'>{skill}</div>
+                              <div key={skill.id} className='bg-[#fafafa] text-black text-[.75rem] w-[128px] rounded-[2px] h-[40px] flex justify-center items-center py-[4px] text-center font-bold'>{skill}</div>
                             ))
                           }
                         </div>

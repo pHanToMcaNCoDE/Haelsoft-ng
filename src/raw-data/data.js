@@ -29,10 +29,13 @@ import { SiAngular, SiBootstrap, SiMongodb, SiReact } from "react-icons/si";
 import { AiOutlineGithub } from "react-icons/ai";
 import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
-import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate } from 'react-icons/fa';
+import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools } from 'react-icons/fa';
 import { FiCloud, FiDatabase, FiGlobe, FiLayers, FiServer, FiUpload } from 'react-icons/fi';
 import { TbBrandBootstrap, TbCloud } from 'react-icons/tb';
 import { FaAws } from 'react-icons/fa6';
+import { FaUserFriends, FaPalette, FaDrawPolygon, FaSitemap, FaSearch, FaUsers } from 'react-icons/fa';
+import { SiFigma, SiAdobe, SiSketch } from 'react-icons/si';
+import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
 
 
 
@@ -1533,7 +1536,9 @@ export const whoSE = [
     },
 ]
 
+// Certificate Learn
 
+// web
 
 export const webLearn = [
     {
@@ -1558,7 +1563,42 @@ export const webLearn = [
     },
 ]
 
+// ux
 
+export const uxLearn = [
+    {
+        id: 1,
+        list: 'Understand user needs through interviews, surveys, and usability testing.'
+    },
+    {
+        id: 2,
+        list: ' Learn the foundations of color theory, typography, and layout for UX.'
+    },
+    {
+        id: 3,
+        list: 'Build interactive prototypes using tools like Figma, Adobe XD, or Sketch.'
+    },
+    {
+        id: 4,
+        list: 'Organize content effectively to enhance user navigation.'
+    },
+    {
+        id: 5,
+        list: 'Test and refine your designs to meet user expectations.'
+    },
+    {
+        id: 6,
+        list: 'Create solutions that prioritize user needs and preferences.'
+    },
+    {
+        id: 7,
+        list: 'Work effectively with developers, product managers, and stakeholders.'
+    },
+]
+
+// Certificate Skills
+
+// web
 
 export const webSkills = [
     {
@@ -1608,7 +1648,44 @@ export const webSkills = [
 ]
 
 
+// ux
 
+
+
+export const uxSkills = [
+    {
+        id: 1,
+        list: 'User Research'
+    },
+    {
+        id: 2,
+        list: 'Design Principles'
+    },
+    {
+        id: 3,
+        list: 'Prototyping'
+    },
+    {
+        id: 4,
+        list: 'Information Architecture'
+    },
+    {
+        id: 5,
+        list: 'Usability Testing'
+    },
+    {
+        id: 6,
+        list: 'Human-Centered Design'
+    },
+    {
+        id: 7,
+        list: 'Collaboration'
+    }
+]
+
+// Certificate Tools
+
+// web
 
 export const webTools = [
     {
@@ -1656,6 +1733,27 @@ export const webTools = [
 ]
 
 
+// ux
+
+export const uxTools = [
+    {
+        id: 1,
+        list: (
+            <FaDrawPolygon color="#2196F3" className='text-[2rem]' />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <SiFigma color="#F24E1E" className='text-[2rem]' />
+        )
+    }
+]
+
+// Certificate Why
+
+// Web
+
 export const webWhy = [
     {
         id: 1,
@@ -1690,9 +1788,48 @@ export const webWhy = [
 ]
 
 
+// ux
+
+export const uxWhy = [
+    {
+        id: 1,
+        name: 'Expert Instructors',
+        desc: 'Learn from seasoned UX professionals with real-world experience.',
+        icon: <FaChalkboardTeacher className='text-[2rem] text-main' />
+    },
+    {
+        id: 2,
+        name: 'Hands-On Project',
+        desc: 'Create a portfolio of projects that showcase your UX design skills.',
+        icon: <FaTools className='text-[2rem] text-main' />
+    },
+    {
+        id: 3,
+        name: 'Flexible Learning',
+        desc: 'Access self-paced modules or live sessions to suit your schedule.',
+        icon: <FaCalendarCheck className='text-[2rem] text-main' />
+    },
+    {
+        id: 4,
+        name: 'Cutting-Edge Tools',
+        desc: 'Get hands-on experience with industry-standard tools and software.',
+        icon: <FaLaptopCode className='text-[2rem] text-main' />
+    },
+    {
+        id: 5,
+        name: 'Certification',
+        desc: 'Earn a recognized certificate to boost your credibility and career prospects.',
+        icon: <FaCertificate className='text-[2rem] text-main' />
+    }
+]
 
 
-export const certificateWeb = [
+// Certificate Curriculum
+
+
+// web
+
+export const curriculumWeb = [
     {
         id: 1,
         unit: 'unit 1',
@@ -1851,6 +1988,178 @@ export const certificateWeb = [
     }         
 ]
 
+// ux
+
+export const curriculumUX = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'User Research and Understanding Needs',
+        desc: "In this unit, you'll explore methods for understanding user needs through interviews, surveys, and usability testing. You'll learn techniques to gather actionable insights that guide the design process and ensure user-focused solutions.",
+        skills: [
+            'User Interviews',
+            'Surveys',
+            'Usability Testing',
+            'Persona Development'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiUserCheck className='text-[1.75rem]'/>
+                ),
+                head: 'User Research',
+                desc: 'Discover how to conduct user interviews, create surveys, and gather insights to inform design decisions.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Design Principles and Aesthetics',
+        desc: "This unit focuses on essential design principles like color theory, typography, and layout. Learn how to create visually appealing interfaces that align with user expectations and accessibility standards.",
+        skills: [
+            'Color Theory',
+            'Typography',
+            'Grid Systems',
+            'Accessibility'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiLayout className='text-[1.75rem]'/>
+                ),
+                head: 'Design Principles',
+                desc: 'Master the core principles of layout, typography, and color to craft aesthetically pleasing designs.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Prototyping and Tools',
+        desc: "Learn to build interactive prototypes using modern tools like Figma, Adobe XD, and Sketch. This unit covers creating wireframes, mockups, and prototypes to visualize and test design concepts.",
+        skills: [
+            'Wireframing',
+            'Interactive Prototypes',
+            'Figma',
+            'Adobe XD'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiPenTool className='text-[1.75rem]'/>
+                ),
+                head: 'Prototyping Tools',
+                desc: 'Use industry-standard tools to create interactive designs and bring your ideas to life.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'Information Architecture',
+        desc: "This unit delves into organizing and structuring content to enhance navigation and user experience. You'll learn about sitemaps, user flows, and how to design intuitive interfaces.",
+        skills: [
+            'Sitemaps',
+            'User Flows',
+            'Content Strategy',
+            'Navigation Design'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiMap className='text-[1.75rem]'/>
+                ),
+                head: 'Information Architecture',
+                desc: 'Learn to organize content effectively for seamless user navigation and interaction.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#C75C27',
+        heading: 'Usability Testing and Refinement',
+        desc: "This unit covers testing your designs with users to gather feedback and refine your solutions. You'll learn how to conduct usability testing and iterate on your designs based on user needs.",
+        skills: [
+            'Usability Testing',
+            'Feedback Analysis',
+            'Iteration',
+            'User-Centric Refinement'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiCheckSquare className='text-[1.75rem]'/>
+                ),
+                head: 'Usability Testing',
+                desc: 'Test your designs with users and refine them to meet their needs and expectations.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#FFFFFF',
+        heading: 'Human-Centered Design',
+        desc: "Discover the principles of human-centered design, focusing on solutions that prioritize user needs and preferences. This unit emphasizes empathy, inclusivity, and problem-solving.",
+        skills: [
+            'Empathy Mapping',
+            'Inclusive Design',
+            'Problem-Solving',
+            'User Focus'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiSmile className='text-[1.75rem]'/>
+                ),
+                head: 'Human-Centered Design',
+                desc: 'Design solutions that prioritize user needs and ensure inclusivity in every step.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#C75C27',
+        heading: 'Collaboration and Teamwork',
+        desc: "This unit teaches you how to collaborate effectively with developers, product managers, and stakeholders. You'll gain skills to communicate your designs, gather feedback, and work in a team environment.",
+        skills: [
+            'Cross-Functional Teams',
+            'Feedback Loops',
+            'Stakeholder Communication',
+            'Agile Workflows'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FiUsers className='text-[1.75rem]'/>
+                ),
+                head: 'Collaboration',
+                desc: 'Work effectively with teams and stakeholders to bring your designs to life.'
+            }
+        ]
+    }
+];
+
+
+
+
+// Certificate FAQS
+
+// web
 
 export const webFaqs = [
     {
@@ -1904,3 +2213,58 @@ export const webFaqs = [
         desc: 'Click the "Enroll Now" button on this page or visit info@haelsoft.com. Fill out the registration form, complete the payment, and you’re ready to start learning!'
     },
 ]
+
+// ux
+
+export const uxFaqs = [
+    {
+        id: 1,
+        name: 'What is UX design, and why is it important?',
+        desc: 'UX design focuses on creating products that provide meaningful and enjoyable experiences for users. It is crucial because it ensures customer satisfaction, drives engagement, and contributes to the success of digital products.'
+    },
+    {
+        id: 2,
+        name: 'Do I need any prior experience to enroll in this course?',
+        desc: 'No prior experience is required. This course is beginner-friendly and covers everything from the basics to advanced UX principles.'
+    },
+    {
+        id: 3,
+        name: 'What tools will I learn to use in this course?',
+        desc: 'You’ll gain hands-on experience with industry-standard tools like Figma, Adobe XD, Sketch, and usability testing platforms.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real projects?',
+        desc: 'Yes, you’ll complete hands-on projects and build a portfolio showcasing your UX design skills, which you can present to potential employers or clients.'
+    },
+    {
+        id: 5,
+        name: 'How long does the course take to complete?',
+        desc: 'The course typically takes 8–12 weeks, depending on whether you choose self-paced learning or live instructor-led sessions.'
+    },
+    {
+        id: 6,
+        name: 'Is this course online or in-person?',
+        desc: 'Our courses are 100% online, offering flexibility for learners to join from anywhere.'
+    },
+    {
+        id: 7,
+        name: 'What support is available if I need help?',
+        desc: 'You’ll have access to instructor support through live Q&A sessions, discussion forums, and email assistance.'
+    },
+    {
+        id: 8,
+        name: 'Will I receive a certificate after completing the course?',
+        desc: 'Yes, you’ll earn a professional certificate upon completion, which you can use to enhance your resume and LinkedIn profile.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Visit [your website link] for pricing details. We offer flexible payment plans and scholarships for eligible learners.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Simply click the "Get Started!". Complete the registration form, make your payment, and start learning!'
+    }
+];

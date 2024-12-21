@@ -5,7 +5,7 @@ import vector from '../../../public/assets/get-certificate/EdTech Platform Group
 import Image from 'next/image';
 import obj from '../../../public/assets/get-certificate/EdTech Platform Group.svg';
 
-const CustomGetCertificate = ({header, desc}) => {
+const CustomGetCertificate = ({header, desc, img}) => {
   return (
     <section className='w-full min-h-[120vh] xl:h-[40vh] bg-white relative px-8 overflow-hidden'>
         <Image className='w-screen object-cover absolute z-10 top-[0px] left-0' src={obj} alt='Vector'></Image>
@@ -24,7 +24,7 @@ const CustomGetCertificate = ({header, desc}) => {
             <Image
                 width={750}
                 height={486}
-                src={vector}
+                src={img}
                 alt="Vector"
                 className="object-cover xl:absolute right-0 top-[549px] z-[5px]"
             />

@@ -122,12 +122,12 @@ const AppFooter = () => {
                   <Link href={`/web-certificate-course`} className="text-[.75rem] font-medium">
                     Web Development
                   </Link>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/ux-design-certificate-course`} className="text-[.75rem] font-medium">
                     User Experience Design
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={`/data-science-certificate-course`} className="text-[.75rem] font-medium">
                     Data Science
-                  </li>
+                  </Link>
                   <li className="text-[.75rem] font-medium">
                     Digital Marketing
                   </li>
