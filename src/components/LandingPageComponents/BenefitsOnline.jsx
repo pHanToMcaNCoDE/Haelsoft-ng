@@ -9,7 +9,7 @@ import Image from 'next/image';
 import BenefitControls from './BenefitControls';
 import icon from '../../../public/Online class icon.png';
 import { BsHourglassTop } from 'react-icons/bs'
-import { FaBarsProgress } from 'react-icons/fa6'
+// import { FaBarsProgress } from 'react-icons/fa6'
 import { GrCertificate, GrDirections } from 'react-icons/gr'
 import fx from '../../../public/Solid System Trend Up.webp';
 import cb from '../../../public/Confetti Regular.webp';

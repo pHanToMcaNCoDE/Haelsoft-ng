@@ -6,8 +6,8 @@ import content from "../../../public/assets/content.svg";
 import web from "../../../public/assets/web.svg";
 import obj from "../../../public/assets/Polygon 1.svg";
 import { IoIosArrowForward } from 'react-icons/io';
-import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 import Image from 'next/image';
+import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 
 const CourseCards = () => {
     const list = [

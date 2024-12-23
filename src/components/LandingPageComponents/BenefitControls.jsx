@@ -5,10 +5,10 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/react-splide/css";
 import './benefits.css'
-import { FaBarsProgress } from 'react-icons/fa6';
-import { RiProgress5Line } from 'react-icons/ri';
-import { GrCertificate, GrDirections } from 'react-icons/gr';
-import { BsHourglassTop } from 'react-icons/bs';
+// import { FaBarsProgress } from 'react-icons/fa6';
+// import { RiProgress5Line } from 'react-icons/ri';
+// import { GrCertificate, GrDirections } from 'react-icons/gr';
+// import { BsHourglassTop } from 'react-icons/bs';
 
 import fx from '../../../public/Solid System Trend Up.webp';
 import cb from '../../../public/Confetti Regular.webp';

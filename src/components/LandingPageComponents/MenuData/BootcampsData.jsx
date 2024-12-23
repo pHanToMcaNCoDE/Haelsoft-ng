@@ -2,7 +2,7 @@ import React from 'react'
 import { FaCode, FaSearchDollar } from 'react-icons/fa'
 import { FiSettings } from 'react-icons/fi'
 import { IoIosArrowForward } from 'react-icons/io'
-import { LuScatterChart } from 'react-icons/lu'
+// import { LuScatterChart } from 'react-icons/lu'
 import { MdBorderColor, MdContactMail, MdOutlineDesignServices } from 'react-icons/md'
 import { TbAtom } from 'react-icons/tb'
 

@@ -19,26 +19,20 @@ import sol from '../../public/assets/bootcamp/solution.svg';
 
 // Icons
 
-
-import { GoDotFill } from 'react-icons/go';
-import { RiHtml5Line, RiJavascriptLine, RiReactjsFill } from 'react-icons/ri';
-import { IoLogoAngular, IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from 'react-icons/io5';
+import { RiHtml5Line, RiJavascriptLine, RiReactjsFill, RiLightbulbFlashLine, RiDatabase2Fill } from 'react-icons/ri';
+// import { IoLogoAngular, IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from 'react-icons/io5';
 import { BsBootstrapFill } from 'react-icons/bs';
 import { PiAngularLogo, PiFileSqlDuotone } from "react-icons/pi";
 import { SiAngular, SiBootstrap, SiMongodb, SiReact } from "react-icons/si";
-import { AiOutlineGithub } from "react-icons/ai";
+import { AiOutlineBarChart, AiOutlineGithub, AiOutlineStock } from "react-icons/ai";
 import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
-import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools } from 'react-icons/fa';
-import { FiCloud, FiDatabase, FiGlobe, FiLayers, FiServer, FiUpload } from 'react-icons/fi';
-import { TbBrandBootstrap, TbCloud } from 'react-icons/tb';
-import { FaAws } from 'react-icons/fa6';
-import { FaUserFriends, FaPalette, FaDrawPolygon, FaSitemap, FaSearch, FaUsers } from 'react-icons/fa';
-import { SiFigma, SiAdobe, SiSketch } from 'react-icons/si';
+import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk } from 'react-icons/fa';
+import { TbBrandBootstrap } from 'react-icons/tb';
+import { FaAws, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy } from 'react-icons/fa6';
+import { SiFigma, SiSqlite, SiR } from 'react-icons/si';
 import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
-
-
-
+import { GiNetworkBars } from 'react-icons/gi';
 
 export const courseDetails = {
     dataScience: {
@@ -1596,6 +1590,80 @@ export const uxLearn = [
     },
 ]
 
+
+// ds
+
+export const dsLearn = [
+    {
+        id: 1,
+        list: 'Analyze datasets and create compelling visualizations using tools like Excel, Tableau, and Power BI.'
+    },
+    {
+        id: 2,
+        list: 'Learn Python, R, and SQL to clean, analyze, and manipulate data.'
+    },
+    {
+        id: 3,
+        list: 'Master statistical methods, probability, and linear algebra for data interpretation.'
+    },
+    {
+        id: 4,
+        list: 'Build predictive models and algorithms using libraries like TensorFlow and Scikit-learn.'
+    },
+    {
+        id: 5,
+        list: 'Explore tools like Hadoop and Spark for handling large-scale data.'
+    },
+    {
+        id: 6,
+        list: 'Learn to manage and analyze data responsibly.'
+    },
+    {
+        id: 7,
+        list: 'Apply data science techniques in industries like healthcare, finance, e-commerce, and more.'
+    },
+]
+
+
+
+
+// dm
+
+export const dmLearn = [
+    {
+        id: 1,
+        list: 'Optimize websites to rank higher on search engines and drive organic traffic.'
+    },
+    {
+        id: 2,
+        list: 'Create and manage impactful campaigns on platforms like Instagram, Facebook, LinkedIn, and Twitter.'
+    },
+    {
+        id: 3,
+        list: 'Develop compelling content strategies to engage and retain audiences.'
+    },
+    {
+        id: 4,
+        list: 'Run effective paid campaigns on Google Ads and social platforms.'
+    },
+    {
+        id: 5,
+        list: 'Craft emails that convert and build long-term customer relationships.'
+    },
+    {
+        id: 6,
+        list: 'Use tools like Google Analytics to measure and optimize campaign performance.'
+    },
+    {
+        id: 7,
+        list: 'Build comprehensive plans to achieve marketing objectives.'
+    },
+]
+
+
+
+
+
 // Certificate Skills
 
 // web
@@ -1683,6 +1751,121 @@ export const uxSkills = [
     }
 ]
 
+
+
+
+// ds
+
+
+
+export const dsSkills = [
+    {
+        id: 1,
+        list: 'Data Analysis'
+    },
+    {
+        id: 2,
+        list: 'Excel'
+    },
+    {
+        id: 3,
+        list: 'Tableau'
+    },
+    {
+        id: 4,
+        list: 'Power BI'
+    },
+    {
+        id: 5,
+        list: 'Python'
+    },
+    {
+        id: 6,
+        list: 'R'
+    },
+    {
+        id: 7,
+        list: 'SQL'
+    },
+    {
+        id: 8,
+        list: 'statistical methods'
+    },
+    {
+        id: 9,
+        list: 'probability'
+    },
+    {
+        id: 10,
+        list: 'linear algebra'
+    },
+    {
+        id: 11,
+        list: 'data interpretation'
+    },
+    {
+        id: 12,
+        list: 'Hadoop'
+    },
+    {
+        id: 13,
+        list: 'Spark'
+    },
+    {
+        id: 14,
+        list: 'TensorFlow'
+    },
+    {
+        id: 15,
+        list: 'Scikit-learn'
+    }
+]
+
+
+
+
+
+// dm
+
+
+
+export const dmSkills = [
+    {
+        id: 1,
+        list: 'SEO'
+    },
+    {
+        id: 2,
+        list: 'Social Media Marketing'
+    },
+    {
+        id: 3,
+        list: 'Content Marketing'
+    },
+    {
+        id: 4,
+        list: 'Advertising'
+    },
+    {
+        id: 5,
+        list: 'Email Marketing'
+    },
+    {
+        id: 6,
+        list: 'Digital Strategy Development'
+    },
+    {
+        id: 7,
+        list: 'Analytics'
+    }
+]
+
+
+
+
+
+
+
 // Certificate Tools
 
 // web
@@ -1749,6 +1932,110 @@ export const uxTools = [
         )
     }
 ]
+
+
+// ds
+
+export const dsTools = [
+    {
+      id: 1,
+      list: (
+        <FaPython color="#306998" className="text-[2rem]" />
+      ),
+    },
+    {
+      id: 2,
+      list: (
+        <SiR color="#276DC3" className="text-[2rem]" />
+      ),
+    },
+    {
+      id: 3,
+      list: (
+        <SiSqlite color="#1C1C1C" className="text-[2rem]" />
+      ),
+    },
+    {
+      id: 4,
+      list: (
+        <AiOutlineBarChart color="#F1C40F" className="text-[2rem]" />
+      ),
+    },
+    {
+      id: 5,
+      list: (
+        <FaCogs color="#34495E" className="text-[2rem]" />
+      ),
+    },
+    {
+      id: 6,
+      list: (
+        <RiDatabase2Fill color="#27AE60" className="text-[2rem]" />
+      ),
+    },
+    {
+      id: 7,
+      list: (
+        <GiNetworkBars color="#8E44AD" className="text-[2rem]" />
+      ),
+    },
+];
+
+
+// dm
+
+export const dmTools = [
+    {
+        id: 1,
+        list: (
+            <FaSearch color="#1E88E5" className="text-[2rem]" />
+        ),
+        desc: 'SEO Mastery: Optimize websites to rank higher on search engines and drive organic traffic.'
+    },
+    {
+        id: 2,
+        list: (
+            <FaFacebook color="#1877F2" className="text-[2rem]" />
+        ),
+        desc: 'Social Media Marketing: Create and manage impactful campaigns on platforms like Instagram, Facebook, LinkedIn, and Twitter.'
+    },
+    {
+        id: 3,
+        list: (
+            <FaPenFancy color="#F39C12" className="text-[2rem]" />
+        ),
+        desc: 'Content Marketing: Develop compelling content strategies to engage and retain audiences.'
+    },
+    {
+        id: 4,
+        list: (
+            <FaGoogle color="#DB4437" className="text-[2rem]" />
+        ),
+        desc: 'Pay-Per-Click Advertising (PPC): Run effective paid campaigns on Google Ads and social platforms.'
+    },
+    {
+        id: 5,
+        list: (
+            <FaMailBulk color="#3498DB" className="text-[2rem]" />
+        ),
+        desc: 'Email Marketing: Craft emails that convert and build long-term customer relationships.'
+    },
+    {
+        id: 6,
+        list: (
+            <FaChartPie color="#2ECC71" className="text-[2rem]" />
+        ),
+        desc: 'Analytics and Reporting: Use tools like Google Analytics to measure and optimize campaign performance.'
+    },
+    {
+        id: 7,
+        list: (
+            <FaBullseye color="#E74C3C" className="text-[2rem]" />
+        ),
+        desc: 'Digital Strategy Development: Build comprehensive plans to achieve marketing objectives.'
+    }
+];
+
 
 // Certificate Why
 
@@ -1824,6 +2111,76 @@ export const uxWhy = [
 ]
 
 
+// data science
+
+export const dsWhy = [
+    {
+        id: 1,
+        icon: <FaChartLine className="text-[2rem] text-main" />,
+        head: 'High Demand',
+        desc: 'Data science is one of the top in-demand skills globally, with growing opportunities across industries.'
+    },
+    {
+        id: 2,
+        icon: <AiOutlineStock className="text-[2rem] text-main" />,
+        head: 'Career Opportunities',
+        desc: 'Unlock roles such as Data Analyst, Data Scientist, Machine Learning Engineer, and more.'
+    },
+    {
+        id: 3,
+        icon: <RiLightbulbFlashLine className="text-[2rem] text-main" />,
+        head: 'Innovative Impact',
+        desc: 'Leverage data to solve real-world problems and drive innovation.'
+    },
+    {
+        id: 4,
+        icon: <FaDollarSign className="text-[2rem] text-main" />,
+        head: 'Lucrative Salaries',
+        desc: 'Data professionals enjoy some of the highest-paying jobs in tech.'
+    }
+];
+
+
+
+// digital marketing
+
+
+export const dmWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Industry-Expert Instructors',
+        desc: 'Learn from seasoned marketers with real-world experience.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Practical Learning',
+        desc: 'Gain hands-on experience through live projects and case studies.'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexible Formats',
+        desc: 'Choose between self-paced modules and live instructor-led sessions.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Earn a recognized certificate to enhance your resume and LinkedIn profile.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Access job placement assistance, resume reviews, and interview preparation.'
+    }
+];
+
+
+
+
 // Certificate Curriculum
 
 
@@ -1846,7 +2203,7 @@ export const curriculumWeb = [
             {
                 id: 1,
                 icon: (
-                    <FiGlobe className='text-[1.75rem]'/>
+                    <FaGlobe className='text-[1.75rem]'/>
                 ),
                 head: 'WWW',
                 desc: 'The World Wide Web (WWW) connects billions of websites, enabling access to vast information, resources, and communication on the internet.'
@@ -1932,7 +2289,7 @@ export const curriculumWeb = [
             {
                 id: 1,
                 icon: (
-                    <FiDatabase className='text-white text-[1.75rem]'/>
+                    <FaDatabase className='text-white text-[1.75rem]'/>
                 ),
                 head: 'SQL',
                 desc: 'SQL (Structured Query Language) is used to manage and query relational databases, enabling efficient data storage and retrieval for web applications.'
@@ -1940,7 +2297,7 @@ export const curriculumWeb = [
             {
                 id: 2,
                 icon: (
-                    <FiServer className='text-white text-[1.75rem]'/>
+                    <FaServer className='text-white text-[1.75rem]'/>
                 ),
                 head: 'Node.js',
                 desc: 'Node.js is a runtime environment that allows you to run JavaScript on the server, ideal for building scalable and high-performance web applications.'
@@ -1948,7 +2305,7 @@ export const curriculumWeb = [
             {
                 id: 3,
                 icon: (
-                    <FiLayers className='text-white text-[1.75rem]'/>
+                    <FaLayerGroup className='text-white text-[1.75rem]'/>
                 ),
                 head: 'MongoDB',
                 desc: 'MongoDB is a NoSQL database designed for flexibility and scalability, enabling developers to work with dynamic and unstructured data efficiently.'
@@ -2155,6 +2512,350 @@ export const curriculumUX = [
 ];
 
 
+// ds
+
+
+
+export const curriculumDS = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'Data Analysis & Visualization',
+        desc: "Analyze datasets and create compelling visualizations using tools like Excel, Tableau, and Power BI. You'll learn how to turn raw data into insights through visual storytelling.",
+        skills: [
+            'Data Analysis',
+            'Data Visualization',
+            'Excel',
+            'Tableau',
+            'Power BI'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaChartBar className='text-[1.75rem]'/>
+                ),
+                head: 'Data Visualization',
+                desc: 'Use tools like Tableau and Power BI to create compelling visual representations of data.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Programming for Data Science',
+        desc: "Learn Python, R, and SQL to clean, analyze, and manipulate data. This unit focuses on the programming skills required to work with large datasets effectively.",
+        skills: [
+            'Python',
+            'R',
+            'SQL',
+            'Data Cleaning',
+            'Data Manipulation'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaCode className='text-[1.75rem]'/>
+                ),
+                head: 'Programming for Data Science',
+                desc: 'Master Python, R, and SQL to analyze and manipulate data effectively.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Statistics & Mathematics',
+        desc: "Master statistical methods, probability, and linear algebra for data interpretation. This unit provides a mathematical foundation necessary for effective data analysis.",
+        skills: [
+            'Probability',
+            'Statistics',
+            'Linear Algebra',
+            'Statistical Inference'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaCalculator className='text-[1.75rem]'/>
+                ),
+                head: 'Mathematical Foundations',
+                desc: 'Build a strong foundation in statistics, probability, and linear algebra for data interpretation.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'Machine Learning',
+        desc: "Build predictive models and algorithms using libraries like TensorFlow and Scikit-learn. This unit will guide you through the process of training models and making predictions based on data.",
+        skills: [
+            'Supervised Learning',
+            'Unsupervised Learning',
+            'TensorFlow',
+            'Scikit-learn',
+            'Model Evaluation'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaMicrochip className='text-[1.75rem]'/>
+                ),
+                head: 'Machine Learning',
+                desc: 'Use TensorFlow and Scikit-learn to build machine learning models that predict outcomes based on data.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#C75C27',
+        heading: 'Big Data Technologies',
+        desc: "Explore tools like Hadoop and Spark for handling large-scale data. Learn how to process and analyze massive datasets that traditional tools cannot handle.",
+        skills: [
+            'Hadoop',
+            'Spark',
+            'Distributed Computing',
+            'Data Storage and Processing'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaDatabase className='text-[1.75rem]'/>
+                ),
+                head: 'Big Data Tools',
+                desc: 'Use Hadoop and Spark to process and analyze large-scale datasets efficiently.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#FFFFFF',
+        heading: 'Data Ethics',
+        desc: "Learn to manage and analyze data responsibly. This unit focuses on the ethical considerations of data collection, privacy, and the potential impact of data science on society.",
+        skills: [
+            'Data Privacy',
+            'Ethical Data Management',
+            'Bias and Fairness',
+            'Transparency'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaLock className='text-[1.75rem]'/>
+                ),
+                head: 'Data Ethics',
+                desc: 'Understand the ethical implications of data collection, privacy, and use in society.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#C75C27',
+        heading: 'Real-World Applications',
+        desc: "Apply data science techniques in industries like healthcare, finance, e-commerce, and more. This unit covers how to implement data-driven solutions in various fields to solve real-world problems.",
+        skills: [
+            'Healthcare',
+            'Finance',
+            'E-commerce',
+            'Predictive Analytics'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaBriefcase className='text-[1.75rem]'/>
+                ),
+                head: 'Real-World Data Science',
+                desc: 'Learn how data science is applied in various industries, including healthcare, finance, and e-commerce.'
+            }
+        ]
+    }
+];
+
+
+
+
+// dm
+
+export const curriculumDM = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'SEO Mastery',
+        desc: "Optimize websites to rank higher on search engines and drive organic traffic. Learn how search engines work and how to use SEO techniques to improve website visibility.",
+        skills: [
+            'SEO',
+            'Keyword Research',
+            'On-Page SEO',
+            'Off-Page SEO'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaSearch className='text-[1.75rem]' />
+                ),
+                head: 'SEO Techniques',
+                desc: 'Master search engine optimization to boost organic traffic and improve search rankings.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Social Media Marketing',
+        desc: "Create and manage impactful campaigns on platforms like Instagram, Facebook, LinkedIn, and Twitter. Learn to craft engaging content and track performance across various platforms.",
+        skills: [
+            'Social Media Strategy',
+            'Content Creation',
+            'Platform Engagement',
+            'Social Ads'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaShareAlt className='text-[1.75rem]' />
+                ),
+                head: 'Social Media Campaigns',
+                desc: 'Leverage platforms like Instagram, Facebook, and Twitter to create impactful social media campaigns.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Content Marketing',
+        desc: "Develop compelling content strategies to engage and retain audiences. Learn how to create valuable content that resonates with your target audience and boosts brand visibility.",
+        skills: [
+            'Content Strategy',
+            'Blogging',
+            'Content Creation',
+            'Content Promotion'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaFileAlt className='text-[1.75rem]' />
+                ),
+                head: 'Content Creation',
+                desc: 'Learn how to create valuable and engaging content to build a connection with your audience.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'Pay-Per-Click Advertising (PPC)',
+        desc: "Run effective paid campaigns on Google Ads and social platforms. Learn to craft paid advertisements that reach the right audience and maximize your ROI.",
+        skills: [
+            'Google Ads',
+            'Facebook Ads',
+            'Campaign Budgeting',
+            'PPC Optimization'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaDollarSign className='text-[1.75rem]' />
+                ),
+                head: 'PPC Campaigns',
+                desc: 'Master PPC advertising strategies on platforms like Google and Facebook to drive paid traffic.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#C75C27',
+        heading: 'Email Marketing',
+        desc: "Craft emails that convert and build long-term customer relationships. Learn email campaign strategies, from list segmentation to copywriting and analytics.",
+        skills: [
+            'Email Campaigns',
+            'List Building',
+            'Copywriting',
+            'Email Analytics'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaEnvelope className='text-[1.75rem]' />
+                ),
+                head: 'Email Strategy',
+                desc: 'Learn how to create and send targeted email campaigns to engage and convert subscribers.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#FFFFFF',
+        heading: 'Analytics and Reporting',
+        desc: "Use tools like Google Analytics to measure and optimize campaign performance. Learn how to track key metrics, analyze data, and generate actionable insights.",
+        skills: [
+            'Google Analytics',
+            'Data Analysis',
+            'Key Metrics',
+            'Performance Optimization'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaChartBar className='text-[1.75rem]' />
+                ),
+                head: 'Data Analytics',
+                desc: 'Use analytics tools to track and optimize marketing campaign performance.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#C75C27',
+        heading: 'Digital Strategy Development',
+        desc: "Build comprehensive plans to achieve marketing objectives. Learn to align business goals with digital marketing tactics, measuring success along the way.",
+        skills: [
+            'Digital Strategy',
+            'Campaign Planning',
+            'Goal Setting',
+            'Performance Metrics'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaClipboardList className='text-[1.75rem]' />
+                ),
+                head: 'Strategic Planning',
+                desc: 'Develop a comprehensive digital marketing strategy to achieve your business goals.'
+            }
+        ]
+    }
+];
+
+
+
+
+
 
 
 // Certificate FAQS
@@ -2210,61 +2911,118 @@ export const webFaqs = [
     {
         id: 10,
         name: 'How do I enroll?',
-        desc: 'Click the "Enroll Now" button on this page or visit info@haelsoft.com. Fill out the registration form, complete the payment, and you’re ready to start learning!'
+        desc: 'Click the "Get Started!" button on this page. Fill out the registration form, complete the payment, and you’re ready to start learning!'
     },
 ]
 
 // ux
 
-export const uxFaqs = [
+export const dsFaqs = [
     {
         id: 1,
-        name: 'What is UX design, and why is it important?',
-        desc: 'UX design focuses on creating products that provide meaningful and enjoyable experiences for users. It is crucial because it ensures customer satisfaction, drives engagement, and contributes to the success of digital products.'
+        name: 'What is data science, and why is it important?',
+        desc: 'Data science involves extracting insights from data using techniques from statistics, machine learning, and programming. It’s crucial for making data-driven decisions in business, healthcare, technology, and more.'
     },
     {
         id: 2,
-        name: 'Do I need any prior experience to enroll in this course?',
-        desc: 'No prior experience is required. This course is beginner-friendly and covers everything from the basics to advanced UX principles.'
+        name: 'Do I need prior experience in programming or statistics?',
+        desc: 'No prior experience is required. The course begins with foundational concepts and progresses to advanced topics, making it suitable for beginners.'
     },
     {
         id: 3,
-        name: 'What tools will I learn to use in this course?',
-        desc: 'You’ll gain hands-on experience with industry-standard tools like Figma, Adobe XD, Sketch, and usability testing platforms.'
+        name: 'What tools and languages will I learn?',
+        desc: 'You’ll learn Python, R, SQL, Tableau, and Big Data tools like Hadoop and Spark, among others.'
     },
     {
         id: 4,
-        name: 'Will I work on real projects?',
-        desc: 'Yes, you’ll complete hands-on projects and build a portfolio showcasing your UX design skills, which you can present to potential employers or clients.'
+        name: 'Are there hands-on projects included?',
+        desc: 'Yes, you’ll work on real-world datasets and projects, such as building predictive models and data visualizations, to create a portfolio.'
     },
     {
         id: 5,
         name: 'How long does the course take to complete?',
-        desc: 'The course typically takes 8–12 weeks, depending on whether you choose self-paced learning or live instructor-led sessions.'
+        desc: 'The course typically takes 12–16 weeks, depending on the pace you choose.'
     },
     {
         id: 6,
-        name: 'Is this course online or in-person?',
-        desc: 'Our courses are 100% online, offering flexibility for learners to join from anywhere.'
+        name: 'Is the course entirely online?',
+        desc: 'Yes, all our data science courses are fully online, offering the flexibility to learn from anywhere.'
     },
     {
         id: 7,
-        name: 'What support is available if I need help?',
-        desc: 'You’ll have access to instructor support through live Q&A sessions, discussion forums, and email assistance.'
+        name: 'Will I earn a certificate after completing the course?',
+        desc: 'Yes, you’ll receive a professional certificate upon successfully completing the course, showcasing your skills to potential employers.'
     },
     {
         id: 8,
-        name: 'Will I receive a certificate after completing the course?',
-        desc: 'Yes, you’ll earn a professional certificate upon completion, which you can use to enhance your resume and LinkedIn profile.'
+        name: 'Can I interact with instructors and peers?',
+        desc: 'Yes, our live sessions, discussion forums, and group projects provide opportunities to engage with instructors and fellow learners.'
     },
     {
         id: 9,
         name: 'How much does the course cost?',
-        desc: 'Visit [your website link] for pricing details. We offer flexible payment plans and scholarships for eligible learners.'
+        desc: 'Course fees vary based on your chosen program. Visit [your website link] for detailed pricing and available payment options.'
     },
     {
         id: 10,
         name: 'How do I enroll?',
-        desc: 'Simply click the "Get Started!". Complete the registration form, make your payment, and start learning!'
+        desc: 'Click the "Get Started!" button. Complete the registration form, make your payment, and start learning!'
     }
 ];
+
+
+// dm
+
+export const dmFaqs = [
+    {
+        id: 1,
+        name: 'What is digital marketing, and why is it important?',
+        desc: 'Digital marketing involves promoting products or services online using strategies like SEO, social media, email marketing, and PPC. It’s essential for reaching today’s tech-savvy consumers and driving business growth.'
+    },
+    {
+        id: 2,
+        name: 'Do I need any prior experience to enroll?',
+        desc: 'No prior experience is required. Our courses are designed for beginners and advanced learners alike.'
+    },
+    {
+        id: 3,
+        name: 'What tools will I learn to use?',
+        desc: 'You’ll gain hands-on experience with tools like Google Analytics, Google Ads, Facebook Business Manager, Canva, and email marketing platforms.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real-world projects?',
+        desc: 'Yes, you’ll work on live campaigns and case studies to build practical skills and create a portfolio.'
+    },
+    {
+        id: 5,
+        name: 'How long does the course take?',
+        desc: 'The course duration is typically 8–12 weeks, depending on the program and your learning pace.'
+    },
+    {
+        id: 6,
+        name: 'Is this course online or in-person?',
+        desc: 'Our courses are 100% online, allowing you to learn from anywhere at your convenience.'
+    },
+    {
+        id: 7,
+        name: 'Will I receive a certificate upon completion?',
+        desc: 'Yes, you’ll earn a professional certificate to validate your expertise and boost your career prospects.'
+    },
+    {
+        id: 8,
+        name: 'Can I interact with instructors?',
+        desc: 'Yes, our live sessions and discussion forums allow you to ask questions and engage with instructors.'
+    },
+    {
+        id: 9,
+        name: 'What career opportunities can I expect after completing this course?',
+        desc: 'You’ll be equipped for roles like SEO Specialist, Social Media Manager, Digital Marketing Manager, and more, or you can use your skills to grow your own business.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Click the "Enroll Now" button or visit [your website link]. Complete your registration, make your payment, and start learning!'
+    }
+];
+

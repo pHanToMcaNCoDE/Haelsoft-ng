@@ -19,7 +19,7 @@ const CustomCertificateWhy = ({main, learn, tools, skills, why}) => {
                     </div>
                 </div>
             </div>
-            <div className='pt-[60px] md:pt-[100px] md:pb-[30px] 2xl:pt-[200px] 2xl:pb-[30px] flex flex-col justify-center items-start gap-8 px-[16px] md:px-[36px]'>
+            <div className='pt-[60px] md:pt-[100px] md:pb-[30px] 2xl:pb-[30px] flex flex-col justify-center items-start gap-8 px-[16px] md:px-[36px]'>
                 <div className='flex flex-col justify-center items-start gap-4'>
                     <h1 className='text-[#201A18] font-semibold text-[1.5rem] leading-[29.26px]'>What You'll Learn</h1>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>

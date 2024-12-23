@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsHourglassTop } from 'react-icons/bs'
-import { FaBarsProgress } from 'react-icons/fa6'
+import { FaBarsProgress } from "react-icons/fa";
 import { GrCertificate, GrDirections } from 'react-icons/gr'
 
 const BenefitCards = () => {

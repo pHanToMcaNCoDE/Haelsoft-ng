@@ -9,13 +9,13 @@ import Navbar from '@/components/LandingPageComponents/Navbar'
 import React, { useRef, useState } from 'react'
 import CertificateCurriculum from '@/components/LandingPageComponents/CertificateCurriculum'
 import CustomEarn from '@/components/LandingPageComponents/CustomEarn'
-import dsCer from '../../../public/certificates/ds.svg';
+import dmCer from '../../../public/certificates/dm.svg';
 import Industries from '@/components/LandingPageComponents/Industries'
 import CertificateFaq from '@/components/LandingPageComponents/CertificateFaq'
 import CertificateGallary from '@/components/LandingPageComponents/CertificateGallary'
 import CertificateGetStarted from '@/components/LandingPageComponents/CertificateGetStarted'
-import ds from '../../../public/assets/cert-course/success/ds.svg'
-import { curriculumDS, dsFaqs, dsLearn, dsSkills, dsTools, dsWhy } from '@/raw-data/data'
+import dm from '../../../public/assets/cert-course/success/dm.svg'
+import { curriculumDM, dmFaqs, dmLearn, dmSkills, dmTools, dmWhy } from '@/raw-data/data'
 
 
 const page = () => {
@@ -39,32 +39,32 @@ const page = () => {
 
     const head = (
         <h1 className='text-black text-[1.5rem] lg:text-[2.65rem] leading-[40px] lg:leading-[61.33px] font-bold'>
-            Get Certified as a Data Scientist
+            Get Certified as a Digital Marketer
         </h1>
     )
 
-    const main = ('Data Science Certification Course Overview')
+    const main = ('Digital Marketing Certification Course Overview')
 
-    const [tools, setTools] = useState(dsTools);
-    const [skills, setSkills] = useState(dsSkills);
-    const [learn, setLearn] = useState(dsLearn);
-    const [why, setWhy] = useState(dsWhy)
-    const [curriculum, setCurriculum] = useState(curriculumDS)
-    const curTitle = 'Data Science Certification Course Curriculum';
+    const [tools, setTools] = useState(dmTools);
+    const [skills, setSkills] = useState(dmSkills);
+    const [learn, setLearn] = useState(dmLearn);
+    const [why, setWhy] = useState(dmWhy)
+    const [curriculum, setCurriculum] = useState(curriculumDM)
+    const curTitle = 'Digital Marketing Certification Course Curriculum';
 
-    const [cusTitle, setCusTitle] = useState('Earn Your Data Science Certification');
-    const [cusImg, setCusImg] = useState(dsCer);
-    const cusDesc = "Earn your Haelsoft Data Science Certification upon course completion. This certification demonstrates your expertise in analyzing data, building models, and generating insights that drive decision-making. It’s an excellent addition to your professional portfolio, helping you stand out in the fast-growing field of data science and secure opportunities aligned with your skills."
+    const [cusTitle, setCusTitle] = useState('Earn Your Digital Marketing Certification');
+    const [cusImg, setCusImg] = useState(dmCer);
+    const cusDesc = "Earn your Haelsoft Digital Marketing Certification upon course completion. This certification validates your expertise in crafting impactful campaigns, optimizing online presence, and driving measurable results. It’s a powerful addition to your professional portfolio, showcasing your skills in SEO, social media, content marketing, and analytics, helping you stand out in the competitive digital marketing industry and secure rewarding opportunities."
 
-    const [faqs, setFaqs] = useState(dsFaqs)
-    const heroTitle = 'Data Science Certification'
-    const heroDesc = "In a world driven by information, data is the most valuable asset for businesses, governments, and individuals. Haelsoft EdTech Platform's Data Science Courses are designed to help you transform raw data into actionable insights, equipping you with the skills to thrive in one of the fastest-growing fields in technology. Whether you&apos;re a beginner eager to explore data science or a professional looking to upskill, our comprehensive courses provide everything you need to excel."
+    const [faqs, setFaqs] = useState(dmFaqs)
+    const heroTitle = 'Digital Marketing Certification'
+    const heroDesc = "In today’s competitive business landscape, digital marketing is the key to reaching and engaging your target audience. Haelsoft EdTech Platform’s Digital Marketing Courses are designed to provide you with cutting-edge skills, practical strategies, and industry insights to excel in the fast-paced world of online marketing."
 
-    const [img, setImg] = useState(ds);
+    const [img, setImg] = useState(dm);
 
-    const whyTitle = "Why Choose Haelsoft's Data Science Certificate Courses?"
-    const getTitle = 'Master Data Science Today';
-    const getDesc = 'Elevate your analytical skills with our industry-recognized Data Science certification. Analyze complex data, work on real-world projects, and join a thriving community of data science professionals.';
+    const whyTitle = "Why Choose Haelsoft's Digital Marketing Certificate Courses?"
+    const getTitle = 'Master Digital Marketing Today';
+    const getDesc = 'Elevate your marketing expertise with our industry-recognized Digital Marketing certification. Master cutting-edge strategies, work on real-world campaigns, and join a thriving community of marketing professionals.';
 
   return (
         <main>

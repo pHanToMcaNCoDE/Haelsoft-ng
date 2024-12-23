@@ -3,7 +3,7 @@
 import React from "react";
 import { FaLinkedinIn, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
-import { FaXTwitter } from "react-icons/fa6";
+import { BsTwitterX } from "react-icons/bs";
 import { FiInstagram } from "react-icons/fi";
 import logo from '../../public/EdTech Platform screenshot (1).svg';
 import Link from "next/link";
@@ -38,7 +38,7 @@ const AppFooter = () => {
                     <FaLinkedinIn size={25} />
                   </Link>
                   <Link href="https://www.linkedin.com/company/haelsoft/mycompany/">
-                    <FaXTwitter size={25} />
+                    <BsTwitterX size={25} />
                   </Link>
                   <Link href="https://www.instagram.com/haelsoft">
                     <FiInstagram size={25} />
@@ -128,9 +128,9 @@ const AppFooter = () => {
                   <Link href={`/data-science-certificate-course`} className="text-[.75rem] font-medium">
                     Data Science
                   </Link>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/digital-marketing-certificate-course`} className="text-[.75rem] font-medium">
                     Digital Marketing
-                  </li>
+                  </Link>
                   <li className="text-[.75rem] font-medium">
                     Product Management
                   </li>
