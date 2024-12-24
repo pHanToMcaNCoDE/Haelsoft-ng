@@ -9,13 +9,13 @@ import Navbar from '@/components/LandingPageComponents/Navbar'
 import React, { useRef, useState } from 'react'
 import CertificateCurriculum from '@/components/LandingPageComponents/CertificateCurriculum'
 import CustomEarn from '@/components/LandingPageComponents/CustomEarn'
-import dmCer from '../../../public/certificates/dm.svg';
+import pmCer from '../../../public/certificates/pm.svg';
 import Industries from '@/components/LandingPageComponents/Industries'
 import CertificateFaq from '@/components/LandingPageComponents/CertificateFaq'
 import CertificateGallary from '@/components/LandingPageComponents/CertificateGallary'
 import CertificateGetStarted from '@/components/LandingPageComponents/CertificateGetStarted'
-import dm from '../../../public/assets/cert-course/success/dm.svg'
-import { curriculumPM, dmLearn, dmSkills, dmTools, pmFaqs, pmWhy } from '@/raw-data/data'
+import pm from '../../../public/assets/cert-course/success/pm.svg'
+import { curriculumPM, pmLearn, pmTools, pmFaqs, pmSkills, pmWhy } from '@/raw-data/data'
 
 
 const page = () => {
@@ -33,34 +33,34 @@ const page = () => {
 
     const desc = (
         <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
-            <span className='font-bold'>Craft Seamless Digital Experiences that Delight and Inspire!</span> In today&apos;s data-driven world, mastering data science is essential for making informed decisions and solving complex problems. Haelsoft EdTech Platform&apos;s Data Science course is designed to equip you with the skills to analyze data, build predictive models, and unlock valuable insights. Whether you&apos;re looking to transition into data science or enhance your existing skills, this course will provide the practical knowledge needed to excel in a fast-paced, data-centric environment." Let me know if you'd like any further adjustments!
+            <span className='font-bold'>Master Product Management and Drive Success!</span> In today&apos;s fast-paced market, effective product management is key to building innovative solutions and leading successful teams. Haelsoft EdTech Platform&apos;s Product Management course is designed to equip you with the skills to manage product lifecycles, define strategies, and deliver customer-driven results. Whether you&apos;re starting a career in product management or looking to refine your skills, this course will provide you with the practical tools to excel in a competitive industry.
         </div>
-    )
+    )    
 
     const head = (
         <h1 className='text-black text-[1.5rem] lg:text-[2.65rem] leading-[40px] lg:leading-[61.33px] font-bold'>
-            Get Certified as a Digital Marketer
+            Get Certified as a Product Manager
         </h1>
     )
 
     const main = ('Product Management Certification Course Overview')
 
-    const [tools, setTools] = useState(dmTools);
-    const [skills, setSkills] = useState(dmSkills);
-    const [learn, setLearn] = useState(dmLearn);
+    const [tools, setTools] = useState(pmTools);
+    const [skills, setSkills] = useState(pmSkills);
+    const [learn, setLearn] = useState(pmLearn);
     const [why, setWhy] = useState(pmWhy)
     const [curriculum, setCurriculum] = useState(curriculumPM)
     const curTitle = 'Product Management Certification Course Curriculum';
 
     const [cusTitle, setCusTitle] = useState('Earn Your Product Management Certification');
-    const [cusImg, setCusImg] = useState(dmCer);
-    const cusDesc = "Earn your Haelsoft Product Management Certification upon course completion. This certification demonstrates your expertise in managing product lifecycles, defining strategies, and delivering customer-centric solutions. It’s a valuable addition to your professional portfolio, showcasing your skills in market research, roadmap development, stakeholder management, and agile methodologies, empowering you to excel in the competitive product management field and unlock exciting career opportunities."
+    const [cusImg, setCusImg] = useState(pmCer);
+    const cusDesc = "Earn the Haelsoft Product Management Certification to showcase your expertise in product lifecycles, strategy, market research, and agile methodologies. Enhance your professional portfolio and unlock new career opportunities in product management."
 
     const [faqs, setFaqs] = useState(pmFaqs)
     const heroTitle = 'Product Management Certification'
     const heroDesc = "In today’s competitive market, product management is at the heart of delivering value-driven solutions that customers love. Haelsoft EdTech Platform’s Product Management Courses are designed to equip you with the skills, tools, and strategies to excel in this exciting field."
 
-    const [img, setImg] = useState(dm);
+    const [img, setImg] = useState(pm);
 
     const whyTitle = "Why Choose Haelsoft's Product Management Certificate Courses?"
     const getTitle = 'Master Product Management Today';

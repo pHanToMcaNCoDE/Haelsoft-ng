@@ -29,7 +29,7 @@ import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
 import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket } from 'react-icons/fa';
 import { TbBrandBootstrap } from 'react-icons/tb';
-import { FaAws, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy } from 'react-icons/fa6';
+import { FaAws, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy, FaPeopleArrows } from 'react-icons/fa6';
 import { SiFigma, SiSqlite, SiR } from 'react-icons/si';
 import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
 import { GiNetworkBars } from 'react-icons/gi';
@@ -1904,6 +1904,34 @@ export const dmSkills = [
 
 
 
+// dm
+
+
+
+export const pmSkills = [
+    {
+        id: 1,
+        list: 'Market Research'
+    },
+    {
+        id: 2,
+        list: 'Agile Development'
+    },
+    {
+        id: 3,
+        list: 'Metrics & Analytics'
+    },
+    {
+        id: 4,
+        list: 'Stakeholder Management'
+    }
+]
+
+
+
+
+
+
 
 // Certificate Tools
 
@@ -2028,52 +2056,100 @@ export const dmTools = [
         id: 1,
         list: (
             <FaSearch color="#1E88E5" className="text-[2rem]" />
-        ),
-        desc: 'SEO Mastery: Optimize websites to rank higher on search engines and drive organic traffic.'
+        )
     },
     {
         id: 2,
         list: (
             <FaFacebook color="#1877F2" className="text-[2rem]" />
-        ),
-        desc: 'Social Media Marketing: Create and manage impactful campaigns on platforms like Instagram, Facebook, LinkedIn, and Twitter.'
+        )
     },
     {
         id: 3,
         list: (
             <FaPenFancy color="#F39C12" className="text-[2rem]" />
-        ),
-        desc: 'Content Marketing: Develop compelling content strategies to engage and retain audiences.'
+        )
     },
     {
         id: 4,
         list: (
             <FaGoogle color="#DB4437" className="text-[2rem]" />
-        ),
-        desc: 'Pay-Per-Click Advertising (PPC): Run effective paid campaigns on Google Ads and social platforms.'
+        )
     },
     {
         id: 5,
         list: (
             <FaMailBulk color="#3498DB" className="text-[2rem]" />
-        ),
-        desc: 'Email Marketing: Craft emails that convert and build long-term customer relationships.'
+        )
     },
     {
         id: 6,
         list: (
             <FaChartPie color="#2ECC71" className="text-[2rem]" />
-        ),
-        desc: 'Analytics and Reporting: Use tools like Google Analytics to measure and optimize campaign performance.'
+        )
     },
     {
         id: 7,
         list: (
             <FaBullseye color="#E74C3C" className="text-[2rem]" />
-        ),
-        desc: 'Digital Strategy Development: Build comprehensive plans to achieve marketing objectives.'
+        )
     }
 ];
+
+
+
+
+
+// pm
+
+export const pmTools = [
+    {
+        id: 1,
+        list: (
+            <FaCogs color="#1E88E5" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <FaSearch color="#1877F2" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <FaMapSigns color="#F39C12" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <FaTasks color="#DB4437" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <FaChartLine color="#2ECC71" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <FaPeopleArrows color="#E74C3C" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <FaRocket color="#3498DB" className="text-[2rem]" />
+        )
+    }
+];
+
+
+
+
 
 
 // Certificate Why
@@ -2940,7 +3016,7 @@ export const curriculumPM = [
     {
         id: 1,
         unit: 'unit 1',
-        bg: '#4CAF50',
+        bg: '#C75C27',
         heading: 'Product Lifecycle Management',
         desc: "Understand every phase of a product’s journey, from idea conception to market launch and beyond.",
         skills: [
@@ -2963,7 +3039,7 @@ export const curriculumPM = [
     {
         id: 2,
         unit: 'unit 2',
-        bg: '#FFC107',
+        bg: '#FFFFFF',
         heading: 'Market Research',
         desc: "Conduct customer interviews, analyze competitive data, and identify user pain points and needs.",
         skills: [
@@ -2986,7 +3062,7 @@ export const curriculumPM = [
     {
         id: 3,
         unit: 'unit 3',
-        bg: '#2196F3',
+        bg: '#C75C27',
         heading: 'Roadmap Creation',
         desc: "Develop comprehensive product roadmaps aligned with organizational goals and user needs.",
         skills: [
@@ -3009,7 +3085,7 @@ export const curriculumPM = [
     {
         id: 4,
         unit: 'unit 4',
-        bg: '#FF5722',
+        bg: '#FFFFFF',
         heading: 'Agile Development',
         desc: "Collaborate with engineering and design teams using Agile methodologies for seamless product development.",
         skills: [
@@ -3032,7 +3108,7 @@ export const curriculumPM = [
     {
         id: 5,
         unit: 'unit 5',
-        bg: '#9C27B0',
+        bg: '#C75C27',
         heading: 'Metrics & Analytics',
         desc: "Track and analyze product performance metrics to drive continuous improvement and success.",
         skills: [
@@ -3055,7 +3131,7 @@ export const curriculumPM = [
     {
         id: 6,
         unit: 'unit 6',
-        bg: '#795548',
+        bg: '#FFFFFF',
         heading: 'Stakeholder Management',
         desc: "Communicate effectively with teams, clients, and leadership to align product vision and execution.",
         skills: [
@@ -3078,7 +3154,7 @@ export const curriculumPM = [
     {
         id: 7,
         unit: 'unit 7',
-        bg: '#3F51B5',
+        bg: '#C75C27',
         heading: 'Go-to-Market Strategy',
         desc: "Plan and execute product launches that capture market attention and drive adoption.",
         skills: [
