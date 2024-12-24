@@ -62,7 +62,7 @@ const page = () => {
 
     const [img, setImg] = useState(pm);
 
-    const whyTitle = "Why Choose Haelsoft's Product Management Certificate Courses?"
+    const whyTitle = "Why Choose Haelsoft's Product Management Certificate Course?"
     const getTitle = 'Master Product Management Today';
     const getDesc = 'Advance your career with our industry-recognized Product Management certification. Gain mastery of innovative frameworks, work on real-world projects, and become part of a dynamic community of product leaders.';
 

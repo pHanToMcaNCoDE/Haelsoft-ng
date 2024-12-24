@@ -62,7 +62,7 @@ const page = () => {
 
     const [img, setImg] = useState(ds);
 
-    const whyTitle = "Why Choose Haelsoft's Data Science Certificate Courses?"
+    const whyTitle = "Why Choose Haelsoft's Data Science Certificate Course?"
     const getTitle = 'Master Data Science Today';
     const getDesc = 'Elevate your analytical skills with our industry-recognized Data Science certification. Analyze complex data, work on real-world projects, and join a thriving community of data science professionals.';
 

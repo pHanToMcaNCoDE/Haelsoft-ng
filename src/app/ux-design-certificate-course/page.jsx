@@ -60,7 +60,7 @@ const page = () => {
 
     const [img, setImg] = useState(ux);
 
-    const whyTitle = "Why Choose Haelsoft's UX Design Certificate Courses?"
+    const whyTitle = "Why Choose Haelsoft's UX Design Certificate Course?"
     const getTitle = 'Master UX Design Today';
     const getDesc = 'Transform your creative skills with our industry-recognized UX design certification. Craft user-centered designs, work on real-world projects, and become part of a thriving community of design professionals.';
 

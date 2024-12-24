@@ -62,7 +62,7 @@ const page = () => {
 
     const [img, setImg] = useState(dm);
 
-    const whyTitle = "Why Choose Haelsoft's Digital Marketing Certificate Courses?"
+    const whyTitle = "Why Choose Haelsoft's Digital Marketing Certificate Course?"
     const getTitle = 'Master Digital Marketing Today';
     const getDesc = 'Elevate your marketing expertise with our industry-recognized Digital Marketing certification. Master cutting-edge strategies, work on real-world campaigns, and join a thriving community of marketing professionals.';
 

@@ -63,7 +63,7 @@ const page = () => {
     const heroTitle = 'Web Development Certification'
     const heroDesc = 'The digital world is powered by websites, and web development is at the heart of building engaging, responsive, and functional online experiences. Haelsoft EdTech Platform`s Web Development Certificate Courses are designed to provide you with the skills, knowledge, and hands-on experience needed to create stunning, user-friendly websites.'
 
-    const whyTitle = "Why Choose Haelsoft's Web Development Certificate Courses?"
+    const whyTitle = "Why Choose Haelsoft's Web Development Certificate Course?"
     const getTitle = 'Master Web Development Today'
     const getDesc = 'Unlock your potential with our industry-recognized web development certification. Build real-world projects, learn cutting-edge technologies, and join a community of passionate developers.'
 

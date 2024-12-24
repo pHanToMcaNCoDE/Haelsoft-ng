@@ -29,7 +29,7 @@ import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
 import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket, FaShieldAlt, FaNetworkWired, FaUserShield, FaExclamationTriangle, FaBalanceScale } from 'react-icons/fa';
 import { TbBrandBootstrap } from 'react-icons/tb';
-import { FaAws, FaBug, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy, FaPeopleArrows } from 'react-icons/fa6';
+import { FaAws, FaBug, FaBullseye, FaBusinessTime, FaChartPie, FaCloud, FaEye, FaFacebook, FaGoogle, FaPenFancy, FaPeopleArrows, FaTable } from 'react-icons/fa6';
 import { SiFigma, SiSqlite, SiR } from 'react-icons/si';
 import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
 import { GiNetworkBars } from 'react-icons/gi';
@@ -1737,6 +1737,44 @@ export const cybLearn = [
 
 
 
+// da
+
+export const daLearn = [
+    {
+        id: 1,
+        list: 'Understand foundational concepts like data collection and cleaning.'
+    },
+    {
+        id: 2,
+        list: 'Apply statistical techniques to uncover trends and patterns.'
+    },
+    {
+        id: 3,
+        list: 'Use tools like Tableau, Power BI, and Excel to create compelling visuals.'
+    },
+    {
+        id: 4,
+        list: 'Learn Python, R, or SQL for advanced data manipulation.'
+    },
+    {
+        id: 5,
+        list: 'Explore technologies like Hadoop and Google BigQuery.'
+    },
+    {
+        id: 6,
+        list: 'Build models to predict future outcomes and behaviors.'
+    },
+    {
+        id: 7,
+        list: 'Translate data insights into strategic decisions for business success.'
+    },
+]
+
+
+
+
+
+
 // Certificate Skills
 
 // web
@@ -1996,6 +2034,57 @@ export const cybSkills = [
         list: 'NIST'
     },
 ]
+
+
+
+
+
+
+
+// da
+
+
+
+export const daSkills = [
+    {
+        id: 1,
+        list: 'Statistical Analysis'
+    },
+    {
+        id: 2,
+        list: 'Data Visualization'
+    },
+    {
+        id: 3,
+        list: 'Python'
+    },
+    {
+        id: 4,
+        list: 'R'
+    },
+    {
+        id: 5,
+        list: 'SQL'
+    },
+    {
+        id: 6,
+        list: 'Hadoop'
+    },
+    {
+        id: 7,
+        list: 'Google BigQuery'
+    },
+    {
+        id: 8,
+        list: 'Business Intelligence'
+    },
+]
+
+
+
+
+
+
 
 
 
@@ -2269,6 +2358,55 @@ export const cybTools = [
 ];
 
 
+// da
+
+export const daTools = [
+    {
+        id: 1,
+        list: (
+            <FaDatabase color="#1E88E5" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <FaChartLine color="#1877F2" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <FaEye color="#F39C12" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <FaPython color="#DB4437" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <FaCloud color="#2ECC71" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <FaCogs color="#E74C3C" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <FaBullseye color="#3498DB" className="text-[2rem]" />
+        )
+    }
+];
+
+
+
 
 
 // Certificate Why
@@ -2488,6 +2626,50 @@ export const cybWhy = [
         desc: 'Access resume building, mock interviews, and job placement assistance.'  
     }
 ];
+
+
+
+
+// da
+
+
+export const daWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Expert-Led Instructors',
+        desc: 'Learn from data analytics practitioners with real-world experience.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Hands-On Practice',
+        desc: 'Work on real-world datasets and case studies for practical exposure.'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexible Learning',
+        desc: 'Choose between self-paced modules and live instructor-led sessions.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Earn credentials that validate your expertise.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Benefit from resume building, interview prep, and job placement assistance.'  
+    }
+];
+
+
+
+
+
 
 
 
@@ -3499,6 +3681,174 @@ export const curriculumCYB = [
 ];
 
 
+// da
+
+
+export const curriculumDA = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'Data Analytics Basics',
+        desc: "Understand foundational concepts like data collection, cleaning, and preparation to ensure reliable analysis.",
+        skills: [
+            'Data Collection Methods',
+            'Data Cleaning Techniques',
+            'Data Transformation',
+            'Basic Analytics Tools'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaDatabase className="text-[1.75rem]" />
+                ),
+                head: 'Data Foundations',
+                desc: 'Learn the basic steps in gathering, cleaning, and preparing data for analysis.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Statistical Analysis',
+        desc: "Apply statistical techniques to uncover trends, patterns, and correlations within data sets.",
+        skills: [
+            'Descriptive Statistics',
+            'Inferential Statistics',
+            'Hypothesis Testing',
+            'Regression Analysis'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaChartLine className="text-[1.75rem]" />
+                ),
+                head: 'Statistical Methods',
+                desc: 'Use statistical methods to analyze data and uncover insights such as trends and relationships.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Data Visualization',
+        desc: "Use tools like Tableau, Power BI, and Excel to create compelling visuals that communicate data insights effectively.",
+        skills: [
+            'Tableau Basics',
+            'Power BI Basics',
+            'Excel Data Visualization',
+            'Visualization Techniques'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaTable className="text-[1.75rem]" />
+                ),
+                head: 'Data Visuals',
+                desc: 'Create impactful charts, graphs, and dashboards to represent data clearly and intuitively.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'Programming for Analytics',
+        desc: "Learn Python, R, or SQL for advanced data manipulation, analysis, and automation of tasks.",
+        skills: [
+            'Python for Data Analytics',
+            'R for Data Analytics',
+            'SQL Querying',
+            'Data Wrangling'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaPython className="text-[1.75rem]" />
+                ),
+                head: 'Programming Skills',
+                desc: 'Master key programming languages like Python, R, and SQL to manipulate and analyze large datasets.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#C75C27',
+        heading: 'Big Data & Cloud Platforms',
+        desc: "Explore cutting-edge technologies like Hadoop, Spark, and Google BigQuery for working with large-scale datasets.",
+        skills: [
+            'Hadoop Basics',
+            'Google BigQuery',
+            'Cloud Data Platforms',
+            'Data Processing Techniques'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaCloud className="text-[1.75rem]" />
+                ),
+                head: 'Big Data Technologies',
+                desc: 'Understand big data tools and platforms used to handle and analyze massive datasets efficiently.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#FFFFFF',
+        heading: 'Predictive Analytics',
+        desc: "Build models using historical data to predict future outcomes and behaviors, helping businesses plan strategically.",
+        skills: [
+            'Predictive Modeling',
+            'Machine Learning Techniques',
+            'Model Validation',
+            'Forecasting Techniques'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaChartBar className="text-[1.75rem]" />
+                ),
+                head: 'Predictive Models',
+                desc: 'Create predictive models that forecast trends and help make data-driven business decisions.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#C75C27',
+        heading: 'Business Intelligence',
+        desc: "Translate data insights into actionable strategies and decisions to drive business growth and success.",
+        skills: [
+            'Data-Driven Decision Making',
+            'BI Tools and Techniques',
+            'Reporting and Dashboards',
+            'Strategic Business Insights'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaBusinessTime className="text-[1.75rem]" />
+                ),
+                head: 'Business Insights',
+                desc: 'Transform data into meaningful insights and actionable business strategies.'
+            }
+        ]
+    }
+];
+
+
 
 
 
@@ -3617,7 +3967,7 @@ export const uxFaqs = [
     {
         id: 10,
         name: 'How do I enroll?',
-        desc: 'Simply click the "Enroll Now" button or visit [your website link]. Complete the registration form, make your payment, and start learning!'
+        desc: 'Simply click the "Get Started!" button or visit [your website link]. Complete the registration form, make your payment, and start learning!'
     }
 ];
 
@@ -3731,7 +4081,7 @@ export const dmFaqs = [
     {
         id: 10,
         name: 'How do I enroll?',
-        desc: 'Click the "Enroll Now" button or visit [your website link]. Complete your registration, make your payment, and start learning!'
+        desc: 'Click the "Get Started!" button or visit [your website link]. Complete your registration, make your payment, and start learning!'
     }
 ];
 
@@ -3788,7 +4138,7 @@ export const pmFaqs = [
     {
         id: 10,
         name: 'How do I enroll?',
-        desc: 'Click "Enroll Now" on this page, register, and complete payment to get started.'
+        desc: 'Click "Get Started!" on this page, register, and complete payment to get started.'
     }
 ];
 
@@ -3840,11 +4190,67 @@ export const cybFaqs = [
     {
         id: 9,
         name: 'How do I enroll?',
-        desc: 'Click "Enroll Now" on this page, register, and complete payment to get started.'
+        desc: 'Click "Get Started!" on this page, register, and complete payment to get started.'
     },
     {
         id: 10,
         name: 'Can I get career support after the course?',
         desc: 'Yes, we provide resume reviews, interview preparation, and job placement assistance to help you succeed.'
+    }
+];
+
+
+// da
+
+export const daFaqs = [
+    {
+        id: 1,
+        name: 'What is data analytics, and why is it important?',
+        desc: 'Data analytics involves examining data sets to uncover patterns, trends, and insights. It’s critical for making informed decisions and solving business problems.'
+    },
+    {
+        id: 2,
+        name: 'Do I need any prior experience to enroll?',
+        desc: 'No, our courses are beginner-friendly and provide foundational knowledge, but also offer advanced modules for experienced learners.'
+    },
+    {
+        id: 3,
+        name: 'What tools will I learn to use?',
+        desc: 'You’ll gain proficiency in tools like Excel, SQL, Tableau, Power BI, Python, and R, depending on your course selection.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real-world projects?',
+        desc: 'Yes, you’ll complete hands-on projects and case studies based on real-world scenarios.'
+    },
+    {
+        id: 5,
+        name: 'How long is the course?',
+        desc: 'Courses typically range from 8 to 16 weeks, depending on the program and your pace of study.'
+    },
+    {
+        id: 6,
+        name: 'Is the course entirely online?',
+        desc: 'Yes, all courses are online, providing flexibility to learn anytime, anywhere.'
+    },
+    {
+        id: 7,
+        name: 'Will I earn a certificate upon completion?',
+        desc: 'Yes, you’ll receive an industry-recognized certificate to showcase your skills.'
+    },
+    {
+        id: 8,
+        name: 'What career opportunities can I explore after completing the course?',
+        desc: 'You can pursue roles such as Data Analyst, Business Analyst, Data Scientist, and more.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Please visit [your website link] for pricing details and available payment plans.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Click the "Get Started!" button or visit [your website link] to register and begin your learning journey.'
     }
 ];
