@@ -23,15 +23,17 @@ import { RiHtml5Line, RiJavascriptLine, RiReactjsFill, RiLightbulbFlashLine, RiD
 // import { IoLogoAngular, IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from 'react-icons/io5';
 import { BsBootstrapFill } from 'react-icons/bs';
 import { PiAngularLogo, PiFileSqlDuotone } from "react-icons/pi";
-import { SiMongodb, SiReact, SiDjango, SiFlask, SiTensorflow, SiScikitlearn, SiFigma, SiSqlite, SiR  } from "react-icons/si";
+import { SiMongodb, SiReact, SiDjango, SiFlask, SiTensorflow, SiScikitlearn, SiFigma, SiSqlite, SiR, SiAdobe, SiSketch, SiKeras, SiPytorch  } from "react-icons/si";
 import { AiOutlineBarChart, AiOutlineGithub, AiOutlineStock } from "react-icons/ai";
 import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
-import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket, FaShieldAlt, FaNetworkWired, FaUserShield, FaExclamationTriangle, FaBalanceScale } from 'react-icons/fa';
+import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket, FaShieldAlt, FaNetworkWired, FaUserShield, FaExclamationTriangle, FaBalanceScale, FaPaintBrush, FaMobileAlt, FaRegFileAlt } from 'react-icons/fa';
 import { TbBrandBootstrap } from 'react-icons/tb';
-import { FaAws, FaBrain, FaBug, FaBullseye, FaBusinessTime, FaChartPie, FaCloud, FaEye, FaFacebook, FaGoogle, FaListUl, FaObjectGroup, FaPenFancy, FaPeopleArrows, FaRobot, FaTable } from 'react-icons/fa6';
+import { FaAws, FaBrain, FaBug, FaBullseye, FaBusinessTime, FaChartPie, FaCloud, FaEye, FaFacebook, FaFont, FaGoogle, FaListUl, FaObjectGroup, FaPalette, FaPenFancy, FaPeopleArrows, FaRobot, FaTable, FaUniversalAccess } from 'react-icons/fa6';
 import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
-import { GiNetworkBars } from 'react-icons/gi';
+import { GiArtificialIntelligence, GiCottonFlower, GiNetworkBars } from 'react-icons/gi';
+import { MdAccessibility, MdBusinessCenter, MdDesignServices, MdWork } from 'react-icons/md';
+import { HiOutlineDeviceMobile, HiOutlineLightBulb } from 'react-icons/hi';
 
 export const courseDetails = {
     dataScience: {
@@ -1817,6 +1819,103 @@ export const pyLearn = [
 
 
 
+
+
+
+
+
+// ui
+
+
+export const uiLearn = [
+    {
+        id: 1,
+        list: 'Understand color theory, typography, and layout.'
+    },
+    {
+        id: 2,
+        list: 'Master industry-standard tools like Adobe XD, Figma, and Sketch.'
+    },
+    {
+        id: 3,
+        list: 'Build blueprints and interactive prototypes.'
+    },
+    {
+        id: 4,
+        list: 'Learn to design interfaces for all screen sizes and devices.'
+    },
+    {
+        id: 5,
+        list: 'Gather insights to guide your design decisions.'
+    },
+    {
+        id: 6,
+        list: 'Create inclusive designs for diverse audiences.'
+    },
+    {
+        id: 7,
+        list: 'Work with developers, UX designers, and project managers.'
+    },
+    {
+        id: 8,
+        list: 'Develop a professional portfolio to showcase your skills.'
+    },
+]
+
+
+
+
+
+
+
+
+
+
+
+// ai
+
+
+export const aiLearn = [
+    {
+        id: 1,
+        list: 'Understand the principles and applications of AI technologies.'
+    },
+    {
+        id: 2,
+        list: 'Learn algorithms, supervised and unsupervised learning, and model evaluation.'
+    },
+    {
+        id: 3,
+        list: 'Dive into neural networks, CNNs, RNNs, and reinforcement learning.'
+    },
+    {
+        id: 4,
+        list: 'Work with language models and text analysis.'
+    },
+    {
+        id: 5,
+        list: 'Learn to process and analyze visual data using AI.'
+    },
+    {
+        id: 6,
+        list: 'Understand the ethical challenges and implications of AI deployment.'
+    },
+    {
+        id: 7,
+        list: 'Master TensorFlow, Keras, and other industry-standard AI tools.'
+    },
+    {
+        id: 8,
+        list: 'Apply AI solutions to real-world business challenges and opportunities.'
+    },
+]
+
+
+
+
+
+
+
 // Certificate Skills
 
 // web
@@ -2171,6 +2270,89 @@ export const pySkills = [
 
 
 
+
+
+
+
+
+// ui
+
+
+
+export const uiSkills = [
+    {
+        id: 1,
+        list: 'Adobe XD'
+    },
+    {
+        id: 2,
+        list: 'Figma'
+    },
+    {
+        id: 3,
+        list: 'Wireframing'
+    },
+    {
+        id: 4,
+        list: 'Prototyping'
+    },
+    {
+        id: 5,
+        list: 'User Research'
+    },
+    {
+        id: 6,
+        list: 'Collaborative Skills'
+    },
+    {
+        id: 7,
+        list: 'Responsive Design'
+    }
+]
+
+
+
+
+
+
+
+
+
+
+// ai
+
+
+
+export const aiSkills = [
+    {
+        id: 1,
+        list: 'Machine Learning'
+    },
+    {
+        id: 2,
+        list: 'Deep Learning'
+    },
+    {
+        id: 3,
+        list: 'Natural Language Processing'
+    },
+    {
+        id: 4,
+        list: 'AI Ethics'
+    },
+    {
+        id: 5,
+        list: 'TensorFlow'
+    },
+    {
+        id: 6,
+        list: 'Keras'
+    },
+    {
+        id: 7,
+        list: 'Computer Vision'
+    }
+]
 
 
 
@@ -2545,6 +2727,113 @@ export const pyTools = [
 ];
 
 
+// ui
+
+export const uiTools = [
+    {
+        id: 1,
+        list: (
+            <FaPalette color="#1E88E5" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <FaPaintBrush color="#1877F2" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <FaShareAlt color="#F39C12" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <FaMobileAlt color="#DB4437" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <FaSearch color="#2ECC71" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <MdAccessibility color="#E74C3C" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <FaUsers color="#3498DB" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 8,
+        list: (
+            <FaBriefcase color="#9B59B6" className="text-[2rem]" />
+        )
+    }
+];
+
+
+// ai
+
+export const aiTools = [
+    {
+        id: 1,
+        list: (
+            <FaBrain color="#1E88E5" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <FaRobot color="#1877F2" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <FaCogs color="#F39C12" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <FaFont color="#DB4437" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <FaEye color="#2ECC71" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <FaBalanceScale color="#E74C3C" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <FaTools color="#3498DB" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 8,
+        list: (
+            <FaBriefcase color="#9B59B6" className="text-[2rem]" />
+        )
+    }
+];
+
 
 
 
@@ -2845,6 +3134,93 @@ export const pyWhy = [
         icon: <FaBriefcase className="text-[2rem] text-main" />,
         title: 'Career Support',
         desc: 'Receive personalized career support to land your dream job.'  
+    }
+];
+
+
+
+
+
+
+// ui
+
+
+export const uiWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Expert-Led Instructors',
+        desc: 'Learn from experienced UI designers with real-world expertise.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Hands-On Learning',
+        desc: 'Gain practical experience with real-world design projects.'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexible Format',
+        desc: 'Choose from self-paced learning or live, instructor-led sessions.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Earn a certificate that validates your skills globally.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Benefit from resume building, portfolio reviews, and job placement assistance.'  
+    }
+];
+
+
+
+
+
+// ai
+
+
+export const aiWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Expert-Led Instructors',
+        desc: 'Learn from top AI professionals with years of industry experience.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Hands-On Practice',
+        desc: 'Work on real-world AI projects to build your portfolio.'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexibility',
+        desc: 'Choose between self-paced courses or live instructor-led sessions.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Earn a globally recognized AI certificate to advance your career.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Receive guidance on job opportunities and career advancement in AI.'  
+    },
+    {
+        id: 6,
+        icon: <FaBookOpen className='text-[2rem] text-main' />,
+        title: 'Comprehensive Curriculum',
+        desc: 'Master AI techniques, tools, and frameworks used in leading industries.'  
     }
 ];
 
@@ -4239,6 +4615,388 @@ export const curriculumPY = [
 
 
 
+// ui
+
+export const curriculumUI = [
+    {
+        id: 1,
+        unit: 'Unit 1',
+        bg: '#C75C27',
+        heading: 'UI Design Principles',
+        desc: "Master the foundational principles of UI design, including color theory, typography, and layout.",
+        skills: [
+            'Color Theory',
+            'Typography Basics',
+            'Grid and Layout Systems',
+            'Design Aesthetics'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <FaPalette className="text-[1.75rem]" />,
+                head: 'Visual Design Basics',
+                desc: 'Understand how color, type, and layout come together to create visually appealing interfaces.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'Unit 2',
+        bg: '#FFFFFF',
+        heading: 'Design Tools',
+        desc: "Gain expertise in industry-standard design tools like Adobe XD, Figma, and Sketch.",
+        skills: [
+            'Interface Navigation',
+            'Component Creation',
+            'Tool Shortcuts',
+            'Collaboration Features'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <SiAdobe className="text-[1.75rem]" />,
+                head: 'Adobe XD',
+                desc: 'Learn to create detailed UI designs and prototypes using Adobe XD.'
+            },
+            {
+                id: 2,
+                icon: <SiFigma className="text-[1.75rem]" />,
+                head: 'Figma',
+                desc: 'Collaborate and design user interfaces in real-time with Figma.'
+            },
+            {
+                id: 3,
+                icon: <SiSketch className="text-[1.75rem]" />,
+                head: 'Sketch',
+                desc: 'Explore Sketch for vector design and prototyping.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'Unit 3',
+        bg: '#C75C27',
+        heading: 'Wireframing & Prototyping',
+        desc: "Learn to create blueprints and interactive prototypes to visualize user flows.",
+        skills: [
+            'Low-Fidelity Wireframes',
+            'High-Fidelity Prototypes',
+            'Interactive Mockups',
+            'Design Feedback Integration'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <MdDesignServices className="text-[1.75rem]" />,
+                head: 'Prototyping',
+                desc: 'Translate static designs into interactive prototypes to demonstrate user flows.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'Unit 4',
+        bg: '#FFFFFF',
+        heading: 'Responsive Design',
+        desc: "Learn to design interfaces that adapt to all screen sizes and devices.",
+        skills: [
+            'Mobile-First Design',
+            'Flexible Grids',
+            'Breakpoints',
+            'Testing Across Devices'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <HiOutlineDeviceMobile className="text-[1.75rem]" />,
+                head: 'Mobile Design',
+                desc: 'Design interfaces optimized for mobile devices and small screens.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'Unit 5',
+        bg: '#C75C27',
+        heading: 'User Research',
+        desc: "Gather and analyze insights to guide your design decisions and improve usability.",
+        skills: [
+            'Conducting Interviews',
+            'User Surveys',
+            'Personas & Empathy Maps',
+            'Usability Testing'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <FaUsers className="text-[1.75rem]" />,
+                head: 'Understanding Users',
+                desc: 'Learn methods to gather and interpret user feedback effectively.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'Unit 6',
+        bg: '#FFFFFF',
+        heading: 'Accessibility Standards',
+        desc: "Create designs that are inclusive and accessible to diverse audiences.",
+        skills: [
+            'WCAG Guidelines',
+            'Contrast and Text Size',
+            'Keyboard Navigation',
+            'Assistive Technologies'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <FaUniversalAccess className="text-[1.75rem]" />,
+                head: 'Inclusive Design',
+                desc: 'Understand how to design for users with varying needs and abilities.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'Unit 7',
+        bg: '#C75C27',
+        heading: 'Collaboration Skills',
+        desc: "Work seamlessly with developers, UX designers, and project managers to deliver exceptional designs.",
+        skills: [
+            'Design Handoff',
+            'Effective Communication',
+            'Feedback Integration',
+            'Team Tools'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <HiOutlineLightBulb className="text-[1.75rem]" />,
+                head: 'Team Collaboration',
+                desc: 'Develop strategies for effective teamwork and design delivery.'
+            }
+        ]
+    },
+    {
+        id: 8,
+        unit: 'Unit 8',
+        bg: '#FFFFFF',
+        heading: 'Portfolio Building',
+        desc: "Develop a professional portfolio to showcase your UI design skills and projects.",
+        skills: [
+            'Portfolio Structure',
+            'Showcasing Case Studies',
+            'Personal Branding',
+            'Preparing for Interviews'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <MdWork className="text-[1.75rem]" />,
+                head: 'Portfolio Development',
+                desc: 'Create a standout portfolio to impress potential clients or employers.'
+            }
+        ]
+    }
+];
+
+
+
+
+
+
+
+
+
+
+
+// ai
+
+
+export const curriculumAI = [
+    {
+        id: 1,
+        unit: 'Unit 1',
+        bg: '#C75C27',
+        heading: 'AI Fundamentals',
+        desc: "Gain a strong foundation in AI principles, its history, and applications across industries.",
+        skills: [
+            'AI Basics',
+            'Applications of AI',
+            'Key AI Terminologies',
+            'History of AI Development'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <GiArtificialIntelligence className="text-[1.75rem]" />,
+                head: 'AI Overview',
+                desc: 'Understand the basics of artificial intelligence and its practical applications.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'Unit 2',
+        bg: '#FFFFFF',
+        heading: 'Machine Learning (ML)',
+        desc: "Master ML algorithms, supervised/unsupervised learning, and evaluation techniques.",
+        skills: [
+            'Supervised Learning',
+            'Unsupervised Learning',
+            'Model Training',
+            'Evaluation Metrics'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <FaBrain className="text-[1.75rem]" />,
+                head: 'Learning Algorithms',
+                desc: 'Explore algorithms like linear regression, decision trees, and clustering.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'Unit 3',
+        bg: '#C75C27',
+        heading: 'Deep Learning',
+        desc: "Dive into advanced topics like neural networks, CNNs, RNNs, and reinforcement learning.",
+        skills: [
+            'Neural Network Basics',
+            'Convolutional Neural Networks (CNNs)',
+            'Recurrent Neural Networks (RNNs)',
+            'Reinforcement Learning'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <GiArtificialIntelligence className="text-[1.75rem]" />,
+                head: 'Neural Networks',
+                desc: 'Understand the structure and functionality of neural networks.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'Unit 4',
+        bg: '#FFFFFF',
+        heading: 'Natural Language Processing (NLP)',
+        desc: "Learn to work with language models, text analysis, and sentiment detection.",
+        skills: [
+            'Text Preprocessing',
+            'Language Models',
+            'Sentiment Analysis',
+            'Text Classification'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <GiCottonFlower className="text-[1.75rem]" />,
+                head: 'Language Models',
+                desc: 'Develop models to analyze and process human language effectively.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'Unit 5',
+        bg: '#C75C27',
+        heading: 'Computer Vision',
+        desc: "Process and analyze visual data using computer vision techniques and AI.",
+        skills: [
+            'Image Preprocessing',
+            'Object Detection',
+            'Image Classification',
+            'Video Analysis'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <FaEye className="text-[1.75rem]" />,
+                head: 'Visual Data Analysis',
+                desc: 'Work with AI models for image recognition and object detection.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'Unit 6',
+        bg: '#FFFFFF',
+        heading: 'AI Ethics',
+        desc: "Explore the ethical challenges and responsibilities associated with AI development.",
+        skills: [
+            'Bias Detection',
+            'Fairness in AI',
+            'Privacy Concerns',
+            'AI Governance'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <FaRegFileAlt className="text-[1.75rem]" />,
+                head: 'Ethical AI Practices',
+                desc: 'Understand the societal implications and ethical considerations of AI.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'Unit 7',
+        bg: '#C75C27',
+        heading: 'Tools and Frameworks',
+        desc: "Master popular AI tools and frameworks like TensorFlow, Keras, and PyTorch.",
+        skills: [
+            'TensorFlow Basics',
+            'Building Models with Keras',
+            'PyTorch for Neural Networks',
+            'Framework Comparison'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <SiTensorflow className="text-[1.75rem]" />,
+                head: 'TensorFlow',
+                desc: 'Build and train models using TensorFlow.'
+            },
+            {
+                id: 2,
+                icon: <SiKeras className="text-[1.75rem]" />,
+                head: 'Keras',
+                desc: 'Simplify AI model development with Keras.'
+            },
+            {
+                id: 3,
+                icon: <SiPytorch className="text-[1.75rem]" />,
+                head: 'PyTorch',
+                desc: 'Utilize PyTorch for deep learning projects.'
+            }
+        ]
+    },
+    {
+        id: 8,
+        unit: 'Unit 8',
+        bg: '#FFFFFF',
+        heading: 'AI in Business',
+        desc: "Learn to apply AI solutions to solve real-world business challenges.",
+        skills: [
+            'Business Problem Analysis',
+            'AI Use Cases in Industry',
+            'Cost-Benefit Analysis',
+            'AI Implementation Strategies'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: <MdBusinessCenter className="text-[1.75rem]" />,
+                head: 'AI for Business',
+                desc: 'Develop and implement AI solutions for business innovation.'
+            }
+        ]
+    }
+];
+
+
 
 
 
@@ -4693,5 +5451,127 @@ export const pyFaqs = [
         id: 10,
         name: 'Will I have access to career support after the course?',
         desc: 'Yes, we provide resume assistance, mock interviews, and job placement support to help you succeed.'
+    }
+];
+
+
+// ui
+
+export const uiFaqs = [
+    {
+        id: 1,
+        name: 'What is UI design, and why is it important?',
+        desc: 'UI design focuses on creating visually appealing and functional interfaces for digital products. It’s essential for ensuring a positive user experience and product success.'
+    },
+    {
+        id: 2,
+        name: 'Do I need prior design experience to enroll?',
+        desc: 'No, our courses cater to beginners while also offering advanced modules for experienced learners.'
+    },
+    {
+        id: 3,
+        name: 'What tools will I learn to use?',
+        desc: 'You’ll gain proficiency in Adobe XD, Figma, Sketch, and other leading design tools.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real-world projects?',
+        desc: 'Yes, you’ll complete hands-on projects that mimic real-world design challenges.'
+    },
+    {
+        id: 5,
+        name: 'How long is the course?',
+        desc: 'Courses typically range from 8 to 12 weeks, depending on the program and your pace.'
+    },
+    {
+        id: 6,
+        name: 'Is the course entirely online?',
+        desc: 'Yes, all our courses are online, offering flexibility for learners worldwide.'
+    },
+    {
+        id: 7,
+        name: 'Will I receive a certificate upon completion?',
+        desc: 'Yes, you’ll earn an industry-recognized certificate to validate your skills.'
+    },
+    {
+        id: 8,
+        name: 'Can this course help me build a portfolio?',
+        desc: 'Absolutely! You’ll create a portfolio of projects to showcase your design expertise.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Visit [your website link] for detailed pricing and available payment plans.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Click the "Enroll Now" button or visit [your website link] to get started.'
+    },
+    {
+        id: 11,
+        name: 'Will I have career support after the course?',
+        desc: 'Yes, we offer resume assistance, portfolio reviews, and job placement guidance to help you succeed.'
+    }
+];
+
+
+// ai
+
+export const aiFaqs = [
+    {
+        id: 1,
+        name: 'What is Artificial Intelligence, and why should I learn it?',
+        desc: 'AI is the simulation of human intelligence processes by machines. It’s an essential field that is shaping industries like healthcare, finance, education, and more. Learning AI opens up exciting career opportunities.'
+    },
+    {
+        id: 2,
+        name: 'Do I need any prior knowledge or experience to start?',
+        desc: 'No, our courses are designed for learners at all levels. We provide foundational knowledge to help you succeed, even if you’re a beginner.'
+    },
+    {
+        id: 3,
+        name: 'What kind of projects will I work on during the course?',
+        desc: 'You’ll work on hands-on projects like building machine learning models, developing AI applications, and solving real-world problems using AI techniques.'
+    },
+    {
+        id: 4,
+        name: 'How long is the course?',
+        desc: 'Our courses typically range from 8 to 12 weeks, depending on your learning pace and chosen program.'
+    },
+    {
+        id: 5,
+        name: 'Is the course entirely online?',
+        desc: 'Yes, all of our AI courses are offered online for your convenience. You can learn at your own pace or join live sessions based on your preference.'
+    },
+    {
+        id: 6,
+        name: 'Will I get a certificate?',
+        desc: 'Yes, you will earn a globally recognized Artificial Intelligence certificate upon completing the course.'
+    },
+    {
+        id: 7,
+        name: 'What tools and frameworks will I learn to use?',
+        desc: 'You will learn industry-standard tools and frameworks, including TensorFlow, Keras, Python, and more, used in AI and machine learning applications.'
+    },
+    {
+        id: 8,
+        name: 'Can this course help me get a job in AI?',
+        desc: 'Absolutely! The course will help you build the skills and portfolio needed to pursue a career in AI. Additionally, we provide career support to help you succeed in the job market.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Please visit [your website link] for detailed pricing information and available payment plans.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll in the course?',
+        desc: 'You can easily sign up by visiting [your website link] or contacting us at [your email address] for more information.'
+    },
+    {
+        id: 11,
+        name: 'Do you offer any career support after completing the course?',
+        desc: 'Yes, we offer job placement assistance, portfolio reviews, and resume support to help you take the next step in your AI career.'
     }
 ];

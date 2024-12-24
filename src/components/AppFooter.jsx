@@ -122,7 +122,7 @@ const AppFooter = () => {
                   <Link href={`/web-certificate-course`} className="text-[.75rem] font-medium">
                     Web Development
                   </Link>
-                  <Link href={`/ux-design-certificate-course`} className="text-[.75rem] font-medium">
+                  <Link href={`/user-experience-certificate-course`} className="text-[.75rem] font-medium">
                     User Experience Design
                   </Link>
                   <Link href={`/data-science-certificate-course`} className="text-[.75rem] font-medium">
@@ -143,12 +143,12 @@ const AppFooter = () => {
                   <Link href={`/python-certificate-course`} className="text-[.75rem] font-medium">
                     Python
                   </Link>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/user-interface-certificate-course`} className="text-[.75rem] font-medium">
                     User Interface Design
-                  </li>
-                  <li className="text-[.75rem] font-medium">
+                  </Link>
+                  <Link href={ `/artificial-intelligence-certificate-course`} className="text-[.75rem] font-medium">
                     Artificial Intelligence
-                  </li>
+                  </Link>
                 </ul>
               </div>
               <div className='flex flex-col justify-center items-start gap-3'>

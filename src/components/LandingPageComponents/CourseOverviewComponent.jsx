@@ -124,7 +124,7 @@ const CourseOverviewComponent = () => {
         <div className="container flex justify-center items-center mx-auto min-w-full relative">
           <ReactPlayer
             ref={playerRef}
-            url="https://www.youtube.com/watch?v=VkxVCMeY53M"
+            // url="https://www.youtube.com/watch?v=VkxVCMeY53M"
             playing={!isPlaying}
             muted
             loop
@@ -144,7 +144,7 @@ const CourseOverviewComponent = () => {
           />
           {!isPlaying && (
             <div className="absolute translate-x-[0%] translate-y-[-40%] z-10 play-button flex flex-col justify-center items-center gap-y-[70px]">
-              <h1 className="text-[1.5rem] lg:text-[4.25rem] font-medium text-white">Alumni Stories</h1>
+              <h1 className="text-[1.5rem] lg:text-[4.25rem] font-medium text-white">Course Overview</h1>
               <button 
                 className="flex justify-center items-center gap-x-3 py-[16px] w-[131px] h-[52px] rounded-full bg-white" 
                 onClick={() => setIsPlaying(true)}
@@ -161,7 +161,7 @@ const CourseOverviewComponent = () => {
                     <div className='h-full w-[90%] flex justify-center items-center p-[24px]'>
                         <ReactPlayer
                             // ref={playerRef}
-                            url="https://www.youtube.com/watch?v=VkxVCMeY53M"
+                            // url="https://www.youtube.com/watch?v=VkxVCMeY53M"
                             className="rounded-[24px] video-preview relative z-[5px]"
                             width="90%"
                             height='700px'
