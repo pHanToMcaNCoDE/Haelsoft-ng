@@ -8,7 +8,7 @@ import "@splidejs/react-splide/css";
 import './expert.css';
 import olu from "../../../public/Opeyemi Oluleye - Brand & Communication.jpg";
 import mic from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
-import chris from "../../../public/Christopher I. Content Strategistr.jpg";
+import chris from "../../../public/Christopher Iwundu. Content Strategistr.jpg";
 import lin from "../../../public/Linda Ochugbua - Public Relations (PR) Strategist.jpg";
 import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
 import Image from "next/image";
@@ -20,7 +20,7 @@ const Expert = () => {
   const slides = [
     {
       image: chris,
-      name: "Christopher I.",
+      name: "Christopher Iwundu.",
       role: "Content Strategist",
       comp: haelsoft,
       compName: 'Haelsoft'
