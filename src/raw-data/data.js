@@ -27,7 +27,7 @@ import { SiAngular, SiBootstrap, SiMongodb, SiReact } from "react-icons/si";
 import { AiOutlineBarChart, AiOutlineGithub, AiOutlineStock } from "react-icons/ai";
 import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
-import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk } from 'react-icons/fa';
+import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket } from 'react-icons/fa';
 import { TbBrandBootstrap } from 'react-icons/tb';
 import { FaAws, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy } from 'react-icons/fa6';
 import { SiFigma, SiSqlite, SiR } from 'react-icons/si';
@@ -1626,7 +1626,6 @@ export const dsLearn = [
 
 
 
-
 // dm
 
 export const dmLearn = [
@@ -1659,6 +1658,46 @@ export const dmLearn = [
         list: 'Build comprehensive plans to achieve marketing objectives.'
     },
 ]
+
+
+
+
+
+// pm
+
+export const pmLearn = [
+    {
+        id: 1,
+        list: 'Understand every phase of a product’s journey, from idea to launch.'
+    },
+    {
+        id: 2,
+        list: 'Conduct customer interviews, analyze data, and identify user needs.'
+    },
+    {
+        id: 3,
+        list: 'Build product roadmaps aligned with business objectives.'
+    },
+    {
+        id: 4,
+        list: 'Collaborate with engineering and design teams using Agile methodologies.'
+    },
+    {
+        id: 5,
+        list: 'Track and optimize product performance with data-driven insights.'
+    },
+    {
+        id: 6,
+        list: 'Communicate effectively with teams, clients, and leadership.'
+    },
+    {
+        id: 7,
+        list: 'Plan and execute successful product launches.'
+    },
+]
+
+
+
 
 
 
@@ -2175,6 +2214,46 @@ export const dmWhy = [
         icon: <FaBriefcase className="text-[2rem] text-main" />,
         title: 'Career Support',
         desc: 'Access job placement assistance, resume reviews, and interview preparation.'
+    }
+];
+
+
+
+
+
+// product manager
+
+
+export const pmWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Expert-Led Instructors',
+        desc: 'Learn from experienced product managers who’ve led successful launches.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Hands-On Projects',
+        desc: 'Apply what you learn by working on real-world product case studies'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexible Learning',
+        desc: 'Choose self-paced courses or interactive live sessions.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Earn a recognized certificate to enhance your resume and LinkedIn profile.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Get resume reviews, interview prep, and networking opportunities.'  
     }
 ];
 
@@ -2855,6 +2934,175 @@ export const curriculumDM = [
 
 
 
+// pm
+
+export const curriculumPM = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#4CAF50',
+        heading: 'Product Lifecycle Management',
+        desc: "Understand every phase of a product’s journey, from idea conception to market launch and beyond.",
+        skills: [
+            'Product Ideation',
+            'Launch Planning',
+            'Lifecycle Strategies',
+            'Iteration Management'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaProjectDiagram className="text-[1.75rem]" />
+                ),
+                head: 'Lifecycle Management',
+                desc: 'Master every phase of a product’s lifecycle for sustained market success.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFC107',
+        heading: 'Market Research',
+        desc: "Conduct customer interviews, analyze competitive data, and identify user pain points and needs.",
+        skills: [
+            'Customer Research',
+            'Competitive Analysis',
+            'Data Interpretation',
+            'User Needs Identification'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaSearchDollar className="text-[1.75rem]" />
+                ),
+                head: 'Market Research',
+                desc: 'Gather insights through data and interviews to inform product decisions.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#2196F3',
+        heading: 'Roadmap Creation',
+        desc: "Develop comprehensive product roadmaps aligned with organizational goals and user needs.",
+        skills: [
+            'Strategic Planning',
+            'Goal Setting',
+            'Timeline Management',
+            'Vision Alignment'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaMapSigns className="text-[1.75rem]" />
+                ),
+                head: 'Roadmap Development',
+                desc: 'Design actionable product roadmaps that align with business objectives.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FF5722',
+        heading: 'Agile Development',
+        desc: "Collaborate with engineering and design teams using Agile methodologies for seamless product development.",
+        skills: [
+            'Scrum',
+            'Kanban',
+            'Cross-Team Collaboration',
+            'Agile Workflows'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaTasks className="text-[1.75rem]" />
+                ),
+                head: 'Agile Collaboration',
+                desc: 'Work with teams effectively using Agile practices to bring products to life.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#9C27B0',
+        heading: 'Metrics & Analytics',
+        desc: "Track and analyze product performance metrics to drive continuous improvement and success.",
+        skills: [
+            'KPI Tracking',
+            'Data Visualization',
+            'Product Optimization',
+            'Insight Generation'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaChartBar className="text-[1.75rem]" />
+                ),
+                head: 'Data-Driven Insights',
+                desc: 'Leverage analytics to measure success and make data-informed decisions.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#795548',
+        heading: 'Stakeholder Management',
+        desc: "Communicate effectively with teams, clients, and leadership to align product vision and execution.",
+        skills: [
+            'Team Communication',
+            'Client Engagement',
+            'Conflict Resolution',
+            'Vision Sharing'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaUsers className="text-[1.75rem]" />
+                ),
+                head: 'Stakeholder Engagement',
+                desc: 'Foster strong relationships to ensure successful product outcomes.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#3F51B5',
+        heading: 'Go-to-Market Strategy',
+        desc: "Plan and execute product launches that capture market attention and drive adoption.",
+        skills: [
+            'Launch Planning',
+            'Marketing Strategy',
+            'Adoption Metrics',
+            'Cross-Functional Execution'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaRocket className="text-[1.75rem]" />
+                ),
+                head: 'Launch Excellence',
+                desc: 'Execute successful product launches with effective go-to-market strategies.'
+            }
+        ]
+    }
+];
+
+
+
+
 
 
 
@@ -2916,6 +3164,64 @@ export const webFaqs = [
 ]
 
 // ux
+
+export const uxFaqs = [
+    {
+        id: 1,
+        name: 'What is UX design, and why is it important?',
+        desc: 'UX design focuses on creating products that provide meaningful and enjoyable experiences for users. It is crucial because it ensures customer satisfaction, drives engagement, and contributes to the success of digital products.'
+    },
+    {
+        id: 2,
+        name: 'Do I need any prior experience to enroll in this course?',
+        desc: 'No prior experience is required. This course is beginner-friendly and covers everything from the basics to advanced UX principles.'
+    },
+    {
+        id: 3,
+        name: 'What tools will I learn to use in this course?',
+        desc: 'You’ll gain hands-on experience with industry-standard tools like Figma, Adobe XD, Sketch, and usability testing platforms.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real projects?',
+        desc: 'Yes, you’ll complete hands-on projects and build a portfolio showcasing your UX design skills, which you can present to potential employers or clients.'
+    },
+    {
+        id: 5,
+        name: 'How long does the course take to complete?',
+        desc: 'The course typically takes 8–12 weeks, depending on whether you choose self-paced learning or live instructor-led sessions.'
+    },
+    {
+        id: 6,
+        name: 'Is this course online or in-person?',
+        desc: 'Our courses are 100% online, offering flexibility for learners to join from anywhere.'
+    },
+    {
+        id: 7,
+        name: 'What support is available if I need help?',
+        desc: 'You’ll have access to instructor support through live Q&A sessions, discussion forums, and email assistance.'
+    },
+    {
+        id: 8,
+        name: 'Will I receive a certificate after completing the course?',
+        desc: 'Yes, you’ll earn a professional certificate upon completion, which you can use to enhance your resume and LinkedIn profile.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Visit [your website link] for pricing details. We offer flexible payment plans and scholarships for eligible learners.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Simply click the "Enroll Now" button or visit [your website link]. Complete the registration form, make your payment, and start learning!'
+    }
+];
+
+
+
+
+// ds
 
 export const dsFaqs = [
     {
@@ -3026,3 +3332,59 @@ export const dmFaqs = [
     }
 ];
 
+
+
+// pm
+
+export const pmFaqs = [
+    {
+        id: 1,
+        name: 'What is product management, and why is it important?',
+        desc: 'Product management involves overseeing the development and lifecycle of a product to meet customer needs and business goals. It’s critical for delivering innovative, market-aligned solutions.'
+    },
+    {
+        id: 2,
+        name: 'Do I need prior experience to join this course?',
+        desc: 'No, our courses are designed for both beginners and professionals looking to upskill.'
+    },
+    {
+        id: 3,
+        name: 'What tools will I learn to use?',
+        desc: 'You’ll learn tools like Jira, Trello, Google Analytics, Aha!, and Miro for product management and collaboration.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real-world projects?',
+        desc: 'Yes, our courses include hands-on projects and case studies to help you apply your knowledge.'
+    },
+    {
+        id: 5,
+        name: 'How long is the course?',
+        desc: 'Most courses run between 8–12 weeks, depending on the program and your chosen pace.'
+    },
+    {
+        id: 6,
+        name: 'Is the course online?',
+        desc: 'Yes, our courses are 100% online, offering flexibility for learners worldwide.'
+    },
+    {
+        id: 7,
+        name: 'Will I earn a certificate upon completion?',
+        desc: 'Yes, you’ll receive a professional certificate to showcase your skills to employers.'
+    },
+    {
+        id: 8,
+        name: 'What career opportunities are available after completing this course?',
+        desc: 'Graduates can pursue roles such as Product Manager, Product Owner, Product Strategist, and more, across industries.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Visit [your website link] for pricing details and payment options.'
+    },
+    {
+        id: 10,
+        name: 'How do I enroll?',
+        desc: 'Click "Enroll Now" on this page, register, and complete payment to get started.'
+    }
+];

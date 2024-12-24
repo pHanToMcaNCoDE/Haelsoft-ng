@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import { IoLockClosedOutline } from "react-icons/io5";
-import { LuPlayCircle } from "react-icons/lu";
 import { GoFile } from "react-icons/go";
 import { useDispatch } from "react-redux";
 import { addLesson, addPdf } from "@/features/courses/courseSlice";
+import { FaCirclePlay } from "react-icons/fa6";
 const Lessons = ({
   lesson,
   isSelected,
@@ -57,7 +57,7 @@ const Lessons = ({
               lesson.pdf_file ? (
                 <GoFile className="text-xl text-[#201A18]" />
               ) : (
-                <LuPlayCircle className="text-xl text-[#201A18]" />
+                <FaCirclePlay className="text-xl text-[#201A18]" />
               )
             ) : (
               <IoLockClosedOutline className="text-xl text-[#201A18]" />

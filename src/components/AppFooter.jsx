@@ -131,9 +131,9 @@ const AppFooter = () => {
                   <Link href={`/digital-marketing-certificate-course`} className="text-[.75rem] font-medium">
                     Digital Marketing
                   </Link>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/product-management-certificate-course`} className="text-[.75rem] font-medium">
                     Product Management
-                  </li>
+                  </Link>
                   <li className="text-[.75rem] font-medium">
                     Cybersecurity
                   </li>
