@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types"; // Import PropTypes for type checking
 import Lessons from "./Lessons";
 
 const Modules = ({
@@ -13,7 +12,7 @@ const Modules = ({
   toggleVisibility,
   isPaid,
   open,
-  setopen, // Renamed to be consistent with common naming conventions
+  setopen, 
 }) => {
   return (
     <div>

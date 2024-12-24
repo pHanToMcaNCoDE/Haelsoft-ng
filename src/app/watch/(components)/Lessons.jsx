@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { IoLockClosedOutline } from "react-icons/io5";
 import { GoFile } from "react-icons/go";
 import { useDispatch } from "react-redux";
-import { addLesson, addPdf } from "@/features/courses/courseSlice";
+import { addLesson } from "@/features/courses/courseSlice";
 import { FaCirclePlay } from "react-icons/fa6";
 const Lessons = ({
   lesson,
