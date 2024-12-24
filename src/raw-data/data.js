@@ -27,9 +27,9 @@ import { SiAngular, SiBootstrap, SiMongodb, SiReact } from "react-icons/si";
 import { AiOutlineBarChart, AiOutlineGithub, AiOutlineStock } from "react-icons/ai";
 import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
-import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket } from 'react-icons/fa';
+import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket, FaShieldAlt, FaNetworkWired, FaUserShield, FaExclamationTriangle, FaBalanceScale } from 'react-icons/fa';
 import { TbBrandBootstrap } from 'react-icons/tb';
-import { FaAws, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy, FaPeopleArrows } from 'react-icons/fa6';
+import { FaAws, FaBug, FaBullseye, FaChartPie, FaFacebook, FaGoogle, FaPenFancy, FaPeopleArrows } from 'react-icons/fa6';
 import { SiFigma, SiSqlite, SiR } from 'react-icons/si';
 import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
 import { GiNetworkBars } from 'react-icons/gi';
@@ -1699,6 +1699,40 @@ export const pmLearn = [
 
 
 
+// cyb
+
+export const cybLearn = [
+    {
+        id: 1,
+        list: 'Understand the core principles of information security.'
+    },
+    {
+        id: 2,
+        list: 'Protect and monitor networks against attacks and breaches.'
+    },
+    {
+        id: 3,
+        list: 'Learn offensive security techniques to identify and fix vulnerabilities.'
+    },
+    {
+        id: 4,
+        list: 'Secure communication through encryption and decryption methods.'
+    },
+    {
+        id: 5,
+        list: 'Develop strategies to respond effectively to cyber incidents.'
+    },
+    {
+        id: 6,
+        list: 'Assess and mitigate potential risks to minimize damage.'
+    },
+    {
+        id: 7,
+        list: 'Understand industry standards like GDPR, ISO 27001, and NIST.'
+    },
+]
+
+
 
 
 
@@ -1904,7 +1938,7 @@ export const dmSkills = [
 
 
 
-// dm
+// pm
 
 
 
@@ -1925,6 +1959,42 @@ export const pmSkills = [
         id: 4,
         list: 'Stakeholder Management'
     }
+]
+
+
+
+
+
+
+// cyb
+
+
+
+export const cybSkills = [
+    {
+        id: 1,
+        list: 'Network Security'
+    },
+    {
+        id: 2,
+        list: 'Ethical Hacking'
+    },
+    {
+        id: 3,
+        list: 'Cryptography'
+    },
+    {
+        id: 4,
+        list: 'GDPR'
+    },
+    {
+        id: 5,
+        list: 'ISO 27001'
+    },
+    {
+        id: 6,
+        list: 'NIST'
+    },
 ]
 
 
@@ -2151,6 +2221,55 @@ export const pmTools = [
 
 
 
+// cyb
+
+export const cybTools = [
+    {
+        id: 1,
+        list: (
+            <FaShieldAlt color="#1E88E5" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <FaNetworkWired color="#1877F2" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <FaBug color="#F39C12" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <FaLock color="#DB4437" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <FaClipboardList color="#2ECC71" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <FaExclamationTriangle color="#E74C3C" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <FaBalanceScale color="#3498DB" className="text-[2rem]" />
+        )
+    }
+];
+
+
+
 
 // Certificate Why
 
@@ -2333,6 +2452,42 @@ export const pmWhy = [
     }
 ];
 
+
+// cyb
+
+
+export const cybWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Expert-Led Instructors',
+        desc: 'Learn from top cybersecurity professionals with extensive experience.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Real-World Projects',
+        desc: 'Gain practical skills through simulated scenarios and case studies.'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexible Learning Options',
+        desc: 'Self-paced and live instructor-led sessions to suit your schedule.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Earn globally recognized certifications to boost your career prospects.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Access resume building, mock interviews, and job placement assistance.'  
+    }
+];
 
 
 
@@ -3177,6 +3332,178 @@ export const curriculumPM = [
 ];
 
 
+// cyb
+
+export const curriculumCYB = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'Fundamentals of Cybersecurity',
+        desc: "Understand the core principles of information security and how to protect sensitive data from cyber threats.",
+        skills: [
+            'Security Protocols',
+            'Threat Intelligence',
+            'Data Privacy',
+            'Cyber Defense Basics'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaShieldAlt className="text-[1.75rem]" />
+                ),
+                head: 'Security Fundamentals',
+                desc: 'Learn the basics of cybersecurity to establish a strong foundation in protecting information.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Network Security',
+        desc: "Protect and monitor networks against attacks, breaches, and unauthorized access, ensuring secure communication.",
+        skills: [
+            'Firewalls & VPNs',
+            'Intrusion Detection Systems',
+            'Access Control',
+            'Network Segmentation'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaNetworkWired className="text-[1.75rem]" />
+                ),
+                head: 'Network Protection',
+                desc: 'Implement network security measures to safeguard critical systems and data.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Ethical Hacking',
+        desc: "Learn offensive security techniques to identify, assess, and fix vulnerabilities in systems and networks.",
+        skills: [
+            'Penetration Testing',
+            'Vulnerability Assessment',
+            'Exploit Development',
+            'Security Auditing'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaUserShield className="text-[1.75rem]" />
+                ),
+                head: 'Hacking Techniques',
+                desc: 'Use ethical hacking methods to find and fix vulnerabilities in systems.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'Cryptography',
+        desc: "Understand encryption and decryption methods to secure communication, ensuring data privacy and integrity.",
+        skills: [
+            'Encryption',
+            'Hashing Algorithms',
+            'Public Key Infrastructure',
+            'Digital Signatures'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaLock className="text-[1.75rem]" />
+                ),
+                head: 'Encryption Techniques',
+                desc: 'Learn cryptographic methods to ensure secure communications and protect sensitive data.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#C75C27',
+        heading: 'Incident Response',
+        desc: "Develop strategies to respond effectively to cyber incidents and minimize potential damage through effective mitigation.",
+        skills: [
+            'Incident Handling',
+            'Forensic Analysis',
+            'Disaster Recovery',
+            'Business Continuity Planning'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaExclamationTriangle className="text-[1.75rem]" />
+                ),
+                head: 'Incident Management',
+                desc: 'Design and implement effective incident response plans to mitigate the impact of cybersecurity events.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#FFFFFF',
+        heading: 'Risk Management',
+        desc: "Assess and mitigate potential risks, applying strategies to minimize damage and protect organizational assets.",
+        skills: [
+            'Risk Assessment',
+            'Threat Modeling',
+            'Impact Analysis',
+            'Risk Mitigation Strategies'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaBalanceScale className="text-[1.75rem]" />
+                ),
+                head: 'Risk Mitigation',
+                desc: 'Identify, assess, and mitigate risks to minimize potential damage and loss.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#C75C27',
+        heading: 'Compliance & Frameworks',
+        desc: "Understand industry standards and compliance frameworks such as GDPR, ISO 27001, and NIST to ensure legal and regulatory adherence.",
+        skills: [
+            'GDPR Compliance',
+            'ISO 27001 Standards',
+            'NIST Frameworks',
+            'Security Audits & Reviews'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaClipboardList className="text-[1.75rem]" />
+                ),
+                head: 'Compliance Management',
+                desc: 'Learn to navigate and comply with global cybersecurity standards and frameworks.'
+            }
+        ]
+    }
+];
+
+
+
+
+
+
+
 
 
 
@@ -3462,5 +3789,62 @@ export const pmFaqs = [
         id: 10,
         name: 'How do I enroll?',
         desc: 'Click "Enroll Now" on this page, register, and complete payment to get started.'
+    }
+];
+
+
+
+// cyb
+
+export const cybFaqs = [
+    {
+        id: 1,
+        name: 'What is cybersecurity, and why is it important?',
+        desc: 'Cybersecurity is the practice of protecting systems, networks, and data from digital attacks. It’s essential to ensure the safety and privacy of information in today’s connected world.'
+    },
+    {
+        id: 2,
+        name: 'Do I need prior experience to join the course?',
+        desc: 'No, our courses cater to all levels, from beginners to advanced learners.'
+    },
+    {
+        id: 3,
+        name: 'What tools and technologies will I learn?',
+        desc: 'You’ll gain hands-on experience with tools like Wireshark, Metasploit, Nessus, and Kali Linux, as well as cloud security platforms.'
+    },
+    {
+        id: 4,
+        name: 'Will I work on real-world scenarios?',
+        desc: 'Yes, you’ll tackle practical projects, including simulated cyberattacks, penetration testing, and incident response exercises.'
+    },
+    {
+        id: 5,
+        name: 'How long does the course take?',
+        desc: 'The course typically takes 8–16 weeks, depending on the program and your learning pace.'
+    },
+    {
+        id: 6,
+        name: 'Is the course online or in-person?',
+        desc: 'Our courses are entirely online, offering flexibility for learners across the globe.'
+    },
+    {
+        id: 7,
+        name: 'Will I earn a certificate?',
+        desc: 'Yes, you’ll receive an industry-recognized certificate upon course completion.'
+    },
+    {
+        id: 8,
+        name: 'What career paths can I pursue after this course?',
+        desc: 'You can explore roles such as Cybersecurity Analyst, Network Security Engineer, Ethical Hacker, and more.'
+    },
+    {
+        id: 9,
+        name: 'How do I enroll?',
+        desc: 'Click "Enroll Now" on this page, register, and complete payment to get started.'
+    },
+    {
+        id: 10,
+        name: 'Can I get career support after the course?',
+        desc: 'Yes, we provide resume reviews, interview preparation, and job placement assistance to help you succeed.'
     }
 ];
