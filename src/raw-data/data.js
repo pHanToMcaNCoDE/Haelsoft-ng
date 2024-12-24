@@ -23,14 +23,13 @@ import { RiHtml5Line, RiJavascriptLine, RiReactjsFill, RiLightbulbFlashLine, RiD
 // import { IoLogoAngular, IoLogoCss3, IoLogoHtml5, IoLogoJavascript } from 'react-icons/io5';
 import { BsBootstrapFill } from 'react-icons/bs';
 import { PiAngularLogo, PiFileSqlDuotone } from "react-icons/pi";
-import { SiAngular, SiBootstrap, SiMongodb, SiReact } from "react-icons/si";
+import { SiMongodb, SiReact, SiDjango, SiFlask, SiTensorflow, SiScikitlearn, SiFigma, SiSqlite, SiR  } from "react-icons/si";
 import { AiOutlineBarChart, AiOutlineGithub, AiOutlineStock } from "react-icons/ai";
 import { LiaAws, LiaCss3 } from "react-icons/lia";
 import { BiLogoNetlify } from "react-icons/bi";
 import { FaBookOpen, FaLaptopCode, FaChalkboardTeacher, FaCalendarCheck, FaCertificate, FaTools, FaChartLine, FaCogs, FaPython, FaDrawPolygon, FaSearch, FaShareAlt, FaFileAlt, FaDollarSign, FaEnvelope, FaClipboardList, FaChartBar, FaCode,FaCalculator, FaMicrochip, FaLock, FaBriefcase, FaDatabase, FaGlobe, FaLayerGroup, FaServer, FaRegClock, FaMailBulk, FaProjectDiagram, FaSearchDollar, FaMapSigns, FaTasks, FaUsers, FaRocket, FaShieldAlt, FaNetworkWired, FaUserShield, FaExclamationTriangle, FaBalanceScale } from 'react-icons/fa';
 import { TbBrandBootstrap } from 'react-icons/tb';
-import { FaAws, FaBug, FaBullseye, FaBusinessTime, FaChartPie, FaCloud, FaEye, FaFacebook, FaGoogle, FaPenFancy, FaPeopleArrows, FaTable } from 'react-icons/fa6';
-import { SiFigma, SiSqlite, SiR } from 'react-icons/si';
+import { FaAws, FaBrain, FaBug, FaBullseye, FaBusinessTime, FaChartPie, FaCloud, FaEye, FaFacebook, FaGoogle, FaListUl, FaObjectGroup, FaPenFancy, FaPeopleArrows, FaRobot, FaTable } from 'react-icons/fa6';
 import { FiUserCheck, FiLayout, FiPenTool, FiMap, FiCheckSquare, FiSmile, FiUsers } from 'react-icons/fi';
 import { GiNetworkBars } from 'react-icons/gi';
 
@@ -1775,6 +1774,49 @@ export const daLearn = [
 
 
 
+
+
+// py
+
+export const pyLearn = [
+    {
+        id: 1,
+        list: 'Master syntax, variables, loops, and conditionals.'
+    },
+    {
+        id: 2,
+        list: 'Work with lists, dictionaries, tuples, and sets.'
+    },
+    {
+        id: 3,
+        list: 'Create classes and objects for modular coding.'
+    },
+    {
+        id: 4,
+        list: 'Learn how to read, write, and manipulate files.'
+    },
+    {
+        id: 5,
+        list: 'Use Python frameworks like Flask and Django to build web apps.'
+    },
+    {
+        id: 6,
+        list: 'Explore data using libraries like Pandas, Matplotlib, and NumPy.'
+    },
+    {
+        id: 7,
+        list: 'Automate repetitive tasks with Python scripts.'
+    },
+    {
+        id: 8,
+        list: 'Get started with AI using libraries like TensorFlow and Scikit-learn.'
+    },
+]
+
+
+
+
+
 // Certificate Skills
 
 // web
@@ -2081,6 +2123,50 @@ export const daSkills = [
 ]
 
 
+
+
+
+
+
+
+// py
+
+
+
+export const pySkills = [
+    {
+        id: 1,
+        list: 'Python'
+    },
+    {
+        id: 2,
+        list: 'Data Structures'
+    },
+    {
+        id: 3,
+        list: 'OOP'
+    },
+    {
+        id: 4,
+        list: 'File Handling'
+    },
+    {
+        id: 5,
+        list: 'Automation'
+    },
+    {
+        id: 6,
+        list: 'Machine Learning'
+    },
+    {
+        id: 7,
+        list: 'Visualization'
+    },
+    {
+        id: 8,
+        list: 'Data Analysis'
+    },
+]
 
 
 
@@ -2405,6 +2491,61 @@ export const daTools = [
     }
 ];
 
+// py
+
+export const pyTools = [
+    {
+        id: 1,
+        list: (
+            <FaCode color="#1E88E5" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 2,
+        list: (
+            <FaListUl color="#1877F2" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 3,
+        list: (
+            <FaObjectGroup color="#F39C12" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 4,
+        list: (
+            <FaFileAlt color="#DB4437" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 5,
+        list: (
+            <FaLaptopCode color="#2ECC71" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 6,
+        list: (
+            <FaChartLine color="#E74C3C" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 7,
+        list: (
+            <FaRobot color="#3498DB" className="text-[2rem]" />
+        )
+    },
+    {
+        id: 8,
+        list: (
+            <FaBrain color="#9B59B6" className="text-[2rem]" />
+        )
+    }
+];
+
+
+
 
 
 
@@ -2668,6 +2809,44 @@ export const daWhy = [
 
 
 
+
+
+
+// py
+
+
+export const pyWhy = [
+    {
+        id: 1,
+        icon: <FaChalkboardTeacher className="text-[2rem] text-main" />,
+        title: 'Expert-Led Instructors',
+        desc: 'Learn from seasoned Python developers and industry experts.'
+    },
+    {
+        id: 2,
+        icon: <FaLaptopCode className="text-[2rem] text-main" />,
+        title: 'Hands-On Practice',
+        desc: 'Work on real-world projects to solidify your skills.'
+    },
+    {
+        id: 3,
+        icon: <FaRegClock className="text-[2rem] text-main" />,
+        title: 'Flexibility',
+        desc: 'Choose between self-paced learning and live instructor-led sessions.'
+    },
+    {
+        id: 4,
+        icon: <FaCertificate className="text-[2rem] text-main" />,
+        title: 'Certification',
+        desc: 'Boost your resume with a Python certification.'
+    },
+    {
+        id: 5,
+        icon: <FaBriefcase className="text-[2rem] text-main" />,
+        title: 'Career Support',
+        desc: 'Receive personalized career support to land your dream job.'  
+    }
+];
 
 
 
@@ -3849,6 +4028,212 @@ export const curriculumDA = [
 ];
 
 
+// py
+
+
+export const curriculumPY = [
+    {
+        id: 1,
+        unit: 'unit 1',
+        bg: '#C75C27',
+        heading: 'Python Basics',
+        desc: "Master the core syntax of Python, including variables, loops, conditionals, and functions.",
+        skills: [
+            'Variables and Data Types',
+            'Loops and Conditionals',
+            'Functions and Modules',
+            'Basic Debugging'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaPython className="text-[1.75rem]" />
+                ),
+                head: 'Python Syntax',
+                desc: 'Understand the basic syntax and structure of Python programming to start building simple programs.'
+            }
+        ]
+    },
+    {
+        id: 2,
+        unit: 'unit 2',
+        bg: '#FFFFFF',
+        heading: 'Data Structures',
+        desc: "Work with Python's built-in data structures like lists, dictionaries, tuples, and sets.",
+        skills: [
+            'Lists and Tuples',
+            'Dictionaries',
+            'Sets',
+            'Data Manipulation'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaCogs className="text-[1.75rem]" />
+                ),
+                head: 'Data Handling',
+                desc: 'Learn how to efficiently manage and manipulate data using Python’s built-in structures.'
+            }
+        ]
+    },
+    {
+        id: 3,
+        unit: 'unit 3',
+        bg: '#C75C27',
+        heading: 'Object-Oriented Programming',
+        desc: "Learn how to design and implement object-oriented code with classes and objects.",
+        skills: [
+            'Classes and Objects',
+            'Methods and Attributes',
+            'Inheritance and Polymorphism',
+            'Encapsulation'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaFileAlt className="text-[1.75rem]" />
+                ),
+                head: 'OOP Concepts',
+                desc: 'Master the principles of Object-Oriented Programming to write clean and reusable code.'
+            }
+        ]
+    },
+    {
+        id: 4,
+        unit: 'unit 4',
+        bg: '#FFFFFF',
+        heading: 'File Handling',
+        desc: "Learn how to read, write, and manipulate files, including text, CSV, and JSON formats.",
+        skills: [
+            'File I/O Operations',
+            'Reading and Writing Files',
+            'Working with CSV and JSON',
+            'Error Handling in File Operations'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaFileAlt className="text-[1.75rem]" />
+                ),
+                head: 'Working with Files',
+                desc: 'Learn how to manage files and store/retrieve data in various formats like CSV, JSON, and text.'
+            }
+        ]
+    },
+    {
+        id: 5,
+        unit: 'unit 5',
+        bg: '#C75C27',
+        heading: 'Web Development',
+        desc: "Use Python frameworks like Flask and Django to build web applications and APIs.",
+        skills: [
+            'Flask Basics',
+            'Django Framework',
+            'Building APIs',
+            'Web App Deployment'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <SiFlask className="text-[1.75rem]" />
+                ),
+                head: 'Flask Framework',
+                desc: 'Build simple and scalable web applications using Flask, a micro-framework for Python.'
+            },
+            {
+                id: 2,
+                icon: (
+                    <SiDjango className="text-[1.75rem]" />
+                ),
+                head: 'Django Framework',
+                desc: 'Learn Django to build powerful web applications with minimal effort by using its built-in features.'
+            }
+        ]
+    },
+    {
+        id: 6,
+        unit: 'unit 6',
+        bg: '#FFFFFF',
+        heading: 'Data Analysis & Visualization',
+        desc: "Explore and analyze data using Python libraries like Pandas, Matplotlib, and NumPy, and visualize insights.",
+        skills: [
+            'Pandas for Data Manipulation',
+            'NumPy for Mathematical Operations',
+            'Matplotlib for Data Visualization',
+            'Data Cleaning and Analysis'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaChartLine className="text-[1.75rem]" />
+                ),
+                head: 'Data Visualization',
+                desc: 'Use libraries like Matplotlib and Seaborn to create compelling graphs and charts for data analysis.'
+            }
+        ]
+    },
+    {
+        id: 7,
+        unit: 'unit 7',
+        bg: '#C75C27',
+        heading: 'Automation',
+        desc: "Automate repetitive tasks and workflows using Python scripts to save time and effort.",
+        skills: [
+            'Task Scheduling',
+            'Web Scraping with BeautifulSoup',
+            'File Automation',
+            'Automating System Tasks'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <FaRobot className="text-[1.75rem]" />
+                ),
+                head: 'Automation Scripts',
+                desc: 'Automate routine tasks and workflows with Python to improve efficiency and productivity.'
+            }
+        ]
+    },
+    {
+        id: 8,
+        unit: 'unit 8',
+        bg: '#FFFFFF',
+        heading: 'Machine Learning Fundamentals',
+        desc: "Get started with machine learning using Python libraries like TensorFlow and Scikit-learn to build AI models.",
+        skills: [
+            'Introduction to Machine Learning',
+            'Supervised vs Unsupervised Learning',
+            'Building Models with Scikit-learn',
+            'Deep Learning with TensorFlow'
+        ],
+        more: [
+            {
+                id: 1,
+                icon: (
+                    <SiTensorflow className="text-[1.75rem]" />
+                ),
+                head: 'TensorFlow Basics',
+                desc: 'Learn how to build and train deep learning models using TensorFlow for AI and data science applications.'
+            },
+            {
+                id: 2,
+                icon: (
+                    <SiScikitlearn className="text-[1.75rem]" />
+                ),
+                head: 'Scikit-learn for ML',
+                desc: 'Build machine learning models and perform data analysis using Scikit-learn’s easy-to-use algorithms.'
+            }
+        ]
+    }
+];
+
 
 
 
@@ -3962,7 +4347,7 @@ export const uxFaqs = [
     {
         id: 9,
         name: 'How much does the course cost?',
-        desc: 'Visit [your website link] for pricing details. We offer flexible payment plans and scholarships for eligible learners.'
+        desc: 'Click "Get Started!" on this page, register, and view payment plan.'
     },
     {
         id: 10,
@@ -4133,7 +4518,7 @@ export const pmFaqs = [
     {
         id: 9,
         name: 'How much does the course cost?',
-        desc: 'Visit [your website link] for pricing details and payment options.'
+        desc: 'Click "Get Started!" on this page, register, and view payment plan.'
     },
     {
         id: 10,
@@ -4246,11 +4631,67 @@ export const daFaqs = [
     {
         id: 9,
         name: 'How much does the course cost?',
-        desc: 'Please visit [your website link] for pricing details and available payment plans.'
+        desc: 'Click "Get Started!" on this page, register, and view payment plan.'
     },
     {
         id: 10,
         name: 'How do I enroll?',
-        desc: 'Click the "Get Started!" button or visit [your website link] to register and begin your learning journey.'
+        desc: 'Click "Get Started!" on this page, register, and complete payment to get started.'
+    }
+];
+
+
+// py
+
+export const pyFaqs = [
+    {
+        id: 1,
+        name: 'What is Python, and why should I learn it?',
+        desc: 'Python is a versatile programming language known for its simplicity and wide range of applications, from web development to data science. It’s a great choice for both beginners and advanced developers.'
+    },
+    {
+        id: 2,
+        name: 'Do I need any prior programming knowledge to enroll?',
+        desc: 'No, our Python courses are designed for beginners and also include advanced modules for experienced learners.'
+    },
+    {
+        id: 3,
+        name: 'What projects will I work on during the course?',
+        desc: 'You’ll complete hands-on projects like building web apps, analyzing datasets, creating automation scripts, and developing machine learning models.'
+    },
+    {
+        id: 4,
+        name: 'How long is the course?',
+        desc: 'The course duration typically ranges from 8 to 12 weeks, depending on your chosen program and pace.'
+    },
+    {
+        id: 5,
+        name: 'Is the course completely online?',
+        desc: 'Yes, our courses are entirely online, offering flexibility for learners around the globe.'
+    },
+    {
+        id: 6,
+        name: 'Will I receive a certificate?',
+        desc: 'Yes, upon completing the course, you’ll earn a globally recognized Python certification.'
+    },
+    {
+        id: 7,
+        name: 'Can this course help me start a career in tech?',
+        desc: 'Absolutely! Python is a fundamental skill for careers in web development, data science, machine learning, and software engineering.'
+    },
+    {
+        id: 8,
+        name: 'How do I enroll?',
+        desc: 'Click "Get Started!" on this page, register, and complete payment to get started.'
+    },
+    {
+        id: 9,
+        name: 'How much does the course cost?',
+        desc: 'Click "Get Started!" on this page, register, and view payment plan.'
+    },
+    {
+        id: 10,
+        name: 'Will I have access to career support after the course?',
+        desc: 'Yes, we provide resume assistance, mock interviews, and job placement support to help you succeed.'
     }
 ];
