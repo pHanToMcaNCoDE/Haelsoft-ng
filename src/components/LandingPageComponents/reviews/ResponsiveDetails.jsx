@@ -3,12 +3,12 @@ import Image from 'next/image';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 import '@splidejs/react-splide/css';
-import user from '/public/assets/landing-page/EdTech Platform (9).svg';
-import user2 from '/public/assets/image 109.png';
-import user3 from '/public/assets/landing-page/EdTech Platform (10).svg';
-import user4 from '/public/Student Profile Tarzine Jackson.jpg';
-import user5 from '/public/Justin Shaifer Black People.jpg';
-import user6 from '/public/Black People Photo by Divinetechygirl.jpg';
+
+import haelsoft from '/public/EdTech Platform Figma.svg';
+import sspecs from '/public/SystemSpecs.png';
+
+import chris from "/public/Christopher I. Content Strategistr.jpg";
+import areo from '/public/Areo Oluwatosin Diamond.jpeg';
 
 
 
@@ -25,50 +25,19 @@ import giz from '/public/assets/clients/Giz Logo II.png';
 const ResponsiveDetails = () => {
   const slides = [
     {
-      image: user,
-      name: 'Adeola Olukayode',
-      date: 'July 8, 2023',
-      comp: edo
-      // desc: "Haelsoft's digital marketing platform is a game-changer. Their industry-based courses provide practical skills crucial for success. With hands-on projects and excellent support, it's the perfect choice for anyone looking to excel in digital marketing.",
+      image: chris,
+      name: "Christopher Iwundu.",
+      role: "Content Strategist",
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
     {
-      image: user2,
-      name: 'Chidera Nwosu',
-      date: 'June 15, 2023',
-      comp: esi
-      // desc: "I am thoroughly impressed with Haelsoft's approach to teaching. The UI/UX Design course has provided me with the skills I need to excel in the field. Their resources and support are top-notch.",
+      image: areo,
+      name: "Areo Oluwatosin Diamond",
+      role: "PR & Media Expert",
+      comp: sspecs,
+      compName: 'SystemSpecs'
     },
-    {
-      image: user3,
-      name: 'Tumi Williams',
-      date: 'May 10, 2023',
-      comp: farm
-      // desc: "Haelsoft's courses are comprehensive and practical. The Full-Stack Development course helped me land a job within months of completing it. Highly recommended for anyone looking to break into tech.",
-    },
-    // {
-    //   image: user4,
-    //   name: 'Justina Thompson',
-    //   date: 'April 22, 2023',
-    //   desc: "The Product Management course at Haelsoft is amazing. The real-world case studies and projects made learning both challenging and enjoyable. I'm now confidently applying these skills in my current job.",
-    // },
-    // {
-    //   image: user5,
-    //   name: 'Ayomide Adebayo',
-    //   date: 'March 30, 2023',
-    //   desc: "Joining Haelsoft's Data Science program was one of the best decisions I've made. The curriculum is well-structured and the instructors are very knowledgeable. I highly recommend it.",
-    // },
-    // {
-    //   image: user6,
-    //   name: 'Amaka Uche',
-    //   date: 'February 18, 2023',
-    //   desc: "I took the Cyber Security course at Haelsoft and it was incredible. The content was in-depth, and the hands-on labs really helped me understand complex concepts. I feel prepared to tackle the challenges in the cybersecurity field.",
-    // },
-    // {
-    //   image: user3,
-    //   name: 'Tunde Johnson',
-    //   date: 'January 12, 2023',
-    //   desc: "Haelsoft's Marketing courses have truly opened my eyes to the world of digital marketing. The strategies and techniques I learned are already making a difference in my business. I highly recommend their programs.",
-    // },
   ];
 
   return (
@@ -80,7 +49,7 @@ const ResponsiveDetails = () => {
         options={{
           type: 'loop',
           gap: '30px',
-          perPage: 2,
+          perPage: 3,
           perMove: 1,
           height: '650px',
           arrows: true,
