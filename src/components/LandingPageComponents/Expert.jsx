@@ -11,7 +11,7 @@ import mic from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
 import chris from "../../../public/Christopher Iwundu - Content Strategist.png";
 import lin from "../../../public/Linda Ochugbua - Public Relations (PR) Strategist.jpg";
 import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
-import abo from "../../../public/Abbo D'Léon - Digital Marketing Specialist.jpg";
+import abo from "../../../public/Abbo.jpg";
 import steph from '../../../public/Stephanie Nelson - Business Development Specialist.jpg';
 import Image from "next/image";
 
