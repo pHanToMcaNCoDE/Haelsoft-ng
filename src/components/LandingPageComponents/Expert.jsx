@@ -8,9 +8,11 @@ import "@splidejs/react-splide/css";
 import './expert.css';
 import olu from "../../../public/Opeyemi Oluleye - Brand & Communication.jpg";
 import mic from "../../../public/Michael Ezeadichie - Data Scientist.jpg";
-import chris from "../../../public/Christopher I. Content Strategistr.jpg";
+import chris from "../../../public/Christopher Iwundu - Content Strategist.png";
 import lin from "../../../public/Linda Ochugbua - Public Relations (PR) Strategist.jpg";
 import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
+import abo from "../../../public/Abbo D'Léon - Digital Marketing Specialist.jpg";
+import steph from '../../../public/Stephanie Nelson - Business Development Specialist.jpg';
 import Image from "next/image";
 
 
@@ -19,16 +21,23 @@ import haelsoft from '../../../public/EdTech Platform Figma.svg';
 const Expert = () => {
   const slides = [
     {
-      image: chris,
-      name: "Christopher Iwundu.",
-      role: "Content Strategist",
+      image: abo,
+      name: "Abbo D'Léon",
+      role: "Digital Marketing Specialist",
       comp: haelsoft,
       compName: 'Haelsoft'
     },
     {
-      image: olu,
-      name: "Instructor Opeyemi Oluleye",
-      role: "Brand & Communication",
+      image: chike,
+      name: "Chike Ozulumba",
+      role: "Backend Engineer",
+      comp: haelsoft,
+      compName: 'Haelsoft'
+    },
+    {
+      image: chris,
+      name: "Christopher Iwundu.",
+      role: "Content Strategist",
       comp: haelsoft,
       compName: 'Haelsoft'
     },
@@ -47,11 +56,18 @@ const Expert = () => {
       compName: 'Haelsoft'
     },
     {
-      image: chike,
-      name: "Chike Ozulumba",
-      role: "Backend Engineer",
+      image: olu,
+      name: "Opeyemi Oluleye",
+      role: "Brand & Communication",
       comp: haelsoft,
       compName: 'Haelsoft'
+    },
+    {
+      image: steph,
+      name: "Stephanie Nelson",
+      role: "Business Development Specialist",
+      comp: haelsoft,
+      compName: 'Beezy Ideas'
     },
   ];
 

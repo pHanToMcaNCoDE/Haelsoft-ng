@@ -7,8 +7,8 @@ import '@splidejs/react-splide/css';
 import haelsoft from '/public/EdTech Platform Figma.svg';
 import sspecs from '/public/SystemSpecs.png';
 
-import chris from "/public/Christopher I. Content Strategistr.jpg";
-import areo from '/public/Areo Oluwatosin Diamond.jpeg';
+import chris from "/public/Christopher Iwundu - Content Strategist.png";
+import areo from '/public/Areo Oluwatosin Diamond - PR & Content Strategist.png';
 
 
 
