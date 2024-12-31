@@ -81,14 +81,14 @@ const Details = () => {
               <Image
                 width={500}
                 height={400}
-                className="rounded-tl-lg rounded-tr-lg object-cover w-[90%]"
+                className="rounded-tl-lg rounded-tr-lg object-cover w-[70%] lg:w-[90%]"
                 src={item.image}
                 alt={item.name}
               />
             {/* </div> */}
 
             {/* Content */}
-            <div className="bg-white p-5 flex flex-col items-start gap-4 w-[90%] rounded-bl-lg rounded-br-lg h-[186px]">
+            <div className="bg-white p-5 flex flex-col items-start gap-4 w-[70%] lg:w-[90%] rounded-bl-lg rounded-br-lg h-[186px]">
               <div>
                 <h2 className="text-lg font-semibold text-gray-900">{item.name}</h2>
                 <p className="text-sm text-gray-600">{item.role}</p>

@@ -137,7 +137,7 @@ const Review = () => {
 
           <div ref={overlayRef} className="h-full w-[80%] bg-[#000]/30 absolute top-0 z-[8px]"></div>
         </div>
-        <div className="car mt-[100px] mb-[1em] duration-300 hidden md:flex flex-col gap-[55px]">
+        <div className="car mt-[100px] mb-[1em] duration-300 flex-col gap-[55px]">
           <h1 className='text-white w-full flex flex-col justify-center items-center text-[2.125rem] font-bold leading-7'>More Alumni Stories</h1>
           <Details />
         </div>

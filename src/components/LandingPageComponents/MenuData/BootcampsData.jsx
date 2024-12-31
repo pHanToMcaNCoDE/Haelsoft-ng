@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import React from 'react'
 import { FaCode, FaSearchDollar } from 'react-icons/fa'
 import { FiSettings } from 'react-icons/fi'
 import { IoIosArrowForward } from 'react-icons/io'
-// import { LuScatterChart } from 'react-icons/lu'
+import { BsFillShieldLockFill } from "react-icons/bs";
 import { MdBorderColor, MdContactMail, MdOutlineDesignServices } from 'react-icons/md'
 import { TbAtom } from 'react-icons/tb'
 
@@ -17,54 +18,55 @@ const BootcampsData = () => {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 justify-items-center w-full xl:w-auto gap-6'>
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
+          <Link href={`/data-science-bootcamp`} className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
             <div className='flex justify-center items-center gap-3'>
             <TbAtom className='text-2xl' />
               <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>Data Science Bootcamp</h1>
             </div>
             <IoIosArrowForward className='text-base' />
-          </div>
+          </Link>
 
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
+          <Link  href={`/digital-marketing-bootcamp`}  className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
             <div className='flex justify-center items-center gap-3'>
               <MdContactMail className='text-2xl' />
               <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>Digital Marketing Bootcamp</h1>
             </div>
             <IoIosArrowForward className='text-base' />
-          </div>
+          </Link>
 
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
+          <Link href={`/cybersecurity-bootcamp`} className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
             <div className='flex justify-center items-center gap-3'>
-              <FaSearchDollar className='text-2xl' />
-              <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>SEO Bootcamp</h1>
+              <BsFillShieldLockFill className='text-2xl' />
+              <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>Cybersecurity Bootcamp</h1>
             </div>
             <IoIosArrowForward className='text-base' />
-          </div>
+          </Link>
 
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
+          {/* <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
             <div className='flex justify-center items-center gap-3'>
               <MdOutlineDesignServices className='text-2xl' />
               <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>UI Design Bootcamp</h1>
             </div>
             <IoIosArrowForward className='text-base' />
-          </div>
+          </div> */}
 
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
+          <Link  href={`/ux-bootcamp`}  className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
             <div className='flex justify-center items-center gap-3'>
               <MdBorderColor className='text-2xl' />
               <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>UX Design Bootcamp</h1>
             </div>
             <IoIosArrowForward className='text-base' />
-          </div>
+          </Link>
 
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
+          <Link href={`/software-engineering-bootcamp`} className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[#F36400] hover:text-white cursor-pointer duration-150 p-[24px] shadow-l w-full xl:w-[309px] h-[78px] rounded border-[#EEEEEEEE] border-[2px] flex justify-between items-center gap-2'>
             <div className='flex justify-center items-center gap-3'>
               <FaCode className='text-2xl' />
-              <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>Web Development Bootcamp</h1>
+              <h1 className='font-semibold text-[.875rem] leading-5 w-[198px]'>Software Engineering Bootcamp</h1>
             </div>
             <IoIosArrowForward className='text-xl' />
-          </div>
-        </div>
+          {/* </div> */}
+        </Link>
+      </div>
     </div>
   )
 }

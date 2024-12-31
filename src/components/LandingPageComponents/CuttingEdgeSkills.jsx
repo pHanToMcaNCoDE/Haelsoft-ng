@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 const CuttingEdgeSkills = () => {
   return (
-    <section className='py-[100px] flex flex-col justify-center items-center gap-[7em]'>
+    <section className='py-[90px] flex flex-col justify-center items-center gap-[7em]'>
         <div className='max-w-[1200px] px-5 2xl:max-w-[1500px] mx-auto flex flex-col justify-center items-center gap-[7em]'>
             <div className='flex flex-col justify-center items-center gap-10 text-center'>
                 <div className='flex flex-col justify-center items-center gap-1'>
@@ -23,7 +23,7 @@ const CuttingEdgeSkills = () => {
                     <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
                 </div>
                 <p className='text-[.875rem] text-[#655D59] font-normal leading-[24px] w-full lg:w-[779px]'>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
+                    Digital transformation is at the heart of modern organizational growth, enabling businesses to adapt, innovate, and thrive in a rapidly evolving digital landscape. At Haelsoft, we specialize in guiding organizations through this transformation, leveraging cutting-edge technologies to optimize processes, enhance customer experiences, and drive measurable results. With a focus on strategy, innovation, and seamless execution, Haelsoft empowers businesses to unlock their full potential in the digital age. 
                 </p>
             </div>
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-items-center gap-8 w-full lg:w-[962px]'>
@@ -45,7 +45,7 @@ const CuttingEdgeSkills = () => {
                 </div>
             </div>
         </div>
-        <div className='flex flex-col gap-4'>
+        {/* <div className='flex flex-col gap-4'>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center gap-1 w-full'>
                 <Image width={482} height={444} className='object-cover' src={one} alt="Learning" />
                 <Image width={482} height={444} className='object-cover' src={two} alt="Learning" />
@@ -57,7 +57,7 @@ const CuttingEdgeSkills = () => {
                 <Image src={six} alt="Learning" />
                 <Image src={seven} alt="Learning" />
             </div>
-        </div>
+        </div> */}
     </section>
   )
 }

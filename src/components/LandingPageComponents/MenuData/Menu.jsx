@@ -10,7 +10,7 @@ const Menu = ({ clicked, setClicked }) => {
 
   return (
     <nav
-      className={`overflow-hidden sticky top-[58px] min-h-[348px] w-full bg-white hidden xl:flex shadow-xl shadow-zinc-200 z-[999] p-10 ${
+      className={`overflow-hidden fixed top-[58px] left-0 min-h-[348px] w-full bg-white hidden xl:flex shadow-xl shadow-zinc-200 z-[999] p-10 ${
         clicked ? 'fade-in' : 'fade-out'
       }`}
     >
@@ -24,6 +24,7 @@ const Menu = ({ clicked, setClicked }) => {
       {clicked === 'Bootcamps' && <BootcampsData />}
       {clicked === 'About' && <AboutData />}
     </nav>
+
   );
 };
 

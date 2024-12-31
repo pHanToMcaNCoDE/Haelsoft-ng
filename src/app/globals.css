@@ -24,6 +24,15 @@ body {
 } */
 
 
+.corp{
+  background-image: url('../../public/EdTech Platform Hero Image.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 100vh; */
+  height: 100vh;
+}
+
 .fade-in {
   animation: fadeIn 0.3s forwards;
 }

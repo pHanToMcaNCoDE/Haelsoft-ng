@@ -22,7 +22,7 @@ const page = () => {
 
 
   const content = (
-    <div className="relative z-10 flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
+    <>
       <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">
         Hire A Halsoft Talent
       </h1>
@@ -32,7 +32,7 @@ const page = () => {
       <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         Whether you’re looking to upskill your workforce, foster leadership development, or implement industry-specific training, our platform provides comprehensive solutions to drive your organization’s success.
       </p>
-    </div>
+    </>
   )
 
   const contentTwo = (

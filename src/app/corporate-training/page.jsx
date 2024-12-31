@@ -20,7 +20,7 @@ const page = () => {
 
 
   const content = (
-    <div className="relative z-10 flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
+    <>
       <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">
         Empowering Teams, Transforming Organizations
       </h1>
@@ -30,7 +30,7 @@ const page = () => {
       <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         With a focus on Africa’s dynamic market, we provide tailored training solutions that address the unique needs of businesses, government institutions, and non-profit organizations. Our programs are designed to foster innovation, enhance productivity, and drive measurable results.
       </p>
-    </div>
+    </>
   )
 
 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 const AboutHero = () => {
   return (
     <section className='w-full relative hero h-[70vh] lg:h-[657px]'>
-      <Image className='absolute' src={family} alt="We are Family" />
+      <Image className='absolute w-full h-[70vh] lg:h-auto' src={family} alt="We are Family" />
       <div className="hero-content px-5 lg:px-8 w-full gap-[2em]">
         <div className='max-w-[1200px] 2xl:max-w-[1530px] mx-auto'>
             <div className='flex flex-col gap-[6em] py-[100px]'>
