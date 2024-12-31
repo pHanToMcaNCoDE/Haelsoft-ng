@@ -13,6 +13,7 @@ import lin from "../../../public/Linda Ochugbua - Public Relations (PR) Strategi
 import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
 import abo from "../../../public/Abbo.jpg";
 import steph from '../../../public/Stephanie Nelson - Business Development Specialist.jpg';
+import beez from '../../../public/Beezy Ideas.png';
 import Image from "next/image";
 
 
@@ -66,7 +67,7 @@ const Expert = () => {
       image: steph,
       name: "Stephanie Nelson",
       role: "Business Development Specialist",
-      comp: haelsoft,
+      comp: beez,
       compName: 'Beezy Ideas'
     },
   ];
@@ -78,7 +79,7 @@ const Expert = () => {
         options={{
           type: "loop",
           gap: "80px",
-          height: '480px',
+          height: '520px',
           perPage: 4,
           perMove: 1,
           arrows: false,
