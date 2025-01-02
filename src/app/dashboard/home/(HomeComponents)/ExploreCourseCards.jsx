@@ -9,15 +9,17 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
   if (!courses || courses.length === 0) {
-    return <p>No courses available.</p>; // Fallback message when courses is empty or undefined
+    return <p>No courses available.</p>;
   }
 
+
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
       {courses.map((course) => (
         <div
           key={course.title}
-          className="p-3 bg-white w-full md:w-[304px] border-[2px] border-[#cfcece] rounded-[12px] flex flex-col gap-6 items-start cursor-pointer"
+          className="p-3 bg-white w-full xl:w-[304px] border-[2px] border-[#cfcece] rounded-[12px] flex flex-col gap-6 items-start cursor-pointer"
         >
           <Image
             width={523}

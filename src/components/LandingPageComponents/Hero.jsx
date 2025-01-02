@@ -14,7 +14,7 @@ const Hero = ({scrollToCourses}) => {
             <div className='flex flex-col gap-[6em] py-[100px]'>
                 <div className='flex flex-col gap-2'>
                   <h1 className='text-[3.5rem] lg:text-[4.313rem] text-left text-[#FFCF00] font-semibold leading-[55px] lg:leading-[75px]'>Innovate. Lead. Succeed.</h1>
-                  <p className='text-[1.25rem] leading-6 text-white text-left'>Jumpstart Your Tech Career and Lead the Future</p>
+                  <p className='text-[1.25rem] leading-6 text-white text-left'>Jumpstart Your Career and Lead the Future</p>
                 </div>
                 <button onClick={scrollToCourses} className="py-[15px] border border-[#F36400] bg-[#F36400] text-white font-semibold  text-[.875rem] h-[48.4px] w-[181px] flex justify-center items-center gap-4 rounded">
                   Browse Courses
