@@ -8,28 +8,40 @@ import obj from "../../../public/assets/Polygon 1.svg";
 import { IoIosArrowForward } from 'react-icons/io';
 import Image from 'next/image';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
+import Link from 'next/link';
+import { FaFileCode } from "react-icons/fa";
 
 const CourseCards = () => {
     const list = [
         {
+          id: 1,
           title: "Artificial Intelligence",
           icon: monitor,
+          route: '/artificial-intelligence-certificate-course'
         },
         {
+          id: 2,
           title: "Data Science",
           icon: socials,
+          route: '/data-science-certificate-course'
         },
         {
-          title: "Search Engine Marketing",
-          icon: seo,
+          id: 3,
+          title: "Web Development",
+          icon: (<FaFileCode className='text-black text-[1.5rem]'/>),
+          route: '/web-certificate-course'
         },
         {
-          title: "Digital Marketing Online Course",
+          id: 4,
+          title: "Digital Marketing",
           icon: content,
+          route: '/digital-marketing-certificate-course'
         },
         {
+          id: 5,
           title: "Python",
           icon: web,
+          route: '/python-certificate-course'
         },
     ];
   return (
@@ -38,22 +50,24 @@ const CourseCards = () => {
       className="relative z-20 cards grid grid-cols-1 gap-8 gap-y-5 lg:gap-y-6 w-full sm:max-w-[650px]"
     >
         {list.map((item) => (
-            <div key={item.title} className="card relative shadow-lg overflow-hidden z-10 bg-white h-[155px] w-full md:w-[520px]">
+            <div key={item.id} className="card relative shadow-lg overflow-hidden z-10 bg-white h-[155px] w-full md:w-[520px]">
                 <Image
                     className="-z-10 absolute h-[11em] left-0 top-[-6%]"
                     src={obj}
                     alt="Object"
                 />
                 <div className="pt-[1em] pb-[1em] md:pb-[1.5em] xl:pb-[2em] px-[.4em] md:px-[2em] lg:px-[2.6em] flex items-center gap-x-6">
-                    <Image className="w-11 h-11" src={item.icon} alt="Icon" />
+                    {
+                      item.id === 3 ? (<>{item.icon}</>) : (<Image className="w-11 h-11" src={item.icon} alt="Icon" />)
+                    }
                     <div className='flex flex-col justify-center items-start gap-y-2'>
                       <p className="text-[1.3rem] text-[#655D59] font-semibold leading-[46px]">
                         {item.title}
                       </p>
-                      <button className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white">
+                      <Link href={item.route} className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white">
                         Learn More
                         <IoIosArrowForward className='text-[1.25rem]' />
-                      </button>
+                      </Link>
                     </div>
                 </div>
             </div>

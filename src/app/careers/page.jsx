@@ -26,7 +26,7 @@ const page = () => {
       <DefineFuture/>
       <DedicatedLearners/>
       <CultureBenefits/>
-      <Gall/>
+      {/* <Gall/> */}
       <TeachingHaelsoft/>
     </main>
   )

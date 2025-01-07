@@ -12,6 +12,7 @@ import StartHiring from '@/components/LandingPageComponents/StartHiring'
 import TalentNetwork from '@/components/LandingPageComponents/TalentNetwork'
 import TrainingBenefits from '@/components/LandingPageComponents/TrainingBenefits'
 import React, { useState } from 'react'
+import training from '../../../public/training.jpg';
 
 const page = () => {
 
@@ -20,7 +21,7 @@ const page = () => {
 
 
   const content = (
-    <>
+    <div className='gap-7 flex flex-col justify-center items-start'>
       <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">
         Empowering Teams, Transforming Organizations
       </h1>
@@ -30,21 +31,25 @@ const page = () => {
       <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         With a focus on Africa’s dynamic market, we provide tailored training solutions that address the unique needs of businesses, government institutions, and non-profit organizations. Our programs are designed to foster innovation, enhance productivity, and drive measurable results.
       </p>
-    </>
+    </div>
   )
 
 
   const contentTwo = (
     <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
-    <h1 className="text-[#F36400] leading-[42px] font-bold text-[1.75rem]">Partner with Haelsoft for Excellence</h1>
-    <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
+    <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">Partner with Haelsoft for Excellence</h1>
+    <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
       Invest in your people, and you’ll invest in the future of your organization. Let Haelsoft EdTech Platform help you build a workforce that’s ready to tackle today’s challenges and tomorrow’s opportunities. To learn more about our Corporate Training programs or schedule a consultation, contact us at [your email address]. At Haelsoft, we don’t just train teams; we empower them to lead, innovate, and excel.
     </p>
-    <span className='text-black font-bold text-[1.125rem] leading-[43px] w-full xl:w-[574px]'>
+    <span className='text-white font-bold text-[1.125rem] leading-[43px] w-full xl:w-[574px]'>
       At Haelsoft, we don’t just train teams; we empower them to lead, innovate, and excel.
     </span>
   </div>
   )
+
+  
+    const [corpImg, setCorpImg] = useState(training)
+    const corpAlt = 'Corporate Training'
 
   return (
     <main>
@@ -54,7 +59,7 @@ const page = () => {
         boolclick={boolclick} 
         setBoolClick={setBoolClick} 
       />
-      <Hire content={content}/>
+      <Hire content={content} corpImg={corpImg} corpAlt={corpAlt}/>
       <TalentNetwork/>
       {/* <TrainingBenefits/> */}
       <Network />

@@ -5,12 +5,12 @@ const Plan = () => {
   return (
     <section className="bg-[#F7F7F7] py-[100px] px-5">
       <div className="max-w-[1250px] mx-auto flex flex-col gap-[4em] justify-center items-center">
-        <h1 className="text-[#F36400] text-[1.5rem] leading-9 font-semibold">
+        <h1 className="text-[#F36400] text-[1.5rem] leading-9 font-semibold text-center">
           Choose A Plan That Suits Your Corporate Needs
         </h1>
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           {/* Corporate Hire Plan */}
-          <div className="gap-[6em] w-full xl:w-[592px] h-[788px] bg-white shadow-lg rounded flex flex-col justify-center items-center">
+          <div className="px-8 relative z-20 gap-[6em] w-[95%] xl:w-[592px] h-[788px] bg-white shadow-lg rounded flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center">
               <h1 className="text-[#FF8C53] text-[1.5rem] leading-[36px] font-semibold">
                 Corporate Hire
@@ -44,7 +44,7 @@ const Plan = () => {
           </div>
 
           {/* Corporate Training Plan */}
-          <div className="gap-[6em] w-full xl:w-[592px] h-[788px] p-[20px] bg-white shadow-lg rounded flex flex-col justify-center items-center">
+          <div className="px-8 relative z-20 gap-[6em] w-[95%] xl:w-[592px] h-[788px] p-[20px] bg-white shadow-lg rounded flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center">
               <h1 className="text-[#FF8C53] text-[1.5rem] leading-[36px] font-semibold">
                 Corporate Training

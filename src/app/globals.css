@@ -23,6 +23,13 @@ body {
   position: absolute;
 } */
 
+/* Corporate Hire & Training Content  */
+.corp-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  color: white;
+}
 
 .corp{
   background-image: url('../../public/EdTech Platform Hero Image.svg');

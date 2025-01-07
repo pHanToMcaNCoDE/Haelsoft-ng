@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '../../../public/assets/logo.svg';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 import { GoArrowLeft } from 'react-icons/go';
@@ -8,14 +8,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Menu from './MenuData/Menu';
 import Aside from './Aside/Aside';
+import { usePathname } from 'next/navigation';
 
 const Navbar = ({ clicked, setClicked }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScroll, setIsScroll] = useState(false);
   const [menu, setMenu] = useState(false);
+  const pathname = usePathname()
+  const menuRef = useRef()
+  const subMenuRef = useRef()
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScroll(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -34,10 +38,26 @@ const Navbar = ({ clicked, setClicked }) => {
 
   console.log('Clicked', clicked)
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // if (menuRef.current && subMenuRef.current && !menuRef.current.contains(event.target) && !subMenuRef.current.contains(event.target)) {
+        if (clicked && !event.target.closest('.dropdown-content')) {
+          setClicked('');
+        }
+      // }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+}, []);
+
+
   return (
-    <>
-      {/* Mobile Navigation */}
-        <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
+   <>
+      <nav ref={menuRef} className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
           <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
             {
               clicked ? (
@@ -64,20 +84,20 @@ const Navbar = ({ clicked, setClicked }) => {
                 setMenu((prev) => !prev);
                 setClicked('');
               }}
-              className="flex flex-col justify-between items-center w-[13%] lg:w-[5%] h-[16px] cursor-pointer gap-1"
+              className="flex flex-col justify-between items-center w-[8%] lg:w-[5%] h-[16px] cursor-pointer gap-1"
             >
               <div
-                className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${
+                className={`h-[2px] w-[30%] rounded-full bg-[#1A1A1A] transition-transform ${
                   menu ? 'rotate-45 translate-y-[7px]' : ''
                 }`}
               ></div>
               <div
-                className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-opacity ${
+                className={`h-[2px] w-[30%] rounded-full bg-[#1A1A1A] transition-opacity ${
                   menu ? 'opacity-0' : 'opacity-100'
                 }`}
               ></div>
               <div
-                className={`h-[2px] w-[40%] rounded-full bg-[#1A1A1A] transition-transform ${
+                className={`h-[2px] w-[30%] rounded-full bg-[#1A1A1A] transition-transform ${
                   menu ? '-rotate-45 -translate-y-[7px]' : ''
                 }`}
               ></div>
@@ -90,8 +110,8 @@ const Navbar = ({ clicked, setClicked }) => {
 
       {/* Desktop Navigation */}
       <nav
-        className={`navbar hidden xl:flex sticky top-0 left-0 w-full z-[990] ${
-          isScrolled ? 'bg-white shadow-lg' : 'bg-[#4c4f5f]/50'
+        className={`navbar hidden xl:flex fixed top-0 left-0 w-full z-[990] ${
+          isScroll ? 'bg-white shadow-lg' : 'bg-[#4c4f5f]/50'
         }`}
       >
         <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
@@ -101,7 +121,7 @@ const Navbar = ({ clicked, setClicked }) => {
           </Link>
           <ul
             className={`flex gap-8 text-[1.125rem] ${
-              isScrolled ? 'text-black' : 'text-white'
+              isScroll ? 'text-black' : 'text-white'
             }`}
           >
             {links.map((item, index) => (
@@ -111,7 +131,7 @@ const Navbar = ({ clicked, setClicked }) => {
                     className="flex items-center gap-1 cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault();
-                      setClicked(clicked === item.name ? '' : item.name)
+                      setClicked((prev) => prev === item.name ? '' : item.name)
                     }}
                   >
                     <span>{item.name}</span>
@@ -131,7 +151,7 @@ const Navbar = ({ clicked, setClicked }) => {
           <Link
             href="/signin"
             className={`w-[150px] h-[43px] rounded flex items-center justify-center ${
-              isScrolled ? 'bg-[#F36400] text-white' : 'bg-[#F36400] text-white'
+              isScroll ? 'bg-[#F36400] text-white' : 'bg-[#F36400] text-white'
             }`}
           >
             Sign In
@@ -140,12 +160,21 @@ const Navbar = ({ clicked, setClicked }) => {
       </nav>
 
       {/* Dropdown Menu */}
-      <div className="relative">
+      {/* <div className="relative">
         {['Courses', 'Corporate', 'Bootcamps', 'About'].includes(clicked) && (
           <Menu clicked={clicked} setClicked={setClicked} />
         )}
-      </div>
-    </>
+      </div> */}
+
+      {clicked && (
+        <Menu
+          subMenuRef={subMenuRef}
+          menu={menu}
+          setMenu={setMenu}
+          clicked={clicked}
+        />
+      )}
+   </>
   );
 };
 

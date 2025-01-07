@@ -13,6 +13,7 @@ import ResponsiveWorkAt from '@/components/LandingPageComponents/ResponsiveWorkA
 import StartHiring from '@/components/LandingPageComponents/StartHiring'
 import WhereTheyWork from '@/components/LandingPageComponents/WhereTheyWork'
 import WorkAt from '@/components/LandingPageComponents/WorkAt'
+import hire from '../../../public/hire.jpg';
 import React, { useState } from 'react'
 
 const page = () => {
@@ -22,7 +23,7 @@ const page = () => {
 
 
   const content = (
-    <>
+    <div className='gap-7 flex flex-col justify-center items-start'>
       <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">
         Hire A Halsoft Talent
       </h1>
@@ -32,18 +33,21 @@ const page = () => {
       <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         Whether you’re looking to upskill your workforce, foster leadership development, or implement industry-specific training, our platform provides comprehensive solutions to drive your organization’s success.
       </p>
-    </>
+    </div>
   )
 
   const contentTwo = (
     <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
-      <h1 className="text-[#F36400] leading-[42px] font-bold text-[1.75rem]">Partner with Haelsoft for Excellence</h1>
-      <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
+      <h1 className="text-white leading-[42px] font-bold text-[1.75rem]">Partner with Haelsoft for Excellence</h1>
+      <p className="text-white text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         Empower your organization with the skills and knowledge it needs to thrive. To learn more about our Corporate Hire services or to schedule a consultation, contact us at [your email address].
         At Haelsoft, we’re not just training teams—we’re building capabilities that drive long-term success.
       </p>
     </div>
   )
+
+  const [corpImg, setCorpImg] = useState(hire)
+  const corpAlt = 'Corporate Hire'
 
 
   return (
@@ -54,7 +58,7 @@ const page = () => {
         boolclick={boolclick} 
         setBoolClick={setBoolClick} 
       />
-      <Hire content={content}/>
+      <Hire content={content} corpImg={corpImg} corpAlt={corpAlt}/>
       {/* <ConnectTalent/> */}
 
       <WhereTheyWork/>
@@ -62,7 +66,7 @@ const page = () => {
       {/* <Network/> */}
       {/* <ResponsiveNetwork/> */}
       {/* <ResponsiveWorkAt/> */}
-      <CorporateGallary/>
+      {/* <CorporateGallary/> */}
       <EdtechRoles/>
       <EdtechGraduates/>
       <Plan/>
