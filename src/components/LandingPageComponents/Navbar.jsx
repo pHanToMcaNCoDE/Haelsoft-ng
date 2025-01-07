@@ -87,17 +87,17 @@ const Navbar = ({ clicked, setClicked }) => {
               className="flex flex-col justify-between items-center w-[8%] lg:w-[5%] h-[16px] cursor-pointer gap-1"
             >
               <div
-                className={`h-[2px] w-[30%] rounded-full bg-[#1A1A1A] transition-transform ${
+                className={`h-[2px] w-[35%] rounded-full bg-[#1A1A1A] transition-transform ${
                   menu ? 'rotate-45 translate-y-[7px]' : ''
                 }`}
               ></div>
               <div
-                className={`h-[2px] w-[30%] rounded-full bg-[#1A1A1A] transition-opacity ${
+                className={`h-[2px] w-[35%] rounded-full bg-[#1A1A1A] transition-opacity ${
                   menu ? 'opacity-0' : 'opacity-100'
                 }`}
               ></div>
               <div
-                className={`h-[2px] w-[30%] rounded-full bg-[#1A1A1A] transition-transform ${
+                className={`h-[2px] w-[35%] rounded-full bg-[#1A1A1A] transition-transform ${
                   menu ? '-rotate-45 -translate-y-[7px]' : ''
                 }`}
               ></div>

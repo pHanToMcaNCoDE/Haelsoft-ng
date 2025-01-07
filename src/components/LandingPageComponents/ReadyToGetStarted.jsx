@@ -6,7 +6,7 @@ import img from '../../../public/c-support.png';
 
 const ReadyToGetStarted = () => {
   return (
-    <section className='bg-main relative min-h-[50vh] w-full px-6 xl:px-0 pt-[100px] overflow-hidden'>
+    <section className='bg-main relative min-h-[50vh] w-full px-6 xl:px-0 overflow-hidden'>
         <Image className="z-[10] absolute top-0 w-screen h-full object-cover" src={obj} alt='Object'></Image>
         <div className='bg-main w-full xl:w-[1064px] py-[111px] px-[12px] mx-auto h-full lg:h-[555.87px] relative z-[20] flex flex-col lg:flex-row justify-between items-center gap-[47px] xl:gap-[87px]'>
             <div className='flex flex-col justify-center items-start gap-[50px]'>

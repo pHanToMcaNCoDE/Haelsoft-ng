@@ -176,7 +176,7 @@ const page = () => {
                                 </div> */}
                             </div>
                             <p className='text-white text-[1rem] font-normal leading-[30px] w-full lg:w-[424px]'>
-                                Take the first step toward becoming a Python expert. Join our Learn Python course today and gain the skills you need to stay ahead in the digital economy.
+                                Take the first step towards becoming a Python expert. Join our Learn Python course today and gain the skills you need to stay ahead in the digital economy.
                             </p>
                         </div>
                         <div className='pt-[180px] flex flex-col justify-center items-start gap-8'>

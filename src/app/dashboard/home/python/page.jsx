@@ -26,7 +26,7 @@ const Page = () => {
   // Using Suspense for `useSearchParams`
   const SuspendedSearchParams = () => {
     const searchParams = useSearchParams();
-    return searchParams.get('details');
+    const courseTtl = searchParams ? searchParams.get('details') : null;
   };
 
   const courseTtl = SuspendedSearchParams();
@@ -35,6 +35,12 @@ const Page = () => {
     const fetchCourse = () => {
       const allCourses = Object.values(courseDetails).flat();
       const normalizedCourseTitle = courseTtl ? courseTtl.toLowerCase() : courseTitle.toLowerCase();
+
+      if (!normalizedCourseTitle) {
+        setError('Course title is missing');
+        setLoading(false);
+        return;
+      }
 
       const cartDataCourse = allCourses.find(
         (c) => c.title && c.title.toLowerCase() === normalizedCourseTitle

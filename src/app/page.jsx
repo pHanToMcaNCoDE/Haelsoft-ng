@@ -13,6 +13,7 @@ import BenefitsOnline from "@/components/LandingPageComponents/BenefitsOnline";
 import Bootcamps from "@/components/LandingPageComponents/Bootcamps";
 import ReadyToGetStarted from "@/components/LandingPageComponents/ReadyToGetStarted";
 import { useState, useEffect, useRef } from "react";
+import CustomNewsletter from "@/components/LandingPageComponents/CustomNewsletter";
 
 export default function Home() {
   const [clicked, setClicked] = useState('');
@@ -44,6 +45,9 @@ export default function Home() {
       <BenefitsOnline />
       <Bootcamps />
       <Instructors />
+      <section className="py-[64px] lg:py-[100px] w-full flex justify-center items-center">
+        <CustomNewsletter/>
+      </section>
       <ReadyToGetStarted />
       <footer className="text-center py-4 hidden">
         <a

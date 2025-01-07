@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
+import obj from "../../../public/assets/EdTech Platform (3).svg";
+import Image from 'next/image';
 
 const CertificateGetStarted = ({getTitle, getDesc}) => {
   return (
     
-    <section className="relative bg-custom-grid bg-repeat bg-[#C75C27] px-6 flex flex-col justify-center items-center h-full">
-      <div className="w-[50%] mx-auto flex flex-col justify-center items-center gap-4 py-[100px] bg-[#C75C27] h-full">
+    <section className="relative bg-[#C75C27] px-6 xl:px-0 flex flex-col justify-center items-center min-h-[50vh]">
+      <Image className="z-[10] absolute top-0 w-screen h-full object-cover" src={obj} alt='Object'></Image>
+      <div className="w-full lg:w-[1064px] z-20 relative mx-auto flex flex-col justify-center items-center gap-4 py-[100px] bg-[#C75C27] h-full px-6">
         
         <div className='max-w-[1300px] px-12 flex flex-col justify-center items-center text-center gap-8 h-full'>
             <div className='flex flex-col justify-center items-center gap-3'>

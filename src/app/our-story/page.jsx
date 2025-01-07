@@ -26,7 +26,7 @@ const page = () => {
       />
       <AboutHero/>
       <AboutStart/>
-      <DigitalTransformation/>
+      {/* <DigitalTransformation/> */}
       <CuttingEdgeSkills/>
       <Leaders/>
       <Organization/>

@@ -81,7 +81,7 @@ const page = () => {
         <CertificateCurriculum curriculum={curriculum} curTitle={curTitle} />
         <CustomEarn cusTitle={cusTitle} cusImg={cusImg} cusDesc={cusDesc} />
         <Industries/>
-        <CertificateGallary/>
+        {/* <CertificateGallary/> */}
         <CertificateFaq faqs={faqs}/>
         <CertificateGetStarted getTitle={getTitle} getDesc={getDesc} />
     </main>

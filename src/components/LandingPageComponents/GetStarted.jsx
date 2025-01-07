@@ -1,5 +1,6 @@
 'use client'
 
+import { africanCountries } from '@/raw-data/data';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Bounce, toast } from 'react-toastify';
@@ -131,6 +132,22 @@ const GetStarted = () => {
                                 />
                                 {errors.phone && <span className="text-red-500 text-sm">{errors.phone}</span>}
                             </div>
+
+                            <select
+                                id="countryDropdown"
+                                // value={selectedCountry}
+                                // onChange={handleSelectChange}
+                                className="p-2 w-full border-l border-l-[#F5F5F5] placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded xl:w-[482px] h-[48px]"
+                                >
+                                <option value="" disabled>
+                                    Choose Your Location...
+                                </option>
+                                {africanCountries.map((country) => (
+                                    <option key={country.name} value={country.name}>
+                                        {country.flag} {country.name}
+                                    </option>
+                                ))}
+                            </select>
                             <button 
                                 className='bg-[#F36400] gap-[10px] p-[10px] w-full md:w-[298px] rounded flex justify-center items-center h-[58px] text-white' 
                                 type="submit"

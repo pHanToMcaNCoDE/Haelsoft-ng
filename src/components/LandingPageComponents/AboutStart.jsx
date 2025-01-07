@@ -11,7 +11,7 @@ import Image from 'next/image';
 
 const AboutStart = () => {
   return (
-    <section className='min-h-screen py-[100px] lg:py-[200px] flex flex-col gap-[15em] max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 lg:px-8'>
+    <section className='min-h-screen py-[100px] xl:py-[200px] flex flex-col gap-[15em] max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 lg:px-8'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-[4em] md:gap-[8em] h-full'>
             <div className='w-full lg:w-[50%] h-full flex flex-col gap-8'>
                 <div className='flex flex-col'>

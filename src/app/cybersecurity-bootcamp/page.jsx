@@ -75,7 +75,7 @@ const page = () => {
         <div className="pt-[200px] px-6 xl:px-0 flex flex-col lg:flex-row justify-end items-start gap-10 max-w-[1250px] mx-auto py-[100px]">
           <div className="flex flex-col justify-center items-start gap-6 relative z-10 w-full xl:w-[50%]">
             <div className='flex flex-col justify-center items-start gap-3 w-full lg:w-[458px]'>
-                <h2 className="text-[#201A18] text-[1.5rem] leading-[29.26px] font-semibold">Take the First Step Toward a Rewarding Career in Cybersecurity</h2>
+                <h2 className="text-[#201A18] text-[1.5rem] leading-[29.26px] font-semibold">Take the first step towards a Rewarding Career in Cybersecurity</h2>
                 <div className='bg-[#F1C118] w-[56px] h-[4px] rounded-[4px]'></div>
             </div>
             <p className="w-full xl:w-[500px] text-[#201A18] leading-[30px] font-normal text-base">
@@ -84,7 +84,7 @@ const page = () => {
             <div className='w-full xl:w-[500px] flex flex-col justify-center items-start gap-1'>
                 <p className="text-[#201A18] leading-[30px] font-normal text-base">Enroll Now</p>
                 <p className="text-[#201A18] leading-[30px] font-normal text-base">
-                    Have questions? Contact us at [Insert Contact Info] or schedule a free consultation to learn more about the bootcamp.
+                    Have questions? Contact us at info@haelsoft.com or schedule a free consultation to learn more about the bootcamp.
                 </p>
             </div>
             <button className='bg-main w-[298px] h-[58px] py-[10px] flex justify-center items-center text-white font-normal leading-10 text-[1.125rem]'>Enroll Now</button>

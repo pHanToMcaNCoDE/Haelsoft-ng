@@ -9,8 +9,7 @@ const CustomForm = () => {
         <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="text" placeholder="Name" />
         <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="email" placeholder="Email Address" />
         <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="text" placeholder="Company" />
-        {/* <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="text" placeholder="Location" /> */}
-        {/* <div className="flex items-center border rounded-md shadow-sm w-full"> */}
+        
             <select
             id="countryDropdown"
             // value={selectedCountry}
@@ -26,14 +25,6 @@ const CustomForm = () => {
                 </option>
             ))}
             </select>
-            {/* <input
-            type="text"
-            // value={inputValue}
-            // onChange={handleInputChange}
-            placeholder="Location"
-            className=""
-            /> */}
-        {/* </div> */}
         <textarea className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[151px]" placeholder="What does your organization need?"></textarea>
         </div>
         <div className="flex flex-col justify-center items-center gap-10">
