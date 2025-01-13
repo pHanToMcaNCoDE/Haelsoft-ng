@@ -110,7 +110,7 @@ const Navbar = ({ clicked, setClicked }) => {
 
       {/* Desktop Navigation */}
       <nav
-        className={`navbar hidden xl:flex fixed top-0 left-0 w-full z-[990] ${
+        className={`navbar hidden xl:flex fixed top-0 left-0 w-full z-[990] duration-200 ${
           isScroll ? 'bg-white shadow-lg' : 'bg-[#4c4f5f]/50'
         }`}
       >
