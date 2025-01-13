@@ -62,8 +62,8 @@ const page = () => {
       <Hire content={content} corpImg={corpImg} corpAlt={corpAlt}/>
       <TalentNetwork/>
       {/* <TrainingBenefits/> */}
-      <Network />
-      <ResponsiveNetwork />
+      {/* <Network />
+      <ResponsiveNetwork /> */}
       <Courses/>
       {/* <Random/> */}
       {/* <Comments/> */}
