@@ -1,33 +1,53 @@
 import React from 'react';
+import Image from 'next/image';
+import opportunitiesImg from '../../../public/assets/EdTech Platform transformed.svg';
+import icon from '../../../public/assets/cut-icons/Email Marketing 1.svg';
 
-const StartHiring = ({contentTwo}) => {
+const StartHiring = () => {
   return (
-    <section className="px-5 flex flex-col justify-center items-center w-full min-h-screen z-0 bg-main relative">
-      <div className="absolute top-[-18%] left-0 w-full h-full skew-y-[6deg] origin-top-left z-[1px] bg-main"></div>
-      <div className="px-5 relative z-10 flex flex-col lg:flex-row justify-between items-start max-w-[1250px] mx-auto py-[100px] gap-y-5 gap-x-8">
-        {contentTwo}
-        <div className="w-full lg:w-[50%] flex flex-col justify-center items-center">
-          {/* <div className="bg-[#FBFBFB] relative z-10 w-full xl:w-[636px] h-[580px] rounded flex flex-col justify-start items-center px-[25px] gap-[3em] py-[20px]"> */}
-            {/* <div className="flex flex-col gap-3 text-center">
-              <h1 className="text-[1.75rem] text-[#F36400] leading-[43px] font-semibold">Connect with our Team</h1>
-              <p className="text-[#655D59] font-normal text-[1rem] leading-6">Kindly fill in the form to get started.</p>
-            </div> */}
-            <form className="flex flex-col justify-center items-center gap-10 bg-[#FBFBFB] relative z-10 w-full xl:w-[536px] h-[580px] rounded px-[25px] py-[20px]" action="">
-              <div className="flex flex-col justify-center items-center gap-4 w-full">
-                <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="text" placeholder="Name" />
-                <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="email" placeholder="Email Address" />
-                <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="text" placeholder="Company" />
-                <input className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[48px]" type="text" placeholder="Location" />
-                <textarea className="placeholder:text-[#655D5980] placeholder:text-[12px] placeholder:font-normal placeholder:leading-[18px] text-base text-black font-normal leading-5 bg-white outline-none py-[15px] px-[20px] rounded border border-[#F5F5F5] w-full xl:w-[482px] h-[151px]" placeholder="What does your organization need?"></textarea>
-              </div>
-              <div className="flex flex-col justify-center items-center gap-10">
-                <button className="bg-[#F36400] text-white w-full md:w-[298px] h-[58px] rounded p-[10px] gap-[10px] text-[1.125rem] leading-10 font-normal">Submit</button>
-              </div>
-            </form>
-          {/* </div> */}
-        </div>
-      </div>
-    </section>
+    <section className='py-[100px] max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 flex flex-col-reverse lg:flex-row justify-between lg:items-start gap-[5em]'>
+          <div className='flex justify-center lg:justify-start items-center'>
+            <Image
+              width={720}
+              height={984}
+              className='w-full lg:w-[720px] object-contain'
+              src={opportunitiesImg}
+              alt="Current Opportunities at Haelsoft"
+            />
+          </div>
+          <div className='h-full flex flex-col gap-[4em] md:mt-5'>
+            <div className='flex flex-col gap-2'>
+              <h1 className='text-[1.625rem] font-semibold leading-[45px] text-[#F36400]'>Current Opportunities</h1>
+              <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
+            </div>
+            <div className='flex flex-col gap-[2em]'>
+              <p className='text-[#655D59] font-normal text-base'>
+                We’re always on the lookout for talented individuals to join our team. Explore opportunities in:
+              </p>
+              <ul className='list-disc mx-8 text-[#655D59] font-normal text-base'>
+                <li className='font-bold text-black'>Instructional Design & Curriculum Development</li>
+                <li className='font-bold text-black'>Technology & Product Development</li>
+                <li className='font-bold text-black'>Marketing & Communications</li>
+                <li className='font-bold text-black'>Sales & Partnerships</li>
+                <li className='font-bold text-black'>Customer Success & Support</li>
+              </ul>
+            </div>
+            <div className='flex flex-col gap-[2em]'>
+              <h2 className='text-[#F36400] text-lg font-semibold'>Let’s Build the Future Together</h2>
+              <p className='text-[#655D59] font-normal text-base'>
+                If you’re ready to be part of something extraordinary, we’d love to hear from you. Explore our open roles or send us your resume and a cover letter at <a href="mailto:your-email@example.com" className="text-[#F36400] underline">your-email@example.com</a>.
+              </p>
+              <p className='text-[#655D59] font-normal text-base'>
+                At Haelsoft, every idea counts, every voice matters, and every effort contributes to a brighter future for Africa. Let’s create something remarkable together!
+              </p>
+            </div>
+            <div className='flex justify-center items-center'>
+              <button className='bg-[#F36400] text-white h-[52px] w-[214px] rounded flex justify-center items-center'>
+                Learn More
+              </button>
+            </div>
+          </div>
+        </section>
   );
 };
 
