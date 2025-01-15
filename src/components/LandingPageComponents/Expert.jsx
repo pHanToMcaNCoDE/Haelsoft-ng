@@ -13,6 +13,7 @@ import lin from "../../../public/Linda Ochugbua - Public Relations (PR) Strategi
 import chike from '../../../public/Chike Ozulumba - Backend- Engineer.jpg';
 import abo from "../../../public/Abbo.jpg";
 import steph from '../../../public/Stephanie Nelson - Business Development Specialist.jpg';
+import phil from '../../../public/Philip Obiorah - Data Scientist .jpg';
 import beez from '../../../public/Beezy Ideas.png';
 import Image from "next/image";
 
@@ -67,6 +68,13 @@ const Expert = () => {
       image: steph,
       name: "Stephanie Nelson",
       role: "Business Development Specialist",
+      comp: beez,
+      compName: 'Beezy Ideas'
+    },
+    {
+      image: phil,
+      name: "Philip Obiorah",
+      role: "Data Scientist",
       comp: beez,
       compName: 'Beezy Ideas'
     },
