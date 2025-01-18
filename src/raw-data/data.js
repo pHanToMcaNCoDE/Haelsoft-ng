@@ -5634,3 +5634,65 @@ export const africanCountries = [
   { name: "Zambia", flag: "🇿🇲" },
   { name: "Zimbabwe", flag: "🇿🇼" },
 ];
+
+
+// Testimonials
+
+export const testimonials = [
+    {
+        id: 1,
+        name: 'James Adegbesan',
+        role: 'Digital Marketing',
+        img: '',
+        comment: 'I had a phenomenal experince with Haeltech as I was able to gain full insight about digital marketing and its strategies. My tutor was passionate about her thorough teaching throughout the training. I can say that my journey at Haeltech was great.'
+    },
+    {
+        id: 2,
+        name: 'Abduljubril Ahmed',
+        role: 'Cybersecurity',
+        img: '',
+        comment: 'My experience personally was interesting. The tutor made himself available to teach us outside his time schedule. I really loved it at Haeltech.'
+    },
+    {
+        id: 3,
+        name: 'Francis Maduabuchi',
+        role: 'Python',
+        img: '',
+        comment: 'I recently completed my Python course at Haeltech. The tutor started from basic level to advanced level. It was helpful and understandable. The tutor was very good and friendly in clearing doubts of the students. Thank you Haeltech.'
+    },
+    {
+        id: 4,
+        name: 'Abayomi Davies',
+        role: 'Front-End Development',
+        img: '',
+        comment: 'I will say learning web development at Haeltech has been interesting as I’ve also been able to network. Initially, I didn’t have much idea about web development but I want learn about it because it is lucrative. So my learning at the training center gave me the opportunity to fully understand the skill, although it was not an easy course at the start. But as time goes on I understand the course as Haeltech has potential for basic learners like me. I really love it here and I wish to advance my skills in web development.'
+    },
+    {
+        id: 5,
+        name: 'Jumoke Balogun',
+        role: 'Cybersecurity',
+        img: '',
+        comment: 'I completed my Cybersecurity training at Haeltech and got certified. The training institute is great with their services. I will always recommend them.'
+    },
+    {
+        id: 6,
+        name: 'Felix Adedeji',
+        role: 'Digital Marketing',
+        img: '',
+        comment: 'My experience so far has been good. I enjoy the class and i have learned alot about digital marketing.'
+    },
+    {
+        id: 7,
+        name: 'Grace Onwe',
+        role: 'Ux Design',
+        img: '',
+        comment: 'Learning at Haeltech has been perfect. Just what i expected. The tutors here are impressive.'
+    },
+    {
+        id: 8,
+        name: 'Elizabeth Nwoke',
+        role: 'Data Analysis',
+        img: '',
+        comment: 'I became a certified Data Analyst at Haeltech while still studying at the University of Lagos. My interest in data analysis began when I discovered how much that data impacts the decision-making process of any industry. As a young lady with knack for data-related courses in school, as well as the high demand for data analysts, I want to get things better for myself. So I enrolled for data analysis course at Haeltech with experienced tutors that took me along in my training. I was exposed to real-time data with practicals and assignments which I handled and grew the skill to become a certified.'
+    },
+]

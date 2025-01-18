@@ -21,7 +21,7 @@ const AboutData = ({subMenuRef}) => {
                   Build and showcase your Data Science portfolio through many projects you will undertake while 
               </p>
           </Link>
-          <div className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[2px] hover:border-[#F36400] hover:text-white cursor-pointer duration-200 p-[24px] shadow-l w-full xl:w-[309px] h-[130px] rounded border-[#EEEEEEEE] border-[2px] flex flex-col gap-2'>
+          <Link href={`/testimonials`} className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[2px] hover:border-[#F36400] hover:text-white cursor-pointer duration-200 p-[24px] shadow-l w-full xl:w-[309px] h-[130px] rounded border-[#EEEEEEEE] border-[2px] flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
               <h1 className='font-medium text-base hover:underline'>Testimonials</h1>
               <IoIosArrowForward className='text-base' />
@@ -29,7 +29,7 @@ const AboutData = ({subMenuRef}) => {
             <p className='leading-[18px] w-[243px] font-normal text-[0.75rem]'>
               Build and showcase your Data Science portfolio through many projects you will undertake while 
             </p>
-          </div>
+          </Link>
           <Link href={`/careers`} className='bg-white text-[#201A18] hover:bg-[#F36400] hover:border-[2px] hover:border-[#F36400] hover:text-white cursor-pointer duration-200 p-[24px] shadow-l w-full xl:w-[309px] h-[130px] rounded border-[#EEEEEEEE] border-[2px] flex flex-col gap-2'>
             <div className='flex items-center gap-2'>
               <h1 className='font-medium text-base hover:underline'>Careers</h1>

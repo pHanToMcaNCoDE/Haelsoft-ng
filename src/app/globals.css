@@ -265,3 +265,13 @@ aside {
     --radius: 0.5rem;
   }
 }
+
+
+/* Testimonial Page */
+
+.testimonial-hero{
+  background-image: url('../../public/testimonials/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

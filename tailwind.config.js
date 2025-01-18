@@ -14,7 +14,8 @@ module.exports = {
             colors: {
                 main: '#C75C27',
                 other: '#7F7571',
-                neutralcustom: '#655D59'
+                neutralcustom: '#655D59',
+                gray: '#D7D7D7'
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
