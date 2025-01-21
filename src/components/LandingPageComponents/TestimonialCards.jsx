@@ -27,13 +27,15 @@ const TestimonialCards = () => {
             {
                 testimonials.map((testimonial) => (
                     <Link href={`/testimonials/${testimonial.id}`} key={testimonial.id} className='w-full h-full lg:h-[465px] border border-gray rounded-[5px] flex flex-col justify-center items-start'>
-                        <div onMouseOver={() => setTestimonialId(testimonial.id) } onMouseLeave={() => setTestimonialId(null)} className='relative w-full h-[352px]'>
+                        <div 
+                            // onMouseOver={() => setTestimonialId(testimonial.id) } onMouseLeave={() => setTestimonialId(null)} 
+                            className='relative w-full h-[352px]'>
                             <div className='bg-[#e5e5e5] rounded-tl-lg rounded-tr-lg absolute z-[5px] h-full lg:h-[331px] w-full'></div>
-                            <div className={testimonial.id == testimonialId ? 'absolute z-10 bottom-[-25px] left-0 bg-gradient-to-b from-main/[80%] to-black/[80%] w-full h-[90%] p-5 overflow-hidden duration-300 flex opacity-100' : 'absolute z-10 bottom-[-25px] opacity-0 left-0 bg-gradient-to-b from-main/[80%] to-black/[80%] w-full h-0 p-5 overflow-hidden duration-300'}>
+                            {/* <div className={testimonial.id == testimonialId ? 'absolute z-10 bottom-[-25px] left-0 bg-gradient-to-b from-main/[80%] to-black/[80%] w-full h-[90%] p-5 overflow-hidden duration-300 flex opacity-100' : 'absolute z-10 bottom-[-25px] opacity-0 left-0 bg-gradient-to-b from-main/[80%] to-black/[80%] w-full h-0 p-5 overflow-hidden duration-300'}>
                                 <h1 className='text-white lg:text-[1rem] font-semibold'>
                                     {testimonial.comment}
                                 </h1>
-                            </div>
+                            </div> */}
                             <Image src={img} alt='Review' className='object-cover absolute z-[6px] w-full h-full lg:h-[331px] rounded-tl-[5px] rounded-tr-[5px]'></Image>
                         </div>
                         <div className='rounded-bl-[5px] rounded-br-[5px] py-[50px] px-[10px] w-full'>

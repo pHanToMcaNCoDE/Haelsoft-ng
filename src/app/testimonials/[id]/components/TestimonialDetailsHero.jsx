@@ -1,8 +1,8 @@
 import React from 'react'
-import { MdArrowBackIosNew } from "react-icons/md";
 import obj from "../../../../../public/assets/EdTech Platform (3).svg";
 import Image from 'next/image';
 import Link from 'next/link';
+import { MdArrowBack } from 'react-icons/md';
 
 
 const TestimonialDetailsHero = () => {
@@ -11,7 +11,7 @@ const TestimonialDetailsHero = () => {
         <Image className="z-[10] absolute top-0 w-screen h-full object-cover" src={obj} alt='Object'></Image>
         <div className='relative z-10 max-w-[1200px] mx-auto text-white flex flex-col justify-center items-start gap-5'>
             <Link href={`/testimonials`} className='text-white duration-150 hover:underline text-[1rem] flex justify-center items-center gap-2'>
-                <MdArrowBackIosNew/>
+                <MdArrowBack/>
                 <p>All Testimonials</p>
             </Link>
             <h1 className='text-[1.75rem] lg:text-[3.5rem] xl:text-[4.5rem] leading-10 lg:leading-[65px] font-bold'>Alumni Stories</h1>

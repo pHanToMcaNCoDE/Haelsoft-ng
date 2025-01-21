@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import React from 'react';
 import { testimonials } from '@/raw-data/data';
@@ -21,7 +23,7 @@ const Testimonial = () => {
     return (
         <section className="bg-white w-full min-h-screen flex flex-col justify-center items-start gap-10 px-6 py-[100px] overflow-hidden">
             <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row justify-between items-start gap-10">
-                <div className="flex flex-col justify-center items-start gap-10 w-full lg:w-[50%] relative">
+                <div className="flex flex-col justify-center items-start gap-10 w-full lg:w-[60%] relative">
                     <Image
                     />
                     <Image
@@ -44,7 +46,7 @@ const Testimonial = () => {
                 <Image
                     src={img}
                     alt="Placeholder"
-                    className="w-full lg:w-[50%] rounded-lg h-full"
+                    className="w-full lg:w-[40%] rounded-lg h-full"
                 />
             </div>
         </section>
