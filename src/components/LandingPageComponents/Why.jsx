@@ -48,9 +48,9 @@ const Why = () => {
         //     content: {
         //     heading: "How Long Are Our Coding Bootcamps?",
         //     paragraphs: [
-        //         "BrainStation's coding bootcamps generally take three months to complete on a full-time basis — 12 weeks.",
-        //         "In that time, you will develop a comprehensive understanding of web development, data science, user experience design, or digital marketing fundamentals, and learn how to apply these new skills and knowledge. BrainStation bootcamps are immersive and project-based, allowing you to build a portfolio of completed projects by the end of the bootcamp..",
-        //         "For students seeking more flexibility, BrainStation also offers part-time bootcamps, which are completed over eight months.",
+        //         "Haelsoft's coding bootcamps generally take three months to complete on a full-time basis — 12 weeks.",
+        //         "In that time, you will develop a comprehensive understanding of web development, data science, user experience design, or digital marketing fundamentals, and learn how to apply these new skills and knowledge. Haelsoft bootcamps are immersive and project-based, allowing you to build a portfolio of completed projects by the end of the bootcamp..",
+        //         "For students seeking more flexibility, Haelsoft also offers part-time bootcamps, which are completed over eight months.",
         //     ]
         //     }
         // }

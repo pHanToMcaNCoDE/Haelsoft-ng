@@ -114,7 +114,7 @@ const Navbar = ({ clicked, setClicked }) => {
           isScroll ? 'bg-white shadow-lg' : 'bg-[#4c4f5f]/50'
         }`}
       >
-        <div className="container flex justify-between items-center p-2 max-w-[1350px] mx-auto">
+        <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
           
           <Link href={`/`}>
             <Image width={100} height={100} src={logo} alt="Logo" />

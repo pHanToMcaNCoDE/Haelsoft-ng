@@ -10,9 +10,9 @@ const Bootcamps = () => {
       content: {
         heading: "What Are Coding Bootcamps?",
         paragraphs: [
-          "Coding bootcamps are short, intensive training coding programs and tech courses that give students the skills they need for new careers in technology. Programming bootcamps and code schools like BrainStation have become an increasingly popular alternative to a four-year computer science degree, allowing students to gain real-world experience under the instruction of top industry professionals.",
+          "Coding bootcamps are short, intensive training coding programs and tech courses that give students the skills they need for new careers in technology. Programming bootcamps and code schools like Haelsoft have become an increasingly popular alternative to a four-year computer science degree, allowing students to gain real-world experience under the instruction of top industry professionals.",
           'While "coding bootcamps" as a term has come to be used for digital skills training across disciplines, including courses and programs relating to web development, software development, data science, UX design, and digital marketing, the term originally was meant to describe short-term, intensive training programs in full-stack web development, software development, or software engineering.',
-          "As one of the best coding bootcamps, BrainStation provides hands-on, project-based learning, allowing students with no prior experience to learn how to use programming languages like HTML, CSS, JavaScript, Python, SQL, and more.",
+          "As one of the best coding bootcamps, Haelsoft provides hands-on, project-based learning, allowing students with no prior experience to learn how to use programming languages like HTML, CSS, JavaScript, Python, SQL, and more.",
           "The goal of our coding bootcamps is to prepare you for a new career in web development, software development and engineering, data science, design, security, digital marketing, or related tech fields. To that end, bootcamp graduates also benefit from ongoing, personalized career services meant to provide guidance and support during the job search."
         ]
       }
@@ -43,9 +43,9 @@ const Bootcamps = () => {
       content: {
         heading: "How Long Are Our Coding Bootcamps?",
         paragraphs: [
-          "BrainStation's coding bootcamps generally take three months to complete on a full-time basis — 12 weeks.",
-          "In that time, you will develop a comprehensive understanding of web development, data science, user experience design, or digital marketing fundamentals, and learn how to apply these new skills and knowledge. BrainStation bootcamps are immersive and project-based, allowing you to build a portfolio of completed projects by the end of the bootcamp..",
-          "For students seeking more flexibility, BrainStation also offers part-time bootcamps, which are completed over eight months.",
+          "Haelsoft's coding bootcamps generally take three months to complete on a full-time basis — 12 weeks.",
+          "In that time, you will develop a comprehensive understanding of web development, data science, user experience design, or digital marketing fundamentals, and learn how to apply these new skills and knowledge. Haelsoft bootcamps are immersive and project-based, allowing you to build a portfolio of completed projects by the end of the bootcamp..",
+          "For students seeking more flexibility, Haelsoft also offers part-time bootcamps, which are completed over eight months.",
         ]
       }
     }

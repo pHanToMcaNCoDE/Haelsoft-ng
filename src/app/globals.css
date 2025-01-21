@@ -275,3 +275,20 @@ aside {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+
+/* Testimonial Details Slider */
+
+@keyframes autoRunSlider{
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: calc(400px * -1)
+  }
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused !important;
+}

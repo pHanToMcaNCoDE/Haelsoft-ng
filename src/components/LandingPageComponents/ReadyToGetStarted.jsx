@@ -22,7 +22,7 @@ const ReadyToGetStarted = () => {
                             <FaCheck />
                         </p>
                         <p>
-                            Learn more about BrainStation certificate courses and coding bootcamps.
+                            Learn more about Haelsoft certificate courses and coding bootcamps.
                         </p>
                     </li>
                     <li className='flex justify-center items-start gap-3 text-[.875rem] leading-5 font-normal text-white'>
