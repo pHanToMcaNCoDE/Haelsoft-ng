@@ -29,8 +29,8 @@ import Image from 'next/image';
 const Organization = () => {
   return (
     <section className='py-[100px] bg-[#F7F7F7] overflow-hidden'>
-        <div className='max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 flex flex-col justify-center items-center gap-[6em]'>
-            <div className='flex flex-col gap-2 justify-center items-center'>
+        <div className='flex flex-col justify-center items-center gap-[6em]'>
+            <div className='max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 flex flex-col gap-2 justify-center items-center'>
                 <h1 className='text-[1.625rem] leading-[36px] text-[#201A18] font-semibold text-center w-full lg:w-[433px]'>
                     Organizations Empowering Their Employees at Haelsoft
                 </h1>

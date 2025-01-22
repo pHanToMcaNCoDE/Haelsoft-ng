@@ -9,9 +9,9 @@ import obj4 from '../../../public/assets/Polygon 4.svg';
 import obj5 from '../../../public/assets/EdTech Platform (2).svg';
 import Image from 'next/image';
 
-const AboutStart = ({storyContent}) => {
+const AboutStart = ({storyContent, storyContentTwo}) => {
   return (
-    <section className='min-h-screen py-[100px] xl:py-[200px] flex flex-col gap-[15em] max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 lg:px-8'>
+    <section className='min-h-screen py-[100px] xl:pt-[200px] flex flex-col gap-[15em] max-w-[1200px] 2xl:max-w-[1500px] mx-auto px-5 lg:px-8'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-[4em] md:gap-[8em] h-full'>
             <div className='w-full lg:w-[50%] h-full flex flex-col gap-8'>
                 {storyContent}
@@ -37,16 +37,7 @@ const AboutStart = ({storyContent}) => {
                 <Image className='absolute z-[5px] left-[-23%] top-[-50px]' src={obj5} alt="Work Family" />
             </div>
             <div className='w-full lg:w-[50%] h-full flex flex-col gap-8'>
-                <div className='flex flex-col'>
-                    <h1 className='text-[1.625rem] font-semibold leading-[45px] text-[#F36400]'>Why Haelsoft?</h1>
-                    <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
-                </div>
-                <p className='text-[.875rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
-                    We set out to build more than just an online learning platform; we aimed to create a movement—a movement that bridges the skills gap, sparks innovation, and accelerates development across the continent. Our story is one of collaboration, resilience, and unwavering commitment to fostering progress.
-                </p>
-                <p className='text-[.875rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
-                    Today, the Haelsoft EdTech Platform stands as a testament to our belief that education is the key to unlocking Africa’s potential. By combining advanced technology with culturally relevant and impactful content, we are transforming lives and building the future of Africa, one learner at a time.
-                </p>
+                {storyContentTwo}
             </div>
         </div>
     </section>
