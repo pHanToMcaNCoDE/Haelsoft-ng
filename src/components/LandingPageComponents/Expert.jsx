@@ -75,8 +75,8 @@ const Expert = () => {
       image: phil,
       name: "Philip Obiorah",
       role: "Data Scientist",
-      comp: beez,
-      compName: 'Beezy Ideas'
+      comp: haelsoft,
+      compName: 'Haelsoft'
     },
   ];
 

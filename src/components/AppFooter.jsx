@@ -199,9 +199,9 @@ const AppFooter = () => {
                   <li className="text-[.75rem] font-medium">
                     Hire Our Grads
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/enterprise-training`} className="text-[.75rem] font-medium">
                     Enterprise Training
-                  </li>
+                  </Link>
                 </ul>
               </div>
               <div className='flex flex-col justify-center items-start gap-3'>
@@ -213,9 +213,9 @@ const AppFooter = () => {
                   <li className="text-[.75rem] font-medium">
                     Certification
                   </li>
-                  <li className="text-[.75rem] font-medium">
+                  <Link href={`/testimonials`} className="text-[.75rem] font-medium">
                     Testimonials
-                  </li>
+                  </Link>
                 </ul>
               </div>
             </div>
