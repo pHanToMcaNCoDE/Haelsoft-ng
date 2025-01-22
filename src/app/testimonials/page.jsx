@@ -3,6 +3,7 @@
 import Navbar from '@/components/LandingPageComponents/Navbar';
 import TestimonialCards from '@/components/LandingPageComponents/TestimonialCards';
 import TestimonialHero from '@/components/LandingPageComponents/TestimonialHero';
+import TestimonialIndustries from '@/components/LandingPageComponents/TestimonialIndustries';
 import TestimonialMetrices from '@/components/LandingPageComponents/TestimonialMetrices';
 import React, { useState } from 'react'
 
@@ -22,6 +23,7 @@ const page = () => {
       <TestimonialHero/>
       <TestimonialMetrices/>
       <TestimonialCards/>
+      <TestimonialIndustries/>
     </main>
   )
 }

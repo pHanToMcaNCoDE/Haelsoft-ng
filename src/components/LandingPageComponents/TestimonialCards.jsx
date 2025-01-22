@@ -22,8 +22,8 @@ const TestimonialCards = () => {
     console.log('Mouse Says', hover)
 
   return (
-    <section className='w-full bg-white min-h-screen py-[100px]'>
-        <div className='max-w-[1234px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center place-items-center gap-10'>
+    <section className='w-full bg-white min-h-screen py-[100px] px-6'>
+        <div className='max-w-[1234px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center place-items-center gap-10'>
             {
                 testimonials.map((testimonial) => (
                     <Link href={`/testimonials/${testimonial.id}`} key={testimonial.id} className='w-full h-full lg:h-[465px] border border-gray rounded-[5px] flex flex-col justify-center items-start'>

@@ -5695,4 +5695,46 @@ export const testimonials = [
         img: '',
         comment: 'I became a certified Data Analyst at Haeltech while still studying at the University of Lagos. My interest in data analysis began when I discovered how much that data impacts the decision-making process of any industry. As a young lady with knack for data-related courses in school, as well as the high demand for data analysts, I want to get things better for myself. So I enrolled for data analysis course at Haeltech with experienced tutors that took me along in my training. I was exposed to real-time data with practicals and assignments which I handled and grew the skill to become a certified.'
     },
+    {
+        id: 9,
+        name: 'Christopher Iwundu Chinaza',
+        role: '',
+        img: '',
+        comment: 'Haelsoft is the major reason for my increased online visibility and superb control of organic search. I am ceaselessly satisfied with their level of professionalism and the fact that they\'re only a phone call away from me. Haelsoft has shown me the full meaning of Digital Marketing'
+    },
+    {
+        id: 10,
+        name: 'Omoike Okosun',
+        role: '',
+        img: '',
+        comment: 'During my training, I learnt how to create content with my phone and other new trends. They did a greate job. They were really explanatory and answered any questions practically and by example. The training impacted so much in my business because it helped increase my online presence and also follow new trends.'
+    },
+    {
+        id: 11,
+        name: 'Tosin Olaniregun',
+        role: '',
+        img: '',
+        comment: 'My training at haelsoft Digital has been an eye opener. I have learnt how to succeed in any business using digital marketing. My website is making on Google and I am making sales. Thank you.'
+    },
+    {
+        id: 12,
+        name: 'Jerry Osabuohien Owie',
+        role: '',
+        img: '',
+        comment: 'Haelsoft is one of the best, I enjoyed their digital marketing training during their visit to train entrepreneurs in Benin. Their training is very flexible and effective.'
+    },
+    {
+        id: 13,
+        name: 'Jerry Osabuohien Owie',
+        role: '',
+        img: '',
+        comment: 'I learnt digital marketing during the 3 days training. I was taught how to use Google My Business to promote one\'s business and YouTube. Now I have over 1k subscribers within two months of starting and I am keen at taking the business to the next level. All that I know today including website development, are all knowledge gained from the training with Haelsoft.'
+    },
+    {
+        id: 14,
+        name: 'Umeasalugo Ekene',
+        role: '',
+        img: '',
+        comment: 'Have been in Haelsoft Digital Marketing training, I\'m equipped with various digital strategies, content Marketing approaches in optimizing analytics to aid conversions for my business. The trainer is really a professional with vast helpful strategies.'
+    },
 ]

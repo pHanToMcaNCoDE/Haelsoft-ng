@@ -14,7 +14,7 @@ const MoreTestimonials = () => {
 
     const testimonial = testimonials.find((t) => t.id !== parseInt(id))
   return (
-    <section className='w-full min-h-screen pt-[100px] pb-[20px] bg-white'>
+    <section className='w-full py-[100px] bg-white'>
         <div className='max-w-[1200px] mx-auto flex justify-start items-start text-left'>
             <h1 className='text-[1.75rem] lg:text-[2.5rem] text-black font-bold'>More Testimonials</h1>
         </div>
