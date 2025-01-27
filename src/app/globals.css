@@ -292,3 +292,10 @@ aside {
 .pause-on-hover:hover {
   animation-play-state: paused !important;
 }
+
+
+.not-found-background{
+  background-image: url('../../public/exit.jpg');
+  background-size: cover;
+  background-position: center;
+}

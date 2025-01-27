@@ -17,6 +17,7 @@ import support from '../../../public/support.jpg';
 import teamwork from '../../../public/teamwork.jpg';
 import Link from "next/link";
 import obj4 from '../../../public/assets/Polygon 4.svg';
+import Image from 'next/image'
 
 const page = () => {
 
@@ -74,7 +75,7 @@ const page = () => {
           <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
         </div>
         <p className='text-[.875rem] leading-[24px] text-white font-normal w-full lg:w-[469px]'>
-            Once we fully grasp your business or agency’s objectives, we will talk with your IT team to assess their ideal state of technology. We will assist them to get as close as possible to achieve their goals. We’ll help you select courses that fit your corporate needs - and when applicable, we will recommend customized training for your IT teams to succeed as fast as possible with standardized courses.
+            Once we fully grasp your business or agency&apos;s objectives, we will talk with your IT team to assess their ideal state of technology. We will assist them to get as close as possible to achieve their goals. We’ll help you select courses that fit your corporate needs - and when applicable, we will recommend customized training for your IT teams to succeed as fast as possible with standardized courses.
         </p> 
         <p className='text-[.875rem] leading-[24px] text-white font-normal w-full lg:w-[469px]'>
             A quick fact - companies or government agencies that contact us for training their IT teams are more likely to get better results because we develop a training roadmap that is aligned with their corporate objectives.

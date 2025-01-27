@@ -18,13 +18,13 @@ const NotFound = () => {
             boolclick={boolclick} 
             setBoolClick={setBoolClick} 
         />
-        <section className='w-full bg-white h-[911px] flex flex-col justify-center items-center gap-7'>
-            <Image className='object-cover' width={394.24} height={320} src={notfound} alt='404 Error Broken Robot'></Image>
-            <div className='flex flex-col w-full lg:w-[423px] text-center justify-center items-center gap-3'>
-                <h1 className='text-[#201A18] font-bold text-[2rem] leading-[45px]'>Page not found</h1>
-                <p className='text-[#655D59] font-normal text-[1.125rem] leading-[30px]'>The page you  requested for could not be found. Please go back to homepage</p>
+        <section className='not-found-background w-full bg-white h-screen flex flex-col justify-center items-center gap-7 relative px-[24px] lg:px-[100px] xl:px-[200px]'>      
+            <div className='h-full absolute bg-main/[30%] top-0 w-full left-0 z-[5px]'></div>
+            <div className='flex flex-col w-full text-left justify-center items-start gap-3 h-full relative z-10'>
+                <h1 className='text-white font-bold text-[2rem] leading-[45px]'>Oh Dear! something went wrong.</h1>
+                <p className='w-full lg:w-[565px] text-white font-normal text-[1.125rem] leading-[30px]'>The page you're looking for could not be found. Please go back to homepage</p>
+                <Link className='h-[52px] w-[190px] bg-main text-white text-[1rem] leading-[30px] flex justify-center items-center rounded-[6px]' href={`/`}>Back to Homepage</Link>
             </div>
-            <Link className='h-[52px] w-[239px] bg-main text-white text-[1rem] leading-[30px] flex justify-center items-center rounded-[12px]' href={`/`}>Back to Homepage</Link>
         </section>
     </main>
   )
