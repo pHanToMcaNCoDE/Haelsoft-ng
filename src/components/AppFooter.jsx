@@ -33,17 +33,17 @@ const AppFooter = () => {
               </div>
               
               <div>
-                <div className="flex items-center gap-x-1">
-                  <Link href="https://www.linkedin.com/company/haelsoft">
+                <div className="flex items-center gap-2">
+                  <Link href="https://www.linkedin.com/company/haelsoft" target='_blank'>
                     <FaLinkedinIn size={25} />
                   </Link>
-                  <Link href="https://www.linkedin.com/company/haelsoft/mycompany/">
+                  <Link href="https://www.linkedin.com/company/haelsoft/mycompany/" target='_blank'>
                     <BsTwitterX size={25} />
                   </Link>
-                  <Link href="https://www.instagram.com/haelsoft">
+                  <Link href="https://www.instagram.com/haelsoft" target='_blank'>
                     <FiInstagram size={25} />
                   </Link>
-                  <Link href="https://wa.link/ul0ttk">
+                  <Link href="https://wa.link/ul0ttk" target='_blank'>
                     <FaWhatsapp size={25} />
                   </Link>
                 </div>
