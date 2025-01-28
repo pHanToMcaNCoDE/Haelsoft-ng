@@ -18,7 +18,7 @@ const ContactDetails = () => {
                     <input className='w-full bg-white border-b border-b-[#e5e5e5] rounded-[2px] h-[56px] px-[16px] py-[10px] outline-none' type="text" name="" id="" placeholder="Full Name" />
                     <input className='w-full bg-white border-b border-b-[#e5e5e5]  rounded-[2px] h-[56px] px-[16px] py-[10px] outline-none' type="text" name="" id="" placeholder="Email" />
                     <textarea className='w-full bg-white border border-[#e5e5e5] rounded-[2px] px-[16px] py-[10px] outline-none h-[200px]' placeholder='Message' name="" id="" cols="50" rows="10"></textarea>
-                    <button type="submit" className='w-[190px] bg-main/100 text-white text-base rounded-[2px] h-[56px] px-[16px] py-[10px] outline-none flex justify-center items-center'>Submit</button>
+                    <button type="submit" className='w-[190px] bg-main/100 text-white text-base rounded-[2px] h-[56px] px-[16px] py-[10px] outline-none flex justify-center items-center font-semibold'>Submit</button>
                 </form>
             </div>
             <div className='w-full lg:w-[35%] flex flex-col justify-center items-start gap-10 lg:gap-[60px]'>
