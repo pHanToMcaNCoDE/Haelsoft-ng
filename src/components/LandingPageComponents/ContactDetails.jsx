@@ -11,7 +11,7 @@ const ContactDetails = () => {
         <div className='max-w-[1250px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-[55px] lg:gap-[100px]'>
             <div className='w-full lg:w-[65%] flex flex-col justify-center items-start gap-7'>
                 <div>
-                    <h1 className='w-full lg:w-[560.46px] text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-bold text-black'>Send Us A Message</h1>
+                    <h1 className='w-full lg:w-[560.46px] text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-semibold text-black'>Send Us A Message</h1>
                     <p className='w-full lg:w-[560.46px] text-base lg:text-[1.25rem] lg:leading-[30px] font-normal text-black'>Have questions about Haelsoft? Connect with us.</p>
                 </div>
                 <form action="" className='w-full flex flex-col justify-center items-start gap-6'>
@@ -23,11 +23,11 @@ const ContactDetails = () => {
             </div>
             <div className='w-full lg:w-[35%] flex flex-col justify-center items-start gap-10 lg:gap-[60px]'>
                 <div className='w-full lg:w-[356px] flex flex-col justify-center items-start gap-9'>
-                    <h1 className='w-full text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-bold text-black'>Our Address</h1>
+                    <h1 className='w-full text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-semibold text-black'>Our Address</h1>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, dolores?</p>
                 </div>
                 <div className='w-full lg:w-[356px] flex flex-col justify-center items-start gap-9'>
-                    <h1 className='w-full text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-bold text-black'>Our Social</h1>
+                    <h1 className='w-full text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-semibold text-black'>Our Social</h1>
                     <div className="flex flex-wrap items-center gap-3">
                         <Link href="https://www.linkedin.com/company/haelsoft" target='_blank'>
                             <FaLinkedinIn size={25} />
@@ -44,7 +44,7 @@ const ContactDetails = () => {
                     </div>
                 </div>
                 <div className='w-full lg:w-[356px] flex flex-col justify-center items-start gap-9'>
-                    <h1 className='text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-bold text-black'>Email Us</h1>
+                    <h1 className='text-[1.25rem] lg:text-[1.75rem] leading-[30px] lg:leading-10 font-semibold text-black'>Email Us</h1>
                     <div className='w-full flex flex-col justify-center items-start gap-4'>
                         <p className='w-full text-base font-normal text-black'>For Product Questions/Concerns, Corporate training & hire inquires:</p>
                         <a href="mailto:hello@haelsoft.com" className='text-black font-bold underline' target='_blank'>hello@haelsoft.com</a>
