@@ -189,8 +189,7 @@ const Hero = ({ courses }) => {
                   <p className="text-lg mt-8">This courses includes</p>
                 </div>
                 <div className="mt-8 w-full space-y-10 flex-1 text-[#655D59]">
-                  {Array.isArray(courses.includes) &&
-                  courses.includes.length > 0 ? (
+                  {Array.isArray(courses.includes) && courses.includes.length > 0 ? (
                     courses.includes.map((include, index) => (
                       <div key={index} className="flex items-center gap-x-4">
                         <Image src={include.img} alt="Include Icon" />
@@ -236,8 +235,7 @@ const Hero = ({ courses }) => {
               What you&apos;ll learn
             </p>
             <div className="md:w-[578px] flex flex-col items-start justify-start md:h-[280px] py-6 gap-5 px-2">
-              {Array.isArray(courses.benefits) &&
-              courses.benefits.length > 0 ? (
+              {Array.isArray(courses.benefits) && courses.benefits.length > 0 ? (
                 courses.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2 mt-4">
                     <GrCheckmark className="text-[#FF8C53]" />

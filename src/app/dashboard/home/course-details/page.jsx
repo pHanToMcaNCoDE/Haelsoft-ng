@@ -15,6 +15,8 @@ import OnlineClassroom from "./OnlineClassroom";
 import GraduateFeedback from "./GraduateFeedback";
 import Community from "./Community";
 import GetStartedCourse from "./GetStartedCourse";
+
+import { courseDetails } from '@/raw-data/data';
 // import Hero from "./Hero";
 // import CourseTrailer from "./CourseTrailer";
 // import CourseTutor from "../CourseTutor";
@@ -28,18 +30,22 @@ import GetStartedCourse from "./GetStartedCourse";
 // import Community from "../Community";
 // import GetStartedCourse from "../GetStartedCourse";
 
-const Page = ({ courseDetails }) => {
+const Page = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [courses, setCourses] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const courseTtl = searchParams.get("details") || "";
+  console.log('Params', searchParams)
+
+  const courseTitle = searchParams.get("details") || "";
   const id = searchParams.get("id") || "";
-  const courseTitle = decodeURIComponent(pathname.split("/").pop() || "");
 
   useEffect(() => {
+    // console.log('Title', courseTitle)
+    // console.log('ID', id)
+
     const fetchCourse = async () => {
       try {
         console.log("Fetching course details...");
@@ -47,9 +53,8 @@ const Page = ({ courseDetails }) => {
 
         console.log("All Courses:", allCourses);
 
-        const normalizedCourseTitle = courseTtl
-          ? courseTtl.toLowerCase()
-          : courseTitle.toLowerCase();
+        const normalizedCourseTitle = courseTitle
+          ? courseTitle.toLowerCase() : '';
 
         console.log("Normalized Course Title:", normalizedCourseTitle);
 
@@ -87,7 +92,7 @@ const Page = ({ courseDetails }) => {
     };
 
     fetchCourse();
-  }, [courseTitle, courseTtl, courseDetails]);
+  }, [courseTitle, courseDetails]);
 
   if (loading) {
     return <div>Loading...</div>;

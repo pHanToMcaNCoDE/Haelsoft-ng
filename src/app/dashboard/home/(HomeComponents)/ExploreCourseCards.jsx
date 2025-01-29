@@ -57,6 +57,7 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
             >
               View course <IoIosArrowRoundForward />
             </Link>
+            
           </div>
         </div>
       ))}
