@@ -12,8 +12,10 @@ const BlogCard = ({blog}) => {
         return date.toLocaleDateString('en-US', options);
     };
   return (
-    <div className='w-full lg:w-[333px] shadow-lg'>
-        <Image width={333} height={116} src={`https://res.cloudinary.com/dmpqdaupc/${blog.image}`} className='w-full lg:w-[333px] object-contain' alt={blog.title} />
+    <div className='w-full shadow-lg h-full lg:h-[544px]'>
+        <div className='w-full h-[218px] relative'>
+            <Image fill src={`https://res.cloudinary.com/dmpqdaupc/${blog.image}`} className='w-full object-cover absolute' alt={blog.title} />
+        </div>
         <div className='bg-white p-6 h-[359px] flex flex-col gap-4'>
             <div className='flex flex-col gap-4'>
                 <div className='flex flex-col gap-1'>
@@ -26,7 +28,7 @@ const BlogCard = ({blog}) => {
                 <p className='text-[#767676] text-[.75rem] leading-6 uppercase font-normal'>{formatDate(blog.created_at)}</p>
             </div>
             <div>
-                <p className='text-[.875rem] leading-7 text-black font-normal w-full lg:w-[251px]'>
+                <p className='text-[.875rem] leading-7 text-black font-normal w-full'>
                     {blog.content.length > 150 ? `${blog.content.substring(0, 150)}...` : blog.content}               
                 </p>
             </div>

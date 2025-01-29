@@ -305,3 +305,11 @@ aside {
   background-size: cover;
   background-position: center;
 }
+
+
+.blogs{
+  background-image: url('../../public/blogs.jpg');
+  background-size: cover;
+  background-position: top;
+  height: 50vh;
+}

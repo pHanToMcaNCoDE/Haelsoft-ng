@@ -18,7 +18,7 @@ const Blogs = () => {
         boolclick={boolclick} 
         setBoolClick={setBoolClick} 
       />
-      <div className="bg-white shadow-xl absolute top-[10%] md:top-[13%] md:left-[16px] xl:left-[150px] py-8 px-5 lg:px-8 w-[95%] md:w-[587px] lg:w-[787px] lg:h-[433px] rounded gap-10 z-40 mx-4">
+      <div className="bg-white shadow-lg absolute top-[4%] md:top-[8%] 2xl:top-[15%] z-20 lg:left-[6%] py-8 px-5 w-[95%] md:w-[587px] lg:w-[787px] lg:h-[463px] rounded gap-10 mx-2 flex justify-start items-center">
         <div className='max-w-[1200px] 2xl:max-w-[1530px] mx-auto'>
           <div className='flex flex-col h-full'>
               <div className='flex flex-col justify-center gap-[3em]'>

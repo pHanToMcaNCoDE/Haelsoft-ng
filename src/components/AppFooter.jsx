@@ -267,6 +267,7 @@ const AppFooter = () => {
         </div> */}
       </div>
       <div className="bg-white h-[2px] max-w-[1040px] mx-auto rounded-full"></div>
+      <p className='max-w-[1064px] mx-auto my-2 text-base text-white'>&copy; Copyright {new Date().getFullYear()} Haelsoft</p>
     </footer>
   );
 };
