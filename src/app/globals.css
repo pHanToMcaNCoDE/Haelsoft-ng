@@ -247,7 +247,7 @@ aside {
 }
 
 .top-section{
-  background-image: url('../asset/Black\ Girl\ Writing\ by\ August\ de\ Richelieu.jpg');
+  background-image: url('../../public/writing.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

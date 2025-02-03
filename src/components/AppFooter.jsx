@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const AppFooter = () => {
   const path = usePathname()
-  if( path === `/signin` || path === `/signup` || path.startsWith(`/dashboard`)){
+  if(path === `/signin` || path === `/signup`){
     return null;
   }
   return (

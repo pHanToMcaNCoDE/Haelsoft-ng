@@ -44,16 +44,16 @@ const TopNav = () => {
   };
 
   return (
-    <div className="bg-white border-b border-b-[#d0cfcf] min-h-[4rem] lg:p-[26px] px-4 sticky flex flex-col top-0 z-50 py-2 gap-y-6">
+    <div className="bg-white border-b border-b-[#d0cfcf] h-[70px] px-4 sticky flex flex-col top-0 z-50 gap-y-6 justify-between items-center py-3">
       <div className="flex items-center justify-between w-full gap-x-4 max-w-[1300px] 2xl:max-w-[1550px] mx-auto">
         <div className="flex gap-x-4 justify-center items-center">
           <Link href={`/dashboard/home`}>
-            <Image src={logo} alt="Haelsoft Logo"></Image>
+            <Image width={120} height={120} className="object-cover" src={logo} alt="Haelsoft Logo"></Image>
           </Link>
         </div>
         <div className="justify-end items-center flex gap-x-6">
           <div
-            className={`relative w-full lg:w-[552px] hidden md:flex ${
+            className={`relative gap-2 w-full lg:w-[552px] hidden md:flex ${
               query
                 ? "rounded-t-[6px] border-b-0 ease-in-out duration-300"
                 : "rounded-3xl ease-in-out duration-300"
@@ -64,7 +64,7 @@ const TopNav = () => {
               name="q"
               onChange={(e) => setQuery(e.target.value)}
               value={query}
-              className="w-full outline-none ring-0"
+              className="w-full outline-none ring-0 px-1"
               placeholder="What do you want to learn?"
               onClick={() => {
                 setIsSearchClicked(true);

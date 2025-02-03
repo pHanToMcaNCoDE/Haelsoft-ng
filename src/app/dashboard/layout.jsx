@@ -11,7 +11,7 @@ const DashboardLayout = ({ children }) => {
 
       <div className="w-full">
         <TopNav />
-        <div> {children}</div>
+          <div> {children}</div>
       </div>
     </section>
   );

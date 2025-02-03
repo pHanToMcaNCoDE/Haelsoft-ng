@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import ExploreCourseCards from "./ExploreCourseCards";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
+import { FiSearch } from "react-icons/fi";
 
 const Explore = ({ courses }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -21,19 +22,22 @@ const Explore = ({ courses }) => {
     setClickFilter(false);
   };
 
-  const filteredCourses = courses.filter((course) => {
-    let categoryMatch = selectedCategory === "Trending" || course.category === selectedCategory;
-    let filterMatch = !selectedFilter || course[selectedFilter.key] === selectedFilter.value;
+  const [searchText, setSearchText] = useState("");
 
-    return categoryMatch && filterMatch;
-  });
+  const filteredCourses = courses.filter((course) => (
+    searchText ? course.title.toLowerCase().includes(searchText.toLowerCase()) : course
+  ));
 
   return (
-    <section className="max-w-[1250px] 2xl:max-w-[1500px] mx-auto p-3 lg:p-0 gap-2">
+    <section className="max-w-[1250px] 2xl:max-w-[1500px] mx-auto gap-2">
       <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-center gap-3 my-5">
-        <div className="text-[#201A18] font-bold text-[1.5rem] lg:text-[2rem] leading-[45px] flex flex-col md:flex-row justify-between w-full items-start md:items-center gap-5 my-5">
+        <div className="text-[#201A18] font-bold text-[1.5rem] lg:text-[2rem] leading-[45px] flex flex-col md:flex-row justify-between w-full items-center md:items-center gap-5 my-5">
         <h1>All Courses</h1>
-        <div className="relative">
+        <form action="" className="w-[238px] h-[38px] rounded-[4px] px-2 py-5 flex justify-between items-center gap-2 border border-[#e0e0e0]">
+          <FiSearch className="text-xl text-[#e0e0e0]" />
+          <input type="text" name="" id="" placeholder='Search...' className='text-black text-base font-normal w-full outline-none px-2 placeholder:text-base' onChange={(e) => setSearchText(e.target.value)} />
+        </form>
+        {/* <div className="relative">
             <div
               onClick={() => setClickFilter((prev) => !prev)}
               className="z-40 bg-white border border-[#e0e0e0] relative w-[189px] h-[38px] rounded-lg px-4 py-5 flex justify-between items-center cursor-pointer"
@@ -80,7 +84,7 @@ const Explore = ({ courses }) => {
                 Most Rated
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -88,7 +92,7 @@ const Explore = ({ courses }) => {
         <ExploreCourseCards courses={filteredCourses} rating={rating} setRating={setRating} />
       </div>
 
-      <div className="flex justify-center items-center mt-[5em] gap-5">
+      {/* <div className="flex justify-center items-center mt-[5em] gap-5">
         <IoArrowBackOutline />
         <div className="flex gap-[10px] justify-center items-center">
           <button className="relative text-black w-4 font-semibold text-base leading-[46px]">
@@ -99,7 +103,7 @@ const Explore = ({ courses }) => {
           <button className="text-[#201A18] font-semibold text-sm w-4 leading-[46px]">3</button>
         </div>
         <IoArrowForwardOutline />
-      </div>
+      </div> */}
     </section>
   );
 };

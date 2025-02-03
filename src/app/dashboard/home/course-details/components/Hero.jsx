@@ -26,7 +26,7 @@ const Hero = ({ courses }) => {
   const [tabClicked, setTabClicked] = useState("About");
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [courseDetails, setcourseDetails] = useState(false);
+  const [courseDetails, setcourseDetails] = useState(null);
 
   const dispatch = useDispatch();
 
@@ -83,46 +83,52 @@ const Hero = ({ courses }) => {
         setLoading(false);
       });
   }, []);
+        console.log('The details', courseDetails)
 
   const [pausePlay, setpausePlay] = useState(false);
 
   return (
     <div className="relative z-10">
-      <div className="w-full bg-main py-16 px-3 xl:px-0">
-        <div className="max-w-[1240px] mx-auto flex flex-col items-center md:items-start md:flex-row gap-x-12 relative xl:max-h-[630px]">
-          <div className="w-full flex flex-col xl:flex-row justify-start items-start gap-6 mt-10">
+      <div className="w-full py-16 px-3 xl:px-0 relative">
+        <video autoPlay muted loop playsInline className="hero-video z-10">
+          <source src='/assets/teacher(1).mp4' type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      <div className='absolute bg-[#D98E47]/70 top-0 left-0 w-full h-full'></div>
+        <div className="max-w-[1300px] mx-auto flex flex-col items-center md:items-start md:flex-row gap-x-12 relative lg:h-[550px] z-30 pt-[70px]">
+          <div className="w-full flex flex-col xl:flex-row justify-start items-start gap-6 ">
             <Link href={`/dashboard/home`}>
               <HiOutlineArrowLongLeft size={35} className="text-white" />
             </Link>
             {/* <p className="text-white font-semibold text-[1.2rem] md:text-[1.8rem] lg:text-[3.4rem]">
               Haelsoft
             </p> */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <p className="text-sm font-medium text-white">
                 PROFESSIONAL CERTIFICATE
               </p>
-              <h1 className="text-white text mt-2 font-bold text-[33px]">
-                Python
+              <h1 className="text-white mt-2 font-bold text-[3rem] leading-10">
+                {courses?.course_title}
               </h1>
               <p className="text-[1rem] leading-8 font-medium text-white w-full">
-                {courses?.description}
+                {courses?.description || courses?.intro}
               </p>
 
               <Link
                 href={`/watch?id=${id}`}
-                className="border border-white text-white rounded-lg px-8 py-4 font-bold w-full md:w-[180px] mt-6"
+                className="border border-white text-white rounded-lg px-8 py-4 font-bold w-full md:w-[180px] mt-4"
               >
                 Go To Course
               </Link>
-              <p className="text-white">1,000 already enrolled</p>
+              {/* <p className="text-white">1,000 already enrolled</p> */}
             </div>
             {/* <div className="leading-[46px] mt-4 text-start">
               {courses?.course_overview?.substring(0, 295) ?? ""}
             </div> */}
           </div>
           <div className="w-full">
-            <div className="md:w-[519px] h-[1074px] mx-auto bg-white mt-10 pb-10 shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)]">
-              <div className="relative w-full cursor-pointer">
+            <div className="md:w-[559px] h-[674px] rounded-[30px] mx-auto bg-white mt-10 lg:mt-[100px] shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] flex flex-col justify-between items-start pt-8">
+              {/* py-8 px-8 <div className="relative w-full cursor-pointer">
                 <ReactPlayer
                   url={
                     `https://res.cloudinary.com/dmpqdaupc/` +
@@ -136,8 +142,8 @@ const Hero = ({ courses }) => {
                   config={{
                     file: {
                       attributes: {
-                        controlsList: "nodownload", // Prevents download option
-                        disablePictureInPicture: true, // Disables PiP mode
+                        controlsList: "nodownload",
+                        disablePictureInPicture: true,
                       },
                     },
                   }}
@@ -155,23 +161,17 @@ const Hero = ({ courses }) => {
                     <p className="text-xl font-semibold">Preview This Course</p>
                   </div>
                 )}
-              </div>
-              <div className="w-full px-4">
-                <div className="px-6 mt-8">
-                  <p className="text-[32px]">
+              </div> */}
+              <div className="w-full px-7">
+                <div className="mt-4">
+                  <p className="text-[2rem] lg:text-[2.5rem] font-semibold">
                     {/* N {courses.price} */}₦{" "}
                     {courseDetails?.price?.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}
                   </p>
-                  <div className="px-8 space-y-4 mt-4">
-                    <button
-                      className="py-4 rounded-lg w-full text-white bg-main"
-                      onClick={handleAddToCart}
-                    >
-                      Add To Cart
-                    </button>
+                  <div className="mt-4">
                     {loading ? (
                       <div className=" flex items-center justify-center">
                         {" "}
@@ -186,14 +186,17 @@ const Hero = ({ courses }) => {
                       </button>
                     )}
                   </div>
-                  <p className="text-lg mt-8">This courses includes</p>
+                  <p className="text-lg mt-8">This courses includes:</p>
                 </div>
-                <div className="mt-8 w-full space-y-10 flex-1 text-[#655D59]">
+                <div className="mt-5 w-full gap-8 flex flex-col justify-center items-start text-[#655D59]">
                   {Array.isArray(courses.includes) && courses.includes.length > 0 ? (
                     courses.includes.map((include, index) => (
-                      <div key={index} className="flex items-center gap-x-4">
+                      <div key={index} className="flex justify-start items-end gap-3">
                         <Image src={include.img} alt="Include Icon" />
-                        <p>{include.text}</p>
+                        <div className="flex flex-col justify-center items-start gap-1">
+                          <p>Duration</p>
+                          <p className="text-black font-semibold">{include.text}</p>
+                        </div>
                       </div>
                     ))
                   ) : (
@@ -201,13 +204,19 @@ const Hero = ({ courses }) => {
                   )}
                 </div>
               </div>
+              <button
+                className="py-8 flex justify-center items-center h-[72px] rounded-bl-[30px] rounded-br-[30px] w-full text-white bg-main"
+                onClick={handleAddToCart}
+              >
+                Add To Cart
+              </button>
             </div>
           </div>
         </div>
       </div>
       <div className="w-full bg-white py-16 px-3 xl:px-0">
-        <div className="max-w-[1240px] mx-auto flex flex-col gap-x-12 relative max-h-[600px]">
-          <div className="w-full md:h-[59px] gap-y-[10px] gap-x-[10px] md:gap-[30px] flex flex-wrap justify-start items-center md:py-0 py-3 relative">
+        <div className="max-w-[1300px] mx-auto flex flex-col gap-x-12 relative max-h-[600px]">
+          {/* <div className="w-full md:h-[59px] gap-y-[10px] gap-x-[10px] md:gap-[30px] flex flex-wrap justify-start items-center md:py-0 py-3 relative">
             {[
               "About",
               "Modules",
@@ -227,14 +236,35 @@ const Hero = ({ courses }) => {
                 {tab}
               </div>
             ))}
-          </div>
-          <div className="mt-4 w-full md:w-[640px] h-[1.5px] rounded-full bg-[#F36400]"></div>
+          </div> */}
+          {/* <div className="mt-4 w-full md:w-[640px] h-[1.5px] rounded-full bg-[#F36400]"></div> */}
 
-          <div className="py-10">
-            <p className="text-[#FF8C53] font-medium text-base leading-4 tracking-[.5px]">
-              What you&apos;ll learn
-            </p>
-            <div className="md:w-[578px] flex flex-col items-start justify-start md:h-[280px] py-6 gap-5 px-2">
+          <div className="py-10 flex flex-col justify-center items-start gap-8">
+            <div className="flex flex-col justify-center items-start gap-2">
+              <h1 className="text-3xl text-black font-bold">About this course</h1>
+              {/* <div className="w-[75px] h-[4px] bg-yellow-400 rounded"></div> */}
+            </div>
+            {courses.course_overview && (() => {
+              const sentences = courses.course_overview.split(". ");
+              const firstParagraph = sentences.slice(0, 4).join(". ") + ".";
+              const secondParagraph = sentences.slice(5).join(". ");
+
+              return (
+                <div className="flex flex-col justify-center items-start gap-6">
+                  <p className="text-black font-medium text-[1rem] leading-[30px] tracking-[.5px] w-full lg:w-[600px]">
+                    {firstParagraph}
+                  </p>
+                  {secondParagraph && (
+                    <p className="text-black font-medium text-[1rem] leading-[30px] tracking-[.5px] w-full lg:w-[600px]">
+                      {secondParagraph}
+                    </p>
+                  )}
+                </div>
+              );
+            })()}
+
+
+            {/* <div className="md:w-[578px] flex flex-col items-start justify-start md:h-[280px] py-6 gap-5 px-2">
               {Array.isArray(courses.benefits) && courses.benefits.length > 0 ? (
                 courses.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2 mt-4">
@@ -247,10 +277,11 @@ const Hero = ({ courses }) => {
               ) : (
                 <p>No benefits available for this course.</p>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
+
       {/* {showCartPopup && <CartPopup onClose={setShowCartPopup}/>} */}
     </div>
   );

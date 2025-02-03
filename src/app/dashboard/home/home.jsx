@@ -8,6 +8,7 @@ import Loading from '../(dashboardcomponents)/loading';
 import { useDispatch } from 'react-redux';
 import { addCourses } from '@/features/courses/courseSlice';
 import TopSection from './(HomeComponents)/TopSection';
+import AppFooter from '@/components/AppFooter';
 
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
@@ -59,15 +60,14 @@ const HomePage = () => {
   }
 
   return (
-    <section className='p-3 bg-white'>
+    <section className='bg-white'>
       {(loadingCategories || loadingCourses) ? (
         <Loading />
       ) : (
         <section className='w-full min-h-screen'>
-          {/* <Navbar/> */}
           <TopSection />
           {/* <Categories categories={categories} /> */}
-          <div className='py-[20px]'>
+          <div className='pt-[30px] pb-[200px] px-4'>
             <Explore courses={courses} />
           </div>
         </section>
