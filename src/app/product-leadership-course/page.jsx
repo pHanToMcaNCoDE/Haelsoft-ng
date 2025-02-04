@@ -37,28 +37,28 @@ const page = () => {
               <Image width={70} height={70} src={team} alt='Team Icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Drive Business Impact</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Learn how to align product strategies with business objectives to maximize value.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Learn how to align product strategies with business objectives to maximize value.</p>
               </div>
           </div>
           <div className='flex flex-col justify-center items-center text-center gap-3'>
               <Image width={70} height={70} src={impact} alt='Impact icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Lead with Confidence</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Develop the leadership skills to inspire teams and stakeholders.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Develop the leadership skills to inspire teams and stakeholders.</p>
               </div>
           </div>
           <div className='flex flex-col justify-center items-center text-center gap-3'>
               <Image width={70} height={70} src={growth} alt='Growth Icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Stay Ahead of Trends</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Master cutting-edge tools and techniques in product management and innovation.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Master cutting-edge tools and techniques in product management and innovation.</p>
               </div>
           </div>
           <div className='flex flex-col justify-center items-center text-center gap-3'>
               <Image width={70} height={70} src={lead} alt='Lead Icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Career Advancement</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Unlock opportunities in high-growth industries as a product leader.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Unlock opportunities in high-growth industries as a product leader.</p>
               </div>
           </div>
       </div>

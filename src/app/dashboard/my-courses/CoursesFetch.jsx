@@ -41,7 +41,7 @@ const CoursesFetch = () => {
   return (
     <div>
       <div className="pb-10 mt-10">
-        <div className="flex text-[#655D59] text-[18px]">Recently Viewed</div>
+        <div className="flex text-grayTwo text-[18px]">Recently Viewed</div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-4 gap-y-10 justify-items-start">
           {/* Uncomment this when ready */}
           {/* {courses.slice(0, 3).map((item, index) => (
@@ -51,7 +51,7 @@ const CoursesFetch = () => {
           ))} */}
         </div>
         
-        <div className="flex text-[#655D59] mt-10 text-[18px]">Categories</div>
+        <div className="flex text-grayTwo mt-10 text-[18px]">Categories</div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 w-full gap-4 gap-y-10">
           {/* Uncomment this when ready */}
           {/* {categories.map((item, index) => (
@@ -61,7 +61,7 @@ const CoursesFetch = () => {
           ))} */}
         </div>
 
-        <div className="flex text-[#655D59] mt-10 text-[18px]">Best selling courses</div>
+        <div className="flex text-grayTwo mt-10 text-[18px]">Best selling courses</div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 w-full gap-4 gap-y-10">
           {courses.map((item, index) => (
             <div className="a" key={index}>

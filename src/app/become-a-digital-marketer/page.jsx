@@ -45,14 +45,14 @@ const page = () => {
 
         <section className='py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10'>
            <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-10'>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     Digital marketing is one of the fastest-growing industries, offering endless opportunities to innovate and succeed. Businesses of all sizes need digital marketers to grow their online presence, making this a great career choice.
                 </p>
                 <div className='flex flex-col justify-center items-start gap-2'><div className='flex flex-col justify-center items-start gap-2'>
                         <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Why Choose a Career in Digital Marketing?</h1>
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Digital marketing is booming. It's a field with high demand, diverse opportunities, flexibility, and attractive earnings potential.
                     </p>
                 </div>
@@ -66,7 +66,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Learn all aspects of digital marketing, from strategy to execution, across multiple platforms.
                         </p>
                     </div>
@@ -80,7 +80,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Work on live projects and campaigns to gain practical experience.
                         </p>
                     </div>
@@ -93,7 +93,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Learn from industry leaders who have years of real-world digital marketing expertise.
                         </p>
                     </div>
@@ -106,7 +106,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Access our self-paced modules anytime, anywhere, with live support when you need it.
                         </p>
                     </div>
@@ -119,7 +119,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Get resume-building guidance, interview preparation, and job placement assistance.
                         </p>
                     </div>
@@ -133,10 +133,10 @@ const page = () => {
                     </div>
                     
                     <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[977px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Our program covers every essential skill and tool for a successful digital marketing career:
                         </p>
-                        <ul className='list-disc ml-6 text-[#655D59] text-base font-normal leading-[30px]'>
+                        <ul className='list-disc ml-6 text-grayTwo text-base font-normal leading-[30px]'>
                             <li>Search Engine Optimization (SEO): Rank websites on search engines and increase organic traffic.</li>
                             <li>Social Media Marketing: Build brand awareness and engagement across platforms like Facebook, Instagram, and LinkedIn.</li>
                             <li>Content Marketing: Create compelling content that drives traffic and conversions.</li>

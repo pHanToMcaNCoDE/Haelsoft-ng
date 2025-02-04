@@ -32,7 +32,7 @@ const ResponsiveNetwork = () => {
     <section className='w-full md:hidden flex flex-col gap-[4em] py-[100px] relative'>
         <div className='flex flex-col justify-center items-center max-w-[1200px] mx-auto text-center gap-4'>
             <h1 className='text-[#F36400] text-[2.125rem] font-semibold leading-9'>Trusted by Leading Companies</h1>
-            {/* <p className='w-full lg:w-[936px] text-center text-base text-[#655D59]'>
+            {/* <p className='w-full lg:w-[936px] text-center text-base text-grayTwo'>
                 At Haelsoft, we partner with renowned digital brands and professionals to deliver cutting-edge online courses, events, and bootcamp experiences, empowering learners worldwide.
             </p> */}
         </div>

@@ -108,7 +108,7 @@ const page = () => {
     const contentTwo = (
         <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
         <h1 className="text-[#F36400] leading-[42px] font-bold text-[1.75rem]">Partner with Haelsoft for Excellence</h1>
-        <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
+        <p className="text-grayTwo text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
           Invest in your people, and you’ll invest in the future of your organization. Let Haelsoft EdTech Platform help you build a workforce that’s ready to tackle today’s challenges and tomorrow’s opportunities. To learn more about our Corporate Training programs or schedule a consultation, contact us at [your email address]. At Haelsoft, we don’t just train teams; we empower them to lead, innovate, and excel.
         </p>
         <span className='text-black font-bold text-[1.125rem] leading-[43px] w-full xl:w-[574px]'>

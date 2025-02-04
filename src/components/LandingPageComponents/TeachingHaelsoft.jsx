@@ -21,10 +21,10 @@ const TeachingHaelsoft = () => {
           <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
         </div>
         <div className='flex flex-col gap-[2em]'>
-          <p className='text-[#655D59] font-normal text-base'>
+          <p className='text-grayTwo font-normal text-base'>
             We’re always on the lookout for talented individuals to join our team. Explore opportunities in:
           </p>
-          <ul className='list-disc mx-8 text-[#655D59] font-normal text-base'>
+          <ul className='list-disc mx-8 text-grayTwo font-normal text-base'>
             <li className='font-bold text-black'>Instructional Design & Curriculum Development</li>
             <li className='font-bold text-black'>Technology & Product Development</li>
             <li className='font-bold text-black'>Marketing & Communications</li>
@@ -34,10 +34,10 @@ const TeachingHaelsoft = () => {
         </div>
         <div className='flex flex-col gap-[2em]'>
           <h2 className='text-[#F36400] text-lg font-semibold'>Let’s Build the Future Together</h2>
-          <p className='text-[#655D59] font-normal text-base'>
+          <p className='text-grayTwo font-normal text-base'>
             If you’re ready to be part of something extraordinary, we’d love to hear from you. Explore our open roles or send us your resume and a cover letter at <a href="mailto:your-email@example.com" className="text-[#F36400] underline">your-email@example.com</a>.
           </p>
-          <p className='text-[#655D59] font-normal text-base'>
+          <p className='text-grayTwo font-normal text-base'>
             At Haelsoft, every idea counts, every voice matters, and every effort contributes to a brighter future for Africa. Let’s create something remarkable together!
           </p>
         </div>

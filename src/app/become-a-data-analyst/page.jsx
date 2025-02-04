@@ -53,16 +53,16 @@ const page = () => {
 
       <section className="py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10">
         <div className="w-full xl:w-[977px] flex flex-col justify-center items-start gap-10">
-          <p className="text-[#655D59] text-base font-normal leading-[30px]">
+          <p className="text-grayTwo text-base font-normal leading-[30px]">
             Data analysts play a crucial role in today's data-driven world. They collect, process, and analyze data to help organizations make informed decisions.
             If you're interested in this career, here's a guide to getting started.
           </p>
           <div className="flex flex-col justify-center items-start gap-4">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h1 className='text-[#655D59] leading-[34.13px] lg:leading-[55.5px] text-[1.75rem] lg:text-[2.5rem] font-bold'>Key Highlights:</h1>
+              <h1 className='text-grayTwo leading-[34.13px] lg:leading-[55.5px] text-[1.75rem] lg:text-[2.5rem] font-bold'>Key Highlights:</h1>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               Learn key programming languages like Python and R, master data visualization tools, and develop an understanding of statistical methods to unlock the potential of data.
             </p>
           </div>
@@ -72,10 +72,10 @@ const page = () => {
           {/* Step 1 */}
           <div className="flex flex-col justify-center items-start gap-2">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h2 className='text-[#655D59] leading-[34.13px] text-[1.75rem] font-bold'>Step 1: Understand the Role of a Data Analyst</h2>
+              <h2 className='text-grayTwo leading-[34.13px] text-[1.75rem] font-bold'>Step 1: Understand the Role of a Data Analyst</h2>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               The first step to becoming a data analyst is understanding what the role entails. Data analysts transform raw data into meaningful insights that help businesses make informed decisions.
               You'll need to develop strong analytical and problem-solving skills, along with a passion for working with numbers and data.
             </p>
@@ -84,10 +84,10 @@ const page = () => {
           {/* Step 2 */}
           <div className="flex flex-col justify-center items-start gap-2">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h2 className='text-[#655D59] leading-[34.13px] text-[1.75rem] font-bold'>Step 2: Learn Key Data Analysis Tools</h2>
+              <h2 className='text-grayTwo leading-[34.13px] text-[1.75rem] font-bold'>Step 2: Learn Key Data Analysis Tools</h2>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               To succeed as a data analyst, you'll need to master various data analysis tools. These include:
               <ul className="list-disc pl-5">
                 <li>Spreadsheet tools like Microsoft Excel and Google Sheets</li>
@@ -101,10 +101,10 @@ const page = () => {
           {/* Step 3 */}
           <div className="flex flex-col justify-center items-start gap-2">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h2 className='text-[#655D59] leading-[34.13px] text-[1.75rem] font-bold'>Step 3: Build a Strong Foundation in Statistics</h2>
+              <h2 className='text-grayTwo leading-[34.13px] text-[1.75rem] font-bold'>Step 3: Build a Strong Foundation in Statistics</h2>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               Understanding statistics is crucial for data analysis. A solid foundation in descriptive statistics, probability, hypothesis testing, and regression analysis will enable you to interpret data accurately.
             </p>
           </div>
@@ -112,10 +112,10 @@ const page = () => {
           {/* Step 4 */}
           <div className="flex flex-col justify-center items-start gap-2">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h2 className='text-[#655D59] leading-[34.13px] text-[1.75rem] font-bold'>Step 4: Gain Practical Experience</h2>
+              <h2 className='text-grayTwo leading-[34.13px] text-[1.75rem] font-bold'>Step 4: Gain Practical Experience</h2>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               Experience is key in becoming a successful data analyst. Work on real-world projects, contribute to open-source data analysis projects, or take part in internships to build your skills.
             </p>
           </div>
@@ -123,10 +123,10 @@ const page = () => {
           {/* Step 5 */}
           <div className="flex flex-col justify-center items-start gap-2">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h2 className='text-[#655D59] leading-[34.13px] text-[1.75rem] font-bold'>Step 5: Stay Updated with Industry Trends</h2>
+              <h2 className='text-grayTwo leading-[34.13px] text-[1.75rem] font-bold'>Step 5: Stay Updated with Industry Trends</h2>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               The world of data analysis is constantly evolving. Stay updated with the latest trends, tools, and best practices in the industry by reading blogs, joining forums, and participating in data analysis communities.
             </p>
           </div>
@@ -134,10 +134,10 @@ const page = () => {
           {/* Step 6 */}
           <div className="flex flex-col justify-center items-start gap-2">
             <div className='flex flex-col justify-center items-start gap-3'>
-              <h2 className='text-[#655D59] leading-[34.13px] text-[1.75rem] font-bold'>Step 6: Build a Strong Portfolio</h2>
+              <h2 className='text-grayTwo leading-[34.13px] text-[1.75rem] font-bold'>Step 6: Build a Strong Portfolio</h2>
               <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
             </div>
-            <p className="text-[#655D59] text-base font-normal leading-[30px]">
+            <p className="text-grayTwo text-base font-normal leading-[30px]">
               Having a portfolio of your work will help demonstrate your skills to potential employers. Include examples of data analysis projects you've worked on, showcasing your ability to solve real problems with data.
             </p>
           </div>

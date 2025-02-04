@@ -10,7 +10,7 @@ const BootcampWhyEnroll = ({item, whyTitle, whyDesc}) => {
                     <h1 className='text-[#201A18] font-bold text-[2.063rem] leading-[55px]'>{whyTitle}</h1>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <p className='text-[#655D59] w-full text-[1rem] font-normal leading-[30px]'>
+                <p className='text-grayTwo w-full text-[1rem] font-normal leading-[30px]'>
                     {whyDesc}
                 </p>
             </div>
@@ -25,7 +25,7 @@ const BootcampWhyEnroll = ({item, whyTitle, whyDesc}) => {
                                 </div>
                                 <p className='text-main leading-[21.94px] text-[1.125rem] font-medium'>{i.name}</p>
                             </div>
-                            <p className='text-[#655D59] leading-[30px] text-[1.125rem] font-medium'>{i.desc}</p>
+                            <p className='text-grayTwo leading-[30px] text-[1.125rem] font-medium'>{i.desc}</p>
                         </div>
                     ))
                 }

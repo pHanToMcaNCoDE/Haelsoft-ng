@@ -100,7 +100,7 @@ const GetStarted = () => {
                         <h1 className='leading-[43px] text-[#F36400] font-semibold text-[1.75rem] text-center xl:text-left w-full'>
                             Book a Consultation for Free
                         </h1>
-                        <p className='text-[#655D59] font-normal text-[1rem] leading-[24px] w-full xl:w-[297px] text-center xl:text-left'>
+                        <p className='text-grayTwo font-normal text-[1rem] leading-[24px] w-full xl:w-[297px] text-center xl:text-left'>
                             Kindly fill in the form to get started.
                         </p>
                         <div className='h-[463px] w-full flex flex-col justify-center items-center gap-[4em] p-6'>

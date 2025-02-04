@@ -13,7 +13,7 @@ const Comments = () => {
             </div>
             <div className='flex flex-col justify-center items-center gap-6'>
                 <Image width={28} height={43} src={img3} alt="Double Quotes" />
-                <p className='w-full lg:w-[849px] text-[#655D59] text-center lg:text-left text-[1rem] leading-[43px] font-normal'>
+                <p className='w-full lg:w-[849px] text-grayTwo text-center lg:text-left text-[1rem] leading-[43px] font-normal'>
                     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
                 </p>
                 <Image width={28} height={43} src={img3} alt="Double Quotes" />

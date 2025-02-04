@@ -15,7 +15,7 @@ const BootcampFeatures = ({features}) => {
                     features.map((feature) => (
                         <div key={feature.id} className='w-full lg:w-[248px] gap-[7px] flex flex-col justify-center items-center text-center'>
                             <h1 className='text-[1.125rem] text-main font-semibold leading-[21.94px]'>{feature.name}</h1>
-                            <p className='leading-[30px] text-[#655D59] font-normal text-[1rem]'>{feature.desc}</p>
+                            <p className='leading-[30px] text-grayTwo font-normal text-[1rem]'>{feature.desc}</p>
                         </div>
                     ))
                 }

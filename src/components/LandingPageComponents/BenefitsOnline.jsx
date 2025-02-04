@@ -75,27 +75,27 @@ const BenefitsOnline = () => {
           </div>
           <div className={`${fade ? 'fade-in' : 'fade-out'} duration-200`}>
             {previousBenefit === 'Progress Tracking' && (
-              <p className='text-base text-[#655D59] text-left font-normal'>
+              <p className='text-base text-grayTwo text-left font-normal'>
                 Interactive platforms often include tracking features that allow you to monitor your progress over time. You can see how well you’re doing, identify areas that need improvement, and set goals to achieve better results.
               </p>
             )}
             {previousBenefit === 'Increased Flexibility' && (
-              <p className='text-base text-[#655D59] text-center lg:text-left font-normal'>
+              <p className='text-base text-grayTwo text-center lg:text-left font-normal'>
                 Online interactive learning allows you to study at your own pace and on your own schedule. This flexibility makes it easier to fit learning into your daily routine, balancing it with other responsibilities.
               </p>
             )}
             {previousBenefit === 'Self-Paced Learning' && (
-              <p className='text-base text-[#655D59] text-center lg:text-left font-normal'>
+              <p className='text-base text-grayTwo text-center lg:text-left font-normal'>
                 Interactive platforms let you revisit lessons, pause when needed, and learn at your own pace. This control over your learning pace helps with better absorption of content.
               </p>
             )}
             {previousBenefit === 'Certification Benefits' && (
               <ul className='px-5 flex flex-col'>
-                <li className='list-disc text-[#655D59] text-base font-normal'>Career Advancement</li>
-                <li className='list-disc text-[#655D59] text-base font-normal'>Recognition of Achievement</li>
-                <li className='list-disc text-[#655D59] text-base font-normal'>Motivation and Focus</li>
-                <li className='list-disc text-[#655D59] text-base font-normal'>Professional Development</li>
-                <li className='list-disc text-[#655D59] text-base font-normal'>Networking Opportunities</li>
+                <li className='list-disc text-grayTwo text-base font-normal'>Career Advancement</li>
+                <li className='list-disc text-grayTwo text-base font-normal'>Recognition of Achievement</li>
+                <li className='list-disc text-grayTwo text-base font-normal'>Motivation and Focus</li>
+                <li className='list-disc text-grayTwo text-base font-normal'>Professional Development</li>
+                <li className='list-disc text-grayTwo text-base font-normal'>Networking Opportunities</li>
               </ul>
             )}
           </div>

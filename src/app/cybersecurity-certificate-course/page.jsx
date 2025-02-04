@@ -32,7 +32,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Protect the Digital World with Advanced Cybersecurity Skills!</span> In today&apos;s interconnected world, robust cybersecurity is essential to protect data and prevent threats. Haelsoft EdTech Platform&apos;s Cybersecurity course is designed to equip you with the skills to secure networks, identify vulnerabilities, and respond to incidents. Whether you&apos;re starting a career in cybersecurity or seeking to sharpen your expertise, this course will provide you with the practical knowledge to thrive in a fast-growing field.
         </div>
     )    

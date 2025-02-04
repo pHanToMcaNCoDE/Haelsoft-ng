@@ -80,7 +80,7 @@ const SignInModal = ({ signInState, setSignInState, setSignupState }) => {
             </div>
           </form>
 
-          <p className="text-[#655D59] font-medium text-center mt-10 text-sm">
+          <p className="text-grayTwo font-medium text-center mt-10 text-sm">
             By signing up, you agree to our Terms of use and Privacy Policy
           </p>
 

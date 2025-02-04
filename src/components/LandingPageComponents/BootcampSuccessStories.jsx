@@ -17,7 +17,7 @@ const BootcampSuccessStories = ({comment}) => {
                     <Image className='object-cover absolute z-[5px] top-[-25px]' src={obj} alt='Quotes'></Image>
                     <div className='flex flex-col justify-center items-start w-full md:w-[463px] gap-10 relative z-10'>
                         <div className='flex flex-col justify-center items-start gap-[10px]'>
-                            <h2 className='uppercase text-[#655D59] font-semibold text-[1.125rem] leading-[21.94px]'>featured story</h2>
+                            <h2 className='uppercase text-grayTwo font-semibold text-[1.125rem] leading-[21.94px]'>featured story</h2>
                             <h1 className='text-[#201A18] leading-[30px] lg:leading-[45px] font-semibold text-[1.25rem] lg:text-[1.875rem]'>{comment}</h1>
                         </div>
                         <h2 className='text-[#201A18] font-normal text-[1rem] leading-[30px]'>Mary Smith, Marketer at Haelsoft</h2>

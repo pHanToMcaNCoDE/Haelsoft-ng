@@ -85,11 +85,11 @@ const FilledCart = ({ carts }) => {
               <div className="flex flex-col md:flex-row justify-between items-start w-full">
                 <div className="flex items-start gap-[6em] w-full md:w-auto">
                   <div className="flex flex-col gap-10">
-                    <h1 className="text-[#655D59] text-[1.125rem] leading-[27px] font-semibold">
+                    <h1 className="text-grayTwo text-[1.125rem] leading-[27px] font-semibold">
                       {item.course_title}
                     </h1>
                     <div className="flex justify-center items-center gap-1">
-                      <p className="text-[#655D59] font-medium text-[.75rem] leading-[18px]">
+                      <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
                         {item.rating} rating
                       </p>
                       <div>
@@ -99,13 +99,13 @@ const FilledCart = ({ carts }) => {
                           readOnly
                         />
                       </div>
-                      <p className="text-[#655D59] font-medium text-[.75rem] leading-[18px]">
+                      <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
                         ({item.reviews})
                       </p>
                     </div>
                   </div>
                   <div className="flex justify-start items-center gap-6">
-                    <p className="text-[#655D59] text-[.875rem] leading-[46px] font-semibold">
+                    <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold">
                       ₦{(item.price || 0).toLocaleString()}
                     </p>
                     <RiDeleteBin6Line
@@ -120,10 +120,10 @@ const FilledCart = ({ carts }) => {
         </div>
         <div className="flex flex-col gap-10 w-full md:w-auto">
           <div className="whitespace-nowrap">
-            <p className="text-[#655D59] text-base font-semibold leading-5">
+            <p className="text-grayTwo text-base font-semibold leading-5">
               Total
             </p>
-            <p className="text-[#655D59] text-base font-semibold leading-5">
+            <p className="text-grayTwo text-base font-semibold leading-5">
               ₦{carts.reduce((total, item) => total + (Number(item.price) || 0), 0).toLocaleString()}
             </p>
           </div>

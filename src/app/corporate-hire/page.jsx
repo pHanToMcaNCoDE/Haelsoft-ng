@@ -49,10 +49,10 @@ const page = () => {
   const why = (
     <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
       <h1 className="text-[#201A18] leading-[42px] font-bold text-[1.75rem] mb-8">Why Choose Haelsoft?</h1>
-      <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
+      <p className="text-grayTwo text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         Haelsoft is uniquely attuned to the dynamics of African markets, offering solutions tailored to your operational realities. Our training programs are designed to provide high-quality results at competitive prices, ensuring you receive exceptional value for your investment.
       </p>
-      <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
+      <p className="text-grayTwo text-[1.125rem] leading-[43px] font-medium w-full xl:w-[574px]">
         With extensive experience in digital transformation and skill development, Haelsoft delivers proven expertise to empower individuals and organizations. Our commitment to innovation and excellence ensures that we remain a trusted partner in achieving your goals.
       </p>
     </div>

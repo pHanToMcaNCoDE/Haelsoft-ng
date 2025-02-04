@@ -13,38 +13,33 @@ const Instructors = ({ courses }) => {
     ];
 
     return (
-        <section className='w-full py-[100px] bg-white md:px-0'>
-            <div className='text-center max-w-[1260px] mx-auto px-3 md:px-0'>
-                <h1 className='text-[1.5rem] text-[#F36400] font-semibold leading-[43px]'>
-                    {courses.course_title} Instructors
-                </h1>
-                <p className='text-base font-semibold text-[#655D59] leading-[43px]'>
-                    {courses.instructors?.description}
-                </p>
-            </div>
-            <div className='overflow-hidden'>
-                <div className="mt-[10em] scroll w-full overflow-x-auto flex flex-row items-start justify-start py-[0rem] pr-[0rem] pl-[2.625rem] sm:pl-[3.625rem] md:pl-[5.625rem] box-border gap-[1rem] min-w-full text-white lg:pl-[7rem] lg:box-border">
-                    {profiles.map((profile, index) => (
-                        <div key={index} className='border-[3px] border-[#F0F0F0] w-[324px] h-[352px] bg-white flex-shrink-0'>
-                            <Image 
-                                className='object-cover' 
-                                width={320} 
-                                height={316} 
-                                src={profile.image} 
-                                alt={`Profile picture of ${profile.name}`}
-                            />
-                            <div className='px-3 py-4'>
+        <section className='w-full py-[100px] bg-white px-4 xl:px-0 flex flex-col justify-center items-center gap-8'>
+            <div className='max-w-[1250px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-10'>
+                {/* <div className="mt-[10em] scroll w-full overflow-x-auto flex flex-row items-start justify-start py-[0rem] pr-[0rem] pl-[2.625rem] sm:pl-[3.625rem] md:pl-[5.625rem] box-border gap-[1rem] min-w-full text-white lg:pl-[7rem] lg:box-border"> */}
+                    {/* {profiles.map((profile, index) => ( */}
+                        <div className='w-full lg:w-[50%] flex flex-col justify-center items-start gap-y-8'>
+                            <h1 className='text-[2.25rem] text-[#F36400] font-bold leading-[43px]'>
+                                Instructor For This Course
+                            </h1>
+                            <div className='w-full flex flex-col justify-center items-start gap-3'>
                                 <h1 className='text-[#201A18] text-[1.5rem] font-semibold leading-[43px]'>
-                                    {profile.name}
+                                    Janet Jackson
                                 </h1>
-                                <p className='text-[#201A18] text-[1.125rem] font-normal leading-[43px]'>
-                                    {profile.title}
+                                <p className='text-grayTwo text-[1.125rem] font-normal leading-[40px]'>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, aliquam expedita nulla labore harum dicta quo ipsa ea, dignissimos dolorum nesciunt corporis inventore tempore ullam perferendis magni molestiae. Qui sequi, iusto velit accusamus ipsam dolore aspernatur repudiandae et recusandae alias itaque est omnis vero non explicabo nihil eligendi, eaque ea! Ipsa incidunt molestiae ut quia necessitatibus, vel suscipit cupiditate earum quos assumenda consequatur modi eveniet a explicabo voluptatum praesentium voluptate. Delectus soluta ducimus inventore, porro perspiciatis ullam a at eum.
                                 </p>
                             </div>
                         </div>
-                    ))}
+                        <Image 
+                            className='object-cover w-full rounded lg:w-[50%] h-full' 
+                                // width={320} 
+                                // height={316} 
+                            src={img} 
+                                alt={`Profile picture of Jamet Jackson`}
+                        />
+                    {/* // ))} */}
                 </div>
-            </div>
+            {/* </div> */}
         </section>
     );
 };

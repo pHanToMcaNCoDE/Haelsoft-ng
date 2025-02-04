@@ -12,7 +12,7 @@ const LoginPopup = ({setIsClicked}) => {
           Log In into your Edtech account
         </h1>
         <div className="flex flex-col justify-center items-center gap-6 mx-auto">
-          <p className="text-[#655D59] font-semibold text-[1.125rem]">Continue with</p>
+          <p className="text-grayTwo font-semibold text-[1.125rem]">Continue with</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
             <div className="w-[80px] h-[80px] gap-[10px] border-[2px] border-[#FF8C53] flex justify-center items-center rounded-full cursor-pointer">
                 <Image width={48} height={48} className="object-cover" src={gle} alt="Google"></Image>
@@ -29,14 +29,14 @@ const LoginPopup = ({setIsClicked}) => {
         <form className="w-full flex flex-col gap-8" action="">
           <input
             placeholder="Email"
-            className="outline-none placeholder:text-[#655D59] placeholder:text-base placeholder:font-medium font-medium placeholder:leading-6 leading-6 text-base w-full lg:w-[610px] py-[28px] px-[33px] border-2 gap-[10px] border-[#F0F0F0] rounded-lg lg:h-[80px] bg-[#F7F7F7]"
+            className="outline-none placeholder:text-grayTwo placeholder:text-base placeholder:font-medium font-medium placeholder:leading-6 leading-6 text-base w-full lg:w-[610px] py-[28px] px-[33px] border-2 gap-[10px] border-[#F0F0F0] rounded-lg lg:h-[80px] bg-[#F7F7F7]"
             type="text"
             name=""
             id=""
           />
           <input
             placeholder="Password"
-            className="outline-none placeholder:text-[#655D59] placeholder:text-base placeholder:font-medium font-medium placeholder:leading-6 leading-6 text-base w-full lg:w-[610px] py-[28px] px-[33px] border-2 gap-[10px] border-[#F0F0F0] rounded-lg lg:h-[80px] bg-[#F7F7F7]"
+            className="outline-none placeholder:text-grayTwo placeholder:text-base placeholder:font-medium font-medium placeholder:leading-6 leading-6 text-base w-full lg:w-[610px] py-[28px] px-[33px] border-2 gap-[10px] border-[#F0F0F0] rounded-lg lg:h-[80px] bg-[#F7F7F7]"
             type="text"
             name=""
             id=""

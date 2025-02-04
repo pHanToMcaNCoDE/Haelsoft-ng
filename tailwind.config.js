@@ -1,21 +1,24 @@
+const {heroui} = require('@heroui/theme');
 /** @type {import('tailwindcss').Config} */
 const nextui = require("@nextui-org/react");
 
 module.exports = {
     darkMode: ["class"],
-    content: [
-        "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-        "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-        "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-    ],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/components/(accordion|divider).js"
+  ],
     theme: {
         extend: {
             colors: {
                 main: '#C75C27',
                 other: '#7F7571',
                 neutralcustom: '#655D59',
-                gray: '#D7D7D7'
+                gray: '#D7D7D7',
+                grayTwo: '#655D59'
             },
             backgroundImage: {
                 'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -46,8 +49,5 @@ module.exports = {
               },
         }
     },
-    plugins: [
-        nextui,
-        require("tailwindcss-animate")
-    ],
+  plugins: [nextui,require("tailwindcss-animate"),heroui()],
 };

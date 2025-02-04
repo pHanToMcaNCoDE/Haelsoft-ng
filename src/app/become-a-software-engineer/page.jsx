@@ -46,7 +46,7 @@ const page = () => {
 
         <section className='py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10'>
            <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-10'>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     Software engineering is a dynamic and challenging field that requires constant learning and problem-solving. 
                 </p>
                 <div className='flex flex-col justify-center items-start gap-2'>
@@ -54,7 +54,7 @@ const page = () => {
                         <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>How to become a software engineer:</h1>
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Becoming a software engineer involves learning core principles of programming, software development processes, and practical problem-solving.
                     </p>
                 </div>
@@ -68,13 +68,13 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Start by understanding core concepts like data structures, algorithms, and object-oriented programming (OOP).
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Learn how to write clean, efficient, and maintainable code that meets industry standards.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Familiarize yourself with version control systems like Git to collaborate on projects.
                         </p>
                     </div>
@@ -87,13 +87,13 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Apply your knowledge by working on projects that solve real-world problems.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Contribute to open-source projects or build your own portfolio to showcase your skills.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Participate in hackathons and collaborate with other developers to enhance your problem-solving abilities.
                         </p>
                     </div>
@@ -106,10 +106,10 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Understand principles such as clean code, testing, and software architecture to create high-quality software.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Study methodologies like Agile and DevOps to work effectively within teams and deliver products on time.
                         </p>
                     </div>
@@ -122,10 +122,10 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Software engineering is an ever-evolving field. Keep learning new languages, frameworks, and tools.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Follow industry leaders, read technical blogs, and attend conferences to stay informed about the latest advancements.
                         </p>
                     </div>
@@ -139,13 +139,13 @@ const page = () => {
                 </div>
                     
                 <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[977px] mx-auto'>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Master the essentials of software engineering including algorithms, data structures, and software development principles.
                     </p>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Learn to design efficient algorithms, write code that scales, and build systems that perform well under pressure.
                     </p>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Always strive to improve and learn new skills to stay competitive in the job market.
                     </p>
                 </div>
@@ -158,10 +158,10 @@ const page = () => {
                 </div>
                     
                 <div className='flex flex-col justify-center items-start gap-10'>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         It's time to start your career as a software engineer! Join thousands of learners worldwide who have taken the first step towards achieving their career goals.
                     </p>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Enroll today and begin learning the skills that will open doors to amazing opportunities in the tech world.
                     </p>
                 </div>

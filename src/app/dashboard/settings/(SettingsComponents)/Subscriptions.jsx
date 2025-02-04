@@ -18,7 +18,7 @@ const Subscriptions = () => {
         </div>
         <div className='px-[15px] lg:px-[30px] pt-[20px]'>
             <div className='h-[370px] w-full lg:w-[877px] border-2 p-4 border-dashed border-main text-center flex justify-center items-center'>
-                <p className='text-[#655D59] text-[1.125rem] font-semibold leading-[27px]'>You don’t have any  subscription yet.</p>
+                <p className='text-grayTwo text-[1.125rem] font-semibold leading-[27px]'>You don’t have any  subscription yet.</p>
             </div>
             <button
             className="mt-10 w-[184px] text-[#7F7571] h-[40px] rounded border border-[#FF8C53] text-[.875rem] font-medium leading-[21px] flex justify-center items-center"

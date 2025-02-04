@@ -7,7 +7,7 @@ const AboutData = ({subMenuRef}) => {
     <div ref={subMenuRef} className='flex justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
       <div className='h-full hidden lg:flex flex-col justify-start items-start gap-5'>
         <h1 className='text-[1.625rem] leading-9 font-semibold text-black'>About</h1>
-        <p className='text-[.875rem] leading-[18px] font-normal text-[#655D59] w-full md:w-[398px]'>
+        <p className='text-[.875rem] leading-[18px] font-normal text-grayTwo w-full md:w-[398px]'>
           Learn more about our tailored corporate training programs designed to boost your team&apos;s expertise. With flexible online courses spanning 5 to 10 weeks, we ensure skill development that fits effortlessly into your schedule while delivering real-world, practical insights.
         </p>
       </div>

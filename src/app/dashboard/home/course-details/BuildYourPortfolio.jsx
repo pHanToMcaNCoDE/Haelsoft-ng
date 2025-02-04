@@ -14,7 +14,7 @@ const BuildYourPortfolio = ({ courses }) => {
             <h1 className='text-[#FF8C53] text-[1.75rem] leading-[43px] font-semibold'>
               Build Your Interview-Ready {courses.course_title} Portfolio
             </h1>
-            <p className='text-[1.125rem] text-[#655D59] leading-10 font-medium'>
+            <p className='text-[1.125rem] text-grayTwo leading-10 font-medium'>
               {courses.portfolio.description}
             </p>
           </div>

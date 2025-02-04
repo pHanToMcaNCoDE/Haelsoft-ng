@@ -40,28 +40,28 @@ const page = () => {
                 <Image width={70} height={70} src={team} alt='Team Icon'></Image>
                 <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                     <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Transform Teams</h2>
-                    <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Inspire and empower designers to achieve their full potential.</p>
+                    <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Inspire and empower designers to achieve their full potential.</p>
                 </div>
             </div>
             <div className='flex flex-col justify-center items-center text-center gap-3'>
                 <Image width={70} height={70} src={impact} alt='Impact icon'></Image>
                 <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                     <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Strategic Impact</h2>
-                    <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Align design strategies with business goals to maximize results.</p>
+                    <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Align design strategies with business goals to maximize results.</p>
                 </div>
             </div>
             <div className='flex flex-col justify-center items-center text-center gap-3'>
                 <Image width={70} height={70} src={lead} alt='Lead Icon'></Image>
                 <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                     <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Lead Innovation</h2>
-                    <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Stay ahead of trends and foster a culture of creativity.</p>
+                    <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Stay ahead of trends and foster a culture of creativity.</p>
                 </div>
             </div>
             <div className='flex flex-col justify-center items-center text-center gap-3'>
                 <Image width={70} height={70} src={growth} alt='Growth Icon'></Image>
                 <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                     <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Career Growth</h2>
-                    <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Take your career to the next level by leading impactful design initiatives.</p>
+                    <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Take your career to the next level by leading impactful design initiatives.</p>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ const BootcampsData = ({subMenuRef}) => {
     <div ref={subMenuRef} className='flex justify-normal xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
         <div className='h-full hidden xl:flex flex-col justify-start items-start gap-5'>
           <h1 className='text-[1.625rem] leading-9 font-semibold text-black'>Bootcamps</h1>
-          <p className='text-[.875rem] leading-[18px] font-normal text-[#655D59] w-full md:w-[398px]'>
+          <p className='text-[.875rem] leading-[18px] font-normal text-grayTwo w-full md:w-[398px]'>
             Enhance your skills with our comprehensive bootcamps. Our part-time certificate programs, available online, are designed to fit into your busy schedule. Spanning 5 to 10 weeks, these courses provide practical, hands-on training to help you advance in your career and gain expertise in the latest digital technologies.
           </p>
         </div>

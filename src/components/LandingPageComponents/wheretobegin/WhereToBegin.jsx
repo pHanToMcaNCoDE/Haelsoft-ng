@@ -11,7 +11,7 @@ const WhereToBegin = () => {
         <h1 className="text-main leading-[36px] text-[1.5rem] text-left lg:text-center font-semibold">
           Not Sure Where to Start?
         </h1>
-        <p className="text-[#655D59] w-full lg:w-[809px] leading-[24px] font-normal text-[1rem] text-left lg:text-center">
+        <p className="text-grayTwo w-full lg:w-[809px] leading-[24px] font-normal text-[1rem] text-left lg:text-center">
           Whether you&apos;re looking to begin a new career or advance in your
           current one, we have the resources to guide you on your journey.
           Explore our tailored learning paths to find what suits you best.

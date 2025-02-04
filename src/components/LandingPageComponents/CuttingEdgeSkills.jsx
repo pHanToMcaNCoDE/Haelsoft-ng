@@ -34,38 +34,38 @@ const CuttingEdgeSkills = ({skillsContent}) => {
                                     <>
                                         <div className='flex justify-center items-center gap-[15px] w-full md:w-[145px]'>
                                             <Image className='object-contain' width={50} height={52} src={design} alt="Graphics Design" />
-                                            <p className='text-[#655D59] text-base font-normal'>Design</p>
+                                            <p className='text-grayTwo text-base font-normal'>Design</p>
                                         </div>
                                         <div className='flex justify-center items-center gap-[15px] w-full md:w-[145px]'>
                                             <Image className='object-contain' width={50} height={52} src={email} alt="Email Marketing" />
-                                            <p className='text-[#655D59] text-base font-normal'>Marketing</p>
+                                            <p className='text-grayTwo text-base font-normal'>Marketing</p>
                                         </div>
                                         <div className='flex justify-center items-center gap-[15px] w-full md:w-[145px]'>
                                             <Image className='object-contain' width={50} height={52} src={dev} alt="Development" />
-                                            <p className='text-[#655D59] text-base font-normal'>Development</p>
+                                            <p className='text-grayTwo text-base font-normal'>Development</p>
                                         </div>
                                         <div className='flex justify-center items-center gap-[15px] w-full md:w-[145px]'>
                                             <Image className='object-contain' width={50} height={52} src={pie} alt="Pie Chart" />
-                                            <p className='text-[#655D59] text-base font-normal'>Data</p>
+                                            <p className='text-grayTwo text-base font-normal'>Data</p>
                                         </div>
                                     </>
                                 ) : (
                                     <>
                                         <div className='flex flex-col justify-center items-center gap-[15px] w-full text-center'>
                                             <Image className='object-contain' width={50} height={52} src={email} alt="Email Marketing" />
-                                            <p className='text-[#655D59] text-base font-normal'>Consult with our IT training specialists with an average of 10 years of consulting experience.</p>
+                                            <p className='text-grayTwo text-base font-normal'>Consult with our IT training specialists with an average of 10 years of consulting experience.</p>
                                         </div>
                                         <div className='flex flex-col justify-center items-center gap-[15px] w-full text-center'>
                                             <Image className='object-contain' width={50} height={52} src={pie} alt="Pie Chart" />
-                                            <p className='text-[#655D59] text-base font-normal'>Understand your company and agency’s IT skill gaps and track employee progress.</p>
+                                            <p className='text-grayTwo text-base font-normal'>Understand your company and agency’s IT skill gaps and track employee progress.</p>
                                         </div>
                                         <div className='flex flex-col justify-center items-center gap-[15px] w-full text-center'>
                                             <Image className='object-contain' width={50} height={52} src={dev} alt="Development" />
-                                            <p className='text-[#655D59] text-base font-normal'>Build your IT team’s technology skills with hands-on instructors.</p>
+                                            <p className='text-grayTwo text-base font-normal'>Build your IT team’s technology skills with hands-on instructors.</p>
                                         </div>
                                         <div className='flex flex-col justify-center items-center gap-[15px] w-full text-center'>
                                             <Image className='object-contain' width={50} height={52} src={design} alt="Graphics Design" />
-                                            <p className='text-[#655D59] text-base font-normal'>Adopt technologies faster and more efficiently.</p>
+                                            <p className='text-grayTwo text-base font-normal'>Adopt technologies faster and more efficiently.</p>
                                         </div>
                                     </>
                                 )

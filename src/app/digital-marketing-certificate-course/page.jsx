@@ -32,7 +32,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Craft Seamless Digital Experiences that Delight and Inspire!</span> In today&apos;s data-driven world, mastering data science is essential for making informed decisions and solving complex problems. Haelsoft EdTech Platform&apos;s Data Science course is designed to equip you with the skills to analyze data, build predictive models, and unlock valuable insights. Whether you&apos;re looking to transition into data science or enhance your existing skills, this course will provide the practical knowledge needed to excel in a fast-paced, data-centric environment." Let me know if you'd like any further adjustments!
         </div>
     )

@@ -15,7 +15,7 @@ const CustomGetCertificate = ({header, desc, img}) => {
                 {header}
                 <div className='w-[56px] h-[4px] rounded-[4px] bg-[#F1C118]'></div>
             </div>
-            <p className='font-normal text-[#655D59] leading-[30px] text-[1rem] w-full sm:w-[328px] md:w-[442px] xl:w-[542px]'>
+            <p className='font-normal text-grayTwo leading-[30px] text-[1rem] w-full sm:w-[328px] md:w-[442px] xl:w-[542px]'>
                 {desc}
             </p>
         </div>

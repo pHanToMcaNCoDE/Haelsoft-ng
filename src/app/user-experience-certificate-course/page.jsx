@@ -30,7 +30,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Craft Seamless Digital Experiences that Delight and Inspire!</span> Haelsoft&apos;s UX Design Certificate Courses empower you to craft intuitive, user-centered designs that elevate digital experiences and drive business success. Start your journey into the dynamic world of UX design today.
         </div>
     )

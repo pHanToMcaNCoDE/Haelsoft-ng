@@ -12,7 +12,7 @@ const EarnCertificate = () => {
                 <h1 className='text-main w-full lg:w-[426px] font-semibold text-[1.5rem] lg:text-[2.063rem] leading-[50px]'>Earn a Ed-Tech<br/> Digital Marketing Certificate</h1>
                 <div className='w-[56px] h-[4px] rounded-[4px] bg-[#F1C118]'></div>
             </div>
-            <p className='text-[#655D59] text-[1rem] font-normal leading-[30px]'>
+            <p className='text-grayTwo text-[1rem] font-normal leading-[30px]'>
                 You will be eligible for a Haelsoft UX designCertificate upon the completion of your course. This is a shareable certificate that you can add to your resume to attract potential employees and add to your page on LinkedIn.
             </p>
         </div>

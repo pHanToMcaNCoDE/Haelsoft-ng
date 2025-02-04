@@ -17,6 +17,7 @@ import Community from "./Community";
 import GetStartedCourse from "./GetStartedCourse";
 
 import { courseDetails } from '@/raw-data/data';
+import CourseAccordion from "./components/CourseAccordion";
 // import Hero from "./Hero";
 // import CourseTrailer from "./CourseTrailer";
 // import CourseTutor from "../CourseTutor";
@@ -108,16 +109,17 @@ const Page = () => {
         <>
           <Hero courses={courses} />
           <CourseTrailer courses={courses} />
-          <CourseTutor courses={courses} />
-          <ImageDisplay />
+          {/* <CourseTutor courses={courses} /> */}
+          {/* <ImageDisplay /> */}
           <CourseContent courses={courses} />
           <Instructors courses={courses} />
-          <BuildYourPortfolio courses={courses} />
-          <Expectation courses={courses} />
+          {/* <BuildYourPortfolio courses={courses} /> */}
+          {/* <Expectation courses={courses} /> */}
           <OnlineClassroom courses={courses} />
-          <GraduateFeedback courses={courses} />
+          <CourseAccordion courses={courses} />
+          {/* <GraduateFeedback courses={courses} /> */}
           <Community />
-          <GetStartedCourse courses={courses} />
+          {/* <GetStartedCourse courses={courses} /> */}
         </>
       )}
     </div>

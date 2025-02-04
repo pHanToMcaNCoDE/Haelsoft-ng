@@ -32,7 +32,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Master Product Management and Drive Success!</span> In today&apos;s fast-paced market, effective product management is key to building innovative solutions and leading successful teams. Haelsoft EdTech Platform&apos;s Product Management course is designed to equip you with the skills to manage product lifecycles, define strategies, and deliver customer-driven results. Whether you&apos;re starting a career in product management or looking to refine your skills, this course will provide you with the practical tools to excel in a competitive industry.
         </div>
     )    

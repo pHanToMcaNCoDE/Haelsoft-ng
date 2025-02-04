@@ -67,7 +67,7 @@ const SignupModal = ({ signupState, setSignupState }) => {
               </button>
             </div>
           </form>
-          <p className="text-[#655D59] font-medium text-center mt-4 text-sm">
+          <p className="text-grayTwo font-medium text-center mt-4 text-sm">
             By signing up, you agree to our Terms of use and Privacy Policy{" "}
           </p>
 

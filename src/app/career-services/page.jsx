@@ -30,11 +30,11 @@ const page = () => {
   const storyContent = (
     <>
       <div className='flex flex-col'>
-        {/* <p className='text-[#655D59] uppercase text-[0.75rem] leading-[18px] font-medium'>our story</p> */}
+        {/* <p className='text-grayTwo uppercase text-[0.75rem] leading-[18px] font-medium'>our story</p> */}
         <h1 className='text-[1.625rem] font-semibold leading-[45px] text-[#F36400]'>Start Your Career</h1>
         <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
       </div>
-      <p className='text-[1rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
+      <p className='text-[1rem] leading-[24px] text-grayTwo font-normal w-full lg:w-[469px]'>
         At <span className='font-bold text-black'>Haelsoft</span>, we clearly understand the challenge of navigating the job market. Irrespective of your pursuit - whether you want to change your career to tech or someone looking to advance in your current field, our dedicated Career Services are available to support you on every step. We are driven by the passion to help you accelerate your job search and achieve your career goals.
       </p>
     </>
@@ -46,7 +46,7 @@ const page = () => {
         <h1 className='text-[1.625rem] font-semibold leading-[35px] text-[#F36400]'>Improve Your Resume And COver Letter</h1>
         <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
       </div>
-      <p className='text-[.875rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
+      <p className='text-[.875rem] leading-[24px] text-grayTwo font-normal w-full lg:w-[469px]'>
         You are not alone in pursuing your career when you partner with us. Our Career Services team knows what a recruiter looks for in the hiring process. We will help you make a powerful impression with a professionally developed resume and cover letter. Our experts at Haeltech will guide you through the latest trends and AI-powered tools to ensure your documents attract employers. We will also spend considerable time uncovering new job leads. So learn how to highlight your skills and experiences efficiently and curate tailored applications to attract employers&apos; attention.
       </p>
     </>

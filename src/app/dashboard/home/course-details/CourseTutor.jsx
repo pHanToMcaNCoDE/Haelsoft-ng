@@ -16,12 +16,12 @@ const CourseTutor = ({ courses }) => {
                     <Image className='absolute top-[8%] left-3' src={tStroke} alt='Top Stroke' />
                     <Image className='absolute bottom-[35%] md:bottom-[40%] lg:bottom-[35%] right-[18%] md:left-[45%]' src={tStroke} alt='Bottom Stroke' />
                     <div>
-                        <p className='text-[#655D59] font-semibold text-[1.125rem] leading-[43px] lg:w-[517px] lg:h-[215px]'>
+                        <p className='text-grayTwo font-semibold text-[1.125rem] leading-[43px] lg:w-[517px] lg:h-[215px]'>
                             This course has been an eye-opener for me! The explanations are clear, and the practical examples really helped solidify my understanding. Highly recommended for anyone looking to deepen their knowledge.
                         </p>
                         <div className='my-4'>
                             <h1 className='text-[#201A18] text-[1.5rem] leading-[43px] font-bold'>Janet Jackson</h1>
-                            <p className='text-base text-[#655D59] font-medium leading-[43px]'>Administrator at Carlcare</p>
+                            <p className='text-base text-grayTwo font-medium leading-[43px]'>Administrator at Carlcare</p>
                         </div>
                     </div>
                     <Image className='absolute right-[310px] lg:flex hidden' width={256} height={436} src={obj} alt='Decoration Object' />
@@ -45,7 +45,7 @@ const CourseTutor = ({ courses }) => {
                                 <Image className='object-cover' width={45} height={45} src={benefit.img} alt={benefit.title} />
                                 <div className='flex flex-col justify-start items-start'>
                                     <h1 className='text-[#201A18] text-[1.125rem] font-semibold leading-[46px]'>{benefit.title}</h1>
-                                    <p className='text-[#655D59] md:w-[473px] text-[1.125rem] leading-[30px] font-semibold h-[46px]'>{benefit.desc}</p>
+                                    <p className='text-grayTwo md:w-[473px] text-[1.125rem] leading-[30px] font-semibold h-[46px]'>{benefit.desc}</p>
                                 </div>
                             </div>
                         )))}

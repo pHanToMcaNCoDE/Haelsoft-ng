@@ -28,10 +28,10 @@ const GraduateFeedback = ({ courses }) => {
                                     <Image width={80} height={80} className='object-cover' src={reviewImg} alt={review.name} />
                                     <div className='flex flex-col justify-start items-start'>
                                         <h1 className='text-[#201A18] text-[1.5rem] font-semibold leading-[43px]'>{review.name}</h1>
-                                        <p className='text-[#655D59] text-[1.125rem] font-normal leading-[43px]'>Software Developer-Haelsoft</p>
+                                        <p className='text-grayTwo text-[1.125rem] font-normal leading-[43px]'>Software Developer-Haelsoft</p>
                                     </div>
                                 </div>
-                                <p className='h-[258px] font-medium text-[1.125rem] text-[#655D59] leading-[43px]'>
+                                <p className='h-[258px] font-medium text-[1.125rem] text-grayTwo leading-[43px]'>
                                     {review.review}
                                 </p>
                             </div>

@@ -46,10 +46,10 @@ const page = () => {
 
         <section className='py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10'>
            <div className='w-full xl:w-[838px] flex flex-col justify-center items-start gap-10'>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     Product Management sits at the intersection of business, technology, and customer experience, making it a dynamic and highly rewarding career:
                 </p>
-                <ul className='list-disc ml-6 text-[#655D59] text-base font-normal leading-[30px]'>
+                <ul className='list-disc ml-6 text-grayTwo text-base font-normal leading-[30px]'>
                     <li>High Demand: Businesses need skilled product managers to launch successful products.</li>
                     <li>Leadership Opportunities: Own the vision, strategy, and execution of impactful products.</li>
                     <li>Competitive Salaries: Enjoy attractive compensation with room for growth.</li>
@@ -57,7 +57,7 @@ const page = () => {
                 </ul>
                 <div className='flex flex-col justify-center items-start gap-2'>
                     <h2 className='text-[#201A18] text-base leading-[30px] font-normal'>Why Learn Product Management with Haelsoft EdTech?</h2>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Haelsoft EdTech equips you with the expertise and real-world knowledge to excel as a product manager.
                     </p>
                 </div>
@@ -71,7 +71,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Gain mastery in product development, strategy, and stakeholder management.
                         </p>
                     </div>
@@ -84,7 +84,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Build a portfolio of case studies and projects that showcase your decision-making and strategic thinking.
                         </p>
                     </div>
@@ -97,7 +97,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Learn from seasoned product managers with years of hands-on industry experience.
                         </p>
                     </div>
@@ -110,7 +110,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Study at your own pace with 24/7 access to our online platform and optional live sessions.
                         </p>
                     </div>
@@ -123,7 +123,7 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Receive resume reviews, mentorship, and interview coaching to land your dream role.
                         </p>
                     </div>
@@ -137,10 +137,10 @@ const page = () => {
                     </div>
                     
                     <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[977px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Our program is designed to provide practical, job-ready skills:
                         </p>
-                        <ul className='list-disc ml-6 text-[#655D59] text-base font-normal leading-[30px]'>
+                        <ul className='list-disc ml-6 text-grayTwo text-base font-normal leading-[30px]'>
                             <li>Product Roadmaps: Learn to define and communicate product visions and goals.</li>
                             <li>Market Research: Identify opportunities and understand user needs.</li>
                             <li>Agile Methodologies: Master frameworks like Scrum and Kanban for efficient product development.</li>
@@ -157,7 +157,7 @@ const page = () => {
                     <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Who Should Enroll?</h1>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <ul className='list-disc ml-6 text-[#655D59] text-base font-normal leading-[30px]'>
+                <ul className='list-disc ml-6 text-grayTwo text-base font-normal leading-[30px]'>
                     <li>Aspiring product managers looking to break into the field.</li>
                     <li>Professionals in tech, marketing, or design aiming to transition to product management.</li>
                     <li>Entrepreneurs building and managing their own products.</li>
@@ -170,7 +170,7 @@ const page = () => {
                     Program Details:
                 </h2>
                 <div className='flex flex-col justify-center items-start gap-4'>
-                    <ul className='list-disc ml-6 text-[#655D59] text-base font-normal leading-[30px]'>
+                    <ul className='list-disc ml-6 text-grayTwo text-base font-normal leading-[30px]'>
                         <li>Duration: 3-6 months (self-paced)</li>
                         <li>Format: 100% Online with live mentoring sessions available</li>
                         <li>Investment: Flexible payment options to fit your budget</li>

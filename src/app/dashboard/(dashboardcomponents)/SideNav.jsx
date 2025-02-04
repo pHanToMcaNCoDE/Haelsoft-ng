@@ -40,7 +40,7 @@ const SideNav = ({ state, setstate }) => {
               className={`  ${
                 pathname === "/dashboard/home"
                   ? "text-[#F36400] font-medium"
-                  : "text-[#655D59] font-normal"
+                  : "text-grayTwo font-normal"
               } text-sm leading-[21px] `}
             >
               Home
@@ -66,20 +66,20 @@ const SideNav = ({ state, setstate }) => {
                 className={` ${
                   pathname === "/dashboard/courses"
                     ? "text-[#F36400] font-medium"
-                    : "text-[#655D59] font-normal "
+                    : "text-grayTwo font-normal "
                 } text-sm leading-[21px] `}
               >
                 My Courses
               </div>
             </Link>{" "}
             <div className="flex px-4 mt-2 min-h-[74px] gap-x-3">
-              <div className="flex flex-col border-l-[3px] w-full px-4 border-l-[#F36400] justify-between py-1 text-sm text-[#655D59] font-normal ">
+              <div className="flex flex-col border-l-[3px] w-full px-4 border-l-[#F36400] justify-between py-1 text-sm text-grayTwo font-normal ">
                 <Link
                   href={"/dashboard/courses/incompletedcourses"}
                   className={` h-[50%]  flex items-center justify-start ${
                     pathname === "/dashboard/courses/incompletedcourses"
                       ? "text-[#F36400] font-medium"
-                      : "text-[#655D59] font-normal"
+                      : "text-grayTwo font-normal"
                   }`}
                 >
                   Incomplete
@@ -89,7 +89,7 @@ const SideNav = ({ state, setstate }) => {
                   className={` h-[50%] flex items-center justify-start text-start ${
                     pathname === "/dashboard/courses/completedcourses"
                       ? "text-[#F36400] font-medium"
-                      : "text-[#655D59] font-normal"
+                      : "text-grayTwo font-normal"
                   }`}
                 >
                   Complete
@@ -112,14 +112,14 @@ const SideNav = ({ state, setstate }) => {
               className={`  ${
                 pathname === "/dashboard/business"
                   ? "text-[#F36400] font-medium"
-                  : "text-[#655D59] font-normal"
+                  : "text-grayTwo font-normal"
               } text-sm leading-[21px] `}
             >
               Business
             </div>
           </Link>
         </div>
-        <div className="absolute bottom-4 flex text-[#655D59] flex-col gap-y-4">
+        <div className="absolute bottom-4 flex text-grayTwo flex-col gap-y-4">
           <div className="flex text-xl gap-x-4 items-center">
             <TiCogOutline /> <span className="text-sm">Settings</span>
           </div>
@@ -173,7 +173,7 @@ const SideNav = ({ state, setstate }) => {
               className={`  ${
                 pathname === "/dashboard/home"
                   ? "text-[#F36400] font-medium"
-                  : "text-[#655D59] font-normal"
+                  : "text-grayTwo font-normal"
               } text-sm leading-[21px] `}
             >
               Home
@@ -202,14 +202,14 @@ const SideNav = ({ state, setstate }) => {
                 className={` ${
                   pathname === "/dashboard/courses"
                     ? "text-[#F36400] font-medium"
-                    : "text-[#655D59] font-normal "
+                    : "text-grayTwo font-normal "
                 } text-sm leading-[21px] `}
               >
                 My Courses
               </div>
             </Link>{" "}
             <div className="flex px-4 mt-2 min-h-[74px] gap-x-3">
-              <div className="flex flex-col border-l-[3px] w-full px-4 border-l-[#F36400] justify-between py-1 text-sm text-[#655D59] font-normal ">
+              <div className="flex flex-col border-l-[3px] w-full px-4 border-l-[#F36400] justify-between py-1 text-sm text-grayTwo font-normal ">
                 <Link
                   onClick={() => {
                     setstate(false);
@@ -218,7 +218,7 @@ const SideNav = ({ state, setstate }) => {
                   className={` h-[50%]  flex items-center justify-start ${
                     pathname === "/dashboard/courses/uncompletedcourses"
                       ? "text-[#F36400] font-medium"
-                      : "text-[#655D59] font-normal"
+                      : "text-grayTwo font-normal"
                   }`}
                 >
                   Incomplete
@@ -231,7 +231,7 @@ const SideNav = ({ state, setstate }) => {
                   className={` h-[50%] flex items-center justify-start text-start ${
                     pathname === "/dashboard/courses/completedcourses"
                       ? "text-[#F36400] font-medium"
-                      : "text-[#655D59] font-normal"
+                      : "text-grayTwo font-normal"
                   }`}
                 >
                   Complete
@@ -257,14 +257,14 @@ const SideNav = ({ state, setstate }) => {
               className={`  ${
                 pathname === "/dashboard/business"
                   ? "text-[#F36400] font-medium"
-                  : "text-[#655D59] font-normal"
+                  : "text-grayTwo font-normal"
               } text-sm leading-[21px] `}
             >
               Business
             </div>
           </Link>{" "}
         </div>
-        <div className="absolute bottom-4 flex text-[#655D59] flex-col gap-y-4">
+        <div className="absolute bottom-4 flex text-grayTwo flex-col gap-y-4">
           <div className="flex text-xl gap-x-4 items-center">
             <TiCogOutline /> <span className="text-sm">Settings</span>
           </div>

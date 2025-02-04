@@ -111,7 +111,7 @@ const Hero = ({ courses }) => {
                 {courses?.course_title}
               </h1>
               <p className="text-[1rem] leading-8 font-medium text-white w-full">
-                {courses?.description || courses?.intro}
+                {courses?.intro}
               </p>
 
               <Link
@@ -188,7 +188,7 @@ const Hero = ({ courses }) => {
                   </div>
                   <p className="text-lg mt-8">This courses includes:</p>
                 </div>
-                <div className="mt-5 w-full gap-8 flex flex-col justify-center items-start text-[#655D59]">
+                <div className="mt-5 w-full gap-8 flex flex-col justify-center items-start text-grayTwo">
                   {Array.isArray(courses.includes) && courses.includes.length > 0 ? (
                     courses.includes.map((include, index) => (
                       <div key={index} className="flex justify-start items-end gap-3">
@@ -205,7 +205,7 @@ const Hero = ({ courses }) => {
                 </div>
               </div>
               <button
-                className="py-8 flex justify-center items-center h-[72px] rounded-bl-[30px] rounded-br-[30px] w-full text-white bg-main"
+                className="py-8 flex justify-center items-center h-[72px] rounded-bl-[30px] rounded-br-[30px] w-full text-white font-semibold bg-main"
                 onClick={handleAddToCart}
               >
                 Add To Cart
@@ -230,7 +230,7 @@ const Hero = ({ courses }) => {
                 className={`${
                   tabClicked === tab
                     ? "bg-[#F36400] text-white font-semibold"
-                    : "bg-transparent text-[#655D59] font-normal"
+                    : "bg-transparent text-grayTwo font-normal"
                 } py-2 px-[10px] rounded-[4px] text-[.875rem] leading-[43px] cursor-pointer h-[59px] flex justify-center items-center`}
               >
                 {tab}
@@ -244,18 +244,35 @@ const Hero = ({ courses }) => {
               <h1 className="text-3xl text-black font-bold">About this course</h1>
               {/* <div className="w-[75px] h-[4px] bg-yellow-400 rounded"></div> */}
             </div>
-            {courses.course_overview && (() => {
+            {courses.course_overview ? (() => {
               const sentences = courses.course_overview.split(". ");
               const firstParagraph = sentences.slice(0, 4).join(". ") + ".";
               const secondParagraph = sentences.slice(5).join(". ");
 
               return (
                 <div className="flex flex-col justify-center items-start gap-6">
-                  <p className="text-black font-medium text-[1rem] leading-[30px] tracking-[.5px] w-full lg:w-[600px]">
+                  <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
                     {firstParagraph}
                   </p>
                   {secondParagraph && (
-                    <p className="text-black font-medium text-[1rem] leading-[30px] tracking-[.5px] w-full lg:w-[600px]">
+                    <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
+                      {secondParagraph}
+                    </p>
+                  )}
+                </div>
+              );
+            })() : (() => {
+              const sentences = courses.description.split(". ");
+              const firstParagraph = sentences.slice(0, 4).join(". ") + ".";
+              const secondParagraph = sentences.slice(5).join(". ");
+
+              return (
+                <div className="flex flex-col justify-center items-start gap-6">
+                  <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
+                    {firstParagraph}
+                  </p>
+                  {secondParagraph && (
+                    <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
                       {secondParagraph}
                     </p>
                   )}
@@ -269,7 +286,7 @@ const Hero = ({ courses }) => {
                 courses.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-center gap-2 mt-4">
                     <GrCheckmark className="text-[#FF8C53]" />
-                    <p className="text-[#655D59] font-medium text-lg">
+                    <p className="text-grayTwo font-medium text-lg">
                       {benefit.title}
                     </p>
                   </div>

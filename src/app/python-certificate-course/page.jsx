@@ -32,7 +32,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Unlock Your Potential with Python – The World&apos;s Most Versatile Programming Language!</span> In today&apos;s fast-evolving tech landscape, mastering Python is essential for building versatile and scalable solutions. Haelsoft EdTech Platform&apos;s Python course is designed to equip you with the skills to code efficiently, solve complex problems, and develop cutting-edge applications. Whether you&apos;re starting your coding journey or aiming to refine your Python expertise, this course will provide you with the practical knowledge needed to thrive in the programming world.
         </div>
     )    

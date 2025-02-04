@@ -51,7 +51,7 @@ const Lessons = ({
             (isClickable && isSelected) || isHovered ? " bg-main" : "bg-white"
           }`}
         ></div>
-        <div className="flex-1 text-[#655D59] py-3 ">
+        <div className="flex-1 text-grayTwo py-3 ">
           <p className="flex gap-x-2 i">
             {isClickable ? (
               lesson.pdf_file ? (

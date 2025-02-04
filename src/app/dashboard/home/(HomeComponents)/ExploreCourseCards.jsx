@@ -54,10 +54,10 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
                   value={rating || 0}
                   onChange={setRating}
                 />
-                <p className="text-[#655D59] text-base text-[.75rem]">(1000)</p>
+                <p className="text-grayTwo text-base text-[.75rem]">(1000)</p>
               </div>
               <div className="flex flex-col justify-center items-start gap-2">
-                <p className="text-[#655D59] font-bold text-lg text-[.75rem]">
+                <p className="text-grayTwo font-bold text-lg text-[.75rem]">
                   ₦{course.price || "N/A"}
                 </p>
                 <Link

@@ -61,7 +61,7 @@ const CourseCards = () => {
                       item.id === 3 ? (<>{item.icon}</>) : (<Image className="w-11 h-11" src={item.icon} alt="Icon" />)
                     }
                     <div className='flex flex-col justify-center items-start gap-y-2'>
-                      <p className="text-[1.3rem] text-[#655D59] font-semibold leading-[46px]">
+                      <p className="text-[1.3rem] text-grayTwo font-semibold leading-[46px]">
                         {item.title}
                       </p>
                       <Link href={item.route} className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white">

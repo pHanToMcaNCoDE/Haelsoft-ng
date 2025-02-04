@@ -44,7 +44,7 @@ const page = () => {
 
             <section className='py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10'>
                 <div className='w-full xl:w-[977px] flex flex-col justify-center items-start gap-10'>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         The journey of a thousand miles begins with a single step. If you aspire to be a Web Developer, start by focusing on foundational skills, building real-world projects, and embracing continuous learning.
                     </p>
                     <div className='flex flex-col justify-center items-start gap-2'>
@@ -52,7 +52,7 @@ const page = () => {
                             <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>How to become a Web Developer:</h1>
                             <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                         </div>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Start by exploring the various disciplines of Web Developering, such as frontend, backend, and mobile development. Choose the path that excites you the most and aligns with your career aspirations.
                         </p>
                     </div>
@@ -104,7 +104,7 @@ const page = () => {
                         </div>
                         <div className='flex flex-col justify-center items-start gap-2'>
                             {texts.map((text, idx) => (
-                                <p key={idx} className='text-[#655D59] text-base font-normal leading-[30px]'>{text}</p>
+                                <p key={idx} className='text-grayTwo text-base font-normal leading-[30px]'>{text}</p>
                             ))}
                         </div>
                     </div>

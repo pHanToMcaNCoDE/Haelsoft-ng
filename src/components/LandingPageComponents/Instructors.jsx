@@ -13,7 +13,7 @@ const Instructors = () => {
         <h1 className="text-white text-[2.125rem] font-bold leading-[36px]">
           Part-Time Certificate Courses
         </h1>
-        <p className='w-full lg:w-[1040px] text-center text-base text-[#655D59]'>
+        <p className='w-full lg:w-[1040px] text-center text-base text-grayTwo'>
           Our team of seasoned professionals brings extensive industry experience and expertise to guide your learning journey. They are dedicated to providing valuable insights, personalized support, and real-world knowledge to help you succeed.
         </p>
       </div>

@@ -5738,3 +5738,57 @@ export const testimonials = [
         comment: 'Have been in Haelsoft Digital Marketing training, I\'m equipped with various digital strategies, content Marketing approaches in optimizing analytics to aid conversions for my business. The trainer is really a professional with vast helpful strategies.'
     },
 ]
+
+
+export const courseDetailsFaqs = [
+    {
+      id: 1,
+      title: 'Who can enroll in these courses?',
+      description: 'Our courses are designed to be accessible to everyone, whether you are a beginner looking to start a new skill or an experienced professional aiming to upskill. We offer courses tailored for different experience levels, so there’s something for everyone.'
+    },
+    {
+      id: 2,
+      title: 'Do I need any prior experience to take a course?',
+      description: 'The requirements vary depending on the course. Some courses are designed for complete beginners with no prior experience, while others may require a basic understanding of the subject. Course descriptions provide details on any prerequisites you may need before enrolling.'
+    },
+    {
+      id: 3,
+      title: 'Are the courses self-paced or instructor-led?',
+      description: 'Most of our courses are self-paced, allowing you to learn at your convenience. This means you can start, pause, and resume lessons whenever it suits you. However, some courses may include live sessions with instructors, interactive webinars, or scheduled assignments that follow a structured timeline.'
+    },
+    {
+      id: 4,
+      title: 'Will I receive a certificate after completing a course?',
+      description: 'Yes, upon successfully completing a course, you will receive a certificate of completion. This certificate can be used to showcase your skills to potential employers, added to your resume, or shared on professional networks like LinkedIn to boost your credibility in your field.'
+    },
+    {
+      id: 5,
+      title: 'Can I enroll in multiple courses at the same time?',
+      description: 'Yes, you can enroll in multiple courses simultaneously and progress through them at your own pace. This allows you to expand your knowledge in different areas and complete courses based on your schedule and learning preferences.'
+    },
+    {
+      id: 6,
+      title: 'Are the courses mobile-friendly?',
+      description: 'Absolutely! Our courses are designed to be fully responsive and accessible across various devices, including desktops, tablets, and smartphones. You can continue your learning journey from anywhere, whether at home or on the go, without compromising the learning experience.'
+    },
+    {
+      id: 7,
+      title: 'Is there a deadline to complete a course?',
+      description: 'No, there is no fixed deadline to complete most courses. Since they are self-paced, you can take as much time as you need to go through the materials, complete assignments, and review concepts at your convenience. However, courses with live sessions may have specific schedules you need to follow.'
+    },
+    {
+      id: 8,
+      title: 'What happens if I forget my login details?',
+      description: 'If you forget your password or login details, you can easily reset your credentials using the "Forgot Password" option on the login page. A password reset link will be sent to your registered email address, allowing you to create a new password and regain access to your account.'
+    },
+    {
+      id: 9,
+      title: 'Do I need to install any software for the courses?',
+      description: 'Some courses may require specific software or tools, depending on the subject matter. Any required software will be mentioned in the course details, along with recommendations for free or trial versions where available. We also provide guidance on installation and setup to ensure a smooth learning experience.'
+    },
+    {
+      id: 10,
+      title: 'How do I track my progress?',
+      description: 'Your progress is automatically saved as you go through the course. You can monitor your learning journey using the progress bar on the watch page, which visually indicates how much of the course you’ve completed. Additionally, your dashboard provides an overview of completed lessons, upcoming tasks, and any assignments that need to be submitted.'
+    },
+];

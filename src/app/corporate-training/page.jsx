@@ -56,13 +56,13 @@ const page = () => {
   const why = (
     <div className="flex flex-col justify-center items-start gap-4 w-full lg:w-[50%] xl:mt-[100px]">
       <h1 className="text-[#201A18] leading-[42px] font-bold text-[1.75rem] mb-8">Our Corporate Training Solutions Include</h1>
-      <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[774px]">
+      <p className="text-grayTwo text-[1.125rem] leading-[43px] font-medium w-full xl:w-[774px]">
         Empower your workforce with comprehensive leadership development programs designed to inspire, navigate change effectively, and drive organizational success. We equip your leaders with the tools needed to foster innovation and resilience in a competitive business environment.
       </p>
-      <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[774px]">
+      <p className="text-grayTwo text-[1.125rem] leading-[43px] font-medium w-full xl:w-[774px]">
         Equip your teams with the technical skills needed to stay ahead in today’s rapidly evolving industries. Our training ensures your employees are adept at utilizing cutting-edge tools and technologies to enhance productivity and innovation.
       </p>
-      <p className="text-[#655D59] text-[1.125rem] leading-[43px] font-medium w-full xl:w-[774px]">
+      <p className="text-grayTwo text-[1.125rem] leading-[43px] font-medium w-full xl:w-[774px]">
         Enhance your organization's communication, teamwork, and problem-solving capabilities through our soft skills enhancement programs. These tailored solutions foster collaboration, adaptability, and effective interpersonal interactions.
       </p>
     </div>

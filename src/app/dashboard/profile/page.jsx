@@ -13,28 +13,28 @@ const Profile = () => {
             </div>
             <div className='w-full lg:w-[923px] min-h-screen flex flex-col justify-center items-start gap-[32px]'>
                 <div className='w-full flex flex-col justify-center items-start gap-[8px]'>
-                    <h1 className='text-[#655D59] leading-[29.26px] font-semibold text-[1.5rem]'>Full name</h1>
+                    <h1 className='text-grayTwo leading-[29.26px] font-semibold text-[1.5rem]'>Full name</h1>
                     <form className='p-[24px] w-full bg-white border-[2px] border-[#F7F7F7] rounded h-full md:h-[289px]' action="">
                         <div className='flex flex-col justify-center items-start gap-[8px]'>
-                            <h1 className='text-[#655D59] leading-[46px] font-medium text-[1.125rem]'>First name</h1>
+                            <h1 className='text-grayTwo leading-[46px] font-medium text-[1.125rem]'>First name</h1>
                             <input className='bg-[#F0F0F0] p-[10px] h-[56px] gap-[10px] rounded w-full' type="text" name="" id="" />
                         </div>
                         <div className='flex flex-col justify-center items-start gap-[8px]'>
-                            <h1 className='text-[#655D59] leading-[46px] font-medium text-[1.125rem]'>Last name</h1>
+                            <h1 className='text-grayTwo leading-[46px] font-medium text-[1.125rem]'>Last name</h1>
                             <input className='bg-[#F0F0F0] p-[10px] h-[56px] gap-[10px] rounded w-full' type="text" name="" id="" />
                         </div>
                     </form>
                 </div>
                 <div className='w-full flex flex-col justify-center items-start gap-[8px]'>
                     <div className='flex justify-between items-center w-full'>
-                        <h1 className='text-[#655D59] leading-[29.26px] font-semibold text-[1.5rem]'>Headline</h1>
+                        <h1 className='text-grayTwo leading-[29.26px] font-semibold text-[1.5rem]'>Headline</h1>
                         <h1 className='text-[#7F7571] leading-[19.5px] font-normal text-[1rem]'>Optional</h1>
                     </div>
                     <form className='p-[24px] w-full bg-white border-[2px] border-[#F7F7F7] rounded h-full md:h-[184px]' action="">
                         <div className='flex flex-col justify-center items-start gap-[8px]'>
                             <div className='w-full flex justify-between items-center'>
-                                <h1 className='text-[#655D59] leading-[46px] font-medium text-[1.125rem]'>Professional Headine</h1>
-                                <h1 className='text-[#655D59] leading-[46px] font-medium text-[1.125rem]'>80 words</h1>
+                                <h1 className='text-grayTwo leading-[46px] font-medium text-[1.125rem]'>Professional Headine</h1>
+                                <h1 className='text-grayTwo leading-[46px] font-medium text-[1.125rem]'>80 words</h1>
                             </div>
                                 <input className='bg-[#F0F0F0] p-[10px] placeholder:text-[#7F7571] text-[1.125rem] placeholder:text-[1.125rem] h-[56px] gap-[10px] rounded w-full' placeholder='Add work experience here' type="text" name="" id="" />
                         </div>
@@ -42,13 +42,13 @@ const Profile = () => {
                 </div>
                 <div className='w-full flex flex-col justify-center items-start gap-[8px]'>
                     <div className='flex justify-between items-center w-full'>
-                        <h1 className='text-[#655D59] leading-[29.26px] font-semibold text-[1.5rem]'>Credentials</h1>
+                        <h1 className='text-grayTwo leading-[29.26px] font-semibold text-[1.5rem]'>Credentials</h1>
                         <h1 className='text-[#7F7571] leading-[19.5px] font-normal text-[1rem]'>Optional</h1>
                     </div>
                     <form className='p-[24px] w-full bg-white border-[2px] border-[#F7F7F7] rounded h-full md:h-[184px]' action="">
                         <div className='flex flex-col justify-center items-start gap-[8px]'>
                             <div className='w-full flex justify-between items-center'>
-                                <h1 className='text-[#655D59] leading-[46px] font-medium text-[1.125rem]'>Certificates</h1>
+                                <h1 className='text-grayTwo leading-[46px] font-medium text-[1.125rem]'>Certificates</h1>
                             </div>
                             <input className='bg-[#F0F0F0] p-[10px] placeholder:text-[#7F7571] text-[1.125rem] placeholder:text-[1.125rem] h-[56px] gap-[10px] rounded w-full' placeholder='Add certificates here' type="text" name="" id="" />
                         </div>
@@ -56,12 +56,12 @@ const Profile = () => {
                 </div>
                 <div className='w-full flex flex-col justify-center items-start gap-[8px]'>
                     <div className='flex justify-between items-center w-full'>
-                        <h1 className='text-[#655D59] leading-[29.26px] font-semibold text-[1.5rem]'>Courses</h1>
+                        <h1 className='text-grayTwo leading-[29.26px] font-semibold text-[1.5rem]'>Courses</h1>
                     </div>
                     <form className='p-[24px] w-full bg-white border-[2px] border-[#F7F7F7] rounded h-full md:h-[184px]' action="">
                         <div className='flex flex-col justify-center items-start gap-[8px]'>
                             <div className='w-full flex justify-between items-center'>
-                                <h1 className='text-[#655D59] leading-[46px] font-medium text-[1.125rem]'>Completed Courses</h1>
+                                <h1 className='text-grayTwo leading-[46px] font-medium text-[1.125rem]'>Completed Courses</h1>
                             </div>
                             <input className='bg-[#F0F0F0] p-[10px] placeholder:text-[#7F7571] text-[1.125rem] placeholder:text-[1.125rem] h-[56px] gap-[10px] rounded w-full' placeholder='Add certificates here' type="text" name="" id="" />
                         </div>
@@ -69,7 +69,7 @@ const Profile = () => {
                 </div>
                 <div className='w-full flex flex-col justify-center items-start gap-[8px]'>
                     <div className='flex justify-between items-center w-full'>
-                        <h1 className='text-[#655D59] leading-[29.26px] font-semibold text-[1.5rem]'>Links</h1>
+                        <h1 className='text-grayTwo leading-[29.26px] font-semibold text-[1.5rem]'>Links</h1>
                         <h1 className='text-[#7F7571] leading-[19.5px] font-normal text-[1rem]'>Optional</h1>
                     </div>
                     <form className='w-full flex flex-col justify-center px-[24px] py-[12px] items-start gap-[24px] bg-white border-[2px] border-[#F7F7F7] rounded h-full md:h-[487px]' action="">

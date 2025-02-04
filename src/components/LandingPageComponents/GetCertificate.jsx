@@ -15,7 +15,7 @@ const GetCertificate = ({header}) => {
                 {header}
                 <div className='w-[56px] h-[4px] rounded-[4px] bg-[#F1C118]'></div>
             </div>
-            <p className='font-normal text-[#655D59] leading-[30px] text-[1rem] w-full xl:w-[542px]'>
+            <p className='font-normal text-grayTwo leading-[30px] text-[1rem] w-full xl:w-[542px]'>
                 <span className='font-semibold'>Lead with Impact, Innovate with Strategy, and Drive Results</span> In today&apos;s dynamic business environment, effective marketing leadership is the cornerstone of brand success and growth. Haelsoft EdTech Platform&apos;s Marketing Leadership course is designed to transform you into a visionary marketing leader who can craft strategies, inspire teams, and deliver measurable results. Whether you&apos;re an experienced marketer aiming to take on leadership roles or a professional transitioning into marketing, this course will provide the skills and insights needed to lead in a rapidly evolving marketing landscape.
             </p>
         </div>

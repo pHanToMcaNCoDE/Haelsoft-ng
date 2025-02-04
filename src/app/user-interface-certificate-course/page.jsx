@@ -30,7 +30,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Create Stunning, User-Friendly Interfaces That Engage and Delight!</span> Haelsoft's UI Design Certificate Courses equip you with the skills to create visually stunning and user-friendly interfaces that captivate users and drive business growth. Begin your journey into the creative world of UI design today.
         </div>
     )

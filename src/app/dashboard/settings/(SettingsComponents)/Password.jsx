@@ -13,7 +13,7 @@ const Password = () => {
         <div className="flex flex-col lg:flex-row justify-between w-full items-start gap-10">
           <div className="w-full flex flex-col justify-center items-start">
             <label
-              className="text-[#655D59] text-[1.125rem] font-medium leading-[46px]"
+              className="text-grayTwo text-[1.125rem] font-medium leading-[46px]"
               htmlFor="Full Name"
             >
               Full Name
@@ -27,7 +27,7 @@ const Password = () => {
           </div>
           <div className="w-full flex flex-col justify-center items-start">
             <label
-              className="text-[#655D59] text-[1.125rem] font-medium leading-[46px]"
+              className="text-grayTwo text-[1.125rem] font-medium leading-[46px]"
               htmlFor="Email address"
             >
               Email address
@@ -41,7 +41,7 @@ const Password = () => {
           </div>
           <div className="w-full flex flex-col justify-center items-start">
             <label
-              className="text-[#655D59] text-[1.125rem] font-medium leading-[46px]"
+              className="text-grayTwo text-[1.125rem] font-medium leading-[46px]"
               htmlFor="Full Name"
             >
               Mobiel number
@@ -68,7 +68,7 @@ const Password = () => {
         <div className="flex flex-col lg:flex-row justify-between w-full items-start gap-[3.5em]">
           <div className="w-full flex flex-col justify-center items-start">
             <label
-              className="text-[#655D59] text-[1.125rem] font-medium leading-[46px]"
+              className="text-grayTwo text-[1.125rem] font-medium leading-[46px]"
               htmlFor="Full Name"
             >
               Mobiel number
@@ -82,7 +82,7 @@ const Password = () => {
           </div>
           <div className="w-full flex flex-col justify-center items-start">
             <label
-              className="text-[#655D59] text-[1.125rem] font-medium leading-[46px]"
+              className="text-grayTwo text-[1.125rem] font-medium leading-[46px]"
               htmlFor="Country"
             >
               Country

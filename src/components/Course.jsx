@@ -7,8 +7,8 @@ const Course = () => {
     <div>
       <div className="h-[440px] max-w-[406px] flex-col flex rounded-[4px]">
         <Image src={thumbnail} alt="thumbnail" className="rounded-t-[4px]"/>
-        <div className="bg-white text-[#655D59] flex-1 px-4 pt-8 rounded-b-[4px] ">
-          <p className="text-[#655D59] text-[18px] font-semibold">Search Engine Optimization Online Course</p>
+        <div className="bg-white text-grayTwo flex-1 px-4 pt-8 rounded-b-[4px] ">
+          <p className="text-grayTwo text-[18px] font-semibold">Search Engine Optimization Online Course</p>
           <div className="flex items-center gap-x-2 text-[12px] font-medium mt-4 text-[#655D59">
             <span>4.8 rattings</span>
             <div className="flex items-center">

@@ -30,7 +30,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Master the Future of Technology with Artificial Intelligence!</span> Haelsoft's AI Certificate Courses provide you with the knowledge and skills to harness the power of artificial intelligence, from machine learning to natural language processing. Start your journey into the transformative world of AI today.
         </div>
     )

@@ -30,14 +30,14 @@ const page = () => {
   const storyContent = (
     <>
       <div className='flex flex-col'>
-        {/* <p className='text-[#655D59] uppercase text-[0.75rem] leading-[18px] font-medium'>our story</p> */}
+        {/* <p className='text-grayTwo uppercase text-[0.75rem] leading-[18px] font-medium'>our story</p> */}
         <h1 className='text-[1.625rem] font-semibold leading-[45px] text-[#F36400]'>Talk with our Experts</h1>
         <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
       </div>
-      <p className='text-[1rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
+      <p className='text-[1rem] leading-[24px] text-grayTwo font-normal w-full lg:w-[469px]'>
         <span className='font-bold text-black'>Haelsoft</span> addresses your unique needs and delivers a continuous cycle of IT training that aligns with the job roles, experience levels, and goals of your company as well as those of the Federal, State, or Local Government agencies/departments. You will work with our consultants and technology subject matter experts to help them understand your objectives, and they can design, develop, and deliver custom-built IT training programs.
       </p>
-      {/* <p className='text-[1rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
+      {/* <p className='text-[1rem] leading-[24px] text-grayTwo font-normal w-full lg:w-[469px]'>
         This realization inspired us to take a bold step: the creation of the Haelsoft EdTech Platform. Our journey began with a vision to empower Africa’s 54 nations with cutting-edge, accessible education for all—small businesses, ambitious entrepreneurs, professionals striving for growth, and even governments seeking innovative solutions for public service.
       </p> */}
     </>
@@ -49,10 +49,10 @@ const page = () => {
         <h1 className='text-[1.625rem] font-semibold leading-[35px] text-[#F36400]'>Make Your IT Training Decisions Faster, Easier, and Better</h1>
         <div className='bg-[#F1C118] h-[4px] w-[56px] rounded'></div>
       </div>
-      <p className='text-[.875rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
+      <p className='text-[.875rem] leading-[24px] text-grayTwo font-normal w-full lg:w-[469px]'>
         It can sometimes be slow and difficult to stay atop IT training. This is because finding which courses you need or where to go for training can be challenging. But you can make the decision simpler for you with Haeltech as you have one source for your IT strategy, planning, and delivery.
       </p>
-      {/* <p className='text-[.875rem] leading-[24px] text-[#655D59] font-normal w-full lg:w-[469px]'>
+      {/* <p className='text-[.875rem] leading-[24px] text-grayTwo font-normal w-full lg:w-[469px]'>
         Today, the Haelsoft EdTech Platform stands as a testament to our belief that education is the key to unlocking Africa’s potential. By combining advanced technology with culturally relevant and impactful content, we are transforming lives and building the future of Africa, one learner at a time.
       </p> */}
     </>

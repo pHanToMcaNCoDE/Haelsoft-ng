@@ -50,10 +50,10 @@ const page = () => {
                     <h1 className='text-[#201A18] leading-[34.13px] text-[1.75rem] font-bold'>Why Choose a Career in UX Design?</h1>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     UX design is at the heart of creating intuitive and engaging digital experiences. A career in this field offers:
                 </p>
-                <ul className='list-disc list-inside text-[#655D59]'>
+                <ul className='list-disc list-inside text-grayTwo'>
                     <li>High Demand: Companies prioritize user experience to stay competitive.</li>
                     <li>Creative Problem-Solving: Combine empathy, creativity, and strategy to craft impactful solutions.</li>
                     <li>Dynamic Work: Collaborate with developers, product teams, and stakeholders.</li>
@@ -68,7 +68,7 @@ const page = () => {
                     </h2>                    
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <ul className='list-decimal list-inside text-[#655D59]'>
+                <ul className='list-decimal list-inside text-grayTwo'>
                     <li><strong>Industry-Driven Curriculum:</strong> Our program is tailored to meet the latest UX trends and employer demands.</li>
                     <li><strong>Project-Based Learning:</strong> Build a portfolio of user-focused designs that showcase your skills to employers.</li>
                     <li><strong>Expert Instructors:</strong> Learn from seasoned UX professionals with real-world experience.</li>
@@ -84,7 +84,7 @@ const page = () => {
                     </h2>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <ul className='list-disc list-inside text-[#655D59]'>
+                <ul className='list-disc list-inside text-grayTwo'>
                     <li>User Research & Empathy: Understand user needs and behaviors through interviews and surveys.</li>
                     <li>Wireframing & Prototyping: Create visual blueprints using tools like Figma, Adobe XD, and Sketch.</li>
                     <li>Design Thinking Process: Learn to ideate, iterate, and innovate.</li>
@@ -100,7 +100,7 @@ const page = () => {
                     <h2 className='text-[#201A18] text-[1.5rem] font-bold leading-[34.13px]'>Who Should Enroll?</h2>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <ul className='list-disc list-inside text-[#655D59]'>
+                <ul className='list-disc list-inside text-grayTwo'>
                     <li>Creative thinkers eager to break into the tech industry.</li>
                     <li>Professionals transitioning to a design role from other careers.</li>
                     <li>Entrepreneurs looking to design user-friendly products for their businesses.</li>
@@ -113,7 +113,7 @@ const page = () => {
                     <h2 className='text-[#201A18] text-[1.5rem] font-bold leading-[34.13px]'>Success Stories</h2>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     "Thanks to Haelsoft EdTech, I now work as a UX designer at a leading startup. The portfolio I built during the program helped me stand out in interviews." – Mary A., Haelsoft Graduate
                 </p>
             </div>
@@ -123,7 +123,7 @@ const page = () => {
                     <h2 className='text-[#201A18] text-[1.5rem] font-bold leading-[34.13px]'>Shape the Future of Digital Experiences</h2>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     The world needs designers who can create seamless, user-centered digital products. Start your UX design journey with Haelsoft EdTech and turn your passion into a fulfilling career.
                 </p>
             </div>

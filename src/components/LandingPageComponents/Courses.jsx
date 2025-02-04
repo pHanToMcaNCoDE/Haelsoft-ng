@@ -14,7 +14,7 @@ const Courses = () => {
             </h1>
             <div className='w-[48px] h-[4px] rounded bg-[#FFCF00]'></div>
           </div>
-          <p className='w-full relative z-10 lg:w-[879px] text-center text-base text-[#655D59]'>
+          <p className='w-full relative z-10 lg:w-[879px] text-center text-base text-grayTwo'>
             Our online classes are crafted to equip you with essential digital skills. With a select range of expert-led courses, you&apos;ll gain practical knowledge and hands-on experience in a flexible format. Discover our offerings and advance your career with targeted, high-impact learning.
           </p>
         </div>

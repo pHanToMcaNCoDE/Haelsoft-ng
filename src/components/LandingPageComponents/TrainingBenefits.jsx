@@ -12,7 +12,7 @@ const TrainingBenefits = () => {
             <p className='text-[#201A18] text-[.875rem] font-normal leading-5'>COPORATE TRAINING</p>
             <h1 className='text-[#F36400] font-semibold text-[1.875rem] leading-10'>Hire A Ed-Tech Talent</h1>
           </div>
-          <p className='text-[1.125rem] leading-[43px] font-normal w-full xl:w-[497px] text-[#655D59]'>
+          <p className='text-[1.125rem] leading-[43px] font-normal w-full xl:w-[497px] text-grayTwo'>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
           </p>
         </div>
@@ -25,7 +25,7 @@ const TrainingBenefits = () => {
             <p className='text-[#201A18] text-[.875rem] font-normal leading-5'>COPORATE TRAINING</p>
             <h1 className='text-[#F36400] font-semibold text-[1.875rem] leading-10'>Hire A Ed-Tech Talent</h1>
           </div>
-          <p className='text-[1.125rem] leading-[43px] font-normal w-full xl:w-[497px] text-[#655D59]'>
+          <p className='text-[1.125rem] leading-[43px] font-normal w-full xl:w-[497px] text-grayTwo'>
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec 
           </p>
         </div>

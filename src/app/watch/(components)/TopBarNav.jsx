@@ -120,8 +120,8 @@ const TopBarNav = () => {
                 : "opacity-0 ease-in-out duration-300 hidden"
             } z-[100] lg:w-full left-[1px] -right-[2px] h-[253px] bg-white top-[2.6rem] border max-w-[398px] border-[#9c918d] border-t-0 rounded-b-[6px] shadow-lg px-4 cursor-pointer`}
           >
-            <div className="w-full gap-x-2 mt-4  flex text-[#655D59] items-center">
-              <IoSearch className="text-[#655D59]" /> Search Engine Optimization
+            <div className="w-full gap-x-2 mt-4  flex text-grayTwo items-center">
+              <IoSearch className="text-grayTwo" /> Search Engine Optimization
             </div>
           </div>
         </div>

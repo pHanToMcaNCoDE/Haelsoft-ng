@@ -21,19 +21,19 @@
 //               </p>
 //             </div>
 //             <ul className="flex flex-col gap-6 justify-center items-start">
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Access to top-tier candidates across various industries.
 //               </li>
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Dedicated recruitment and onboarding support.
 //               </li>
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Customizable hiring solutions tailored to your needs.
 //               </li>
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Ongoing performance tracking and feedback.
 //               </li>
@@ -55,19 +55,19 @@
 //               </p>
 //             </div>
 //             <ul className="flex flex-col gap-6 justify-center items-start">
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Comprehensive leadership development programs.
 //               </li>
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Technical and soft skills training for all departments.
 //               </li>
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 Tailored programs for industry-specific requirements.
 //               </li>
-//               <li className="text-[#655D59] flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
+//               <li className="text-grayTwo flex justify-center items-center gap-5 font-medium text-[1rem] leading-[43px]">
 //                 <IoCheckmark className="text-[1.5rem] text-[#F36400]" />
 //                 On-demand webinars and access to expert trainers.
 //               </li>

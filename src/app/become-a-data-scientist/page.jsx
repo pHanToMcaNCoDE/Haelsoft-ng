@@ -46,12 +46,12 @@ const page = () => {
 
         <section className='py-[100px] max-w-[1200px] mx-auto px-6 xl:px-0 flex flex-col justify-center items-center gap-10'>
            <div className='w-full xl:w-[838px] flex flex-col justify-center items-start gap-10'>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     Data Science is a multidisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. To become a successful data scientist, you need to follow a structured path.
                 </p>
                 <div className='flex flex-col justify-center items-start gap-2'>
                     <h2 className='text-[#201A18] text-base leading-[30px] font-normal'>Steps to Become a Data Scientist:</h2>
-                    <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                    <p className='text-grayTwo text-base font-normal leading-[30px]'>
                         Follow these key steps to embark on your data science career journey.
                     </p>
                 </div>
@@ -65,10 +65,10 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Master the essential programming languages like Python, R, and SQL to manipulate data, perform statistical analysis, and work with databases.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Learn how to write clean, efficient, and reusable code to analyze and visualize data effectively.
                         </p>
                     </div>
@@ -81,10 +81,10 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-2'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Build a strong foundation in data analytics and statistics, focusing on key concepts like hypothesis testing, regression analysis, and probability theory.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Knowing how to analyze data and draw meaningful insights will allow you to make data-driven decisions and solve real-world problems.
                         </p>
                     </div>
@@ -97,10 +97,10 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Gain proficiency in various machine learning algorithms such as supervised learning (e.g., regression, classification) and unsupervised learning (e.g., clustering, dimensionality reduction).
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Learn how to implement these algorithms and apply them to solve problems in different industries.
                         </p>
                     </div>
@@ -113,10 +113,10 @@ const page = () => {
                         <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                     </div>
                     <div className='flex flex-col justify-center items-start gap-7'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Data visualization is crucial for communicating complex findings. Learn to use tools like Tableau, Power BI, and libraries like Matplotlib and Seaborn in Python to create compelling visualizations.
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Develop the skill to present your findings in a way that is easy for both technical and non-technical audiences to understand.
                         </p>
                     </div>
@@ -130,10 +130,10 @@ const page = () => {
                     </div>
                     
                     <div className='flex flex-col justify-center items-start gap-2 w-full xl:w-[838px] mx-auto'>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             Gain familiarity with popular data science tools like Jupyter Notebooks, Anaconda, and Git for version control. Understanding these tools is key to working efficiently as a data scientist.  
                         </p>
-                        <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                        <p className='text-grayTwo text-base font-normal leading-[30px]'>
                             These tools will help you streamline your workflow, collaborate with teams, and manage your projects effectively.
                         </p>
                     </div>
@@ -146,7 +146,7 @@ const page = () => {
                     </h1>
                     <div className='bg-[#F1C118] rounded w-[56px] h-[4px]'></div>
                 </div>
-                <p className='text-[#655D59] text-base font-normal leading-[30px]'>
+                <p className='text-grayTwo text-base font-normal leading-[30px]'>
                     Apply your skills by working on real-world projects, participating in data science competitions, or contributing to open-source projects. This will help you build a portfolio that demonstrates your expertise and increases your employability.
                 </p>
             </div>

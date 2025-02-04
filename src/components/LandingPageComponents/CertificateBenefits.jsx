@@ -15,7 +15,7 @@ const CertificateBenefits = ({why, whyTitle}) => {
                     <div className='w-full lg:w-[343px] min-h-[216px] flex flex-col justify-center items-center text-center gap-[16px]' key={w.id}>
                         {w.icon}
                         <h1 className='text-black text-[1.5rem] leading-[38.88px] font-semibold'>{w.name}</h1>
-                        <p className='text-base font-normal leading-[31.5px] text-[#655D59]'>{w.desc}</p>
+                        <p className='text-base font-normal leading-[31.5px] text-grayTwo'>{w.desc}</p>
                     </div>
                 ))
             }

@@ -36,28 +36,28 @@ const page = () => {
               <Image width={70} height={70} src={team} alt='Team Icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Strategic Vision</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Learn to align marketing goals with overarching business objectives.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Learn to align marketing goals with overarching business objectives.</p>
               </div>
           </div>
           <div className='flex flex-col justify-center items-center text-center gap-3'>
               <Image width={70} height={70} src={impact} alt='Impact icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Team Empowerment</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Build and lead high-performing marketing teams that thrive on innovation.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Build and lead high-performing marketing teams that thrive on innovation.</p>
               </div>
           </div>
           <div className='flex flex-col justify-center items-center text-center gap-3'>
               <Image width={70} height={70} src={lead} alt='Lead Icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Data-Driven Insights</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Use analytics to make informed decisions and optimize campaigns.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Use analytics to make informed decisions and optimize campaigns.</p>
               </div>
           </div>
           <div className='flex flex-col justify-center items-center text-center gap-3'>
               <Image width={70} height={70} src={growth} alt='Growth Icon'></Image>
               <div className='flex flex-col justify-center items-center text-center gap-[7px]'>
                   <h2 className='text-main font-semibold text-[1.125rem] leading-[21.94px]'>Career Advancement</h2>
-                  <p className='text-[#655D59] font-normal text-[1rem] leading-[30px]'>Unlock opportunities in high-growth industries as a product leader.</p>
+                  <p className='text-grayTwo font-normal text-[1rem] leading-[30px]'>Unlock opportunities in high-growth industries as a product leader.</p>
               </div>
           </div>
       </div>

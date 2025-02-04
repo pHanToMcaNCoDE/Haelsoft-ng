@@ -6,7 +6,7 @@ const Loading = () => {
     <>
       <Skeleton className="w-full h-[70vh] lg:h-[50vh] mb-8"/>
       <div className="max-w-[1250px] 2xl:max-w-[1500px] mx-auto w-full min-h-screen py-[10px] px-3">
-        {/* <div className="flex text-[#655D59] mt-10 text-[18px]">
+        {/* <div className="flex text-grayTwo mt-10 text-[18px]">
           Recently Viewed
         </div> */}
         <div className='w-full flex justify-end items-end p-0 mb-[5em]'>
@@ -32,7 +32,7 @@ const Loading = () => {
             );
           })}
         </div>
-        <div className="flex text-[#655D59] mt-10 text-[18px]">
+        <div className="flex text-grayTwo mt-10 text-[18px]">
           Most Popular Certificate
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-4 gap-y-10 justify-items-start">

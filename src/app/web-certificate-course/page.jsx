@@ -32,7 +32,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Build the Web, Build Your Future!</span> Haelsoft&apos;s Web Development Certificate Courses empower you to create innovative, high-performing websites that meet the needs of users and businesses alike. Start your journey into the exciting world of web development today.
         </div>
     )

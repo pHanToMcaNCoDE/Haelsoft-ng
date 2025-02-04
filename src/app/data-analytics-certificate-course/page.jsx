@@ -32,7 +32,7 @@ const page = () => {
     }
 
     const desc = (
-        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-[#655D59]'>
+        <div className='text-[.875rem] lg:text-[1.125rem] leading-6 lg:leading-8 font-semibold text-grayTwo'>
             <span className='font-bold'>Master Data Analytics and Unlock the Power of Data-Driven Decisions!</span> In today&apos;s data-driven world, the ability to analyze and interpret data is crucial for making informed decisions. Haelsoft EdTech Platform&apos;s Data Analytics course is designed to equip you with the skills to extract insights, build predictive models, and optimize performance. Whether you're starting a career in data analytics or looking to enhance your skills, this course will provide you with the practical knowledge to excel in a rapidly evolving field.
         </div>
     )    

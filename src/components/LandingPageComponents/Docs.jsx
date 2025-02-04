@@ -8,7 +8,7 @@ const Docs = () => {
                 <h1 className='text-[#201A18] text-[1.75rem] leading-[34.13px] font-bold'>Explore Detailed Pyhton Reference Docs</h1>
                 <div className='bg-[#F1C118] rounded w-[56px] h-[5px]'></div>
             </div>
-            <p className='text-[#655D59] text-[1rem] font-normal leading-[30px] text-center'>
+            <p className='text-grayTwo text-[1rem] font-normal leading-[30px] text-center'>
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec
             </p>
         </div>

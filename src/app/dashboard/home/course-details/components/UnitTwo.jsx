@@ -15,12 +15,12 @@ const UnitTwo = () => {
                     <p className='text-[#F36400] font-semibold text-[1.5rem] leading-[43px]'>Introduction To Data Science</p>
                 </div>
                 <div className='flex flex-col gap-[20px]'>
-                    <p className='font-semibold leading-[43px] text-base text-[#655D59] w-full md:w-[57%]'>
+                    <p className='font-semibold leading-[43px] text-base text-grayTwo w-full md:w-[57%]'>
                         Real-world data are commonly messy, distributed, and heterogeneous. This course introduces core concepts of data cleaning, standardization, and data integration, which are aimed at using Python to convert and map raw data into other formats that allow more efficient and convenient use and analysis of data. The courses also discuss data quality, management, and storage issues relevant to data analytics.
                     </p>
                 </div>
                 <div className='md:w-[576px] h-[51px] flex gap-x-3 items-center my-[2em] flex-wrap'>
-                    <p className='text-[#655D59] text-[1.25rem] leading-[43px] font-semibold'>Relevant Skills:</p>
+                    <p className='text-grayTwo text-[1.25rem] leading-[43px] font-semibold'>Relevant Skills:</p>
                     <button className='text-white bg-[#F36400] text-[.75rem] leading-[43px] font-normal py-1 px-[10px] rounded gap-1 h-[51px]'>Data Wrangling</button>
                     <button className='text-white bg-[#F36400] text-[.75rem] leading-[43px] font-normal py-1 px-[10px] rounded gap-1 h-[51px]'>Data Analysis</button>
                     <button className='text-white bg-[#F36400] text-[.75rem] leading-[43px] font-normal py-1 px-[10px] rounded gap-1 h-[51px]'>Data Visualization</button>
@@ -29,14 +29,14 @@ const UnitTwo = () => {
                     <div className='flex flex-col justify-start items-start gap-4'>
                         <GoGlobe className='text-[2.25rem] text-[#F36400]' />
                         <h1 className='text-[1.25rem] font-semibold leading-[43px] text-black'>Prepare Data</h1>
-                        <p className='text-base font-medium leading-[43px] md:w-[542px] text-[#655D59]'>
+                        <p className='text-base font-medium leading-[43px] md:w-[542px] text-grayTwo'>
                             Understand the fundamentals of data wrangling and cleaning to prepare your data sets for statistical analysis, modeling, and essential insights.
                         </p>
                     </div>
                     <div className='flex flex-col justify-start items-start gap-4'>
                         <GoGlobe className='text-[2.25rem] text-[#F36400]' />
                         <h1 className='text-[1.25rem] font-semibold leading-[43px] text-black'>Beautiful Data Visualization</h1>
-                        <p className='text-base font-medium leading-[43px] md:w-[542px] text-[#655D59]'>
+                        <p className='text-base font-medium leading-[43px] md:w-[542px] text-grayTwo'>
                             Learn to use Python packages to create different types of data visualization. You can also master using other data visualizations for various use cases in the real world.
                         </p>
                     </div>
