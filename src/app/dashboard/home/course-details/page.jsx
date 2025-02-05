@@ -121,7 +121,7 @@ const Page = () => {
           <CourseAccordion courses={courses} />
           {/* <GraduateFeedback courses={courses} /> */}
           <Community />
-          <RelatedCourses />
+          {/* <RelatedCourses /> */}
           {/* <GetStartedCourse courses={courses} /> */}
         </>
       )}

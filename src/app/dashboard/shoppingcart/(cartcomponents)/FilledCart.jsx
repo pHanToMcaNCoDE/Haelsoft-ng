@@ -118,7 +118,7 @@ const FilledCart = ({ carts }) => {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-10 w-full md:w-auto">
+        {/* <div className="flex flex-col gap-10 w-full md:w-auto">
           <div className="whitespace-nowrap">
             <p className="text-grayTwo text-base font-semibold leading-5">
               Total
@@ -127,13 +127,20 @@ const FilledCart = ({ carts }) => {
               ₦{carts.reduce((total, item) => total + (Number(item.price) || 0), 0).toLocaleString()}
             </p>
           </div>
+        </div> */}
+        <div className="flex flex-col justify-start items-center gap-10 w-full md:w-auto">
+          {/* <div className="whitespace-nowrap"> */}
+            <p className="text-grayTwo text-3xl font-bold leading-5">
+              ₦{carts.reduce((total, item) => total + (Number(item.price) || 0), 0).toLocaleString()}
+            </p>
+          {/* </div> */}
+          <button
+            onClick={handleTransaction}
+            className="bg-main py-[2px] px-[15px] h-[54px] w-[250px] gap-[5px] rounded-lg text-white flex justify-center items-center text-[1rem] leading-[46px] font-semibold"
+          >
+            Checkout
+          </button>
         </div>
-        <button
-          onClick={handleTransaction}
-          className="bg-main py-[2px] px-[15px] h-[54px] w-[250px] gap-[5px] rounded-lg text-white flex justify-center items-center text-[1rem] leading-[46px] font-semibold"
-        >
-          Checkout
-        </button>
       </div>
     </div>
   );
