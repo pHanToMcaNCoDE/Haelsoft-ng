@@ -18,6 +18,8 @@ import GetStartedCourse from "./GetStartedCourse";
 
 import { courseDetails } from '@/raw-data/data';
 import CourseAccordion from "./components/CourseAccordion";
+import RelatedCourses from "./components/RelatedCourses";
+import DetailsSkeletonLoader from "./components/DetailsSkeletonLoader";
 // import Hero from "./Hero";
 // import CourseTrailer from "./CourseTrailer";
 // import CourseTutor from "../CourseTutor";
@@ -96,7 +98,7 @@ const Page = () => {
   }, [courseTitle, courseDetails]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <DetailsSkeletonLoader/>;
   }
 
   if (error) {
@@ -111,7 +113,7 @@ const Page = () => {
           <CourseTrailer courses={courses} />
           {/* <CourseTutor courses={courses} /> */}
           {/* <ImageDisplay /> */}
-          <CourseContent courses={courses} />
+          <CourseContent courses={courses} /> 
           <Instructors courses={courses} />
           {/* <BuildYourPortfolio courses={courses} /> */}
           {/* <Expectation courses={courses} /> */}
@@ -119,6 +121,7 @@ const Page = () => {
           <CourseAccordion courses={courses} />
           {/* <GraduateFeedback courses={courses} /> */}
           <Community />
+          <RelatedCourses />
           {/* <GetStartedCourse courses={courses} /> */}
         </>
       )}

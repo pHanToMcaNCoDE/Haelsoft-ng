@@ -33,13 +33,13 @@ const CourseContent = ({ courses = { units: [] } }) => {
       </div>
       <div className='w-full min-h-screen'>
         {courses.units.map((unit, index) => (
-          <div key={index} className={`w-full min-h-screen pt-[100px] relative ${index === 1 || index === 3 ? 'bg-white' : 'bg-main'}`}>
+          <div key={index} className={`w-full relative ${index === 1 || index === 3 ? 'bg-white' : 'bg-main'}`}>
             <div className='flex justify-start items-start max-w-[1260px] mx-auto'>
-              <div className={`w-[6%] md:w-[4%] flex flex-col items-center`}>
-                <div className={`w-6 h-6 rounded-full ${index === 1 || index === 3 ? 'bg-main' : 'bg-white'}`}></div>
-                <div className={`w-[5px] min-h-screen ${index === 1 || index === 3 ? 'bg-main' : 'bg-white'}`}></div>
+              <div className={`w-[6%] md:w-[4%] flex flex-col items-center relative`}>
+                <div className={`w-6 h-6 rounded-full absolute top-[10%] ${index === 1 || index === 3 ? 'bg-main' : 'bg-white'}`}></div>
+                <div className={`w-[5px] min-h-[119vh] ${index === 1 || index === 3 ? 'bg-main' : 'bg-white'}`}></div>
               </div>
-              <div className='w-[94%] px-3 md:px-0 md:w-[96%] min-h-screen xl:h-[1115px] flex flex-col justify-start items-start gap-[40px]'>
+              <div className='w-[94%] px-3 md:px-0 md:w-[96%] min-h-screen xl:h-[1115px] flex flex-col justify-start items-start gap-[40px] pt-[100px]'>
                 <div className='flex flex-col justify-start items-start'>
                   <h1 className={`font-semibold text-[1.5rem] leading-[43px] ${index === 1 || index === 3 ? 'text-main' : 'text-white'}`}>{unit.title}</h1>
                   <p className={`font-semibold text-[1.5rem] leading-[43px] ${index === 1 || index === 3 ? 'text-main' : 'text-white'}`}>{unit.sub}</p>

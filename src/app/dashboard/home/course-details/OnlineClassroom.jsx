@@ -7,7 +7,7 @@ import { GiBullseye } from "react-icons/gi";
 const OnlineClassroom = () => {
   return (
     <section className='bg-white w-full h-full flex flex-col justify-end'>
-        <div className='max-w-[1260px] mx-auto px-3 lg:px-0 flex flex-col justify-end items-center h-full py-[200px] gap-[100px]'>
+        <div className='max-w-[1260px] mx-auto px-3 lg:px-0 flex flex-col justify-end items-center h-full pt-[200px] pb-[100px] gap-[100px]'>
             <div className='flex flex-col justify-center items-center gap-3 text-center'>
                 <h1 className='text-black text-[2rem] lg:text-[2.5rem] font-semibold leading-[43px]'>Learn In Our Next-Gen Online Classroom</h1>
                 <div className='bg-yellow-400 w-[96px] rounded h-[3px]'></div>

@@ -13,7 +13,7 @@ const Loading = () => {
           <Skeleton className="w-full md:w-[269px] h-[68px]"></Skeleton>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-4 gap-x-[11px] gap-y-[5em] justify-items-center max-w-[1250px] 2xl:max-w-[1500px] mx-auto">
-          {[...Array(40)].map((_, index) => {
+          {[...Array(8)].map((_, index) => {
             return (
               <div
                 key={index}
@@ -32,7 +32,7 @@ const Loading = () => {
             );
           })}
         </div>
-        <div className="flex text-grayTwo mt-10 text-[18px]">
+        {/* <div className="flex text-grayTwo mt-10 text-[18px]">
           Most Popular Certificate
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-4 gap-y-10 justify-items-start">
@@ -53,7 +53,7 @@ const Loading = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </>
     
