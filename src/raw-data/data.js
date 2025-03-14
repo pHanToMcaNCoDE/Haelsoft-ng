@@ -200,7 +200,7 @@ export const courseDetails = {
     artificialIntelligence: {
         "course_title": "Artificial Intelligence",
         "level": "Beginner",
-        "price": "Free",
+        "price": 2000,
         "duration": "Long",
         "popularity": "Least Popular",
         "rating": "Lowest Rated",

@@ -26,6 +26,8 @@ const FilledCart = ({ carts }) => {
       });
     }
   };
+  
+  console.log("Cart Page", carts)
 
   const token = secureLocalStorage.getItem("token");
 
@@ -36,7 +38,7 @@ const FilledCart = ({ carts }) => {
         `https://edtech-backend-q2ud.onrender.com/enrollment/api/transactions/`,
         {
           amount: carts.reduce((total, item) => total + (Number(item.price) || 0), 0),
-          courses: carts.map((cart) => cart.course_id),
+          courses: carts,
         },
         {
           headers: {
@@ -62,46 +64,48 @@ const FilledCart = ({ carts }) => {
   }
 
   return (
-    <div className="flex flex-col justify-start items-start gap-[4em] w-full">
+    <div className="flex flex-col justify-start items-start gap-6 w-full py-[20px]">
       <div className="flex flex-col w-full gap-3">
-        <p className="text-[.875rem] leading-[21px] font-medium">
-          {carts.length} Courses in cart
+        <p className="text-[.875rem] leading-[21px] text-black font-normal">
+          {carts.length} Item(s)
         </p>
         <div className="bg-[#FF8C53] h-[1px] w-full xl:w-[755px]"></div>
       </div>
-      <div className="flex w-full justify-between gap-x-6">
-        <div className="w-full xl:max-w-[1150px] lg:min-h-[628px] flex flex-col gap-6 justify-start items-start">
+      <div className="flex flex-col items-end w-full justify-start gap-6 p-5">
+        <div className="w-full flex flex-col gap-6 justify-start items-start">
           {carts.map((item) => (
             <div
               key={item.id}
               className="flex flex-col md:flex-row justify-center items-center gap-3 w-full"
             >
               <Image
-                width={308}
-                height={219}
+                width={230}
+                height={250}
                 src={item.image}
                 alt={item.course_title}
               />
-              <div className="flex flex-col md:flex-row justify-between items-start w-full">
-                <div className="flex items-start gap-[6em] w-full md:w-auto">
-                  <div className="flex flex-col gap-10">
-                    <h1 className="text-grayTwo text-[1.125rem] leading-[27px] font-semibold">
+              <div className="flex flex-col md:flex-row justify-between items-center w-full">
+                <div className="flex items-start gap-[6em] w-full">
+                  <div className="flex flex-col gap-2 w-full">
+                    <h1 className="text-grayTwo text-[1.5rem] leading-[35px] font-semibold">
                       {item.course_title}
                     </h1>
-                    <div className="flex justify-center items-center gap-1">
+                    <div className="flex flex-col justify-center items-start gap-1">
                       <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
                         {item.rating} rating
                       </p>
-                      <div>
-                        <Rating
-                          style={{ maxWidth: 80 }}
-                          value={item.rating}
-                          readOnly
-                        />
+                      <div className="flex justify-center items-center gap-1">
+                        <div>
+                          <Rating
+                            style={{ maxWidth: 80 }}
+                            value={item.rating}
+                            readOnly
+                          />
+                        </div>
+                        <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                          ({item.reviews})
+                        </p>
                       </div>
-                      <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
-                        ({item.reviews})
-                      </p>
                     </div>
                   </div>
                   <div className="flex justify-start items-center gap-6">
@@ -117,6 +121,7 @@ const FilledCart = ({ carts }) => {
               </div>
             </div>
           ))}
+          <div className="w-full h-[.75px] rounded-full bg-grayTwo mb-3"></div>
         </div>
         {/* <div className="flex flex-col gap-10 w-full md:w-auto">
           <div className="whitespace-nowrap">
@@ -128,7 +133,7 @@ const FilledCart = ({ carts }) => {
             </p>
           </div>
         </div> */}
-        <div className="flex flex-col justify-start items-center gap-10 w-full md:w-auto">
+        <div className="flex flex-col justify-end items-end gap-6 w-full md:w-auto">
           {/* <div className="whitespace-nowrap"> */}
             <p className="text-grayTwo text-3xl font-bold leading-5">
               ₦{carts.reduce((total, item) => total + (Number(item.price) || 0), 0).toLocaleString()}

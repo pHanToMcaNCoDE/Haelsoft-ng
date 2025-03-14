@@ -14,7 +14,7 @@ import { FcGoogle } from "react-icons/fc";
 import firebase from "firebase/auth";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { app } from "@/app/lib/firebase";
-import l from '/public/EdTech Platform screenshot (1).svg'
+import logo from '/public/EdTech Platform Figma.svg'
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -88,14 +88,13 @@ const SigninForm = () => {
         <SigninCarousel />
       </div>
       <div className="flex items-center justify-center px-4 w-full lg:w-[50%] bg-white h-screen">
-        <div className="w-full mx-auto text-center lg:mt-36">
+        <div className="w-full mx-auto text-center lg:mt-36 flex flex-col justify-center items-center gap-1.5">
           <Link href={"/"}>
             <Image
-              src={l}
-              alt="Logo"
+              src={logo}
+              alt="Haelsoft Logo"
               width={100}
               height={100}
-              className="object-contain absolute top-8 left-8"
             />
           </Link>
           <h1 className="text-[36px] font-medium">Welcome back!!</h1>

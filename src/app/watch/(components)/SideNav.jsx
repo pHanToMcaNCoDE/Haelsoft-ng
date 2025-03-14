@@ -10,37 +10,37 @@ import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import secureLocalStorage from "react-secure-storage";
 import Loading from "@/app/dashboard/(dashboardcomponents)/loading";
+import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const SideNav = ({
   setVideoUrl,
   open,
-  setopen,
+  setOpen,
   videoData,
-  courseContentData,
+  // courseContentData,
 }) => {
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [hoveredLesson, setHoveredLesson] = useState(null);
   const [visibleModules, setVisibleModules] = useState({});
 
   useEffect(() => {
-    // Set the first lesson under the first module as selected initially
-    console.log("cwodwds1");
+    console.log("Initial Video Data:", videoData);
+    
+    if (!videoData?.data?.modules || videoData.data.modules.length === 0) {
+      console.warn("Modules array is empty or undefined.");
+      return;
+    }
 
-    //   console.log("cwodwds2");
     setSelectedLesson({ moduleIndex: 0, lessonIndex: 0 });
-    setVideoUrl(
-      videoData?.data?.modules?.length <= 0
-        ? ""
-        : videoData.data.modules[0].lessons[0].video_url
-    );
+    setVideoUrl(videoData.data.modules[0].lessons[0]?.video_url || "");
 
-    // Initialize visibility of all modules to true
     const initialVisibility = {};
     videoData.data.modules.forEach((_, index) => {
       initialVisibility[index] = true;
     });
     setVisibleModules(initialVisibility);
-  }, []);
+  }, [videoData]);
 
   const toggleVisibility = (moduleIndex) => {
     setVisibleModules((prev) => ({
@@ -61,46 +61,65 @@ const SideNav = ({
     }
   };
 
+
+  const { course } = useSelector((state) => state.courses);
+
   return (
     <div
-      className={`md:col-span-3 pl-4 lg:py-10 md:pl-10 pr-4 py-4 w-full max-w-[270px] overflow-auto bg-white shadow-xl md:block fixed md:static top-0 z-[180] md:z-[2] ${
-        open ? "block" : "hidden"
-      }`}
+      className={`w-[45%] h-full lg:w-[25%] md:col-span-3 px-3 py-7 overflow-auto bg-white shadow-xl md:block fixed lg:static top-0 z-[180] md:z-[2] transition-all flex flex-col justify-start items-start gap-6 ${open ? "left-0" : "left-[-200%] lg:left-0"}`}
     >
-      <Image
-        onClick={() => setopen(!open)}
+      {/* <Image
+        onClick={() => setOpen(!open)}
         src={draw}
-        className="mt-4 cursor-pointer  hidden md:block"
+        className="mt-4 cursor-pointer hidden md:block"
         alt="Draw"
-      />
-      <div
-        onClick={() => setopen(!open)}
-        className="flex items-center fixed lg:hidden top-4 left-[60%] justify-end text-[#f36402]"
-      >
-        <div>Close</div>
-        <IoCloseOutline
-          //
-          className=" text-4xl cursor-pointer "
-        />
+      /> */}
+      {
+        open && (
+          <div
+            onClick={() => setOpen(!open)}
+            className="flex items-center mb-4 fixed lg:hidden top-4 justify-end text-[#f36402]"
+          >
+            <IoCloseOutline className="text-3xl cursor-pointer" />
+            <p>close</p>
+          </div>
+        )
+      }
+
+      <div className={`flex flex-col justify-start items-start gap-6 mt-2`}>
+        <p className="font-bold text-xl">
+          {course?.title}
+        </p>
+        
+        <div className=" w-full max-w-[300px] flex flex-col justify-end item-center">
+          <p className="text-gray-700 whitespace-nowrap font-medium text-sm">
+            Progress: 20%
+          </p>
+          <div className="w-full max-w-[300px] bg-gray-300 rounded-xl h-3 overflow-hidden border border-main">
+            <div className={`h-full bg-main`} style={{ width: `${20}%` }}></div>
+          </div>
+        </div>
       </div>
+      
       {videoData?.data?.modules?.length > 0 &&
         videoData?.data?.modules.map((module, moduleIndex) => {
           return (
-            <Modules
-              key={moduleIndex}
-              module={module}
-              moduleIndex={moduleIndex}
-              selectedLesson={selectedLesson}
-              setSelectedLesson={handleLessonClick}
-              hoveredLesson={hoveredLesson}
-              setHoveredLesson={setHoveredLesson}
-              isVisible={visibleModules[moduleIndex]}
-              toggleVisibility={toggleVisibility}
-              isPaid={videoData.isPaid}
-              setVideoUrl={setVideoUrl}
-              setopen={setopen}
-              open={open}
-            />
+
+              <Modules
+                key={moduleIndex}
+                module={module}
+                moduleIndex={moduleIndex}
+                selectedLesson={selectedLesson}
+                setSelectedLesson={handleLessonClick}
+                hoveredLesson={hoveredLesson}
+                setHoveredLesson={setHoveredLesson}
+                isVisible={visibleModules[moduleIndex]}
+                toggleVisibility={toggleVisibility}
+                isPaid={videoData.isPaid}
+                setVideoUrl={setVideoUrl}
+                setOpen={setOpen}
+                open={open}
+              />
           );
         })}
     </div>

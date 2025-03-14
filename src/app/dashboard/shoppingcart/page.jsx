@@ -14,12 +14,14 @@ import EmptyCart from './(cartcomponents)/EmptyCart';
 
 
 const ShoppingCart = () => {
- const {cartItems}= useSelector((state) => state.cart);
+ const {cartItems} = useSelector((state) => state.cart);
+
+ console.log("Shopping Cart", cartItems)
 
   return (
     <>
-      <section className='relative max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start pt-[100px] gap-6'>
-        <h1 className='text-main font-semibold leading-9 text-[1.5rem]'>Shopping Cart</h1>
+      <section className='relative max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start pt-[70px] pb-[100px] gap-6'>
+        <h1 className='text-main font-bold leading-10 text-[1.5rem] uppercase'>Shopping Cart</h1>
         {cartItems.length > 0 ? <FilledCart carts={cartItems}  /> : <EmptyCart />}
         {/* <FilledCart carts={cartItems}  /> 
         <EmptyCart /> */}
@@ -27,9 +29,9 @@ const ShoppingCart = () => {
       <section className='w-full bg-[#FBFBFB] py-[100px]'>
           <div className='max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start gap-7'>
             <h1 className='text-[#FF8C53] leading-[46px] text-[1.5rem] font-semibold'>You might also like</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 justify-items-center'>
               {suggestions.map((s, index) => (
-                <div key={index} className='bg-white rounded-bl-lg rounded-br-lg w-full lg:w-[406px] lg:h-[440px]'>
+                <div key={index} className='bg-white rounded-bl-lg rounded-br-lg w-full lg:h-[440px]'>
                   <Image
                     className='rounded-tl-lg rounded-tr-lg object-cover rounded-bl-none rounded-br-none'
                     width={406}

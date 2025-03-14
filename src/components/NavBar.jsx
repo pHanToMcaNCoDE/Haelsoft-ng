@@ -14,13 +14,13 @@ const NavBar = () => {
           height={100}
           className="object-contain absolute top-8 left-8 hidden md:flex"
         />
-        <Image
+        {/* <Image
           src="https://firebasestorage.googleapis.com/v0/b/web-project-ca895.appspot.com/o/haelsoft%2Flogo2.png?alt=media&token=99c206bc-6bcb-462f-be89-41e945f5bf6f"
           alt="Image description"
           width={100}
           height={100}
           className="object-contain flex md:hidden"
-        />
+        /> */}
         {/* <p className="flex items-center justify-center text-base font-normal gap-x-2 leading-[40px]">
           <span> Already have an account?</span>
           <Link href={"/signin"} className=" text-[#0E7EE5]">

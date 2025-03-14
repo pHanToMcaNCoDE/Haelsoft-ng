@@ -15,24 +15,24 @@ import './signin.css';
 
 const SigninCarousel = () => {
     const items = [
-        <section key="1" className="relative signinOne item w-full h-screen flex gap-4">
+        <section key="1" className="relative signinOne item w-full h-screen flex gap-4 text-white">
             <div className='bg-[#000]/40 w-full h-screen absolute top-0 left-0 z-[5px]'></div>
             <div className="py-3 px-8 flex flex-col justify-center text-left items-start gap-2 z-10">
-                <h1 className="text-[1.5rem] md:text-[3rem] 2xl:text-[3.5rem] font-semibold leading-[40px] text-white">Welcome to Your Next Adventure</h1>
+                <h1 className="text-[1.5rem] md:text-[3rem] 2xl:text-[3.5rem] font-semibold leading-[40px]">Welcome to Your Next Adventure</h1>
                 <p className="text-gray-100 text-left text-[1.125rem] font-medium leading-7">Join a community of learners <br className="hidden lg:flex"></br> dedicated to growing their skills <br className="hidden lg:flex"></br> and advancing their careers.</p>
             </div>
         </section>,
-        <section key="2" className="relative signinTwo item w-full h-screen flex gap-4">
+        <section key="2" className="relative signinTwo item w-full h-screen flex gap-4 text-white">
             <div className='bg-[#000]/40 w-full h-screen absolute top-0 left-0 z-[5px]'></div>
             <div className="py-3 px-8 flex flex-col justify-center text-left items-start gap-2 z-10">
-                <h1 className="text-[1.5rem] md:text-[3rem] 2xl:text-[3.5rem] font-semibold leading-[40px] text-white">Unlock Your<br className="hidden lg:flex"></br> Potential</h1>
+                <h1 className="text-[1.5rem] md:text-[3rem] 2xl:text-[3.5rem] font-semibold leading-[40px]">Unlock Your<br className="hidden lg:flex"></br> Potential</h1>
                 <p className="text-gray-100 text-left text-[1.125rem] font-medium leading-7">Access resources and tools <br className="hidden lg:flex"></br> designed to help you succeed <br className="hidden lg:flex"></br> in your career journey.</p>
             </div>
         </section>,
-        <section key="3" className="relative signinThree item w-full h-screen flex gap-4">
+        <section key="3" className="relative signinThree item w-full h-screen flex gap-4 text-white">
             <div className='bg-[#000]/40 w-full h-screen absolute top-0 left-0 z-[5px]'></div>
             <div className="py-3 px-8 flex flex-col justify-center text-left items-start gap-2 z-10">
-                <h1 className="text-[1.5rem] md:text-[3rem] 2xl:text-[3.5rem] font-semibold leading-[40px] text-white">Elevate Your<br className="hidden lg:flex"></br> Career</h1>
+                <h1 className="text-[1.5rem] md:text-[3rem] 2xl:text-[3.5rem] font-semibold leading-[40px]">Elevate Your<br className="hidden lg:flex"></br> Career</h1>
                 <p className="text-gray-100 text-left text-[1.125rem] font-medium leading-7">Take the next step <br className="hidden lg:flex"></br>towards a brighter future <br className="hidden lg:flex"></br> with our expert guidance.</p>
             </div>
         </section>,

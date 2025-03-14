@@ -12,7 +12,7 @@ import secureLocalStorage from "react-secure-storage";
 
 const Watch = () => {
   const [videoUrl, setVideoUrl] = useState("");
-  const [open, setopen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [videoData, setVideoData] = useState([]);
   const [courseContentData, setContentData] = useState([]);
@@ -25,9 +25,9 @@ const Watch = () => {
       <div className="h-screen flex w-full">
         <SideNav
           videoData={videoData}
-          courseContentData={courseContentData}
+          // courseContentData={courseContentData}
           setVideoUrl={setVideoUrl}
-          setopen={setopen}
+          setOpen={setOpen}
           open={open}
         />
 
@@ -35,49 +35,71 @@ const Watch = () => {
           <SearchParamsWrapper
             setLoading={setLoading}
             setVideoData={setVideoData}
+            videoData={videoData}
             setContentData={setContentData}
             token={token}
           />
-          <VideoPlayer
-            videoUrl={videoUrl}
-            courseContentData={courseContentData}
-            setopen={setopen}
-            open={open}
-          />
+          <div>
+            <VideoPlayer
+              videoUrl={videoUrl}
+              courseContentData={courseContentData}
+              setOpen={setOpen}
+              open={open}
+            />
+          </div>
+          
         </Suspense>
       </div>
     </div>
   );
 };
 
-const SearchParamsWrapper = ({ setLoading, setVideoData, setContentData, token }) => {
+const SearchParamsWrapper = ({ setLoading, setVideoData, videoData, setContentData, token }) => {
   const SearchParamsSuspense = () => {
     const params = useSearchParams();
     const id = params.get("id");
 
     useEffect(() => {
-      if (id) {
-        axios
-          .get(
-            `https://edtech-backend-q2ud.onrender.com/course_details/api/courses/${id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          )
-          .then((res) => {
-            setVideoData(res.data.data);
-            setContentData(res.data.data);
-          })
-          .catch((err) => {
-            console.log(err);
-          })
-          .finally(() => {
-            setLoading(false);
-          });
+      // console.log("Search Params Video ID:", id);
+      // console.log("Stored Token:", token);
+      
+      if (!id) {
+        // console.warn("No ID found in URL params.");
+        return;
       }
-    }, [id, token]);
+      
+      if (!token) {
+        // console.error("No authentication token found.");
+        return;
+      }
+
+      setLoading(true);
+
+      axios
+        .get(`https://edtech-backend-q2ud.onrender.com/course_details/api/courses/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          console.log("Full API Response:", res);
+          if (res.data?.data) {
+            setVideoData(res.data.data);
+            // setContentData(res.data.data);
+            // console.log("VideoData:", courseContentData);
+          } else {
+            console.warn("API returned no video data.");
+          }
+        })
+        .catch((err) => {
+          console.error("API Fetch Error:", err);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    }, [id, token, setVideoData, setContentData]);
+
+    useEffect(() => {
+      console.log("Updated videoData state:", videoData);
+    }, [videoData]);
 
     return null;
   };
@@ -90,3 +112,4 @@ const SearchParamsWrapper = ({ setLoading, setVideoData, setContentData, token }
 };
 
 export default Watch;
+

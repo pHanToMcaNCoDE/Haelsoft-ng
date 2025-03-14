@@ -31,35 +31,19 @@ const TopBarNav = () => {
   return (
     <div className="bg-white col-span-12   border-b-2 border-b-[#F0F0F0] px-4 md:px-10 min-h-[6rem]  lg:p-[26px] sticky items-start w-full flex flex-col top-0 z-[10] py-6 gap-y-6">
       <div className=" flex items-center justify-between w-full gap-x-4  bg-white   ">
-        <div className="flex w-full gap-x-7 lg:gap-x-4  lg:justify-between items-center">
+        <div className="flex w-full gap-x-7 lg:gap-x-4 lg:justify-between items-center">
           <div className="md:flex justify-between w-full items-center gap-4 ">
             <Link
-              className="text-[#f36402] w-full font-semibold text-[1.8rem]  lg:text-4xl"
+              className="text-[#f36402] xl:w-full font-semibold text-[1.8rem]  lg:text-4xl"
               href="/dashboard/home"
             >
               Haelsoft
             </Link>
-            <div className="w-full">
-              {" "}
-              <p className=" font-bold text-2xl text-center ">
-                {course?.title} Course{" "}
-              </p>
-            </div>
+            <Link href="/dashboard/my-learning" className="font-semibold underline text-main text-sm cursor-pointer w-[333px]">
+              <p>My Learning</p>  
 
-            <div className="flex w-full justify-between items-center">
-              <Link href="/dashboard/my-learning" className="font-medium text-sm cursor-pointer">My Learning</Link>
-              <div className=" w-full max-w-[300px] flex flex-col justify-end    item-center ">
-                <p className=" text-gray-700 whitespace-nowrap font-medium">
-                  20% Progress
-                </p>
-                <div className="w-full  max-w-[300px] bg-gray-300 rounded-xl h-4 overflow-hidden">
-                  <div
-                    className={`h-full bg-main`}
-                    style={{ width: `${30}%` }}
-                  ></div>
-                </div>
-              </div>
-            </div>
+            </Link>
+            
           </div>
         </div>
         <IoIosMenu

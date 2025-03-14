@@ -15,7 +15,7 @@ const Modules = ({
   setopen, 
 }) => {
   return (
-    <div>
+    <div className="w-full">
       <div className="mt-6">
         <button
           onClick={() => toggleVisibility(moduleIndex)}

@@ -13,7 +13,7 @@ const CustomNewsletter = ({searchText, setSearchText}) => {
                 </button>
             </div>
         </form>
-        <div className='bg-main text-white px-[20px] py-[30px] rounded-[4px] w-full lg:h-[452px] flex flex-col justify-between items-center gap-10 mx-auto'>
+        <div className='bg-main text-white px-[20px] py-[30px] rounded-[4px] w-full lg:w-[380px] lg:h-[452px] flex flex-col justify-between items-center gap-10 mx-auto'>
             <div className='w-full flex flex-col gap-4 justify-center items-start'>
                 <h1 className='text-[1.125rem] font-medium leading-[43px]'>Subscribe to Our Newsletter</h1>
                 <p className='w-full h-[50px] text-[.875rem] leading-6 font-normal'>

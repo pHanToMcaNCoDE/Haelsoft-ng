@@ -8,7 +8,7 @@ import playicon from "../../../../public/assets/playicon.svg";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
-const VideoPlayer = ({ videoUrl, open, setopen }) => {
+const VideoPlayer = ({ videoUrl, open, setOpen }) => {
   const { lesson } = useSelector((state) => state.courses);
   console.log("Video Link", lesson);
 
@@ -38,12 +38,12 @@ const VideoPlayer = ({ videoUrl, open, setopen }) => {
 
   const [pausePlay, setpausePlay] = useState(false);
   return (
-    <div className="col-span-12 md:col-span-9 h-screen gap-y-4 p-4 md:px-10 flex-1 overflow-y-auto w-full">
+    <div className="col-span-12 md:col-span-9 h-screen gap-y-4 p-4 md:px-5 flex-1 overflow-y-auto w-full">
       <div>
         <Image
           src={draw}
-          className="mt-4 mb-4 md:hidden"
-          onClick={() => setopen(!open)}
+          className="mt-4 mb-4 md:hidden cursor-pointer"
+          onClick={() => setOpen(!open)}
           alt="Draw"
         />
 

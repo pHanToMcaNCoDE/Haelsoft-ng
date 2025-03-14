@@ -16,6 +16,7 @@ import SignupCarousel from "./SignupCarousel";
 import { FcGoogle } from "react-icons/fc";
 // import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // import { app } from "@/app/lib/firebase";
+import logo from '/public/EdTech Platform Figma.svg'
 
 
 const SignupForm = () => {
@@ -128,9 +129,17 @@ const SignupForm = () => {
         <SignupCarousel />
       </div>
 
-      <div className="flex flex-col w-full h-screen justify-center items-center px-4 lg:px-0 ">
-        <NavBar />
-        <div className="w-full mx-auto text-center">
+      <div className="flex flex-col w-full lg:w-[50%] h-screen justify-center items-center px-4 lg:px-0 ">
+        {/* <NavBar /> */}
+        <div className="mx-auto text-center flex flex-col justify-center items-center gap-1.5">
+          <Link href={"/"}>
+            <Image
+              src={logo}
+              alt="Haelsoft Logo"
+              width={100}
+              height={100}
+            />
+          </Link>
           <h1 className="text-[36px] font-medium">
             Welcome to Haelsoft
             <span role="img" aria-label="waving hand" className="waving-emoji">
@@ -292,10 +301,10 @@ const SignupForm = () => {
               Sign Up
             </button>
           </form>
-          <p className="text-sm">
+          <p className="text-sm flex justify-center items-center gap-1">
             Already have an account?
-            <Link href="/signin">
-              <span className="text-main">Sign in here</span>
+            <Link href="/signin" className="text-[#0E7EE5] underline">
+              Sign in here
             </Link>
           </p>
         </div>
