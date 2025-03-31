@@ -45,9 +45,9 @@ export default function Home() {
       <BenefitsOnline />
       <Bootcamps />
       <Instructors />
-      <section className="py-[64px] lg:py-[100px] w-full flex justify-center items-center">
+      {/* <section className="py-[64px] lg:py-[100px] w-full flex justify-center items-center">
         <CustomNewsletter/>
-      </section>
+      </section> */}
       <ReadyToGetStarted />
       <footer className="text-center py-4 hidden">
         <a
