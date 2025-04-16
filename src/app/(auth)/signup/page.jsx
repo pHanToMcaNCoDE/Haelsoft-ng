@@ -11,26 +11,26 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Loader from "@/components/Loader";
-import { signupValidation } from "@/Service/validation";
+import { baseURL, signupValidation } from "@/Service/validation";
 import SignupCarousel from "./SignupCarousel";
 import { FcGoogle } from "react-icons/fc";
 // import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 // import { app } from "@/app/lib/firebase";
 import logo from '/public/EdTech Platform Figma.svg'
+import { IoCheckmarkOutline } from "react-icons/io5";
 
 
 const SignupForm = () => {
   const router = useRouter();
   const [errormessage, seterrormessage] = useState("");
   const [showpassword, setshowpassword] = useState(false);
-  const [showconfirmpassword, setshowconfirmpassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [passwordstate, setpasswordstate] = useState("");
   const [formData, setFormData] = useState({
-    fullName: "",
+    full_name: "",
+    email: "",
     username: "",
-    emailAddress: "",
     password: "",
-    passwordConfirmation: "",
   });
   const [errors, seterrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -67,95 +67,83 @@ const SignupForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
     try {
-      // Validate the form data here
       const validatedData = await signupValidation.validate(formData, {
         abortEarly: false,
       });
 
       try {
         const response = await axios.post(
-          "https://edtech-backend-q2ud.onrender.com/auth/api/signup",
+          `${baseURL}auth/register`,
           {
-            username: validatedData.username,
-            email: validatedData.emailAddress,
-            fullName: validatedData.fullName,
+            full_name: validatedData.full_name,
+            email: validatedData.email,
             password: validatedData.password,
-            accept_terms_and_conditions: true,
+            username: validatedData.username,
+            // accept_terms_and_conditions: true,
           }
         );
-
-        toast.success("Signup successful!");
-        router.push(`/checkmail?email=${response.data.data.email}`);
+          toast.success("Signup successful!");
+          router.push(`/verify-email?email=${encodeURIComponent(response.data.data.user.email)}&id=${response.data.data.user.user_uuid}`);
       } catch (error) {
-        console.log("Signup Error:", error);
-        seterrormessage(error.response?.data?.message || "Signup failed");
+        if (error.response?.data?.errors?.email) {
+          seterrormessage(error.response?.data?.errors?.email?.[0] || "Signup failed");
+        } else {
+          seterrormessage(error.response?.data?.message || "Signup failed");
+        }
       }
     } catch (error) {
-      const validationErrors = {};
-      if (error.inner) {
-        error.inner.forEach((e) => {
-          validationErrors[e.path] = e.message;
+      if (error.name === "AxiosError") {
+        const newErrors = {};
+        error.inner.forEach((err) => {
+          if (err.path) {
+            newErrors[err.path] = err.message;
+            toast.error(err.message);
+          }
         });
+        seterrors(newErrors);
+      } else {
+        toast.error(error.message || "Something went wrong.");
+        seterrormessage(error.message || "Something went wrong.");
       }
-      seterrors(validationErrors);
     } finally {
-      setIsLoading(false); // End loading
+      setIsLoading(false);
     }
   };
 
-  // if (!isLoading) {
-  //   return <Loader />;
-  // }
-
-  // const signInWithGoogle = async () => {
-  //   const auth = getAuth(app);
-  //   const provider = new GoogleAuthProvider();
-
-  //   try {
-  //     const result = await signInWithPopup(auth, provider);
-  //     const user = result.user;
-  //     const idToken = await user.getIdToken();
-  //     console.log("idToken", idToken);
-  //   } catch (e) {
-  //     console.log("e", e);
-  //   }
-  // };
 
   return (
     <section className="h-screen w-full flex items-center justify-between">
-      <div className="relative w-full lg:w-[50%] h-screen z-[5px] hidden lg:flex flex-col justify-center items-start">
-        <SignupCarousel />
-      </div>
 
-      <div className="flex flex-col w-full lg:w-[50%] h-screen justify-center items-center px-4 lg:px-0 ">
+      <div className="flex flex-col w-full lg:w-[50%] h-screen justify-center items-start px-4 lg:px-0 ">
         {/* <NavBar /> */}
-        <div className="mx-auto text-center flex flex-col justify-center items-center gap-1.5">
-          <Link href={"/"}>
-            <Image
-              src={logo}
-              alt="Haelsoft Logo"
-              width={100}
-              height={100}
-            />
-          </Link>
-          <h1 className="text-[36px] font-medium">
-            Welcome to Haelsoft
-            <span role="img" aria-label="waving hand" className="waving-emoji">
-              👋
-            </span>
-          </h1>
-          <p className="text-[#7F7571] text-base">
-            Empower Your Future: Learn, Grow, and Succeed with Digital Marketing
-            <span className="text-[13px]">!</span>
-          </p>
+        <div className="mx-auto text-center flex flex-col justify-start items-center gap-1.5">
+          <div className="w-full flex flex-col justify-between items-start gap-2">
+            <Link className='mb-5' href={"/"}>
+              <Image
+                src={logo}
+                alt="Haelsoft Logo"
+                width={100}
+                height={100}
+              />
+            </Link>
+            <div className='w-full flex flex-col justify-between items-start gap-1'>
+              <Link href={'/'} className='underline text-base text-black font-semibold'>Back to home</Link>
+              <h1 className="text-[1.5rem] lg:text-[2rem] font-medium text-left">
+                Welcome to Haelsoft
+                <span role="img" aria-label="waving hand" className="waving-emoji">
+                  👋
+                </span>
+              </h1>
+            </div>
+          </div>
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 mt-4 mb-8 w-[60%] mx-auto"
+            className="space-y-4 mt-4 mb-8 w-full mx-auto"
           >
-            {isLoading && <Loader />} {/* Show loader when loading */}
-            <div
+            {isLoading && <Loader />}
+            {/* <div
               className={`w-full flex items-center px-2 gap-x-2 bg-[#FFDAD6] border border-[#FF897D] h-[48px] rounded-[4px] ${
                 errormessage
                   ? "opacity-100 transition-opacity duration-800"
@@ -163,20 +151,22 @@ const SignupForm = () => {
               }`}
             >
               <p className="text-[#7F7571] text-sm">{errormessage}</p>
-            </div>
+            </div> */}
             <InputField
-              label="Full Legal Name"
-              htmlFor="fullName"
-              name="fullName"
-              value={formData.fullName}
-              error={errors.fullName}
-              errorText={errors.fullName}
+              className={'!w-full'}
+              label="Full Name"
+              htmlFor="full_name"
+              name="full_name"
+              value={formData.full_name}
+              error={errors.full_name}
+              errorText={errors.full_name}
               onChange={handleInputChange}
-              onFocus={() => handleFieldFocus("fullName")}
+              onFocus={() => handleFieldFocus("full_name")}
             />
             <InputField
+              className={'!w-full'}
               label="Username"
-              htmlFor="username"
+              htmlFor="User Name"
               name="username"
               value={formData.username}
               error={errors.username}
@@ -185,42 +175,137 @@ const SignupForm = () => {
               onFocus={() => handleFieldFocus("username")}
             />
             <InputField
+              className={'!w-full'}
               label="E-mail"
-              htmlFor="emailAddress"
-              name="emailAddress"
-              value={formData.emailAddress}
-              error={errors.emailAddress}
-              errorText={errors.emailAddress}
+              htmlFor="Email Address"
+              name="email"
+              value={formData.email}
+              error={errors.email}
+              errorText={errors.email}
               onChange={handleInputChange}
-              onFocus={() => handleFieldFocus("emailAddress")}
+              onFocus={() => handleFieldFocus("email")}
             />
-            <div className="relative">
-              <InputField
-                label="Create Password"
-                htmlFor="password"
-                name="password"
-                type={showpassword ? "text" : "password"}
-                value={formData.password}
-                error={errors.password}
-                errorText={errors.password}
-                onChange={handleInputChange}
-                onFocus={() => handleFieldFocus("password")}
-              />
-              <div
-                onClick={() => {
-                  setshowpassword(!showpassword);
-                }}
-                className="absolute cursor-pointer inset-y-[1rem] right-4 text-lg"
-              >
-                {showpassword ? <LuEye /> : <LuEyeOff />}
+            <div className="w-full flex flex-col justify-end items-center gap-2.5">
+
+              <div className="relative w-full">
+                  <InputField
+                    className={'!w-full'}
+                    label="Create Password"
+                    htmlFor="password"
+                    name="password"
+                    type={showpassword ? "text" : "password"}
+                    value={formData.password}
+                    error={errors.password}
+                    errorText={errors.password}
+                    onChange={handleInputChange}
+                    onFocus={() => handleFieldFocus("password")}
+                  />
+                  <div
+                    onClick={() => {
+                      setshowpassword(!showpassword);
+                    }}
+                    className="absolute cursor-pointer inset-y-[1rem] right-4 text-lg"
+                  >
+                    {showpassword ? <LuEye /> : <LuEyeOff />}
+                  </div>
+                </div>
+
+                <div className="w-full flex flex-wrap justify-end items-center gap-4">
+                  <div className="flex items-center gap-x-2 w-fit">
+                    <div
+                      className={`w-[60px] h-[6px] rounded ${
+                        /^(?=.*[a-z])/.test(formData.password) ? "bg-[#6FC248]" : "bg-gray"
+                      }`}
+                    ></div>
+                  </div>
+                  <div className="flex items-center gap-x-2 w-fit">
+                    <div
+                      className={`w-[60px] h-[6px] rounded ${
+                        /^(?=.*[A-Z])/.test(formData.password) ? "bg-[#6FC248]" : "bg-gray"
+                      }`}
+                    ></div>
+                  </div>
+                  <div className="flex items-center gap-x-2 w-fit">
+                    <div
+                      className={`w-[60px] h-[6px] rounded ${
+                        /^.{8,}$/.test(formData.password) ? "bg-[#6FC248]" : "bg-gray"
+                      }`}
+                    ></div>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div
+                      className={`w-[60px] h-[6px] rounded ${
+                        /^(?=.*\d)/.test(formData.password) ? "bg-[#6FC248]" : "bg-gray"
+                      }`}
+                    ></div>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <div
+                      className={`w-[60px] h-[6px] rounded ${
+                        /^(?=.*\W)/.test(formData.password) ? "bg-[#6FC248]" : "bg-gray"
+                      }`}
+                    ></div>
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap justify-end items-center max-w-[500px] gap-4">
+                  <div className="flex items-center gap-x-2 w-fit">
+                    <IoCheckmarkOutline
+                      className={`${
+                        /^(?=.*[a-z])/.test(formData.password) ? "text-[#6FC248]" : "text-gray"
+                      }`}
+                    />
+                    <p className="text-[#7F7571] text-[13px]">
+                      Lowercase Characters.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-x-2 w-fit">
+                    <IoCheckmarkOutline
+                      className={`${
+                        /^(?=.*[A-Z])/.test(formData.password) ? "text-[#6FC248]" : "text-gray"
+                      }`}
+                    />
+                    <p className="text-[#7F7571] text-[13px]">
+                      Uppercase Characters.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-x-2 w-fit">
+                    <IoCheckmarkOutline
+                      className={`${
+                        /^.{8,}$/.test(formData.password) ? "text-[#6FC248]" : "text-gray"
+                      }`}
+                    />
+                    <p className="text-[#7F7571] text-[13px]">Numbers.</p>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <IoCheckmarkOutline
+                      className={`${
+                        /^(?=.*\d)/.test(formData.password) ? "text-[#6FC248]" : "text-gray"
+                      }`}
+                    />
+                    <p className="text-[#7F7571] text-[13px]">
+                      8 Characters minimum.
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-x-2">
+                    <IoCheckmarkOutline
+                      className={`${
+                        /^(?=.*\W)/.test(formData.password) ? "text-[#6FC248]" : "text-gray"
+                      }`}
+                    />
+                    <p className="text-[#7F7571] text-[.7rem]">
+                      Special Characters.
+                    </p>
+                  </div>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative w-full">
               <InputField
+                className={'!w-full'}
                 label="Re-type Password"
                 htmlFor="passwordConfirmation"
                 name="passwordConfirmation"
-                type={showconfirmpassword ? "text" : "password"}
+                type={showConfirmPassword ? "text" : "password"}
                 value={formData.passwordConfirmation}
                 error={errors.passwordConfirmation}
                 errorText={errors.passwordConfirmation}
@@ -229,61 +314,11 @@ const SignupForm = () => {
               />
               <div
                 onClick={() => {
-                  setshowconfirmpassword(!showconfirmpassword);
+                  setShowConfirmPassword(!showConfirmPassword);
                 }}
                 className="absolute cursor-pointer inset-y-[1rem] right-4 text-lg"
               >
-                {showconfirmpassword ? <LuEye /> : <LuEyeOff />}
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 max-w-[391px]">
-              <div className="flex items-center gap-x-2 w-fit">
-                <RiVerifiedBadgeFill
-                  className={`text-[#6FC248] ${
-                    /^(?=.*[a-z])/.test(formData.password) ? "block" : "hidden"
-                  }`}
-                />
-                <p className="text-[#7F7571] text-[13px]">
-                  Lowercase Characters.
-                </p>
-              </div>
-              <div className="flex items-center gap-x-2 w-fit">
-                <RiVerifiedBadgeFill
-                  className={`text-[#6FC248] ${
-                    /^(?=.*[A-Z])/.test(formData.password) ? "block" : "hidden"
-                  }`}
-                />
-                <p className="text-[#7F7571] text-[13px]">
-                  Uppercase Characters.
-                </p>
-              </div>
-              <div className="flex items-center gap-x-2 w-fit">
-                <RiVerifiedBadgeFill
-                  className={`text-[#6FC248] ${
-                    /^.{8,}$/.test(formData.password) ? "block" : "hidden"
-                  }`}
-                />
-                <p className="text-[#7F7571] text-[13px]">Numbers.</p>
-              </div>
-              <div className="flex items-center gap-x-2">
-                <RiVerifiedBadgeFill
-                  className={`text-[#6FC248] ${
-                    /^(?=.*\d)/.test(formData.password) ? "block" : "hidden"
-                  }`}
-                />
-                <p className="text-[#7F7571] text-[13px]">
-                  8 Characters minimum.
-                </p>
-              </div>
-              <div className="flex items-center gap-x-2">
-                <RiVerifiedBadgeFill
-                  className={`text-[#6FC248] ${
-                    /^(?=.*\W)/.test(formData.password) ? "block" : "hidden"
-                  }`}
-                />
-                <p className="text-[#7F7571] text-[13px]">
-                  Special Characters.
-                </p>
+                {showConfirmPassword ? <LuEye /> : <LuEyeOff />}
               </div>
             </div>
           {/* <button
@@ -296,12 +331,12 @@ const SignupForm = () => {
           </button> */}
             <button
               type="submit"
-              className="text-white bg-main h-[48px] w-full text-sm rounded-[4px] font-medium"
+              className="text-white bg-main h-[48px] w-full text-sm rounded-[6px] font-medium"
             >
               Sign Up
             </button>
           </form>
-          <p className="text-sm flex justify-center items-center gap-1">
+          <p className="text-sm flex justify-center items-center text-center w-full gap-1">
             Already have an account?
             <Link href="/signin" className="text-[#0E7EE5] underline">
               Sign in here
@@ -309,8 +344,14 @@ const SignupForm = () => {
           </p>
         </div>
       </div>
+
+
+      <div className="relative w-full lg:w-[50%] h-screen z-[5px] hidden lg:flex flex-col justify-center items-start">
+        <SignupCarousel />
+      </div>
     </section>
   );
 };
 
 export default SignupForm;
+

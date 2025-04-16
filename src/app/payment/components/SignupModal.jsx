@@ -18,7 +18,7 @@ const SignupModal = ({ signupState, setSignupState }) => {
     toast.success(state?.success?.message);
     console.log();
     if (state?.success?.message) {
-      router.push(`/checkmail?email=${state?.email}`);
+      router.push(`/verify-email?email=${state?.email}`);
     }
   }, [state?.success, state?.success?.message]);
 

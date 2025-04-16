@@ -15,55 +15,98 @@ import firebase from "firebase/auth";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { app } from "@/app/lib/firebase";
 import logo from '/public/EdTech Platform Figma.svg'
+import { baseURL, signinValidation } from "@/Service/validation";
+import axios from "axios";
+import { setAuth } from "@/features/user-details/userDetailsSlice";
+import { useDispatch } from "react-redux";
 
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider();
+
 const SigninForm = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, seterrors] = useState({});
   const [passwordState, setPasswordState] = useState("");
+  const [formData, setFormData] = useState({
+    login: "",
+    password: ""
+  });
 
-  // Error handling
-  useEffect(() => {
-    if (errorMessage) {
-      const timer = setTimeout(() => {
-        setErrorMessage("");
-      }, 3000);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
 
-      return () => clearTimeout(timer);
-    }
-  }, [errorMessage]);
+  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (errors?.message) {
-      toast.error(errors.message);
-    }
-  }, [errors]);
 
-  // Handle sign-in process
-  const handleSignin = async (formData) => {
-    setIsLoading(true); // Show loading animation
-    const result = await signin(formData); // Call the signin action
 
-    setIsLoading(false); // Stop loading animation
-
-    if (result.status === "success") {
-      toast.success("Signed in successfully!");
-      secureLocalStorage.setItem("token", result.success.access); // Save token in secure local storage
-      router.push(`/dashboard/home`); // Redirect to dashboard
-    } else if (result.errors) {
-      setErrors(result.errors); // Set errors if present
-      toast.error(result.errors.general || "Sign-in failed.");
-    }
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setIsLoading(true);
+      try {
+        const validatedData = await signinValidation.validate(formData, {
+          abortEarly: false,
+        });
+  
+        try {
+          const response = await axios.post(
+            `${baseURL}auth/login`,
+            {
+              login: validatedData.login,
+              password: validatedData.password,
+              // accept_terms_and_conditions: true,
+            }
+          );
+
+          toast.success(response?.data?.data?.message || "Login successful!");
+          console.log("Signin Response", response);
+
+          if (res.data.data?.token) {
+            dispatch(setAuth({
+              token: response.data.data.token,
+              user: response.data.data.user
+            }));
+          }
+
+          router.push(`/dashboard`);
+
+        } catch (error) {
+          if (error.response?.data?.errors?.email) {
+            toast.error(error.response?.data?.errors?.email?.[0] || "Signin failed");
+          } else {
+            toast.error(error.response?.data?.message || "Signin failed");
+          }
+        }
+      } catch (error) {
+        if (error.inner) {
+          const newErrors = {};
+          error.inner.forEach((err) => {
+            if (err.path) {
+              newErrors[err.path] = err.message;
+              toast.error(err.message);
+            }
+          });
+          seterrors(newErrors);
+        } else {
+          toast.error(error.message || "Something went wrong.");
+        }
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
   const handleFieldFocus = (fieldName) => {
-    setErrors((prevErrors) => {
+    seterrors((prevErrors) => {
       const updatedErrors = { ...prevErrors };
-      delete updatedErrors[fieldName]; // Remove error for the focused field
+      delete updatedErrors[fieldName];
       return updatedErrors;
     });
   };
@@ -84,11 +127,8 @@ const SigninForm = () => {
   };
   return (
     <section className="h-screen w-full flex items-center justify-center">
-      <div className="relative w-full lg:w-[50%] h-screen z-[5px] hidden lg:flex flex-col justify-center items-start gap-10">
-        <SigninCarousel />
-      </div>
       <div className="flex items-center justify-center px-4 w-full lg:w-[50%] bg-white h-screen">
-        <div className="w-full mx-auto text-center lg:mt-36 flex flex-col justify-center items-center gap-1.5">
+        <div className="w-full lg:w-[70%] mx-auto text-center lg:mt-36 flex flex-col justify-center items-center gap-1.5">
           <Link href={"/"}>
             <Image
               src={logo}
@@ -99,19 +139,15 @@ const SigninForm = () => {
           </Link>
           <h1 className="text-[36px] font-medium">Welcome back!!</h1>
           <p className="flex items-center h-[33px] text-[#7F7571] text-sm justify-center font-normal gap-x-2">
-            <span>Don’t have an account yet?</span>
+            <span>Don&apos;t have an account yet?</span>
             <Link href={"/signup"} className="text-[#0E7EE5] underline">
               Sign up now
             </Link>
           </p>
 
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              const formData = new FormData(e.target);
-              handleSignin(formData);
-            }}
-            className="space-y-4 mt-8 max-w-[509px] mx-auto"
+            onSubmit={handleSubmit}
+            className="space-y-4 mt-8 w-full mx-auto"
           >
             {isLoading &&
               <Loader />
@@ -119,11 +155,13 @@ const SigninForm = () => {
             <div className="flex flex-col">
               <InputField
                 label={`E-mail`}
-                htmlFor={`emailAddress`}
-                name={`emailAddress`}
-                error={errors?.emailAddress}
-                errorText={errors?.emailAddress}
-                onFocus={() => handleFieldFocus("emailAddress")}
+                htmlFor={`login`}
+                name={`login`}
+                value={formData.login}
+                error={errors?.login}
+                errorText={errors?.login}
+                onChange={handleInputChange}
+                onFocus={() => handleFieldFocus("login")}
               />
             </div>
             <div className="relative">
@@ -132,10 +170,10 @@ const SigninForm = () => {
                 htmlFor={`password`}
                 name={`password`}
                 type={showPassword ? "text" : "password"}
-                value={passwordState}
+                value={formData.password}
                 error={errors?.password}
                 errorText={errors?.password}
-                onChange={(e) => setPasswordState(e.target.value)}
+                onChange={handleInputChange}
                 onFocus={() => handleFieldFocus("password")}
               />
               <div
@@ -174,6 +212,9 @@ const SigninForm = () => {
             </div>
           </form>
         </div>
+      </div>
+      <div className="relative w-full lg:w-[50%] h-screen z-[5px] hidden lg:flex flex-col justify-center items-start gap-10">
+        <SigninCarousel />
       </div>
     </section>
   );

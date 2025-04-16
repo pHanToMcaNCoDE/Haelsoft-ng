@@ -1,6 +1,6 @@
 "use client";
 import InputField from "@/components/InputField";
-import { forgotPassword } from "@/Service/validation";
+import { baseURL, forgotPassword } from "@/Service/validation";
 import axios from "axios";
 import { useFormik } from "formik";
 import Image from "next/image";
@@ -9,6 +9,8 @@ import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
 import logoimage from "../../../asset/haelsoft.gif"
 import { toast, Bounce } from "react-toastify";
+import logo from '/public/EdTech Platform Figma.svg'
+import Loader from "@/components/Loader";
 
 const ForgotPassword = () => {
   const [isLoading, setisLoading] = useState(false);
@@ -20,15 +22,16 @@ const ForgotPassword = () => {
     validationSchema: forgotPassword,
     onSubmit: (values) => {
       setisLoading(true);
-      console.log(values);
       axios
-        .post(`/auth/api/reset-password/request/`, values)
+        .post(`${baseURL}auth/forgot_password`, values)
         .then((res) => {
-          console.log(res);
+          console.log('Forgot Password', res);
           toast.success(res.data.message, {
             toastId: 1,
             position: "top-right",
           });
+
+          router.push('/verify-email');
         })
         .catch((e) => {
           console.log(e);
@@ -45,34 +48,30 @@ const ForgotPassword = () => {
   });
 
   return (
-    <div className="min-h-screen w-screen flex items-center justify-center px-4 lg:px-0">
+    <div className="min-h-screen w-full flex items-center justify-center px-4 lg:px-0">
       {isLoading && (
-        <div className=" flex z-[100] items-center justify-center fixed top-0 w-screen h-screen bg-black/[0.8]">
-          {/* <ClipLoader color="#ff6900" size={100} /> */}
-          <Image src={logoimage}/>
-        </div>
+        <Loader/>
       )}
-      <Link href={"/"}>
-        <Image
-          src="https://firebasestorage.googleapis.com/v0/b/web-project-ca895.appspot.com/o/haelsoft%2Flogo2.png?alt=media&token=99c206bc-6bcb-462f-be89-41e945f5bf6f"
-          alt="Image description"
-          width={200}
-          height={200}
-          className="object-contain w-[10rem] absolute top-8 left-8 "
-        />
-      </Link>
-      <div className="max-w-[554px] w-full  mx-auto text-center  lg:mt-36">
+      <div className="max-w-[500px] w-full mx-auto text-center lg:mt-36 flex flex-col justify-center items-center gap-4">
+        <Link href={"/"}>
+          <Image
+            src={logo}
+            alt="Haelsoft Logo"
+            width={100}
+            height={100}
+            className="object-contain"
+          />
+        </Link>
         <h1 className="text-[36px] font-medium ">Forgot password?</h1>
-        <p className="flex  mt-2 mb-8  max-w-[442px]  mx-auto items-center text-[#7F7571] text-sm justify-center font-normal gap-x-2">
+        <p className="flex  mt-2 mb-8  max-w-[400px]  mx-auto items-center text-[#7F7571] text-sm justify-center font-normal gap-x-2">
           All good. Enter your account&apos;s email address and we&apos;ll send
           you a link to reset your password
         </p>
 
         <form
           onSubmit={formik.handleSubmit}
-          className="space-y-4 max-w-[509px] mx-auto"
+          className="space-y-4 w-full mx-auto"
         >
-          {" "}
           <InputField
             label={`E-mail`}
             placeHolder={``}
@@ -82,7 +81,7 @@ const ForgotPassword = () => {
             error={formik.touched.email && formik.errors.email}
             errorText={formik.errors.email}
           />
-          <button className="text-[#8E4D2E] bg-[#FFF1EC] h-[48px] w-full  text-sm rounded-[4px]font-medium  shadow-custom-light-elevation">
+          <button type="submit" className="bg-main text-[#FFF1EC] h-[48px] w-full text-lg rounded-[4px] font-medium shadow-custom-light-elevation">
             Send reset link
           </button>
         </form>

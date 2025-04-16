@@ -1,15 +1,15 @@
 import * as yup from "yup";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://edtech-backend-q2ud.onrender.com";
-export const baseURL = "https://edtech-backend-q2ud.onrender.com";
+axios.defaults.baseURL = "https://staging.haelsoftmasterclass.com/api/v1/";
+export const baseURL = "https://staging.haelsoftmasterclass.com/api/v1/";
 const passwordRegExp =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#;:])[A-Za-z\d@$!%*?&#;:]{8,}$/;
 
 export const signupValidation = yup.object().shape({
   username: yup.string().required("required"),
-  fullName: yup.string().required("required"),
-  emailAddress: yup
+  full_name: yup.string().required("required"),
+  email: yup
     .string()
     .email("please enter a valid email", "Please enter a valid e-mail address.")
     .required("required"),
@@ -25,6 +25,8 @@ export const signupValidation = yup.object().shape({
     .string()
     .oneOf([yup.ref("password")], "Passwords must match")
     .required("required"),
+
+
   // agreedToTermsandConditions: yup
   //   .boolean("Select this checkbox please")
   //   .oneOf([true], "required")
@@ -33,7 +35,7 @@ export const signupValidation = yup.object().shape({
 });
 
 export const signinValidation = yup.object().shape({
-  emailAddress: yup
+  login: yup
     .string()
     .email("please enter a valid email", "Please enter a valid e-mail address.")
     .required("required"),

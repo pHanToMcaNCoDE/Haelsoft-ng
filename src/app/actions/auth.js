@@ -1,5 +1,5 @@
 "use server";
-import { signinValidation, signupValidation } from "@/Service/validation";
+import { baseURL, signinValidation, signupValidation } from "@/Service/validation";
 import { revalidatePath } from "next/cache";
 import axios from "axios";
 import { cookies } from "next/headers";
@@ -8,22 +8,22 @@ export async function signup(state, formData) {
   try {
     const validatedData = await signupValidation.validate(
       {
-        username: formData.get("username"),
-        fullName: formData.get("fullName"),
-        emailAddress: formData.get("emailAddress"),
+        full_name: formData.get("full_name"),
+        email: formData.get("email"),
         password: formData.get("password"),
-        passwordConfirmation: formData.get("passwordConfirmation"),
+        username: formData.get("username"),
+        // passwordConfirmation: formData.get("passwordConfirmation"),
       },
       { abortEarly: false }
     );
 
     try {
-      const response = await axios.post("https://edtech-backend-q2ud.onrender.com/auth/api/signup", {
-        username: validatedData.username,
-        email: validatedData.emailAddress,
-        fullName: validatedData.fullName,
+      const response = await axios.post("https://staging.haelsoftmasterclass.com/api/v1/auth/register", {
+        fullName: validatedData.full_name,
+        email: validatedData.email,
         password: validatedData.password,
-        accept_terms_and_conditions: true,
+        username: validatedData.username,
+        // accept_terms_and_conditions: true,
       });
       revalidatePath("/ui/signup");
 
@@ -61,25 +61,26 @@ export async function signin(formData) {
   try {
     const validatedData = await signinValidation.validate(
       {
-        emailAddress: formData.get("emailAddress"),
+        login: formData.get("login"),
         password: formData.get("password"),
       },
       { abortEarly: false }
     );
 
     try {
-      const response = await axios.post("/auth/api/login", {
-        email: validatedData.emailAddress,
+      const response = await axios.post("https://staging.haelsoftmasterclass.com/api/v1/auth/login", {
+        login: validatedData.login,
         password: validatedData.password,
       });
 
-      console.log('set', response.data.data);
-      cookies().set("token", response.data.data.access);
+      // cookies().set("token", response.data.data?.token);
 
-      return {
-        status: "success",
-        success: response.data.data,
-      };
+      console.log("Signin", response)
+
+      // return {
+      //   status: "success",
+      //   success: response.data.data,
+      // };
     } catch (error) {
       console.error("Signin Error:", error.response.data);
       return { errors: error.response?.data, status: "error" };

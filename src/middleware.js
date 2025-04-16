@@ -7,7 +7,7 @@ import { logIn, logOut } from "./store/LoggedInSlice";
 const publicRoutes = [
   "/signin",
   "/signup",
-  "/checkmail",
+  "/verify-email",
   "/changepassword",
   "/forgotpassword",
 ];

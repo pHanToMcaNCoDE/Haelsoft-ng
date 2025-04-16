@@ -32,9 +32,9 @@ function InputField({
         ref={inputRef}
         onClick={() => setoutline(true)}
         className={`border ${
-          error ? "border-red-500" : "border-[#717171]"
-        } ${className} rounded-[4px] py-1 gap-y-2  h-[48px] px-6  font-normal focus:outline-kandaBlue placeholder:font-normal ${
-          outline ? "border-[#FF8C53]" : "border-[#717171]"
+          error ? "border-red-500" : "border-gray"
+        } ${className} rounded-[6px] py-1 gap-y-2  h-[48px] px-6  font-normal focus:outline-kandaBlue placeholder:font-normal ${
+          outline ? "border-[#FF8C53]" : "border-gray"
         }  ${InputStyle && InputStyle.className}flex flex-col w-full `}
       >
         <label

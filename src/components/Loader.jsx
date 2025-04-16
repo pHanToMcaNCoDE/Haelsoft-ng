@@ -12,7 +12,7 @@ const Loader = () => {
           className={`flex z-[100] left-0 opacity-100 transition-opacity duration-500 items-center justify-center fixed top-0 w-screen h-screen bg-black/[0.8] `}
         >
           {/* <ClipLoader color="#ff6900" size={100} /> */}
-          <Image src={logoimage} />
+          <Image src={logoimage} alt="Haelsoft Logo" />
         </div>
     </div>
   );
