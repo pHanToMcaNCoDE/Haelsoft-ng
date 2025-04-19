@@ -27,7 +27,7 @@ const HomePage = () => {
         setLoadingCategories(false);
       })
       .catch((err) => {
-        setErrorCategories('Failed to fetch categories: Network error');
+        // setErrorCategories('Failed to fetch categories: Network error');
         setLoadingCategories(false);
       });
 
@@ -38,13 +38,13 @@ const HomePage = () => {
           setCourses(res.data.data);
           dispatch(addCourses(res.data.data));
         } else {
-          setErrorCourses("Failed to fetch courses: Invalid response structure");
+          // setErrorCourses("Failed to fetch courses: Invalid response structure");
         }
         setLoadingCourses(false);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
-        setErrorCourses("Failed to fetch data: Network error");
+        // console.error("Error fetching data:", error);
+        // setErrorCourses("Failed to fetch data: Network error");
         setLoadingCourses(false);
       });
   }, [dispatch]);

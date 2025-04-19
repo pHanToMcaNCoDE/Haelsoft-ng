@@ -114,9 +114,9 @@ const SignupForm = () => {
 
 
   return (
-    <section className="h-screen w-full flex items-center justify-between">
+    <section className="min-h-screen w-full flex items-center justify-between">
 
-      <div className="flex flex-col w-full lg:w-[50%] h-screen justify-center items-start px-4 lg:px-0 ">
+      <div className="flex flex-col w-full lg:w-[50%] min-h-screen justify-center items-start px-4 lg:px-0 ">
         {/* <NavBar /> */}
         <div className="mx-auto text-center flex flex-col justify-start items-center gap-1.5">
           <div className="w-full flex flex-col justify-between items-start gap-2">
@@ -346,7 +346,7 @@ const SignupForm = () => {
       </div>
 
 
-      <div className="relative w-full lg:w-[50%] h-screen z-[5px] hidden lg:flex flex-col justify-center items-start">
+      <div className="relative w-full lg:w-[50%] min-h-screen z-[5px] hidden lg:flex flex-col justify-center items-start">
         <SignupCarousel />
       </div>
     </section>
