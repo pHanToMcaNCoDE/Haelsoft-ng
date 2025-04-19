@@ -201,14 +201,14 @@ const SigninForm = () => {
             >
               Sign in
             </button>
-            <div
+            {/* <div
               type="button"
               onClick={signInWithGoogle}
               className="text-black border-2 border-[#e5f5f5] bg-white h-[48px] w-full text-sm rounded-[4px] font-medium flex justify-center items-center gap-4"
             >
               <FcGoogle className="text-[1.75rem]" />
               Sign In with Google
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
