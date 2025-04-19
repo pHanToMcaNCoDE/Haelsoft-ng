@@ -5,7 +5,7 @@ import Link from 'next/link';
 import AsideData from './AsideData';
 import './style.css';
 
-const Aside = ({ menu, setMenu, clicked, setClicked }) => {
+const Aside = ({ menu, setMenu, clicked, setClicked, isScroll }) => {
   const [selectedMenu, setSelectedMenu] = useState('');
 
   const links = [
@@ -51,6 +51,14 @@ const Aside = ({ menu, setMenu, clicked, setClicked }) => {
               <span className="absolute left-0 right-0 bottom-[-13px] h-[5px] bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
             </li>
           ))}
+                    <Link
+                      href="/signin"
+                      className={`w-[150px] h-[43px] rounded flex items-center justify-center ${
+                        isScroll ? 'bg-[#F36400] text-white' : 'bg-[#F36400] text-white'
+                      }`}
+                    >
+                      Sign In
+                    </Link>
         </div>
       </aside>
 

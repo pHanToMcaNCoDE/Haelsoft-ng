@@ -105,7 +105,7 @@ const Navbar = ({ clicked, setClicked }) => {
         </nav>
     
 
-      {menu && <Aside menu={menu} setMenu={setMenu} clicked={clicked} setClicked={setClicked} />}
+      {menu && <Aside menu={menu} isScroll={isScroll} setMenu={setMenu} clicked={clicked} setClicked={setClicked} />}
 
       {/* Desktop Navigation */}
       <nav
