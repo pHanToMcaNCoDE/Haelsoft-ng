@@ -10,7 +10,6 @@ import { useSelector } from "react-redux";
 
 const VideoPlayer = ({ videoUrl, open, setOpen }) => {
   const { lesson } = useSelector((state) => state.courses);
-  console.log("Video Link", lesson);
 
   const handleDownload = async () => {
     const url = `https://res.cloudinary.com/dmpqdaupc/${lesson.pdf_file}`;

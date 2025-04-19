@@ -30,16 +30,13 @@ const CourseDetailPage = ({ courseDetails }) => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        console.log("Fetching course details...");
         const allCourses = Object.values(courseDetails).flat();
 
-        console.log("All Courses:", allCourses);
 
         const normalizedCourseTitle = courseTtl
           ? courseTtl.toLowerCase()
           : courseTitle.toLowerCase();
 
-        console.log("Normalized Course Title:", normalizedCourseTitle);
 
         const cartDataCourse = allCourses.find(
           (c) => c.title && c.title.toLowerCase() === normalizedCourseTitle
@@ -51,15 +48,12 @@ const CourseDetailPage = ({ courseDetails }) => {
             c.course_title.toLowerCase() === normalizedCourseTitle
         );
 
-        console.log("Cart Data Course:", cartDataCourse);
-        console.log("Display Data Course:", displayDataCourse);
 
         const mergedCourseData = {
           ...(cartDataCourse || {}),
           ...(displayDataCourse || {}),
         };
 
-        console.log("Merged Course Data:", mergedCourseData);
 
         if (Object.keys(mergedCourseData).length > 0) {
           setCourses(mergedCourseData);

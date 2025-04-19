@@ -27,7 +27,6 @@ const FilledCart = ({ carts }) => {
     }
   };
   
-  console.log("Cart Page", carts)
 
   const token = secureLocalStorage.getItem("token");
 
@@ -53,7 +52,7 @@ const FilledCart = ({ carts }) => {
           window.location.href = transURL;
         }
       })
-      .catch((err) => console.log("Transaction Error", err))
+      .catch((err) => err)
       .finally(() => {
         setLoading(false);
       });

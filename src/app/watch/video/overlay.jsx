@@ -24,7 +24,6 @@ const VideoOverlay = ({
 	const [isFullScreen, setIsFullscreen] = useState(false)
 	const JUMP_FACTOR = 4
 
-	console.log(jumpTime)
 
 	const handleJumpForward = () => {
 		setJumpTime(prevJumpTime => prevJumpTime + JUMP_FACTOR)

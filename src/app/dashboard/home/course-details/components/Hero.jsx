@@ -30,7 +30,6 @@ const Hero = ({ courses }) => {
 
   const dispatch = useDispatch();
 
-  console.log("courses", id);
 
   const handleAddToCart = () => {
     if (dispatch(addToCart(courses))) {
@@ -63,7 +62,7 @@ const Hero = ({ courses }) => {
           window.location.href = transURL;
         }
       })
-      .catch((err) => console.log("Transaction Error", err))
+      .catch((err) => err)
       .finally(() => {
         setLoading(false);
       });
@@ -73,17 +72,17 @@ const Hero = ({ courses }) => {
     axios
       .get(`https://edtech-backend-q2ud.onrender.com/course/api/course/${id}/`)
       .then((res) => {
-        console.log("res", res.data.data);
+        // console.log("res", res.data.data);
         setLoading(false);
         setcourseDetails(res.data.data);
         dispatch(addCourse(res.data.data))
       })
       .catch((err) => {
-        console.log("Categories Error", err);
+        // console.log("Categories Error", err);
         setLoading(false);
       });
   }, []);
-        console.log('The details', courseDetails)
+        // console.log('The details', courseDetails)
 
   const [pausePlay, setpausePlay] = useState(false);
 

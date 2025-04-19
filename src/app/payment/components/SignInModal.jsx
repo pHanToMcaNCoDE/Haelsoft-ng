@@ -14,12 +14,10 @@ const SignInModal = ({ signInState, setSignInState, setSignupState }) => {
   useEffect(() => {
     seterrors(state?.errors);
     toast.error(state?.errors?.message);
-    console.log();
   }, [state?.errors]);
   // Diplay success message
   useEffect(() => {
     toast.success(state?.success?.message);
-    console.log();
     if (state?.success?.message) {
       router.push(`/dashboard/home`);
     }

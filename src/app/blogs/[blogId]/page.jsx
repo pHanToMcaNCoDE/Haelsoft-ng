@@ -15,7 +15,7 @@ const page = () => {
   useEffect(() => {
       axios.get(`https://edtech-backend-q2ud.onrender.com/blog/blogposts/${blogId}`)
       .then(res => setBlogs(res.data.data))
-      .catch(err => console.log('Blog Errors', err))
+      .catch(err => err)
   }, [blogId])
 
   const formatDate = (isoDate) => {

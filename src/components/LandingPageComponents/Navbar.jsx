@@ -36,7 +36,6 @@ const Navbar = ({ clicked, setClicked }) => {
     { name: 'Bootcamps', link: '#' },
   ];
 
-  console.log('Clicked', clicked)
 
   useEffect(() => {
     const handleClickOutside = (event) => {

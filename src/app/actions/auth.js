@@ -3,6 +3,7 @@ import { baseURL, signinValidation, signupValidation } from "@/Service/validatio
 import { revalidatePath } from "next/cache";
 import axios from "axios";
 import { cookies } from "next/headers";
+import { useDispatch, useSelector } from "react-redux";
 
 export async function signup(state, formData) {
   try {
@@ -27,7 +28,6 @@ export async function signup(state, formData) {
       });
       revalidatePath("/ui/signup");
 
-      console.log(response.data);
 
       return {
         status: "success",
@@ -36,7 +36,6 @@ export async function signup(state, formData) {
       };
     } catch (error) {
       revalidatePath("/signup");
-      console.log("Signup Error:", error);
       return { errors: error.response?.data, status: "error" };
     }
   } catch (error) {
@@ -48,7 +47,6 @@ export async function signup(state, formData) {
     } else {
       errors.general = error.message;
     }
-    console.log("error", errors);
     revalidatePath("/signup");
     return {
       errors,
@@ -75,7 +73,6 @@ export async function signin(formData) {
 
       // cookies().set("token", response.data.data?.token);
 
-      console.log("Signin", response)
 
       // return {
       //   status: "success",

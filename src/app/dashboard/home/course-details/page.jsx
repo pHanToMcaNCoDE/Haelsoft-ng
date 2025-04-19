@@ -40,7 +40,6 @@ const Page = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  console.log('Params', searchParams)
 
   const courseTitle = searchParams.get("details") || "";
   const id = searchParams.get("id") || "";
@@ -51,15 +50,12 @@ const Page = () => {
 
     const fetchCourse = async () => {
       try {
-        console.log("Fetching course details...");
         const allCourses = Object.values(courseDetails).flat();
 
-        console.log("All Courses:", allCourses);
 
         const normalizedCourseTitle = courseTitle
           ? courseTitle.toLowerCase() : '';
 
-        console.log("Normalized Course Title:", normalizedCourseTitle);
 
         const cartDataCourse = allCourses.find(
           (c) => c.title && c.title.toLowerCase() === normalizedCourseTitle
@@ -71,15 +67,12 @@ const Page = () => {
             c.course_title.toLowerCase() === normalizedCourseTitle
         );
 
-        console.log("Cart Data Course:", cartDataCourse);
-        console.log("Display Data Course:", displayDataCourse);
 
         const mergedCourseData = {
           ...(cartDataCourse || {}),
           ...(displayDataCourse || {}),
         };
 
-        console.log("Merged Course Data:", mergedCourseData);
 
         if (Object.keys(mergedCourseData).length > 0) {
           setCourses(mergedCourseData);

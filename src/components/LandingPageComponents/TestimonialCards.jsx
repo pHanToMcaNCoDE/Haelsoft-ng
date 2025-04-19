@@ -19,7 +19,6 @@ const TestimonialCards = () => {
     //     setHover(true);
     // }
 
-    console.log('Mouse Says', hover)
 
   return (
     <section className='w-full bg-white min-h-screen py-[100px] px-6'>

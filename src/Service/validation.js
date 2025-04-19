@@ -57,6 +57,16 @@ export const forgotPassword = yup.object().shape({
 });
 
 export const changePasswordValidation = yup.object().shape({
+  email: yup
+    .string()
+    .email("please enter a valid email", "Please enter a valid e-mail address.")
+    .required("required"),
+    
+  otp: yup
+    .string()
+    .required("OTP is required")
+    .matches(/^[0-9]{4}$/, "Must be exactly 4 digit numbers"),
+
   password: yup
     .string()
     .min(8, "password must contain least 8 characters ")
@@ -65,7 +75,7 @@ export const changePasswordValidation = yup.object().shape({
       "characters with at least one of each: uppercase, lowercase, number and special"
     )
     .required("required"),
-  passwordConfirmation: yup
+  password_confirmation: yup
     .string()
     .oneOf([yup.ref("password")], "Passwords must match")
     .required("required"),

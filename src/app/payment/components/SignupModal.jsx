@@ -16,7 +16,6 @@ const SignupModal = ({ signupState, setSignupState }) => {
   // Diplay success message
   useEffect(() => {
     toast.success(state?.success?.message);
-    console.log();
     if (state?.success?.message) {
       router.push(`/verify-email?email=${state?.email}`);
     }

@@ -25,7 +25,6 @@ const SideNav = ({
   const [visibleModules, setVisibleModules] = useState({});
 
   useEffect(() => {
-    console.log("Initial Video Data:", videoData);
     
     if (!videoData?.data?.modules || videoData.data.modules.length === 0) {
       console.warn("Modules array is empty or undefined.");

@@ -16,7 +16,6 @@ import EmptyCart from './(cartcomponents)/EmptyCart';
 const ShoppingCart = () => {
  const {cartItems} = useSelector((state) => state.cart);
 
- console.log("Shopping Cart", cartItems)
 
   return (
     <>

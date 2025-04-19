@@ -15,6 +15,8 @@ import Link from "next/link";
 import secureLocalStorage from "react-secure-storage";
 import { useSelector } from "react-redux";
 import logo from '../../../../public/assets/EdTech Platform Figma.svg';
+import { baseURL } from "@/Service/validation";
+import axios from "axios";
 
 const TopNav = () => {
   const pathname = usePathname();
@@ -33,14 +35,26 @@ const TopNav = () => {
 
   const cartItems = useSelector((state) => state.cart.cartItems);
 
-  const data = secureLocalStorage.getItem('userInfo');
 
-  console.log('User', data)
+
 
   const handleLogout = () => {
+    const token = secureLocalStorage.getItem('token');
     Logout();
+    router.push('/signin');
     router.refresh();
-    toast.success("Logout Successful");
+    
+    axios.post(`${baseURL}auth/logout`, {}, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      toast.success(response?.data?.message || "Logout successful!");
+    })
+    .catch(error => {
+      toast.error(error.response?.data?.message || "Logout failed");
+    });
   };
 
   return (
@@ -116,7 +130,7 @@ const TopNav = () => {
             />
             {profile && (
               <div className="absolute top-8 z-[99] flex shadow-xl flex-col rounded-xl pt-4 px-1 -left-10 h-[6rem] w-20 bg-white">
-                <p
+                <button
                   onClick={() => {
                     setProfile(!profile);
                     handleLogout();
@@ -124,7 +138,7 @@ const TopNav = () => {
                   className="text-sm hover:bg-slate-100 cursor-pointer w-full text-center"
                 >
                   Logout
-                </p>
+                </button>
                 <Link
                   className="text-sm hover:bg-slate-100 cursor-pointer w-full text-center"
                   href="/dashboard/settings"

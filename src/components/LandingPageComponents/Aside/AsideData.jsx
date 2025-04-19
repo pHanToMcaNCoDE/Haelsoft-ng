@@ -8,7 +8,6 @@ import Image from 'next/image';
 
 const AsideData = ({ clicked, selectedMenu, setSelectedMenu }) => {
 
-  console.log('Asidedata', clicked);
 
   useEffect(() => {
     if (clicked) {

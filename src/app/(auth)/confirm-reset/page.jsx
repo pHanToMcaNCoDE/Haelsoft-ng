@@ -14,7 +14,7 @@ import secureLocalStorage from "react-secure-storage";
 import { useDispatch } from "react-redux";
 import { setAuth } from "@/features/user-details/userDetailsSlice";
 
-const EmailVerified = () => {
+const ConfirmReset = () => {
   const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const searchParams = useSearchParams();
@@ -79,12 +79,13 @@ const EmailVerified = () => {
     setIsLoading(true);
     
     axios
-      .post(`${baseURL}auth/verify_account`, {
+      .post(`${baseURL}auth/forgot_password`, {
         user_uuid: user_uuid,
         otp: otpCode
       })
       .then((res) => {
         toast.success(res?.data?.data?.message || "Verification successful!");
+       
         
         if(res.data.data?.token){
           dispatch(setAuth({
@@ -229,4 +230,4 @@ const EmailVerified = () => {
   );
 };
 
-export default EmailVerified;
+export default ConfirmReset;

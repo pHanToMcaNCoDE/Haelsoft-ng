@@ -10,7 +10,7 @@ export const fetchData = async (url) => {
     // console.log("response", response.data.data);
     return response.data.data;
   } catch (error) {
-    console.log("real error", error.message);
+    // console.log("real error", error.message);
     return {
       error,
       status: "error",

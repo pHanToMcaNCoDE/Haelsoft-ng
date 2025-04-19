@@ -1,17 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import Image from "next/image";
-import { signin } from "@/app/actions/auth";
 import { useRouter } from "next/navigation";
 import Loader from "@/components/Loader";
-import secureLocalStorage from "react-secure-storage";
 import SigninCarousel from "./SigninCarousel";
 import InputField from "@/components/InputField";
 import { FcGoogle } from "react-icons/fc";
-import firebase from "firebase/auth";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { app } from "@/app/lib/firebase";
 import logo from '/public/EdTech Platform Figma.svg'
@@ -32,6 +29,15 @@ const SigninForm = () => {
     password: ""
   });
 
+  // const { token } = useSelector((state) => state.userDetails)
+
+  // useEffect(() => {
+  //   if (token) {
+  //     console.log("Attempting navigation to dashboard");
+  //     router.replace('/dashboard/home');
+  //   }
+  // }, [token, router]);
+
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
@@ -48,60 +54,53 @@ const SigninForm = () => {
   };
 
   
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setIsLoading(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const validatedData = await signinValidation.validate(formData, {
+        abortEarly: false,
+      });
+
       try {
-        const validatedData = await signinValidation.validate(formData, {
-          abortEarly: false,
+        const response = await axios.post(`${baseURL}auth/login`, {
+          login: validatedData.login,
+          password: validatedData.password,
         });
-  
-        try {
-          const response = await axios.post(
-            `${baseURL}auth/login`,
-            {
-              login: validatedData.login,
-              password: validatedData.password,
-              // accept_terms_and_conditions: true,
-            }
-          );
-
-          toast.success(response?.data?.data?.message || "Login successful!");
-          console.log("Signin Response", response);
-
-          if (res.data.data?.token) {
-            dispatch(setAuth({
-              token: response.data.data.token,
-              user: response.data.data.user
-            }));
-          }
-
-          router.push(`/dashboard`);
-
-        } catch (error) {
-          if (error.response?.data?.errors?.email) {
-            toast.error(error.response?.data?.errors?.email?.[0] || "Signin failed");
-          } else {
-            toast.error(error.response?.data?.message || "Signin failed");
-          }
+        toast.success(response?.data?.data?.message || "Login successful!");
+        if (response.data.data?.token) {
+          dispatch(setAuth({
+            token: response.data.data.token,
+            user: response.data.data.user
+          }));
+          document.cookie = `token=${response.data.data?.token}; path=/; max-age=86400; SameSite=Strict`;
+          router.replace('/dashboard/home');
         }
+
       } catch (error) {
-        if (error.inner) {
-          const newErrors = {};
-          error.inner.forEach((err) => {
-            if (err.path) {
-              newErrors[err.path] = err.message;
-              toast.error(err.message);
-            }
-          });
-          seterrors(newErrors);
+        if (error.response?.data?.errors?.email) {
+          toast.error(error.response?.data?.errors?.email?.[0] || "Signin failed");
         } else {
-          toast.error(error.message || "Something went wrong.");
+          toast.error(error.response?.data?.message || "Signin failed");
         }
-      } finally {
-        setIsLoading(false);
       }
-    };
+    } catch (error) {
+      if (error.inner) {
+        const newErrors = {};
+        error.inner.forEach((err) => {
+          if (err.path) {
+            newErrors[err.path] = err.message;
+            toast.error(err.message);
+          }
+        });
+        seterrors(newErrors);
+      } else {
+        toast.error(error.message || "Something went wrong.");
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleFieldFocus = (fieldName) => {
     seterrors((prevErrors) => {
@@ -120,9 +119,9 @@ const SigninForm = () => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       const idToken = await user.getIdToken();
-      console.log("idToken", idToken);
     } catch (e) {
-      console.log("e", e);
+      // console.log("e", e);
+      e
     }
   };
   return (
@@ -147,7 +146,7 @@ const SigninForm = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-4 mt-8 w-full mx-auto"
+            className="space-y-4 mt-8 w-[90%] lg:w-full mx-auto"
           >
             {isLoading &&
               <Loader />
@@ -184,10 +183,10 @@ const SigninForm = () => {
               </div>
             </div>
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-x-2">
+              {/* <div className="flex items-center gap-x-2">
                 <input type="checkbox" name="agreedToTermsandConditions" />
                 <div className="text-[#7F7571] text-[13px]">Remember Me</div>
-              </div>
+              </div> */}
               <Link
                 href={"/forgotpassword"}
                 className="underline text-[#0E7EE5] text-[14px]"

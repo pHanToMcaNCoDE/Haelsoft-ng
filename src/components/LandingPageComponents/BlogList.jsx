@@ -36,7 +36,7 @@ const BlogList = () => {
                 setBlogs(res.data.data);
                 setTotalPage(Math.ceil(res.data.data.length / blogLimit));
             })
-            .catch((err) => console.log('Blog Errors', err))
+            .catch((err) => err)
             .finally(() => {
                 setLoading(false);
             });

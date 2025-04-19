@@ -32,7 +32,7 @@ const PaymentConfirmation = () => {
           secureLocalStorage.removeItem('CartItems');
           router.push("/dashboard/my-learning");
         })
-        .catch((err) => console.log(err))
+        .catch((err) => err)
         .finally(() => setLoading(false));
     }
   }, [reference, router]);

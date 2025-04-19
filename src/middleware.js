@@ -22,9 +22,6 @@ export function middleware(req) {
   const cookie = cookies().has("token");
   // dispatch(cookie ? logIn() : logOut());
 
-  // console.log("wcool");
-
-  // console.log(cookie);
 
   if (
     (req.nextUrl.pathname.startsWith("/dashboard") || isProtectedRoute) &&
@@ -32,8 +29,6 @@ export function middleware(req) {
   ) {
     return NextResponse.redirect(new URL("/signin", req.nextUrl));
   }
-
-  // console.log("wcool");
   if (isPublicRoute && cookie) {
     return NextResponse.redirect(new URL("/dashboard/home", req.nextUrl));
   }

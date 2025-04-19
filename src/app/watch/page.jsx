@@ -80,7 +80,7 @@ const SearchParamsWrapper = ({ setLoading, setVideoData, videoData, setContentDa
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {
-          console.log("Full API Response:", res);
+          // console.log("Full API Response:", res);
           if (res.data?.data) {
             setVideoData(res.data.data);
             // setContentData(res.data.data);
@@ -98,7 +98,6 @@ const SearchParamsWrapper = ({ setLoading, setVideoData, videoData, setContentDa
     }, [id, token, setVideoData, setContentData]);
 
     useEffect(() => {
-      console.log("Updated videoData state:", videoData);
     }, [videoData]);
 
     return null;

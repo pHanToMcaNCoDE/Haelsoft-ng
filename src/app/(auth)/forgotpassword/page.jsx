@@ -11,9 +11,12 @@ import logoimage from "../../../asset/haelsoft.gif"
 import { toast, Bounce } from "react-toastify";
 import logo from '/public/EdTech Platform Figma.svg'
 import Loader from "@/components/Loader";
+import { useRouter } from "next/navigation";
 
 const ForgotPassword = () => {
   const [isLoading, setisLoading] = useState(false);
+
+  const router = useRouter();
 
   const formik = useFormik({
     initialValues: {
@@ -25,18 +28,16 @@ const ForgotPassword = () => {
       axios
         .post(`${baseURL}auth/forgot_password`, values)
         .then((res) => {
-          console.log('Forgot Password', res);
           toast.success(res.data.message, {
             toastId: 1,
             position: "top-right",
           });
 
-          router.push('/verify-email');
+          router.push(`/changepassword?email=${encodeURIComponent(formik.values.email)}`);
         })
         .catch((e) => {
-          console.log(e);
           setisLoading(false);
-          toast.error(e.res.data.message, {
+          toast.error(e.message, {
             toastId: 1,
             position: "top-right",
           });
@@ -52,7 +53,7 @@ const ForgotPassword = () => {
       {isLoading && (
         <Loader/>
       )}
-      <div className="max-w-[500px] w-full mx-auto text-center lg:mt-36 flex flex-col justify-center items-center gap-4">
+      <div className="max-w-[500px] w-full mx-auto text-center flex flex-col justify-center items-center gap-4">
         <Link href={"/"}>
           <Image
             src={logo}
@@ -81,7 +82,7 @@ const ForgotPassword = () => {
             error={formik.touched.email && formik.errors.email}
             errorText={formik.errors.email}
           />
-          <button type="submit" className="bg-main text-[#FFF1EC] h-[48px] w-full text-lg rounded-[4px] font-medium shadow-custom-light-elevation">
+          <button type="submit" className="bg-main text-[#FFF1EC] h-[48px] w-full text-lg rounded-[4px] font-medium ">
             Send reset link
           </button>
         </form>

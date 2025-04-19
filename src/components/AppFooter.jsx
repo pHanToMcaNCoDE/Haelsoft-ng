@@ -13,11 +13,10 @@ import Image from "next/image";
 const AppFooter = () => {
   const path = usePathname()
 
-  console.log('Path', path)
 
   
 
-  if(['/verify-email', '/signup', '/signin'].includes(path)) {
+  if(['/verify-email', '/signup', '/signin', '/forgotpassword', '/changepassword'].includes(path)) {
     return null;
   }
   

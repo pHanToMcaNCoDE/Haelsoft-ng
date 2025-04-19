@@ -17,15 +17,15 @@ const MyLearning = () => {
         const token = secureLocalStorage.getItem('token');
 
     
-        console.log('Token', token)
+        // console.log('Token', token)
         axios.get(`https://edtech-backend-q2ud.onrender.com/enrollment/api/enrollments/`,{
             headers: {
               'Authorization': `Bearer ${token}`
             }
           }).then((res) => {
-            console.log('Paid Courses', res.data.data);
+            // console.log('Paid Courses', res.data.data);
             setPaidCourses(res.data.data);
-        }).catch (err => console.log('Fetch Course Error', err)).finally(() => setLoading(false))
+        }).catch (err => err).finally(() => setLoading(false))
     }, [])
     
     if(loading) {

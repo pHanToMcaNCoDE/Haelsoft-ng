@@ -27,7 +27,6 @@ const HomePage = () => {
         setLoadingCategories(false);
       })
       .catch((err) => {
-        console.log('Categories Error', err);
         setErrorCategories('Failed to fetch categories: Network error');
         setLoadingCategories(false);
       });
@@ -35,7 +34,6 @@ const HomePage = () => {
     // Fetch Courses
     axios.get(`https://edtech-backend-q2ud.onrender.com/course/api/course/`)
       .then((res) => {
-        console.log("Fetched data:", res);
         if (res.data.status === "Success" && Array.isArray(res.data.data)) {
           setCourses(res.data.data);
           dispatch(addCourses(res.data.data));
