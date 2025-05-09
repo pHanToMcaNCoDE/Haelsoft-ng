@@ -12,7 +12,9 @@ const SettingsTab = ({settingsTab, setSettingsTab}) => {
 
   return (
     <nav className='w-full md:w-[30%] lg:w-auto flex flex-col justify-start items-start gap-10'>
-        <h1 className='font-semibold leading-9 text-[1.5rem] text-black'>Account Setting</h1>
+        <div>
+            <h1 className='font-semibold leading-9 text-[1.5rem] text-black'>Account Setting</h1>
+        </div>
         <ul className='font-medium text-[1.125rem] leading-[46px] text-black'>
             <li className='relative cursor-pointer' onClick={() => setSettingsTab('Personal Information')}>
                 Personal Information
@@ -23,7 +25,7 @@ const SettingsTab = ({settingsTab, setSettingsTab}) => {
                 }
             </li>
             <li className='relative cursor-pointer' onClick={() => setSettingsTab('Password')}>
-                Password
+                Change Password
                 {
                     settingsTab === 'Password' && (
                         <div className='w-[45px] h-[4px] rounded-md bg-main duration-200'></div>
@@ -38,14 +40,14 @@ const SettingsTab = ({settingsTab, setSettingsTab}) => {
                     )
                 }
             </li>
-            <li className='relative cursor-pointer' onClick={() => setSettingsTab('Subscriptions')}>
+            {/* <li className='relative cursor-pointer' onClick={() => setSettingsTab('Subscriptions')}>
                 Subscriptions
                 {
                     settingsTab === 'Subscriptions' && (
                         <div className='w-[45px] h-[4px] rounded-md bg-main duration-200'></div>
                     )
                 }
-            </li>
+            </li> */}
             <li className='relative cursor-pointer' onClick={() => setSettingsTab('Linked Accounts')}>
                 Linked Accounts
                 {
@@ -54,14 +56,14 @@ const SettingsTab = ({settingsTab, setSettingsTab}) => {
                     )
                 }
             </li>
-            <li className='relative cursor-pointer' onClick={() => setSettingsTab('Language Preference')}>
+            {/* <li className='relative cursor-pointer' onClick={() => setSettingsTab('Language Preference')}>
                 Language Preference
                 {
                     settingsTab === 'Language Preference' && (
                         <div className='w-[45px] h-[4px] rounded-md bg-main duration-200'></div>
                     )
                 }
-            </li>
+            </li> */}
         </ul>
     </nav>
   )

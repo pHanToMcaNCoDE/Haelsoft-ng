@@ -21,9 +21,9 @@ const Settings = () => {
               settingsTab === 'Personal Information' ? (<PersonalInformation/>) :
               settingsTab === 'Password' ? (<Password/>) :
               settingsTab === 'Notification' ? (<Notification/>) :
-              settingsTab === 'Subscriptions' ? (<Subscriptions/>) : 
+              // settingsTab === 'Subscriptions' ? (<Subscriptions/>) : 
               settingsTab === 'Linked Accounts' ? (<LinkedAccounts/>) : 
-              settingsTab === 'Language Preference' ? (<LanguagePreference/>) : 
+              // settingsTab === 'Language Preference' ? (<LanguagePreference/>) : 
               <PersonalInformation/>
           }
         </div>

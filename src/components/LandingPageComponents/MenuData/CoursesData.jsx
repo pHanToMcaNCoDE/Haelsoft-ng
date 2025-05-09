@@ -1,11 +1,35 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaCode, FaSearchDollar } from 'react-icons/fa'
 import { MdContactMail, MdOutlineDesignServices } from 'react-icons/md'
 import { FaClipboardList } from 'react-icons/fa';
 import { TbAtom } from 'react-icons/tb'
+import axios from 'axios';
+import secureLocalStorage from 'react-secure-storage';
 
 const CoursesData = ({subMenuRef}) => {
+    
+    const token = secureLocalStorage.getItem("token");
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        const fetchCategory = () => {
+            axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+
+            .then((response) => {
+                setCategories(response.data.data)
+            })
+
+            .catch(error => console.log("Category Error", error))
+        }
+
+        if(token) fetchCategory()
+    }, [token])
   return (
     <div ref={subMenuRef} className='flex justify-start xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
         <div className='h-full hidden lg:flex flex-col justify-start items-start gap-5'>
@@ -15,52 +39,39 @@ const CoursesData = ({subMenuRef}) => {
             </p>
         </div>
         <div className='hidden xl:grid grid-cols-1 xl:grid-cols-4 justify-items-start gap-4 xl:h-full'>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <h1 className='text-base font-semibold text-black'>Development</h1>
-                <ul className='flex flex-col justify-start items-start gap-3'>
-                    <Link href={`/web-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Web Development
-                    </Link>
-                    {/* <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Backend Development
-                    </li> */}
-                    {/* <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Full-Stack Development
-                    </li> */}
-                    {/* <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Block-Chain Development
-                    </li> */}
-                </ul>
-            </div>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <h1 className='text-base font-semibold text-black'>Data + AI</h1>
-                <ul className='flex flex-col justify-start items-start gap-3'>
-                    <Link href={`/data-analytics-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Data Analytics</Link>
-                    <Link href={`/data-science-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Data Science</Link>
-                    <Link href={`/artificial-intelligence-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Artificial Intelligence</Link>
-                    <Link href={`/python-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Python</Link>
-                </ul>
-            </div>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <h1 className='text-base font-semibold text-black'>Design</h1>
-                <ul className='flex flex-col justify-start items-start gap-3'>
-                    <Link href={`/user-interface-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>UI Design</Link>
-                    <Link href={`/user-experience-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>UX Design</Link>
-                </ul>
-            </div>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <h1 className='text-base font-semibold text-black'>Digital Marketing</h1>
-                <ul className='flex flex-col justify-start items-start gap-3'>
-                    <Link href={`/digital-marketing-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Digital Marketing</Link>
-                </ul>
-            </div>
-            {/* <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <h1 className='text-base font-semibold text-black'>Search Engine Optimization</h1>
-                <ul className='flex flex-col justify-start items-start gap-3'>
-                    <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>SEO Fundamentals</li>
-                    <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Advance SEO Concepts</li>
-                </ul>
-            </div> */}
+            {
+                categories?.map((category) => (
+                    <div key={category.uid} className='w-full flex flex-col justify-start items-start gap-3'>
+                        <h1 className='text-base font-semibold text-black'>{category.name}</h1>
+                        <ul className='flex flex-col justify-start items-start gap-3'>
+                            {
+                                category.sub_categories.length > 0 ? (
+                                    category.sub_categories.map((sub) => (
+                                    <Link
+                                        key={sub.uid}
+                                        href={`/dashboard/category/${category.uid}`}
+                                        className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                    >
+                                        {sub.name}
+                                    </Link>
+                                    ))
+                                ) : (
+                                    <Link
+                                    href={`/dashboard/category/${category.uid}`}
+                                    className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                    >
+                                    {category.name}
+                                    </Link>
+                                )
+                            }
+                        </ul>
+                    </div>
+                ))
+            }
         </div>
 
 

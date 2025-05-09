@@ -41,7 +41,7 @@ const ChangePasswordComponent = () => {
     onSubmit: (values) => {
       setIsLoading(true);
       axios
-        .post(`${baseURL}auth/reset_password`, {
+        .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/reset_password`, {
           email: mainEmail,
           otp: values.otp,
           password: values.password,
@@ -71,7 +71,7 @@ const ChangePasswordComponent = () => {
   const handleResendOtp = () => {
     setIsLoading(true);
     axios
-      .post(`${baseURL}auth/resend_forget_password`, {
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/resend_forget_password`, {
         email: mainEmail
       })
       .then((res) => {

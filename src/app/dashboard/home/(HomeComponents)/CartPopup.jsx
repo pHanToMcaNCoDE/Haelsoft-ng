@@ -49,7 +49,7 @@ const CartPopup = ({ onClose }) => {
                 </p>
               </div>
               <Link
-                href={"/dashboard/shoppingcart"}
+                href={"/dashboard/shopping-cart"}
                 className="flex justify-center items-center w-[214px] h-[58px] gap-[10px] p-[10px] rounded bg-[#FF8C53] border border-[#FF8C53] text-white"
               >
                 Go To Cart

@@ -4,7 +4,7 @@ const nextConfig = {
     missingSuspenseWithCSRBailout: false,
   },
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: ['staging.haelsoftmasterclass.com'],
   },
 };
 

@@ -30,6 +30,7 @@ const userDetailsSlice = createSlice({
             state.tokenExpiration = null;
             secureLocalStorage.removeItem('token');
             secureLocalStorage.removeItem('user');
+            secureLocalStorage.removeItem('uid');
         }
     }
 });

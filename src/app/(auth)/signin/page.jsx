@@ -16,6 +16,7 @@ import { baseURL, signinValidation } from "@/Service/validation";
 import axios from "axios";
 import { setAuth } from "@/features/user-details/userDetailsSlice";
 import { useDispatch } from "react-redux";
+import secureLocalStorage from "react-secure-storage";
 
 
 const SigninForm = () => {
@@ -63,11 +64,13 @@ const SigninForm = () => {
       });
 
       try {
-        const response = await axios.post(`${baseURL}auth/login`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/login`, {
           login: validatedData.login,
           password: validatedData.password,
         });
         toast.success(response?.data?.data?.message || "Login successful!");
+
+        secureLocalStorage.setItem('uid', response.data.data.user.user_uuid)
         if (response.data.data?.token) {
           dispatch(setAuth({
             token: response.data.data.token,

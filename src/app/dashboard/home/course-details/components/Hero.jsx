@@ -14,33 +14,37 @@ import { Bounce, toast } from "react-toastify";
 import axios from "axios";
 import ReactPlayer from "react-player";
 import { PulseLoader } from "react-spinners";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useParams, usePathname, useSearchParams } from "next/navigation";
 import { addCourse } from "@/features/courses/courseSlice";
+import Loader from "@/components/Loader";
 
 const Hero = ({ courses }) => {
   const pathname = usePathname();
   // const id = decodeURIComponent(pathname.split('id').pop());
-  const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  // const searchParams = useSearchParams();
+  // const id = searchParams.get("id");
   const [isVideo, setIsVideo] = useState(false);
   const [tabClicked, setTabClicked] = useState("About");
   const [showCartPopup, setShowCartPopup] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [courseDetails, setcourseDetails] = useState(null);
-
+  const [isLoading, setIsLoading] = useState(false)
   const dispatch = useDispatch();
 
+  const { id } = useParams();
 
-  const handleAddToCart = () => {
-    if (dispatch(addToCart(courses))) {
-      setShowCartPopup(true);
-    } else {
-      toast.error("Something went wrong!", {
-        transition: Bounce,
-      });
-    }
-  };
+
+  // const handleAddToCart = () => {
+  //   if (dispatch(addToCart(courses))) {
+  //     setShowCartPopup(true);
+  //   } else {
+  //     toast.error("Something went wrong!", {
+  //       transition: Bounce,
+  //     });
+  //   }
+  // };
+
   const token = secureLocalStorage.getItem("token");
+
   const handleTransaction = () => {
     setLoading(true);
     axios
@@ -68,36 +72,72 @@ const Hero = ({ courses }) => {
       });
   };
 
-  useEffect(() => {
-    axios
-      .get(`https://edtech-backend-q2ud.onrender.com/course/api/course/${id}/`)
-      .then((res) => {
-        // console.log("res", res.data.data);
-        setLoading(false);
-        setcourseDetails(res.data.data);
-        dispatch(addCourse(res.data.data))
-      })
-      .catch((err) => {
-        // console.log("Categories Error", err);
-        setLoading(false);
+  const fetchCartItems = async () => {
+    try {
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
       });
-  }, []);
-        // console.log('The details', courseDetails)
+      return response.data.data;
+    } catch (error) {
+      toast.error(error.response.data.message)
+      return [];
+    }
+  };
 
-  const [pausePlay, setpausePlay] = useState(false);
+
+  const handleAddToCartRequest = async () => {
+    setIsLoading(true);
+
+    try {
+      const cartItems = await fetchCartItems();
+      const alreadyInCart = cartItems.some(item => item.course.id === courses.course_id);
+
+      if (alreadyInCart) {
+        toast.info("Course already in cart");
+        return;
+      }
+
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${id}`,
+        {},
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      toast.success(response.data.message);
+
+    } catch (error) {
+      toast.error(error.response.data.message)
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
 
   return (
-    <div className="relative z-10">
-      <div className="w-full py-16 px-3 xl:px-0 relative">
+    <section className="relative z-10">
+      {
+        isLoading && (
+          <Loader/>
+        )
+      }
+      <div className="w-full pt-16 pb-10 px-3 xl:px-0 relative">
         <video autoPlay muted loop playsInline className="hero-video z-10">
           <source src='/assets/teacher(1).mp4' type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      <div className='absolute bg-[#D98E47]/70 top-0 left-0 w-full h-full'></div>
-        <div className="max-w-[1300px] mx-auto flex flex-col items-center md:items-start md:flex-row gap-x-12 relative lg:h-[550px] z-30 pt-[70px]">
-          <div className="w-full flex flex-col xl:flex-row justify-start items-start gap-6 ">
-            <Link href={`/dashboard/home`}>
-              <HiOutlineArrowLongLeft size={35} className="text-white" />
+        <div className='absolute bg-[#D98E47]/70 top-0 left-0 w-full h-full'></div>
+        <div className="max-w-[1300px] mx-auto flex flex-col items-center md:items-start lg:flex-row gap-x-12 relative lg:h-[550px] z-30 pt-[70px]">
+          <div className="w-full flex flex-col justify-start items-start gap-4">
+            <Link href={`/dashboard/home`} className="flex justify-center font-medium text-lg text-white items-center gap-2">
+              <HiOutlineArrowLongLeft size={35} className="text-white" /> Go back
             </Link>
             {/* <p className="text-white font-semibold text-[1.2rem] md:text-[1.8rem] lg:text-[3.4rem]">
               Haelsoft
@@ -106,19 +146,13 @@ const Hero = ({ courses }) => {
               <p className="text-sm font-medium text-white">
                 PROFESSIONAL CERTIFICATE
               </p>
-              <h1 className="text-white mt-2 font-bold text-[3rem] leading-10">
-                {courses?.course_title}
+              <h1 className="text-white mt-2 font-bold text-[2rem] lg:text-5xl leading-10">
+                {courses?.title}
               </h1>
               <p className="text-[1rem] leading-8 font-medium text-white w-full">
-                {courses?.intro}
+                {courses.category?.desc}
               </p>
 
-              <Link
-                href={`/watch?id=${id}`}
-                className="border border-white text-white rounded-lg px-8 py-4 font-bold w-full md:w-[180px] mt-4"
-              >
-                Go To Course
-              </Link>
               {/* <p className="text-white">1,000 already enrolled</p> */}
             </div>
             {/* <div className="leading-[46px] mt-4 text-start">
@@ -126,46 +160,13 @@ const Hero = ({ courses }) => {
             </div> */}
           </div>
           <div className="w-full">
-            <div className="md:w-[559px] h-[674px] rounded-[30px] mx-auto bg-white mt-10 lg:mt-[100px] shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] flex flex-col justify-between items-start pt-8">
-              {/* py-8 px-8 <div className="relative w-full cursor-pointer">
-                <ReactPlayer
-                  url={
-                    `https://res.cloudinary.com/dmpqdaupc/` +
-                    courseDetails.video_url
-                  }
-                  width={"100%"}
-                  height={"448px"}
-                  className="bg-black"
-                  playing={pausePlay}
-                  controls={pausePlay}
-                  config={{
-                    file: {
-                      attributes: {
-                        controlsList: "nodownload",
-                        disablePictureInPicture: true,
-                      },
-                    },
-                  }}
-                />
-                {!pausePlay && (
-                  <div
-                    onClick={() => setpausePlay((prev) => !prev)}
-                    className="flex flex-col gap-8 pt-10 absolute inset-0 m-auto text-white items-center justify-center"
-                  >
-                    <Image
-                      src={playicon}
-                      className="object-contain"
-                      alt="Play Icon"
-                    />
-                    <p className="text-xl font-semibold">Preview This Course</p>
-                  </div>
-                )}
-              </div> */}
+            <div className="md:w-[559px] md:h-[400px] rounded-[30px] mx-auto bg-white mt-10 lg:mt-[100px] shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] flex flex-col justify-between items-start pt-8">
+              
               <div className="w-full px-7">
                 <div className="mt-4">
                   <p className="text-[2rem] lg:text-[2.5rem] font-semibold">
                     {/* N {courses.price} */}₦{" "}
-                    {courseDetails?.price?.toLocaleString(undefined, {
+                    {courses?.price?.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}
@@ -185,30 +186,18 @@ const Hero = ({ courses }) => {
                       </button>
                     )}
                   </div>
-                  <p className="text-lg mt-8">This courses includes:</p>
+                  <p className="text-lg mt-8">What You'll Learn:</p>
                 </div>
-                <div className="mt-5 w-full gap-8 flex flex-col justify-center items-start text-grayTwo">
-                  {Array.isArray(courses.includes) && courses.includes.length > 0 ? (
-                    courses.includes.map((include, index) => (
-                      <div key={index} className="flex justify-start items-end gap-3">
-                        <Image src={include.img} alt="Include Icon" />
-                        <div className="flex flex-col justify-center items-start gap-1">
-                          <p>Duration</p>
-                          <p className="text-black font-semibold">{include.text}</p>
-                        </div>
-                      </div>
-                    ))
-                  ) : (
-                    <p>No includes available for this course.</p>
-                  )}
-                </div>
+                <ul className="my-5 w-full gap-8 flex flex-col justify-center items-start text-grayTwo">
+                  <li className="text-black font-semibold ml-4 list-disc">{courses.what_you_learn}</li>
+                </ul>
               </div>
-              <button
-                className="py-8 flex justify-center items-center h-[72px] rounded-bl-[30px] rounded-br-[30px] w-full text-white font-semibold bg-main"
-                onClick={handleAddToCart}
-              >
-                Add To Cart
-              </button>
+                <button
+                  className="py-8 flex justify-center items-center h-[72px] rounded-bl-[30px] rounded-br-[30px] w-full text-white font-semibold bg-main"
+                  onClick={handleAddToCartRequest}
+                >
+                  Add To Cart
+                </button>
             </div>
           </div>
         </div>
@@ -238,46 +227,32 @@ const Hero = ({ courses }) => {
           </div> */}
           {/* <div className="mt-4 w-full md:w-[640px] h-[1.5px] rounded-full bg-[#F36400]"></div> */}
 
-          <div className="py-10 flex flex-col justify-center items-start gap-8">
-            <div className="flex flex-col justify-center items-start gap-2">
+          {/* <div className="py-10 flex flex-col justify-center items-start gap-8"> */}
+            {/* <div className="flex flex-col justify-center items-start gap-2">
               <h1 className="text-3xl text-black font-bold">About this course</h1>
-              {/* <div className="w-[75px] h-[4px] bg-yellow-400 rounded"></div> */}
-            </div>
-            {courses.course_overview ? (() => {
-              const sentences = courses.course_overview.split(". ");
-              const firstParagraph = sentences.slice(0, 4).join(". ") + ".";
-              const secondParagraph = sentences.slice(5).join(". ");
-
-              return (
-                <div className="flex flex-col justify-center items-start gap-6">
-                  <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
-                    {firstParagraph}
-                  </p>
-                  {secondParagraph && (
+            </div> */}
+            {/* {
+              courses.category?.desc && (() => {
+                const sentences = courses?.category?.desc.split(". ");
+                const firstParagraph = sentences.slice(0, 4).join(". ") + ".";
+                const secondParagraph = sentences.slice(5).join(". ");
+                return (
+                  <div className="flex flex-col justify-center items-start gap-6">
                     <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
-                      {secondParagraph}
+                      {firstParagraph}
                     </p>
-                  )}
-                </div>
-              );
-            })() : (() => {
-              const sentences = courses.description.split(". ");
-              const firstParagraph = sentences.slice(0, 4).join(". ") + ".";
-              const secondParagraph = sentences.slice(5).join(". ");
+                    {secondParagraph && (
+                      <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
+                        {secondParagraph}
+                      </p>
+                    )}
+                  </div>
+                );
+              })
+            } */}
 
-              return (
-                <div className="flex flex-col justify-center items-start gap-6">
-                  <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
-                    {firstParagraph}
-                  </p>
-                  {secondParagraph && (
-                    <p className="text-[1rem] text-grayTwo font-normal leading-[30px] tracking-[.5px] w-full lg:w-[654px]">
-                      {secondParagraph}
-                    </p>
-                  )}
-                </div>
-              );
-            })()}
+
+            
 
 
             {/* <div className="md:w-[578px] flex flex-col items-start justify-start md:h-[280px] py-6 gap-5 px-2">
@@ -294,12 +269,11 @@ const Hero = ({ courses }) => {
                 <p>No benefits available for this course.</p>
               )}
             </div> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
-
-      {/* {showCartPopup && <CartPopup onClose={setShowCartPopup}/>} */}
-    </div>
+    </section>
+  
   );
 };
 

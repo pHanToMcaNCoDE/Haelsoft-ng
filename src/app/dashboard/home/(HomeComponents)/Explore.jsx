@@ -10,12 +10,12 @@ const Explore = ({ courses }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [clickFilter, setClickFilter] = useState(false);
   const [rating, setRating] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState("Trending");
+  // const [selectedCategory, setSelectedCategory] = useState("Trending");
   const [selectedFilter, setSelectedFilter] = useState(null);
 
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-  };
+  // const handleCategoryClick = (category) => {
+  //   setSelectedCategory(category);
+  // };
 
   const handleFilterClick = (filter) => {
     setSelectedFilter(filter);
@@ -31,12 +31,12 @@ const Explore = ({ courses }) => {
   return (
     <section className="max-w-[1250px] 2xl:max-w-[1500px] mx-auto gap-2">
       <div className="flex flex-col md:flex-row justify-between w-full items-start md:items-center gap-3 my-5">
-        <div className="text-[#201A18] font-bold text-[1.5rem] lg:text-[2rem] leading-[45px] flex flex-col md:flex-row justify-between w-full items-center md:items-center gap-5 my-5">
-        <h1>All Courses</h1>
-        <form action="" className="w-[238px] h-[38px] rounded-[4px] px-2 py-5 flex justify-between items-center gap-2 border border-[#e0e0e0]">
-          <FiSearch className="text-xl text-[#e0e0e0]" />
-          <input type="text" name="" id="" placeholder='Search...' className='text-black text-base font-normal w-full outline-none px-2 placeholder:text-base' onChange={(e) => setSearchText(e.target.value)} />
-        </form>
+        <div className="text-[#201A18] font-bold text-[1.5rem] lg:text-[2rem] leading-[45px] flex flex-wrap justify-between w-full items-start sm:items-center gap-5 my-5">
+          <h1>All Courses</h1>
+          <form action="" className="w-[238px] h-[38px] rounded-[4px] px-2 py-5 flex justify-between items-center gap-2 border border-[#e0e0e0]">
+            <FiSearch className="text-xl text-[#e0e0e0]" />
+            <input type="text" name="" id="" placeholder='Search...' className='text-black text-base font-normal w-full outline-none px-2 placeholder:text-base' onChange={(e) => setSearchText(e.target.value)} />
+          </form>
         {/* <div className="relative">
             <div
               onClick={() => setClickFilter((prev) => !prev)}

@@ -80,6 +80,78 @@ export const changePasswordValidation = yup.object().shape({
     .oneOf([yup.ref("password")], "Passwords must match")
     .required("required"),
 });
+ 
+
+export const profileValidation = yup.object().shape({
+  full_name: yup
+    .string()
+    .required("Full Name requried"),
+  
+  alt_email: yup
+    .string()
+    .email("Please enter a valid e-mail address.")
+    .required("required"),
+
+  country: yup
+    .string()
+    .required("Location required"),
+
+  profile_image: yup
+    .mixed()
+    .notRequired()
+})
+
+
+
+export const linkedAccountsValidation = yup.object().shape({
+  facebook_link: yup
+    .string()
+    .required("Full Name requried"),
+  
+  youtube_link: yup
+    .string()
+    // .email("Please enter a valid e-mail address.")
+    .required("required"),
+
+  google_link: yup
+    .string()
+    .required("Location required"),
+
+  linkedin_link: yup
+    .string()
+    .required("Profile Image required"),
+
+  tiktok_link: yup
+    .string()
+    .required("Profile Image required")
+});
+
+
+
+
+export const changePasswordSettingsValidation = yup.object().shape({
+  current_password: yup
+    .string()
+    .required("Current Password requried"),
+  
+  password: yup
+    .string()
+    .min(8, "password must contain least 8 characters ")
+    .matches(
+      passwordRegExp,
+      "characters with at least one of each: uppercase, lowercase, number and special"
+    )
+    .required("required"),
+
+  password_confirmation: yup
+    .string()
+    .oneOf([yup.ref("password")], "Passwords must match")
+    .required("required"),
+
+})
+
+
+
 
 export const data = {
   isPaid: true,

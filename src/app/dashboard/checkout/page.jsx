@@ -1,0 +1,198 @@
+'use client'
+
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import PaymentChannel from './(components)/PaymentChannel'
+import secureLocalStorage from 'react-secure-storage'
+import axios from 'axios'
+import Loader from '@/components/Loader'
+import { ScaleLoader } from 'react-spinners'
+import CheckOut from './(components)/CheckOut'
+import { toast } from 'react-toastify'
+import { Rating } from '@smastrom/react-rating'
+
+const page = () => {
+    const [current, setCurrent] = useState("Payment Channel");
+    const[channels, setChannels] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
+    
+    const [cartItems, setCartItems] = useState([]);
+
+    const [selectedChannel, setSelectedChannel] = useState(null);
+
+    console.log('Selected channel', selectedChannel)
+
+    const token = secureLocalStorage.getItem("token");
+
+    useEffect(() => {
+        setIsLoading(true);
+        const fetchPaymentChannel = () => {
+            axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}payment/channels`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+
+            .then((response) => {
+                setChannels(response.data.data)
+            })
+
+            .catch((error) => console.log('Channel Error', error))
+
+            .finally(() => setIsLoading(false))
+        }
+
+        if(token) fetchPaymentChannel()
+
+    }, [token])
+
+
+
+    useEffect(() => {
+        setLoading(true);
+
+        axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
+        headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`
+        }
+        })
+        .then((response) => {
+        setLoading(false)
+        // toast.success(response.data.message)
+        setCartItems(response.data.data);
+        })
+        .catch((error) => {
+        toast.error(error.response?.data?.message || error.response?.message )
+        setLoading(false)
+        })
+    }, [token])
+
+
+    const renderContent = () => {
+        switch (current) {
+            case 'Payment Channel':
+            return (
+                <PaymentChannel
+                channels={channels}
+                setSelectedChannel={setSelectedChannel}
+                selectedChannel={selectedChannel}
+                />
+            );
+            case 'Bank Transfer':
+            return (
+                <CheckOut/>
+            );
+            case 'Card Payment':
+            return <div>Card Payment component here</div>;
+            default:
+            return <p>No view selected</p>;
+        }
+    };
+
+  return (
+    <main className='w-full flex flex-col lg:flex-row justify-center items-center gap-8 h-screen'>
+        
+        {/* Components */}
+        <div className='w-full lg:w-[50%] h-full px-3 py-[50px] flex flex-col justify-center items-start gap-10'>
+            <div className='w-full flex flex-col justify-start items-start gap-1'>
+                <p className='font-bold text-black text-xl md:text-2xl'>{current}</p>
+                <h1 className='font-normal bold text-md text-grayTwo'>Choose a payment channel</h1>
+            </div>
+
+            {
+                isLoading ? (
+                    <div className='w-full flex justify-center items-center'>
+                        <ScaleLoader color='#c75c27'/>
+                    </div>
+                ) : (
+                    renderContent()
+                )
+            }
+        </div>
+
+
+        {/* Amount */}
+        
+        <div className='w-full lg:w-[50%] h-full bg-gray/[20%] flex flex-col justify-center items-center gap-8 border-t lg:border-l border-gray px-3 py-[50px]'>
+            <div className='w-full flex flex-col gap-10 lg:gap-[60px]'>
+                <div className='w-ful flex flex-col gap-2'>
+                    <h1 className='font-bold text-black text-xl md:text-2xl'>Order Summary</h1>
+                    <div className='w-full flex flex-col sm:flex-row justify-between items-center gap-1'>
+                        <p className='text-grayTwo font-semibold text-md'>Order details</p>
+                        <p className='text-grayTwo font-normal text-md'>Price</p>
+                    </div>
+                </div>
+                {
+                    loading ? (
+                        <div className='w-full flex justify-center items-center'>
+                            <ScaleLoader color='#c75c27'/>
+                        </div>
+                    ) : (
+                        <div className='max-h-[500px] overflow-auto w-full'>
+                            <div className="w-full flex flex-col gap-10 justify-start items-start">
+                            {cartItems.map((item) => (
+                                <div
+                                key={item.course_uid || item.uid}
+                                className="flex flex-col md:flex-row justify-center items-center gap-3 w-full"
+                                >
+                                <div className="flex flex-col md:flex-row justify-between items-center w-full">
+                                    <div className="flex flex-col md:flex-row items-start justify-between gap-8 w-full">
+                                        <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={150} height={300} alt={item.course?.title} />
+                                    <div className="flex flex-col gap-2 w-full">
+                                        <h1 className="text-grayTwo text-[1.125rem] leading-[35px] font-semibold">
+                                        {item.course?.title}
+                                        </h1>
+                                        <div className="flex flex-col justify-center items-start gap-1">
+                                        {/* <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                                            {item.rating} rating
+                                        </p> */}
+                    
+                                        {/* <div className="flex justify-center items-center gap-1">
+                                            <div>
+                                            <Rating
+                                                style={{ maxWidth: 80 }}
+                                                value={item.rating}
+                                                readOnly
+                                            />
+                                            </div>
+                                            <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                                            ({item.reviews})
+                                            </p>
+                                        </div> */}
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-start items-center gap-6">
+                                        <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold">
+                                        ₦{(item.course?.price || 0).toLocaleString()}
+                                        </p>
+                                        {/* <RiDeleteBin6Line
+                                        onClick={() => handleRemoveFromCart(item.uid)}
+                                        className="text-[1.25rem] cursor-pointer text-main font-semibold"
+                                        /> */}
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
+                            ))}
+                            <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+            <div className='w-full flex flex-col md:flex-row justify-start md:justify-between items-start md:items-center gap-4'>
+                <h1 className='font-semibold text-md text-black'>Total <span className='font-normal'>({cartItems.length} Course(s)):</span></h1>
+                <div className='text-left md:text-right text-grayTwo flex flex-col gap-3'>
+                    <h2 className='text-lg font-semibold'>
+                        ₦{cartItems.reduce((total, item) => total + (Number(item.course?.price) || 0), 0).toLocaleString()}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </main>
+  )
+}
+
+export default page

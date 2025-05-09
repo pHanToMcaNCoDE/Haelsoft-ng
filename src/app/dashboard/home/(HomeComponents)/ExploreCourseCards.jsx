@@ -26,7 +26,7 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
 
         return (
           <div
-            key={course.title}
+            key={course.uid}
             className="bg-white w-full h-full lg:h-[425px] border border-[#cfcece] rounded-[6px] flex flex-col justify-between gap-2 items-start cursor-pointer"
           >
             {/* <div
@@ -39,15 +39,16 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
               height={300}
               className="object-contain rounded-tl-[6px] rounded-tr-[6px]"
               src={
-                course?.img_course
-                  ? `https://res.cloudinary.com/dmpqdaupc/${course.img_course}`
+                course?.cover_image
+                  ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
                   : "/fallback-image.jpg"
               }
               alt={course.title}
             />
 
             <div className="px-3 pb-5 flex flex-col justify-end items-start w-full gap-2">
-              <h1 className="text-black text-2xl font-semibold">{course.title}</h1>
+              <h1 className="text-black text-xl font-semibold">{course.title}</h1>
+              <p className="text-grayTwo text-sm text-[.75rem]">{course.sub_title}</p>
               <div className="flex flex-wrap justify-between items-center w-full gap-5">
                 <Rating
                   style={{ maxWidth: 80 }}
@@ -61,13 +62,14 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
                   ₦{course.price || "N/A"}
                 </p>
                 <Link
-                  href={{
-                    pathname: "/dashboard/home/course-details",
-                    query: {
-                      details: course.title,
-                      id: course.course_id,
-                    },
-                  }}
+                  // href={{
+                  //   pathname: "/dashboard/home/course-details",
+                  //   query: {
+                  //     // details: course.title,
+                  //     id: course.uid,
+                  //   },
+                  // }}
+                  href={`/dashboard/home/course-details/${course.uid}`}
                   className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
                 >
                   View course <IoIosArrowRoundForward />

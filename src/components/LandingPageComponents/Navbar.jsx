@@ -166,12 +166,14 @@ const Navbar = ({ clicked, setClicked }) => {
       </div> */}
 
       {clicked && (
-        <Menu
-          subMenuRef={subMenuRef}
-          menu={menu}
-          setMenu={setMenu}
-          clicked={clicked}
-        />
+        <div className={`dropdown-content overflow-hidden fixed top-[58px] left-0 min-h-[348px] w-full bg-white hidden xl:flex shadow-xl shadow-zinc-200 z-[999] p-10`}>
+          <Menu
+            subMenuRef={subMenuRef}
+            menu={menu}
+            setMenu={setMenu}
+            clicked={clicked}
+            />
+        </div>
       )}
    </>
   );

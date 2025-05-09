@@ -48,7 +48,7 @@ const ConfirmReset = () => {
   const resendOtp = () => {
     setIsLoading(true);
     axios
-      .post(`${baseURL}auth/resend_otp`, {
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/resend_otp`, {
         email: email
       })
       .then((res) => {
@@ -79,7 +79,7 @@ const ConfirmReset = () => {
     setIsLoading(true);
     
     axios
-      .post(`${baseURL}auth/forgot_password`, {
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/forgot_password`, {
         user_uuid: user_uuid,
         otp: otpCode
       })

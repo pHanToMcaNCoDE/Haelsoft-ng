@@ -1,8 +1,4 @@
-
 import { NextResponse } from "next/server";
-import { cookies } from "next/headers";
-// import { useSelector, useDispatch } from "react-redux";
-import { logIn, logOut } from "./store/LoggedInSlice";
 
 const publicRoutes = [
   "/signin",
@@ -13,24 +9,21 @@ const publicRoutes = [
 ];
 const protectedRoutes = ["/watch"];
 
-export function middleware(req) {
-
-  // const dispatch = useDispatch();
-  const path = req.nextUrl.pathname;
-  const isProtectedRoute = protectedRoutes.includes(path);
+export function middleware(request) {
+  const path = request.nextUrl.pathname;
+  const isProtectedRoute = protectedRoutes.includes(path) || path.startsWith("/dashboard");
   const isPublicRoute = publicRoutes.includes(path);
-  const cookie = cookies().has("token");
-  // dispatch(cookie ? logIn() : logOut());
+  
+  const token = request.cookies.get("token");
+  // console.log('Middleware', token)
+  const hasToken = !!token;
 
-
-  if (
-    (req.nextUrl.pathname.startsWith("/dashboard") || isProtectedRoute) &&
-    !cookie
-  ) {
-    return NextResponse.redirect(new URL("/signin", req.nextUrl));
+  if (isProtectedRoute && !hasToken) {
+    return NextResponse.redirect(new URL("/signin", request.url));
   }
-  if (isPublicRoute && cookie) {
-    return NextResponse.redirect(new URL("/dashboard/home", req.nextUrl));
+  
+  if (isPublicRoute && hasToken) {
+    return NextResponse.redirect(new URL("/dashboard/home", request.url));
   }
 
   return NextResponse.next();
@@ -40,5 +33,3 @@ export function middleware(req) {
 export const config = {
   matcher: ["/((?!api|_next/static|_next/image|.*\\.png$).*)"],
 };
-
-

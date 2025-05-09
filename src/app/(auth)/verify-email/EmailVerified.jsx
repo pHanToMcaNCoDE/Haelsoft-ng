@@ -48,7 +48,7 @@ const EmailVerified = () => {
   const resendOtp = () => {
     setIsLoading(true);
     axios
-      .post(`${baseURL}auth/resend_otp`, {
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/resend_otp`, {
         email: email
       })
       .then((res) => {
@@ -79,7 +79,7 @@ const EmailVerified = () => {
     setIsLoading(true);
     
     axios
-      .post(`${baseURL}auth/verify_account`, {
+      .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/verify_account`, {
         user_uuid: user_uuid,
         otp: otpCode
       })

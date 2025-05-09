@@ -11,13 +11,13 @@ const Menu = ({ clicked, subMenuRef }) => {
   return (
     <nav
       ref={subMenuRef}
-      className={`dropdown-content overflow-hidden fixed top-[58px] left-0 min-h-[348px] w-full bg-white hidden xl:flex shadow-xl shadow-zinc-200 z-[999] p-10`}
     >
       <Image
         className="absolute z-[999] left-[-50%] 2xl:left-[-35%] w-[1200px] h-[700px] bottom-[-80%]"
         src={vector}
         alt="Decorative Vector"
       />
+      
       <div className={`w-full ${
           clicked ? 'fade-in' : 'fade-out'
         }`}

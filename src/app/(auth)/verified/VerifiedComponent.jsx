@@ -23,7 +23,7 @@ const VerifiedComponent = () => {
     const verifyEmail = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get(`${baseURL}/auth/api/verify-email/${token}/`);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/api/verify-email/${token}/`);
         toast.success(res.data.message, {
           toastId: 1,
           position: "top-right",

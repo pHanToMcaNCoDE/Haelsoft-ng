@@ -26,7 +26,7 @@ const ForgotPassword = () => {
     onSubmit: (values) => {
       setisLoading(true);
       axios
-        .post(`${baseURL}auth/forgot_password`, values)
+        .post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/forgot_password`, values)
         .then((res) => {
           toast.success(res.data.message, {
             toastId: 1,

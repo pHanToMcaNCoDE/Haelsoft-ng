@@ -16,7 +16,7 @@ const AppFooter = () => {
 
   
 
-  if(['/verify-email', '/signup', '/signin', '/forgotpassword', '/changepassword'].includes(path)) {
+  if(['/verify-email', '/signup', '/signin', '/forgotpassword', '/changepassword', '/dashboard/checkout'].includes(path)) {
     return null;
   }
   

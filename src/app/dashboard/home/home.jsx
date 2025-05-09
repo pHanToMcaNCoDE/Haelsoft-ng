@@ -9,6 +9,9 @@ import { useDispatch } from 'react-redux';
 import { addCourses } from '@/features/courses/courseSlice';
 import TopSection from './(HomeComponents)/TopSection';
 import AppFooter from '@/components/AppFooter';
+import { baseURL } from '@/Service/validation';
+import Loader from '@/components/Loader';
+import secureLocalStorage from 'react-secure-storage';
 
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
@@ -19,27 +22,35 @@ const HomePage = () => {
   const [errorCourses, setErrorCourses] = useState(null);
   const dispatch = useDispatch();
 
+  const token = secureLocalStorage.getItem('token');
+
   useEffect(() => {
     // Fetch Categories
-    axios.get(`https://edtech-backend-q2ud.onrender.com/course/api/category/`)
-      .then((res) => {
-        setCategories(res.data.data);
-        setLoadingCategories(false);
-      })
-      .catch((err) => {
-        // setErrorCategories('Failed to fetch categories: Network error');
-        setLoadingCategories(false);
-      });
+    // axios.get(`https://edtech-backend-q2ud.onrender.com/course/api/category/`)
+    //   .then((res) => {
+    //     setCategories(res.data.data);
+    //     setLoadingCategories(false);
+    //   })
+    //   .catch((err) => {
+    //     // setErrorCategories('Failed to fetch categories: Network error');
+    //     setLoadingCategories(false);
+    //   });
 
     // Fetch Courses
-    axios.get(`https://edtech-backend-q2ud.onrender.com/course/api/course/`)
+
+    axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses`, {
+      headers: {
+        'Accept': 'application/json',
+        'Authorizathion': `Bearer ${token}`
+      }
+    })
       .then((res) => {
-        if (res.data.status === "Success" && Array.isArray(res.data.data)) {
-          setCourses(res.data.data);
-          dispatch(addCourses(res.data.data));
-        } else {
-          // setErrorCourses("Failed to fetch courses: Invalid response structure");
+        if (res.data.data) {
+          setCourses(res.data.data.data);
+          dispatch(addCourses(res.data.data.data));
+          console.log("course Rep", res.data.data.data);
         }
+
         setLoadingCourses(false);
       })
       .catch((error) => {
@@ -59,8 +70,8 @@ const HomePage = () => {
 
   return (
     <section className='bg-white'>
-      {(loadingCategories || loadingCourses) ? (
-        <Loading />
+      {(loadingCourses) ? (
+        <Loader />
       ) : (
         <section className='w-full min-h-screen'>
           <TopSection />

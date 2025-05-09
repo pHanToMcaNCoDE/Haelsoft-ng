@@ -9,23 +9,55 @@ import Image from 'next/image';
 import { useSelector } from 'react-redux';
 import FilledCart from './(cartcomponents)/FilledCart';
 import EmptyCart from './(cartcomponents)/EmptyCart';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import Loader from '@/components/Loader';
 // import FilledCart from './(cartcomponents)/FilledCart';
 // import EmptyCart from './(cartcomponents)/EmptyCart';
 
 
 const ShoppingCart = () => {
- const {cartItems} = useSelector((state) => state.cart);
 
+  const [cartItems, setCartItems] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const token = secureLocalStorage.getItem("token");
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
+      headers: {
+        Accept: 'application/json',
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then((response) => {
+      setIsLoading(false)
+      toast.success(response.data.message)
+      console.log("Cart Page", response)
+      setCartItems(response.data.data);
+    })
+    .catch((error) => {
+      toast.error(error.response?.data?.message || error.response?.message )
+      setIsLoading(false)
+    })
+  }, [token])
 
   return (
     <>
       <section className='relative max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start pt-[70px] pb-[100px] gap-6'>
+        {
+          isLoading && (
+            <Loader/>
+          )
+        }
         <h1 className='text-main font-bold leading-10 text-[1.5rem] uppercase'>Shopping Cart</h1>
-        {cartItems.length > 0 ? <FilledCart carts={cartItems}  /> : <EmptyCart />}
+        {cartItems?.length > 0 ? <FilledCart cartItems={cartItems} setCartItems={setCartItems}  /> : <EmptyCart />}
         {/* <FilledCart carts={cartItems}  /> 
         <EmptyCart /> */}
       </section>
-      <section className='w-full bg-[#FBFBFB] py-[100px]'>
+      {/* <section className='w-full bg-[#FBFBFB] py-[100px]'>
           <div className='max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start gap-7'>
             <h1 className='text-[#FF8C53] leading-[46px] text-[1.5rem] font-semibold'>You might also like</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-3 justify-items-center'>
@@ -51,7 +83,7 @@ const ShoppingCart = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
     </>
   );
 };

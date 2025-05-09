@@ -9,7 +9,7 @@ import { GoGlobe } from 'react-icons/go'
 const CourseContent = ({ courses = { units: [] } }) => {
   // Check if courses.units is defined and is an array
   if (!Array.isArray(courses.units) || courses.units.length === 0) {
-    return <div>No course units available.</div>;
+    return ;
   }
 
   return (

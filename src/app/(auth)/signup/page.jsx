@@ -75,7 +75,7 @@ const SignupForm = () => {
 
       try {
         const response = await axios.post(
-          `${baseURL}auth/register`,
+          `${process.env.NEXT_PUBLIC_BASE_URL}auth/register`,
           {
             full_name: validatedData.full_name,
             email: validatedData.email,
