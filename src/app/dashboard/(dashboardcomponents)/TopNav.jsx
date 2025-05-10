@@ -30,9 +30,8 @@ const TopNav = ({setCloseModal}) => {
   const subMenuRef = useRef(null);
     useEffect(() => {
       const handleClickOutside = (e) => {
-          if (e.target.closest('.dropdown-content')) {
-            setClicked(null);
-          }
+          if (e.target.closest(subMenuRef)) null
+          setClicked(null);
       };
   
       if(clicked) {

@@ -6,11 +6,11 @@ import BootcampsData from './BootcampsData';
 import AboutData from './AboutData';
 import Image from 'next/image';
 
-const Menu = ({ clicked, subMenuRef }) => {
+const Menu = ({ clicked, menuRef }) => {
 
   return (
     <nav
-      ref={subMenuRef}
+      ref={menuRef}
     >
       <Image
         className="absolute z-[999] left-[-50%] 2xl:left-[-35%] w-[1200px] h-[700px] bottom-[-80%]"
@@ -22,10 +22,10 @@ const Menu = ({ clicked, subMenuRef }) => {
           clicked ? 'fade-in' : 'fade-out'
         }`}
       >
-        {clicked === 'Courses' && <CoursesData subMenuRef={subMenuRef} />}
-        {clicked === 'Corporate' && <CorporateData subMenuRef={subMenuRef} />}
-        {clicked === 'Bootcamps' && <BootcampsData subMenuRef={subMenuRef} />}
-        {clicked === 'About' && <AboutData subMenuRef={subMenuRef} />}
+        {clicked === 'Courses' && <CoursesData />}
+        {clicked === 'Corporate' && <CorporateData />}
+        {clicked === 'Bootcamps' && <BootcampsData />}
+        {clicked === 'About' && <AboutData />}
       </div>
     </nav>
 

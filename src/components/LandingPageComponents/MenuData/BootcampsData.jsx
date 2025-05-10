@@ -7,9 +7,9 @@ import { BsFillShieldLockFill } from "react-icons/bs";
 import { MdBorderColor, MdContactMail, MdOutlineDesignServices } from 'react-icons/md'
 import { TbAtom } from 'react-icons/tb'
 
-const BootcampsData = ({subMenuRef}) => {
+const BootcampsData = () => {
   return (
-    <div ref={subMenuRef} className='flex justify-normal xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
+    <div className='flex justify-normal xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
         <div className='h-full hidden xl:flex flex-col justify-start items-start gap-5'>
           <h1 className='text-[1.625rem] leading-9 font-semibold text-black'>Bootcamps</h1>
           <p className='text-[.875rem] leading-[18px] font-normal text-grayTwo w-full md:w-[398px]'>

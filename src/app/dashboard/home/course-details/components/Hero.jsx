@@ -112,6 +112,10 @@ const Hero = ({ courses }) => {
       );
 
       toast.success(response.data.message);
+      
+      if (typeof window !== "undefined") {
+        window.location.href = '/dashboard/shoppingcart';
+      }
 
     } catch (error) {
       toast.error(error.response.data.message)
@@ -166,12 +170,10 @@ const Hero = ({ courses }) => {
                 <div className="mt-4">
                   <p className="text-[2rem] lg:text-[2.5rem] font-semibold">
                     {/* N {courses.price} */}₦{" "}
-                    {courses?.price?.toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
+                    {Number(courses?.price).toLocaleString()}
                   </p>
-                  <div className="mt-4">
+                  <div className='w-full h-full mx-1 bg-neutral-200'></div>
+                  {/* <div className="mt-4">
                     {loading ? (
                       <div className=" flex items-center justify-center">
                         {" "}
@@ -185,7 +187,7 @@ const Hero = ({ courses }) => {
                         Buy Now
                       </button>
                     )}
-                  </div>
+                  </div> */}
                   <p className="text-lg mt-8">What You'll Learn:</p>
                 </div>
                 <ul className="my-5 w-full gap-8 flex flex-col justify-center items-start text-grayTwo">

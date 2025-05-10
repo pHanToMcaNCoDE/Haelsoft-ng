@@ -2,9 +2,9 @@ import Link from 'next/link'
 import React from 'react'
 import { IoIosArrowForward } from 'react-icons/io'
 
-const CorporateData = ({subMenuRef}) => {
+const CorporateData = () => {
   return (
-    <div ref={subMenuRef} className='flex justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
+    <div className='flex justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
         <div className='h-full hidden lg:flex flex-col justify-start items-start gap-5'>
             <h1 className='text-[1.625rem] leading-9 font-semibold text-black'>Corporate</h1>
             <p className='text-[.875rem] leading-[18px] font-normal text-grayTwo w-full md:w-[398px]'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import monitor from "../../../public/assets/DesktopComputerOutline (1).svg";
 import socials from "../../../public/assets/socials.svg";
 import seo from "../../../public/assets/seo.svg";
@@ -10,40 +10,64 @@ import Image from 'next/image';
 import { HiOutlineArrowLongRight } from 'react-icons/hi2';
 import Link from 'next/link';
 import { FaFileCode } from "react-icons/fa";
+import secureLocalStorage from 'react-secure-storage';
+import axios from 'axios';
 
 const CourseCards = () => {
-    const list = [
+
+  const token = secureLocalStorage.getItem("token");
+  const [categories, setCategories] = useState([])
+    
+  useEffect(() => {
+    const fetchCategory = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`, {
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setCategories(response.data.data);
+        console.log('Home Cats', response.data.data);
+      } catch (error) {
+        console.error('Home Fetch Error:', error);
+      }
+    };
+
+    if (token) fetchCategory();
+  }, [token]);
+
+
+
+  const list = [
         {
           id: 1,
           title: "Artificial Intelligence",
-          icon: monitor,
-          route: '/artificial-intelligence-certificate-course'
+          icon: monitor
         },
         {
           id: 2,
           title: "Data Science",
-          icon: socials,
-          route: '/data-science-certificate-course'
+          icon: socials
         },
         {
           id: 3,
           title: "Web Development",
-          icon: (<FaFileCode className='text-black text-[1.5rem]'/>),
-          route: '/web-certificate-course'
+          icon: (<FaFileCode className='text-black text-[1.5rem]'/>)
         },
         {
           id: 4,
           title: "Digital Marketing",
-          icon: content,
-          route: '/digital-marketing-certificate-course'
+          icon: content
         },
         {
           id: 5,
           title: "Python",
-          icon: web,
-          route: '/python-certificate-course'
+          icon: web
         },
     ];
+
+
   return (
     <div
       id="cr"
@@ -64,10 +88,18 @@ const CourseCards = () => {
                       <p className="text-[1.3rem] text-grayTwo font-semibold leading-[46px]">
                         {item.title}
                       </p>
-                      <Link href={item.route} className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white">
-                        Learn More
-                        <IoIosArrowForward className='text-[1.25rem]' />
-                      </Link>
+                      {categories?.length > 0 && (
+                        categories.map((category) => (  
+                          <Link
+                            key={category.uid}
+                            href={`/dashboard/category/${category.uid}`}
+                            className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white"
+                          >
+                            Learn More
+                            <IoIosArrowForward className='text-[1.25rem]' />
+                          </Link>
+                        ))
+                      )}
                     </div>
                 </div>
             </div>

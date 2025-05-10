@@ -25,6 +25,7 @@ const DashboardLayout = ({ children }) => {
       handleCloseModal();
     }
   };
+  
 
   useEffect(() => {
     const timer = setTimeout(() => {

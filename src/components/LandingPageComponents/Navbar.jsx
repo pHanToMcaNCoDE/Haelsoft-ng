@@ -15,7 +15,7 @@ const Navbar = ({ clicked, setClicked }) => {
   const [menu, setMenu] = useState(false);
   const pathname = usePathname()
   const menuRef = useRef()
-  const subMenuRef = useRef()
+  // const subMenuRef = useRef()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,24 +39,22 @@ const Navbar = ({ clicked, setClicked }) => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      // if (menuRef.current && subMenuRef.current && !menuRef.current.contains(event.target) && !subMenuRef.current.contains(event.target)) {
-        if (clicked && !event.target.closest('.dropdown-content')) {
-          setClicked('');
-        }
-      // }
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setClicked('');
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-}, []);
+  }, []);
+
 
 
   return (
    <>
-      <nav ref={menuRef} className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
+      <nav className="navbar h-[68px] xl:hidden fixed top-0 left-0 w-full z-[990] bg-white border-b-[2px] border-b-[#EEEEEEEE] flex justify-center items-center">
           <div className="container flex justify-between items-center p-2 max-w-[1200px] mx-auto">
             {
               clicked ? (
@@ -168,7 +166,7 @@ const Navbar = ({ clicked, setClicked }) => {
       {clicked && (
         <div className={`dropdown-content overflow-hidden fixed top-[58px] left-0 min-h-[348px] w-full bg-white hidden xl:flex shadow-xl shadow-zinc-200 z-[999] p-10`}>
           <Menu
-            subMenuRef={subMenuRef}
+            menuRef={menuRef}
             menu={menu}
             setMenu={setMenu}
             clicked={clicked}

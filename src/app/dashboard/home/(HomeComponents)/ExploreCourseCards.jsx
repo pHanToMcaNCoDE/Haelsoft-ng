@@ -59,7 +59,7 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
               </div>
               <div className="flex flex-col justify-center items-start gap-2">
                 <p className="text-grayTwo font-bold text-lg text-[.75rem]">
-                  ₦{course.price || "N/A"}
+                  ₦{Number(course.price).toLocaleString() || "N/A"}
                 </p>
                 <Link
                   // href={{

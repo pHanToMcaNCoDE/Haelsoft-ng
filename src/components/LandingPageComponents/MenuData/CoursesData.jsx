@@ -7,7 +7,7 @@ import { TbAtom } from 'react-icons/tb'
 import axios from 'axios';
 import secureLocalStorage from 'react-secure-storage';
 
-const CoursesData = ({subMenuRef}) => {
+const CoursesData = () => {
     
     const token = secureLocalStorage.getItem("token");
     const [categories, setCategories] = useState([])
@@ -17,7 +17,7 @@ const CoursesData = ({subMenuRef}) => {
             axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`, {
                 headers: {
                     'Accept': 'application/json',
-                    'Authorization': `Bearer ${token}`
+                    // 'Authorization': `Bearer ${token}`
                 }
             })
 
@@ -31,7 +31,7 @@ const CoursesData = ({subMenuRef}) => {
         if(token) fetchCategory()
     }, [token])
   return (
-    <div ref={subMenuRef} className='flex justify-start xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
+    <div className='flex justify-start xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
         <div className='h-full hidden lg:flex flex-col justify-start items-start gap-5'>
             <h1 className='text-[1.625rem] leading-9 font-semibold text-black'>Certificate Courses</h1>
             <p className='text-[.875rem] leading-[18px] font-normal text-grayTwo w-full md:w-[398px]'>
@@ -76,78 +76,39 @@ const CoursesData = ({subMenuRef}) => {
 
 
         <div className='xl:hidden grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-items-start gap-10 xl:h-full w-full'>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <div className='flex justify-center items-center gap-2'>
-                    <FaCode className='text-[1.5rem]' />
-                    <h1 className='text-base font-semibold text-black'>Development</h1>
-                </div>
-                <ul className='flex flex-col justify-start items-start gap-3 mx-8'>
-                    <Link href={`/web-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Web Development
-                    </Link>
-                    {/* <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Backend Development
-                    </li>
-                    <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Full-Stack Development
-                    </li> */}
-                    {/* <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Block-Chain Development
-                    </li> */}
-                </ul>
-            </div>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <div className='flex justify-center items-center gap-2'>
-                    <TbAtom className='text-[1.5rem]'/>
-                    <h1 className='text-base font-semibold text-black'>Data + AI</h1>
-                </div>
-                <ul className='flex flex-col justify-start items-start gap-3 mx-8'>
-                    <Link href={`/data-analytics-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Data Analytics</Link>
-                    <Link href={`/data-science-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Data Science</Link>
-                    <Link href={`/artificial-intelligence-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Artificial Intelligence</Link>
-                    <Link href={`/python-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Python</Link>
-                </ul>
-            </div>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <div className='flex justify-center items-center gap-2'>
-                    <MdOutlineDesignServices className='text-[1.5rem]' />
-                    <h1 className='text-base font-semibold text-black'>Design</h1>
-                </div>
-                <ul className='flex flex-col justify-start items-start gap-3 mx-8'>
-                    <Link href={`/user-interface-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>UI Design</Link>
-                    <Link href={`/user-experience-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>UX Design</Link>
-                </ul>
-            </div>
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <div className='flex justify-center items-center gap-2'>
-                    <MdContactMail className='text-2xl' />
-                    <h1 className='text-base font-semibold text-black'>Digital Marketing</h1>
-                </div>
-                <ul className='flex flex-col justify-start items-start gap-3 mx-8'>
-                    <Link href={`/digital-marketing-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Digital Marketing</Link>
-                </ul>
-            </div>
-            {/* <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <div className='flex justify-center items-center gap-2'>
-                    <FaSearchDollar className='text-2xl' />
-                    <h1 className='text-base font-semibold text-black'>Search Engine Optimization</h1>
-                </div>
-                <ul className='flex flex-col justify-start items-start gap-3 mx-8'>
-                    <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>SEO Fundamentals</li>
-                    <li className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>Advance SEO Concepts</li>
-                </ul>
-            </div> */}
-            <div className='w-full flex flex-col justify-start items-start gap-3'>
-                <div className='flex justify-center items-center gap-2'>
-                    <FaClipboardList className='text-2xl' />
-                    <h1 className='text-base font-semibold text-black'>Product Management</h1>
-                </div>
-                <ul className='flex flex-col justify-start items-start gap-3 mx-8'>
-                    <Link href={`/product-management-certificate-course`} className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'>
-                        Product Management
-                    </Link>                
-                </ul>
-            </div>
+            {
+                categories?.map((category) => (
+                    <div key={category.uid} className='w-full flex flex-col justify-start items-start gap-3'>
+                        <h1 className='text-base font-semibold text-black'>{category.name}</h1>
+                        <ul className='flex flex-col justify-start items-start gap-3'>
+                            {
+                                category.sub_categories.length > 0 ? (
+                                    category.sub_categories.map((sub) => (
+                                    <Link
+                                        key={sub.uid}
+                                        href={`/dashboard/category/${category.uid}`}
+                                        className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                    >
+                                        {sub.name}
+                                    </Link>
+                                    ))
+                                ) : (
+                                    <Link
+                                    href={`/dashboard/category/${category.uid}`}
+                                    className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                    >
+                                    {category.name}
+                                    </Link>
+                                )
+                            }
+                        </ul>
+                    </div>
+                ))
+            }
         </div>
     </div>
   )
