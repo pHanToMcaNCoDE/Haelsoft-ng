@@ -94,7 +94,7 @@ export const profileValidation = yup.object().shape({
 
   country: yup
     .string()
-    .required("Location required"),
+    .required("Country required"),
 
   profile_image: yup
     .mixed()

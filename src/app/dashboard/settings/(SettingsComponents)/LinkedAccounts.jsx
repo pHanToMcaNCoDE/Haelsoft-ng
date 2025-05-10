@@ -8,10 +8,13 @@ import Input from "@/components/Input";
 import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
 import Loader from "@/components/Loader";
+import { toast } from "react-toastify";
 
 const LinkedAccounts = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({})
+  const [socialLinks, setSocialLinks] = useState({})
+
   const [formData, setFormData] = useState({
     facebook_link: "",
     youtube_link: "",
@@ -56,24 +59,64 @@ const LinkedAccounts = () => {
           youtube_link: validatedData.youtube_link,
           google_link: validatedData.google_link,
           linkedin_link: validatedData.linkedin_link,
-          tiktok_link: validatedData.tiktok_link
+          tiktok_link: validatedData.tiktok_link,
+          '_method': 'PUT'
         }, {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/json',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
+          }
         })
 
-        console.log('The response', response)
+        // console.log('The response', response)
+        toast.success(response.data?.message || "Social Links Updated")
       } catch (error) {
         console.log('Api error', error)
       } 
 
     } catch (error) {
-      console.log('Api error', error)
+      // console.log('Api error', error)
+      toast.error(error.response.data.message || error.response.message)
     } finally {
       setIsLoading(false);
     }
 
   }
+
+
+  useEffect(() => {
+    const getSocialHandles = () => {
+      setIsLoading(true);
+        axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}profile/social_handles`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        })
+
+        .then((response) => {
+          toast.success(response.data.message)
+
+          // setSocialLinks(response.data.data)
+
+          setFormData((prev)=> ({
+            ...prev,
+              facebook_link: response.data.data.facebook_link || "",
+              youtube_link: response.data.data.youtube_link,
+              google_link: response.data.data.google_link,
+              linkedin_link: response.data.data.linkedin_link,
+              tiktok_link: response.data.data.tiktok_link
+          }))
+
+          // console.log("social Links", socialLinks)
+        })
+
+        .catch((error) => console.log('Social Links Error', error))
+
+        .finally(() => setIsLoading(false))
+    }
+
+    if(token) getSocialHandles()
+  }, [token])
 
   return (
     <div className="bg-white w-full lg:w-[1023px] px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-start items-start gap-8">
@@ -125,7 +168,7 @@ const LinkedAccounts = () => {
               labelClassName="text-grayTwo text-[1.125rem] font-medium leading-[46px]"
               inputClassName="px-3 h-[56px] w-full border-2 border-[#F0F0F0] rounded-[5px] focus-within:border-main outline-none"
               label={'Google Link'}
-              placeholder={'facebook.com/'}
+              placeholder={'google.com/'}
               htmlFor={`Google Link`}
               name={`google_link`}
               value={formData.google_link}

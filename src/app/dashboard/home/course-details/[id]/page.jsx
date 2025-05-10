@@ -13,6 +13,7 @@ import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
 import Loader from "@/components/Loader";
 import CourseAccordion from "../components/CourseAccordion";
+import { toast } from "react-toastify";
 
 const Page = () => {
   const [courses, setCourses] = useState(null);
@@ -52,8 +53,7 @@ const Page = () => {
           setError('Course data structure not as expected');
         }
       } catch (error) {
-        console.error('API Error:', error.response || error);
-        setError(`Failed to load course: ${error.message}`);
+        toast.error(error.response.data.message || error.response.message)
       } finally {
         setLoading(false);
       }
@@ -80,7 +80,7 @@ const Page = () => {
 
   // Additional null check with more information
   if (!courses) {
-    return <div className="p-4">No course data available. Please check console for API response details.</div>;
+    return <div className="p-4 w-full h-full flex justify-center items-center">No course data available. Please check console for API response details.</div>;
   }
 
   return (

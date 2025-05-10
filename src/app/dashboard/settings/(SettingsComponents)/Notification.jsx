@@ -9,7 +9,6 @@ import Loader from '@/components/Loader'
 import secureLocalStorage from 'react-secure-storage'
 
 const Notification = () => {
-  // State to track notification settings - using "true"/"false" strings as requested by backend
   const [settings, setSettings] = useState({
     promotional_email: "false",
     announcement: "false",
@@ -27,41 +26,34 @@ const Notification = () => {
       setIsLoading(true)
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}profile/notification`, {
-            headers: {
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+          }
         })
 
-        console.log('GET response:', response.data);
+        console.log('GET response:', response.data)
 
         if (response.data?.message) {
           toast.success(response.data.message)
         }
 
-        if (response.data && response.data.data) {
-          const apiSettings = response.data.data;
-          
-          // Convert any incoming values to the string "true" or "false" format
-          setSettings({
-            promotional_email: String(apiSettings.promotional_email).toLowerCase() === "1" || 
-                              String(apiSettings.promotional_email).toLowerCase() === "true" ? "true" : "false",
-            announcement: String(apiSettings.announcement).toLowerCase() === "1" || 
-                          String(apiSettings.announcement).toLowerCase() === "true" ? "true" : "false",
-            learning_progress: String(apiSettings.learning_progress).toLowerCase() === "1" || 
-                                String(apiSettings.learning_progress).toLowerCase() === "true" ? "true" : "false"
-          });
-        }
+        setSettings({
+          promotional_email: response.data.data.promotional_email === 1,
+          announcement: response.data.data.announcement === 1,
+          learning_progress: response.data.data.learning_progress === 1
+        })
       } catch (error) {
-        console.error('Error fetching settings:', error);
-        toast.error(error.response?.data?.message || 'Failed to load notification settings');
+        console.error('Error fetching settings:', error)
+        toast.error(error.response?.data?.message || 'Failed to load notification settings')
       } finally {
         setIsLoading(false)
       }
     }
-    
+
     fetchSettings()
   }, [])
+
   
   const handleToggle = (setting) => {
     setSettings(prev => ({

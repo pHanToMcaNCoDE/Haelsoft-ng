@@ -8,7 +8,7 @@ import React, { useState, useEffect } from "react";
 import { RiImageAddFill } from "react-icons/ri";
 import secureLocalStorage from "react-secure-storage";
 import { ScaleLoader } from "react-spinners";
-import { toast } from "react-toastify"; // Added missing import for toast
+import { toast } from "react-toastify";
 
 const PersonalInformation = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,10 +45,11 @@ const PersonalInformation = () => {
 
         setUserName(username || '____');
 
-        console.log('Profile', res)
+        setImagePreview(res.data.data.profile_image)
+
 
         if (profile_image) {
-          const imageUrl = `${process.env.NEXT_PUBLIC_BASE_URL}${profile_image}`;
+          const imageUrl = `${process.env.NEXT_PUBLIC_IMAGE_URL}${profile_image}`;
           setImagePreview(imageUrl);
           secureLocalStorage.setItem('userProfileImage', imageUrl);
         } else {
@@ -77,7 +78,7 @@ const PersonalInformation = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type.startsWith('image/')) {
-      setImageFile(file);
+      setImageFile(`${process.env.NEXT_PUBLIC_IMAGE_URL}${file}`);
       const reader = new FileReader();
       reader.onload = () => {
         const imageData = reader.result;

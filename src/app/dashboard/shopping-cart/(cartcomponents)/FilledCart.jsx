@@ -16,6 +16,9 @@ const FilledCart = ({ cartItems, setCartItems }) => {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
+
+  console.log('Cart Items', cartItems)
+
   const handleRemoveFromCart = async (courseId) => {
     setLoading(true);
     const token = secureLocalStorage.getItem("token");
@@ -73,16 +76,20 @@ const FilledCart = ({ cartItems, setCartItems }) => {
         <div className="w-full flex flex-col gap-10 justify-start items-start">
           {cartItems.map((item) => (
             <div
-              key={item.course_uid || item.uid}
+              key={item.course_uid || item.course.uid}
               className="flex flex-col md:flex-row justify-center items-center gap-3 w-full"
             >
               <div className="flex flex-col md:flex-row justify-between items-center w-full">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 w-full">
                   <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={200} height={300} alt={item.course?.title} />
                   <div className="flex flex-col gap-2 w-full">
-                    <h1 className="text-grayTwo text-[1rem] md:text-[1.5rem] leading-[35px] font-semibold">
+                    <Link 
+                      href={`/dashboard/home/course-details/${item.course.uid}`}
+                      target="_blank" 
+                      className="text-grayTwo text-[1rem] md:text-[1.5rem] leading-[35px] font-semibold"
+                    >
                       {item.course?.title}
-                    </h1>
+                    </Link>
                     <div className="flex flex-col justify-center items-start gap-1">
                       <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
                         {item.rating} rating
@@ -104,7 +111,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
                   </div>
                   <div className="flex justify-start items-center gap-6">
                     <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold">
-                      ₦{(item.course?.price || 0).toLocaleString()}
+                      ₦{(Number(item.course?.price) || 0).toLocaleString()}
                     </p>
                     <RiDeleteBin6Line
                       onClick={() => handleRemoveFromCart(item.uid)}
@@ -115,7 +122,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
               </div>
             </div>
           ))}
-          <div className="w-full h-[.75px] rounded-full bg-neutral-400 mb-3"></div>
+          <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
         </div>
         
         <div className="flex flex-col justify-end items-end gap-6 w-full md:w-auto">

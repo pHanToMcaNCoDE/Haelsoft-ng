@@ -34,9 +34,11 @@ const ShoppingCart = () => {
     })
     .then((response) => {
       setIsLoading(false)
-      toast.success(response.data.message)
-      console.log("Cart Page", response)
       setCartItems(response.data.data);
+
+      if(response.data.data) { 
+        toast.success(response.data.message)
+      }
     })
     .catch((error) => {
       toast.error(error.response?.data?.message || error.response?.message )
@@ -46,13 +48,13 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <section className='relative max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start pt-[70px] pb-[100px] gap-6'>
+      <section className='relative max-w-[1250px] mx-auto p-3 flex flex-col justify-center items-start py-[50px] gap-6'>
         {
           isLoading && (
             <Loader/>
           )
         }
-        <h1 className='text-main font-bold leading-10 text-[1.5rem] uppercase'>Shopping Cart</h1>
+        <h1 className='text-main font-bold leading-10 text-[1.5rem] lg:text-[3.5rem]'>Shopping Cart</h1>
         {cartItems?.length > 0 ? <FilledCart cartItems={cartItems} setCartItems={setCartItems}  /> : <EmptyCart />}
         {/* <FilledCart carts={cartItems}  /> 
         <EmptyCart /> */}
