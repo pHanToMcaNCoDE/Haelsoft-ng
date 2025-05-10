@@ -114,7 +114,7 @@ const Hero = ({ courses }) => {
       toast.success(response.data.message);
       
       if (typeof window !== "undefined") {
-        window.location.href = '/dashboard/shoppingcart';
+        window.location.href = '/dashboard/shopping-cart';
       }
 
     } catch (error) {
