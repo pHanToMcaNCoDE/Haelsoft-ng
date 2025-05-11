@@ -54,7 +54,7 @@ const ShoppingCart = () => {
             <Loader/>
           )
         }
-        <h1 className='text-main font-bold leading-10 text-[1.5rem] lg:text-[3.5rem]'>Shopping Cart</h1>
+        <h1 className='text-main font-bold leading-10 text-[1.5rem] lg:text-[2.5rem]'>Shopping Cart</h1>
         {cartItems?.length > 0 ? <FilledCart cartItems={cartItems} setCartItems={setCartItems}  /> : <EmptyCart />}
         {/* <FilledCart carts={cartItems}  /> 
         <EmptyCart /> */}

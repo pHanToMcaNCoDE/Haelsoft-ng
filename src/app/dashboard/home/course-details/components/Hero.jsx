@@ -164,15 +164,15 @@ const Hero = ({ courses }) => {
             </div> */}
           </div>
           <div className="w-full">
-            <div className="md:w-[559px] md:h-[400px] rounded-[30px] mx-auto bg-white mt-10 lg:mt-[100px] shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] flex flex-col justify-between items-start pt-8">
+            <div className="md:w-[559px] md:h-[400px] rounded-[30px] mx-auto bg-white mt-10 lg:mt-[100px] shadow-[0px_4px_4px_0px_rgba(0,_0,_0,_0.25)] flex flex-col justify-between items-start pt-4">
               
               <div className="w-full px-7">
-                <div className="mt-4">
+                <div className="mt-4 flex flex-col gap-3">
                   <p className="text-[2rem] lg:text-[2.5rem] font-semibold">
                     {/* N {courses.price} */}₦{" "}
                     {Number(courses?.price).toLocaleString()}
                   </p>
-                  <div className='w-full h-full mx-1 bg-neutral-200'></div>
+                  <div className='w-full h-[1px] mx-1 bg-neutral-200'></div>
                   {/* <div className="mt-4">
                     {loading ? (
                       <div className=" flex items-center justify-center">

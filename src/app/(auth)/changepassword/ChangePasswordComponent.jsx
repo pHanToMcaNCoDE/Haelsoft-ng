@@ -52,7 +52,10 @@ const ChangePasswordComponent = () => {
             toastId: 1,
             position: "top-right",
           });
-          router.replace("/signin");
+          
+          if (typeof window !== "undefined") {
+            window.location.href = '/signin';
+          }
         })
         .catch((e) => {
           setIsLoading(false);

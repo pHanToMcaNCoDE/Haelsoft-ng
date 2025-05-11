@@ -88,7 +88,7 @@ const CourseCards = () => {
                       <p className="text-[1.3rem] text-grayTwo font-semibold leading-[46px]">
                         {item.title}
                       </p>
-                      {categories?.length > 0 && (
+                      {categories?.length > 0 ? (
                         categories.map((category) => (  
                           <Link
                             key={category.uid}
@@ -99,6 +99,14 @@ const CourseCards = () => {
                             <IoIosArrowForward className='text-[1.25rem]' />
                           </Link>
                         ))
+                      ) : (
+                          <Link
+                            href={`/signin`}
+                            className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white"
+                          >
+                            Learn More
+                            <IoIosArrowForward className='text-[1.25rem]' />
+                          </Link>
                       )}
                     </div>
                 </div>

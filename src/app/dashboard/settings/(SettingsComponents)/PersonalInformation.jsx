@@ -179,7 +179,7 @@ const PersonalInformation = () => {
   };
 
   return (
-    <div className="bg-white w-full lg:w-[1023px] px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-between items-start gap-8">
+    <div className="bg-white w-full px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-between items-start gap-8">
       {isLoading && (
         <Loader/>
       )}

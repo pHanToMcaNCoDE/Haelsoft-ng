@@ -66,6 +66,7 @@ const Navbar = ({ clicked, setClicked }) => {
                     <GoArrowLeft className="font-semibold text-base" />
                     <p>Back</p>
                   </div>
+                  
                   <Link href={`/`}>
                     <Image width={100} height={100} src={logo} alt="Logo" />
                   </Link>

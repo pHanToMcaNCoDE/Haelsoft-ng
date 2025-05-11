@@ -7,9 +7,21 @@ import cyb from '/public/assets/part-time-icons/EdTech Platform Cyber Security.s
 import mkt from '/public/assets/part-time-icons/EdTech Platform email-marketing (1).svg';
 import { IoIosArrowForward } from 'react-icons/io';
 import Image from 'next/image';
+import Link from 'next/link';
+import secureLocalStorage from 'react-secure-storage';
 
 const CourseCrd = () => {
+
     const courses = [
+        {
+            image: dev,
+            name: "Web Development",
+            details: [
+                "Frontend Development",
+                "Backend Development",
+                "FullStack Web Development"
+            ]
+        },
         {
             image: data,
             name: 'Data + AI',
@@ -51,15 +63,10 @@ const CourseCrd = () => {
             details: [
                 'Cybersecurity Course '
             ]
-        },
-        {
-            image: dev,
-            name: 'Development',
-            details: [
-                'Web Development Course '
-            ]
-        },
+        }
     ];    
+
+    const token = secureLocalStorage.getItem("token");
 
     return (
         <div className='relative z-30 grid grid-cols-1 md:grid-cols-2 gap-10 lg:place-items-end lg:ml-auto mt-[20px] lg:mt-[50px] w-full md:w-auto'>
@@ -80,13 +87,14 @@ const CourseCrd = () => {
                     <div className='w-full h-[1px] bg-[#E7E7E7] rounded-[1px] my-5'></div>
                     <ul className='flex flex-col justify-start gap-2'>
                         {course.details.map((detail, index) => (
-                            <li
+                            <Link
+                                href={!token && '/signin'}
                                 className='text-[#201A18] text-[.875rem] font-normal leading-6 flex gap-1 items-center duration-200 hover:underline hover:text-blue-700 cursor-pointer'
                                 key={index}
                             >
                                 {detail}
                                 <IoIosArrowForward className='text-[.875rem]' />
-                            </li>
+                            </Link>
                         ))}
                     </ul>
                 </div>

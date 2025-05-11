@@ -10,9 +10,9 @@ import secureLocalStorage from 'react-secure-storage'
 
 const Notification = () => {
   const [settings, setSettings] = useState({
-    promotional_email: "false",
-    announcement: "false",
-    learning_progress: "false"
+    promotional_email: "",
+    announcement: "",
+    learning_progress: ""
   })
   
   const [hasChanges, setHasChanges] = useState(false)
@@ -38,11 +38,14 @@ const Notification = () => {
           toast.success(response.data.message)
         }
 
-        setSettings({
-          promotional_email: response.data.data.promotional_email === 1,
-          announcement: response.data.data.announcement === 1,
-          learning_progress: response.data.data.learning_progress === 1
-        })
+        setSettings((prev) => ({
+          ...prev,
+          promotional_email: response.data.data.promotional_email,
+          announcement: response.data.data.announcement,
+          learning_progress: response.data.data.learning_progress
+        }))
+
+        console.log("Notifications Page", settings)
       } catch (error) {
         console.error('Error fetching settings:', error)
         toast.error(error.response?.data?.message || 'Failed to load notification settings')
@@ -109,7 +112,7 @@ const Notification = () => {
   }
 
   return (
-    <div className='bg-white w-full lg:w-[1023px] px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-start items-start gap-[3em]'>
+    <div className='bg-white w-full px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-start items-start gap-[3em]'>
         <h1 className="px-[30px] pt-[20px] font-semibold leading-9 text-[1.5rem] text-black">
             Notification
         </h1>
@@ -131,7 +134,7 @@ const Notification = () => {
                   <Switch 
                     className='data-[state=checked]:bg-main' 
                     id="promotional-email"
-                    checked={settings.promotional_email === "true"}
+                    checked={settings.promotional_email}
                     onCheckedChange={() => handleToggle('promotional_email')}
                     aria-label="Toggle promotional emails"
                   />
@@ -144,7 +147,7 @@ const Notification = () => {
                   <Switch 
                     className='data-[state=checked]:bg-main' 
                     id="announcement"
-                    checked={settings.announcement === "true"}
+                    checked={settings.announcement}
                     onCheckedChange={() => handleToggle('announcement')}
                     aria-label="Toggle announcements"
                   />
@@ -157,7 +160,7 @@ const Notification = () => {
                   <Switch 
                     className='data-[state=checked]:bg-main' 
                     id="learning-progress"
-                    checked={settings.learning_progress === "true"}
+                    checked={settings.learning_progress}
                     onCheckedChange={() => handleToggle('learning_progress')}
                     aria-label="Toggle learning progress notifications"
                   />

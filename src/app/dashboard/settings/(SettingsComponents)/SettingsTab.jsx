@@ -11,7 +11,7 @@ import LanguagePreference from './LanguagePreference';
 const SettingsTab = ({settingsTab, setSettingsTab}) => {
 
   return (
-    <nav className='w-full md:w-[30%] lg:w-auto flex flex-col justify-start items-start gap-10'>
+    <nav className='w-full lg:w-[20%] flex flex-col justify-start items-start gap-10'>
         <div>
             <h1 className='font-semibold leading-9 text-[1.5rem] text-black'>Account Setting</h1>
         </div>

@@ -13,10 +13,10 @@ const Settings = () => {
 
   const [settingsTab, setSettingsTab] = useState('Personal Information');
   return (
-    <section className='w-full py-[100px] min-h-screen bg-[#F7F7F7]'>
-      <div className='max-w-[1250px] lg:p-0 p-3 mx-auto flex flex-col md:flex-row items-start justify-between gap-5 min-h-full'>
+    <section className='w-full min-h-screen bg-[#F7F7F7] p-5 lg:p-0 flex justify-center items-center'>
+      <div className='w-full xl:w-[1250px] mx-auto flex flex-col lg:flex-row items-start justify-between gap-5 min-h-full py-[100px] px-5'>
         <SettingsTab settingsTab={settingsTab} setSettingsTab={setSettingsTab} />
-        <div className='w-full md:w-[70%] lg:w-auto'>
+        <div className='w-full lg:w-[80%]'>
           {
               settingsTab === 'Personal Information' ? (<PersonalInformation/>) :
               settingsTab === 'Password' ? (<Password/>) :

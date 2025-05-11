@@ -75,9 +75,10 @@ const page = () => {
             case 'Payment Channel':
             return (
                 <PaymentChannel
-                channels={channels}
-                setSelectedChannel={setSelectedChannel}
-                selectedChannel={selectedChannel}
+                    channels={channels}
+                    setSelectedChannel={setSelectedChannel}
+                    selectedChannel={selectedChannel}
+                    cartItems={cartItems}
                 />
             );
             case 'Bank Transfer':

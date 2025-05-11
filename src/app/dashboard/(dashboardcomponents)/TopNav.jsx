@@ -28,19 +28,21 @@ const TopNav = ({setCloseModal}) => {
   const [clicked, setClicked] = useState(null);
   const menuRef = useRef(null)
   const subMenuRef = useRef(null);
-    useEffect(() => {
-      const handleClickOutside = (e) => {
-          if (e.target.closest(subMenuRef)) null
-          setClicked(null);
-      };
+    
+
   
-      if(clicked) {
-        document.addEventListener('click', handleClickOutside);
+  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setClicked('');
       }
-  
-      return () => {
-        document.removeEventListener('click', handleClickOutside);
-      };
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
 
@@ -143,8 +145,8 @@ const TopNav = ({setCloseModal}) => {
     },
     {
       id: 2,
-      name: 'My Learning',
-      route: '/dashboard/my-learning'
+      name: 'My Courses',
+      route: '/dashboard/my-courses'
     },
     {
       id: 3,
@@ -187,18 +189,24 @@ const TopNav = ({setCloseModal}) => {
           </Link>
         </div>
 
+        <Link href={`/dashboard/home`} className="p-2 rounded-[4px] duration-200 hover:bg-main/[15%] text-black text-[1.125rem]">
+            Explore
+          </Link>
+
         <div className='nav-modal w-fit'>
-          <ul
-            className={`flex gap-8 text-[1.125rem] text-black`}
-          >
+          <ul className="flex gap-8 text-[1.125rem] text-black">
             {menuLinks.map((item, index) => (
-              <li key={index} className="group relative">
-                {['Courses'].includes(item.name) && (
+              <li
+                key={index}
+                className="group relative"
+                ref={item.name === 'Courses' && clicked === item.name ? menuRef : null}
+              >
+                {item.name === 'Courses' ? (
                   <div
                     className="flex items-center gap-1 cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault();
-                      setClicked((prev) => prev === item.name ? '' : item.name)
+                      setClicked((prev) => (prev === item.name ? '' : item.name));
                     }}
                   >
                     <span>{item.name}</span>
@@ -208,24 +216,29 @@ const TopNav = ({setCloseModal}) => {
                       }`}
                     />
                   </div>
+                ) : (
+                  <Link href={item.link}>{item.name}</Link>
                 )}
+
+
               </li>
             ))}
           </ul>
 
-          {
-            clicked && (
-              <div className={`dropdown-content overflow-hidden fixed top-[58px] left-0 min-h-[348px] w-full bg-white hidden xl:flex shadow-xl shadow-zinc-200 z-[999] p-10`}>
+
+          {clicked && (
+            <div className="absolute inset-x-0 top-full w-full bg-white shadow-xl z-[99]">
+              <div className="max-w-[1350px] mx-auto px-6 py-10">
                 <Menu
-                  subMenuRef={subMenuRef}
+                  menuRef={menuRef}
                   menu={menu}
                   setMenu={setMenu}
                   clicked={clicked}
                 />
               </div>
-              
-            )
-          }
+            </div>
+          )}
+
         </div>
 
          <div

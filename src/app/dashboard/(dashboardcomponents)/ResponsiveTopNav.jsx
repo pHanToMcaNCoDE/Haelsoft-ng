@@ -30,7 +30,7 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
   const routes = [
     { name: "Home", routes: "/dashboard/home" },
     { name: "Settings", routes: "/dashboard/settings" },
-    { name: "My Courses", routes: "/dashboard/courses" },
+    { name: "My Courses", routes: "/dashboard/my-courses" },
     { name: "Incompleted Courses", routes: "/dashboard/courses/incompletedcourses" },
     { name: "Completed Courses", routes: "/dashboard/courses/completedcourses" },
   ];
@@ -109,7 +109,10 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
 
       toast.success("Logout successful!");
 
-      router.push('/signin');
+      if (typeof window !== "undefined") {
+        window.location.href = '/signin';
+      }
+
     } catch (error) {
       toast.error(error?.response?.data?.message || "Logout failed");
     }

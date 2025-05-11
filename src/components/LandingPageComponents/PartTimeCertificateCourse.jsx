@@ -38,7 +38,7 @@ const PartTimeCertificateCourse = () => {
             </h1>
             <div className='w-[48px] h-[4px] rounded bg-[#FFCF00]'></div>
           </div>
-          <p className="lg:w-[800px] xl:w-[1049px] text-gray-200 leading-[24px] text-[1rem] font-normal">
+          <p className="lg:w-[800px] xl:w-[1049px] text-white text-gray-200 leading-[24px] text-[1rem] font-normal">
             Enroll in our flexible part-time courses and gain valuable certifications that will advance your career. Learn from experienced professionals and engage in hands-on projects to build your skills.
           </p>
         </div>

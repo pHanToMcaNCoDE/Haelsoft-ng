@@ -87,7 +87,7 @@ const Password = () => {
 
 
   return (
-    <div className="bg-white w-full lg:w-[1023px] h-full px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-start items-start gap-8">
+    <div className="bg-white w-full h-full px-[10px] lg:px-[25px] py-[50px] pb-[100px] flex flex-col justify-start items-start gap-8">
       {isLoading && <Loader/>}
       <h1 className="px-[15px] lg:px-[30px] pt-[20px] font-semibold leading-9 text-[1.5rem] text-black">
         Password

@@ -77,7 +77,10 @@ const SigninForm = () => {
             user: response.data.data.user
           }));
           document.cookie = `token=${response.data.data?.token}; path=/; max-age=86400; SameSite=Strict`;
-          router.replace('/dashboard/home');
+          
+          if (typeof window !== "undefined") {
+            window.location.href = '/dashboard/home';
+          }
         }
 
       } catch (error) {

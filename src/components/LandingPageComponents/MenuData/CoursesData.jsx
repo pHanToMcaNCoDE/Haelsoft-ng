@@ -8,28 +8,105 @@ import axios from 'axios';
 import secureLocalStorage from 'react-secure-storage';
 
 const CoursesData = () => {
+
+   const defaultCategories = [
+        {
+            uid: "web-development",
+            name: "Web Development",
+            sub_categories: [
+            { uid: "frontend-dev", name: "Frontend Development" },
+            { uid: "backend-dev", name: "Backend Development" },
+            { uid: "fullstack-dev", name: "FullStack Web Development" }
+            // { uid: "web-dev-course", name: "Web Development Course" }
+            ]
+        },
+        {
+            uid: "ai",
+            name: "Artificial Intelligence",
+            sub_categories: [
+            { uid: "python", name: "python" }
+            ]
+        },
+        {
+            uid: "data-science",
+            name: "Data Science",
+            sub_categories: [
+            { uid: "python-course", name: "Python Course" },
+            { uid: "ai-course", name: "Artificial Intelligence Course" },
+            { uid: "data-science-course", name: "Data Science Course" },
+            { uid: "data-analytics", name: "Data Analytics Course" }
+            ]
+        },
+        {
+            uid: "marketing",
+            name: "Digital Marketing",
+            sub_categories: [
+            { uid: "digital-marketing-course", name: "Digital Marketing Course" },
+            { uid: "marketing-leadership", name: "Marketing Leadership" }
+            ]
+        },
+        {
+            uid: "product",
+            name: "Product",
+            sub_categories: [
+            { uid: "product-management", name: "Product Management" },
+            { uid: "product-leadership", name: "Product Leadership Course" }
+            ]
+        },
+        {
+            uid: "design",
+            name: "Design",
+            sub_categories: [
+            { uid: "ux-design", name: "UX Design Course" },
+            { uid: "ui-design", name: "UI Design Course" },
+            { uid: "design-leadership", name: "Design Leadership Course" }
+            ]
+        },
+        {
+            uid: "cyber",
+            name: "Cyber",
+            sub_categories: [
+            { uid: "cybersecurity-course", name: "Cybersecurity Course" }
+            ]
+        },
+        {
+            uid: "development",
+            name: "Development",
+            sub_categories: [
+                { uid: "web-development-course", name: "Web Development Course" }
+            ]
+        }
+    ];
+
+
+    
     
     const token = secureLocalStorage.getItem("token");
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState(defaultCategories)
 
     useEffect(() => {
-        const fetchCategory = () => {
-            axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`, {
-                headers: {
-                    'Accept': 'application/json',
-                    // 'Authorization': `Bearer ${token}`
+        if (!token) return;
+        
+        const fetchCategory = async () => {
+            try {
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`, {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+                
+                if (response.data && response.data.data && response.data.data.length > 0) {
+                    setCategories(response.data.data);
                 }
-            })
-
-            .then((response) => {
-                setCategories(response.data.data)
-            })
-
-            .catch(error => console.log("Category Error", error))
+            } catch (error) {
+                console.log("Category Error", error);
+            }
         }
 
-        if(token) fetchCategory()
+        fetchCategory();
     }, [token])
+    
   return (
     <div className='flex justify-start xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
         <div className='h-full hidden lg:flex flex-col justify-start items-start gap-5'>
@@ -49,7 +126,14 @@ const CoursesData = () => {
                                     category.sub_categories.map((sub) => (
                                     <Link
                                         key={sub.uid}
-                                        href={`/dashboard/category/${category.uid}`}
+                                        href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                            onClick={(e) => {
+                                                if (!token) {
+                                                e.preventDefault();
+                                                window.location.href = '/signin';
+                                                }
+                                            }
+                                        }
                                         className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                 before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                 before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
@@ -59,13 +143,20 @@ const CoursesData = () => {
                                     ))
                                 ) : (
                                     <Link
-                                    href={`/dashboard/category/${category.uid}`}
-                                    className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
-                                                before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
-                                                before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                        href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                        onClick={(e) => {
+                                            if (!token) {
+                                            e.preventDefault();
+                                            window.location.href = '/signin';
+                                            }
+                                        }}
+                                        className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                    before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                    before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
                                     >
-                                    {category.name}
+                                        {category.name}
                                     </Link>
+
                                 )
                             }
                         </ul>
@@ -86,7 +177,13 @@ const CoursesData = () => {
                                     category.sub_categories.map((sub) => (
                                     <Link
                                         key={sub.uid}
-                                        href={`/dashboard/category/${category.uid}`}
+                                        href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                        onClick={(e) => {
+                                            if (!token) {
+                                              e.preventDefault();
+                                              window.location.href = '/signin';
+                                            }
+                                        }}
                                         className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                 before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                 before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
@@ -96,7 +193,13 @@ const CoursesData = () => {
                                     ))
                                 ) : (
                                     <Link
-                                    href={`/dashboard/category/${category.uid}`}
+                                    href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                    onClick={(e) => {
+                                        if (!token) {
+                                          e.preventDefault();
+                                          window.location.href = '/signin';
+                                        }
+                                    }}
                                     className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                 before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                 before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
