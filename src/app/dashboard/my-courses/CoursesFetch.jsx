@@ -3,6 +3,9 @@ import RecentViewCourse from "../(dashboardcomponents)/RecentViewCourse";
 import Course from "../(dashboardcomponents)/Course";
 import CourseCategories from "../(dashboardcomponents)/CourseCategories";
 import { fetchData } from "@/app/lib/actions";
+import axios from "axios";
+import secureLocalStorage from "react-secure-storage";
+import SkeletonLoader from "../my-learning/(mylearningcomponent)/SkeletonLoader";
 
 const CoursesFetch = () => {
   const [courses, setCourses] = useState([]);
@@ -10,14 +13,20 @@ const CoursesFetch = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const token = secureLocalStorage.getItem("token")
+
   useEffect(() => {
     const fetchCoursesAndCategories = async () => {
       try {
-        const coursesData = await fetchData("/course/api/course/");
-        setCourses(coursesData);
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}learning`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
 
-        // const categoriesData = await fetchData("/course/api/category/");
-        // setCategories(categoriesData);
+        console.log('My Courses', response.data)
+
+        setCourses(response.data.data);
 
         setLoading(false);
       } catch (error) {
@@ -27,11 +36,11 @@ const CoursesFetch = () => {
       }
     };
 
-    fetchCoursesAndCategories();
-  }, []);
+    if(token) fetchCoursesAndCategories();
+  }, [token]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <SkeletonLoader/>;
   }
 
   if (error) {
@@ -39,32 +48,12 @@ const CoursesFetch = () => {
   }
 
   return (
-    <div>
-      <div className="pb-10 mt-10">
-        <div className="flex text-grayTwo text-[18px]">Recently Viewed</div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 gap-4 gap-y-10 justify-items-start">
-          {/* Uncomment this when ready */}
-          {/* {courses.slice(0, 3).map((item, index) => (
-            <div className="a" key={index}>
-              <RecentViewCourse item={item} />
-            </div>
-          ))} */}
-        </div>
-        
-        <div className="flex text-grayTwo mt-10 text-[18px]">Categories</div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 w-full gap-4 gap-y-10">
-          {/* Uncomment this when ready */}
-          {/* {categories.map((item, index) => (
-            <div className="a" key={index}>
-              <CourseCategories name={item.name} />
-            </div>
-          ))} */}
-        </div>
+    <div className="bg-red-600">
+      <div className="pb-5 mt-1">
 
-        <div className="flex text-grayTwo mt-10 text-[18px]">Best selling courses</div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 w-full gap-4 gap-y-10">
           {courses.map((item, index) => (
-            <div className="a" key={index}>
+            <div className="w-full flex flex-col gap-6" key={index}>
               <Course item={item} />
             </div>
           ))}

@@ -126,7 +126,7 @@ const CoursesData = () => {
                                     category.sub_categories.map((sub) => (
                                     <Link
                                         key={sub.uid}
-                                        href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                        href={'/signin'}
                                             onClick={(e) => {
                                                 if (!token) {
                                                 e.preventDefault();
@@ -143,7 +143,7 @@ const CoursesData = () => {
                                     ))
                                 ) : (
                                     <Link
-                                        href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                        href={'/signin'}
                                         onClick={(e) => {
                                             if (!token) {
                                             e.preventDefault();
@@ -177,7 +177,7 @@ const CoursesData = () => {
                                     category.sub_categories.map((sub) => (
                                     <Link
                                         key={sub.uid}
-                                        href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                        href={'/signin'}
                                         onClick={(e) => {
                                             if (!token) {
                                               e.preventDefault();
@@ -193,7 +193,7 @@ const CoursesData = () => {
                                     ))
                                 ) : (
                                     <Link
-                                    href={token ? `/dashboard/category/${category.uid}` : '/signin'}
+                                    href={'/signin'}
                                     onClick={(e) => {
                                         if (!token) {
                                           e.preventDefault();

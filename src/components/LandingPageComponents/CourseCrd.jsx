@@ -66,7 +66,6 @@ const CourseCrd = () => {
         }
     ];    
 
-    const token = secureLocalStorage.getItem("token");
 
     return (
         <div className='relative z-30 grid grid-cols-1 md:grid-cols-2 gap-10 lg:place-items-end lg:ml-auto mt-[20px] lg:mt-[50px] w-full md:w-auto'>
@@ -88,7 +87,7 @@ const CourseCrd = () => {
                     <ul className='flex flex-col justify-start gap-2'>
                         {course.details.map((detail, index) => (
                             <Link
-                                href={!token && '/signin'}
+                                href={'/signin'}
                                 className='text-[#201A18] text-[.875rem] font-normal leading-6 flex gap-1 items-center duration-200 hover:underline hover:text-blue-700 cursor-pointer'
                                 key={index}
                             >

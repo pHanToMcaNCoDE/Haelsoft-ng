@@ -12,27 +12,19 @@ import CompletedCourses from "./completedcourses/page";
 
 const Courses = () => {
   // const dater = fetchData("") ?? [];
-  const [completeIncomplete, setCompleteIncomplete] = useState(true);
+  // const [completeIncomplete, setCompleteIncomplete] = useState(true);
 
   return (
-    <section className="bg-[#f6f6f6] w-full h-screen py-[100px]">
-      <div className="max-w-[1250px] mx-auto p-3 h-screen py-[100px]">
+    <section className="bg-[#f6f6f6] w-full h-screen py-[40px]">
+      <div className="max-w-[1250px] mx-auto p-5 h-screen py-[10px]">
         <div className='flex flex-col justify-start items-start gap-3'>
-          <h1 className="text-[#000000] text-[1.5rem] leading-9 font-semibold">My Courses</h1>
-          <div className="flex gap-3 items-center">
-            <div className='text-[#7F7571] font-semibold leading-[27px] text-[1.125rem] relative'>
-              In progress
-              <div className='w-[70px] h-[3px] bg-[#FF8C53] rounded-full absolute mx-auto'></div>
-            </div>
-            <div className='text-[#7F7571] font-semibold leading-[27px] text-[1.125rem] relative'>
-              Completed
-              <div className='w-[70px] h-[3px] bg-[#FF8C53] rounded-full absolute mx-auto'></div>
-            </div>
-          </div>
+          <h1 className="text-[#000000] text-[1.5rem] lg:text-[2rem] leading-9 font-semibold">My Courses</h1>
         </div>
-        {
+        {/* {
           completeIncomplete ? (<CompletedCourses/>) : (<Incompletetedcourses/>)
-        }
+        } */}
+
+        <CoursesFetch/>
         {/* <Suspense fallback={<Loading />}>
           <CoursesFetch/>
         </Suspense> */}

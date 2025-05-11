@@ -15,8 +15,8 @@ import axios from 'axios';
 
 const CourseCards = () => {
 
-  const token = secureLocalStorage.getItem("token");
   const [categories, setCategories] = useState([])
+    const token = secureLocalStorage.getItem("token");
     
   useEffect(() => {
     const fetchCategory = async () => {
@@ -76,9 +76,9 @@ const CourseCards = () => {
         {list.map((item) => (
             <div key={item.id} className="card relative shadow-lg overflow-hidden z-10 bg-white h-[155px] w-full md:w-[520px]">
                 <Image
-                    className="-z-10 absolute h-[11em] left-0 top-[-6%]"
-                    src={obj}
-                    alt="Object"
+                  className="-z-10 absolute h-[11em] left-0 top-[-6%]"
+                  src={obj}
+                  alt="Object"
                 />
                 <div className="pt-[1em] pb-[1em] md:pb-[1.5em] xl:pb-[2em] px-[.4em] md:px-[2em] lg:px-[2.6em] flex items-center gap-x-6">
                     {
@@ -88,18 +88,7 @@ const CourseCards = () => {
                       <p className="text-[1.3rem] text-grayTwo font-semibold leading-[46px]">
                         {item.title}
                       </p>
-                      {categories?.length > 0 ? (
-                        categories.map((category) => (  
-                          <Link
-                            key={category.uid}
-                            href={`/dashboard/category/${category.uid}`}
-                            className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white"
-                          >
-                            Learn More
-                            <IoIosArrowForward className='text-[1.25rem]' />
-                          </Link>
-                        ))
-                      ) : (
+                      
                           <Link
                             href={`/signin`}
                             className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white"
@@ -107,12 +96,13 @@ const CourseCards = () => {
                             Learn More
                             <IoIosArrowForward className='text-[1.25rem]' />
                           </Link>
-                      )}
                     </div>
                 </div>
             </div>
         ))}
+
       {/* Object */}
+      
       <div className="learn bg-orange-200 w-[120px] h-[120px] rounded-full text-center scale-0 flex justify-center items-center text-[1.125rem] font-normal fixed z-10">
         Our Courses
         <HiOutlineArrowLongRight />
