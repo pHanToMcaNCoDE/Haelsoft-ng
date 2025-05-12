@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { MdOutlineBroadcastOnPersonal } from 'react-icons/md';
 import secureLocalStorage from 'react-secure-storage';
+import Loader from '../Loader';
 
 const FeaturedCourses = () => {
   const [currentTab, setCurrentTab] = useState("Featured");
@@ -16,13 +17,11 @@ const FeaturedCourses = () => {
       try {
         const endpoint = currentTab.toLowerCase();
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/${endpoint}`);
-        const data = response.data.data;
-        if (Array.isArray(data)) {
-          setCourses(data);
-        } else {
-          setCourses([]);
-          console.error(`Expected an array but got:`, data);
-        }
+        
+        setCourses(response.data.data.data)
+
+        console.log(`${currentTab} Response`, response.data)
+
       } catch (error) {
         console.error(`Error fetching ${currentTab} courses:`, error);
         setCourses([]);
@@ -30,7 +29,7 @@ const FeaturedCourses = () => {
     };
 
     fetchCourses();
-  }, [currentTab]);
+  }, []);
 
   const handleAddToCartRequest = async (courseId) => {
     setIsLoading(true);
@@ -66,6 +65,9 @@ const FeaturedCourses = () => {
 
   return (
     <section className='h-full px-5 py-25 flex flex-col gap-10 py-[40px]'>
+      {
+        isLoading && (<Loader />)
+      }
       <div className='w-full border-b border-neutral-200 flex justify-start items-center gap-4 transition-all'>
         {['Featured', 'Latest'].map((tab) => (
           <div
@@ -80,7 +82,7 @@ const FeaturedCourses = () => {
         ))}
       </div>
 
-      <div className='w-full'>
+      <div className='w-full flex flex-col gap-5'>
         <h1 className='text-[1.5rem] lg:text-[2rem] font-semibold text-black'>
           {currentTab} Courses
         </h1>
@@ -125,10 +127,10 @@ const FeaturedCourses = () => {
 
                   <button
                     disabled={isLoading}
-                    className="mt-3 py-3 w-full bg-main text-white rounded-bl-[30px] rounded-br-[30px] font-semibold"
+                    className="mt-3 py-3 w-full bg-main text-white rounded-[30px] font-semibold"
                     onClick={() => handleAddToCartRequest(course.course_id)}
                   >
-                    {isLoading ? 'Adding...' : 'Add To Cart'}
+                    Add To Cart
                   </button>
                 </div>
               </div>
