@@ -82,7 +82,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
               <div className="flex flex-col md:flex-row justify-between items-center w-full">
                 <div className="flex flex-col md:flex-row items-start justify-between gap-8 w-full">
                   <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={200} height={300} alt={item.course?.title} />
-                  <div className="flex flex-col gap-2 w-full">
+                  <div className="flex flex-col gap-2 w-[90%]">
                     <Link 
                       href={`/dashboard/home/course-details/${item.course.uid}`}
                       target="_blank" 
@@ -109,9 +109,10 @@ const FilledCart = ({ cartItems, setCartItems }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-start items-center gap-6">
-                    <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold">
-                      ₦{(Number(item.course?.price) || 0).toLocaleString()}
+                  <div className="flex justify-start items-center gap-6 w-[20%]">
+                    <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold flex gap-0.5">
+                      ₦ {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
+
                     </p>
                     <RiDeleteBin6Line
                       onClick={() => handleRemoveFromCart(item.uid)}
@@ -125,9 +126,10 @@ const FilledCart = ({ cartItems, setCartItems }) => {
           <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
         </div>
         
-        <div className="flex flex-col justify-end items-end gap-6 w-full md:w-auto">
+        <div className="flex flex-col justify-end items-end gap-6 w-full md:w-fit">
           <p className="text-grayTwo text-2xl md:text-3xl font-bold leading-5">
-            ₦{cartItems.reduce((total, item) => total + (Number(item.course?.price) || 0), 0).toLocaleString()}
+            ₦{cartItems.reduce((total, item) => total + Number(item.course?.price || 0), 0).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+
           </p>
           <Link
             href={`/dashboard/checkout`}

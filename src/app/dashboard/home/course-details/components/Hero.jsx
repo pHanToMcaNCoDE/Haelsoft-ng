@@ -169,8 +169,7 @@ const Hero = ({ courses }) => {
               <div className="w-full px-7">
                 <div className="mt-4 flex flex-col gap-3">
                   <p className="text-[2rem] lg:text-[2.5rem] font-semibold">
-                    {/* N {courses.price} */}₦{" "}
-                    {Number(courses?.price).toLocaleString()}
+                    ₦ {Number(courses?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                   </p>
                   <div className='w-full h-[1px] mx-1 bg-neutral-200'></div>
                   {/* <div className="mt-4">

@@ -347,7 +347,7 @@ const TopNav = ({setCloseModal}) => {
                       <Link href={'/dashboard/settings'} className="w-full flex justify-start items-start lg:items-center border-b border-neutral-200 px-2.5 pb-4 gap-2">
 
                         <div className="relative">
-                          <img src={userDetail.profile_image} alt={userDetail.username} className="z-10 w-12 h-12 rounded-full" />
+                          <img src={userDetail?.profile_image} alt={userDetail.username} className="z-10 w-12 h-12 rounded-full" />
                           <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-lg">
                             {userDetail.username.substr(0,1)}
                           </div>

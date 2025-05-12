@@ -96,10 +96,6 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
   const handleLogout = async () => {
     const token = secureLocalStorage.getItem('token');
 
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    secureLocalStorage.clear();
-    dispatch(logoutUser());
-
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/logout`, {}, {
         headers: {
@@ -108,10 +104,16 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
       });
 
       toast.success("Logout successful!");
+    
 
       if (typeof window !== "undefined") {
         window.location.href = '/signin';
       }
+
+
+      document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      secureLocalStorage.clear();
+      dispatch(logoutUser());
 
     } catch (error) {
       toast.error(error?.response?.data?.message || "Logout failed");

@@ -145,7 +145,7 @@ const FeaturedCourses = () => {
                       </div>
                       <div className="flex flex-col justify-center items-start gap-2">
                         <p className="text-grayTwo font-bold text-lg text-[.75rem]">
-                          ₦{Number(feature.price).toLocaleString() || "N/A"}
+                          ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                         </p>
                         <button
                           className="py-8 flex justify-center items-center h-[72px] rounded-bl-[30px] rounded-br-[30px] w-full text-white font-semibold bg-main"

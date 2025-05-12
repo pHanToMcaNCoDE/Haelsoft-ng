@@ -61,7 +61,7 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
               </div>
               <div className="flex flex-col justify-center items-start gap-2">
                 <p className="text-grayTwo font-bold text-lg text-[.75rem]">
-                  ₦{Number(course.price).toLocaleString() || "N/A"}
+                  ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                 </p>
                 <Link
                   // href={{
@@ -72,7 +72,7 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
                   //   },
                   // }}
                   href={`/dashboard/home/course-details/${course.uid}`}
-                  className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
+                  className="text-main bg-transparent border duration-200 hover:bg-main hover:text-white border-main p-2 rounded text-base flex justify-center items-center gap-2"
                 >
                   View course <IoIosArrowRoundForward />
                 </Link>

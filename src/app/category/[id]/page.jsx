@@ -167,7 +167,7 @@ const Page = () => {
                     </div>
                     <div className="flex flex-col justify-center items-start gap-2">
                       <p className="text-grayTwo font-bold text-lg text-[.75rem]">
-                        ₦{course.price || "N/A"}
+                        ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                       </p>
                       <button
                         className="py-4 px-3 flex justify-center items-center rounded-[10px] w-full text-white font-semibold bg-main"

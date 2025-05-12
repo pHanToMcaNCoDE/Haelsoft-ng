@@ -117,7 +117,7 @@ const Page = () => {
                   </div>
                   <div className="flex flex-col justify-center items-start gap-2">
                     <p className="text-grayTwo font-bold text-lg text-[.75rem]">
-                      ₦{course.price || "N/A"}
+                      ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                     </p>
                     <Link
                       // href={{
@@ -128,7 +128,7 @@ const Page = () => {
                       //   },
                       // }}
                       href={`/dashboard/home/course-details/${course.uid}`}
-                      className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
+                      className="text-main duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
                     >
                       View course <IoIosArrowRoundForward />
                     </Link>
