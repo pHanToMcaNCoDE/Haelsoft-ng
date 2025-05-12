@@ -172,7 +172,7 @@ const page = () => {
 
         {/* Amount */}
         
-        <div className='w-full lg:w-[50%] min-h-screen bg-[#F2F2F2]flex flex-col justify-center items-center gap-8 border-t lg:border-l border-gray px-5 py-[50px]'>
+        <div className='w-full lg:w-[50%] min-h-screen bg-[#F2F2F2] flex flex-col justify-center items-center gap-8 border-t lg:border-l border-gray px-5 py-[50px]'>
             <div className='w-full flex flex-col justify-center gap-10 lg:gap-[60px]'>
                 <div className='w-ful flex flex-col gap-2'>
                     <h1 className='font-bold text-black text-xl md:text-2xl'>Order Summary</h1>
