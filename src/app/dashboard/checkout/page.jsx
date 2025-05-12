@@ -205,9 +205,9 @@ const page = () => {
                                             
                                             </div>
                                         </div>
-                                        <div className="flex justify-start items-center gap-6">
+                                        <div className="flex justify-start items-center gap-6 w-[30%]">
                                             <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold">
-                                                ₦ {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
+                                                {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"} ₦
                                             </p>
                                         </div>
                                         </div>

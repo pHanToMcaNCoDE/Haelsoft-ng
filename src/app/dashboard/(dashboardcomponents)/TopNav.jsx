@@ -6,7 +6,7 @@ import account from "../../../asset/account.svg";
 import notify from "../../../asset/notify.svg";
 import shoppingcart from "../../../asset/shoppingcart.svg";
 import Image from "next/image";
-import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
+import { IoIosArrowDown, IoIosMenu, IoMdNotifications } from "react-icons/io";
 import SideNav from "./SideNav";
 import { Logout } from "@/app/actions/auth";
 import { toast } from "react-toastify";
@@ -19,15 +19,22 @@ import axios from "axios";
 import { logoutUser } from "@/features/user-details/userDetailsSlice";
 import { FaRegUserCircle } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
-import { MdOutlineKeyboardArrowDown, MdOutlineNotifications } from "react-icons/md";
+import { MdLogout, MdOutlineKeyboardArrowDown, MdOutlineNotifications } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import Menu from "@/components/LandingPageComponents/MenuData/Menu";
+import { CgReadme } from "react-icons/cg";
+import { RiSettings4Fill } from "react-icons/ri";
 
 const TopNav = ({setCloseModal}) => {
   const pathname = usePathname();
   const [clicked, setClicked] = useState(null);
   const menuRef = useRef(null)
   const subMenuRef = useRef(null);
+  
+  const dispatch = useDispatch();
+
+  const carts = useSelector((state) => state.cart.items);
+
     
 
   
@@ -65,10 +72,10 @@ const TopNav = ({setCloseModal}) => {
   const profileButtonRef = useRef(null);
 
 
-
     const [cartItems, setCartItems] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
   
+    
     const token = secureLocalStorage.getItem("token");
   
     useEffect(() => {
@@ -79,18 +86,21 @@ const TopNav = ({setCloseModal}) => {
           Authorization: `Bearer ${token}`
         }
       })
+
       .then((response) => {
         setIsLoading(false)
+        dispatch(setCartItems(response.data.data));
+
         setCartItems(response.data.data);
 
       })
+
       .catch((error) => {
         toast.error(error.response?.data?.message || error.response?.message )
       })
     }, [token])
 
 
-  const dispatch = useDispatch();
 
   const handleClose = () => {
     setProfile(false);
@@ -167,26 +177,41 @@ const TopNav = ({setCloseModal}) => {
     {
       id: 1,
       name: 'My Cart',
-      route: '/dashboard/shopping-cart'
+      route: '/dashboard/shopping-cart',
+      icon: (
+        <GrCart size={25} />
+      )
     },
     {
       id: 2,
       name: 'My Courses',
-      route: '/dashboard/my-courses'
+      route: '/dashboard/my-courses',
+      icon: (
+        <CgReadme size={25} />
+      )
     },
     {
       id: 3,
       name: 'Account Settings',
-      route: '/dashboard/settings'
+      route: '/dashboard/settings',
+      icon: (
+        <RiSettings4Fill size={25} />
+      )
     },
     {
       id: 4,
       name: 'Notifications',
-      route: ""
+      route: "",
+      icon: (
+        <IoMdNotifications size={25} />
+      )
     },
     {
       id: 5,
-      name: 'Logout'
+      name: 'Logout',
+      icon: (
+        <MdLogout size={25} />
+      )
     },
   ]
 
@@ -318,11 +343,13 @@ const TopNav = ({setCloseModal}) => {
             >
               <div className="relative">
                 <GrCart size={25} />
-                <div className="bg-red-500 text-white w-5 h-5 text-xs font-bold text-center rounded-full flex justify-center items-center absolute -top-2 -right-2">
-                  {cartItems?.length ?? 0}
+                
+                <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center absolute -top-2 -right-2">
+                  {cartItems?.length}
                 </div>
               </div>
             </Link>
+
 
 
 
@@ -373,8 +400,9 @@ const TopNav = ({setCloseModal}) => {
                                       setProfile(false);
                                       handleLogout();
                                     }}
-                                    className={`text-sm duration-200 hover:bg-slate-100 cursor-pointer w-full text-center flex justify-start items-center px-2.5 py-3 ${link.name === 'Logout' && 'rounded-md'}`}
+                                    className={`text-sm duration-200 hover:bg-slate-100 cursor-pointer w-full text-center flex justify-start items-center gap-1 px-2.5 py-3 ${link.name === 'Logout' && 'rounded-md'}`}
                                   >
+                                    {link.icon}
                                     Logout
                                   </button>
                                 </>
@@ -387,16 +415,19 @@ const TopNav = ({setCloseModal}) => {
 
                                 className="w-full flex justify-between items-center gap-2 flex-wrap p-2.5 duration-200 hover:bg-slate-100 cursor-pointer"
                               >
-                                <p className="text-sm w-full text-center flex justify-between items-center">
-                                  {link.name}
-                                
-                                {link.name === 'My Cart' && 
-                                  (
-                                    <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
-                                      {cartItems?.length ?? 0}
-                                    </div>
-                                  )}
-                                </p>
+                                <div className="flex justify-between w-full items-center gap-1">
+                                  {link.icon}
+                                  <p className="text-sm w-full text-center flex justify-between items-center">
+                                    {link.name}
+                                  
+                                  {link.name === 'My Cart' && 
+                                    (
+                                      <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
+                                        {cartItems?.length}
+                                      </div>
+                                    )}
+                                  </p>
+                                </div>
                               </Link>
                             );
                           })

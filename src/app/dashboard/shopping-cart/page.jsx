@@ -23,9 +23,8 @@ const ShoppingCart = () => {
 
   const token = secureLocalStorage.getItem("token");
 
-  useEffect(() => {
+  const fetchCart = () => {
     setIsLoading(true);
-
     axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
       headers: {
         Accept: 'application/json',
@@ -33,14 +32,21 @@ const ShoppingCart = () => {
       }
     })
     .then((response) => {
-      setIsLoading(false)
+      setIsLoading(false);
       setCartItems(response.data.data);
     })
     .catch((error) => {
       toast.error(error.response?.data?.message || error.response?.message )
-      setIsLoading(false)
-    })
-  }, [token])
+      setIsLoading(false);
+    });
+  };
+
+  useEffect(() => {
+    fetchCart();
+  }, [token]);
+
+  console.log('cart lenght', cartItems?.length)
+
 
   return (
     <>

@@ -7,7 +7,7 @@ import account from "../../../asset/account.svg";
 import notify from "../../../asset/notify.svg";
 import shoppingcart from "../../../asset/shoppingcart.svg";
 import Image from "next/image";
-import { IoIosArrowDown, IoIosMenu } from "react-icons/io";
+import { IoIosArrowDown, IoIosMenu, IoMdNotifications } from "react-icons/io";
 import SideNav from "./SideNav";
 import { Logout } from "@/app/actions/auth";
 import { toast } from "react-toastify";
@@ -20,8 +20,10 @@ import axios from "axios";
 import { logoutUser } from "@/features/user-details/userDetailsSlice";
 import { FaRegUserCircle } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
-import { MdOutlineNotifications } from "react-icons/md";
+import { MdLogout, MdOutlineNotifications } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
+import { RiSettings4Fill } from "react-icons/ri";
+import { CgReadme } from "react-icons/cg";
 
 const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
   const pathname = usePathname();
@@ -37,12 +39,42 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
   const [open, setOpen] = useState(false);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [query, setQuery] = useState("");
-
-  const cartItems = useSelector((state) => state.cart.cartItems);
-
   const profileMenuRef = useRef(null);
   const profileButtonRef = useRef(null);
+
   const dispatch = useDispatch();
+
+  const carts = useSelector((state) => state.cart.items);
+
+  
+
+    const [cartItems, setCartItems] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+  
+    const token = secureLocalStorage.getItem("token");
+  
+    useEffect(() => {
+  
+      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then((response) => {
+        setIsLoading(false)
+        dispatch(setCartItems(response.data.data));
+
+        setCartItems(response.data.data);
+
+      })
+      .catch((error) => {
+        toast.error(error.response?.data?.message || error.response?.message )
+      })
+    }, [token])
+
+    
+
 
   const handleClose = () => {
     setProfile(false);
@@ -124,26 +156,41 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
     {
       id: 1,
       name: 'My Cart',
-      route: '/dashboard/shopping-cart'
+      route: '/dashboard/shopping-cart',
+      icon: (
+        <GrCart size={25} />
+      )
     },
     {
       id: 2,
-      name: 'My Learning',
-      route: '/dashboard/my-learning'
+      name: 'My Courses',
+      route: '/dashboard/my-courses',
+      icon: (
+        <CgReadme size={25} />
+      )
     },
     {
       id: 3,
       name: 'Account Settings',
-      route: '/dashboard/settings'
+      route: '/dashboard/settings',
+      icon: (
+        <RiSettings4Fill size={25} />
+      )
     },
     {
       id: 4,
       name: 'Notifications',
-      route: ""
+      route: "",
+      icon: (
+        <IoMdNotifications size={25} />
+      )
     },
     {
       id: 5,
-      name: 'Logout'
+      name: 'Logout',
+      icon: (
+        <MdLogout size={25} />
+      )
     },
   ]
 
@@ -186,26 +233,35 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
                           setProfile(false);
                           handleLogout();
                           }}
-                          className={`text-sm duration-200 hover:bg-slate-100 cursor-pointer w-full text-center flex justify-start items-center p-4 ${link.name === 'Logout' && 'rounded-md'}`}
+                          className={`text-sm gap-1 duration-200 hover:bg-slate-100 cursor-pointer w-full text-center flex justify-start items-center p-4 ${link.name === 'Logout' && 'rounded-md'}`}
                       >
-                          Logout
+                        {link.icon}
+                        Logout
                       </button>
                       </>
                   );
                   }
                   return (
-                  <Link
+                    <Link
                       key={link.id}
                       href={link.route}
-                      className="relative w-full flex justify-between items-center gap-2 flex-wrap p-4 duration-200 hover:bg-slate-100 cursor-pointer"
-                  >
-                      <p className="text-sm w-full text-center flex justify-start items-center">{link.name}</p>
-                      {link.name === 'My Cart' && cartItems?.length > 0 && (
-                      <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
-                          {cartItems.length}
+                      className="w-full flex justify-between items-center gap-2 flex-wrap p-2.5 duration-200 hover:bg-slate-100 cursor-pointer"
+                    >
+                      <div className="flex justify-between w-full items-center gap-1">
+                        {link.icon}
+                        <p className="text-sm w-full text-center flex justify-between items-center">
+                          {link.name}
+
+                        {link.name === 'My Cart' && 
+                          (
+                            <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
+                              {cartItems?.length}
+                            </div>
+                          )
+                        }
+                        </p>
                       </div>
-                      )}
-                  </Link>
+                    </Link>
                   );
               })
             }

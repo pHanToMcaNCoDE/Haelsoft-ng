@@ -19,7 +19,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
 
   console.log('Cart Items', cartItems)
 
-  const handleRemoveFromCart = async (courseId) => {
+  const handleRemoveFromCart = async (cartItemUid) => {
     setLoading(true);
     const token = secureLocalStorage.getItem("token");
 
@@ -31,7 +31,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
 
     try {
       const response = await axios.delete(
-        `${process.env.NEXT_PUBLIC_BASE_URL}cart/remove-from-cart/${courseId}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}cart/remove-from-cart/${cartItemUid}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -40,9 +40,8 @@ const FilledCart = ({ cartItems, setCartItems }) => {
       );
 
       toast.success(response.data?.message || "Item removed successfully");
-      
-      
-      setCartItems((prev) => prev.filter(item => item.uid !== courseId))
+
+
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to remove item");
     } finally {
@@ -50,11 +49,17 @@ const FilledCart = ({ cartItems, setCartItems }) => {
     }
   };
 
+
+  const handleRemoveItem = (uid) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.uid !== uid));
+  };
+
+
   const token = secureLocalStorage.getItem("token");
 
   const handleTransaction = () => {
     console.log('Transaction')
-    // Transaction logic here
+    
   };
 
   if (isLoading) {
@@ -77,16 +82,16 @@ const FilledCart = ({ cartItems, setCartItems }) => {
           {cartItems.map((item) => (
             <div
               key={item.course_uid || item.course.uid}
-              className="flex flex-col md:flex-row justify-center items-center gap-3 w-full"
+              className="flex flex-col lg:flex-row justify-center items-center gap-3 w-full"
             >
-              <div className="flex flex-col md:flex-row justify-between items-center w-full">
-                <div className="flex flex-col md:flex-row items-start justify-between gap-8 w-full">
+              <div className="flex flex-col lg:flex-row justify-between items-center w-full">
+                <div className="flex flex-col lg:flex-row items-start justify-between gap-8 w-full">
                   <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={200} height={300} alt={item.course?.title} />
                   <div className="flex flex-col gap-2 w-[90%]">
                     <Link 
                       href={`/dashboard/home/course-details/${item.course.uid}`}
                       target="_blank" 
-                      className="text-grayTwo text-[1rem] md:text-[1.5rem] leading-[35px] font-semibold"
+                      className="text-grayTwo text-[1rem] lg:text-[1.5rem] leading-[35px] font-semibold"
                     >
                       {item.course?.title}
                     </Link>
@@ -109,7 +114,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex justify-start items-center gap-6 w-[20%]">
+                  <div className="flex justify-start items-center gap-6 lg:w-[20%]">
                     <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold flex gap-0.5">
                       ₦ {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
 

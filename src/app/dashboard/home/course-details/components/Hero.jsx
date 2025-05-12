@@ -113,9 +113,9 @@ const Hero = ({ courses }) => {
 
       toast.success(response.data.message);
       
-      if (typeof window !== "undefined") {
-        window.location.href = '/dashboard/shopping-cart';
-      }
+      // if (typeof window !== "undefined") {
+      //   window.location.href = '/dashboard/shopping-cart';
+      // }
 
     } catch (error) {
       toast.error(error.response.data.message)
@@ -154,7 +154,7 @@ const Hero = ({ courses }) => {
                 {courses?.title}
               </h1>
               <p className="text-[1rem] leading-8 font-medium text-white w-full">
-                {courses.category?.desc}
+                {courses.category?.long_desc}
               </p>
 
               {/* <p className="text-white">1,000 already enrolled</p> */}
