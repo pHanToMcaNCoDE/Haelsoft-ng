@@ -18,7 +18,7 @@ const FeaturedCourses = () => {
         const endpoint = currentTab.toLowerCase();
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/${endpoint}`);
         
-        setCourses(response.data.data.data)
+        setCourses(response.data.data)
 
         console.log(`${currentTab} Response`, response.data)
 
@@ -68,8 +68,8 @@ const FeaturedCourses = () => {
       {
         isLoading && (<Loader />)
       }
-      <div className='w-full border-b border-neutral-200 flex justify-start items-center gap-4 transition-all'>
-        {['Featured', 'Latest'].map((tab) => (
+      {/* <div className='w-full border-b border-neutral-200 flex justify-start items-center gap-4 transition-all'>
+        {['Featured'].map((tab) => (
           <div
             key={tab}
             onClick={() => setCurrentTab(tab)}
@@ -80,9 +80,9 @@ const FeaturedCourses = () => {
             {tab}
           </div>
         ))}
-      </div>
+      </div> */}
 
-      <div className='w-full flex flex-col gap-5'>
+      <div className='w-full flex flex-col gap-10'>
         <h1 className='text-[1.5rem] lg:text-[2rem] font-semibold text-black'>
           {currentTab} Courses
         </h1>
@@ -114,20 +114,21 @@ const FeaturedCourses = () => {
                   </p>
 
                   <div className="flex items-center justify-between mt-2">
-                    <Rating style={{ maxWidth: 80 }} value={rating} onChange={setRating} />
+                    <p className="font-bold text-lg text-gray-800 mt-3">
+                      ₦ {Number(course.price).toLocaleString('en-NG', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      })}
+                    </p>
+                    {/* <Rating style={{ maxWidth: 80 }} value={rating} onChange={setRating} /> */}
                     <p className="text-grayTwo text-sm">(1000)</p>
                   </div>
 
-                  <p className="font-bold text-lg text-gray-800 mt-3">
-                    ₦ {Number(course.price).toLocaleString('en-NG', {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
-                  </p>
+                  
 
                   <button
                     disabled={isLoading}
-                    className="mt-3 py-3 w-full bg-main text-white rounded-[30px] font-semibold"
+                    className="mt-3 py-3 w-full bg-main text-white rounded-[30px] font-semibold cursor-pointer"
                     onClick={() => handleAddToCartRequest(course.course_id)}
                   >
                     Add To Cart

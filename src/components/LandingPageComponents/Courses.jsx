@@ -7,7 +7,7 @@ const Courses = () => {
   
   return (
     <section className='pb-[40px] pt-[100px] lg:pb-0 relative lg:min-h-screen 2xl:h-[138vh] overflow-hidden'>
-        <div className='flex flex-col justify-center items-center gap-6 px-5 lg:px-8 text-center'>
+        <div className='flex flex-col justify-center items-center gap-6 px-5 lg:px-8 text-center mb-10'>
           <div className='flex flex-col justify-center items-center gap-5'>
             <h1 className='text-[#F36400] text-[2.125rem] font-semibold leading-9'>
               Transformative Online Courses for Future Leaders

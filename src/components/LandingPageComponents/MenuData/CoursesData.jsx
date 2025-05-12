@@ -85,7 +85,8 @@ const CoursesData = () => {
     
     
     const token = secureLocalStorage.getItem("token");
-    const [categories, setCategories] = useState(defaultCategories)
+
+    const [categories, setCategories] = useState([])
 
     useEffect(() => {
         
@@ -122,19 +123,9 @@ const CoursesData = () => {
                         <h1 className='text-base font-semibold text-black'>{category.name}</h1>
                         <ul className='flex flex-col justify-start items-start gap-3'>
                             {
-                                category.sub_categories.length > 0 ? (
+                                category.sub_categories.length > 0 && (
                                     category.sub_categories.map((sub) => (
-                                        pathname === '/' ? (
-                                            <Link
-                                                key={sub.uid}
-                                                href={`/category/${category.uid}`}
-                                                className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
-                                                        before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
-                                                        before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
-                                            >
-                                                {sub.name}
-                                            </Link>
-                                        ) : (
+                                        pathname.includes('/dashboard') ? (
 
                                             <Link
                                                 key={sub.uid}
@@ -145,18 +136,18 @@ const CoursesData = () => {
                                             >
                                                 {sub.name}
                                             </Link>
+                                        ) : (
+                                            <Link
+                                                key={sub.uid}
+                                                href={`/category/${category.uid}`}
+                                                className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                        before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                        before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                            >
+                                                {sub.name}
+                                            </Link>
                                         )
                                     ))
-                                ) : (
-                                    <Link
-                                        href={`/dashboard/category/${category.uid}`}
-                                        className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
-                                                    before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
-                                                    before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
-                                    >
-                                        {category.name}
-                                    </Link>
-
                                 )
                             }
                         </ul>
@@ -173,19 +164,9 @@ const CoursesData = () => {
                         <h1 className='text-base font-semibold text-black'>{category.name}</h1>
                         <ul className='flex flex-col justify-start items-start gap-3'>
                             {
-                                category.sub_categories.length > 0 ? (
+                                category.sub_categories.length > 0 && (
                                     category.sub_categories.map((sub) => (
-                                        pathname === '/' ? (
-                                            <Link
-                                                key={sub.uid}
-                                                href={`/category/${category.uid}`}
-                                                className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
-                                                        before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
-                                                        before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
-                                            >
-                                                {sub.name}
-                                            </Link>
-                                        ) : (
+                                        pathname.includes('/dashboard') ? (
 
                                             <Link
                                                 key={sub.uid}
@@ -196,18 +177,18 @@ const CoursesData = () => {
                                             >
                                                 {sub.name}
                                             </Link>
+                                        ) : (
+                                            <Link
+                                                key={sub.uid}
+                                                href={`/category/${category.uid}`}
+                                                className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                        before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                        before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                            >
+                                                {sub.name}
+                                            </Link>
                                         )
                                     ))
-                                ) : (
-                                    <Link
-                                        href={`/dashboard/category/${category.uid}`}
-                                        className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
-                                                    before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
-                                                    before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
-                                    >
-                                        {category.name}
-                                    </Link>
-
                                 )
                             }
                         </ul>
