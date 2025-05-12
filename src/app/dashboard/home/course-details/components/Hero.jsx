@@ -92,13 +92,13 @@ const Hero = ({ courses }) => {
     setIsLoading(true);
 
     try {
-      const cartItems = await fetchCartItems();
-      const alreadyInCart = cartItems.some(item => item.course.id === courses.course_id);
+      // const cartItems = await fetchCartItems();
+      // const alreadyInCart = cartItems.some(item => item.course.id === courses.course_id);
 
-      if (alreadyInCart) {
-        toast.info("Course already in cart");
-        return;
-      }
+      // if (alreadyInCart) {
+      //   toast.info("Course already in cart");
+      //   return;
+      // }
 
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${id}`,

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaLinkedinIn, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { BsTwitterX } from "react-icons/bs";
@@ -9,9 +9,32 @@ import logo from '../../public/EdTech Platform screenshot (1).svg';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import axios from "axios";
 
 const AppFooter = () => {
   const path = usePathname()
+
+  const [categories, setCategories] = useState([])
+
+
+  useEffect(() => {
+          
+          const fetchCategory = async () => {
+              try {
+                  const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`);
+  
+                  
+                  
+                  if (response.data && response.data.data && response.data.data.length > 0) {
+                      setCategories(response.data.data);
+                  }
+              } catch (error) {
+                  console.log("Category Error", error);
+              }
+          }
+  
+          fetchCategory();
+      }, [])
 
 
   
@@ -122,38 +145,15 @@ const AppFooter = () => {
             </div>
             <div className="f my-[2em] md:my-0 gap-y-8 flex flex-col justify-center items-start">
               <div className='flex flex-col justify-center items-start gap-3'>
-                <h2 className="text-[.875rem] font-bold">Certificate Courses</h2>
+                <h2 className="text-[.875rem] font-bold">Courses</h2>
                 <ul className="flex flex-col justify-center items-start gap-2">
-                  <Link href={`/web-certificate-course`} className="text-[.75rem] font-medium">
-                    Web Development
-                  </Link>
-                  <Link href={`/user-experience-certificate-course`} className="text-[.75rem] font-medium">
-                    User Experience Design
-                  </Link>
-                  <Link href={`/data-science-certificate-course`} className="text-[.75rem] font-medium">
-                    Data Science
-                  </Link>
-                  <Link href={`/digital-marketing-certificate-course`} className="text-[.75rem] font-medium">
-                    Digital Marketing
-                  </Link>
-                  <Link href={`/product-management-certificate-course`} className="text-[.75rem] font-medium">
-                    Product Management
-                  </Link>
-                  <Link href={`/cybersecurity-certificate-course`} className="text-[.75rem] font-medium">
-                    Cybersecurity
-                  </Link>
-                  <Link href={`/data-analytics-certificate-course`} className="text-[.75rem] font-medium">
-                    Data Analytics
-                  </Link>
-                  <Link href={`/python-certificate-course`} className="text-[.75rem] font-medium">
-                    Python
-                  </Link>
-                  <Link href={`/user-interface-certificate-course`} className="text-[.75rem] font-medium">
-                    User Interface Design
-                  </Link>
-                  <Link href={ `/artificial-intelligence-certificate-course`} className="text-[.75rem] font-medium">
-                    Artificial Intelligence
-                  </Link>
+                  {
+                    categories.map((category) => (
+                      <Link href={`/category/${category.uid}`} className="text-[.75rem] font-medium">
+                        {category.name}
+                      </Link>
+                    ))
+                  }
                 </ul>
               </div>
               <div className='flex flex-col justify-center items-start gap-3'>

@@ -6,8 +6,11 @@ import { FaClipboardList } from 'react-icons/fa';
 import { TbAtom } from 'react-icons/tb'
 import axios from 'axios';
 import secureLocalStorage from 'react-secure-storage';
+import { usePathname } from 'next/navigation';
 
 const CoursesData = () => {
+
+    const pathname = usePathname();
 
    const defaultCategories = [
         {
@@ -85,16 +88,12 @@ const CoursesData = () => {
     const [categories, setCategories] = useState(defaultCategories)
 
     useEffect(() => {
-        if (!token) return;
         
         const fetchCategory = async () => {
             try {
-                const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`, {
-                    headers: {
-                        'Accept': 'application/json',
-                        'Authorization': `Bearer ${token}`
-                    }
-                });
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}category`);
+
+                // console.log('Categories', response.data)
                 
                 if (response.data && response.data.data && response.data.data.length > 0) {
                     setCategories(response.data.data);
@@ -105,7 +104,7 @@ const CoursesData = () => {
         }
 
         fetchCategory();
-    }, [token])
+    }, [])
     
   return (
     <div className='flex justify-start xl:justify-center items-start gap-[4em] h-full w-full xl:max-w-[1500px] mx-auto'>
@@ -119,31 +118,38 @@ const CoursesData = () => {
             {
                 categories?.map((category) => (
                     <div key={category.uid} className='w-full flex flex-col justify-start items-start gap-3'>
+                        
                         <h1 className='text-base font-semibold text-black'>{category.name}</h1>
                         <ul className='flex flex-col justify-start items-start gap-3'>
                             {
                                 category.sub_categories.length > 0 ? (
                                     category.sub_categories.map((sub) => (
-                                    <Link
-                                        key={sub.uid}
-                                        href={'/signin'}
-                                            onClick={(e) => {
-                                                if (!token) {
-                                                e.preventDefault();
-                                                window.location.href = '/signin';
-                                                }
-                                            }
-                                        }
-                                        className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
-                                                before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
-                                                before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
-                                    >
-                                        {sub.name}
-                                    </Link>
+                                        pathname === '/' ? (
+                                            <Link
+                                                key={sub.uid}
+                                                href={`/category/${category.uid}`}
+                                                className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                        before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                        before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                            >
+                                                {sub.name}
+                                            </Link>
+                                        ) : (
+
+                                            <Link
+                                                key={sub.uid}
+                                                href={`/dashboard/category/${category.uid}`}
+                                                className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
+                                                        before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
+                                                        before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
+                                            >
+                                                {sub.name}
+                                            </Link>
+                                        )
                                     ))
                                 ) : (
                                     <Link
-                                        href={'/signin'}
+                                        href={`/dashboard/category/${category.uid}`}
                                         onClick={(e) => {
                                             if (!token) {
                                             e.preventDefault();

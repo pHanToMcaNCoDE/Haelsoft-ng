@@ -105,8 +105,8 @@ const Page = () => {
                 />
 
                 <div className="px-3 pb-5 flex flex-col justify-end items-start w-full gap-2">
-                  <h1 className="text-black text-lg lg:text-xl font-semibold">{course.title}</h1>
-                  <p className="text-grayTwo text-sm text-[.75rem]">{course.sub_title}</p>
+                  <h1 className="text-black text-lg lg:text-xl font-semibold">{course.title.substr(0, 40) + '...'}</h1>
+                  <p className="text-grayTwo text-sm text-[.75rem]">{course.sub_title.substr(0, 30) + '...'}</p>
                   <div className="flex flex-wrap justify-between items-center w-full gap-5">
                     <Rating
                       style={{ maxWidth: 80 }}

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -16,6 +16,7 @@ import secureLocalStorage from 'react-secure-storage';
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [courses, setCourses] = useState([]);
+  const [paginationData, setPaginationData] = useState({});
   const [loadingCategories, setLoadingCategories] = useState(true);
   const [loadingCourses, setLoadingCourses] = useState(true);
   const [errorCategories, setErrorCategories] = useState(null);
@@ -37,25 +38,22 @@ const HomePage = () => {
     //   });
 
     // Fetch Courses
-
     axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses`, {
       headers: {
         'Accept': 'application/json',
-        'Authorizathion': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
       }
     })
       .then((res) => {
         if (res.data.data) {
           setCourses(res.data.data.data);
+          setPaginationData(res.data.data.meta);
           dispatch(addCourses(res.data.data.data));
           console.log("course Rep", res.data.data.data);
         }
-
         setLoadingCourses(false);
       })
       .catch((error) => {
-        // console.error("Error fetching data:", error);
-        // setErrorCourses("Failed to fetch data: Network error");
         setLoadingCourses(false);
       });
   }, [dispatch]);
@@ -70,14 +68,13 @@ const HomePage = () => {
 
   return (
     <section className='bg-white'>
-      {(loadingCourses) ? (
+      {loadingCourses ? (
         <Loader />
       ) : (
         <section className='w-full min-h-screen'>
           <TopSection />
-          {/* <Categories categories={categories} /> */}
           <div className='pt-[30px] pb-[200px] px-4'>
-            <Explore courses={courses} />
+            <Explore courses={courses} setCourses={setCourses} paginationData={paginationData} setPaginationData={setPaginationData} />
           </div>
         </section>
       )}
