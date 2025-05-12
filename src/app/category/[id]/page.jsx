@@ -144,8 +144,8 @@ const Page = () => {
 
                   <Image
                     width={523}
-                    height={350}
-                    className="object-contain rounded-tl-[6px] rounded-tr-[6px]"
+                    height={300}
+                    className="object-cover rounded-tl-[6px] rounded-tr-[6px] w-[523px] h-[300px] overflow-hidden"
                     src={
                       course?.cover_image
                         ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
@@ -170,7 +170,7 @@ const Page = () => {
                         ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                       </p>
                       <button
-                        className="py-4 px-3 flex justify-center items-center rounded-[10px] w-full text-white font-semibold bg-main"
+                        className="py-4 px-3 flex justify-center items-center rounded-[10px] w-full text-white font-semibold bg-main duration-200 hover:bg-transparent hover:text-main"
                         onClick={handleAddToCartRequest}
                       >
                         Add To Cart

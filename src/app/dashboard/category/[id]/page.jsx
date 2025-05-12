@@ -94,8 +94,8 @@ const Page = () => {
 
                 <Image
                   width={523}
-                  height={350}
-                  className="object-contain rounded-tl-[6px] rounded-tr-[6px]"
+                  height={300}
+                  className="object-cover rounded-tl-[6px] rounded-tr-[6px] w-[523px] h-[300px] overflow-hidden"
                   src={
                     course?.cover_image
                       ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
@@ -128,7 +128,7 @@ const Page = () => {
                       //   },
                       // }}
                       href={`/dashboard/home/course-details/${course.uid}`}
-                      className="text-main duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
+                      className="text-main  duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
                     >
                       View course <IoIosArrowRoundForward />
                     </Link>
