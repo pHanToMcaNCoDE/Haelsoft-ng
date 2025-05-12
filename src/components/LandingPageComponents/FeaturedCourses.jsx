@@ -1,26 +1,31 @@
-import { Rating } from '@smastrom/react-rating'
-import axios from 'axios'
-import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import { toast } from 'react-toastify'
-import secureLocalStorage from 'react-secure-storage'
+import { Rating } from '@smastrom/react-rating';
+import axios from 'axios';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
+import { MdOutlineBroadcastOnPersonal } from 'react-icons/md';
+import secureLocalStorage from 'react-secure-storage';
 
 const FeaturedCourses = () => {
   const [currentTab, setCurrentTab] = useState("Featured");
-  const [courses, setCourses] = useState([]); // Will hold either featured or latest
+  const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [rating, setRating] = useState(0);
-
-  const token = secureLocalStorage.getItem('accessToken');
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const endpoint = currentTab === 'Featured' ? 'featured' : 'latest';
+        const endpoint = currentTab.toLowerCase();
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/${endpoint}`);
-        setCourses(response.data.data || []);
+        const data = response.data.data;
+        if (Array.isArray(data)) {
+          setCourses(data);
+        } else {
+          setCourses([]);
+          console.error(`Expected an array but got:`, data);
+        }
       } catch (error) {
-        console.log('Fetch error:', error);
+        console.error(`Error fetching ${currentTab} courses:`, error);
+        setCourses([]);
       }
     };
 
@@ -28,63 +33,61 @@ const FeaturedCourses = () => {
   }, [currentTab]);
 
   const handleAddToCartRequest = async (courseId) => {
-    if (!token) return window.location.href = '/signin';
-
     setIsLoading(true);
-    try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${courseId}`,
-        {},
-        {
-          headers: {
-            Accept: 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+    const token = secureLocalStorage.getItem("token");
 
-      toast.success(response.data.message);
-      window.location.href = '/dashboard/shopping-cart';
-    } catch (error) {
-      toast.error(error?.response?.data?.message || 'Something went wrong');
-    } finally {
-      setIsLoading(false);
+    if (token) {
+      try {
+        const response = await axios.post(
+          `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${courseId}`,
+          {},
+          {
+            headers: {
+              Accept: 'application/json',
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        toast.success(response.data.message);
+
+        if (typeof window !== "undefined") {
+          window.location.href = '/dashboard/shopping-cart';
+        }
+      } catch (error) {
+        toast.error(error.response?.data?.message || "An error occurred");
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      window.location.href = '/signin';
     }
   };
 
   return (
-    <section className='h-full px-5 py-[40px] flex flex-col gap-10'>
-      {/* Tabs */}
-      <div className='w-full border-b border-neutral-200 flex gap-4'>
+    <section className='h-full px-5 py-25 flex flex-col gap-10 py-[40px]'>
+      <div className='w-full border-b border-neutral-200 flex justify-start items-center gap-4 transition-all'>
         {['Featured', 'Latest'].map((tab) => (
           <div
             key={tab}
             onClick={() => setCurrentTab(tab)}
-            className={`cursor-pointer text-lg font-medium relative h-[53px] ${
-              currentTab === tab ? 'text-black' : 'text-grayTwo'
+            className={`cursor-pointer text-lg flex flex-col gap-2 justify-center items-center font-medium text-grayTwo relative h-[53px] ${
+              currentTab === tab ? 'border-b-2 border-yellow-300' : ''
             }`}
           >
             {tab}
-            {currentTab === tab && (
-              <div className='w-full h-[3px] bg-yellow-300 absolute bottom-0'></div>
-            )}
           </div>
         ))}
       </div>
 
-      {/* Title */}
-      <h1 className='text-[1.5rem] lg:text-[2rem] font-semibold text-black'>
-        {currentTab} Courses
-      </h1>
-
-      {/* Course List */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {courses.length === 0 ? (
-          <p className="text-gray-500">No courses available.</p>
-        ) : (
-          Array.isArray(courses) && courses.length > 0 ? 
-            courses.map((course) => (
-              <div 
+      <div className='w-full'>
+        <h1 className='text-[1.5rem] lg:text-[2rem] font-semibold text-black'>
+          {currentTab} Courses
+        </h1>
+        {Array.isArray(courses) && courses.length > 0 ? (
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {courses.map((course) => (
+              <div
                 key={course.uid}
                 className="bg-white border border-[#cfcece] rounded-[6px] flex flex-col h-full overflow-hidden"
               >
@@ -129,12 +132,12 @@ const FeaturedCourses = () => {
                   </button>
                 </div>
               </div>
-            ))
-          : (
+            ))}
+          </div>
+        ) : (
             <div className='w-full h-full flex justify-center items-center'>
               <p className="text-gray-700 text-xl font-semibold">No courses available.</p>
             </div>
-          )
         )}
       </div>
     </section>
