@@ -413,7 +413,7 @@ const TopNav = ({setCloseModal}) => {
         </div>
       </div>
       <div
-        className={`w-full relative md:w-[70%] lg:w-full max-w-[522px] md:hidden ${
+        className={`w-full relative md:w-[70%] lg:w-full max-w-[522px] hidden ${
           query
             ? "rounded-t-[6px] border-b-0 ease-in-out duration-300"
             : "rounded-3xl ease-in-out duration-300"
