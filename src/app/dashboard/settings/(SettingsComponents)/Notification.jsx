@@ -34,10 +34,6 @@ const Notification = () => {
 
         console.log('GET response:', response.data)
 
-        if (response.data?.message) {
-          toast.success(response.data.message)
-        }
-
         setSettings((prev) => ({
           ...prev,
           promotional_email: response.data.data.promotional_email,

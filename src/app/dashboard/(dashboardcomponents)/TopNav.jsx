@@ -60,10 +60,36 @@ const TopNav = ({setCloseModal}) => {
   const [query, setQuery] = useState("");
 
   const [menu, setMenu] = useState(false);
-  const cartItems = useSelector((state) => state.cart.cartItems);
 
   const profileMenuRef = useRef(null);
   const profileButtonRef = useRef(null);
+
+
+
+    const [cartItems, setCartItems] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+  
+    const token = secureLocalStorage.getItem("token");
+  
+    useEffect(() => {
+  
+      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then((response) => {
+        setIsLoading(false)
+        setCartItems(response.data.data);
+
+      })
+      .catch((error) => {
+        toast.error(error.response?.data?.message || error.response?.message )
+      })
+    }, [token])
+
+
   const dispatch = useDispatch();
 
   const handleClose = () => {
@@ -288,16 +314,17 @@ const TopNav = ({setCloseModal}) => {
 
             <Link
               href="/dashboard/shopping-cart"
-              className="relative w-full flex justify-between items-center flex-wrap duration-200 cursor-pointer"
+              className="w-full flex justify-between items-center flex-wrap duration-200 cursor-pointer"
             >
-              <GrCart size={25} />
-
-              {cartItems?.length > 0 && (
-                <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center absolute top-0 -right-5">
-                  {cartItems.length}
+              <div className="relative">
+                <GrCart size={25} />
+                <div className="bg-red-500 text-white w-5 h-5 text-xs font-bold text-center rounded-full flex justify-center items-center absolute -top-2 -right-2">
+                  {cartItems?.length ?? 0}
                 </div>
-              )}
+              </div>
             </Link>
+
+
 
           <div className="w-auto relative">
             <motion.div
@@ -321,7 +348,9 @@ const TopNav = ({setCloseModal}) => {
 
                         <div className="relative">
                           <img src={userDetail.profile_image} alt={userDetail.username} className="z-10 w-12 h-12 rounded-full" />
-                          <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5]"></div>
+                          <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-lg">
+                            {userDetail.username.substr(0,1)}
+                          </div>
                       </div>
 
                         <div className="flex flex-col justify-center items-start">
@@ -356,14 +385,18 @@ const TopNav = ({setCloseModal}) => {
                                 key={link.id}
                                 href={link.route}
 
-                                className="relative w-full flex justify-between items-center gap-2 flex-wrap p-2.5 duration-200 hover:bg-slate-100 cursor-pointer"
+                                className="w-full flex justify-between items-center gap-2 flex-wrap p-2.5 duration-200 hover:bg-slate-100 cursor-pointer"
                               >
-                                <p className="text-sm w-full text-center flex justify-start items-center">{link.name}</p>
-                                {link.name === 'My Cart' && cartItems?.length > 0 && (
-                                  <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
-                                    {cartItems.length}
-                                  </div>
-                                )}
+                                <p className="text-sm w-full text-center flex justify-between items-center">
+                                  {link.name}
+                                
+                                {link.name === 'My Cart' && 
+                                  (
+                                    <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
+                                      {cartItems?.length ?? 0}
+                                    </div>
+                                  )}
+                                </p>
                               </Link>
                             );
                           })

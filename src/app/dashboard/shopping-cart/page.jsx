@@ -35,10 +35,6 @@ const ShoppingCart = () => {
     .then((response) => {
       setIsLoading(false)
       setCartItems(response.data.data);
-
-      if(response.data.data) { 
-        toast.success(response.data.message)
-      }
     })
     .catch((error) => {
       toast.error(error.response?.data?.message || error.response?.message )

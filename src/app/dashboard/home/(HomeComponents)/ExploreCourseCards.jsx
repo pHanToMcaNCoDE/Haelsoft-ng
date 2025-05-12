@@ -34,21 +34,23 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
               style={{ backgroundImage: `url(${course?.img_course ? `https://res.cloudinary.com/dmpqdaupc/image/upload/${course.img_course}` : "/fallback-image.jpg"})` }}
             ></div> */}
 
-            <Image
-              width={523}
-              height={300}
-              className="object-contain rounded-tl-[6px] rounded-tr-[6px]"
-              src={
-                course?.cover_image
-                  ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
-                  : "/fallback-image.jpg"
-              }
-              alt={course.title}
-            />
+            {/* <div className="relative overflow-hidden w-fit h-fit"> */}
+              <Image
+                width={523}
+                height={300}
+                className="object-cover rounded-tl-[6px] rounded-tr-[6px] w-[523px] h-[300px] overflow-hidden"
+                src={
+                  course?.cover_image
+                    ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
+                    : "/fallback-image.jpg"
+                }
+                alt={course.title}
+              />
+            {/* </div> */}
 
             <div className="px-3 pb-5 flex flex-col justify-end items-start w-full gap-2">
-              <h1 className="text-black text-xl font-semibold">{course.title}</h1>
-              <p className="text-grayTwo text-sm text-[.75rem]">{course.sub_title}</p>
+              <h1 className="text-black text-xl font-semibold">{course.title.substr(0, 40) + '...'}</h1>
+              <p className="text-grayTwo text-sm text-[.75rem]">{course.sub_title.substr(0, 30) + '...'}</p>
               <div className="flex flex-wrap justify-between items-center w-full gap-5">
                 <Rating
                   style={{ maxWidth: 80 }}

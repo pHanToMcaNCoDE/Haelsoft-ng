@@ -68,10 +68,8 @@ const LinkedAccounts = () => {
           }
         })
 
-        // console.log('The response', response)
-        toast.success(response.data?.message || "Social Links Updated")
       } catch (error) {
-        console.log('Api error', error)
+        toast.error(error.response.data.message || error.response.message)
       } 
 
     } catch (error) {

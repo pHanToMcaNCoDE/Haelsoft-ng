@@ -151,11 +151,6 @@ const PersonalInformation = () => {
           }
         );
         
-        if (response.data && response.data.message) {
-          toast.success(response.data.message);
-        } else {
-          toast.success("Profile updated successfully");
-        }
       } catch (error) {
         console.error('Profile Update Error:', error);
         if (error.response && error.response.data && error.response.data.message) {

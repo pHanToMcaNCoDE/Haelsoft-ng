@@ -36,6 +36,7 @@ const page = () => {
 
             .then((response) => {
                 setChannels(response.data.data)
+                console.log('Payment Response', response.data)
             })
 
             .catch((error) => console.log('Channel Error', error))

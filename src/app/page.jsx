@@ -14,6 +14,7 @@ import Bootcamps from "@/components/LandingPageComponents/Bootcamps";
 import ReadyToGetStarted from "@/components/LandingPageComponents/ReadyToGetStarted";
 import { useState, useEffect, useRef } from "react";
 import CustomNewsletter from "@/components/LandingPageComponents/CustomNewsletter";
+import FeaturedCourses from "@/components/LandingPageComponents/FeaturedCourses";
 
 export default function Home() {
   const [clicked, setClicked] = useState('');
@@ -39,6 +40,7 @@ export default function Home() {
         <Courses />
       </section>
       <Review />
+      <FeaturedCourses/>
       <Network />
       <ResponsiveNetwork />
       <PartTimeCertificateCourse />
