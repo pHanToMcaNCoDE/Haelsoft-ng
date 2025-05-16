@@ -28,7 +28,8 @@ const VerifiedComponent = () => {
           toastId: 1,
           position: "top-right",
         });
-        secureLocalStorage.removeItem("token");
+        document.cookie = "session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        
         router.push("/signin");
       } catch (e) {
         console.error(e);

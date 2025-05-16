@@ -14,22 +14,25 @@ import secureLocalStorage from "react-secure-storage";
 import Loader from "@/components/Loader";
 import CourseAccordion from "../components/CourseAccordion";
 import { toast } from "react-toastify";
+import RelatedCourses from "../components/RelatedCourses";
+import { useSelector } from "react-redux";
 
 const Page = () => {
   const [courses, setCourses] = useState(null);
+  const [relatedCourses, setRelatedCourses] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [apiResponse, setApiResponse] = useState(null);
 
   const { id } = useParams();
+        
+  const { token } = useSelector((state) => state.userDetails);
   
-  // Get token only when needed to avoid SSR issues
   useEffect(() => {
     const fetchCourse = async () => {
       setLoading(true);
       
       try {
-        const token = secureLocalStorage.getItem('token');
 
         const url = `${process.env.NEXT_PUBLIC_BASE_URL}courses/single/${id}`;
         console.log('Fetching course with ID:', id);
@@ -46,14 +49,15 @@ const Page = () => {
         console.log('Full API Response:', response.data);
         
         if (response.data && response.data.data && response.data.data.course) {
-          console.log('Course data found:', response.data.data.course);
+          setRelatedCourses(response.data.data.relatedCourse)
           setCourses(response.data.data.course);
         } else {
           console.error('Unexpected API response structure:', response.data);
           setError('Course data structure not as expected');
         }
       } catch (error) {
-        toast.error(error.response.data.message || error.response.message)
+        // toast.error(error.response.data.message || error.response.message)
+        console.log('Course Details Error', error)
       } finally {
         setLoading(false);
       }
@@ -93,6 +97,7 @@ const Page = () => {
           {/* <Instructors courses={courses} /> */}
           {/* <OnlineClassroom courses={courses} /> */}
           <CourseAccordion courses={courses} />
+          <RelatedCourses relatedCourses={relatedCourses} />
           <Community />
         </>
       )}

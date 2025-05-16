@@ -9,7 +9,7 @@ const Course = ({item}) => {
   return (
     <>
       <div
-        key={course.uid}
+        key={item.course.uid}
         className="bg-white w-full h-full lg:h-[425px] border border-[#cfcece] rounded-[6px] flex flex-col justify-between gap-2 items-start cursor-pointer"
       >
         {/* <div
@@ -45,7 +45,7 @@ const Course = ({item}) => {
               <p className="text-black text-lg font-semibold">0%</p>
             </div>
             <Link
-              href={`/watch`}
+              href={`/dashboard/watch/${item.course.uid}`}
               className="text-main duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
             >
               Get started <IoIosArrowRoundForward />

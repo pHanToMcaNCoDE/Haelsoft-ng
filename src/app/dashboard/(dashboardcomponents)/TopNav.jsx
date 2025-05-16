@@ -16,7 +16,7 @@ import secureLocalStorage from "react-secure-storage";
 import { useDispatch, useSelector } from "react-redux";
 import logo from '../../../../public/assets/EdTech Platform Figma.svg';
 import axios from "axios";
-import { logoutUser } from "@/features/user-details/userDetailsSlice";
+import { logout } from "@/features/user-details/userDetailsSlice";
 import { FaRegUserCircle } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { MdLogout, MdOutlineKeyboardArrowDown, MdOutlineNotifications } from "react-icons/md";
@@ -24,6 +24,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Menu from "@/components/LandingPageComponents/MenuData/Menu";
 import { CgReadme } from "react-icons/cg";
 import { RiSettings4Fill } from "react-icons/ri";
+import { useSelect } from "@nextui-org/react";
 
 const TopNav = ({setCloseModal}) => {
   const pathname = usePathname();
@@ -76,7 +77,9 @@ const TopNav = ({setCloseModal}) => {
     const [isLoading, setIsLoading] = useState(false);
   
     
-    const token = secureLocalStorage.getItem("token");
+    const { token } = useSelector((state) => state.userDetails);
+
+    console.log('TOken from redux', token)
   
     useEffect(() => {
   
@@ -152,11 +155,6 @@ const TopNav = ({setCloseModal}) => {
   }, [profile]);
 
   const handleLogout = async () => {
-    const token = secureLocalStorage.getItem('token');
-
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    secureLocalStorage.clear();
-    dispatch(logoutUser());
 
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/logout`, {}, {
@@ -166,6 +164,9 @@ const TopNav = ({setCloseModal}) => {
       });
 
       toast.success("Logout successful!");
+      document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      secureLocalStorage.clear();
+      dispatch(logout());
 
       router.push('/signin');
     } catch (error) {
@@ -240,7 +241,7 @@ const TopNav = ({setCloseModal}) => {
           </Link>
         </div>
 
-        <Link href={`/dashboard/home`} className="p-2 rounded-[4px] duration-200 hover:bg-main/[15%] text-black text-[1.125rem]">
+          <Link href={`/dashboard/home`} className="p-2 rounded-[4px] duration-200 hover:bg-main/[15%] text-black text-[1.125rem] hidden lg:flex">
             Explore
           </Link>
 
@@ -351,9 +352,7 @@ const TopNav = ({setCloseModal}) => {
             </Link>
 
 
-
-
-          <div className="w-auto relative">
+          <div className="w-auto relative hidden lg:flex">
             <motion.div
               ref={profileButtonRef}
               className="flex justify-center items-center gap-1 cursor-pointer text-black"
@@ -374,9 +373,9 @@ const TopNav = ({setCloseModal}) => {
                       <Link href={'/dashboard/settings'} className="w-full flex justify-start items-start lg:items-center border-b border-neutral-200 px-2.5 pb-4 gap-2">
 
                         <div className="relative">
-                          <img src={userDetail?.profile_image} alt={userDetail.username} className="z-10 w-12 h-12 rounded-full" />
+                          <img src={userDetail?.profile_image} alt={userDetail?.username} className="z-10 w-12 h-12 rounded-full" />
                           <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-lg">
-                            {userDetail.username.substr(0,1)}
+                            {userDetail?.username.substr(0,1)}
                           </div>
                       </div>
 

@@ -7,6 +7,7 @@ import axios from 'axios';
 import secureLocalStorage from 'react-secure-storage';
 import Link from 'next/link';
 import { IoIosArrowRoundBack } from 'react-icons/io';
+import { useSelector } from 'react-redux';
 
 const MyLearning = () => {
     const [loading, setLoading] = useState(true);
@@ -14,7 +15,7 @@ const MyLearning = () => {
 
     useEffect(() => {
         // window.location.reload();
-        const token = secureLocalStorage.getItem('token');
+        const { token } = useSelector((state) => state.userDetails);
 
     
         // console.log('Token', token)

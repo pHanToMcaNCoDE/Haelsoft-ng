@@ -8,7 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import { GrCart } from "react-icons/gr";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useSelector } from "react-redux";
 import secureLocalStorage from "react-secure-storage";
 
 const Page = () => {
@@ -39,7 +41,7 @@ const Page = () => {
    const [clicked, setClicked] = useState('');
 
 
-  const token = secureLocalStorage.getItem('token');
+  const { token } = useSelector((state) => state.userDetails);
 
   useEffect(() => {
     const fetchCategoryDetails = () => {
@@ -165,16 +167,26 @@ const Page = () => {
                       />
                       <p className="text-grayTwo text-base text-[.75rem]">(1000)</p>
                     </div>
-                    <div className="flex flex-col justify-center items-start gap-2">
+                    <div className="flex flex-col justify-center items-start gap-2 w-full">
                       <p className="text-grayTwo font-bold text-lg text-[.75rem]">
                         ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                       </p>
-                      <button
-                        className="py-4 px-3 flex justify-center items-center rounded-[10px] w-full text-white font-semibold bg-main duration-200 hover:bg-transparent hover:text-main"
-                        onClick={handleAddToCartRequest}
-                      >
-                        Add To Cart
-                      </button>
+                      
+                      <div className='w-full flex flex-col md:flex-row justify-between items-center gap-2 mt-2'>
+                        <Link
+                            href={`/course-details/${course.uid}`}
+                            className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2 duration-200 hover:text-white hover:bg-main"
+                        >
+                            View course <IoIosArrowRoundForward />
+                        </Link>
+                        <button
+                            disabled={isLoading}
+                            className="p-3 bg-main cursor-pointer text-white duration-200 hover:text-main hover:bg-transparent border border-main rounded-full font-semibold"
+                            onClick={() => handleAddToCartRequest(course.course_id)}
+                        >
+                            <GrCart size={22}/>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

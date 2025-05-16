@@ -15,6 +15,7 @@ import ReadyToGetStarted from "@/components/LandingPageComponents/ReadyToGetStar
 import { useState, useEffect, useRef } from "react";
 import CustomNewsletter from "@/components/LandingPageComponents/CustomNewsletter";
 import FeaturedCourses from "@/components/LandingPageComponents/FeaturedCourses";
+import LatestCourses from "@/components/LandingPageComponents/LatestCourses";
 
 export default function Home() {
   const [clicked, setClicked] = useState('');
@@ -36,6 +37,7 @@ export default function Home() {
       />
       <Hero scrollToCourses={scrollToCourses} />
       <Companies />
+      <LatestCourses/>
       <section ref={courses}>
         <Courses />
       </section>

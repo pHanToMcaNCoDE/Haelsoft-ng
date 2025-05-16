@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import draw from "../../../asset/draw.svg";
+import draw from "../../../../asset/draw.svg";
 import Image from "next/image";
-import check from "../../../asset/draw.svg";
+import check from "../../../../asset/draw.svg";
 import { IoCloseOutline } from "react-icons/io5";
 import Modules from "./Modules";
 import { data } from "@/Service/validation";

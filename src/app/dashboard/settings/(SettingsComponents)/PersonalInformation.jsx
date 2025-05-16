@@ -6,6 +6,7 @@ import { baseURL, profileValidation } from "@/Service/validation";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { RiImageAddFill } from "react-icons/ri";
+import { useSelector } from "react-redux";
 import secureLocalStorage from "react-secure-storage";
 import { ScaleLoader } from "react-spinners";
 import { toast } from "react-toastify";
@@ -23,7 +24,7 @@ const PersonalInformation = () => {
     profile_image: ""
   });
 
-  const token = secureLocalStorage.getItem('token');
+  const { token } = useSelector((state) => state.userDetails);
 
   useEffect(() => {
     const getUserDetails = () => {

@@ -6,14 +6,14 @@ import { fetchData } from "@/app/lib/actions";
 import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
 import SkeletonLoader from "../my-learning/(mylearningcomponent)/SkeletonLoader";
+import { useSelector } from "react-redux";
 
 const CoursesFetch = () => {
   const [courses, setCourses] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const token = secureLocalStorage.getItem("token")
+  const { token } = useSelector((state) => state.userDetails);
 
   useEffect(() => {
     const fetchCoursesAndCategories = async () => {

@@ -12,11 +12,12 @@ import Link from 'next/link';
 import { FaFileCode } from "react-icons/fa";
 import secureLocalStorage from 'react-secure-storage';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 const CourseCards = () => {
 
   const [categories, setCategories] = useState([])
-    const token = secureLocalStorage.getItem("token");
+    const { token } = useSelector((state) => state.userDetails);
     const [id, setId] = useState([])
     
   useEffect(() => {
@@ -65,7 +66,7 @@ const CourseCards = () => {
           id: 5,
           title: "Python",
           icon: web
-        },
+        }, 
     ];
 
 

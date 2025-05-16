@@ -10,6 +10,7 @@ import { ScaleLoader } from 'react-spinners'
 import CheckOut from './(components)/CheckOut'
 import { toast } from 'react-toastify'
 import { Rating } from '@smastrom/react-rating'
+import { useSelector } from 'react-redux'
 
 const page = () => {
     const [current, setCurrent] = useState("Payment Channel");
@@ -23,7 +24,7 @@ const page = () => {
 
     console.log('Selected channel', selectedChannel)
 
-    const token = secureLocalStorage.getItem("token");
+    const { token } = useSelector((state) => state.userDetails);
 
     useEffect(() => {
         setIsLoading(true);
@@ -90,11 +91,14 @@ const page = () => {
         }
 
         const courseUids = cartItems.map(item => item.uid);
+        const callback = `${process.env.NEXT_PUBLIC_BASE_URL}/dashboard/checkout/success`;
+
 
         const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}payment/${endpoint}/initialize`,
             {
-            courseUids,
-            paymentMethod: endpoint,
+                courseUids,
+                paymentMethod: endpoint,
+                callback_url: callback
             },
             {
             headers: {
@@ -103,16 +107,18 @@ const page = () => {
             }
         );
 
-        console.log('Payment Response', response.data)
+        console.log('Payment Response 2', response.data)
+
+        toast.success(response.data.message)
 
         paymentUrl = response.data?.data?.url;
 
 
-        if (paymentUrl) {
-            window.location.href = paymentUrl;
-        } else {
-            toast.error('No payment URL returned from the server');
-        }
+            if (paymentUrl) {
+                window.location.href = paymentUrl;
+            } else {
+                toast.error('No payment URL returned from the server');
+            }
         } catch (error) {
         console.error('Payment Error:', error);
         toast.error(error.response?.data?.message || 'Payment initialization failed');

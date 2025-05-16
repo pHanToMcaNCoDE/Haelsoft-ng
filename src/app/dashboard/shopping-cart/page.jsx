@@ -21,7 +21,7 @@ const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const token = secureLocalStorage.getItem("token");
+  const { token } = useSelector((state) => state.userDetails);
 
   const fetchCart = () => {
     setIsLoading(true);

@@ -43,7 +43,7 @@ const Hero = ({ courses }) => {
   //   }
   // };
 
-  const token = secureLocalStorage.getItem("token");
+  const { token } = useSelector((state) => state.userDetails);
 
   const handleTransaction = () => {
     setLoading(true);

@@ -4,6 +4,7 @@ import { baseURL, changePasswordSettingsValidation } from "@/Service/validation"
 import axios from "axios";
 import React, { useState } from "react";
 import { LuEye, LuEyeOff } from "react-icons/lu";
+import { useSelector } from "react-redux";
 import secureLocalStorage from "react-secure-storage";
 import { toast } from "react-toastify";
 
@@ -32,7 +33,7 @@ const Password = () => {
   };
 
 
-  const token = secureLocalStorage.getItem('token');
+  const { token } = useSelector((state) => state.userDetails);
 
   const handleChangePassword = async (e) => {
     e.preventDefault();

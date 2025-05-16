@@ -2,12 +2,15 @@
 
 import { useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { toast } from 'react-toastify'
+
 import Link from 'next/link'
 import { FaRegCircleCheck } from 'react-icons/fa6'
 
-const SuccessPage = () => {
+const PaymentSuccess = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
+
   const reference = searchParams.get('reference')
 
   useEffect(() => {
@@ -17,8 +20,12 @@ const SuccessPage = () => {
       }, 3000)
 
       return () => clearTimeout(timeout)
+
+      toast.success('Payment successful! 🎉')
+    } else {
+      toast.error('No payment reference found.')
     }
-  }, [reference, router])
+  }, [reference])
 
   return (
     <main className="h-screen flex flex-col justify-center items-center bg-gray-50 px-4">
@@ -28,11 +35,7 @@ const SuccessPage = () => {
         <div className="text-center space-y-1">
           <p className="text-gray-600 text-base">We have received your payment.</p>
           <p className="text-gray-600 text-lg">You will be redirected shortly.</p>
-          {/* {reference && (
-            <p className="text-sm text-gray-500">
-              Reference: <span className="font-medium">{reference}</span>
-            </p>
-          )} */}
+          <p className="mt-2 text-sm text-gray-500">Ref: {reference}</p>
         </div>
         <Link
           href="/dashboard/my-courses"
@@ -45,4 +48,4 @@ const SuccessPage = () => {
   )
 }
 
-export default SuccessPage
+export default PaymentSuccess

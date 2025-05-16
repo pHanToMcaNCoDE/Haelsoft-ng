@@ -5,12 +5,18 @@ import React, { useEffect, useState } from 'react';
 import { MdOutlineBroadcastOnPersonal } from 'react-icons/md';
 import secureLocalStorage from 'react-secure-storage';
 import Loader from '../Loader';
+import Link from 'next/link';
+import { GrCart } from 'react-icons/gr';
+import { IoIosArrowRoundForward } from 'react-icons/io';
+import { useSelector } from 'react-redux';
 
 const FeaturedCourses = () => {
   const [currentTab, setCurrentTab] = useState("Featured");
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [rating, setRating] = useState(0);
+
+  const { token } = useSelector((state) => state.userDetails);
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -33,7 +39,6 @@ const FeaturedCourses = () => {
 
   const handleAddToCartRequest = async (courseId) => {
     setIsLoading(true);
-    const token = secureLocalStorage.getItem("token");
 
     if (token) {
       try {
@@ -125,14 +130,21 @@ const FeaturedCourses = () => {
                   </div>
 
                   
-
-                  <button
-                    disabled={isLoading}
-                    className="mt-3 py-3 w-full bg-main text-white rounded-[30px] font-semibold cursor-pointer"
-                    onClick={() => handleAddToCartRequest(course.course_id)}
-                  >
-                    Add To Cart
-                  </button>
+                  <div className='w-full flex flex-col md:flex-row justify-between items-center gap-2 mt-2'>
+                      <Link
+                          href={`/course-details/${course.uid}`}
+                          className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2 duration-200 hover:text-white hover:bg-main"
+                      >
+                          View course <IoIosArrowRoundForward />
+                      </Link>
+                      <button
+                          disabled={isLoading}
+                          className="p-3 bg-main cursor-pointer text-white duration-200 hover:text-main hover:bg-transparent border border-main rounded-full font-semibold"
+                          onClick={() => handleAddToCartRequest(course.course_id)}
+                      >
+                          <GrCart size={22}/>
+                      </button>
+                  </div>
                 </div>
               </div>
             ))}

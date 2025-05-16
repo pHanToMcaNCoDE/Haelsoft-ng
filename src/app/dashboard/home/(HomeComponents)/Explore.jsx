@@ -5,26 +5,27 @@ import ExploreCourseCards from "./ExploreCourseCards";
 import { IoArrowBackOutline, IoArrowForwardOutline } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 
-const Explore = ({ courses, paginationData, setPaginationData, setCourses }) => {
+const Explore = ({ 
+  courses, 
+  paginationData, 
+  setPaginationData, 
+  setCourses, 
+  fetchCourses 
+}) => {
   const [searchText, setSearchText] = useState("");
+  const [filteredCourses, setFilteredCourses] = useState(courses);
 
-  // Handle search filtering
-  const filteredCourses = courses.filter((course) =>
-    searchText ? course.title.toLowerCase().includes(searchText.toLowerCase()) : course
-  );
+  // Update filtered courses when search text or courses change
+  useEffect(() => {
+    const filtered = courses.filter((course) =>
+      searchText ? course.title.toLowerCase().includes(searchText.toLowerCase()) : true
+    );
+    setFilteredCourses(filtered);
+  }, [searchText, courses]);
 
-  // Function to handle page changes (using the pagination URLs)
-  const handlePageChange = (url) => {
-    if (!url) return;
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        // Update courses and pagination data
-        setCourses(data.data);
-        setPaginationData(data.meta);
-      })
-      .catch((err) => console.error("Error fetching courses:", err));
+  // Handle page change
+  const handlePageChange = (pageNumber) => {
+    fetchCourses(pageNumber);
   };
 
   // Safe check for paginationData
@@ -42,6 +43,7 @@ const Explore = ({ courses, paginationData, setPaginationData, setCourses }) => 
               placeholder="Search..."
               className="text-black text-base font-normal w-full outline-none px-2 placeholder:text-base"
               onChange={(e) => setSearchText(e.target.value)}
+              value={searchText}
             />
           </form>
         </div>
@@ -53,27 +55,28 @@ const Explore = ({ courses, paginationData, setPaginationData, setCourses }) => 
 
       {/* Pagination Controls */}
       <div className="flex justify-center items-center mt-8 gap-5">
-        {/* Add safe checks for paginationData */}
         <IoArrowBackOutline
-          className={`cursor-pointer ${!safePaginationData.prev_page_url ? "text-gray-400" : ""}`}
-          onClick={() => handlePageChange(safePaginationData.prev_page_url)}
+          className={`cursor-pointer text-2xl ${safePaginationData.current_page <= 1 ? "text-gray-400 cursor-not-allowed" : "hover:text-main"}`}
+          onClick={() => safePaginationData.current_page > 1 && handlePageChange(safePaginationData.current_page - 1)}
         />
         <div className="flex gap-[10px] justify-center items-center">
           {/* Displaying the page numbers */}
           {Array.from({ length: safePaginationData.last_page || 1 }, (_, index) => index + 1).map((page) => (
             <button
               key={page}
-              className={`relative ${safePaginationData.current_page === page ? "text-black font-semibold" : "text-[#201A18]"} w-4 leading-[46px]`}
-              onClick={() => handlePageChange(`${process.env.NEXT_PUBLIC_BASE_URL}courses?page=${page}`)}
+              className={`relative ${safePaginationData.current_page === page ? "text-black font-semibold" : "text-[#201A18]"} w-8 h-8 flex items-center justify-center`}
+              onClick={() => handlePageChange(page)}
             >
               {page}
-              {safePaginationData.current_page === page && <div className="w-4 bg-main rounded-lg h-[4px] absolute bottom-0"></div>}
+              {safePaginationData.current_page === page && (
+                <div className="w-full bg-main rounded-lg h-[4px] absolute bottom-0"></div>
+              )}
             </button>
           ))}
         </div>
         <IoArrowForwardOutline
-          className={`cursor-pointer ${!safePaginationData.next_page_url ? "text-gray-400" : ""}`}
-          onClick={() => handlePageChange(safePaginationData.next_page_url)}
+          className={`cursor-pointer text-2xl ${safePaginationData.current_page >= safePaginationData.last_page ? "text-gray-400 cursor-not-allowed" : "hover:text-main"}`}
+          onClick={() => safePaginationData.current_page < safePaginationData.last_page && handlePageChange(safePaginationData.current_page + 1)}
         />
       </div>
     </section>

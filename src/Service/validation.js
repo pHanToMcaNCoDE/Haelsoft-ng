@@ -37,16 +37,16 @@ export const signupValidation = yup.object().shape({
 export const signinValidation = yup.object().shape({
   login: yup
     .string()
-    .email("please enter a valid email", "Please enter a valid e-mail address.")
-    .required("required"),
+    .email("please enter a valid email", "Please enter a valid e-mail address."),
+    // .required("required"),
   password: yup
     .string()
     .min(8, "password must contain least 8 characters ")
     .matches(
       passwordRegExp,
       "characters with at least one of each: uppercase, lowercase, number and special"
-    )
-    .required("required"),
+    ),
+    // .required("required"),
 });
 
 export const forgotPassword = yup.object().shape({

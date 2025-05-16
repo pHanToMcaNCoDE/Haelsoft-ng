@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { MediaPlayer, MediaProvider, Poster, Track } from "@vidstack/react";
 import { PlayIcon } from "@vidstack/react/icons";
-import draw from "../../../asset/draw.svg";
-import playicon from "../../../../public/assets/playicon.svg";
+import draw from "../../../../asset/draw.svg";
+import playicon from "../../../../../public/assets/playicon.svg";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 

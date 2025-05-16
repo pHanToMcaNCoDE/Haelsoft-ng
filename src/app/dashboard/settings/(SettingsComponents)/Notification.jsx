@@ -7,6 +7,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import Loader from '@/components/Loader'
 import secureLocalStorage from 'react-secure-storage'
+import { useSelector } from 'react-redux'
 
 const Notification = () => {
   const [settings, setSettings] = useState({
@@ -19,7 +20,7 @@ const Notification = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [isSaving, setIsSaving] = useState(false)
 
-  const token = secureLocalStorage.getItem('token');
+  const { token } = useSelector((state) => state.userDetails);
 
   useEffect(() => {
     const fetchSettings = async () => {

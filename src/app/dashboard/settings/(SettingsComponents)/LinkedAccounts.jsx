@@ -9,6 +9,7 @@ import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
 import Loader from "@/components/Loader";
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const LinkedAccounts = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -41,7 +42,7 @@ const LinkedAccounts = () => {
     }));
   };
 
-  const token = secureLocalStorage.getItem("token");
+  const { token } = useSelector((state) => state.userDetails);
 
   const handleSubmitLinkedAccount = async (e) => {
     e.preventDefault();

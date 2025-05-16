@@ -7,27 +7,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
+import { GrCart } from "react-icons/gr";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { useSelector } from "react-redux";
 import secureLocalStorage from "react-secure-storage";
+import { toast } from "react-toastify";
 
 const Page = () => {
-  // const { isAuthenticated, token } = useSelector((state) => state.userDetails);
-
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //     if (!isAuthenticated && !token) {
-  //       router.replace('/signin');
-  //     }
-  //   }, 100);
-
-  //   return () => clearTimeout(timer);
-  // }, [isAuthenticated, token, router]);
-
-  // if (isLoading) {
-  //   return null;
-  // }
 
   const { id } = useParams();
   const [categoryDetails, setCategoryDetails] = useState([]);
@@ -36,7 +22,7 @@ const Page = () => {
   const [rating, setRating] = useState(0)
 
 
-  const token = secureLocalStorage.getItem('token');
+  const { token } = useSelector((state) => state.userDetails);
 
   useEffect(() => {
     const fetchCategoryDetails = () => {
@@ -67,11 +53,49 @@ const Page = () => {
 
   }, [token])
 
-  if (isLoading) return <Loader />;
+
+  const handleAddToCartRequest = async (courseId) => {
+    if (!courseId) {
+      toast.error("Course ID is required");
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${courseId}`,
+        {},
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      toast.success(response.data.message);
+      
+      // Uncomment if you want to redirect after adding to cart
+      // if (typeof window !== "undefined") {
+      //   window.location.href = '/dashboard/shopping-cart';
+      // }
+
+    } catch (error) {
+      // Safer error handling to prevent undefined property access
+      const errorMessage = error.response?.data?.message || "Failed to add course to cart";
+      toast.error(errorMessage);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
 
   return (
     <section className="min-h-screen w-full py-12 px-5 lg:px-[25px] flex flex-col justify-start items-start gap-[30px] lg:gap-[5em]">
-
+      {
+        isLoading && (<Loader />)
+      }
       <h1 className="text-black text-xl lg:text-[2rem] font-bold">
         {categoryDetails.length > 0 && categoryDetails[0]?.category?.name} Courses
       </h1>
@@ -115,23 +139,33 @@ const Page = () => {
                     />
                     <p className="text-grayTwo text-base text-[.75rem]">(1000)</p>
                   </div>
-                  <div className="flex flex-col justify-center items-start gap-2">
+                  <div className="flex flex-col justify-center items-start gap-2 w-full">
                     <p className="text-grayTwo font-bold text-lg text-[.75rem]">
                       ₦ {Number(course.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
                     </p>
-                    <Link
-                      // href={{
-                      //   pathname: "/dashboard/home/course-details",
-                      //   query: {
-                      //     // details: course.title,
-                      //     id: course.uid,
-                      //   },
-                      // }}
-                      href={`/dashboard/home/course-details/${course.uid}`}
-                      className="text-main  duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
-                    >
-                      View course <IoIosArrowRoundForward />
-                    </Link>
+                    <div className='w-full flex flex-col md:flex-row justify-between items-center gap-2 mt-2'>
+                      <Link
+                        // href={{
+                        //   pathname: "/dashboard/home/course-details",
+                        //   query: {
+                        //     // details: course.title,
+                        //     id: course.uid,
+                        //   },
+                        // }}
+                        href={`/dashboard/home/course-details/${course.uid}`}
+                        className="text-main  duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
+                      >
+                        View course <IoIosArrowRoundForward />
+                      </Link>
+
+                      <button
+                        disabled={isLoading}
+                        className="p-3 bg-main cursor-pointer text-white duration-200 hover:text-main hover:bg-transparent border border-main rounded-full font-semibold"
+                        onClick={() => handleAddToCartRequest(course.uid)}
+                      >
+                        <GrCart size={22} />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

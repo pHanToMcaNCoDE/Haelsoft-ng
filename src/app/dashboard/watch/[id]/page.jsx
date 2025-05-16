@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useEffect, useState, Suspense } from "react";
-import TopBarNav from "./(components)/TopBarNav";
-import SideNav from "./(components)/SideNav";
+import TopBarNav from "../(components)/TopBarNav";
+import SideNav from "../(components)/SideNav";
 import "next-cloudinary/dist/cld-video-player.css";
-import VideoPlayer from "./(components)/VideoPlayer";
-import Loading from "../dashboard/(dashboardcomponents)/loading";
+import VideoPlayer from "../(components)/VideoPlayer";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import secureLocalStorage from "react-secure-storage";
+import { useSelector } from "react-redux";
+import Loading from "../../(dashboardcomponents)/loading";
 
 const Watch = () => {
   const [videoUrl, setVideoUrl] = useState("");
@@ -17,7 +18,37 @@ const Watch = () => {
   const [videoData, setVideoData] = useState([]);
   const [courseContentData, setContentData] = useState([]);
 
-  const token = secureLocalStorage.getItem("token");
+  const { token } = useSelector((state) => state.userDetails);
+
+  const { id } = useParams();
+
+
+  useEffect(() => {
+    const fetchMyCourseDetails = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}learning/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/json'
+          }
+        });
+
+        console.log('My courses details', response.data);
+        // Optionally set state with response.data here
+        // setVideoData(response.data?.data);
+      } catch (error) {
+        console.log('My courses details errors', error);
+        setError("Failed to load course details.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (token) fetchMyCourseDetails();
+  }, [token, id]);
+
+  
 
   return (
     <div className="w-full">

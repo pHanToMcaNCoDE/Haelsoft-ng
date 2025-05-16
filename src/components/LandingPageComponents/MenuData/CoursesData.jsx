@@ -7,6 +7,7 @@ import { TbAtom } from 'react-icons/tb'
 import axios from 'axios';
 import secureLocalStorage from 'react-secure-storage';
 import { usePathname } from 'next/navigation';
+import { useSelector } from 'react-redux';
 
 const CoursesData = () => {
 
@@ -84,7 +85,7 @@ const CoursesData = () => {
 
     
     
-    const token = secureLocalStorage.getItem("token");
+    const { token } = useSelector((state) => state.userDetails);
 
     const [categories, setCategories] = useState([])
 

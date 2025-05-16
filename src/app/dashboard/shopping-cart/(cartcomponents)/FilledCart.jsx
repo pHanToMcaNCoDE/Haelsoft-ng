@@ -3,7 +3,7 @@ import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { removeFromCart } from "@/features/cart/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
@@ -21,7 +21,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
 
   const handleRemoveFromCart = async (cartItemUid) => {
     setLoading(true);
-    const token = secureLocalStorage.getItem("token");
+    const { token } = useSelector((state) => state.userDetails);
 
     if (!token) {
       toast.error("No authentication token found. Please log in.");
@@ -55,7 +55,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
   };
 
 
-  const token = secureLocalStorage.getItem("token");
+  const { token } = useSelector((state) => state.userDetails);
 
   const handleTransaction = () => {
     console.log('Transaction')

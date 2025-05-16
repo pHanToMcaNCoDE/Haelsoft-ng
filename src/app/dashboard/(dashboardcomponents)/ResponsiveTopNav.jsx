@@ -17,7 +17,7 @@ import secureLocalStorage from "react-secure-storage";
 import { useDispatch, useSelector } from "react-redux";
 import logo from '../../../../public/assets/EdTech Platform Figma.svg';
 import axios from "axios";
-import { logoutUser } from "@/features/user-details/userDetailsSlice";
+import { logout } from "@/features/user-details/userDetailsSlice";
 import { FaRegUserCircle } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { MdLogout, MdOutlineNotifications } from "react-icons/md";
@@ -51,7 +51,7 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
     const [cartItems, setCartItems] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
   
-    const token = secureLocalStorage.getItem("token");
+    const { token } = useSelector((state) => state.userDetails);
   
     useEffect(() => {
   
@@ -126,7 +126,6 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
   }, [profile]);
 
   const handleLogout = async () => {
-    const token = secureLocalStorage.getItem('token');
 
     try {
       await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}auth/logout`, {}, {
@@ -135,6 +134,7 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
         }
       });
 
+      dispatch(logout());
       toast.success("Logout successful!");
     
 
@@ -145,7 +145,6 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
 
       document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       secureLocalStorage.clear();
-      dispatch(logoutUser());
 
     } catch (error) {
       toast.error(error?.response?.data?.message || "Logout failed");

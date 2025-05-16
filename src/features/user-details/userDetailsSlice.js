@@ -1,39 +1,56 @@
-import { createSlice } from '@reduxjs/toolkit';
-import secureLocalStorage from 'react-secure-storage';
+import { clearAuth, saveAuthToSession } from "@/app/utils/authUtils";
+import { createSlice } from "@reduxjs/toolkit";
+
+
+
+const initialState = {
+  token: null,
+  user: null,
+  isAuthenticated: false,
+};
 
 const userDetailsSlice = createSlice({
-    name: 'userDetails',
-    initialState: {
-        user: secureLocalStorage.getItem('user') ? JSON.parse(secureLocalStorage.getItem('user')) : null,
-        token: secureLocalStorage.getItem('token') || null,
-        isAuthenticated: !!secureLocalStorage.getItem('token')
+  name: "userDetails",
+  initialState,
+  reducers: {
+    setAuth: (state, action) => {
+      const { token, user } = action.payload;
+      state.token = token;
+      state.user = user;
+      state.isAuthenticated = Boolean(token);
+      
+     
+      if (typeof window !== 'undefined') {
+        saveAuthToSession({
+          token,
+          user_uuid: user?.user_uuid,
+          name: user?.first_name
+        });
+      }
     },
     
-    reducers: {
-        setAuth: (state, action) => {
-            const { token, user } = action.payload;
-            state.token = token;
-            state.user = user;
-            state.isAuthenticated = !!token;
-
-            if (token) {
-                secureLocalStorage.setItem('token', token);
-                secureLocalStorage.setItem('user', JSON.stringify(user));
-            }
-        },
-
-        
-        logoutUser: (state) => {
-            state.user = null;
-            state.token = null;
-            state.isAuthenticated = false;
-            state.tokenExpiration = null;
-            secureLocalStorage.removeItem('token');
-            secureLocalStorage.removeItem('user');
-            secureLocalStorage.removeItem('uid');
-        }
+    logout: (state) => {
+      state.token = null;
+      state.user = null;
+      state.isAuthenticated = false;
+      
+     
+      if (typeof window !== 'undefined') {
+        clearAuth();
+      }
+    },
+    
+   
+    restoreAuthFromSession: (state, action) => {
+      const { token, user } = action.payload;
+      if (token) {
+        state.token = token;
+        state.user = user;
+        state.isAuthenticated = true;
+      }
     }
+  },
 });
 
-export const { setAuth, logoutUser } = userDetailsSlice.actions;
+export const { setAuth, logout, restoreAuthFromSession } = userDetailsSlice.actions;
 export default userDetailsSlice.reducer;

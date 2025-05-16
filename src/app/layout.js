@@ -6,6 +6,7 @@ import AppFooter from "@/components/AppFooter";
 import StoreProvider from "@/store/StoreProvider";
 import NextTopLoader from 'nextjs-toploader';
 import "./globals.css";
+import AuthInitializer from "./components/AuthInitializer";
 
 const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
@@ -40,8 +41,7 @@ export default function RootLayout({ children }) {
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(be, s);
               })();
-
-              window.addEventListener('load', function() {
+               window.addEventListener('load', function() {
                 const chatbotWidget = document.querySelector('.chatbot-widget');
                 if (chatbotWidget) {
                   chatbotWidget.style.position = 'fixed';
@@ -60,6 +60,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${montserrat.className} antialiased`}>
         <StoreProvider>
+          <AuthInitializer />
           <ToastContainer
             position="top-right"
             autoClose={5000}

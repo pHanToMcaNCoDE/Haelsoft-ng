@@ -5,10 +5,13 @@ import notfound from '../../public/404 Error Broken Robot.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/LandingPageComponents/Navbar';
+import { useRouter } from 'next/navigation';
 
 const NotFound = () => {
     const [clicked, setClicked] = useState('');
     const [boolclick, setBoolClick] = useState(false);
+
+    const router = useRouter()
 
   return (
     <main>
@@ -23,7 +26,7 @@ const NotFound = () => {
             <div className='flex flex-col w-full text-left justify-center items-start gap-3 h-full relative z-10'>
                 <h1 className='text-white font-bold text-[2rem] leading-[45px]'>Oh Dear! something went wrong.</h1>
                 <p className='w-full lg:w-[565px] text-white font-normal text-[1.125rem] leading-[30px]'>The page you're looking for could not be found. Please go back to homepage</p>
-                <Link className='h-[52px] w-[190px] bg-main text-white text-[1rem] leading-[30px] flex justify-center items-center rounded-[6px]' href={`/`}>Back to Homepage</Link>
+                <button className='h-[52px] w-[190px] bg-main text-white text-[1rem] leading-[30px] flex justify-center items-center rounded-[6px]' onClick={() => router.back()}>Back to Homepage</button>
             </div>
         </section>
     </main>

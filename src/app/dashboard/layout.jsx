@@ -4,13 +4,16 @@ import SideNav from "@/app/dashboard/(dashboardcomponents)/SideNav";
 import TopNav from "@/app/dashboard/(dashboardcomponents)/TopNav";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ResponsiveTopNav from "./(dashboardcomponents)/ResponsiveTopNav";
 import { AnimatePresence, motion } from "framer-motion";
+import Loader from "@/components/Loader";
+import { setAuth } from "@/features/user-details/userDetailsSlice";
 
 const DashboardLayout = ({ children }) => {
   const { isAuthenticated, token } = useSelector((state) => state.userDetails);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [isLoading, setIsLoading] = useState(true);
   const modalRef = useRef(null);
@@ -25,21 +28,41 @@ const DashboardLayout = ({ children }) => {
       handleCloseModal();
     }
   };
-  
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      if (!isAuthenticated && !token) {
+    // Check for auth data in sessionStorage if not in Redux
+    if (!isAuthenticated || !token) {
+      try {
+        const sessionData = sessionStorage.getItem("authSession");
+        if (sessionData) {
+          const parsedData = JSON.parse(sessionData);
+          if (parsedData && parsedData.token) {
+            // If session data exists, set it in Redux
+            dispatch(setAuth({ 
+              token: parsedData.token, 
+              user: { 
+                user_uuid: parsedData.user_uuid,
+                first_name: parsedData.name
+              } 
+            }));
+            setIsLoading(false);
+            return;
+          }
+        }
+        // If no auth data found, redirect to signin
+        console.log("No authentication found, redirecting to sign-in...");
+        router.replace('/signin');
+      } catch (error) {
+        console.error("Error checking auth session:", error);
         router.replace('/signin');
       }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [isAuthenticated, token, router]);
+    } else {
+      setIsLoading(false);
+    }
+  }, [isAuthenticated, token, router, dispatch]);
 
   if (isLoading) {
-    return null;
+    return <Loader />;
   }
 
   return (
