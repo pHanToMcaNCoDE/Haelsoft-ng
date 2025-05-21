@@ -1,15 +1,24 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
-import { MediaPlayer, MediaProvider, Poster, Track } from "@vidstack/react";
-import { PlayIcon } from "@vidstack/react/icons";
 import draw from "../../../../asset/draw.svg";
 import playicon from "../../../../../public/assets/playicon.svg";
 import Image from "next/image";
 import { useSelector } from "react-redux";
 
-const VideoPlayer = ({ videoUrl, open, setOpen }) => {
+const VideoPlayer = ({ videoUrl, open, setOpen, currentLesson, nextLesson }) => {
   const { lesson } = useSelector((state) => state.courses);
+  const [pausePlay, setPausePlay] = useState(false);
+  const [ended, setEnded] = useState(false);
+
+  // Auto-play first video when component mounts
+  useEffect(() => {
+    setEnded(false);
+    
+    if (videoUrl) {
+      setPausePlay(true);
+    }
+  }, [videoUrl]);
 
   const handleDownload = async () => {
     const url = `https://res.cloudinary.com/dmpqdaupc/${lesson.pdf_file}`;
@@ -35,7 +44,11 @@ const VideoPlayer = ({ videoUrl, open, setOpen }) => {
     }
   };
 
-  const [pausePlay, setpausePlay] = useState(false);
+  const handleVideoEnd = () => {
+    setEnded(true);
+    setPausePlay(false);
+  };
+
   return (
     <div className="col-span-12 md:col-span-9 h-[500px] gap-y-4 p-4 md:px-5 lg:p-0 flex-1 overflow-y-auto w-full">
       <>
@@ -46,16 +59,17 @@ const VideoPlayer = ({ videoUrl, open, setOpen }) => {
           alt="Draw"
         />
 
-        {!lesson.pdf_file && (
+        {!lesson.pdf_file && videoUrl && (
           <div className="relative w-full cursor-pointer">
             <ReactPlayer
-              url={`${videoUrl}`}
+              url={videoUrl}
               width={"100%"}
               height={"500px"}
               className="bg-black"
               playing={pausePlay}
-              onClick={() => setpausePlay((prev) => !prev)}
+              onClick={() => setPausePlay((prev) => !prev)}
               controls={pausePlay}
+              onEnded={handleVideoEnd}
               config={{
                 file: {
                   attributes: {
@@ -67,28 +81,46 @@ const VideoPlayer = ({ videoUrl, open, setOpen }) => {
             />
             {!pausePlay && (
               <div
-                onClick={() => setpausePlay((prev) => !prev)}
+                onClick={() => setPausePlay((prev) => !prev)}
                 className="flex flex-col gap-8 pt-10 absolute inset-0 m-auto text-white items-center justify-center"
               >
-                <Image
-                  src={playicon}
-                  className="object-contain"
-                  alt="Play Icon"
-                />
-                <p className="text-xl font-semibold"></p>
+                {ended && nextLesson ? (
+                  <>
+                    <div className="flex flex-col items-center">
+                      <Image
+                        src={playicon}
+                        className="object-contain"
+                        alt="Play Icon"
+                      />
+                      <p className="text-xl font-semibold mt-2">Play Next Lesson</p>
+                    </div>
+                  </>
+                ) : (
+                  <Image
+                    src={playicon}
+                    className="object-contain"
+                    alt="Play Icon"
+                  />
+                )}
+                <p className="text-xl font-semibold">{currentLesson?.title || ""}</p>
               </div>
             )}
           </div>
         )}
-        {!videoUrl && (
-          <div className="flex flex-col justify-center items-center">
+        {!videoUrl && lesson.pdf_file && (
+          <div className="flex flex-col justify-center items-center h-full">
             <p>Download the PDF below to access resources for this lesson</p>
             <button
               onClick={handleDownload}
               className="bg-main px-4 py-2 rounded-lg text-white mt-4"
             >
-              Download Pdf
+              Download PDF
             </button>
+          </div>
+        )}
+        {!videoUrl && !lesson.pdf_file && (
+          <div className="flex flex-col justify-center items-center h-[500px] w-full bg-black text-white">
+            <p>No content available for this lesson</p>
           </div>
         )}
       </>

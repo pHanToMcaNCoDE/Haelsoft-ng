@@ -13,15 +13,10 @@ import Loading from "@/app/dashboard/(dashboardcomponents)/loading";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 import SideNavTab from "./SideNavTab";
-import {
-  CustomAccordion as Accordion,
-  CustomAccordionSummary as AccordionSummary,
-  CustomAccordionDetails as AccordionDetails,
-  CustomTypography as Typography,
-  CustomExpandMoreIcon as ExpandMoreIcon,
-  CustomButton as Button
-} from '../(components)/CustomAccordion';
-import { ImStopwatch } from "react-icons/im";
+
+import { Accordion, AccordionItem } from "@heroui/accordion";
+import { IoMdStopwatch } from "react-icons/io";
+
 
 
 
@@ -82,25 +77,8 @@ const SideNav = ({
 
   return (
     <aside
-      className={`w-[45%] lg:w-[32%] h-full md:col-span-3 overflow-auto bg-white shadow-xl md:block fixed lg:static top-0 z-[180] md:z-[2] transition-all flex flex-col justify-start items-start gap-6 border-l border-gray`}
+      className={`w-[45%] lg:w-[40%] min-h-screen overflow-auto shadow-xl md:block fixed lg:static top-0 z-[180] md:z-[2] transition-all flex flex-col gap-4 p-0 justify-start items-start border-l border-[#e5e5e5]`}
     >
-      {/* <Image
-        onClick={() => setOpen(!open)}
-        src={draw}
-        className="mt-4 cursor-pointer hidden md:block"
-        alt="Draw"
-      /> */}
-      {/* {
-        open && (
-          <div
-            onClick={() => setOpen(!open)}
-            className="flex items-center mb-4 fixed lg:hidden top-4 justify-end text-[#f36402]"
-          >
-            <IoCloseOutline className="text-3xl cursor-pointer" />
-            <p>close</p>
-          </div>
-        )
-      } */}
 
       <SideNavTab/>
 
@@ -110,36 +88,36 @@ const SideNav = ({
           currentTab === 'Course content' && (
             videoData?.map((module, index) => {
               return (
-                <div key={module.uid}>
-                  <Accordion className="shadow-none border-0">
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className='text-[.75rem]' />}
-                      aria-controls="panel1-content"
-                      id="panel1-header"
-                      className="w-full py-5 border-0 outline-none bg-[#f6f7f9] px-3 flex justify-between items-center gap-3"
-                    >
-                      <Typography className='font-bold text-md' component="span">Module {index+1}: {module.name}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      {
-                        module.lessons.map((lesson, index) => (
-                          <div key={index} className={`cursor-pointer w-full flex justify-start items-start p-3 gap-2 ${videoUrl ? 'bg-[#e5e5e5]' : ''}`}>
-                            <div className='w-3 h-3 rounded-full border border-gray mt-1'></div>
-                            <div className="flex flex-col w-full justify-start items-start gap-2 h-[65px]">
-                              <div onClick={() => setVideoUrl(lesson.link)} className="w-full flex justify-start items-center gap-2">
-                                <p className="text-md font-medium">{index+1}.</p>
-                                <p className="text-md font-medium">{lesson.name}</p>
-                              </div>
+                <div className="w-full p-0" key={module.uid}>
+                  <Accordion className='w-full flex flex-col gap-2 p-0'>
+                    <AccordionItem aria-label="Accordion 1" title={
+                      <div className="flex flex-col justify-between items-center w-full">
+                        <h1 className="text-[rgb(32,26,24)] text-[1.125rem] font-bold">Module {index+1}: {module.name}</h1>
+                      </div>
+                    } key={module.id} className="bg-[#f6f7f9] border-b-[2px] rounded-[3px] border-[#e7e8ec] p-1">
+                        <div className="flex flex-col">
+                          <div className=" text-base text-grayTwo font-normal min-h-full">
+                            {
+                              module.lessons.map((lesson, index) => (
+                                <div key={index} className={`p-1 cursor-pointer w-full flex justify-start items-start gap-2 ${videoUrl ? 'bg-[#d1d2df]' : ''}`}>
+                                  <div className='w-3 h-3 rounded-full border border-grayTwo mt-1'></div>
+                                  <div className="flex flex-col w-full justify-start items-start gap-2 h-[65px]">
+                                    <div onClick={() => setVideoUrl(lesson.link)} className="w-full flex justify-start items-center gap-2">
+                                      <p className="text-md font-medium">{index+1}.</p>
+                                      <p className="text-md font-medium">{lesson.name}</p>
+                                    </div>
 
-                              <div className="flex justify-start items-center gap-1">
-                                <ImStopwatch size={22} />
-                                <p className="text-sm font-normal">{lesson.duration} mins</p>
-                              </div>
-                            </div>
+                                    <div className="flex justify-start items-center gap-1">
+                                      <IoMdStopwatch size={22} />
+                                      <p className="text-sm font-normal">{lesson.duration} mins</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              ))
+                            }
                           </div>
-                        ))
-                      }
-                    </AccordionDetails>
+                        </div>
+                      </AccordionItem>
                   </Accordion>
                 </div>
               );
