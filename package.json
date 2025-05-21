@@ -17,6 +17,8 @@
     "@heroui/accordion": "^2.2.8",
     "@heroui/system": "^2.4.7",
     "@heroui/theme": "^2.4.6",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
     "@netlify/classnames-template-literals": "^1.0.3",
     "@nextui-org/react": "^2.4.8",
     "@radix-ui/react-label": "^2.1.0",

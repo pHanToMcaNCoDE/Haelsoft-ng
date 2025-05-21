@@ -37,7 +37,9 @@ const TopNav = ({setCloseModal}) => {
   const carts = useSelector((state) => state.cart.items);
 
     
-
+  if(pathname.includes('/dashboard/watch')){
+    return null
+  }
   
   
   useEffect(() => {

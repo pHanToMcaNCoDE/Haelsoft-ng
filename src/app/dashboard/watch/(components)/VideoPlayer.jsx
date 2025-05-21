@@ -37,8 +37,8 @@ const VideoPlayer = ({ videoUrl, open, setOpen }) => {
 
   const [pausePlay, setpausePlay] = useState(false);
   return (
-    <div className="col-span-12 md:col-span-9 h-screen gap-y-4 p-4 md:px-5 flex-1 overflow-y-auto w-full">
-      <div>
+    <div className="col-span-12 md:col-span-9 h-[500px] gap-y-4 p-4 md:px-5 lg:p-0 flex-1 overflow-y-auto w-full">
+      <>
         <Image
           src={draw}
           className="mt-4 mb-4 md:hidden cursor-pointer"
@@ -49,9 +49,9 @@ const VideoPlayer = ({ videoUrl, open, setOpen }) => {
         {!lesson.pdf_file && (
           <div className="relative w-full cursor-pointer">
             <ReactPlayer
-              url={`https://res.cloudinary.com/dmpqdaupc/${videoUrl}`}
+              url={`${videoUrl}`}
               width={"100%"}
-              height={"448px"}
+              height={"500px"}
               className="bg-black"
               playing={pausePlay}
               onClick={() => setpausePlay((prev) => !prev)}
@@ -91,7 +91,7 @@ const VideoPlayer = ({ videoUrl, open, setOpen }) => {
             </button>
           </div>
         )}
-      </div>
+      </>
     </div>
   );
 };
