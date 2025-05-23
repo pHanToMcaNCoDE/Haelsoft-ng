@@ -20,36 +20,61 @@ const HomePage = () => {
   const [loadingCourses, setLoadingCourses] = useState(true);
   const [errorCategories, setErrorCategories] = useState(null);
   const [errorCourses, setErrorCourses] = useState(null);
-  const dispatch = useDispatch();
 
+  // Pagination state
+  const [paginationData, setPaginationData] = useState({
+    current_page: 1,
+    last_page: 1,
+    per_page: 20,
+    total: 0,
+    from: 0,
+    to: 0
+  });
+
+  const dispatch = useDispatch();
   const { token } = useSelector((state) => state.userDetails);
 
-
-  useEffect(() => {
-
-    // Fetch Courses
-
-    axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses`, {
-      headers: {
-        'Accept': 'application/json',
-        'Authorizathion': `Bearer ${token}`
-      }
-    })
-      .then((res) => {
-        if (res.data.data) {
-          setCourses(res.data.data.data);
-          dispatch(addCourses(res.data.data.data));
-          console.log("course Rep", res.data.data.data);
+  // Fetch courses function with pagination
+  const fetchCourses = async (page = 1) => {
+    setLoadingCourses(true);
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}courses?page=${page}`,
+        {
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}` // Fixed typo: was 'Authorizathion'
+          }
         }
+      );
 
-        setLoadingCourses(false);
-      })
-      .catch((error) => {
-        // console.error("Error fetching data:", error);
-        // setErrorCourses("Failed to fetch data: Network error");
-        setLoadingCourses(false);
-      });
-  }, [dispatch]);
+      console.log('All Courses from Backend', response.data);
+
+      if (response.data.status && response.data.data) {
+        const { data: coursesArray, ...pagination } = response.data.data;
+        
+        setCourses(coursesArray);
+        setPaginationData(pagination);
+        dispatch(addCourses(coursesArray));
+        
+        console.log("Course Response", coursesArray);
+        console.log("Pagination Data", pagination);
+      }
+    } catch (error) {
+      console.error("Error fetching courses:", error);
+      // Uncomment if you want to show error messages
+      // const errorMessage = error.response?.data?.message || "Failed to fetch courses";
+      // toast.error(errorMessage);
+      // setErrorCourses(errorMessage);
+    } finally {
+      setLoadingCourses(false);
+    }
+  };
+
+  // Initial fetch
+  useEffect(() => {
+    fetchCourses(1);
+  }, [dispatch, token]);
 
   if (errorCategories || errorCourses) {
     return (
@@ -61,14 +86,20 @@ const HomePage = () => {
 
   return (
     <section className='bg-white'>
-      {(loadingCourses) ? (
+      {loadingCourses && courses.length === 0 ? (
         <Loader />
       ) : (
         <section className='w-full min-h-screen'>
           <TopSection />
-          {/* <Categories categories={categories} /> */}
           <div className='pt-[30px] pb-[200px] px-4'>
-            <Explore courses={courses} />
+            <Explore 
+              courses={courses} 
+              paginationData={paginationData}
+              setPaginationData={setPaginationData}
+              setCourses={setCourses}
+              fetchCourses={fetchCourses}
+              loading={loadingCourses}
+            />
           </div>
         </section>
       )}

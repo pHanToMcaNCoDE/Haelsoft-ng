@@ -39,13 +39,12 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
 
       toast.success(response.data.message);
       
-      // Uncomment if you want to redirect after adding to cart
-      // if (typeof window !== "undefined") {
-      //   window.location.href = '/dashboard/shopping-cart';
-      // }
+      setTimeout(() => {
+        window.location.reload();
+
+      }, 2000)
 
     } catch (error) {
-      // Safer error handling to prevent undefined property access
       const errorMessage = error.response?.data?.message || "Failed to add course to cart";
       toast.error(errorMessage);
     } finally {

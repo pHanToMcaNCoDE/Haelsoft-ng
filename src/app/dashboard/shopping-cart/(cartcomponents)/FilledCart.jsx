@@ -10,18 +10,20 @@ import secureLocalStorage from "react-secure-storage";
 import Loading from "../../(dashboardcomponents)/loading";
 import Loader from "@/components/Loader";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const FilledCart = ({ cartItems, setCartItems }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const router = useRouter();
 
+  const { token } = useSelector((state) => state.userDetails);
 
   console.log('Cart Items', cartItems)
 
   const handleRemoveFromCart = async (cartItemUid) => {
     setLoading(true);
-    const { token } = useSelector((state) => state.userDetails);
 
     if (!token) {
       toast.error("No authentication token found. Please log in.");
@@ -41,25 +43,23 @@ const FilledCart = ({ cartItems, setCartItems }) => {
 
       toast.success(response.data?.message || "Item removed successfully");
 
+      setTimeout(() => {
+        window.location.reload();
+
+      }, 2000)
 
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to remove item");
-    } finally {
       setLoading(false);
     }
   };
-
 
   const handleRemoveItem = (uid) => {
     setCartItems((prevItems) => prevItems.filter((item) => item.uid !== uid));
   };
 
-
-  const { token } = useSelector((state) => state.userDetails);
-
   const handleTransaction = () => {
     console.log('Transaction')
-    
   };
 
   if (isLoading) {
@@ -117,7 +117,6 @@ const FilledCart = ({ cartItems, setCartItems }) => {
                   <div className="flex justify-start items-center gap-6 lg:w-[20%]">
                     <p className="text-grayTwo text-[.875rem] leading-[46px] font-semibold flex gap-0.5">
                       ₦ {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
-
                     </p>
                     <RiDeleteBin6Line
                       onClick={() => handleRemoveFromCart(item.uid)}
@@ -134,11 +133,9 @@ const FilledCart = ({ cartItems, setCartItems }) => {
         <div className="flex flex-col justify-end items-end gap-6 w-full md:w-fit">
           <p className="text-grayTwo text-2xl md:text-3xl font-bold leading-5">
             ₦{cartItems.reduce((total, item) => total + Number(item.course?.price || 0), 0).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-
           </p>
           <Link
             href={`/dashboard/checkout`}
-            // onClick={handleTransaction}
             className="bg-main py-[2px] px-[15px] h-[54px] w-[250px] gap-[5px] rounded-lg text-white flex justify-center items-center text-[1rem] leading-[46px] font-semibold"
           >
             Checkout
