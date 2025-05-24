@@ -5,7 +5,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   token: null,
-  user: null,
+  user: {},
   isAuthenticated: false,
 };
 
@@ -21,12 +21,9 @@ const userDetailsSlice = createSlice({
       
      
       if (typeof window !== 'undefined') {
-        saveAuthToSession({
-          token,
-          user_uuid: user?.user_uuid,
-          name: user?.first_name
-        });
+        saveAuthToSession({ token, user });
       }
+      
     },
     
     logout: (state) => {

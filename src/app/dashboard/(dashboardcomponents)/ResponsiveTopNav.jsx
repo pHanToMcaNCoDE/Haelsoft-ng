@@ -193,7 +193,7 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
     },
   ]
 
-  const userDetail = JSON.parse(secureLocalStorage.getItem('user'));
+  const userDetail = secureLocalStorage.getItem('user');
 
 
   return (

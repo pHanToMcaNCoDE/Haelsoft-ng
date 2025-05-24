@@ -63,7 +63,12 @@ const SigninForm = () => {
         password: validatedData.password
       });
 
-      const { token, user } = response.data.data;
+      console.log("user THat's innn", response.data.data)
+
+      const token = response.data.data.token;
+      const user = response.data.data.user
+
+      secureLocalStorage.setItem('user', user)
       
       dispatch(setAuth({ token, user }));
 
@@ -76,9 +81,9 @@ const SigninForm = () => {
       
       if(token) {
         toast.success(response?.data?.data?.message || "Login successful!");
+      
         
-        console.log("✅ About to redirect to dashboard...");
-        
+        // router.replace("/dashboard/home")
         // router.push("/dashboard/home");
         window.location.href = '/dashboard/home'
       }

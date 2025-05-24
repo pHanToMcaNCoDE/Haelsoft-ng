@@ -21,7 +21,6 @@ const HomePage = () => {
   const [errorCategories, setErrorCategories] = useState(null);
   const [errorCourses, setErrorCourses] = useState(null);
 
-  // Pagination state
   const [paginationData, setPaginationData] = useState({
     current_page: 1,
     last_page: 1,
@@ -34,7 +33,6 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const { token } = useSelector((state) => state.userDetails);
 
-  // Fetch courses function with pagination
   const fetchCourses = async (page = 1) => {
     setLoadingCourses(true);
     try {
@@ -43,7 +41,7 @@ const HomePage = () => {
         {
           headers: {
             'Accept': 'application/json',
-            'Authorization': `Bearer ${token}` // Fixed typo: was 'Authorizathion'
+            'Authorization': `Bearer ${token}`
           }
         }
       );
@@ -62,7 +60,6 @@ const HomePage = () => {
       }
     } catch (error) {
       console.error("Error fetching courses:", error);
-      // Uncomment if you want to show error messages
       // const errorMessage = error.response?.data?.message || "Failed to fetch courses";
       // toast.error(errorMessage);
       // setErrorCourses(errorMessage);
@@ -71,7 +68,6 @@ const HomePage = () => {
     }
   };
 
-  // Initial fetch
   useEffect(() => {
     fetchCourses(1);
   }, [dispatch, token]);

@@ -80,8 +80,10 @@ const TopNav = ({setCloseModal}) => {
   
     
     const { token } = useSelector((state) => state.userDetails);
+    const user = secureLocalStorage.getItem('user')
 
-    console.log('TOken from redux', token)
+    // console.log('TOken from redux', token)
+    // console.log('user from redux', user)
   
     useEffect(() => {
   
@@ -229,9 +231,10 @@ const TopNav = ({setCloseModal}) => {
     // { name: 'Bootcamps', link: '#' },
   ];
 
-  const userDetail = JSON.parse(secureLocalStorage.getItem('user'));
+  // const user = JSON.parse(secureLocalStorage.getItem('user'));
+  // const { user } = useSelector((state) => state.userDetails);
 
-  console.log('User Details', userDetail);
+  console.log('User Details', user);
 
 
   return (
@@ -375,17 +378,17 @@ const TopNav = ({setCloseModal}) => {
                       <Link href={'/dashboard/settings'} className="w-full flex justify-start items-start lg:items-center border-b border-neutral-200 px-2.5 pb-4 gap-2">
 
                         <div className="relative">
-                          <img src={userDetail?.profile_image} alt={userDetail?.username} className="z-10 w-12 h-12 rounded-full" />
+                          <img src={user?.profile_image} alt={user?.username} className="z-10 w-12 h-12 rounded-full" />
                           <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-lg">
-                            {userDetail?.username.substr(0,1)}
+                            {user?.username?.substr(0,1)}
                           </div>
                       </div>
 
                         <div className="flex flex-col justify-center items-start">
-                          {userDetail?.username && (
-                            <h1 className="text-md text-black font-semibold duration-200 hover:text-main">{userDetail.username}</h1>
+                          {user?.username && (
+                            <h1 className="text-md text-black font-semibold duration-200 hover:text-main">{user.username}</h1>
                           )}
-                          <p className="text-xs text-grayTwo">{userDetail?.email || ""}</p>
+                          <p className="text-xs text-grayTwo">{user?.email || ""}</p>
                         </div>
                       </Link>
                       <div className="flex flex-col justify-start items-start mt-3 w-full">
