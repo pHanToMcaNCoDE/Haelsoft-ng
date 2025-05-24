@@ -363,7 +363,18 @@ const TopNav = ({setCloseModal}) => {
               className="flex justify-center items-center gap-1 cursor-pointer text-black"
               whileTap={{ y: 1 }}
             >
-              <FaRegUserCircle size={25} />
+              {
+                user?.username ? (
+                  <div className="relative">
+                    <img src={user?.profile_image} alt={user?.username} className="z-10 w-7 h-7 rounded-full" />
+                    <div className="w-7 h-7 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-md">
+                      {user?.username?.substr(0,1)}
+                    </div>
+                  </div>
+                ) : (
+                  <FaRegUserCircle size={25} />
+                )
+              }
             </motion.div>
             <AnimatePresence initial={false}>
                 {profile ? (
@@ -382,7 +393,7 @@ const TopNav = ({setCloseModal}) => {
                           <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-lg">
                             {user?.username?.substr(0,1)}
                           </div>
-                      </div>
+                        </div>
 
                         <div className="flex flex-col justify-center items-start">
                           {user?.username && (
