@@ -35,6 +35,9 @@ const TopNav = ({setCloseModal}) => {
   const menuRef = useRef(null)
   const subMenuRef = useRef(null);
   const [keyPress, setKeyPress] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [courses, setCourses] = useState([])
+  const [isTyping, setIsTyping] = useState(false);
   
   const dispatch = useDispatch();
 
@@ -332,27 +335,38 @@ const TopNav = ({setCloseModal}) => {
 
   // Search Courses
 
-  const searchForCourses = async () => {
-    setKeyPress(true)
-    
-    try{
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses?search=${query}`)
-
-      console.log('Query Response', response.data);
-    } catch (error) {
-      console.log('Query Error', error);
-    }
-
-  }
-
   useEffect(() => {
-    searchForCourses()
-  }, [query])
+    const delayDebounce = setTimeout(() => {
+      if (query.trim() !== "") {
+        searchForCourses();
+      } else {
+        setCourses([]);
+      }
+    }, 400);
+
+    return () => clearTimeout(delayDebounce);
+  }, [query]);
+
+  const searchForCourses = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_BASE_URL}courses?search=${query}`
+      );
+      console.log("Query Response", response.data);
+      setCourses(response.data.data.data || []);
+    } catch (error) {
+      console.error("Query Error", error);
+      setCourses([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
 
   return (
     <div className="bg-white border-b border-b-[#d0cfcf] h-[70px] px-4 sticky flex flex-col top-0 z-50 gap-y-6 justify-between items-center py-3">
-      <div className="flex items-center justify-between w-full gap-x-4 max-w-[1300px] 2xl:max-w-[1550px] mx-auto">
+      <div className="flex items-center justify-between w-full gap-x-4 max-w-[1300px] 2xl:max-w-[1550px] mx-auto p-1">
         <div className="flex gap-x-4 justify-center items-center">
           <Link href={`/dashboard/home`}>
             <Image width={120} height={120} className="object-cover" src={logo} alt="Haelsoft Logo"></Image>
@@ -412,65 +426,53 @@ const TopNav = ({setCloseModal}) => {
         </div>
 
         
+       
         <div className="w-full flex flex-col justify-center items-center">
-
           <div
-            className={`relative gap-2 w-[60%] lg:w-[552px] hidden lg:flex ${
-              query
-                ? "rounded-t-[6px] border-b-0 ease-in-out duration-300"
-                : "rounded-3xl ease-in-out duration-300"
-            } border border-[#9c918d] flex justify-between items-center px-3 h-[41px]`}
+            className={`relative gap-2 w-[60%] lg:w-[552px] hidden lg:flex rounded-3xl ease-in-out duration-300 border border-[#9c918d] justify-between items-center px-3 h-[41px]`}
           >
             <input
               type="text"
               name="q"
-              onChange={(e) => setQuery(e.target.value)}
-              value={query}
-              className="w-full outline-none ring-0 px-1"
               placeholder="What do you want to learn?"
-              onClick={() => {
-                setIsSearchClicked(true);
+              className="w-full outline-none ring-0 px-1"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setIsTyping(true);
               }}
             />
             <div className="bg-main text-white flex items-center justify-center rounded-full h-8 w-8 cursor-pointer">
               <IoSearch className="text-xl" />
             </div>
+
+            
             <div
-              onClick={() => {
-                setIsSearchClicked(false);
-              }}
-              className={`absolute lg:w-full max-w-[522px] ${
-                query
-                  ? "ease-in-out duration-300 opacity-[100%]"
-                  : "opacity-0 ease-in-out duration-300 hidden"
-              } z-[100] lg:w-full left-[1px] -right-[2px] h-[253px] bg-white top-[2.6rem] border max-w-[398px] border-[#9c918d] border-t-0 rounded-b-[6px] shadow-lg px-4 cursor-pointer`}
+              className={`absolute z-[100] left-[1px] -right-[2px] top-[50px] border border-[#9c918d] rounded-[8px] shadow-lg p-4 bg-white cursor-pointer max-w-[750px] overflow-auto gap-6 ${
+                query ? "opacity-100 ease-in-out duration-300" : "opacity-0 hidden"
+              } max-h-[253px] overflow-y-auto`}
             >
-              <div className="w-full gap-x-2 mt-4 flex text-grayTwo items-center">
-                <IoSearch className="text-grayTwo" /> Search Engine Optimization
-              </div>
+              {loading ? (
+                <div className="py-4 text-gray-400 font-semibold">Searching...</div>
+              ) : courses.length > 0 ? (
+                courses.map((course, index) => (
+                  <Link
+                    href={`/course-details/${course.uid}`}
+                    key={index}
+                    className="flex items-center gap-x-2 py-3 text-grayTwo border-b border-[#9c918d] last:border-none"
+                  >
+                    <IoSearch className="text-grayTwo" />
+                    <div className="w-full flex justify-start items-center gap-3 duration-200 hover:text-main">
+                      <img width={100} height={100} src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`} alt={course.title} />
+                      {course.title}
+                    </div>
+                  </Link>
+                ))
+              ) : (
+                query && <div className="py-4 text-gray-400">No matching courses found.</div>
+              )}
             </div>
           </div>
-
-
-          <AnimatePresence initial={false} className="w-full">
-            {query ? (
-              <motion.div
-                ref={modalRef}
-                onClick={handleOpenModal}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                key="box"
-                
-                className={`mt-2 w-full h-full p-4 border border-gray shadow-md rounded-2xl`}
-              >
-                <div>
-                  Yo
-                </div>
-              </motion.div>
-            ) : null}
-          </AnimatePresence>
-          
         </div>
 
 
