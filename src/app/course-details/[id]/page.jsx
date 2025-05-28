@@ -15,9 +15,12 @@ import Loader from "@/components/Loader";
 import CourseAccordion from "../components/CourseAccordion";
 import { toast } from "react-toastify";
 import RelatedCourses from "../components/RelatedCourses";
+import Navbar from "@/components/LandingPageComponents/Navbar";
 
 const Page = () => {
   const [courses, setCourses] = useState(null);
+  const [clicked, setClicked] = useState('');
+  const [boolclick, setBoolClick] = useState(false);
   const [relatedCourses, setRelatedCourses] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -82,11 +85,18 @@ const Page = () => {
   if (!courses) {
     return <div className="p-4 w-full h-full flex justify-center items-center">No course data available. Please check console for API response details.</div>;
   }
+      
 
   return (
     <div>
       {courses && (
         <>
+          <Navbar
+              clicked={clicked} 
+              setClicked={setClicked} 
+              boolclick={boolclick} 
+              setBoolClick={setBoolClick} 
+          />
           <Hero courses={courses} />
           <CourseTrailer courses={courses} />
           <CourseContent courses={courses} /> 

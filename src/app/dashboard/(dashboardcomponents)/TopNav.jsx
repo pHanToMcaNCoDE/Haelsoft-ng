@@ -448,7 +448,7 @@ const TopNav = ({setCloseModal}) => {
 
             
             <div
-              className={`absolute z-[100] left-[1px] -right-[2px] top-[50px] border border-[#9c918d] rounded-[8px] shadow-lg p-4 bg-white cursor-pointer max-w-[750px] overflow-auto gap-6 ${
+              className={`absolute z-[100] left-[1px] -right-[2px] top-[50px] border border-[#eeedec] rounded-[8px] shadow-lg p-4 bg-white cursor-pointer max-w-[750px] overflow-auto gap-6 ${
                 query ? "opacity-100 ease-in-out duration-300" : "opacity-0 hidden"
               } max-h-[253px] overflow-y-auto`}
             >
@@ -457,7 +457,7 @@ const TopNav = ({setCloseModal}) => {
               ) : courses.length > 0 ? (
                 courses.map((course, index) => (
                   <Link
-                    href={`/course-details/${course.uid}`}
+                    href={`/dashboard/course-details/${course.uid}`}
                     key={index}
                     className="flex items-center gap-x-2 py-3 text-grayTwo border-b border-[#9c918d] last:border-none"
                   >
