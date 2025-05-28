@@ -30,36 +30,30 @@ const DashboardLayout = ({ children }) => {
   };
 
   useEffect(() => {
-    // Check for auth data in sessionStorage if not in Redux
-    if (!isAuthenticated || !token) {
+    const restoreSession = async () => {
       try {
         const sessionData = sessionStorage.getItem("authSession");
         if (sessionData) {
           const parsedData = JSON.parse(sessionData);
-          if (parsedData && parsedData.token) {
-            // If session data exists, set it in Redux
-            dispatch(setAuth({ 
-              token: parsedData.token, 
-              user: { 
-                user_uuid: parsedData.user_uuid,
-                first_name: parsedData.name
-              } 
-            }));
+          if (parsedData?.token && parsedData?.user) {
+            dispatch(setAuth({ token: parsedData.token, user: parsedData.user }));
             setIsLoading(false);
             return;
           }
         }
-        // If no auth data found, redirect to signin
-        console.log("No authentication found, redirecting to sign-in...");
-        router.replace('/signin');
+        throw new Error("Session not found");
       } catch (error) {
-        console.error("Error checking auth session:", error);
         router.replace('/signin');
       }
+    };
+  
+    if (!isAuthenticated || !token) {
+      restoreSession();
     } else {
       setIsLoading(false);
     }
   }, [isAuthenticated, token, router, dispatch]);
+  
 
   if (isLoading) {
     return <Loader />;

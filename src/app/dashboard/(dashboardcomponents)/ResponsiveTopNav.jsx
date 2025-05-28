@@ -209,7 +209,9 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
             <Link href={'/dashboard/settings'} className="w-full flex flex-col justify-start items-start border-b border-neutral-200 px-4 py-8 gap-2">
               <div className="relative w-12 h-12 rounded-full">
                 {/* <img src={userDetail?.profile_image} alt={userDetail.username} className="z-10 w-12 h-12 rounded-full" /> */}
-                <div className="w-12 h-12 rounded-full bg-main absolute top-0 z-[5]"></div>
+                <div className="w-7 h-7 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-md">
+                  {userDetail?.username?.substr(0,1).toUpperCase()}
+                </div>
               </div>
               
               <div className="flex flex-col justify-center items-start">

@@ -92,19 +92,21 @@ const Page = () => {
 
 
   return (
-    <section className="min-h-screen w-full py-12 px-5 lg:px-[25px] flex flex-col justify-start items-start gap-[30px] lg:gap-[5em]">
+    <section className="min-h-screen w-full py-12 px-5 lg:px-[25px] flex flex-col justify-center items-center text-center gap-[30px] lg:gap-[5em]">
       {
         isLoading && (<Loader />)
       }
-      <h1 className="text-black text-xl lg:text-[2rem] font-bold">
-        {categoryDetails.length > 0 && categoryDetails[0]?.category?.name} Courses
-      </h1>
+      <div className="min-h-screen w-full flex flex-col justify-center items-center gap-2 text-center">
+        <h1 className="text-black text-xl lg:text-[2rem] font-bold">
+          {categoryDetails.length > 0 && categoryDetails[0]?.category?.name} Courses
+        </h1>
+        <p className="text-black text-xl font-semibold">Courses to get you started</p>
+      </div>
 
-      <div className="w-full flex flex-col justify-start items-start gap-10">
-        <div>
-          <h1 className="text-black text-xl font-semibold">Courses to get you started</h1>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+
+      <div className="w-full flex flex-col justify-center items-center text-center gap-10">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 justify-items-center place-items-center">
           {categoryDetails.map((course) => {
             return (
               <div

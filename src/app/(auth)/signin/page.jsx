@@ -74,19 +74,17 @@ const SigninForm = () => {
 
       const sessionData = {
         token,
+        user,
       };
-
-
+      
       sessionStorage.setItem("authSession", JSON.stringify(sessionData));
       
-      if(token) {
-        toast.success(response?.data?.data?.message || "Login successful!");
       
-        
-        // router.replace("/dashboard/home")
-        // router.push("/dashboard/home");
-        window.location.href = '/dashboard/home'
+      if (token) {
+        toast.success(response?.data?.data?.message || "Login successful!");
+        router.push("/dashboard/home");
       }
+      
       
 
     } catch (err) {

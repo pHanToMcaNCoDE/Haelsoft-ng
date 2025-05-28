@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import logo from '../../../../public/assets/EdTech Platform Figma.svg';
 import axios from "axios";
 import { logout } from "@/features/user-details/userDetailsSlice";
+import { setCartItems } from "@/features/cart/cartSlice"; // Add this import
 import { FaRegUserCircle } from "react-icons/fa";
 import { GrCart } from "react-icons/gr";
 import { MdLogout, MdOutlineKeyboardArrowDown, MdOutlineNotifications } from "react-icons/md";
@@ -25,6 +26,7 @@ import Menu from "@/components/LandingPageComponents/MenuData/Menu";
 import { CgReadme } from "react-icons/cg";
 import { RiSettings4Fill } from "react-icons/ri";
 import { useSelect } from "@nextui-org/react";
+import cart from '../../../asset/shopping-cart/Delete Cart Icon.svg';
 
 const TopNav = ({setCloseModal}) => {
   const pathname = usePathname();
@@ -58,6 +60,7 @@ const TopNav = ({setCloseModal}) => {
 
   const router = useRouter();
   const [profile, setProfile] = useState(false);
+  const [isCart, setIsCart] = useState(false);
   const routes = [
     { name: "Home", routes: "/dashboard/home" },
     { name: "Settings", routes: "/dashboard/settings" },
@@ -75,7 +78,11 @@ const TopNav = ({setCloseModal}) => {
   const profileButtonRef = useRef(null);
 
 
-    const [cartItems, setCartItems] = useState(null);
+  const cartMenuRef = useRef(null);
+  const cartButtonRef = useRef(null);
+
+
+    const [cartItems, setCartItems] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
   
     
@@ -86,6 +93,7 @@ const TopNav = ({setCloseModal}) => {
     // console.log('user from redux', user)
   
     useEffect(() => {
+      if (!token) return;
   
       axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}cart`, {
         headers: {
@@ -97,15 +105,14 @@ const TopNav = ({setCloseModal}) => {
       .then((response) => {
         setIsLoading(false)
         dispatch(setCartItems(response.data.data));
-
         setCartItems(response.data.data);
-
       })
 
       .catch((error) => {
+        console.error('Cart fetch error:', error);
         toast.error(error.response?.data?.message || error.response?.message )
       })
-    }, [token])
+    }, [token, dispatch])
 
 
 
@@ -157,6 +164,56 @@ const TopNav = ({setCloseModal}) => {
       }
     };
   }, [profile]);
+
+
+
+
+  useEffect(() => {
+    let closeTimer;
+    
+    const handleMenuMouseEnter = () => {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+      }
+    };
+    
+    const handleMenuMouseLeave = () => {
+      closeTimer = setTimeout(() => {
+        setIsCart(false); // Fixed: should set isCart, not profile
+      }, 300);
+    };
+
+    const cartEl = cartMenuRef.current;
+    const cartButtonEl = cartButtonRef.current;
+    
+
+    if (isCart && cartEl) {
+      cartEl.addEventListener('mouseenter', handleMenuMouseEnter);
+      cartEl.addEventListener('mouseleave', handleMenuMouseLeave);
+    }
+    
+    if (cartButtonEl) {
+      cartButtonEl.addEventListener('mouseenter', () => setIsCart(true)); // Fixed: should set isCart, not profile
+      cartButtonEl.addEventListener('mouseleave', handleMenuMouseLeave);
+    }
+    
+    return () => {
+
+      if (cartEl) {
+        cartEl.removeEventListener('mouseenter', handleMenuMouseEnter);
+        cartEl.removeEventListener('mouseleave', handleMenuMouseLeave);
+      }
+      
+      if (cartButtonEl) {
+        cartButtonEl.removeEventListener('mouseenter', () => setIsCart(true)); // Fixed: should set isCart, not profile
+        cartButtonEl.removeEventListener('mouseleave', handleMenuMouseLeave);
+      }
+      
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+      }
+    };
+  }, [isCart]);
 
   const handleLogout = async () => {
 
@@ -343,18 +400,45 @@ const TopNav = ({setCloseModal}) => {
               <MdOutlineNotifications size={28} />
             </Link>
 
-            <Link
-              href="/dashboard/shopping-cart"
-              className="w-full flex justify-between items-center flex-wrap duration-200 cursor-pointer"
-            >
-              <div className="relative">
-                <GrCart size={25} />
-                
-                <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center absolute -top-2 -right-2">
-                  {cartItems?.length}
-                </div>
-              </div>
-            </Link>
+
+
+            <div className="w-auto relative hidden lg:flex">
+              <motion.div
+                ref={cartButtonRef}
+                className="w-full flex justify-between items-center flex-wrap duration-200 cursor-pointer"
+                whileTap={{ y: 1 }}
+              >
+                <Link
+                  href="/dashboard/shopping-cart"
+                  className="flex justify-between items-center flex-wrap"
+                >
+                  <div className="relative">
+                    <GrCart size={25} />
+                    
+                    <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center absolute -top-2 -right-2">
+                      {cartItems?.length || 0}
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+              <AnimatePresence initial={false}>
+                  {isCart ? (
+                      <motion.div
+                        ref={cartMenuRef}
+                        initial={{ opacity: 0}}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0}}
+                        key="box"
+                        className={`transition-all duration-200 absolute top-full right-0 mt-2 w-[350px] border border-neutral-200 z-[99] flex shadow-xl flex-col justify-start items-center rounded-md pt-5 bg-white`}
+                      >
+                        <div className='w-full h-[400px] flex flex-col gap-3 justify-center items-center'>
+                          <Image width={150} height={150} src={cart} alt="Shopping Cart" />
+                          <p className='text-lg font-semibold text-black'>Your cart is empty.</p>
+                        </div>
+                      </motion.div>
+                  ) : null}
+              </AnimatePresence>
+            </div>
 
 
           <div className="w-auto relative hidden lg:flex">
@@ -368,7 +452,7 @@ const TopNav = ({setCloseModal}) => {
                   <div className="relative">
                     <img src={user?.profile_image} alt={user?.username} className="z-10 w-7 h-7 rounded-full" />
                     <div className="w-7 h-7 rounded-full bg-main absolute top-0 z-[5] font-black text-white flex justify-center items-center text-md">
-                      {user?.username?.substr(0,1)}
+                      {user?.username?.substr(0,1).toUpperCase()}
                     </div>
                   </div>
                 ) : (
@@ -407,10 +491,9 @@ const TopNav = ({setCloseModal}) => {
                           links.map((link) => {
                             if (link.name === 'Logout') {
                               return (
-                                <>
+                                <React.Fragment key={link.id}>
                                   <div className='border-t border-neutral-200 my-2 w-full h-1'></div>
                                   <button
-                                    key={link.id}
                                     onClick={() => {
                                       setProfile(false);
                                       handleLogout();
@@ -420,7 +503,7 @@ const TopNav = ({setCloseModal}) => {
                                     {link.icon}
                                     Logout
                                   </button>
-                                </>
+                                </React.Fragment>
                               );
                             }
                             return (
@@ -438,7 +521,7 @@ const TopNav = ({setCloseModal}) => {
                                   {link.name === 'My Cart' && 
                                     (
                                       <div className="bg-red-600 text-white w-5 h-5 text-base font-bold text-center rounded-full flex justify-center items-center">
-                                        {cartItems?.length}
+                                        {cartItems?.length || 0}
                                       </div>
                                     )}
                                   </p>

@@ -110,7 +110,7 @@ const CourseCards = () => {
           return (
             <div key={item.id} className="card relative shadow-lg overflow-hidden z-10 bg-white h-[155px] w-full md:w-[520px]">
               <Image
-                className="-z-10 absolute h-[11em] left-0 top-[-6%]"
+                className="-z-10 absolute h-[11em] left-0 top-[-2%]"
                 src={obj}
                 alt="Object"
               />

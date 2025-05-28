@@ -123,15 +123,15 @@ const Page = () => {
       
       <section className="min-h-screen w-full px-5 lg:px-[25px] flex flex-col justify-start items-start gap-[30px] lg:gap-[3em] py-[100px]">
 
-
-        <h1 className="text-black text-xl lg:text-[2rem] font-bold">
-          {categoryDetails.length > 0 && categoryDetails[0]?.category?.name} Courses
-        </h1>
-
-        <div className="w-full flex flex-col justify-start items-start gap-8">
-          <div>
+          <div className="w-full flex flex-col justify-center items-center gap-2">
+            <h1 className="text-black text-xl lg:text-[2rem] font-bold">
+              {categoryDetails.length > 0 && categoryDetails[0]?.category?.name} Courses
+            </h1>
             <h1 className="text-grayTwo text-xl font-normal">Courses to get you started</h1>
           </div>
+
+
+        <div className="w-full flex flex-col justify-start items-start gap-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
             {categoryDetails.map((course) => {
               return (
