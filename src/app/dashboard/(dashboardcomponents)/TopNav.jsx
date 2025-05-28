@@ -24,15 +24,17 @@ import { MdLogout, MdOutlineKeyboardArrowDown, MdOutlineNotifications } from "re
 import { AnimatePresence, motion } from "framer-motion";
 import Menu from "@/components/LandingPageComponents/MenuData/Menu";
 import { CgReadme } from "react-icons/cg";
-import { RiSettings4Fill } from "react-icons/ri";
+import { RiDeleteBin6Line, RiSettings4Fill } from "react-icons/ri";
 import { useSelect } from "@nextui-org/react";
 import cart from '../../../asset/shopping-cart/Delete Cart Icon.svg';
+import { Rating } from "@smastrom/react-rating";
 
 const TopNav = ({setCloseModal}) => {
   const pathname = usePathname();
   const [clicked, setClicked] = useState(null);
   const menuRef = useRef(null)
   const subMenuRef = useRef(null);
+  const [keyPress, setKeyPress] = useState(false);
   
   const dispatch = useDispatch();
 
@@ -116,6 +118,40 @@ const TopNav = ({setCloseModal}) => {
 
 
 
+  const handleRemoveFromCart = async (cartItemUid) => {
+    // setLoading(true);
+
+    if (!token) {
+      toast.error("No authentication token found. Please log in.");
+      // setLoading(false);
+      return;
+    }
+
+    try {
+      const response = await axios.delete(
+        `${process.env.NEXT_PUBLIC_BASE_URL}cart/remove-from-cart/${cartItemUid}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        }
+      );
+
+      toast.success(response.data?.message || "Item removed successfully");
+
+      setTimeout(() => {
+        window.location.reload();
+
+      }, 2000)
+
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Failed to remove item");
+      // setLoading(false);
+    }
+  };
+
+
+
   const handleClose = () => {
     setProfile(false);
   }
@@ -179,7 +215,7 @@ const TopNav = ({setCloseModal}) => {
     
     const handleMenuMouseLeave = () => {
       closeTimer = setTimeout(() => {
-        setIsCart(false); // Fixed: should set isCart, not profile
+        setIsCart(false);
       }, 300);
     };
 
@@ -294,6 +330,26 @@ const TopNav = ({setCloseModal}) => {
   console.log('User Details', user);
 
 
+  // Search Courses
+
+  const searchForCourses = async () => {
+    setKeyPress(true)
+    
+    try{
+      const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses?search=${query}`)
+
+      console.log('Query Response', response.data);
+    } catch (error) {
+      console.log('Query Error', error);
+    }
+
+  }
+
+  useEffect(() => {
+    searchForCourses()
+  }, [query])
+
+
   return (
     <div className="bg-white border-b border-b-[#d0cfcf] h-[70px] px-4 sticky flex flex-col top-0 z-50 gap-y-6 justify-between items-center py-3">
       <div className="flex items-center justify-between w-full gap-x-4 max-w-[1300px] 2xl:max-w-[1550px] mx-auto">
@@ -355,7 +411,10 @@ const TopNav = ({setCloseModal}) => {
 
         </div>
 
-         <div
+        
+        <div className="w-full flex flex-col justify-center items-center">
+
+          <div
             className={`relative gap-2 w-[60%] lg:w-[552px] hidden lg:flex ${
               query
                 ? "rounded-t-[6px] border-b-0 ease-in-out duration-300"
@@ -391,16 +450,38 @@ const TopNav = ({setCloseModal}) => {
               </div>
             </div>
           </div>
+
+
+          <AnimatePresence initial={false} className="w-full">
+            {query ? (
+              <motion.div
+                ref={modalRef}
+                onClick={handleOpenModal}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                key="box"
+                
+                className={`mt-2 w-full h-full p-4 border border-gray shadow-md rounded-2xl`}
+              >
+                <div>
+                  Yo
+                </div>
+              </motion.div>
+            ) : null}
+          </AnimatePresence>
+          
+        </div>
+
+
         <div className="justify-center items-center flex gap-x-8">
 
-            <Link
+            {/* <Link
               href="/dashboard/home"
               className="relative w-full flex justify-between items-center flex-wrap duration-200 cursor-pointer"
             >
               <MdOutlineNotifications size={28} />
-            </Link>
-
-
+            </Link> */}
 
             <div className="w-auto relative hidden lg:flex">
               <motion.div
@@ -422,21 +503,79 @@ const TopNav = ({setCloseModal}) => {
                 </Link>
               </motion.div>
               <AnimatePresence initial={false}>
-                  {isCart ? (
+                  {isCart && (
                       <motion.div
                         ref={cartMenuRef}
                         initial={{ opacity: 0}}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0}}
                         key="box"
-                        className={`transition-all duration-200 absolute top-full right-0 mt-2 w-[350px] border border-neutral-200 z-[99] flex shadow-xl flex-col justify-start items-center rounded-md pt-5 bg-white`}
+                        className={`transition-all duration-200 absolute top-full right-0 mt-2 w-[550px] border border-neutral-200 z-[99] flex shadow-xl flex-col justify-start items-center rounded-md pt-2 bg-white max-h-[400px] overflow-auto`}
                       >
-                        <div className='w-full h-[400px] flex flex-col gap-3 justify-center items-center'>
-                          <Image width={150} height={150} src={cart} alt="Shopping Cart" />
-                          <p className='text-lg font-semibold text-black'>Your cart is empty.</p>
-                        </div>
+                        {
+                          cartItems?.length > 0 ? (
+                                  <div className="flex flex-col items-end w-full justify-start gap-6 p-2">
+                                    <div className="w-full flex flex-col gap-10 justify-start items-start">
+                                      {cartItems.map((item) => (
+                                        <div
+                                          key={item.course_uid || item.course?.uid}
+                                          className="flex flex-col lg:flex-row justify-center items-center gap-3 w-full"
+                                        >
+                                          <div className="flex flex-col justify-between items-center w-full">
+                                            <div className="flex flex-col lg:flex-row items-start justify-between gap-3 w-full">
+                                              <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
+                                              <div className="flex flex-col gap-2 w-[90%]">
+                                                <Link 
+                                                  href={`/dashboard/home/course-details/${item.course?.uid}`}
+                                                  target="_blank" 
+                                                  className="text-grayTwo text-[.75rem] leading-[30px] font-semibold"
+                                                >
+                                                  {item.course?.title}
+                                                </Link>
+                                                <div className="flex flex-col justify-center items-start gap-1">
+                                                  <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                                                    {item.rating} rating
+                                                  </p>
+    
+                                                  <div className="flex justify-center items-center gap-1">
+                                                    <div>
+                                                      <Rating
+                                                        style={{ maxWidth: 80 }}
+                                                        value={item.rating}
+                                                        readOnly
+                                                      />
+                                                    </div>
+                                                    <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                                                      ({item.reviews})
+                                                    </p>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div className="flex justify-start items-center gap-6">
+                                                <p className="text-grayTwo text-sm font-semibold flex gap-0.5">
+                                                  ₦ {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
+                                                </p>
+                                                <RiDeleteBin6Line
+                                                  onClick={() => handleRemoveFromCart(item.uid)}
+                                                  className="text-[1.25rem] cursor-pointer text-main font-semibold"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      ))}
+                                      <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
+                                    </div>
+                                  </div>
+                          ) : (
+                            <div className='w-full h-[400px] flex flex-col gap-3 justify-center items-center'>
+                              <Image width={150} height={150} src={cart} alt="Shopping Cart" />
+                              <p className='text-lg font-semibold text-black'>Your cart is empty.</p>
+                            </div>
+                          )
+                        }
                       </motion.div>
-                  ) : null}
+                  )}
               </AnimatePresence>
             </div>
 
