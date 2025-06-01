@@ -528,7 +528,7 @@ const TopNav = ({setCloseModal}) => {
                                               <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
                                               <div className="flex flex-col gap-2 w-[90%]">
                                                 <Link 
-                                                  href={`/dashboard/home/course-details/${item.course?.uid}`}
+                                                  href={`/dashboard/course-details/${item.course?.uid}`}
                                                   target="_blank" 
                                                   className="text-grayTwo text-[.75rem] leading-[30px] font-semibold"
                                                 >

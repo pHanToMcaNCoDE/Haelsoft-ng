@@ -89,7 +89,7 @@ const FilledCart = ({ cartItems, setCartItems }) => {
                   <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={200} height={300} alt={item.course?.title} />
                   <div className="flex flex-col gap-2 w-[90%]">
                     <Link 
-                      href={`/dashboard/home/course-details/${item.course.uid}`}
+                      href={`/dashboard/course-details/${item.course.uid}`}
                       target="_blank" 
                       className="text-grayTwo text-[1rem] lg:text-[1.5rem] leading-[35px] font-semibold"
                     >

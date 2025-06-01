@@ -19,8 +19,9 @@ import Image from "next/image";
 
 
 import haelsoft from '../../../public/EdTech Platform Figma.svg';
+import Link from "next/link";
 
-const Expert = () => {
+const Expert = ({instructors}) => {
   const slides = [
     {
       image: abo,
@@ -100,36 +101,41 @@ const Expert = () => {
           },
         }}
       >
-        {slides.map((item, index) => (
+        {instructors.map((instructor, index) => (
           <SplideSlide
             key={index}
             className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
           >
-            <div className="relative z-[5px] w-full md:w-[268px] overflow-hidden">
-              <Image
-                width={268}
-                height={268}
-                className="object-cover rounded-tl-[4px] rounded-tr-[4px] w-full md:w-[268px] h-[268px]"
-                src={item.image}
-                alt={item.name}
-              />
-              <div className="absolute z-10 translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
-            </div>
-            <div className="flex justify-between items-start">
-              <div className="p-[24px] flex flex-col justify-between rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] gap-4 w-full md:w-[268px]">
-                <div className="flex flex-col items-start">
-                  <h1 className="text-[#000000] font-medium text-base text-start">
-                    {item.name}
-                  </h1>
-                  <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-start">
-                    {item.role}
-                  </p>
-                </div>
-                <Image width={100} className="object-cover" src={item.comp} alt='Company'></Image>
+            <Link
+              href={`/about-instructor/${instructor.uid}`} 
+              className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
+            >
+              <div className="relative z-[5px] w-full md:w-[268px] overflow-hidden">
+                <Image
+                  width={268}
+                  height={268}
+                  className="object-cover rounded-tl-[4px] rounded-tr-[4px] w-full md:w-[268px] h-[268px]"
+                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${instructor.image}`}
+                  alt={instructor.name}
+                />
+                <div className="absolute z-10 translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
               </div>
-              {/* <div> */}
-              {/* </div> */}
-            </div>
+              <div className="flex justify-between items-start">
+                <div className="p-[20px] flex flex-col justify-between rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] gap-4 w-full md:w-[268px]">
+                  <div className="flex flex-col items-start">
+                    <h1 className="text-[#000000] font-medium text-base text-start">
+                      {instructor.name}
+                    </h1>
+                    {/* <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-start">
+                      {item.role}
+                    </p> */}
+                  </div>
+                  {/* <Image width={100} className="object-cover" src={item.comp} alt='Company'></Image> */}
+                </div>
+                {/* <div> */}
+                {/* </div> */}
+              </div>
+            </Link>
           </SplideSlide>
         ))}
       </Splide>

@@ -1,18 +1,18 @@
 "use client";
 
 import React, { useEffect, useState, Suspense } from 'react';
-import Hero from '../course-details/components/Hero';
-import CourseTrailer from '../course-details/components/CourseTrailer';
-import CourseTutor from '../course-details/CourseTutor';
-import ImageDisplay from '../course-details/ImageDisplay';
-import CourseContent from '../course-details/CourseContent';
-import Instructors from '../course-details/Instructors';
-import BuildYourPortfolio from '../course-details/BuildYourPortfolio';
-import Expectation from '../course-details/Expectation';
-import OnlineClassroom from '../course-details/OnlineClassroom';
-import GraduateFeedback from '../course-details/GraduateFeedback';
-import Community from '../course-details/Community';
-import GetStartedCourse from '../course-details/GetStartedCourse';
+import Hero from '../../course-details/components/Hero';
+import CourseTrailer from '../../course-details/components/CourseTrailer';
+import CourseTutor from '../../course-details/CourseTutor';
+import ImageDisplay from '../../course-details/ImageDisplay';
+import CourseContent from '../../course-details/CourseContent';
+import Instructors from '../../course-details/Instructors';
+import BuildYourPortfolio from '../../course-details/BuildYourPortfolio';
+import Expectation from '../../course-details/Expectation';
+import OnlineClassroom from '../../course-details/OnlineClassroom';
+import GraduateFeedback from '../../course-details/GraduateFeedback';
+import Community from '../../course-details/Community';
+import GetStartedCourse from '../../course-details/GetStartedCourse';
 import { courseDetails } from '@/raw-data/data';
 import { usePathname, useSearchParams } from 'next/navigation';
 

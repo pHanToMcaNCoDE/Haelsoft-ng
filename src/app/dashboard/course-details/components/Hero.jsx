@@ -1,14 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import play from "../../../../../../public/assets/play.svg";
-import playicon from "../../../../../../public/assets/playicon.svg";
+import play from "../../../../../public/assets/play.svg";
+import playicon from "../../../../../public/assets/playicon.svg";
 import Image from "next/image";
 import { GrCheckmark } from "react-icons/gr";
 import { HiOutlineArrowLongLeft } from "react-icons/hi2";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../../../features/cart/cartSlice";
-import CartPopup from "../../(HomeComponents)/CartPopup";
+import { addToCart } from "../../../../features/cart/cartSlice";
+import CartPopup from "../../home/(HomeComponents)/CartPopup";
 import secureLocalStorage from "react-secure-storage";
 import { Bounce, toast } from "react-toastify";
 import axios from "axios";
@@ -138,7 +138,7 @@ const Hero = ({ courses }) => {
           Your browser does not support the video tag.
         </video>
         <div className='absolute bg-[#D98E47]/70 top-0 left-0 w-full h-full'></div>
-        <div className="max-w-[1300px] mx-auto flex flex-col items-center md:items-start lg:flex-row gap-x-12 relative lg:h-[550px] z-30 pt-[70px]">
+        <div className="max-w-[1300px] mx-auto flex flex-col items-center md:items-start lg:flex-row gap-x-12 relative lg:min-h-[550px] z-30 pt-[70px]">
           <div className="w-full flex flex-col justify-start items-start gap-4">
             <Link href={`/dashboard/home`} className="flex justify-center font-medium text-lg text-white items-center gap-2">
               <HiOutlineArrowLongLeft size={35} className="text-white" /> Go back
@@ -154,7 +154,7 @@ const Hero = ({ courses }) => {
                 {courses?.title}
               </h1>
               <p className="text-[1rem] leading-8 font-medium text-white w-full">
-                {courses.category?.long_desc}
+                {courses?.long_desc}
               </p>
 
               {/* <p className="text-white">1,000 already enrolled</p> */}

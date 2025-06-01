@@ -92,11 +92,11 @@ const Page = () => {
 
 
   return (
-    <section className="min-h-screen w-full py-12 px-5 lg:px-[25px] flex flex-col justify-center items-center text-center gap-[30px] lg:gap-[5em]">
+    <section className="w-full py-[100px] px-5 lg:px-[25px] flex flex-col justify-center items-center text-center gap-[30px] lg:gap-[5em]">
       {
         isLoading && (<Loader />)
       }
-      <div className="min-h-screen w-full flex flex-col justify-center items-center gap-2 text-center">
+      <div className="w-full flex flex-col justify-center items-center gap-2 text-center">
         <h1 className="text-black text-xl lg:text-[2rem] font-bold">
           {categoryDetails.length > 0 && categoryDetails[0]?.category?.name} Courses
         </h1>
@@ -154,7 +154,7 @@ const Page = () => {
                         //     id: course.uid,
                         //   },
                         // }}
-                        href={`/dashboard/home/course-details/${course.uid}`}
+                        href={`/dashboard/course-details/${course.uid}`}
                         className="text-main  duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
                       >
                         View course <IoIosArrowRoundForward />

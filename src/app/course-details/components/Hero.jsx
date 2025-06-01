@@ -142,9 +142,9 @@ const Hero = ({ courses }) => {
         <div className='absolute bg-[#D98E47]/70 top-0 left-0 w-full h-full'></div>
         <div className="max-w-[1300px] mx-auto flex flex-col items-center md:items-start lg:flex-row gap-x-12 relative z-30 pt-[70px]">
           <div className="w-full flex flex-col justify-start items-start gap-4">
-            <button onClick={() => router.back()} className="flex justify-center font-medium text-lg text-white items-center gap-2">
+            {/* <button onClick={() => router.back()} className="flex justify-center font-medium text-lg text-white items-center gap-2">
               <HiOutlineArrowLongLeft size={35} className="text-white" /> Go back
-            </button>
+            </button> */}
             {/* <p className="text-white font-semibold text-[1.2rem] md:text-[1.8rem] lg:text-[3.4rem]">
               Haelsoft
             </p> */}

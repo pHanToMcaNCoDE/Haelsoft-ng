@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import img from '../../../../asset/course-details/Brunette Woman Curly Hair.svg';
+import img from '../../../asset/course-details/Brunette Woman Curly Hair.svg';
 
 const Instructors = ({ courses }) => {
     const profiles = [
