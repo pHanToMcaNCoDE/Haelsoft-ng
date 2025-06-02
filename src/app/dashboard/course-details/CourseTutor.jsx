@@ -1,12 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import obj from '../../../../asset/EdTechPlatformVector 1.svg';
-import img from '../../../../asset/course-details/EdTechPlatformVector 5.svg';
-import tStroke from '../../../../asset/course-details/EdTechPlatform.svg';
-import laptop from '../../../../asset/course-details/EdTechPlatformnotebook.svg';
-import people from '../../../../asset/course-details/EdTechPlatformteam-building.svg';
-import run from '../../../../asset/course-details/EdTechPlatformtrack1.svg';
-import cer from '../../../../asset/course-details/EdTechPlatformcertificate.svg';
+import obj from '../../../asset/EdTechPlatformVector 1.svg';
+import img from '../../../asset/course-details/EdTechPlatformVector 5.svg';
+import tStroke from '../../../asset/course-details/EdTechPlatform.svg';
+import laptop from '../../../asset/course-details/EdTechPlatformnotebook.svg';
+import people from '../../../asset/course-details/EdTechPlatformteam-building.svg';
+import run from '../../../asset/course-details/EdTechPlatformtrack1.svg';
+import cer from '../../../asset/course-details/EdTechPlatformcertificate.svg';
 
 const CourseTutor = ({ courses }) => {
     return (
