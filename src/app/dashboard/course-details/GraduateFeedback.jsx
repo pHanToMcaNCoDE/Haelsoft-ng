@@ -1,10 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
-import img from '../../../../asset/course-details/Ellipse 28.svg';
-import one from '../../../../asset/course-details/Ellipse 28.svg';
-import two from '../../../../asset/course-details/Ellipse 27.svg';
-import three from '../../../../asset/course-details/EdTech Platform Ellipse 27.svg';
-import four from '../../../../asset/course-details/Ellipse 27 (1).svg';
+import img from '../../../asset/course-details/Ellipse 28.svg';
+import one from '../../../asset/course-details/Ellipse 28.svg';
+import two from '../../../asset/course-details/Ellipse 27.svg';
+import three from '../../../asset/course-details/EdTech Platform Ellipse 27.svg';
+import four from '../../../asset/course-details/Ellipse 27 (1).svg';
 
 const GraduateFeedback = ({ courses }) => {
     return (

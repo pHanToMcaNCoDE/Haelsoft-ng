@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-import one from '../../../../asset/course-details/Mask group.svg'
-import two from '../../../../asset/course-details/Remoteworkervideocall.svg'
-import three from '../../../../asset/course-details/SEOModishEcommerce.svg'
-import four from '../../../../asset/course-details/Mask group (2).svg'
-import five from '../../../../asset/course-details/Mask group (4).svg'
-import six from '../../../../asset/course-details/EdTech Platform Mask Group.svg'
-import seven from '../../../../asset/course-details/Mask group (6).svg'
+import one from '../../../asset/course-details/Mask group.svg'
+import two from '../../../asset/course-details/Remoteworkervideocall.svg'
+import three from '../../../asset/course-details/SEOModishEcommerce.svg'
+import four from '../../../asset/course-details/Mask group (2).svg'
+import five from '../../../asset/course-details/Mask group (4).svg'
+import six from '../../../asset/course-details/EdTech Platform Mask Group.svg'
+import seven from '../../../asset/course-details/Mask group (6).svg'
 
 const ImageDisplay = () => {
   return (
