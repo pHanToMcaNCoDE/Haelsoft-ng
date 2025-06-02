@@ -50,10 +50,12 @@ const CoursesFetch = () => {
   return (
     <div className="w-full h-full">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 mt-4 w-full gap-4 gap-y-10 h-full">
-          {courses.map((item, index) => (
-            <div className="w-full flex flex-col gap-6" key={index}>
-              <Course item={item} />
-            </div>
+          {courses
+            .filter((item) => item.status === 'active')
+            .map((item, index) => (
+              <div className="w-full flex flex-col gap-6" key={index}>
+                <Course item={item} />
+              </div>
           ))}
         </div>
     </div>

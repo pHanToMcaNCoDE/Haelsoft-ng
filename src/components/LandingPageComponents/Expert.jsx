@@ -82,7 +82,7 @@ const Expert = ({instructors}) => {
   ];
 
   return (
-    <div className="w-[1064px] mx-auto overflow-hidden relative before:absolute before:top-0 before:bottom-0 before:w-[30%] before:bg-gradient-to-r before:from-white before:to-transparent before:z-[2] before:left-0 after:right-0 after:absolute after:top-0 after:bottom-0 after:w-[30%] after:z-[2] after:bg-gradient-to-r after:from-transparent after:to-white">
+    <div className="w-[1064px] mx-auto overflow-hidden relative before:absolute before:top-0 before:bottom-0 before:w-[20%] before:bg-gradient-to-r before:from-white before:to-transparent before:z-[2] before:left-0 after:right-0 after:absolute after:top-0 after:bottom-0 after:w-[20%] after:z-[2] after:bg-gradient-to-r after:from-transparent after:to-white">
       <Splide
         extensions={{ AutoScroll }}
         options={{
@@ -121,14 +121,14 @@ const Expert = ({instructors}) => {
                 <div className="absolute z-10 translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>
               </div>
               <div className="flex justify-between items-start">
-                <div className="p-[20px] flex flex-col justify-between rounded-bl-[4px] border-[2px] border-t-none border-[#F3F3F3] rounded-br-[4px] items-start bg-white h-[191.31px] gap-4 w-full md:w-[268px]">
+                <div className="p-[20px] flex flex-col justify-between items-start bg-white h-[191.31px] gap-4 w-full md:w-[268px]">
                   <div className="flex flex-col items-start">
-                    <h1 className="text-[#000000] font-medium text-base text-start">
+                    <h1 className="text-[#000000] font-semibold text-xl text-start">
                       {instructor.name}
                     </h1>
-                    {/* <p className="text-[.875rem] leading-[21px] font-normal text-[#7F7571] text-start">
-                      {item.role}
-                    </p> */}
+                    <p className="text-[.875rem] leading-[21px] font-medium text-[#7F7571] text-start">
+                      {instructor.designation}
+                    </p>
                   </div>
                   {/* <Image width={100} className="object-cover" src={item.comp} alt='Company'></Image> */}
                 </div>
