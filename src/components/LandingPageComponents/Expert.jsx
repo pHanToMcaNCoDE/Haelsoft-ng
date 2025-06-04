@@ -115,7 +115,7 @@ const Expert = ({instructors}) => {
                   width={268}
                   height={268}
                   className="object-cover rounded-tl-[4px] rounded-tr-[4px] w-full md:w-[268px] h-[268px]"
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${instructor.image}`}
+                  src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${instructor.image}`}
                   alt={instructor.name}
                 />
                 <div className="absolute z-10 translate-x-3 translate-y-3 bottom-0 w-full h-3 bg-main"></div>

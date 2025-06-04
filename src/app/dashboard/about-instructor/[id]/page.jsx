@@ -128,7 +128,7 @@ const page = () => {
                     <p className='text-md font-semibold text-grayTwo'>{details.designation}</p>
                 </div>
                 <div className='w-[140px] h-[140px] rounded-full border-[10px] border-[#f4f4f4] absolute bottom-[-25%]'>
-                    <Image className='w-full h-full absolute rounded-full object-cover top-0' width={100} height={100} src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${details.image}`} alt={details.name} />
+                    <Image className='w-full h-full absolute rounded-full object-cover top-0' width={100} height={100} src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${details.image}`} alt={details.name} />
                 </div>
             </div>
 
@@ -154,7 +154,7 @@ const page = () => {
                                 className="object-cover rounded-tl-[6px] rounded-tr-[6px] w-[523px] h-[300px] overflow-hidden"
                                 src={
                                   course?.cover_image
-                                    ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
+                                    ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${course.cover_image}`
                                     : "/fallback-image.jpg"
                                 }
                                 alt={course.title}

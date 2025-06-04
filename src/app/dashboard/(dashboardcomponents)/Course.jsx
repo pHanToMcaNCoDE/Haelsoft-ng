@@ -20,7 +20,7 @@ const Course = ({item}) => {
           width={523}
           height={300}
           className="object-cover rounded-tl-[6px] rounded-tr-[6px] w-[523px] h-[300px] overflow-hidden"
-          src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`}
+          src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${item.course?.cover_image}`}
           alt={item?.course?.title}
         />
         <div className="px-3 pb-5 flex flex-col justify-end items-start w-full gap-2">

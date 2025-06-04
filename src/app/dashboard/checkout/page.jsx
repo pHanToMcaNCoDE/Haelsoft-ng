@@ -202,7 +202,7 @@ const page = () => {
                                 >
                                     <div className="flex flex-col md:flex-row justify-between items-center w-full">
                                         <div className="flex flex-col md:flex-row items-start justify-between gap-8 w-full">
-                                            <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={150} height={300} alt={item.course?.title} />
+                                            <img src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${item.course?.cover_image}`} width={150} height={300} alt={item.course?.title} />
                                         <div className="flex flex-col gap-2 w-full">
                                             <h1 className="text-grayTwo text-[1.125rem] leading-[35px] font-semibold">
                                             {item.course?.title}

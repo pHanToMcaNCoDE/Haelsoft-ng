@@ -14,7 +14,7 @@ const PaymentChannel = ({channels, setSelectedChannel, selectedChannel, cartItem
             channels.map((channel) => (
               <div onClick={() => setSelectedChannel(channel.name)} key={channel.id} className={`${selectedChannel === channel.name ? 'border border-main' : 'border border-gray'} rounded-[5px] w-full px-3 transition-all py-5 flex justify-between items-center cursor-pointer`}>
                 <p className='text-md font-bold text-black'>{channel.description}</p>
-                <img width={130} height={130} className='object-contain' src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${channel.logo}`} alt={channel.name} />
+                <img width={130} height={130} className='object-contain' src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${channel.logo}`} alt={channel.name} />
               </div>
             ))
           }

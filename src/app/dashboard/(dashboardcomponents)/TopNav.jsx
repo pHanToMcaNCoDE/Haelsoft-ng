@@ -463,7 +463,7 @@ const TopNav = ({setCloseModal}) => {
                   >
                     <IoSearch className="text-grayTwo" />
                     <div className="w-full flex justify-start items-center gap-3 duration-200 hover:text-main">
-                      <img width={100} height={100} src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`} alt={course.title} />
+                      <img width={100} height={100} src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${course.cover_image}`} alt={course.title} />
                       {course.title}
                     </div>
                   </Link>
@@ -525,7 +525,7 @@ const TopNav = ({setCloseModal}) => {
                                         >
                                           <div className="flex flex-col justify-between items-center w-full">
                                             <div className="flex flex-col lg:flex-row items-start justify-between gap-3 w-full">
-                                              <img src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
+                                              <img src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
                                               <div className="flex flex-col gap-2 w-[90%]">
                                                 <Link 
                                                   href={`/dashboard/course-details/${item.course?.uid}`}

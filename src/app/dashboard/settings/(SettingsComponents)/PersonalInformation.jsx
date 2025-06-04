@@ -50,7 +50,7 @@ const PersonalInformation = () => {
 
 
         if (profile_image) {
-          const imageUrl = `${process.env.NEXT_PUBLIC_IMAGE_URL}${profile_image}`;
+          const imageUrl = `${process.env.NEXT_PUBLIC_STORAGE_URL}${profile_image}`;
           setImagePreview(imageUrl);
           secureLocalStorage.setItem('userProfileImage', imageUrl);
         } else {
@@ -79,7 +79,7 @@ const PersonalInformation = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type.startsWith('image/')) {
-      setImageFile(`${process.env.NEXT_PUBLIC_IMAGE_URL}${file}`);
+      setImageFile(`${process.env.NEXT_PUBLIC_STORAGE_URL}${file}`);
       const reader = new FileReader();
       reader.onload = () => {
         const imageData = reader.result;

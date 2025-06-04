@@ -9,10 +9,12 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { PulseLoader } from "react-spinners";
+import { BiMenuAltLeft } from "react-icons/bi";
 
 const Watch = () => {
   const [videoUrl, setVideoUrl] = useState("");
   const [open, setOpen] = useState(false);
+  const [sideNavClicked, setSideNavClicked] = useState(false);
   const [error, setError] = useState("");
   const [videoData, setVideoData] = useState([]);
   const [courseContent, setCourseContent] = useState({});
@@ -92,8 +94,8 @@ const Watch = () => {
       }
     };
 
-    if (token && courseContent.intructor_uid) fetchInstructor();
-  }, [token, courseContent.intructor_uid]);
+    if (token) fetchInstructor();
+  }, [token]);
 
   const handleSetVideoUrl = (newUrl, lesson, moduleIndex, lessonIndex) => {
     setVideoUrl(newUrl);
@@ -168,7 +170,10 @@ const Watch = () => {
     <div className="w-full min-h-screen">
       {/* <TopBarNav /> */}
       <div className="flex w-full justify-between">
-        <div className="w-full flex flex-col justify-start items-start">
+        <div className="w-full flex flex-col justify-start items-start z-20">
+        <div className="flex lg:hidden w-full justify-end py-2 px-5">
+          <BiMenuAltLeft onClick={() => setSideNavClicked(prev => !prev)} className='text-main text-2xl cursor-pointer'/>
+        </div>
           <div className="h-auto flex flex-col w-full">
             <VideoPlayer
               videoUrl={videoUrl}
@@ -241,6 +246,7 @@ const Watch = () => {
         </div>
 
         <SideNav
+          sideNavClicked={sideNavClicked}
           videoData={videoData}
           videoUrl={videoUrl}
           setVideoUrl={handleSetVideoUrl}

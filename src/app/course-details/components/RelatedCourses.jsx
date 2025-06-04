@@ -40,7 +40,7 @@ const RelatedCourses = ({relatedCourses}) => {
               className="object-cover w-full h-[200px]"
               src={
                 course?.cover_image
-                  ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
+                  ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${course.cover_image}`
                   : "/fallback-image.jpg"
               }
               alt={course.title}

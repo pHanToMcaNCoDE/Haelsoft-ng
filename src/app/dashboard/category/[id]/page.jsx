@@ -124,7 +124,7 @@ const Page = () => {
                   className="object-cover rounded-tl-[6px] rounded-tr-[6px] w-[523px] h-[300px] overflow-hidden"
                   src={
                     course?.cover_image
-                      ? `${process.env.NEXT_PUBLIC_IMAGE_URL}${course.cover_image}`
+                      ? `${process.env.NEXT_PUBLIC_STORAGE_URL}${course.cover_image}`
                       : "/fallback-image.jpg"
                   }
                   alt={course.title}

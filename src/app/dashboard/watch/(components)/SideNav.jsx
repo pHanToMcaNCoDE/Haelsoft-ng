@@ -27,7 +27,8 @@ const SideNav = ({
   setOpen,
   videoData,
   videoUrl,
-  setVideoUrl
+  setVideoUrl,
+  sideNavClicked
   // courseContentData,
 }) => {
   // const [selectedLesson, setSelectedLesson] = useState(null);
@@ -78,10 +79,10 @@ const SideNav = ({
 
   return (
     <aside
-      className={`w-[45%] lg:w-[40%] min-h-screen overflow-auto shadow-xl md:block fixed lg:static top-0 z-[180] md:z-[2] transition-all flex flex-col gap-4 p-0 justify-start items-start border-l border-[#e5e5e5]`}
+      className={`w-[45%] lg:w-[40%] min-h-screen overflow-auto shadow-xl md:block fixed lg:static top-0 z-[80] transition-all flex flex-col gap-4 p-0 justify-start duration-200 items-start border-l border-[#e5e5e5] bg-white ${sideNavClicked ? 'left-0' : 'left-[-100%]'}`}
     >
 
-      <SideNavTab/>
+      {/* <SideNavTab/> */}
 
 
       <div className='w-full flex flex-col justify-start items-end'>
@@ -114,25 +115,26 @@ const SideNav = ({
                                         <p className="text-sm font-normal">{lesson.duration} mins</p>
                                       </div>
                                     </div>
-                                    {lesson.resources?.length > 0 && (
+                                    
+                                  </div>
+                                  {lesson.resources?.length > 0 && (
                                     <div className="space-y-3">
                                       {lesson.resources.map((resource) => {
                                         const fileType = resource.link.split('.').pop().toUpperCase();
                                         return (
-                                          <div className="p-3 flex justify-center items-center gap-2 text-main border-main bg-transparent rounded-[4px] font-medium text-md" key={resource.uid}>
-                                            <a
-                                              href={`${process.env.NEXT_PUBLIC_BASE_URL}storage/resources/${resource.link}`}
-                                              target="_blank"
-                                              rel="noopener noreferrer"
-                                            >
-                                              <RiDownload2Line/> Download ({fileType})
-                                            </a>
-                                          </div>
+                                          <a
+                                            key={resource.uid}
+                                            href={`${process.env.NEXT_PUBLIC_STORAGE_URL}${resource.link}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className='p-2 flex justify-center items-center gap-2 text-main border-main bg-transparent rounded-[4px] w-[150px] font-medium text-md'
+                                          >
+                                            <RiDownload2Line/> Resources
+                                          </a>
                                         );
                                       })}
                                     </div>
                                   )}
-                                  </div>
 
                                   {/* {
                                     lesson.resources.map((resource) => (
