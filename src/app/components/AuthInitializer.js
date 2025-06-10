@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { restoreAuthFromSession } from '@/features/user-details/userDetailsSlice';
 import { getAuthFromSession, syncAuthState } from '../utils/authUtils';
+import { getAuthState } from "@/app/utils/authUtils";
+import { usePathname } from 'next/navigation';
 
 /**
  * Component to initialize authentication state
@@ -12,10 +14,20 @@ import { getAuthFromSession, syncAuthState } from '../utils/authUtils';
 
 const AuthInitializer = () => {
   const dispatch = useDispatch();
+  const pathname = usePathname();
 
   useEffect(() => {
     // Check if we're in a browser environment
     if (typeof window !== 'undefined') {
+      const isCheckoutResultPage =
+        pathname === "/dashboard/checkout/success" ||
+        pathname === "/dashboard/checkout/failed";
+
+      if (isCheckoutResultPage && getAuthState()) {
+
+        return;
+      }
+
       // Try to restore auth from session storage
       try {
         const authData = getAuthFromSession();
@@ -28,7 +40,7 @@ const AuthInitializer = () => {
             //   first_name: authData.name
             // }
           }));
-          
+
           // Ensure the auth status cookie is set for middleware
           syncAuthState(true);
           console.log('✅ Auth state restored from session storage');
@@ -42,7 +54,7 @@ const AuthInitializer = () => {
         syncAuthState(false);
       }
     }
-  }, [dispatch]);
+  }, [dispatch, pathname]);
 
   // This component doesn't render anything
   return null;

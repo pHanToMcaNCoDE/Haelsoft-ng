@@ -1,17 +1,19 @@
-'use client'
-
-import SideNav from "@/app/dashboard/(dashboardcomponents)/SideNav";
+"use client";
 import TopNav from "@/app/dashboard/(dashboardcomponents)/TopNav";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useRef, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ResponsiveTopNav from "./(dashboardcomponents)/ResponsiveTopNav";
 import { AnimatePresence, motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import { setAuth } from "@/features/user-details/userDetailsSlice";
+import { getAuthState } from "@/app/utils/authUtils";
 
 const DashboardLayout = ({ children }) => {
   const { isAuthenticated, token } = useSelector((state) => state.userDetails);
+  const authState = getAuthState();
+  const pathname = usePathname();
+
   const router = useRouter();
   const dispatch = useDispatch();
 
@@ -30,30 +32,37 @@ const DashboardLayout = ({ children }) => {
   };
 
   useEffect(() => {
+    const isCheckoutResultPage =
+      pathname === "/dashboard/checkout/success" ||
+      pathname === "/dashboard/checkout/failed";
+
     const restoreSession = async () => {
       try {
         const sessionData = sessionStorage.getItem("authSession");
         if (sessionData) {
           const parsedData = JSON.parse(sessionData);
           if (parsedData?.token && parsedData?.user) {
-            dispatch(setAuth({ token: parsedData.token, user: parsedData.user }));
+            dispatch(
+              setAuth({ token: parsedData.token, user: parsedData.user })
+            );
             setIsLoading(false);
             return;
           }
         }
         throw new Error("Session not found");
       } catch (error) {
-        router.replace('/signin');
+        router.replace("/signin");
       }
     };
-  
-    if (!isAuthenticated || !token) {
+    if (isCheckoutResultPage && authState) {
+      setIsLoading(false);
+      return;
+    } else if (!isAuthenticated || !token) {
       restoreSession();
     } else {
       setIsLoading(false);
     }
-  }, [isAuthenticated, token, router, dispatch]);
-  
+  }, [isAuthenticated, token, router, dispatch, pathname, authState]);
 
   if (isLoading) {
     return <Loader />;
@@ -74,7 +83,10 @@ const DashboardLayout = ({ children }) => {
               key="box"
               className="fixed top-0 left-0 w-screen h-screen bg-black/60 z-50 lg:hidden"
             >
-              <ResponsiveTopNav handleOpenModal={handleOpenModal} setCloseModal={setCloseModal} />
+              <ResponsiveTopNav
+                handleOpenModal={handleOpenModal}
+                setCloseModal={setCloseModal}
+              />
             </motion.div>
           ) : null}
         </AnimatePresence>
