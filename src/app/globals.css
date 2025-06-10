@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+} */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+} */
+
+/* .hire{
+  background-image: url('../../../public/EdTech Platform Hero Image.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+} */
+
+
+/* Corporate Hire & Training Content  */
+.corp-content {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  color: white;
+}
+
+.corp{
+  background-image: url('../../public/EdTech Platform Hero Image.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 100vh; */
+  height: 100vh;
+}
+
+.fade-in {
+  animation: fadeIn 0.3s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s backwards;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      /* transform: translateX(100%); */
+  }
+  to {
+      opacity: 1;
+      /* transform: translateX(0); */
+  }
+}
+
+@keyframes fadeOut {
+  from {
+      opacity: 1;
+      /* transform: translateX(0); */
+  }
+  to {
+      opacity: 0;
+      /* transform: translateX(100%); */
+  }
+}
+
+.fade-left {
+  animation: fadeLeft 0.3s ease-in-out forwards;
+}
+
+.fade-right {
+  animation: fadeRight 0.3s ease-in-out forwards;
+}
+
+
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+
+aside {
+  transition: transform 0.2s ease-in-out;
+  z-index: 50;
+  display: block;
+}
+
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+
+.aside-link {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.hover\:text-[#F36400]:hover {
+  color: #F36400; /* Ensure this color contrasts the background */
+}
+
+
+
+/* Hero and Video Styling */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+.cer {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cerVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+
+
+
+.custom-spinner .nextui-spinner {
+  color: #f36400 !important; /* Override with your custom color */
+}
+
+/* styles.css */
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.waving-emoji {
+  display: inline-block;
+  animation: wave-animation  4s infinite;
+  transform-origin: 70% 70%;   
+}
+
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.trailer{
+  background-image: url('../asset/course-details/ConfidentBusinessWoman.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.comm{
+  background-image: url('../asset/course-details/EdTechPlatformteam.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner{
+  background-image: url('../asset/courses/EdTechPlatform.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.top-section{
+  background-image: url('../../public/writing.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.py{
+  background-image: url('../../public/pyTwo.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+
+/* Testimonial Page */
+
+.testimonial-hero{
+  background-image: url('../../public/testimonials/hero.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* Testimonial Details Slider */
+
+@keyframes autoRunSlider{
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: calc(400px * -1)
+  }
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused !important;
+}
+
+
+.not-found-background{
+  background-image: url('../../public/exit.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-us{
+  background-image: url('../../public/Woman in Black Blazer (1).jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.blogs{
+  background-image: url('../../public/blogs.jpg');
+  background-size: cover;
+  background-position: top;
+  height: 50vh;
+}

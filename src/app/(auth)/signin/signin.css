@@ -1,0 +1,35 @@
+
+.alice-carousel__stage-item {
+    transition: opacity 1s ease-in-out !important;
+}
+
+.alice-carousel__dots-item {
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.alice-carousel__dots-item.__active {
+    background-color: white !important;
+    border-color: white !important;
+}
+
+.signinOne{
+    background-image: url('../../../asset/Black\ People\ Learning\ Divinetechygirl.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.signinTwo{
+    background-image: url('../../../asset/Black\ People\ Learning\ Retha\ Ferguson.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.signinThree{
+    background-image: url('../../../asset/Black\ People\ Learning\ Yankrukov.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
