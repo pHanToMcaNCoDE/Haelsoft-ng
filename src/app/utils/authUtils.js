@@ -48,3 +48,11 @@ export const syncAuthState = (isAuthenticated = false) => {
   }
 };
 
+export const getAuthState = () => {
+  const authStatus = typeof window !== 'undefined' ? window?.document?.cookie
+    .split(";")
+    .find((cookie) => cookie.startsWith("authStatus=")) : null;
+  return authStatus?.split("=")[1] === "true";
+};
+
+

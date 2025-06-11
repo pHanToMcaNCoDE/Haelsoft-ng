@@ -16,6 +16,8 @@ import axios from "axios";
 import { setAuth } from "@/features/user-details/userDetailsSlice";
 import { useDispatch } from "react-redux";
 import secureLocalStorage from "react-secure-storage";
+import { syncAuthState } from "@/app/utils/authUtils";
+
 
 const SigninForm = () => {
   const router = useRouter();
@@ -78,11 +80,14 @@ const SigninForm = () => {
       };
       
       sessionStorage.setItem("authSession", JSON.stringify(sessionData));
+
       
       
       if (token) {
         toast.success(response?.data?.data?.message || "Login successful!");
+        syncAuthState(true);
         router.push("/dashboard/home");
+       
       }
       
       
