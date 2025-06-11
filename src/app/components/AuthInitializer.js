@@ -15,6 +15,7 @@ import { usePathname } from 'next/navigation';
 const AuthInitializer = () => {
   const dispatch = useDispatch();
   const pathname = usePathname();
+  const authState = getAuthState();
 
   useEffect(() => {
     // Check if we're in a browser environment
@@ -23,8 +24,7 @@ const AuthInitializer = () => {
         pathname === "/dashboard/checkout/success" ||
         pathname === "/dashboard/checkout/failed";
 
-      if (isCheckoutResultPage && getAuthState()) {
-
+      if (isCheckoutResultPage && authState) {
         return;
       }
 
@@ -46,15 +46,23 @@ const AuthInitializer = () => {
           console.log('✅ Auth state restored from session storage');
         } else {
           // Ensure the auth status cookie is cleared
-          syncAuthState(false);
-          console.log('ℹ️ No auth data found in session storage');
+          if (isCheckoutResultPage && authState) {
+
+            return;
+          }
+          else {
+            syncAuthState(false);
+          }
+
+
+
         }
       } catch (error) {
         console.error('❌ Error initializing auth state:', error);
         syncAuthState(false);
       }
     }
-  }, [dispatch, pathname]);
+  }, [dispatch, pathname, authState]);
 
   // This component doesn't render anything
   return null;

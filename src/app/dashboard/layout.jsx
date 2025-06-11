@@ -34,7 +34,8 @@ const DashboardLayout = ({ children }) => {
   useEffect(() => {
     const isCheckoutResultPage =
       pathname === "/dashboard/checkout/success" ||
-      pathname === "/dashboard/checkout/failed";
+      pathname === "/dashboard/checkout/failed" ||
+      pathname === "/dashboard/my-courses";
 
     const restoreSession = async () => {
       try {
