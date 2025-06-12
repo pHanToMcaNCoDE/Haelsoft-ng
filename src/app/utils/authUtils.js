@@ -10,6 +10,8 @@ export const clearAuth = () => {
 
 export const clearCookieAuth = () => {
   Cookies.remove("authSession");
+  Cookies.remove("authStatus");
+  Cookies.remove("token");
 };
 
 /**

@@ -1,4 +1,4 @@
-import { clearAuth, saveAuthToSession } from "@/app/utils/authUtils";
+import { clearCookieAuth, saveAuthToCookie } from "@/app/utils/authUtils";
 import { createSlice } from "@reduxjs/toolkit";
 
 
@@ -18,26 +18,26 @@ const userDetailsSlice = createSlice({
       state.token = token;
       state.user = user;
       state.isAuthenticated = Boolean(token);
-      
-     
+
+
       if (typeof window !== 'undefined') {
-        saveAuthToSession({ token, user });
+        saveAuthToCookie({ token, user });
       }
-      
+
     },
-    
+
     logout: (state) => {
       state.token = null;
       state.user = null;
       state.isAuthenticated = false;
-      
-     
+
+
       if (typeof window !== 'undefined') {
-        clearAuth();
+        clearCookieAuth();
       }
     },
-    
-   
+
+
     restoreAuthFromSession: (state, action) => {
       const { token, user } = action.payload;
       if (token) {

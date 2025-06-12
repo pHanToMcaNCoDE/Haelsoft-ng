@@ -102,4 +102,6 @@ export async function signin(formData) {
 
 export const Logout = () => {
   cookies().delete("token");
+  cookies().delete("authSession");
+  cookies().delete("authStatus");
 };

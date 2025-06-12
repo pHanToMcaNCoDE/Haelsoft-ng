@@ -14,16 +14,16 @@ const PaymentSuccess = () => {
   const reference = searchParams.get("reference");
 
   useEffect(() => {
-    if (reference) {
+    
       const timeout = setTimeout(() => {
         router.push("/dashboard/my-courses");
-      }, 3000);
+      }, 5000);
 
       return () => clearTimeout(timeout);
 
       // toast.success('Payment successful! 🎉')
-    }
-  }, [reference]);
+    
+  }, []);
 
   return (
     <main className="h-screen flex flex-col justify-center items-center bg-gray-50 px-4">
