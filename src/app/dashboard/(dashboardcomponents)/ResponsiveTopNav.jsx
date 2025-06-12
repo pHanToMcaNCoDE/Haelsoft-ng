@@ -24,6 +24,7 @@ import { MdLogout, MdOutlineNotifications } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import { RiSettings4Fill } from "react-icons/ri";
 import { CgReadme } from "react-icons/cg";
+import { clearCookieAuth } from "@/app/utils/authUtils";
 
 const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
   const pathname = usePathname();
@@ -145,6 +146,7 @@ const ResponsiveTopNav = ({handleOpenModal, setCloseModal}) => {
 
       document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       secureLocalStorage.clear();
+      clearCookieAuth();
 
     } catch (error) {
       toast.error(error?.response?.data?.message || "Logout failed");
