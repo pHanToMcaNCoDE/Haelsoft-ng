@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { restoreAuthFromSession } from '@/features/user-details/userDetailsSlice';
-import { getAuthFromSession, syncAuthState } from '../utils/authUtils';
+import { getAuthFromCookie, syncAuthStateCookie } from '../utils/authUtils';
 import { getAuthState } from "@/app/utils/authUtils";
 import { usePathname } from 'next/navigation';
 
@@ -30,7 +30,7 @@ const AuthInitializer = () => {
 
       // Try to restore auth from session storage
       try {
-        const authData = getAuthFromSession();
+        const authData = getAuthFromCookie();
         if (authData && authData.token) {
           // Restore auth data to Redux
           dispatch(restoreAuthFromSession({
@@ -42,7 +42,7 @@ const AuthInitializer = () => {
           }));
 
           // Ensure the auth status cookie is set for middleware
-          syncAuthState(true);
+          syncAuthStateCookie(true);  
           console.log('✅ Auth state restored from session storage');
         } else {
           // Ensure the auth status cookie is cleared
@@ -51,7 +51,7 @@ const AuthInitializer = () => {
             return;
           }
           else {
-            syncAuthState(false);
+            syncAuthStateCookie(false);
           }
 
 
@@ -59,7 +59,7 @@ const AuthInitializer = () => {
         }
       } catch (error) {
         console.error('❌ Error initializing auth state:', error);
-        syncAuthState(false);
+        syncAuthStateCookie(false);
       }
     }
   }, [dispatch, pathname, authState]);

@@ -16,8 +16,8 @@ import axios from "axios";
 import { setAuth } from "@/features/user-details/userDetailsSlice";
 import { useDispatch } from "react-redux";
 import secureLocalStorage from "react-secure-storage";
-import { syncAuthState } from "@/app/utils/authUtils";
-
+import { syncAuthStateCookie } from "@/app/utils/authUtils";
+import Cookies from "js-cookie";
 
 const SigninForm = () => {
   const router = useRouter();
@@ -62,36 +62,30 @@ const SigninForm = () => {
       const baseURL = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/+$/, "");
       const response = await axios.post(`${baseURL}/auth/login`, {
         login: validatedData.login,
-        password: validatedData.password
+        password: validatedData.password,
       });
 
-      console.log("user THat's innn", response.data.data)
+      console.log("user THat's innn", response.data.data);
 
       const token = response.data.data.token;
-      const user = response.data.data.user
+      const user = response.data.data.user;
 
-      secureLocalStorage.setItem('user', user)
-      
+      secureLocalStorage.setItem("user", user);
+
       dispatch(setAuth({ token, user }));
 
       const sessionData = {
         token,
         user,
       };
-      
-      sessionStorage.setItem("authSession", JSON.stringify(sessionData));
 
-      
-      
+      Cookies.set("authSession", JSON.stringify(sessionData), { expires: 1 });
+
       if (token) {
         toast.success(response?.data?.data?.message || "Login successful!");
-        syncAuthState(true);
+        syncAuthStateCookie(true);
         router.push("/dashboard/home");
-       
       }
-      
-      
-
     } catch (err) {
       setIsLoading(false);
       if (err?.name === "ValidationError" && err.inner) {
