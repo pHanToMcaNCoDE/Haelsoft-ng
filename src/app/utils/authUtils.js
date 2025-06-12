@@ -3,8 +3,13 @@
 /**
  * Clear authentication data from sessionStorage
  */
+import Cookies from "js-cookie";
 export const clearAuth = () => {
   sessionStorage.removeItem("authSession");
+};
+
+export const clearCookieAuth = () => {
+  Cookies.remove("authSession");
 };
 
 /**
@@ -23,6 +28,19 @@ export const saveAuthToSession = (authData) => {
   }
 };
 
+
+export const saveAuthToCookie = (authData) => {
+  try {
+    if (authData && authData.token) {
+      Cookies.set("authSession", JSON.stringify(authData), { expires: 1 });
+    } else {
+      clearCookieAuth();
+    }
+  } catch (error) {
+    console.error("Error saving auth to cookie:", error);
+  }
+};
+
 /**
  * Get authentication data from sessionStorage
  * @returns {Object|null} The authentication data or null if not found
@@ -33,6 +51,16 @@ export const getAuthFromSession = () => {
     return sessionData ? JSON.parse(sessionData) : null;
   } catch (error) {
     console.error("Error getting auth from session:", error);
+    return null;
+  }
+};
+
+export const getAuthFromCookie = () => {
+  try {
+    const cookieData = Cookies.get("authSession");
+    return cookieData ? JSON.parse(cookieData) : null;
+  } catch (error) {
+    console.error("Error getting auth from cookie:", error);
     return null;
   }
 };
@@ -48,11 +76,22 @@ export const syncAuthState = (isAuthenticated = false) => {
   }
 };
 
+export const syncAuthStateCookie = (isAuthenticated = false) => {
+  if (isAuthenticated) {
+    Cookies.set("authStatus", "true", { expires: 1 });
+  } else {
+    Cookies.remove("authStatus");
+    Cookies.remove("authSession");
+  }
+};
+
+
+
+
+
 export const getAuthState = () => {
-  const authStatus = typeof window !== 'undefined' ? window?.document?.cookie
-    .split(";")
-    .find((cookie) => cookie.startsWith("authStatus=")) : null;
-  return authStatus?.split("=")[1] === "true";
+  const authStatus = typeof window !== 'undefined' ? Cookies.get("authStatus") : null;
+  return authStatus === "true";
 };
 
 

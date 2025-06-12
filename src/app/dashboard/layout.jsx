@@ -8,6 +8,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import Loader from "@/components/Loader";
 import { setAuth } from "@/features/user-details/userDetailsSlice";
 import { getAuthState } from "@/app/utils/authUtils";
+import Cookies from "js-cookie";
+
 
 const DashboardLayout = ({ children }) => {
   const { isAuthenticated, token } = useSelector((state) => state.userDetails);
@@ -39,9 +41,10 @@ const DashboardLayout = ({ children }) => {
 
     const restoreSession = async () => {
       try {
-        const sessionData = sessionStorage.getItem("authSession");
+        const sessionData = Cookies.get("authSession");
         if (sessionData) {
           const parsedData = JSON.parse(sessionData);
+
           if (parsedData?.token && parsedData?.user) {
             dispatch(
               setAuth({ token: parsedData.token, user: parsedData.user })
@@ -55,6 +58,7 @@ const DashboardLayout = ({ children }) => {
         router.replace("/signin");
       }
     };
+
     if (isCheckoutResultPage && authState) {
       setIsLoading(false);
       return;
