@@ -154,7 +154,7 @@ const Page = () => {
                         //     id: course.uid,
                         //   },
                         // }}
-                        href={`/dashboard/course-details/${course.uid}`}
+                        href={`/dashboard/course-details/${course.slug}`}
                         className="text-main  duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
                       >
                         View course <IoIosArrowRoundForward />

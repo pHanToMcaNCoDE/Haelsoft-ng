@@ -32,7 +32,7 @@ const Page = () => {
   //   return null;
   // }
 
-  const { id } = useParams();
+  const { slug } = useParams();
   const [categoryDetails, setCategoryDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -46,7 +46,7 @@ const Page = () => {
   useEffect(() => {
     const fetchCategoryDetails = () => {
       setIsLoading(true);
-      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/category/${id}`)
+      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/category/${slug}`)
 
       .then((response) => {
         setCategoryDetails(response.data.data.data)
@@ -174,7 +174,7 @@ const Page = () => {
                       
                       <div className='w-full flex flex-col md:flex-row justify-between items-center gap-2 mt-2'>
                         <Link
-                            href={`/course-details/${course.uid}`}
+                            href={`/course-details/${course.slug}`}
                             className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2 duration-200 hover:text-white hover:bg-main"
                         >
                             View course <IoIosArrowRoundForward />

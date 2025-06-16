@@ -41,7 +41,7 @@ const VerifiedComponent = () => {
 
         if (errorMessage === "Email already verified") {
           secureLocalStorage.removeItem("token");
-          router.push("/signin");
+          router.push("/dashboard/home");
         }
       } finally {
         setIsLoading(false);

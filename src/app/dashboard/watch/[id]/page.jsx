@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { PulseLoader } from "react-spinners";
 import { BiMenuAltLeft } from "react-icons/bi";
+import Link from "next/link";
 
 const Watch = () => {
   const [videoUrl, setVideoUrl] = useState("");
@@ -23,15 +24,81 @@ const Watch = () => {
   const [currentLesson, setCurrentLesson] = useState(null);
   const [nextLesson, setNextLesson] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [instructorData, setInstructorData] = useState({});
   const [currentLessonIndex, setCurrentLessonIndex] = useState({ moduleIndex: 0, lessonIndex: 0 });
+  
+  // New state for progress tracking
+  const [completedLessons, setCompletedLessons] = useState(new Set());
+  const [courseProgress, setCourseProgress] = useState(0);
 
   const { token } = useSelector((state) => state.userDetails);
   const { id } = useParams();
   const dispatch = useDispatch();
 
+  // Calculate total lessons
+  const getTotalLessons = () => {
+    return videoData.reduce((total, module) => {
+      return total + (module.lessons ? module.lessons.length : 0);
+    }, 0);
+  };
+
+  // Update progress when completed lessons change
+  useEffect(() => {
+    const totalLessons = getTotalLessons();
+    if (totalLessons > 0) {
+      const progress = (completedLessons.size / totalLessons) * 100;
+      setCourseProgress(Math.round(progress));
+    }
+  }, [completedLessons, videoData]);
+
+  // Load completed lessons from localStorage on component mount
+  useEffect(() => {
+    if (id) {
+      const savedProgress = localStorage.getItem(`course_progress_${id}`);
+      if (savedProgress) {
+        const parsed = JSON.parse(savedProgress);
+        setCompletedLessons(new Set(parsed.completedLessons || []));
+      }
+    }
+  }, [id]);
+
+  // Save progress to localStorage whenever it changes
+  useEffect(() => {
+    if (id && completedLessons.size > 0) {
+      const progressData = {
+        completedLessons: Array.from(completedLessons),
+        lastUpdated: new Date().toISOString(),
+        totalLessons: getTotalLessons()
+      };
+      localStorage.setItem(`course_progress_${id}`, JSON.stringify(progressData));
+    }
+  }, [completedLessons, id]);
+
+  // Mark lesson as completed
+  const markLessonAsCompleted = (lessonId) => {
+    setCompletedLessons(prev => {
+      const newSet = new Set(prev);
+      newSet.add(lessonId);
+      return newSet;
+    });
+  };
+
+  // Toggle lesson completion status
+  const toggleLessonCompletion = (lessonId) => {
+    setCompletedLessons(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(lessonId)) {
+        newSet.delete(lessonId);
+      } else {
+        newSet.add(lessonId);
+      }
+      return newSet;
+    });
+  };
+
   useEffect(() => {
     const fetchMyCourseDetails = async () => {
-      setIsLoading(true)
+      setIsLoading(true);
       try {
         const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}learning/${id}`, {
           headers: {
@@ -39,19 +106,16 @@ const Watch = () => {
             Accept: 'application/json'
           }
         });
-
+  
         console.log('My courses details', response.data);
-        setIsLoading(false)
         const dataContent = response.data?.data?.my_course;
         const modules = response.data?.data?.my_course.modules;
-
+  
         setVideoData(modules);
         setCourseContent(dataContent);
-
         console.log("Contents", dataContent);
         
         if (modules && modules.length > 0 && modules[0].lessons && modules[0].lessons.length > 0) {
-          
           const firstLesson = modules[0].lessons[0];
           setVideoUrl(firstLesson.link);
           setCurrentLesson(firstLesson);
@@ -61,7 +125,7 @@ const Watch = () => {
           } else if (modules.length > 1 && modules[1].lessons && modules[1].lessons.length > 0) {
             setNextLesson(modules[1].lessons[0]);
           }
-
+  
           if (dispatch) {
             dispatch({ 
               type: 'SET_CURRENT_LESSON', 
@@ -69,34 +133,34 @@ const Watch = () => {
             });
           }
         }
+  
+        try {
+          const instructorResponse = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}instructors/single/${response.data?.data?.my_course.instructor_uid}`, {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          });
+          console.log('Instructors', instructorResponse.data.data)
+          const data = instructorResponse.data.data
+
+          setInstructorData(data)
+          
+        } catch (instructorError) {
+          console.log("Instructor fetch error", instructorError);
+        }
+  
+        setIsLoading(false);
+        
       } catch (error) {
         console.log('My courses details errors', error);
         setError("Failed to load course details.");
-        setIsLoading(false)
+        setIsLoading(false);
       }
     };
-
+  
     if (token) fetchMyCourseDetails();
-  }, [token, id, dispatch]);
-
-  useEffect(() => {
-    const fetchInstructor = async () => {
-      try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}instructors/single/${courseContent.intructor_uid}`, {
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-    
-        console.log('Instructor', response.data);
-      } catch (error) {
-        console.log("Inst error", error);
-      }
-    };
-
-    if (token) fetchInstructor();
-  }, [token]);
-
+  }, [token, id]);
+  
   const handleSetVideoUrl = (newUrl, lesson, moduleIndex, lessonIndex) => {
     setVideoUrl(newUrl);
     setCurrentLesson(lesson);
@@ -143,6 +207,11 @@ const Watch = () => {
   const handlePlayNext = () => {
     if (!nextLesson) return;
     
+
+    if (currentLesson) {
+      markLessonAsCompleted(currentLesson.id);
+    }
+    
     let foundNextModule = -1;
     let foundNextLesson = -1;
     
@@ -168,12 +237,30 @@ const Watch = () => {
 
   return (
     <div className="w-full min-h-screen">
-      {/* <TopBarNav /> */}
       <div className="flex w-full justify-between">
         <div className="w-full flex flex-col justify-start items-start z-20">
-        <div className="flex lg:hidden w-full justify-end py-2 px-5">
-          <BiMenuAltLeft onClick={() => setSideNavClicked(prev => !prev)} className='text-main text-2xl cursor-pointer'/>
-        </div>
+          <div className="flex lg:hidden w-full justify-end py-2 px-5">
+            <BiMenuAltLeft onClick={() => setSideNavClicked(prev => !prev)} className='text-main text-2xl cursor-pointer'/>
+          </div>
+          
+          {/* Progress Bar */}
+          <div className="w-full px-4 py-2 bg-gray-50 border-b">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-medium text-gray-700">Course Progress</span>
+              <span className="text-sm font-bold text-main">{courseProgress}%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div 
+                className="bg-gradient-to-r from-orange-400 to-orange-600 h-2 rounded-full transition-all duration-500" 
+                style={{ width: `${courseProgress}%` }}
+              ></div>
+            </div>
+            <div className="flex justify-between text-xs text-gray-500 mt-1">
+              <span>{completedLessons.size} of {getTotalLessons()} lessons completed</span>
+              <span>{getTotalLessons() - completedLessons.size} remaining</span>
+            </div>
+          </div>
+
           <div className="h-auto flex flex-col w-full">
             <VideoPlayer
               videoUrl={videoUrl}
@@ -182,6 +269,7 @@ const Watch = () => {
               currentLesson={currentLesson}
               nextLesson={nextLesson}
               onPlayNext={handlePlayNext}
+              onLessonComplete={() => currentLesson && markLessonAsCompleted(currentLesson.id)}
             />
           </div>
 
@@ -232,6 +320,16 @@ const Watch = () => {
                       </div>
                     )}
                   </div>
+
+                  <div className="w-full flex py-[50px] flex-col justify-start items-start gap-4">
+                    <div className="flex justify-start items-start gap-3">
+                      <img width={70} height={70} className="object-cover rounded-full w-[50px] h-[50px]" src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${instructorData.image}`} alt={instructorData.name} />
+                      <div className="flex flex-col justify-start items-start">
+                        <Link href={`/dashboard/about-instructor/${instructorData.uid}`} className="text-xl font-semibold text-black duration-200 hover:underline hover:text-main">{instructorData.name}</Link>
+                        <p className="text-md text-grayTwo font-medium">{instructorData.designation}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
               
@@ -252,6 +350,9 @@ const Watch = () => {
           setVideoUrl={handleSetVideoUrl}
           setOpen={setOpen}
           open={open}
+          completedLessons={completedLessons}
+          toggleLessonCompletion={toggleLessonCompletion}
+          currentLesson={currentLesson}
         />
       </div>
     </div>

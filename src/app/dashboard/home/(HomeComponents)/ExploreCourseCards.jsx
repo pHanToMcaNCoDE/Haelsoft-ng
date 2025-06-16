@@ -102,7 +102,7 @@ const ExploreCourseCards = ({ courses = [], rating, setRating }) => {
               </p>
               <div className='w-full flex flex-col md:flex-row justify-between items-center gap-2 mt-2'>
                 <Link
-                  href={`/dashboard/course-details/${course.uid}`}
+                  href={`/dashboard/course-details/${course.slug}`}
                   className="text-main bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2 duration-200 hover:text-white hover:bg-main"
                 >
                   View course <IoIosArrowRoundForward />

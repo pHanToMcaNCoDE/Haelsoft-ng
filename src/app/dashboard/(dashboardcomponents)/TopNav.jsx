@@ -109,6 +109,7 @@ const TopNav = ({setCloseModal}) => {
 
       .then((response) => {
         setIsLoading(false)
+        console.log('CartItem', response.data)
         dispatch(setCartItems(response.data.data));
         setCartItems(response.data.data);
       })
@@ -457,7 +458,7 @@ const TopNav = ({setCloseModal}) => {
               ) : courses.length > 0 ? (
                 courses.map((course, index) => (
                   <Link
-                    href={`/dashboard/course-details/${course.uid}`}
+                    href={`/dashboard/course-details/${course.slug}`}
                     key={index}
                     className="flex items-center gap-x-2 py-3 text-grayTwo border-b border-[#9c918d] last:border-none"
                   >
@@ -528,7 +529,7 @@ const TopNav = ({setCloseModal}) => {
                                               <img src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
                                               <div className="flex flex-col gap-2 w-[90%]">
                                                 <Link 
-                                                  href={`/dashboard/course-details/${item.course?.uid}`}
+                                                  href={`/dashboard/course-details/${item.course?.slug}`}
                                                   target="_blank" 
                                                   className="text-grayTwo text-[.75rem] leading-[30px] font-semibold"
                                                 >
