@@ -130,7 +130,7 @@ const CoursesData = () => {
 
                                             <Link
                                                 key={sub.uid}
-                                                href={`/dashboard/category/${category.uid}`}
+                                                href={`/dashboard/category/${category.slug}`}
                                                 className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                         before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                         before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
@@ -140,7 +140,7 @@ const CoursesData = () => {
                                         ) : (
                                             <Link
                                                 key={sub.uid}
-                                                href={`/category/${category.uid}`}
+                                                href={`/category/${category.slug}`}
                                                 className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                         before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                         before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
@@ -171,7 +171,7 @@ const CoursesData = () => {
 
                                             <Link
                                                 key={sub.uid}
-                                                href={`/dashboard/category/${category.uid}`}
+                                                href={`/dashboard/category/${category.slug}`}
                                                 className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                         before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                         before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'
@@ -181,7 +181,7 @@ const CoursesData = () => {
                                         ) : (
                                             <Link
                                                 key={sub.uid}
-                                                href={`/category/${category.uid}`}
+                                                href={`/category/${category.slug}`}
                                                 className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                         before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 
                                                         before:bottom-0 before:left-0 before:duration-200 hover:before:w-[55px]'

@@ -58,7 +58,7 @@ const Course = ({ item }) => {
           </div>
 
           <Link
-            href={`/dashboard/watch/${item?.course?.slug}`}
+            href={`/dashboard/watch/${item.order_no}`}
             className="text-main duration-200 hover:bg-main hover:text-white bg-transparent border border-main p-2 rounded text-base flex justify-center items-center gap-2"
           >
             Get started <IoIosArrowRoundForward />

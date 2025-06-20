@@ -107,7 +107,7 @@ const Expert = ({instructors}) => {
             className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
           >
             <Link
-              href={`/about-instructor/${instructor.uid}`} 
+              href={`/about-instructor/${instructor.slug}`} 
               className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
             >
               <div className="relative z-[5px] w-full md:w-[268px] overflow-hidden">

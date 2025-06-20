@@ -124,7 +124,7 @@ const CourseCards = () => {
                   </p>
 
                   <Link
-                    href={matchedCategory ? `/category/${matchedCategory.uid}` : "#"}
+                    href={matchedCategory ? `/category/${matchedCategory.slug}` : "#"}
                     className="px-3 py-2 text-[#f36402] border border-[#f36402] font-semibold flex justify-center items-center gap-x-3 w-[155px] h-[53px] rounded duration-300 hover:bg-[#f36402] hover:text-white"
                   >
                     Learn More

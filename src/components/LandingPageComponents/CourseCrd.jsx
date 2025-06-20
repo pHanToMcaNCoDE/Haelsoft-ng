@@ -106,7 +106,7 @@ const CourseCrd = () => {
                             category.sub_categories.length > 0 ? (
                                 category.sub_categories.map((sub) => (
                                     <Link
-                                        href={`/category/${category.uid}`}
+                                        href={`/category/${category.slug}`}
                                         className='text-[#201A18] text-[.875rem] font-normal leading-6 flex gap-1 items-center duration-200 hover:underline hover:text-blue-700 cursor-pointer'
                                         key={index}
                                     >
@@ -116,7 +116,7 @@ const CourseCrd = () => {
                                 ))
                             ) : (
                                 <Link
-                                    href={`/category/${category.uid}`}
+                                    href={`/category/${category.slug}`}
                                     
                                     className='relative text-[.875rem] leading-[18px] font-normal text-grayTwo cursor-pointer 
                                                 before:absolute before:w-0 pb-1 before:h-[2px] before:bg-[#F36400] 

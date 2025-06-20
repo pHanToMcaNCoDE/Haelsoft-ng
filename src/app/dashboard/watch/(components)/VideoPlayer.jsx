@@ -52,12 +52,12 @@ const VideoPlayer = ({ videoUrl, open, setOpen, currentLesson, nextLesson }) => 
   return (
     <div className="col-span-12 md:col-span-9 h-[500px] gap-y-4 p-4 md:px-5 lg:p-0 flex-1 overflow-y-auto w-full">
       <>
-        <Image
+        {/* <Image
           src={draw}
           className="mt-4 mb-4 md:hidden cursor-pointer"
           onClick={() => setOpen(!open)}
           alt="Draw"
-        />
+        /> */}
 
         {!lesson.pdf_file && videoUrl && (
           <div className="relative w-full cursor-pointer">

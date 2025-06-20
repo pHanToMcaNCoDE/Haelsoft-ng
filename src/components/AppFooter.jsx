@@ -149,7 +149,7 @@ const AppFooter = () => {
                 <ul className="flex flex-col justify-center items-start gap-2">
                   {
                     categories.map((category) => (
-                      <Link href={`/category/${category.uid}`} className="text-[.75rem] font-medium">
+                      <Link href={`/category/${category.slug}`} className="text-[.75rem] font-medium">
                         {category.name}
                       </Link>
                     ))
