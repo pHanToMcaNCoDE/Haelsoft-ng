@@ -106,8 +106,8 @@ const Expert = ({instructors}) => {
             key={index}
             className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
           >
-            <Link
-              href={`/about-instructor/${instructor.slug}`} 
+            <div
+              
               className="relative flex flex-col items-center w-full md:w-[268px] h-[460.31px]"
             >
               <div className="relative z-[5px] w-full md:w-[268px] overflow-hidden">
@@ -127,15 +127,20 @@ const Expert = ({instructors}) => {
                       {instructor.name}
                     </h1>
                     <p className="text-[.875rem] leading-[21px] font-medium text-[#7F7571] text-start">
-                      {instructor.designation}
+
+                      {instructor?.designation
+                            ? instructor.description.substr(0, 30) + "..."
+                            : "No description available."}
                     </p>
+
                   </div>
+                  <Link href={`/about-instructor/${instructor.slug}`} className='w-[150px] h-[44px] flex justify-center items-center z-20 p-3 border border-main text-main text-lg font-medium duration-200 hover:bg-main hover:text-white'>View more</Link>
                   {/* <Image width={100} className="object-cover" src={item.comp} alt='Company'></Image> */}
                 </div>
                 {/* <div> */}
                 {/* </div> */}
               </div>
-            </Link>
+            </div>
           </SplideSlide>
         ))}
       </Splide>
