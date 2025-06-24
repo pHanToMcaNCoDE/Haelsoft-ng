@@ -144,7 +144,7 @@ const LatestCourses = () => {
                         <button
                             disabled={isLoading}
                             className="p-3 bg-main cursor-pointer text-white duration-200 hover:text-main hover:bg-transparent border border-main rounded-full font-semibold"
-                            onClick={() => handleAddToCartRequest(course.course_id)}
+                            onClick={() => handleAddToCartRequest(course.uid)}
                         >
                             <GrCart size={22}/>
                         </button>

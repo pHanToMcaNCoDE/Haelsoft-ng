@@ -101,7 +101,7 @@ const Hero = ({ courses }) => {
       // }
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${courses.uid}`,
         {},
         {
           headers: {
@@ -113,6 +113,10 @@ const Hero = ({ courses }) => {
 
       toast.success(response.data.message);
       
+      setTimeout(() => {
+        window.location.reload();
+
+      }, 2000)
       // if (typeof window !== "undefined") {
       //   window.location.href = '/dashboard/shopping-cart';
       // }
