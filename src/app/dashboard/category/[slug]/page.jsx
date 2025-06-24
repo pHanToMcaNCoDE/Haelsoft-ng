@@ -15,7 +15,7 @@ import { toast } from "react-toastify";
 
 const Page = () => {
 
-  const { id } = useParams();
+  const { slug } = useParams();
   const [categoryDetails, setCategoryDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   
@@ -27,7 +27,7 @@ const Page = () => {
   useEffect(() => {
     const fetchCategoryDetails = () => {
       setIsLoading(true);
-      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/category/${id}`, {
+      axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}courses/category/${slug}`, {
         headers: {
           'Accept': 'application/json',
           'Authorization': `Bearer ${token}`
