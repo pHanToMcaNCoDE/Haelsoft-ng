@@ -26,7 +26,7 @@ const Page = () => {
   const [error, setError] = useState(null);
   const [apiResponse, setApiResponse] = useState(null);
 
-  const { id } = useParams();
+  const { slug } = useParams();
   
   useEffect(() => {
     const fetchCourse = async () => {
@@ -34,8 +34,8 @@ const Page = () => {
        
       try {
 
-        const url = `${process.env.NEXT_PUBLIC_BASE_URL}courses/single/${id}`;
-        console.log('Fetching course with ID:', id);
+        const url = `${process.env.NEXT_PUBLIC_BASE_URL}courses/single/${slug}`;
+        console.log('Fetching course with ID:', slug);
         console.log('API URL:', url);
         
         const response = await axios.get(url, {
@@ -62,8 +62,8 @@ const Page = () => {
       }
     };
 
-    if (id) fetchCourse();
-  }, [id]);
+    if (slug) fetchCourse();
+  }, [slug]);
 
   useEffect(() => {
     console.log('Current courses state:', courses);

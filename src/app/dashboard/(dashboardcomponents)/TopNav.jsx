@@ -517,59 +517,76 @@ const TopNav = ({setCloseModal}) => {
                       >
                         {
                           cartItems?.length > 0 ? (
-                                  <div className="flex flex-col items-end w-full justify-start gap-6 p-2">
-                                    <div className="w-full flex flex-col gap-10 justify-start items-start">
-                                      {cartItems.map((item) => (
-                                        <div
-                                          key={item.course_uid || item.course?.uid}
-                                          className="flex flex-col lg:flex-row justify-center items-center gap-3 w-full"
-                                        >
-                                          <div className="flex flex-col justify-between items-center w-full">
-                                            <div className="flex flex-col lg:flex-row items-start justify-between gap-3 w-full">
-                                              <img src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
-                                              <div className="flex flex-col gap-2 w-[90%]">
-                                                <Link 
-                                                  href={`/dashboard/course-details/${item.course?.slug}`}
-                                                  target="_blank" 
-                                                  className="text-grayTwo text-[.75rem] leading-[30px] font-semibold"
-                                                >
-                                                  {item.course?.title}
-                                                </Link>
-                                                <div className="flex flex-col justify-center items-start gap-1">
-                                                  <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
-                                                    {item.rating} rating
-                                                  </p>
-    
-                                                  <div className="flex justify-center items-center gap-1">
-                                                    <div>
-                                                      <Rating
-                                                        style={{ maxWidth: 80 }}
-                                                        value={item.rating}
-                                                        readOnly
-                                                      />
-                                                    </div>
-                                                    <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
-                                                      ({item.reviews})
-                                                    </p>
-                                                  </div>
-                                                </div>
-                                              </div>
-                                              <div className="flex justify-start items-center gap-6">
-                                                <p className="text-grayTwo text-sm font-semibold flex gap-0.5">
-                                                  ₦ {Number(item.course?.price).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || "N/A"}
-                                                </p>
-                                                <RiDeleteBin6Line
-                                                  onClick={() => handleRemoveFromCart(item.uid)}
-                                                  className="text-[1.25rem] cursor-pointer text-main font-semibold"
+                            <div className="flex flex-col items-end w-full justify-start gap-6 p-2">
+                              <div className="w-full flex flex-col gap-10 justify-start items-start">
+                                {cartItems.map((item) => (
+                                  <div
+                                    key={item.course_uid || item.course?.uid}
+                                    className="flex flex-col lg:flex-row justify-center items-center gap-3 w-full"
+                                  >
+                                    <div className="flex flex-col justify-between items-center w-full">
+                                      <div className="flex flex-col lg:flex-row items-start justify-between gap-3 w-full">
+                                        <img src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${item.course?.cover_image}`} width={80} height={80} alt={item.course?.title} />
+                                        <div className="flex flex-col gap-2 w-[90%]">
+                                          <Link 
+                                            href={`/dashboard/course-details/${item.course?.slug}`}
+                                            target="_blank" 
+                                            className="text-grayTwo text-[.75rem] leading-[30px] font-semibold"
+                                          >
+                                            {item.course?.title}
+                                          </Link>
+                                          <div className="flex flex-col justify-center items-start gap-1">
+                                            <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                                              {item.rating} rating
+                                            </p>
+
+                                            <div className="flex justify-center items-center gap-1">
+                                              <div>
+                                                <Rating
+                                                  style={{ maxWidth: 80 }}
+                                                  value={item.rating}
+                                                  readOnly
                                                 />
                                               </div>
+                                              <p className="text-grayTwo font-medium text-[.75rem] leading-[18px]">
+                                                ({item.reviews})
+                                              </p>
                                             </div>
                                           </div>
                                         </div>
-                                      ))}
-                                      <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
+                                        <div className="flex justify-start items-center gap-6">
+                                          <p className="text-grayTwo text-sm font-semibold flex gap-0.5">
+                                            ₦ {Number(item.course?.price || 0).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                          </p>
+                                          <RiDeleteBin6Line
+                                            onClick={() => handleRemoveFromCart(item.uid)}
+                                            className="text-[1.25rem] cursor-pointer text-main font-semibold"
+                                          />
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
+                                ))}
+                                <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
+                                
+                                {/* Cart Total */}
+                                <div className="w-full flex justify-between items-center pt-4">
+                                  <span className="text-lg font-semibold">Total:</span>
+                                  <span className="text-xl font-bold text-main">
+                                    ₦{cartItems.reduce((total, item) => total + Number(item.course?.price || 0), 0).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                  </span>
+                                </div>
+                                
+                                <div className='w-full flex justify-end items-end'>
+                                  <Link
+                                    href={`/dashboard/checkout`}
+                                    className="bg-main py-3 px-6 rounded-lg text-white flex justify-center items-center text-[1rem] font-semibold w-[65%]"
+                                  >
+                                    Checkout
+                                  </Link>
+                                </div>
+                              </div>
+                            </div>
                           ) : (
                             <div className='w-full h-[400px] flex flex-col gap-3 justify-center items-center'>
                               <Image width={150} height={150} src={cart} alt="Shopping Cart" />

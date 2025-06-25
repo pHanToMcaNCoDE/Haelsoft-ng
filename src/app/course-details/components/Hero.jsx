@@ -103,7 +103,7 @@ const Hero = ({ courses }) => {
       // }
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}cart/add-to-cart/${courses.uid}`,
         {},
         {
           headers: {
