@@ -570,7 +570,7 @@ const TopNav = ({setCloseModal}) => {
                                 <div className="w-full h-[.75px] rounded-full bg-neutral-200 mb-3"></div>
                                 
                                 {/* Cart Total */}
-                                <div className="w-full flex justify-between items-center pt-4">
+                                <div className="w-full flex justify-between items-center pt-1">
                                   <span className="text-lg font-semibold">Total:</span>
                                   <span className="text-xl font-bold text-main">
                                     ₦{cartItems.reduce((total, item) => total + Number(item.course?.price || 0), 0).toLocaleString('en-NG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
