@@ -117,10 +117,10 @@ const page = () => {
         {loading ? (<Loader/>) : (
             <section className='bg-[#D98E47]/30 w-full flex flex-col justify-start items-start gap-3'>
               <div className='max-w-[1240px] mx-auto flex flex-col justify-between items-center gap-6 pt-[150px] pb-[100px] px-5 lg:px-10 relative'>
-                  <div className='w-[80%] h-[150px] flex flex-col justify-center items-center text-center gap-5 py-10'>
+                  <div className='h-[150px] flex flex-col justify-center items-center text-center gap-5 py-10'>
                       <p className='uppercase text-md font-medium'>instructors</p>
                       <h1 className='text-4xl font-bold text-grayTwo'>{details.name}</h1>
-                      <p className='text-md font-semibold text-grayTwo'>{details.designation}</p>
+                      <p className='text-md font-semibold text-grayTwo w-[80%]'>{details.designation}</p>
                   </div>
                   <div className='w-[140px] h-[140px] rounded-full border-[10px] border-[#f4f4f4] absolute bottom-[-25%]'>
                       <Image className='w-full h-full absolute rounded-full object-cover top-0' width={100} height={100} src={`${process.env.NEXT_PUBLIC_STORAGE_URL}${details.image}`} alt={details.name} />
